@@ -1,0 +1,19 @@
+# bkit internal state (tool-generated, not for sharing)
+.bkit/
+
+# Obsidian local/workspace state (keep shared config)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/graph.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Logs
+*.log
