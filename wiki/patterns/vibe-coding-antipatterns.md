@@ -3,7 +3,7 @@ title: "Vibe Coding 안티패턴"
 category: patterns
 tags: [vibe-coding, antipatterns, security, production, solo-developer]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-11
 sources:
   - "raw/notes/2026-04-09-vibe-coding-antipatterns.md"
 related:
@@ -16,6 +16,16 @@ confidence: high
 ---
 
 # Vibe Coding 안티패턴
+
+## 쉽게 읽기
+
+**Vibe coding**은 “느낌상 괜찮아 보이니까” AI 코드를 **거의 검토 없이** 받아들이는 태도다. 이 페이지는 그렇게 하면 **보안·유출·유지보수**에서 어떤 일이 실제로 나는지 정리한다. 겁주기가 아니라 **체크리스트**로 읽으면 된다.
+
+| 용어 | 풀이 |
+|------|------|
+| **안티패턴** | 이름은 그럴듯하지만 **피해야 할** 습관 |
+| **API 키** | 외부 서비스 문을 여는 **비밀 열쇠** — 유출되면 큰일 |
+| **유지보수** | 출시 후에도 **고치고 돌보는 일** |
 
 ## 한줄 설명
 

@@ -3,7 +3,7 @@ title: "gstack"
 category: tools
 tags: [claude-code-plugin, gstack, garry-tan, role-based, startup]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-11
 sources: []
 related:
   - "[[tools/claude-code]]"
@@ -16,6 +16,16 @@ confidence: medium
 ---
 
 # gstack
+
+## 쉽게 읽기
+
+**역할 놀이**를 프롬프트로 정리해 둔 스킬 팩이다. 같은 AI라도 “지금은 QA”, “지금은 디자이너”처럼 **말투와 체크리스트**를 바꿔 쓰게 한다. 실체는 **CLAUDE.md + 슬래시 명령 모음**에 가깝다.
+
+| 용어 | 풀이 |
+|------|------|
+| **Persona** | AI에게 씌우는 **역할 가면** |
+| **Slash command** | `/something` 처럼 **짧은 명령으로 스크립트 실행** |
+| **스킬 팩** | 여러 역할·절차를 파일로 묶어 둔 것 |
 
 ## 한줄 설명
 

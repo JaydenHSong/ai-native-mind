@@ -3,17 +3,21 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-04-09
-total_pages: 32
+updated: 2026-04-11
+total_pages: 41
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 전체 32개 페이지 | 최종 업데이트: 2026-04-09
+> 전체 41개 페이지 | 최종 업데이트: 2026-04-11 — 대부분 페이지에 **쉽게 읽기** 블록 있음
 
-## Concepts (14개)
+## 쉽게 읽기
+
+링크만 모아 둔 **목차**다. 주제가 낯설면 해당 페이지로 들어가서 맨 위 **「쉽게 읽기」**부터 읽으면 된다.
+
+## Concepts (15개)
 
 ### 성장 맵 & 철학
 - [[concepts/ai-native-programmer]] — AI를 팀원으로 활용하여 1인이 팀 규모 결과를 내는 개발자, 성장 맵
@@ -35,11 +39,14 @@ status: active
 - [[concepts/llm-evaluation]] — LLM 출력을 체계적으로 테스트하는 Evals 방법론
 - [[concepts/rag]] — RAG(Retrieval-Augmented Generation), LLM의 외부 지식 검색·활용 패턴
 
+### 운영·관측
+- [[concepts/gen-ai-observability]] — OpenTelemetry GenAI·에이전트 시맨틱 컨벤션, 트레이스·표준 계측
+
 ### AI의 어두운 면
 - [[concepts/context-rot-hallucination]] — Context Rot, Hallucination, Error 누적 등 5대 실패 패턴
 - [[concepts/cognitive-debt]] — Technical Debt의 AI 버전, 개발자의 머릿속에 쌓이는 부채
 
-## Tools (6개)
+## Tools (7개)
 
 - [[tools/claude-code]] — Anthropic의 CLI 기반 AI 코딩 도구, 위키 유지보수 LLM
 - [[tools/obsidian]] — 로컬 마크다운 기반 노트 앱, 위키 브라우저/IDE
@@ -47,14 +54,18 @@ status: active
 - [[tools/superpowers]] — TDD + subagent 병렬 실행 agentic skills 프레임워크 (Claude Code 플러그인)
 - [[tools/codex-plugin]] — OpenAI의 크로스-모델 코드 리뷰 도구 (Claude Code 플러그인)
 - [[tools/gstack]] — 역할 기반 AI 팀 시뮬레이션 스킬 팩 (Claude Code 플러그인)
+- [[tools/vercel-workflow]] — Workflow DevKit, TypeScript 내구 워크플로·Webhook·에이전트 장기 실행
 
-## Patterns (10개)
+## Patterns (13개)
 
 ### LLM-Wiki & 메타 패턴
 - [[patterns/llm-wiki]] — LLM이 유지보수하는 개인 지식 위키 패턴 (Tobi Lütke)
 - [[patterns/bkit-superpowers-combo]] — bkit PDCA + Superpowers TDD 조합으로 단계 건너뛰기 방지
 
 ### AI 개발 실전 패턴
+- [[patterns/agent-planning-to-implementation]] — 기획·스펙·태스크→코드까지 에이전트 파이프라인과 HITL 게이트
+- [[patterns/agent-server-harness]] — HTTP·큐·SSE 뒤의 에이전트 백엔드·상태·보안 하네스
+- [[patterns/owasp-llm-typescript-mitigations]] — OWASP LLM Top 10 중 LLM01/06/10을 TS·AI SDK로 완화하는 패턴
 - [[patterns/claude-md-guide]] — CLAUDE.md 작성 가이드, Harness Engineering의 실전 구현체
 - [[patterns/subagents-delegation]] — Claude Code Subagents 위임 패턴 (Explore-Plan-Execute)
 - [[patterns/prompt-caching]] — 반복 prompt prefix 캐싱으로 비용 90% 절감
@@ -66,7 +77,9 @@ status: active
 - [[patterns/solo-product-strategy]] — 1인 개발자 제품 전략, 마이크로 SaaS 기획·출시
 - [[patterns/vibe-coding-antipatterns]] — Vibe Coding의 7대 안티패턴과 회피법
 
-## Journal (0개)
+## Journal (1개)
+
+- [[journal/2026-04-12]] — Fowler Humans/Agents·on the loop·OWASP×TS 정리 일지
 
 ## Comparisons (5개)
 

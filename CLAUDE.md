@@ -94,6 +94,8 @@ confidence: high | medium | low
 - 존재하지 않는 페이지도 링크 가능 (Obsidian이 빨간색 표시 → 추후 생성)
 - 소스 참조: `[출처](raw/articles/파일명.md)`
 
+**Obsidian과 실제 경로 (`wiki/…`)**: 위키 파일은 `wiki/concepts/` 등 하위에 있지만, 링크는 `[[concepts/페이지명]]` 형태를 유지한다. 볼트 루트에 **심볼릭 링크** `concepts` → `wiki/concepts`, `patterns` → `wiki/patterns`, `tools` → `wiki/tools`, `comparisons` → `wiki/comparisons`, `journal` → `wiki/journal` 를 두어 Obsidian이 `[[concepts/…]]` 를 실제 파일로 해석하게 한다. (Windows에서는 개발자 모드 등으로 symlink 생성이 필요할 수 있다.)
+
 ### 언어 규칙
 
 - 본문: **한국어**
@@ -160,8 +162,8 @@ confidence: high | medium | low
 
 ## Current State
 
-- **총 페이지 수**: 32
-- **카테고리 현황**: concepts(14), tools(6), patterns(10), journal(0), comparisons(5)
-- **소스 수**: 25개 ingested
-- **최근 활동**: 14개 주제 대규모 리서치 (실전기술·개념심화·어두운면·실무) (2026-04-09)
+- **총 페이지 수**: 41
+- **카테고리 현황**: concepts(15), tools(7), patterns(13), journal(1), comparisons(5)
+- **소스 수**: 32개 (raw 노트 + papers: OWASP LLM Top 10 메타 1건 추가)
+- **최근 활동**: 2026-04-11 위키 전 페이지 **「쉽게 읽기」**(비유·용어 표) 가독성 패스, `wiki/log`·`index`·`overview` 반영. 2026-04-12 저널·OWASP×TS·papers·예제 스케치. 2026-04-11 Vercel Workflow·OTel·AI SDK·하네스 보강. 2026-04-09 14개 주제 대규모 리서치.
 - **다음 할 일**: 실습 기록 (journal/), 구체적 사례 추가

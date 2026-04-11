@@ -1,3 +1,7 @@
 {
-  "attachmentFolderPath": "raw/assets"
+  "attachmentFolderPath": "raw/assets",
+  "newFileLocation": "folder",
+  "newFileFolderPath": "raw/notes",
+  "alwaysUpdateLinks": true,
+  "showUnsupportedFiles": true
 }

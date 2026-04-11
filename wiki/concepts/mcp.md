@@ -3,7 +3,7 @@ title: "MCP (Model Context Protocol)"
 category: concepts
 tags: [mcp, anthropic, protocol, tools, integration]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-11
 sources:
   - "raw/notes/2026-04-09-mcp-research.md"
 related:
@@ -11,11 +11,22 @@ related:
   - "[[concepts/harness-engineering]]"
   - "[[tools/claude-code]]"
   - "[[concepts/ai-orchestration]]"
+  - "[[patterns/owasp-llm-typescript-mitigations]]"
 status: active
 confidence: high
 ---
 
 # MCP (Model Context Protocol)
+
+## 쉽게 읽기
+
+**비유**: 예전에는 기기마다 충전기 모양이 달랐다. **MCP**는 AI 앱이 외부(깃허브, DB, 슬랙 등)와 연결할 때 쓰는 **공통 충전 포트(USB-C 같은 것)** 이다. 한 번 표준에 맞춰 두면, 새 도구도 “이 포트만 맞추면” 붙인다.
+
+| 용어 | 풀이 |
+|------|------|
+| **MCP Client** | AI 앱 쪽(질문·명령을 보내는 쪽) |
+| **MCP Server** | 실제 데이터·기능을 제공하는 쪽 |
+| **Tools / Resources / Prompts** | AI가 실행할 함수·읽을 데이터·미리 만든 질문 템플릿 |
 
 ## 한줄 정의
 

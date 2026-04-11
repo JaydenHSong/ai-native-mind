@@ -3,7 +3,7 @@ title: "Prompt Caching 전략"
 category: patterns
 tags: [prompt-caching, cost-optimization, anthropic, llm]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-11
 sources:
   - "raw/notes/2026-04-09-prompt-caching.md"
 related:
@@ -15,6 +15,16 @@ confidence: high
 ---
 
 # Prompt Caching 전략
+
+## 쉽게 읽기
+
+**비유**: 매 수업마다 교과서 **전체를 베끼는 대신**, 교과서는 한 번만 사 두고(캐시에 저장) 질문지만 바꾼다. 같은 **앞부분(시스템 설명·긴 문서)** 이 반복될 때 특히 요금이 줄어든다.
+
+| 용어 | 풀이 |
+|------|------|
+| **prefix** | 프롬프트 **앞쪽**에 붙는 고정 설명·문서 |
+| **Cache read / write** | 저장해 두고 읽기 vs 처음 저장하기(쓰기는 보통 더 비쌈) |
+| **TTL** | 캐시가 **얼마 동안** 유효한지(시간 제한) |
 
 ## 한줄 설명
 

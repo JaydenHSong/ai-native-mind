@@ -3,7 +3,7 @@ title: "Structured Output"
 category: concepts
 tags: [structured-output, json-mode, function-calling, schema]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-11
 sources:
   - "raw/notes/2026-04-09-structured-output.md"
 related:
@@ -14,6 +14,16 @@ confidence: high
 ---
 
 # Structured Output
+
+## 쉽게 읽기
+
+**비유**: AI에게 “아무 말이나 해”가 아니라 **양식지에 빈칸만 채우게** 하는 것이다. 빈칸 이름·형식(숫자만, 목록 중 하나만)을 정해 두면, 다음 프로그램이 **깨지지 않고** 처리할 수 있다.
+
+| 용어 | 풀이 |
+|------|------|
+| **스키마** | 허용되는 필드 이름·타입·필수 여부를 적은 **설계도** |
+| **JSON Mode** | “그냥 JSON이면 됨” 수준 — 필드 이름까지 맞출 보장은 약함 |
+| **Structured Outputs** | 설계도에 **딱 맞게** 나오게 강제하는 방식 |
 
 ## 한줄 정의
 

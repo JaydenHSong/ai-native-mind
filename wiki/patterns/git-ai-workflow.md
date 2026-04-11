@@ -3,7 +3,7 @@ title: "Git + AI 워크플로우"
 category: patterns
 tags: [git, workflow, claude-code, commits, pr]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-11
 sources:
   - "raw/notes/2026-04-09-git-ai-workflow.md"
 related:
@@ -16,6 +16,16 @@ confidence: high
 ---
 
 # Git + AI 워크플로우
+
+## 쉽게 읽기
+
+**Git**은 코드의 **타임머신 + 백업**이다. **커밋**은 “이 시점 저장”, **PR(Pull Request)** 은 “내 저장본을 합쳐도 될지 검토 요청”이다. 이 페이지는 Claude Code가 그걸 **명령 한 번에** 도와주는 쓰는 법이다.
+
+| 용어 | 풀이 |
+|------|------|
+| **diff** | 바뀐 줄만 보여 주는 **변경 목록** |
+| **스테이징** | 커밋에 넣을 파일을 **장바구니에 담기** |
+| **Conventional commits** | `fix:`, `feat:` 같이 **맨 앞에 종류 태그**를 붙이는 관례 |
 
 ## 한줄 설명
 

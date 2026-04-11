@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-04-09
+updated: 2026-04-11
 sources: []
 status: active
 ---
@@ -11,6 +11,61 @@ status: active
 # ai-native-mind Wiki Log
 
 > 시간순 작업 기록. `grep "^## \[" wiki/log.md`로 파싱 가능.
+
+## 쉽게 읽기
+
+날짜별로 **무엇을 바꿨는지**만 적어 둔다. 개념 설명은 `wiki/concepts/` 등 본문 페이지를 보면 된다.
+
+## [2026-04-11] update | 전 위키 가독성 패스 (쉽게 읽기 + 용어 표)
+
+- **Pages updated**: concepts·tools·patterns·comparisons 전 페이지(메타 `overview`/`index` 포함), `harness-engineering`·`owasp-llm-typescript-mitigations`·`agent-server-harness`·`journal/2026-04-12`의 `updated` 정리
+- **Notes**: 각 본문 상단에 **「쉽게 읽기」**(비유 + 짧은 용어 표). index 인용줄 안내. (이전에 agent-server·저널에만 넣었던 설명은 이번에 전 페이지로 확장.)
+
+## [2026-04-12] create | 저널·OWASP×TS 패턴·papers·예제 스케치
+
+- **Sources**: `raw/notes/2026-04-12-security-typescript-corpus.md`, `raw/notes/2026-04-12-harness-engineering-deep-dive.md`, `raw/papers/owasp-genai-2025-llm-top-10.md`
+- **Pages created**: `wiki/journal/2026-04-12.md`, `wiki/patterns/owasp-llm-typescript-mitigations.md`
+- **Other**: `examples/agent-safety-sketch/README.md`, `raw/papers/owasp-genai-2025-llm-top-10.md`
+- **Pages updated**: `concepts/harness-engineering.md`, `patterns/agent-server-harness.md`, `index.md`, `overview.md`, `log.md`, `CLAUDE.md`
+- **Notes**: Fowler Humans/Agents 요약을 저널·하네스 페이지에 연결. OWASP LLM01/06/10 ↔ TS·AI SDK 완화 패턴 위키화. 실행용 최소 README 스케치.
+
+## [2026-04-12] collect | 보안 × TypeScript 큐레이션 (②)
+
+- **Sources**: `raw/notes/2026-04-12-security-typescript-corpus.md`
+- **Pages updated**: `raw/notes/2026-04-12-ai-native-learning-corpus.md` (5c 링크), `log.md`, `overview.md`, `CLAUDE.md`
+- **Notes**: OWASP GenAI LLM Top 10, MCP Authorization 튜토리얼·스펙, AI SDK 구조화 출력·도구·MCP·미들웨어·테스트·텔레메트리, TS strict·Zod, 위협↔TS 완화 표.
+
+## [2026-04-12] update | Harness Engineering 심화 (개념 보강 + 큐레이션 노트)
+
+- **Sources**: `raw/notes/2026-04-12-harness-engineering-deep-dive.md`
+- **Pages updated**: `concepts/harness-engineering.md`, `log.md`, `overview.md`, `CLAUDE.md`
+- **Notes**: 루프·인간 in/on/out·Harnessability·Norms/Guardrails 표 추가. Fowler memo / Humans and Agents, Anthropic 도구 글 링크. 심화 읽기 리스트 raw에 정리.
+
+## [2026-04-12] collect | AI 네이티브 학습 외부 자료 큐레이션
+
+- **Sources**: `raw/notes/2026-04-12-ai-native-learning-corpus.md`
+- **Pages updated**: `log.md`, `CLAUDE.md`
+- **Notes**: Anthropic 엔지니어링·OpenAI Cookbook·HF Agents Course·DeepLearning Agentic AI·MCP·OTel·Simon Willison·실습 순서 권장안 링크 모음 (ingest 전 raw 풀).
+
+## [2026-04-11] ingest | AI SDK(streamText/Agent) + Workflow DurableAgent 리서치
+
+- **Sources**: `raw/notes/2026-04-11-ai-sdk-durable-agent-workflow-research.md` (useworkflow.dev 공식 가이드)
+- **Pages updated**: `tools/vercel-workflow.md`, `patterns/agent-server-harness.md`, `log.md`, `CLAUDE.md`, `overview.md`
+- **Notes**: `Agent`가 `streamText` 래퍼임, `DurableAgent`·`getWritable`·`start`·`run.readable`·도구 `"use step"`·`npx workflow web`·flight-booking 예제 브랜치 정리.
+
+## [2026-04-11] ingest | Vercel Workflow + OpenTelemetry GenAI 관측 리서치
+
+- **Sources**: `raw/notes/2026-04-11-vercel-workflow-otel-agents-research.md` (웹 1차 출처: Vercel 블로그, useworkflow.dev, OTel 스펙·블로그·SIG)
+- **Pages created**: `tools/vercel-workflow.md`, `concepts/gen-ai-observability.md`
+- **Pages updated**: `patterns/agent-server-harness.md`, `concepts/harness-engineering.md`, `concepts/llm-evaluation.md`, `index.md`, `overview.md`, `log.md`, `CLAUDE.md`
+- **Notes**: WDK의 `use workflow`/`use step`·Webhook·Worlds·내장 관측 요약. OTel GenAI semconv·에이전트 앱/프레임워크 컨벤션·계측 두 갈래 정리.
+
+## [2026-04-11] update | 오케스트레이션·하네스 서버 보강 + 패턴 2종
+
+- **Sources**: `raw/notes/2026-04-11-orchestration-harness-server-supplement.md`
+- **Pages created**: `patterns/agent-planning-to-implementation.md`, `patterns/agent-server-harness.md`
+- **Pages updated**: `concepts/ai-orchestration.md`, `concepts/harness-engineering.md`, `concepts/agentic-engineering.md`, `index.md`, `overview.md`, `log.md`, `CLAUDE.md`
+- **Notes**: 6대 패턴 위에 런타임(상태·멱등·HITL·관측) 정리, Harness에 서버·프로덕션 경계 추가. 기획→코드 산출물 체인·HITL, 동기/비동기/SSE 백엔드 패턴 문서화.
 
 ## [2026-04-09] ingest | 14개 주제 대규모 리서치 (실전 기술·개념·어두운 면·실무)
 

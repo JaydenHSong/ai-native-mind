@@ -3,7 +3,7 @@ title: "Subagents & 위임 패턴"
 category: patterns
 tags: [subagents, claude-code, delegation, orchestration]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-11
 sources:
   - "raw/notes/2026-04-09-subagents-delegation.md"
 related:
@@ -11,11 +11,23 @@ related:
   - "[[concepts/harness-engineering]]"
   - "[[tools/claude-code]]"
   - "[[patterns/claude-md-guide]]"
+  - "[[patterns/agent-planning-to-implementation]]"
+  - "[[patterns/agent-server-harness]]"
 status: active
 confidence: high
 ---
 
 # Subagents & 위임 패턴
+
+## 쉽게 읽기
+
+**비유**: 반장 한 명에게 모든 과목을 시키면 머리가 복잡해진다. **서브에이전트**는 “수학 전담”, “영어 전담”처럼 **역할을 나눈 조원**이다. 각자 **짧은 메모장(컨텍스트)** 만 쓰게 해서 서로 섞이지 않게 한다.
+
+| 용어 | 풀이 |
+|------|------|
+| **Subagent** | 메인 채팅과 분리된 **전문 조수** 설정 묶음 |
+| **위임** | 큰 일을 쪼개서 조원에게 넘기기 |
+| **컨텍스트 윈도우** | AI가 한 번에 기억할 수 있는 **메모장 크기** |
 
 ## 한줄 설명
 

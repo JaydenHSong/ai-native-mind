@@ -3,18 +3,31 @@ title: "Agentic Engineering"
 category: concepts
 tags: [agentic-engineering, vibe-coding, ai-development, karpathy]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-11
 sources:
   - "raw/notes/2026-04-09-engineering-paradigms-research.md"
+  - "raw/notes/2026-04-11-orchestration-harness-server-supplement.md"
 related:
   - "[[concepts/harness-engineering]]"
   - "[[concepts/ai-orchestration]]"
   - "[[concepts/ai-native-programmer]]"
+  - "[[patterns/agent-planning-to-implementation]]"
+  - "[[patterns/agent-server-harness]]"
 status: active
 confidence: medium
 ---
 
 # Agentic Engineering
+
+## 쉽게 읽기
+
+**Vibe coding**은 “느낌 가는 대로 AI 출력을 받아들이기”에 가깝다. **Agentic engineering**은 그 대신 **역할·검사·되돌리기**를 정해 두고 AI가 돌게 하는 쪽이다. 즉, **속도만**이 아니라 **통제 가능한 자동화**를 목표로 한다.
+
+| 용어 | 풀이 |
+|------|------|
+| **Harness** | AI가 벗어나지 않게 하는 **안전 띠·난간** 묶음 |
+| **감독** | 사람이 완전히 손에서 놓지 않고 **기준과 승인**을 쥠 |
+| **프로덕션** | 실제 사용자에게 나가는 **진짜 서비스** 환경 |
 
 ## 한줄 정의
 
@@ -63,6 +76,8 @@ Agentic Engineering은 "AI를 쓰는 것"과 "AI로 엔지니어링하는 것"�
 - [[concepts/harness-engineering]] — Agentic Engineering의 인프라
 - [[concepts/ai-orchestration]] — 에이전트 조율 패턴
 - [[concepts/ai-native-programmer]] — 이 방법론을 실천하는 사람
+- [[patterns/agent-planning-to-implementation]] — 기획·계획을 코드로 넘길 때의 감독 구조
+- [[patterns/agent-server-harness]] — 서버에 올린 에이전트의 감독·경계
 
 ## 참고 소스
 

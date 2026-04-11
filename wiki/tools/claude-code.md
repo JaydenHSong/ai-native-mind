@@ -3,7 +3,7 @@ title: "Claude Code"
 category: tools
 tags: [claude-code, llm, ai-tool, cli]
 created: 2026-04-06
-updated: 2026-04-06
+updated: 2026-04-11
 sources:
   - "raw/articles/2026-04-04-llm-wiki-pattern.md"
 related:
@@ -17,6 +17,16 @@ confidence: medium
 ---
 
 # Claude Code
+
+## 쉽게 읽기
+
+Anthropic의 **터미널용 AI 코딩 도구**다. VS Code 안이 아니라 **검은 창(터미널)** 에서 폴더를 열고, 파일을 읽고 고치고, 명령을 실행하게 시킬 수 있다. “챗봇 한 창”보다 **프로젝트 전체**를 다루기 좋다.
+
+| 용어 | 풀이 |
+|------|------|
+| **CLI** | 명령줄 인터페이스 — **키보드로만** 조작하는 창 |
+| **멀티파일** | 여러 파일을 **한 작업**으로 수정 |
+| **Anthropic** | Claude를 만든 **회사 이름** |
 
 ## 한줄 설명
 

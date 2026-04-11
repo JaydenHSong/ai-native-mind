@@ -3,7 +3,7 @@ title: "AI 코드 리뷰 워크플로우"
 category: patterns
 tags: [code-review, workflow, solo-developer, claude-code]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-11
 sources:
   - "raw/notes/2026-04-09-ai-code-review.md"
 related:
@@ -16,6 +16,16 @@ confidence: high
 ---
 
 # AI 코드 리뷰 워크플로우
+
+## 쉽게 읽기
+
+**비유**: 혼자 코딩할 때 **가상 동료**에게 “이 변경 괜찮아?” 묻는 과정이다. 사람 리뷰어가 없어도, AI가 **버그·보안·엣지 케이스**를 짚어 주도록 습관을 만든다.
+
+| 용어 | 풀이 |
+|------|------|
+| **PR** | 내 브랜치 변경을 메인에 합치자고 올리는 **검토 요청** |
+| **인라인 코멘트** | 특정 줄 옆에 달리는 **쪽지** |
+| **Correctness** | 문법보다 **논리가 맞는지**가 중심인 검토 |
 
 ## 한줄 설명
 

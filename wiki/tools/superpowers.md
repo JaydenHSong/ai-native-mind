@@ -3,7 +3,7 @@ title: "Superpowers"
 category: tools
 tags: [claude-code-plugin, superpowers, tdd, subagent, planning]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-11
 sources: []
 related:
   - "[[tools/claude-code]]"
@@ -17,6 +17,16 @@ confidence: medium
 ---
 
 # Superpowers
+
+## 쉽게 읽기
+
+Claude Code용 **오픈소스 플러그인**이다. “바로 코드부터”가 아니라 **브레인스토밍→계획→실행**, 필요하면 **테스트 먼저** 같은 **시니어 개발자 습관**을 스킬 파일로 박아 둔다.
+
+| 용어 | 풀이 |
+|------|------|
+| **스킬(Skill)** | 특정 작업 때 따라야 할 **규칙·체크리스트 묶음** |
+| **TDD** | 테스트를 먼저 쓰고 코드를 **맞추기** |
+| **Brainstorming** | 구현 전에 요구·위험을 **넓게 털기** |
 
 ## 한줄 설명
 

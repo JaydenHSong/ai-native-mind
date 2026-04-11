@@ -3,7 +3,7 @@ title: "CLAUDE.md 작성 가이드"
 category: patterns
 tags: [claude-md, harness-engineering, context-engineering, best-practices]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-11
 sources:
   - "raw/notes/2026-04-09-claude-md-best-practices.md"
 related:
@@ -16,6 +16,16 @@ confidence: high
 ---
 
 # CLAUDE.md 작성 가이드
+
+## 쉽게 읽기
+
+`CLAUDE.md`는 Claude Code가 **매번 먼저 읽는** 프로젝트 설명서다. “우리 폴더 구조, 금지 사항, 테스트 명령”을 짧게 적어 두면, AI가 **같은 실수를 덜** 한다. 너무 길면 **중요한 줄이 묻힌다**는 점이 핵심이다.
+
+| 용어 | 풀이 |
+|------|------|
+| **Harness** | AI 행동을 묶는 **규칙·경계** |
+| **소음** | 정보량이 많아 **진짜 규칙이 안 보이는 것** |
+| **프로젝트 루트** | 저장소 **맨 위 폴더** |
 
 ## 한줄 설명
 

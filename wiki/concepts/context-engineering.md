@@ -3,7 +3,7 @@ title: "Context Engineering"
 category: concepts
 tags: [context-engineering, prompt-engineering, ai-orchestration]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-11
 sources:
   - "raw/notes/2026-04-09-ai-orchestration-research.md"
   - "raw/notes/2026-04-09-solo-dev-ai-research.md"
@@ -19,6 +19,16 @@ confidence: medium
 ---
 
 # Context Engineering
+
+## 쉽게 읽기 (30초)
+
+**한 문장**: “질문 한 줄 잘 쓰기”를 넘어, AI가 보는 **전체 환경**(규칙 파일, 메모리, 도구, 안전장치)을 설계하는 일이다. 아래 표의 **비유** 열이 가장 빠른 요약이다.
+
+| 용어 | 풀이 |
+|------|------|
+| **Context** | 모델이 답할 때 참고하는 **모든 입력** |
+| **Guardrails** | 하면 안 되는 행동·출력을 막는 **울타리** |
+| **RAG/MCP** | 외부 지식·도구를 **안전하게** 붙이는 층 |
 
 ## 한줄 정의
 

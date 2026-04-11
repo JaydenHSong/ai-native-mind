@@ -3,7 +3,7 @@ title: "AI 네이티브 아키텍처"
 category: concepts
 tags: [ai-native, architecture, design-principles, software-design]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-11
 sources:
   - "raw/notes/2026-04-09-ai-native-architecture-research.md"
 related:
@@ -16,6 +16,16 @@ confidence: medium
 ---
 
 # AI 네이티브 아키텍처
+
+## 쉽게 읽기
+
+**비유**: 완성된 집에 에어컨만 달면 **후천적**이다. **AI 네이티브**는 설계도부터 “에어컨 배관·전기 용량”을 넣듯이, **AI가 읽고 고치기 쉬운 구조**를 전제로 짠다. 즉, 나중에 붙이는 게 아니라 **처음부터 중심에 AI**를 둔다.
+
+| 용어 | 풀이 |
+|------|------|
+| **아키텍처** | 시스템의 **뼈대**(모듈 나누기, 데이터 흐름) |
+| **모듈 경계** | 파일·서비스를 **어디서 잘라** 책임을 나눌지 |
+| **비기능 요구** | 속도, 비용, 보안처럼 “기능 목록” 밖의 **조건** |
 
 ## 한줄 정의
 

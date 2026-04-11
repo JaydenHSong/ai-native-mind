@@ -3,7 +3,7 @@ title: "AI 네이티브 프로그래머"
 category: concepts
 tags: [ai-native, growth, solo-developer, career]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-11
 sources:
   - "raw/notes/2026-04-09-solo-dev-ai-research.md"
   - "raw/notes/2026-04-09-ai-native-architecture-research.md"
@@ -17,6 +17,16 @@ confidence: medium
 ---
 
 # AI 네이티브 프로그래머
+
+## 쉽게 읽기
+
+AI를 **자동완성 도구**만이 아니라, 기획·코드·검증을 **함께 돌리는 팀원**처럼 쓰는 개발자 그림이다. 혼자서도 기획·백엔드·프론트를 **오케스트레이션**으로 묶어 낼 때 이 말이 자주 쓰인다.
+
+| 용어 | 풀이 |
+|------|------|
+| **오케스트레이션** | 여러 단계·도구를 **순서와 조건**에 맞게 연결 |
+| **1인 팀** | 사람은 한 명이지만 산출은 **팀 규모**로 내기 |
+| **하네스** | AI가 벗어나지 않게 하는 **규칙과 검사** |
 
 ## 한줄 정의
 

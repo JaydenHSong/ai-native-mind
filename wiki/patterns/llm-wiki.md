@@ -3,7 +3,7 @@ title: "LLM-Wiki 패턴"
 category: patterns
 tags: [llm, wiki, knowledge-management, obsidian]
 created: 2026-04-06
-updated: 2026-04-06
+updated: 2026-04-11
 sources:
   - "raw/articles/2026-04-04-llm-wiki-pattern.md"
 related:
@@ -18,6 +18,16 @@ confidence: medium
 ---
 
 # LLM-Wiki 패턴
+
+## 쉽게 읽기
+
+사람이 직접 위키만 쓰는 대신, **LLM이 정리·링크·갱신**을 맡는 지식 관리 방식이다. `raw/` 에 원본을 두고, `wiki/` 는 LLM이 **구조화한 층**으로 두는 식(이 저장소 `CLAUDE.md` 스키마)이 전형적이다.
+
+| 용어 | 풀이 |
+|------|------|
+| **Layer 1 raw** | 바꾸지 않는 **원문 저장** |
+| **Layer 2 wiki** | 읽기 쉽게 **가공된 노트** |
+| **Ingest** | 원본을 읽고 위키 페이지로 **옮겨 적기** |
 
 ## 한줄 설명
 

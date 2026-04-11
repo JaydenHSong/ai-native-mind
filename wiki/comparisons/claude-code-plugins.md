@@ -3,7 +3,7 @@ title: "Claude Code 플러그인 4종 비교"
 category: comparisons
 tags: [claude-code-plugin, bkit, superpowers, codex, gstack, comparison]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-11
 sources: []
 related:
   - "[[tools/bkit]]"
@@ -18,6 +18,17 @@ confidence: medium
 ---
 
 # Claude Code 플러그인 4종 비교
+
+## 쉽게 읽기
+
+네 회사가 아니라 **한 앱(Claude Code)에 붙는 확장팩** 네 종류다. 서로 “대체”라기보다 **프로세스(bkit)·습관(superpowers)·역할(gstack)·외부 검열(codex)** 처럼 층이 다르다.
+
+| 이름 | 한 줄 |
+|------|--------|
+| **bkit** | 큰 개발 순서(PDCA) 뼈대 |
+| **Superpowers** | 계획·TDD 같은 **작업 습관** 강제 |
+| **gstack** | CEO/디자이너처럼 **역할 분업** |
+| **Codex plugin** | 다른 회사 모델로 **둘째 의견** 리뷰 |
 
 ## 핵심 차이
 

@@ -3,7 +3,7 @@ title: "RAG (Retrieval-Augmented Generation)"
 category: concepts
 tags: [rag, llm, retrieval, knowledge]
 created: 2026-04-06
-updated: 2026-04-06
+updated: 2026-04-11
 sources:
   - "raw/articles/2026-04-04-llm-wiki-pattern.md"
 related:
@@ -15,6 +15,16 @@ confidence: medium
 ---
 
 # RAG (Retrieval-Augmented Generation)
+
+## 쉽게 읽기
+
+시험 때 **교과서 일부만 펼쳐 놓고** 답하는 것과 비슷하다. 질문과 관련된 문단을 찾아(retrieve) 모델 입력에 붙이고, 그걸 바탕으로 답을 생성(generate)한다. 모델이 원래 모르던 **회사 문서·최신 글**을 넣을 때 쓴다.
+
+| 용어 | 풀이 |
+|------|------|
+| **청크(chunk)** | 긴 문서를 잘라 둔 **작은 조각** |
+| **Top-K** | 가장 관련 있어 보이는 조각 **K개**만 사용 |
+| **Embedding** | 글을 **숫자 벡터**로 바꿔 “가까움”을 재는 것 |
 
 ## 한줄 정의
 

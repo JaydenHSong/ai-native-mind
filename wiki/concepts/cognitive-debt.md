@@ -3,7 +3,7 @@ title: "Cognitive Debt"
 category: concepts
 tags: [cognitive-debt, technical-debt, ai-coding, maintenance]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-11
 sources:
   - "raw/notes/2026-04-09-cognitive-debt-deep.md"
 related:
@@ -16,6 +16,16 @@ confidence: high
 ---
 
 # Cognitive Debt
+
+## 쉽게 읽기
+
+**비유**: **기술 부채**가 “나중에 고칠 코드 똥덩어리”라면, **인지 부채**는 “나중에 머리 아프게 할 **이해 비용**”이다. AI가 빠르게 만든 코드를 내가 잘 모른 채 쌓아 두면, 다음에 고칠 때마다 **머리가 더 필요**해진다.
+
+| 용어 | 풀이 |
+|------|------|
+| **Technical debt** | 품질을 조금 포기하고 **속도로 갚기로 미룬 빚** |
+| **Cognitive debt** | 시스템을 **사람이 이해·추론**해야 할 부담이 쌓임 |
+| **회귀 비용** | 고칠 때마다 깨질까 봐 **겁나는 정도** |
 
 ## 한줄 정의
 

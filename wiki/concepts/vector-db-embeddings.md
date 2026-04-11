@@ -3,7 +3,7 @@ title: "Vector Database & Embeddings"
 category: concepts
 tags: [vector-db, embeddings, rag, pinecone, pgvector, chroma]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-11
 sources:
   - "raw/notes/2026-04-09-vector-db-embeddings.md"
 related:
@@ -14,6 +14,16 @@ confidence: high
 ---
 
 # Vector Database & Embeddings
+
+## 쉽게 읽기
+
+**비유**: 글을 **숫자 좌표**로 바꿔 놓고(임베딩), 비슷한 뜻끼리는 좌표가 가깝게 앉게 한다. 질문도 같은 방식으로 좌표로 바꾼 뒤, **가까운 이웃**을 찾는 창고가 벡터 DB다. “강아지”와 “개”가 가까이 있는 식이다.
+
+| 용어 | 풀이 |
+|------|------|
+| **Embedding** | 문장을 고차원 **숫자 벡터**로 바꾼 것 |
+| **Vector DB** | 벡터를 많이 저장하고 **빠르게 이웃 검색**하는 DB |
+| **ANN** | 정확히 1등만 찾기보다 **아주 빠르게 거의 맞는 후보**를 찾는 알고리즘 계열 |
 
 ## 한줄 정의
 

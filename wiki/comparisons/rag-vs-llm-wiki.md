@@ -3,7 +3,7 @@ title: "RAG vs LLM-Wiki"
 category: comparisons
 tags: [rag, llm-wiki, knowledge-management]
 created: 2026-04-06
-updated: 2026-04-06
+updated: 2026-04-11
 sources:
   - "raw/articles/2026-04-04-llm-wiki-pattern.md"
 related:
@@ -14,6 +14,16 @@ confidence: medium
 ---
 
 # RAG vs LLM-Wiki
+
+## 쉽게 읽기
+
+**RAG**는 질문할 때마다 서랍에서 관련 문서를 **꺼내 읽고** 답한다. **LLM-Wiki**는 LLM이 **정리해 둔 노트(위키)** 를 계속 고쳐 가며, 다음번엔 “이미 요약·연결된 글”을 본다. 둘 중 하나만이 정답은 아니고 **목적에 따라** 섞기도 한다.
+
+| 용어 | 풀이 |
+|------|------|
+| **RAG** | 검색으로 문맥을 붙인 뒤 생성 |
+| **위키** | 페이지를 링크로 엮은 **지식 저장소** |
+| **컴파일** | 원자료를 한 번 **가공해 두는 것** |
 
 ## 핵심 차이
 

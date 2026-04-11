@@ -3,7 +3,7 @@ title: "Obsidian"
 category: tools
 tags: [obsidian, markdown, note-taking, wiki]
 created: 2026-04-06
-updated: 2026-04-06
+updated: 2026-04-11
 sources:
   - "raw/articles/2026-04-04-llm-wiki-pattern.md"
 related:
@@ -15,6 +15,16 @@ confidence: medium
 ---
 
 # Obsidian
+
+## 쉽게 읽기
+
+**내 컴퓨터에 저장되는** 마크다운 노트 앱이다. `[[링크]]` 로 페이지를 서로 엮으면 **지식 그래프**가 된다. 이 위키(ai-native-mind)도 Obsidian으로 열어 **그래프·검색**을 쓰기 좋게 설계할 수 있다.
+
+| 용어 | 풀이 |
+|------|------|
+| **마크다운** | `# 제목`, `- 목록` 같이 **평문으로 서식** 적는 법 |
+| **Wikilink** | `[[페이지이름]]` 으로 **노트끼리 연결** |
+| **Vault** | 노트들이 모여 있는 **폴더 한 덩어리** |
 
 ## 한줄 설명
 

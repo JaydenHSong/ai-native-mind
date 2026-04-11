@@ -3,7 +3,7 @@ title: "AI Agent 프레임워크 비교 (2026)"
 category: comparisons
 tags: [langgraph, crewai, openai-agents-sdk, multi-agent, framework]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-11
 sources:
   - "raw/notes/2026-04-09-agent-frameworks-comparison.md"
 related:
@@ -15,6 +15,16 @@ confidence: medium
 ---
 
 # AI Agent 프레임워크 비교 (2026)
+
+## 쉽게 읽기
+
+여기 이름들(LangGraph, CrewAI 등)은 **“여러 AI 단계를 코드로 엮는 도구상자 브랜드”**라고 보면 된다. 표는 “그래프로 그릴까, 역할 팀으로 갈까, 넘겨주기(handoff)로 갈까” **정리 스타일**이 다른지 비교한다.
+
+| 용어 | 풀이 |
+|------|------|
+| **프레임워크** | 같은 패턴을 **덜 반복해서** 짜게 해 주는 틀 |
+| **핸드오프** | A가 하다가 B에게 **공 넘기기** |
+| **프로토타입** | 빠르게 써 보는 **시험판** 버전 |
 
 ## 핵심 차이
 

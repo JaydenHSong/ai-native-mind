@@ -3,7 +3,7 @@ title: "1인 개발자 제품 전략"
 category: patterns
 tags: [solo-developer, micro-saas, product-strategy, indie-hacker]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-11
 sources:
   - "raw/notes/2026-04-09-solo-product-strategy.md"
 related:
@@ -14,6 +14,16 @@ confidence: medium
 ---
 
 # 1인 개발자 제품 전략
+
+## 쉽게 읽기
+
+**혼자서도** 작은 유료 서비스(마이크로 SaaS)를 만들 때, 기능을 다 넣기보다 **한 가지 아픈 점**을 골라 빠르게 검증하는 이야기다. “대기업 앱”이 아니라 **내가 유지할 수 있는 크기**가 기준이다.
+
+| 용어 | 풀이 |
+|------|------|
+| **MVP** | 최소 기능으로 **시장反응 보기** |
+| **마이크로 SaaS** | 아주 좁은 문제만 파는 **작은 구독 서비스** |
+| **검증** | 사람들이 **돈·시간을 낼지** 실험하기 |
 
 ## 한줄 설명
 

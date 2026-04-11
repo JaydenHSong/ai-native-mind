@@ -3,7 +3,7 @@ title: "Tool Use (Function Calling)"
 category: concepts
 tags: [tool-use, function-calling, llm, api]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-11
 sources:
   - "raw/notes/2026-04-09-tool-use-function-calling.md"
 related:
@@ -16,6 +16,16 @@ confidence: high
 ---
 
 # Tool Use (Function Calling)
+
+## 쉽게 읽기
+
+AI가 글만 쓰는 게 아니라, “이 함수 실행해 줘”라고 **프로그램에 주문**하는 방식이다. 날씨 API, DB 조회, 파일 읽기처럼 **정해진 이름·인자**만 허용하면 안전하게 쓸 수 있다.
+
+| 용어 | 풀이 |
+|------|------|
+| **Function calling** | 호출 가능한 함수 목록을 주고 **이름 고르기** |
+| **스키마** | 함수 이름, 인자 타입을 적은 **설명서** |
+| **MCP** | 도구 연결을 **표준 포트**로 통일한 프로토콜 |
 
 ## 한줄 정의
 

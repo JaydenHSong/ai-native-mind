@@ -3,7 +3,7 @@ title: "Fine-tuning vs Prompting"
 category: comparisons
 tags: [fine-tuning, prompting, rag, llm, decision-guide]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-11
 sources:
   - "raw/notes/2026-04-09-fine-tuning-vs-prompting.md"
 related:
@@ -15,6 +15,16 @@ confidence: high
 ---
 
 # Fine-tuning vs Prompting
+
+## 쉽게 읽기
+
+**프롬프팅**은 모델 가중치는 건드리지 않고 **말(지시·예시)** 로 행동을 바꾼다. **파인튜닝**은 “시험지 더 풀게 하기”처럼 모델 자체를 **추가 학습**시켜 습관을 박아 넣는 쪽에 가깝다. 보통은 **프롬프트로 한계를 만난 뒤**에만 파인튜닝을 고른다.
+
+| 용어 | 풀이 |
+|------|------|
+| **Fine-tuning** | 특정 데이터로 모델을 **조금 더 훈련** |
+| **Prompting** | 질문·규칙·예시로 **출력 스타일** 조절 |
+| **Ceiling** | 프롬프트만으로는 **더 이상 안 오르는 한계** |
 
 ## 핵심 원칙
 

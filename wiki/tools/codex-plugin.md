@@ -3,7 +3,7 @@ title: "Codex Plugin"
 category: tools
 tags: [claude-code-plugin, codex, openai, code-review, cross-model]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-11
 sources: []
 related:
   - "[[tools/claude-code]]"
@@ -16,6 +16,16 @@ confidence: medium
 ---
 
 # Codex Plugin (codex-plugin-cc)
+
+## 쉽게 읽기
+
+Claude가 쓴 코드를 **다른 회사 모델(OpenAI Codex)** 이 “둘째 의견”으로 리뷰하게 하는 플러그인이다. 같은 모델이 자기 글만 보면 **지나치게 찬성**할 수 있어서, **교차 검토**에 가깝다.
+
+| 용어 | 풀이 |
+|------|------|
+| **크로스 모델** | 서로 다른 **두 AI**를 섞어 씀 |
+| **편향(sycophancy)** | 사용자를 **무조건 맞춰 주려는** 성향 |
+| **리뷰** | 버그·보안·빠진 경우를 **짚어 주기** |
 
 ## 한줄 설명
 

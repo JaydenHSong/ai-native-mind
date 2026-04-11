@@ -3,7 +3,7 @@ title: "bkit"
 category: tools
 tags: [claude-code-plugin, bkit, pdca, ai-native, development-os]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-11
 sources: []
 related:
   - "[[tools/claude-code]]"
@@ -17,6 +17,16 @@ confidence: medium
 ---
 
 # bkit (Vibecoding Kit)
+
+## 쉽게 읽기
+
+**Claude Code** 안에 붙는 **플러그인**이다. “감으로 코딩”만 하지 말고, **계획→만들기→확인→개선** 같은 순서를 AI가 같이 밟게 하려는 도구다. 학교 과제로 치면 **보고서 양식 + 제출 기한**을 시스템이 잡아 주는 느낌이다.
+
+| 용어 | 풀이 |
+|------|------|
+| **PDCA** | 계획·실행·점검·개선 **반복** |
+| **플러그인** | 본 프로그램에 **꽂아 쓰는 확장** |
+| **AI Native** | AI를 **전제로 한** 개발 방식 |
 
 ## 한줄 설명
 

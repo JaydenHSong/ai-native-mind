@@ -3,7 +3,7 @@ title: "AI 비용 관리"
 category: patterns
 tags: [cost, pricing, optimization, anthropic, claude, openai]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-11
 sources:
   - "raw/notes/2026-04-09-ai-cost-management.md"
 related:
@@ -15,6 +15,16 @@ confidence: high
 ---
 
 # AI 비용 관리
+
+## 쉽게 읽기
+
+**비유**: AI는 글자 수(토큰)만큼 **종량제 과금**에 가깝다. 질문이 길수록·답이 길수록·모델이 비쌀수록 영수증이 커진다. 그래서 **짧은 모델로 먼저 시도**, **반복되는 앞부분 캐시**, **불필요한 맥락 줄이기**로 요금을 관리한다.
+
+| 용어 | 풀이 |
+|------|------|
+| **토큰** | AI가 읽고 쓰는 **작은 글자 덩어리** 단위 |
+| **Model routing** | 쉬운 일은 싼 모델, 어려운 일만 비싼 모델에 맡기기 |
+| **Input / Output** | 질문 쪽 과금 vs 답변 쪽 과금(보통 답이 더 비쌈) |
 
 ## 한줄 설명
 

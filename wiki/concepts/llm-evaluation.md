@@ -3,18 +3,29 @@ title: "LLM Evaluation (Evals)"
 category: concepts
 tags: [evaluation, testing, llm, quality, evals]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-11
 sources:
   - "raw/notes/2026-04-09-llm-evaluation.md"
 related:
   - "[[concepts/harness-engineering]]"
   - "[[concepts/context-rot-hallucination]]"
   - "[[patterns/ai-code-review]]"
+  - "[[concepts/gen-ai-observability]]"
 status: active
 confidence: high
 ---
 
 # LLM Evaluation (Evals)
+
+## 쉽게 읽기
+
+**비유**: 같은 문제집을 여러 번 풀었는데 매번 답이 조금씩 다르다. 그래서 “**몇 점 이상이면 통과**”를 정해 두고, 바꾼 뒤에도 점수가 안 떨어지는지 자동으로 확인하는 것이 eval이다.
+
+| 용어 | 풀이 |
+|------|------|
+| **Golden dataset** | 입력과 “이 정도면 정답” 기대를 짝지어 둔 **샘플 시험지** |
+| **LLM-as-a-Judge** | 채점을 또 다른(보통 더 큰) AI에게 맡기는 방식 |
+| **회귀(regression)** | 고쳤더니 예전엔 되던 게 안 되는 현상 — eval로 잡는다 |
 
 ## 한줄 정의
 
@@ -107,6 +118,8 @@ LLM이 자기 출력을 스스로 점수화.
 ## [[concepts/harness-engineering|Harness Engineering]]에서의 위치
 
 Evals는 Harness의 **Sensor (피드백 제어)** 계층. 에이전트가 행동한 후 품질을 측정하고 피드백을 제공.
+
+프로덕션에서는 [[concepts/gen-ai-observability|OpenTelemetry GenAI 관측]]으로 수집한 트레이스·세션을 eval 데이터셋과 붙이면, 회귀 원인을 **모델·도구·프롬프트** 단위로 좁히기 쉽다.
 
 ## 1인 개발자에게
 

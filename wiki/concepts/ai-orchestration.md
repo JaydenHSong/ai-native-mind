@@ -3,19 +3,32 @@ title: "AI 오케스트레이션"
 category: concepts
 tags: [ai-orchestration, multi-agent, patterns, anthropic]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-11
 sources:
   - "raw/notes/2026-04-09-ai-orchestration-research.md"
+  - "raw/notes/2026-04-11-orchestration-harness-server-supplement.md"
 related:
   - "[[concepts/ai-native-programmer]]"
   - "[[concepts/context-engineering]]"
   - "[[concepts/ai-native-architecture]]"
   - "[[tools/claude-code]]"
+  - "[[concepts/harness-engineering]]"
+  - "[[patterns/agent-server-harness]]"
 status: active
 confidence: medium
 ---
 
 # AI 오케스트레이션
+
+## 쉽게 읽기
+
+**비유**: 학교 축제에서 **진행 요원·부스 담당·방송**을 나누고, 순서를 맞추는 것이 오케스트레이션이다. AI도 여러 단계·여러 “역할”을 **순서와 조건**에 맞게 이어 준다.
+
+| 용어 | 풀이 |
+|------|------|
+| **에이전트** | 목표를 위해 스스로 단계를 밟는 AI 실행 단위 |
+| **멀티 에이전트** | 역할 다른 AI들을 **나눠 쓰기** |
+| **패턴 이름**(Chaining 등) | 자주 쓰는 **진행 순서 템플릿**에 붙은 별명 |
 
 ## 한줄 정의
 
@@ -75,6 +88,23 @@ Anthropic이 수십 개 팀과 협업하며 발견한 것: 가장 성공적인 �
 | **프레임워크** | LangGraph(안정적), CrewAI(빠른 프로토타입), OpenAI Agents SDK |
 | **시장** | Gartner: 멀티에이전트 문의 1,445% 증가 (2024→2025) |
 
+### 런타임·구현에서 자주 빠지는 조각
+
+패턴 이름만 알고 있으면, **서버나 CI에 올렸을 때** 바로 막히는 부분이 생긴다. 아래는 오케스트레이션을 “코드·인프라”로 내릴 때 같이 설계할 항목이다.
+
+| 조각 | 질문 | 비고 |
+|------|------|------|
+| **상태** | 단계 간에 무엇을 저장하는가? (요약, JSON, DB 행) | 재시작·재시도 시 복구에 필요 |
+| **멱등성** | 같은 요청이 두 번 오면? | 웹훅·큐 재전달 시 필수 |
+| **HITL** | 어디서 사람이 승인/거절하는가? | 비용·위험 큰 단계에 게이트 |
+| **타임아웃·취소** | LLM·도구 호출 상한은? | 무한 대기 방지, UX(취소 버튼) |
+| **부분 실패** | 한 워커만 실패하면 롤백인가, 재시도인가, 스킵인가? | Orchestrator-Workers와 짝 |
+| **관측** | `run_id`, 단계별 로그, 토큰·비용 메트릭 | 디버깅과 비용 통제 |
+
+**프레임워크 vs 직접 구현**: LangGraph 등은 그래프·상태·체크포인트를 표준화해 준다. 반대로 요청-응답 한 번짜리 라우팅은 **라우팅 패턴 + 얇은 오케스트레이터 함수**로 충분한 경우가 많다. “멀티에이전트”가 목표가 아니라 **신뢰 가능한 상태 기계**가 목표인지 먼저 판단하는 편이 낫다.
+
+프로덕션에서 에이전트가 **HTTP 뒤**에 있을 때의 배치·한계는 [[patterns/agent-server-harness|에이전트 서버 하네스]]에서 정리한다.
+
 ## 왜 중요한가
 
 AI 네이티브 프로그래머의 **핵심 역량**이다. 혼자서 팀 규모의 결과를 내려면, 여러 AI를 잘 조율하는 능력이 필수. 하지만 Anthropic의 조언대로, **복잡하게 시작하지 말고 단순한 패턴부터** 마스터하는 게 중요하다.
@@ -84,6 +114,8 @@ AI 네이티브 프로그래머의 **핵심 역량**이다. 혼자서 팀 규모
 - [[concepts/ai-native-programmer]] — 오케스트레이션은 핵심 역량 중 하나
 - [[concepts/context-engineering]] — 오케스트레이션의 기반 스킬
 - [[tools/claude-code]] — 오케스트레이터-워커 패턴의 실제 구현체
+- [[patterns/agent-server-harness]] — HTTP·큐·스트림 위 오케스트레이션
+- [[patterns/agent-planning-to-implementation]] — 문서 단계의 체이닝·HITL
 
 ## 참고 소스
 

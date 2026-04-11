@@ -3,7 +3,7 @@ title: "AI Memory Systems"
 category: concepts
 tags: [memory, agent, long-term, short-term, context]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-11
 sources:
   - "raw/notes/2026-04-09-ai-memory-systems.md"
 related:
@@ -16,6 +16,16 @@ confidence: high
 ---
 
 # AI Memory Systems
+
+## 쉽게 읽기
+
+**비유**: 사람도 **작업 메모**(지금 책상 위)와 **일기장**(오래 보관)을 나눈다. AI **단기 메모리**는 지금 대화 창 안, **장기 메모리**는 DB·파일·벡터 DB처럼 창 밖 저장소에 둔다.
+
+| 용어 | 풀이 |
+|------|------|
+| **컨텍스트 윈도우** | 한 번에 모델이 볼 수 있는 **최대 길이** |
+| **Semantic memory** | “의미가 비슷한 것끼리” 찾아 오는 **장기 기억** 스타일 |
+| **RAG** | 필요할 때 문서를 **검색해서** 단기 메모에 붙이는 방식 |
 
 ## 한줄 정의
 

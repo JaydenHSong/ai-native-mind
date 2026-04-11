@@ -3,7 +3,7 @@ title: "AI 코딩 도구 비교 (2026)"
 category: comparisons
 tags: [claude-code, cursor, copilot, windsurf, ai-tools]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-11
 sources:
   - "raw/notes/2026-04-09-ai-coding-tools-comparison.md"
 related:
@@ -15,6 +15,16 @@ confidence: high
 ---
 
 # AI 코딩 도구 비교 (2026)
+
+## 쉽게 읽기
+
+**터미널형**(Claude Code)은 폴더 전체를 **명령줄에서** 돌며 고친다. **IDE형**(Cursor, Windsurf)은 VS Code 같은 **편집기 안**에서 돈다. **Copilot**은 줄 단위 **자동완성**에 특화된 편이다. “누가 이김”보다 **내가 어디서 일하는지**에 맞추면 된다.
+
+| 용어 | 풀이 |
+|------|------|
+| **CLI** | 검은 창에 명령을 치는 **터미널 방식** |
+| **IDE** | 코드 편집·디버그가 한곳에 모인 **개발 프로그램** |
+| **인라인 완성** | 타이핑하다 옆에서 **이어질 줄**을 제안 |
 
 ## 핵심 차이
 

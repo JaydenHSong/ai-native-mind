@@ -3,7 +3,7 @@ title: "Prompt Engineering"
 category: concepts
 tags: [prompt-engineering, llm, basics]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-11
 sources:
   - "raw/notes/2026-04-09-engineering-paradigms-research.md"
 related:
@@ -14,6 +14,16 @@ confidence: high
 ---
 
 # Prompt Engineering
+
+## 쉽게 읽기
+
+**한 번의 질문**을 어떻게 쓰면 답이 좋아지는지 다룬다. 역할을 주기, 예시를 넣기, 출력 형식을 정하기 같은 **말솜씨 기술**이다. [[concepts/context-engineering|Context Engineering]]은 이걸 넘어 **도구·메모리·규칙 전체**까지 설계한다.
+
+| 용어 | 풀이 |
+|------|------|
+| **프롬프트** | 모델에게 보내는 **입력 텍스트** |
+| **Few-shot** | 예시 몇 개를 **붙여서** 패턴을 가르치기 |
+| **System vs User** | 전역 규칙 vs 이번 질문 **본문** |
 
 ## 한줄 정의
 

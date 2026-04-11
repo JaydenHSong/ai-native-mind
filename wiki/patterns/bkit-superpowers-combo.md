@@ -3,7 +3,7 @@ title: "bkit + Superpowers 조합 패턴"
 category: patterns
 tags: [bkit, superpowers, pdca, tdd, process-discipline, claude-code-plugin]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-11
 sources: []
 related:
   - "[[tools/bkit]]"
@@ -16,6 +16,16 @@ confidence: medium
 ---
 
 # bkit + Superpowers 조합 패턴
+
+## 쉽게 읽기
+
+**bkit**은 “무엇을 언제 할지” **PDCA 같은 큰 순서**를 잡아 주는 플러그인에 가깝다. **Superpowers**는 “코드 짜기 전에 생각·테스트 먼저” 같은 **작은 습관**을 강하게 박아 둔다. 둘을 같이 쓰면 **큰 그림과 실행 규율**이 동시에 생긴다.
+
+| 용어 | 풀이 |
+|------|------|
+| **PDCA** | 계획→실행→점검→개선 **반복 사이클** |
+| **TDD** | 테스트를 **먼저** 적고 코드를 맞추는 방식 |
+| **스킬(skill)** | 특정 상황에서 AI가 따라야 할 **미리 적힌 규칙 묶음** |
 
 ## 한줄 설명
 

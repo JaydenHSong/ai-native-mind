@@ -3,7 +3,7 @@ title: "AI 실패 패턴 (Context Rot & Hallucination)"
 category: concepts
 tags: [failure, hallucination, context-rot, error, reliability]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-11
 sources:
   - "raw/notes/2026-04-09-llm-failure-modes.md"
 related:
@@ -15,6 +15,16 @@ confidence: high
 ---
 
 # AI 실패 패턴 (Context Rot & Hallucination)
+
+## 쉽게 읽기
+
+**환각(Hallucination)** 은 “없는 사실을 아주 그럴듯하게 말함”이다. **Context rot**는 메모장이 너무 길어져 **앞 내용을 흐리게 기억**하거나 엉뚽하게 이어 붙이는 현상에 가깝다. 둘 다 “AI가 틀렸다”가 아니라 **설계·맥락·검증** 문제로 다루는 편이 낫다.
+
+| 용어 | 풀이 |
+|------|------|
+| **Hallucination** | 근거 없는 주장을 **확신 톤**으로 생성 |
+| **Context rot** | 긴 대화·긴 문서 속에서 **집중이 흐트러짐** |
+| **Tool hallucination** | 실제로는 없는 도구 호출·파일을 **있다고 말함** |
 
 ## 한줄 정의
 
