@@ -16,6 +16,11 @@ status: active
 
 날짜별로 **무엇을 바꿨는지**만 적어 둔다. 개념 설명은 `wiki/concepts/` 등 본문 페이지를 보면 된다.
 
+## [2026-04-11] update | 공개 저장소 보안 장치 (Gitleaks·Dependabot·SECURITY)
+
+- **Other**: `SECURITY.md`, `.gitleaks.toml`, `.github/workflows/gitleaks.yml`, `dependency-review.yml`, `dependabot.yml`, PR 템플릿(비밀 체크리스트), `.gitignore` 보강, `CLAUDE.md` 보안 한 줄
+- **Notes**: 푸시·PR마다 비밀 스캔, PR마다 의존성 리뷰, 주간 Dependabot. 실제 키는 GitHub Secrets에만.
+
 ## [2026-04-11] update | 전 위키 가독성 패스 (쉽게 읽기 + 용어 표)
 
 - **Pages updated**: concepts·tools·patterns·comparisons 전 페이지(메타 `overview`/`index` 포함), `harness-engineering`·`owasp-llm-typescript-mitigations`·`agent-server-harness`·`journal/2026-04-12`의 `updated` 정리

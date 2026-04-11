@@ -167,3 +167,4 @@ confidence: high | medium | low
 - **소스 수**: 32개 (raw 노트 + papers: OWASP LLM Top 10 메타 1건 추가)
 - **최근 활동**: 2026-04-11 위키 전 페이지 **「쉽게 읽기」**(비유·용어 표) 가독성 패스, `wiki/log`·`index`·`overview` 반영. 2026-04-12 저널·OWASP×TS·papers·예제 스케치. 2026-04-11 Vercel Workflow·OTel·AI SDK·하네스 보강. 2026-04-09 14개 주제 대규모 리서치.
 - **다음 할 일**: 실습 기록 (journal/), 구체적 사례 추가
+- **보안**: `SECURITY.md`, `.gitleaks.toml`, GitHub Actions(Gitleaks·dependency review), Dependabot, 강화된 `.gitignore` — 비밀·키·`.env` 실값은 커밋 금지.

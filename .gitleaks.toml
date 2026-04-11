@@ -1,0 +1,21 @@
+# Gitleaks overrides for ai-native-mind (public wiki + docs repo).
+# Default rules: https://github.com/gitleaks/gitleaks/blob/master/config/gitleaks.toml
+
+title = "ai-native-mind"
+
+[extend]
+useDefault = true
+
+# Reduce false positives from documented CI / code patterns (still never commit real values).
+[[allowlists]]
+description = "GitHub Actions expression placeholders (secret names, not values)"
+regexes = [
+  '''(?i)\$\{\{\s*secrets\.[A-Z0-9_]+\s*\}\}''',
+]
+
+[[allowlists]]
+description = "Reference to reading API keys from environment in examples"
+regexes = [
+  '''(?i)apiKey\s*:\s*process\.env\.[A-Z0-9_]+''',
+  '''(?i)process\.env\.(OPENAI|ANTHROPIC|GITHUB)_API_KEY''',
+]
