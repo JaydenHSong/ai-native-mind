@@ -16,6 +16,7 @@ related:
   - "[[tools/claude-code]]"
   - "[[patterns/agent-server-harness]]"
   - "[[patterns/agent-planning-to-implementation]]"
+  - "[[patterns/harness-building-blocks]]"
   - "[[tools/vercel-workflow]]"
   - "[[concepts/gen-ai-observability]]"
   - "[[patterns/owasp-llm-typescript-mitigations]]"

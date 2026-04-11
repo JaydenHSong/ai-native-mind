@@ -16,6 +16,13 @@ status: active
 
 날짜별로 **무엇을 바꿨는지**만 적어 둔다. 개념 설명은 `wiki/concepts/` 등 본문 페이지를 보면 된다.
 
+## [2026-04-11] create | 에이전트 커리큘럼 프랙티스 6편 + raw 메타
+
+- **Sources**: `raw/notes/2026-04-12-practice-curriculum.md`
+- **Pages created**: `concepts/context-vs-prompt-practice.md`, `patterns/preventing-context-rot.md`, `patterns/harness-building-blocks.md`, `patterns/safe-tool-calling-sandbox.md`, `patterns/orchestration-patterns-practice.md`, `patterns/my-first-agentic-service.md`
+- **Pages updated**: `index.md`, `overview.md`, `log.md` (각 페이지에 **쉽게 읽기**·`sources` 정리)
+- **Notes**: 중학교 커리큘럼 톤 실습 트랙. 읽기 순서는 `wiki/index` 커리큘럼 절 참고.
+
 ## [2026-04-11] update | 공개 저장소 보안 장치 (Gitleaks·Dependabot·SECURITY)
 
 - **Other**: `SECURITY.md`, `.gitleaks.toml`, `.github/workflows/gitleaks.yml`, `dependency-review.yml`, `dependabot.yml`, PR 템플릿(비밀 체크리스트), `.gitignore` 보강, `CLAUDE.md` 보안 한 줄

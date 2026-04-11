@@ -4,20 +4,20 @@ category: meta
 tags: [index, catalog]
 created: 2026-04-06
 updated: 2026-04-11
-total_pages: 41
+total_pages: 47
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 전체 41개 페이지 | 최종 업데이트: 2026-04-11 — 대부분 페이지에 **쉽게 읽기** 블록 있음
+> 전체 47개 페이지 | 최종 업데이트: 2026-04-11 — 대부분 페이지에 **쉽게 읽기** 블록 있음
 
 ## 쉽게 읽기
 
 링크만 모아 둔 **목차**다. 주제가 낯설면 해당 페이지로 들어가서 맨 위 **「쉽게 읽기」**부터 읽으면 된다.
 
-## Concepts (15개)
+## Concepts (16개)
 
 ### 성장 맵 & 철학
 - [[concepts/ai-native-programmer]] — AI를 팀원으로 활용하여 1인이 팀 규모 결과를 내는 개발자, 성장 맵
@@ -29,6 +29,9 @@ status: active
 - [[concepts/context-engineering]] — AI 정보 환경 설계, Prompt Engineering의 진화 (2세대)
 - [[concepts/harness-engineering]] — AI 에이전트의 완전한 인프라 설계, Agent = Model + Harness (3세대)
 - [[concepts/agentic-engineering]] — Vibe Coding의 성숙 진화, 구조화된 AI 감독 하의 개발
+
+### 커리큘럼·실습 (입문 트랙)
+- [[concepts/context-vs-prompt-practice]] — 프롬프트 vs 컨텍스트, 시험공부 비유 (커리큘럼 1)
 
 ### 핵심 기술
 - [[concepts/tool-use]] — LLM이 외부 함수/API를 호출하는 메커니즘
@@ -56,7 +59,14 @@ status: active
 - [[tools/gstack]] — 역할 기반 AI 팀 시뮬레이션 스킬 팩 (Claude Code 플러그인)
 - [[tools/vercel-workflow]] — Workflow DevKit, TypeScript 내구 워크플로·Webhook·에이전트 장기 실행
 
-## Patterns (13개)
+## Patterns (18개)
+
+### 커리큘럼·실습 (읽기 순서 2→6)
+- [[patterns/preventing-context-rot]] — Context Rot·3계층 메모리 (커리큘럼 2)
+- [[patterns/harness-building-blocks]] — Guides/Sensors 하네스 실전 (커리큘럼 3)
+- [[patterns/safe-tool-calling-sandbox]] — 안전한 툴·샌드박스·HITL (커리큘럼 4)
+- [[patterns/orchestration-patterns-practice]] — 체이닝·병렬·Evaluator-Optimizer (커리큘럼 5)
+- [[patterns/my-first-agentic-service]] — Capstone: 에이전틱 서비스 한 바퀴 (커리큘럼 6)
 
 ### LLM-Wiki & 메타 패턴
 - [[patterns/llm-wiki]] — LLM이 유지보수하는 개인 지식 위키 패턴 (Tobi Lütke)

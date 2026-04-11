@@ -18,10 +18,10 @@ status: active
 
 ## 현재 상태
 
-- **총 페이지**: 41개
-- **카테고리**: concepts(15), tools(7), patterns(13), journal(1), comparisons(5)
+- **총 페이지**: 47개
+- **카테고리**: concepts(16), tools(7), patterns(18), journal(1), comparisons(5)
 - **시작일**: 2026-04-06
-- **소스**: 25개 ingested
+- **소스**: raw 노트·papers 누적 (커리큘럼 메타: `raw/notes/2026-04-12-practice-curriculum.md` 포함)
 
 ## 주요 주제
 
@@ -55,6 +55,7 @@ AI 네이티브 개발을 구조화하는 4대 플러그인 ([[comparisons/claud
 
 ## 최근 활동
 
+- **2026-04-11**: **에이전트 커리큘럼 프랙티스** — `concepts/context-vs-prompt-practice`, `patterns/preventing-context-rot`, `harness-building-blocks`, `safe-tool-calling-sandbox`, `orchestration-patterns-practice`, `my-first-agentic-service` + `raw/notes/2026-04-12-practice-curriculum.md`, `index`·`overview` 반영
 - **2026-04-12**: **일괄 보강** — `wiki/journal/2026-04-12`(Fowler on the loop), `patterns/owasp-llm-typescript-mitigations`, `raw/papers/owasp-genai-2025-llm-top-10`, `examples/agent-safety-sketch/README`
 - **2026-04-12**: **보안 × TypeScript** 큐레이션 — `raw/notes/2026-04-12-security-typescript-corpus.md` (OWASP LLM Top 10, MCP 인가, AI SDK·Zod·미들웨어)
 - **2026-04-12**: **Harness Engineering 심화** — 위키에 루프·인간 역할·Harnessability 절 추가, Fowler/Anthropic 심화 링크는 `raw/notes/2026-04-12-harness-engineering-deep-dive.md`
