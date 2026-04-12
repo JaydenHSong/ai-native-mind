@@ -3,7 +3,7 @@ title: "OWASP LLM Top 10 × TypeScript 완화 패턴"
 category: patterns
 tags: [security, owasp, typescript, agents, zod, ai-sdk]
 created: 2026-04-12
-updated: 2026-04-11
+updated: 2026-04-12
 sources:
   - "raw/notes/2026-04-12-security-typescript-corpus.md"
   - "raw/papers/owasp-genai-2025-llm-top-10.md"
@@ -87,6 +87,14 @@ confidence: medium
 - [[patterns/agent-server-harness]] — HTTP·큐·SSE 뒤에서의 경계  
 - [[concepts/mcp]] — 도구 연결 보안  
 - [[concepts/gen-ai-observability]] — 운영 센서
+
+## Chapter Clear 가이드
+
+- **소속 챕터**: Chapter 5 (안전 던전)
+- **퀘스트**: LLM01/06/10 중 현재 프로젝트에 가장 위험한 항목 1개를 선택해 완화안을 작성한다.
+- **클리어 조건**: 스키마/권한/상한/관측 중 최소 2개 제어를 코드 레벨로 명시할 수 있다.
+- **보상(산출물)**: OWASP 우선 대응표 1개
+- **다음 퀘스트**: [[concepts/llm-evaluation]] -> [[concepts/gen-ai-observability]]
 
 ## 참고 소스
 

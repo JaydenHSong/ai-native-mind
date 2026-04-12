@@ -3,7 +3,7 @@ title: "Claude Code"
 category: tools
 tags: [claude-code, llm, ai-tool, cli]
 created: 2026-04-06
-updated: 2026-04-11
+updated: 2026-04-12
 sources:
   - "raw/articles/2026-04-04-llm-wiki-pattern.md"
 related:
@@ -74,6 +74,14 @@ Claude Code는 [[concepts/ai-orchestration|AI 오케스트레이션]]의 **Orche
 ## 관련 도구
 
 - [[tools/obsidian]] — 위키 브라우저/뷰어 역할
+
+## Chapter Clear 가이드
+
+- **소속 챕터**: Chapter 0 (튜토리얼)
+- **퀘스트**: Claude Code가 Ingest/Query/Lint에서 각각 하는 일을 1줄씩 적는다.
+- **클리어 조건**: "대화 기억은 사라져도 문서 기억은 남는다"를 `CLAUDE.md`/`wiki` 기준으로 설명할 수 있다.
+- **보상(산출물)**: 내 프로젝트용 최소 운영 규칙 초안 1개
+- **다음 퀘스트**: [[concepts/ai-native-programmer]] -> [[concepts/ai-native-architecture]]
 
 ## 참고 소스
 

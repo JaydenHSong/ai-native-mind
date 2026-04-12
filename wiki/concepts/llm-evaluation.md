@@ -3,7 +3,7 @@ title: "LLM Evaluation (Evals)"
 category: concepts
 tags: [evaluation, testing, llm, quality, evals]
 created: 2026-04-09
-updated: 2026-04-11
+updated: 2026-04-12
 sources:
   - "raw/notes/2026-04-09-llm-evaluation.md"
 related:
@@ -127,6 +127,14 @@ Evals는 Harness의 **Sensor (피드백 제어)** 계층. 에이전트가 행동
 - LLM-as-Judge로 자동화
 - PR에서 자동 실행 (GitHub Actions)
 - 프롬프트 변경 시 회귀 발견 가능
+
+## Chapter Clear 가이드
+
+- **소속 챕터**: Chapter 6 (운영 보스전)
+- **퀘스트**: golden dataset 10개와 통과 기준 1개를 정의한다.
+- **클리어 조건**: 프롬프트/모델 변경 후 회귀를 감지하는 루프를 설명할 수 있다.
+- **보상(산출물)**: eval 체크리스트 v1
+- **다음 퀘스트**: [[concepts/gen-ai-observability]] -> [[patterns/git-ai-workflow]]
 
 ## 참고 소스
 

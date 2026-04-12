@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-04-11
+updated: 2026-04-12
 sources: []
 status: active
 ---
@@ -15,6 +15,26 @@ status: active
 ## 쉽게 읽기
 
 날짜별로 **무엇을 바꿨는지**만 적어 둔다. 개념 설명은 `wiki/concepts/` 등 본문 페이지를 보면 된다.
+
+- 월드맵 허브: [[wiki/campaign-map|Campaign Map]]
+- 진행 가이드: [[wiki/overview|Overview]]
+- 전체 도감: [[wiki/index|Index]]
+
+## [2026-04-12] update | Chapter Clear 월드맵 허브 연결
+
+- **Pages created**: `wiki/campaign-map.md`
+- **Pages updated**: `wiki/overview.md`, `wiki/index.md`, `wiki/log.md`
+- **Notes**: 위키를 게임형 학습 동선으로 재구성. 챕터별 클리어 조건/산출물/트래커를 추가하고, 메타 문서(overview/index/log)를 월드맵 허브로 연결.
+
+## [2026-04-12] update | Chapter 0~2 문서 퀘스트 가이드 통일
+
+- **Pages updated**: `patterns/llm-wiki.md`, `tools/obsidian.md`, `tools/claude-code.md`, `concepts/ai-native-programmer.md`, `concepts/ai-native-architecture.md`, `concepts/prompt-engineering.md`, `concepts/context-engineering.md`, `concepts/context-vs-prompt-practice.md`, `wiki/campaign-map.md`
+- **Notes**: 각 문서 하단에 `Chapter Clear 가이드`를 추가하여 퀘스트/클리어 조건/보상/다음 퀘스트를 통일. 월드맵과 개별 문서 간 진행 흐름을 양방향으로 맞춤.
+
+## [2026-04-12] update | Chapter 3~7 문서 퀘스트 가이드 확장
+
+- **Pages updated**: `concepts/ai-orchestration.md`, `patterns/orchestration-patterns-practice.md`, `patterns/agent-planning-to-implementation.md`, `patterns/subagents-delegation.md`, `patterns/agent-server-harness.md`, `patterns/safe-tool-calling-sandbox.md`, `patterns/owasp-llm-typescript-mitigations.md`, `concepts/llm-evaluation.md`, `concepts/gen-ai-observability.md`, `patterns/git-ai-workflow.md`, `patterns/ai-code-review.md`, `patterns/ai-cost-management.md`, `wiki/campaign-map.md`
+- **Notes**: Chapter 3~7 핵심 문서에도 동일한 `Chapter Clear 가이드` 형식을 적용하여, 문서 단위에서 챕터 진행이 끊기지 않게 연결. 각 문서의 "다음 퀘스트" 링크를 통해 월드맵 순환 루프를 완성.
 
 ## [2026-04-11] create | 에이전트 커리큘럼 프랙티스 6편 + raw 메타
 

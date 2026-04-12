@@ -3,7 +3,7 @@ title: "Obsidian"
 category: tools
 tags: [obsidian, markdown, note-taking, wiki]
 created: 2026-04-06
-updated: 2026-04-11
+updated: 2026-04-12
 sources:
   - "raw/articles/2026-04-04-llm-wiki-pattern.md"
 related:
@@ -67,6 +67,14 @@ confidence: medium
 ## 관련 도구
 
 - [[tools/claude-code]] — 위키 유지보수를 담당하는 LLM
+
+## Chapter Clear 가이드
+
+- **소속 챕터**: Chapter 0 (튜토리얼)
+- **퀘스트**: Vault에서 `raw/`, `wiki/`, `templates/` 폴더를 직접 열어 역할을 확인한다.
+- **클리어 조건**: Wikilink 1개를 따라가며 문서 간 연결을 설명할 수 있다.
+- **보상(산출물)**: "내가 자주 볼 Obsidian 뷰(검색/그래프)" 체크 메모
+- **다음 퀘스트**: [[tools/claude-code]] -> [[concepts/ai-native-programmer]]
 
 ## 참고 소스
 

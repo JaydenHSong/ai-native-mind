@@ -3,7 +3,7 @@ title: "Subagents & 위임 패턴"
 category: patterns
 tags: [subagents, claude-code, delegation, orchestration]
 created: 2026-04-09
-updated: 2026-04-11
+updated: 2026-04-12
 sources:
   - "raw/notes/2026-04-09-subagents-delegation.md"
 related:
@@ -124,6 +124,14 @@ description: Reviews code for security vulnerabilities including SQL injection, 
 | Parallelization | 병렬 subagent 패턴 |
 | Prompt Chaining | Explore-Plan-Execute |
 | Evaluator-Optimizer | Generator + Reviewer subagent |
+
+## Chapter Clear 가이드
+
+- **소속 챕터**: Chapter 4 (제작소)
+- **퀘스트**: Explore-Plan-Execute로 실제 작업 1개를 위임 설계한다.
+- **클리어 조건**: 무엇을 위임하고 무엇을 메인 컨텍스트에 남길지 구분할 수 있다.
+- **보상(산출물)**: subagent 역할 정의 초안 1개
+- **다음 퀘스트**: [[patterns/agent-server-harness]] -> [[patterns/safe-tool-calling-sandbox]]
 
 ## 참고 소스
 

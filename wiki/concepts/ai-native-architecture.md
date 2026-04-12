@@ -3,7 +3,7 @@ title: "AI 네이티브 아키텍처"
 category: concepts
 tags: [ai-native, architecture, design-principles, software-design]
 created: 2026-04-09
-updated: 2026-04-11
+updated: 2026-04-12
 sources:
   - "raw/notes/2026-04-09-ai-native-architecture-research.md"
 related:
@@ -90,6 +90,14 @@ AI 네이티브 아키텍처를 이해하면:
 - [[concepts/ai-orchestration]] — 아키텍처 위에서 AI를 조율하는 기술
 - [[concepts/context-engineering]] — 아키텍처의 핵심 구현 수단
 - [[patterns/llm-wiki]] — AI 네이티브 아키텍처의 실제 적용 사례
+
+## Chapter Clear 가이드
+
+- **소속 챕터**: Chapter 1 (세계관 이해)
+- **퀘스트**: 내 프로젝트에서 AI 네이티브 4원칙 중 이미 적용 중인 것 1개, 비어 있는 것 1개를 적는다.
+- **클리어 조건**: "기존 방식 vs AI 네이티브 방식" 차이를 문서/설계/테스트 기준으로 설명할 수 있다.
+- **보상(산출물)**: 내 프로젝트 아키텍처 개선 TODO 3개
+- **다음 퀘스트**: [[concepts/prompt-engineering]] -> [[concepts/context-engineering]]
 
 ## 참고 소스
 

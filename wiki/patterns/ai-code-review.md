@@ -3,7 +3,7 @@ title: "AI 코드 리뷰 워크플로우"
 category: patterns
 tags: [code-review, workflow, solo-developer, claude-code]
 created: 2026-04-09
-updated: 2026-04-11
+updated: 2026-04-12
 sources:
   - "raw/notes/2026-04-09-ai-code-review.md"
 related:
@@ -160,6 +160,14 @@ jobs:
 1. CLAUDE.md 리팩토링 (200줄 이하 유지)
 2. 반복 작업 → slash command 추가
 3. 실수 패턴 → CLAUDE.md 금지 항목에 추가
+
+## Chapter Clear 가이드
+
+- **소속 챕터**: Chapter 7 (엔드게임)
+- **퀘스트**: 최근 변경 1개를 self-review와 AI review 두 단계로 점검한다.
+- **클리어 조건**: correctness/보안/엣지 케이스 중 최소 1개 개선점을 찾아 반영한다.
+- **보상(산출물)**: 내 코드 리뷰 체크리스트 v1
+- **다음 퀘스트**: [[patterns/ai-cost-management]] -> [[wiki/campaign-map]]
 
 ## 참고 소스
 

@@ -3,7 +3,7 @@ title: "에이전트 기획→구현 파이프라인"
 category: patterns
 tags: [agents, planning, implementation, pdca, harness, orchestration]
 created: 2026-04-11
-updated: 2026-04-11
+updated: 2026-04-12
 sources:
   - "raw/notes/2026-04-11-orchestration-harness-server-supplement.md"
   - "raw/notes/2026-04-09-subagents-delegation.md"
@@ -75,6 +75,14 @@ confidence: medium
 - 기획 없이 바로 “전부 구현해줘” (범위·검증 부재)
 - 에이전트가 쓴 긴 문서를 사람이 읽지 않고 승인 (형식적 HITL)
 - 태스크에 “완료” 정의 없이 병렬 다발 구현 (부분 실패 시 정리 불가)
+
+## Chapter Clear 가이드
+
+- **소속 챕터**: Chapter 4 (제작소)
+- **퀘스트**: 작은 기능 1개를 의도->요구->설계->태스크->구현 체인으로 쪼갠다.
+- **클리어 조건**: 각 단계 산출물이 다음 단계 입력 계약이라는 점을 실제 예시로 설명할 수 있다.
+- **보상(산출물)**: 기능 1개용 단계별 체크리스트
+- **다음 퀘스트**: [[patterns/subagents-delegation]] -> [[patterns/agent-server-harness]]
 
 ## 관련 개념
 

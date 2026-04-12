@@ -3,7 +3,7 @@ title: "에이전트 서버 하네스"
 category: patterns
 tags: [agents, server, backend, sse, queue, harness, production]
 created: 2026-04-11
-updated: 2026-04-11
+updated: 2026-04-12
 sources:
   - "raw/notes/2026-04-11-orchestration-harness-server-supplement.md"
   - "raw/notes/2026-04-09-ai-orchestration-research.md"
@@ -111,6 +111,14 @@ LangGraph, OpenAI Agents SDK 등은 그래프·상태·재시도를 표준화한
 - [[concepts/mcp]] — 도구 연결 표준과 보안 고려
 - [[tools/vercel-workflow]] — 내구 워크플로·Webhook
 - [[concepts/gen-ai-observability]] — OTel·GenAI 스팬
+
+## Chapter Clear 가이드
+
+- **소속 챕터**: Chapter 5 (안전 던전)
+- **퀘스트**: 내 서비스에서 동기/비동기/스트리밍 중 맞는 배치 패턴을 하나 선택한다.
+- **클리어 조건**: 상태 저장 위치와 실패 복구 방식을 함께 정의할 수 있다.
+- **보상(산출물)**: 서버 하네스 설계 메모 v1
+- **다음 퀘스트**: [[patterns/safe-tool-calling-sandbox]] -> [[patterns/owasp-llm-typescript-mitigations]]
 
 ## 참고 소스
 

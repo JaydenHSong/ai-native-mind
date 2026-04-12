@@ -3,7 +3,7 @@ title: "안전한 툴 호출과 샌드박싱: 칼을 쥐여주기 전에 칼집�
 category: patterns
 tags: [tool-use, mcp, sandboxing, security, curriculum]
 created: 2026-04-12
-updated: 2026-04-11
+updated: 2026-04-12
 sources:
   - "raw/notes/2026-04-12-practice-curriculum.md"
 related:
@@ -75,3 +75,11 @@ AI의 위험한 행동을 막으려면 3중 방어막을 쳐야 합니다.
 
 ---
 *선생님의 한마디: "보안이 없는 에이전트는 해커가 마음대로 조종할 수 있는 좀비 PC와 같습니다. 안전이 최우선입니다!"*
+
+## Chapter Clear 가이드
+
+- **소속 챕터**: Chapter 5 (안전 던전)
+- **퀘스트**: 내 도구 호출 흐름에 3단계 방어(권한/격리/HITL)를 매핑한다.
+- **클리어 조건**: 위험 명령 1개를 어떤 방어층에서 차단할지 설명할 수 있다.
+- **보상(산출물)**: Safe Tool Calling 체크리스트 v1
+- **다음 퀘스트**: [[patterns/owasp-llm-typescript-mitigations]] -> [[concepts/llm-evaluation]]

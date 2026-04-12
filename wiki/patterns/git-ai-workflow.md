@@ -3,7 +3,7 @@ title: "Git + AI 워크플로우"
 category: patterns
 tags: [git, workflow, claude-code, commits, pr]
 created: 2026-04-09
-updated: 2026-04-11
+updated: 2026-04-12
 sources:
   - "raw/notes/2026-04-09-git-ai-workflow.md"
 related:
@@ -185,6 +185,14 @@ claude-code validate-commit-msg $1
 - AI가 실수한 커밋 → `git revert`
 - 잘못된 force push → `git reflog`로 복구
 - **AI에게 복구 명령도 요청 가능** — "git reflog로 이전 상태 복구해줘"
+
+## Chapter Clear 가이드
+
+- **소속 챕터**: Chapter 7 (엔드게임)
+- **퀘스트**: 내 작업 흐름을 `branch -> commit -> pr -> review` 한 사이클로 문서화한다.
+- **클리어 조건**: 작은 커밋/검증 루틴을 실제로 한 번 실행하고 설명할 수 있다.
+- **보상(산출물)**: 개인 Git+AI 루틴 카드 1개
+- **다음 퀘스트**: [[patterns/ai-code-review]] -> [[patterns/ai-cost-management]]
 
 ## 추천 도구
 

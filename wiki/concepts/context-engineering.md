@@ -3,7 +3,7 @@ title: "Context Engineering"
 category: concepts
 tags: [context-engineering, prompt-engineering, ai-orchestration]
 created: 2026-04-09
-updated: 2026-04-11
+updated: 2026-04-12
 sources:
   - "raw/notes/2026-04-09-ai-orchestration-research.md"
   - "raw/notes/2026-04-09-solo-dev-ai-research.md"
@@ -106,6 +106,14 @@ Context Engineering은 [[concepts/prompt-engineering|Prompt Engineering]]의 진
 - [[concepts/ai-orchestration]] — Context Engineering이 기반이 되는 실행 기술
 - [[concepts/ai-native-programmer]] — Context Engineering을 핵심 스킬로 가진 사람
 - [[concepts/rag]] — 컨텍스트를 제공하는 기존 방식 (매번 재검색)
+
+## Chapter Clear 가이드
+
+- **소속 챕터**: Chapter 2 (기본 전투)
+- **퀘스트**: 내 프로젝트의 컨텍스트 구성요소를 5대 요소(System/분해/Memory/Tools/Guardrails)로 매핑한다.
+- **클리어 조건**: 문제 1개를 "프롬프트 문제"가 아닌 "컨텍스트 설계 문제"로 재정의할 수 있다.
+- **보상(산출물)**: 내 컨텍스트 파이프라인 도식(텍스트 버전 가능)
+- **다음 퀘스트**: [[concepts/context-vs-prompt-practice]] -> [[concepts/ai-orchestration]]
 
 ## 참고 소스
 

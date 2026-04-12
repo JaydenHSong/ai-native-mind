@@ -3,7 +3,7 @@ title: "AI 오케스트레이션"
 category: concepts
 tags: [ai-orchestration, multi-agent, patterns, anthropic]
 created: 2026-04-09
-updated: 2026-04-11
+updated: 2026-04-12
 sources:
   - "raw/notes/2026-04-09-ai-orchestration-research.md"
   - "raw/notes/2026-04-11-orchestration-harness-server-supplement.md"
@@ -116,6 +116,14 @@ AI 네이티브 프로그래머의 **핵심 역량**이다. 혼자서 팀 규모
 - [[tools/claude-code]] — 오케스트레이터-워커 패턴의 실제 구현체
 - [[patterns/agent-server-harness]] — HTTP·큐·스트림 위 오케스트레이션
 - [[patterns/agent-planning-to-implementation]] — 문서 단계의 체이닝·HITL
+
+## Chapter Clear 가이드
+
+- **소속 챕터**: Chapter 3 (파티 운영)
+- **퀘스트**: 현재 진행 중인 작업 하나를 6대 오케스트레이션 패턴 중 하나로 분류한다.
+- **클리어 조건**: 왜 해당 패턴이 맞는지 비용/속도/신뢰성 관점에서 설명할 수 있다.
+- **보상(산출물)**: 내 작업용 오케스트레이션 선택표 1개
+- **다음 퀘스트**: [[patterns/orchestration-patterns-practice]] -> [[patterns/agent-planning-to-implementation]]
 
 ## 참고 소스
 

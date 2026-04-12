@@ -3,19 +3,28 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-04-11
-total_pages: 47
+updated: 2026-04-12
+total_pages: 48
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 전체 47개 페이지 | 최종 업데이트: 2026-04-11 — 대부분 페이지에 **쉽게 읽기** 블록 있음
+> 전체 48개 페이지 | 최종 업데이트: 2026-04-12 — 대부분 페이지에 **쉽게 읽기** 블록 있음
 
 ## 쉽게 읽기
 
 링크만 모아 둔 **목차**다. 주제가 낯설면 해당 페이지로 들어가서 맨 위 **「쉽게 읽기」**부터 읽으면 된다.
+
+## Chapter Clear 시작점
+
+게임처럼 순서대로 가고 싶다면 먼저 [[wiki/campaign-map|Campaign Map]]을 열고, 필요할 때 [[wiki/overview|Overview]]로 보조 설명을 본다.
+
+- **튜토리얼(Chapter 0)**: [[patterns/llm-wiki]], [[tools/obsidian]], [[tools/claude-code]]
+- **기본기(Chapter 1~2)**: [[concepts/ai-native-programmer]], [[concepts/context-engineering]]
+- **실전(Chapter 3~5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
+- **엔드게임(Chapter 6~7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
 ## Concepts (16개)
 
@@ -101,5 +110,6 @@ status: active
 
 ## Meta
 
+- [[wiki/campaign-map]] — 챕터 클리어 월드맵 (메인 허브)
 - [[wiki/overview]] — 위키 전체 종합 현황
 - [[wiki/log]] — 시간순 작업 기록

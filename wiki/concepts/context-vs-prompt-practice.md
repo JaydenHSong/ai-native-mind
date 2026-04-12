@@ -3,7 +3,7 @@ title: "프롬프트 vs 컨텍스트: 시험공부 비유로 완벽 이해하기
 category: concepts
 tags: [prompt-engineering, context-engineering, curriculum]
 created: 2026-04-12
-updated: 2026-04-11
+updated: 2026-04-12
 sources:
   - "raw/notes/2026-04-12-practice-curriculum.md"
 related:
@@ -67,3 +67,11 @@ AI를 '공부 아주 잘하는 전교 1등(하지만 우리 반 사정은 모르
 
 ---
 *선생님의 한마디: "질문(프롬프트)을 예쁘게 다듬는 시간에, AI가 참고할 좋은 자료(컨텍스트)를 찾아주는 게 10배 더 효과적입니다!"*
+
+## Chapter Clear 가이드
+
+- **소속 챕터**: Chapter 2 (기본 전투 실습)
+- **퀘스트**: 지금 하고 있는 실제 작업 1개를 골라 prompt/context를 분리해서 다시 작성한다.
+- **클리어 조건**: "프롬프트 1줄 + 컨텍스트 3개 이상" 구조로 재작성한 사례를 1개 만들었다.
+- **보상(산출물)**: 실전용 프롬프트-컨텍스트 템플릿 1개
+- **다음 퀘스트**: [[concepts/ai-orchestration]] -> [[patterns/orchestration-patterns-practice]]

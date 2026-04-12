@@ -3,7 +3,7 @@ title: "LLM-Wiki 패턴"
 category: patterns
 tags: [llm, wiki, knowledge-management, obsidian]
 created: 2026-04-06
-updated: 2026-04-11
+updated: 2026-04-12
 sources:
   - "raw/articles/2026-04-04-llm-wiki-pattern.md"
 related:
@@ -97,6 +97,14 @@ Vannevar Bush의 **Memex**(1945)와 정신적으로 연결됨 — 연관 트레�
 
 - [[concepts/rag]] — LLM-Wiki가 대체/보완하는 기존 방식
 - [[comparisons/rag-vs-llm-wiki]] — 두 접근법 비교
+
+## Chapter Clear 가이드
+
+- **소속 챕터**: Chapter 0 (튜토리얼)
+- **퀘스트**: 내 프로젝트 기준으로 ingest/query/lint를 각각 1문장으로 적는다.
+- **클리어 조건**: "raw는 원본, wiki는 가공, schema는 규칙"을 예시와 함께 설명할 수 있다.
+- **보상(산출물)**: 개인용 위키 운영 규칙 메모 1개
+- **다음 퀘스트**: [[tools/obsidian]] -> [[tools/claude-code]] -> [[concepts/ai-native-programmer]]
 
 ## 참고 소스
 

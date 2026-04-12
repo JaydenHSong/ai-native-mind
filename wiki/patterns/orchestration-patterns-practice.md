@@ -3,7 +3,7 @@ title: "오케스트레이션 패턴 실전 연습: 팀플레이 지휘하기"
 category: patterns
 tags: [orchestration, multi-agent, workflow, curriculum]
 created: 2026-04-12
-updated: 2026-04-11
+updated: 2026-04-12
 sources:
   - "raw/notes/2026-04-12-practice-curriculum.md"
 related:
@@ -78,3 +78,11 @@ confidence: high
 
 ---
 *선생님의 한마디: "훌륭한 지휘자는 에이전트를 많이 쓰는 게 아니라, 덜 쓰고도 톱니바퀴처럼 맞물리게 연결하는 사람입니다."*
+
+## Chapter Clear 가이드
+
+- **소속 챕터**: Chapter 3 (파티 운영 실습)
+- **퀘스트**: 체이닝/병렬/Evaluator-Optimizer 중 현재 작업에 맞는 패턴 1개를 골라 미니 설계를 작성한다.
+- **클리어 조건**: 선택한 패턴에서 실패 지점(상태, 재시도, 비용)을 2개 이상 말할 수 있다.
+- **보상(산출물)**: 오케스트레이션 미니 설계서 1개
+- **다음 퀘스트**: [[patterns/agent-planning-to-implementation]] -> [[patterns/subagents-delegation]]

@@ -3,7 +3,7 @@ title: "GenAI·에이전트 관측 가능성 (OpenTelemetry)"
 category: concepts
 tags: [observability, opentelemetry, genai, agents, tracing, semconv]
 created: 2026-04-11
-updated: 2026-04-11
+updated: 2026-04-12
 sources:
   - "raw/notes/2026-04-11-vercel-workflow-otel-agents-research.md"
 related:
@@ -74,6 +74,14 @@ confidence: high
 - [[patterns/agent-server-harness]] — 백엔드 배치와 관측 훅
 - [[tools/vercel-workflow]] — 플랫폼 측 워크플로 관측 UI와의 관계 검토
 - [[concepts/mcp]] — 도구 경로 관측 시 같이 설계
+
+## Chapter Clear 가이드
+
+- **소속 챕터**: Chapter 6 (운영 보스전)
+- **퀘스트**: 모델 호출, 도구 호출, 에러를 각각 하나씩 span으로 추적하는 기준을 정한다.
+- **클리어 조건**: trace_id 기준으로 "문제 요청 한 건"을 끝까지 따라갈 수 있다.
+- **보상(산출물)**: 관측 지표 카드 1장
+- **다음 퀘스트**: [[patterns/git-ai-workflow]] -> [[patterns/ai-code-review]]
 
 ## 참고 소스
 

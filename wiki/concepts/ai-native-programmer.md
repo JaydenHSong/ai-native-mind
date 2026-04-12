@@ -3,7 +3,7 @@ title: "AI 네이티브 프로그래머"
 category: concepts
 tags: [ai-native, growth, solo-developer, career]
 created: 2026-04-09
-updated: 2026-04-11
+updated: 2026-04-12
 sources:
   - "raw/notes/2026-04-09-solo-dev-ai-research.md"
   - "raw/notes/2026-04-09-ai-native-architecture-research.md"
@@ -89,6 +89,14 @@ AI가 코드를 읽고 쓰는 걸 전제로 설계하는 방식.
 - [[concepts/ai-orchestration]] — 핵심 역량 1
 - [[concepts/ai-native-architecture]] — 핵심 역량 2
 - [[concepts/context-engineering]] — 오케스트레이션의 핵심 스킬
+
+## Chapter Clear 가이드
+
+- **소속 챕터**: Chapter 1 (세계관 이해)
+- **퀘스트**: "나는 AI를 도구로 쓰는가, 팀원으로 운영하는가"를 현재 작업 기준으로 비교한다.
+- **클리어 조건**: 3대 역량(오케스트레이션/아키텍처/판단력)을 내 작업 사례와 연결해 설명할 수 있다.
+- **보상(산출물)**: 내 개발 방식 Before/After 5문장 메모
+- **다음 퀘스트**: [[concepts/ai-native-architecture]] -> [[concepts/context-engineering]]
 
 ## 참고 소스
 

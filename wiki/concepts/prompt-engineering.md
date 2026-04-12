@@ -3,7 +3,7 @@ title: "Prompt Engineering"
 category: concepts
 tags: [prompt-engineering, llm, basics]
 created: 2026-04-09
-updated: 2026-04-11
+updated: 2026-04-12
 sources:
   - "raw/notes/2026-04-09-engineering-paradigms-research.md"
 related:
@@ -66,6 +66,14 @@ Prompt Engineering은 사라지지 않았다. [[concepts/harness-engineering|Har
 
 - [[concepts/context-engineering]] — 2세대 진화
 - [[concepts/harness-engineering]] — 3세대 진화
+
+## Chapter Clear 가이드
+
+- **소속 챕터**: Chapter 2 (기본 전투)
+- **퀘스트**: 최근 AI 요청 1개를 골라 prompt 요소(역할/지시/출력형식)를 분해해 본다.
+- **클리어 조건**: prompt 최적화만으로 해결 안 되는 한계를 2개 이상 설명할 수 있다.
+- **보상(산출물)**: "좋은 프롬프트 체크리스트" 초안 1개
+- **다음 퀘스트**: [[concepts/context-engineering]] -> [[concepts/context-vs-prompt-practice]]
 
 ## 참고 소스
 

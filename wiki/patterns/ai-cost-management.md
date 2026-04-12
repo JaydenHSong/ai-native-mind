@@ -3,7 +3,7 @@ title: "AI 비용 관리"
 category: patterns
 tags: [cost, pricing, optimization, anthropic, claude, openai]
 created: 2026-04-09
-updated: 2026-04-11
+updated: 2026-04-12
 sources:
   - "raw/notes/2026-04-09-ai-cost-management.md"
 related:
@@ -175,6 +175,14 @@ def route_model(task_complexity: str) -> str:
 - 무제한 컨텍스트 주입
 - Batch 가능한 것을 실시간으로
 - 비용 모니터링 없이 배포
+
+## Chapter Clear 가이드
+
+- **소속 챕터**: Chapter 7 (엔드게임)
+- **퀘스트**: 내 사용 패턴 기준으로 model routing 규칙 1개와 예산 상한 1개를 정한다.
+- **클리어 조건**: 비용 최적화 전후를 숫자로 비교할 수 있다.
+- **보상(산출물)**: 월간 AI 비용 운영표 v1
+- **다음 퀘스트**: [[wiki/campaign-map]] -> [[wiki/log]]
 
 ## 참고 소스
 
