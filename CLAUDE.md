@@ -162,9 +162,9 @@ confidence: high | medium | low
 
 ## Current State
 
-- **총 페이지 수**: 47
-- **카테고리 현황**: concepts(16), tools(7), patterns(18), journal(1), comparisons(5)
-- **소스 수**: 33개 (raw 노트 + papers; 커리큘럼 메타 `2026-04-12-practice-curriculum.md` 포함)
-- **최근 활동**: 2026-04-11 에이전트 **커리큘럼 프랙티스** 6편(`context-vs-prompt-practice` 등)·`raw/notes/2026-04-12-practice-curriculum.md`·`index`/`overview` 반영. 이전: 전 페이지 **쉽게 읽기** 가독성 패스, 저널·OWASP×TS·papers·예제, Vercel Workflow·OTel·AI SDK·하네스 보강.
-- **다음 할 일**: 실습 기록 (journal/), 구체적 사례 추가
+- **총 페이지 수**: 49
+- **카테고리 현황**: concepts(16), tools(7), patterns(19), journal(1), comparisons(5)
+- **소스 수**: 34개 (raw 노트 + papers; `2026-04-13-harness-casebook-anthropic-academy.md` 포함)
+- **최근 활동**: 2026-04-13 **Harness 케이스북**(`patterns/harness-engineering-casebook`) — 도메인 30케이스 + Anthropic Academy 코스 맵·4주 트랙. 이전: Chapter Clear 월드맵·`campaign-map`, 2026-04-11 커리큘럼 프랙티스 6편·쉽게 읽기 패스·OWASP×TS·WDK·OTel 보강.
+- **다음 할 일**: Anthropic 코스 이수 노트를 `journal/`에 남기기, 케이스북에서 본인 프로젝트 행만 골라 Guides/Sensors 적용
 - **보안**: `SECURITY.md`, `.gitleaks.toml`, GitHub Actions(Gitleaks·dependency review), Dependabot, 강화된 `.gitignore` — 비밀·키·`.env` 실값은 커밋 금지.

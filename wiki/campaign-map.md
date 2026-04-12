@@ -3,7 +3,7 @@ title: "Campaign Map"
 category: meta
 tags: [map, campaign, navigation]
 created: 2026-04-12
-updated: 2026-04-12
+updated: 2026-04-13
 sources:
  - "wiki/overview.md"
  - "wiki/index.md"
@@ -71,6 +71,7 @@ confidence: high
 
 ## 서브 퀘스트 라인 (선택)
 
+- **하네스 심화 + 공식 스터디**: [[patterns/harness-engineering-casebook]] (케이스 30 + Anthropic Academy 맵)
 - **보안 특화**: [[patterns/owasp-llm-typescript-mitigations]] -> [[patterns/safe-tool-calling-sandbox]] -> [[concepts/context-rot-hallucination]]
 - **도구 비교**: [[comparisons/claude-code-plugins]] -> [[comparisons/ai-coding-tools]] -> [[comparisons/agent-frameworks]]
 - **비용/효율**: [[patterns/prompt-caching]] -> [[patterns/ai-cost-management]] -> [[concepts/structured-output]]
@@ -97,4 +98,5 @@ confidence: high
 
 - 2026-04-12: Chapter 0~2 핵심 문서에 공통 `Chapter Clear 가이드` 섹션을 추가해, 문서 단위에서도 퀘스트 흐름이 끊기지 않도록 보강.
 - 2026-04-12: Chapter 3~7 핵심 문서까지 `Chapter Clear 가이드`를 확장해 전체 챕터 라인이 문서 단위로 연속되도록 연결.
+- 2026-04-13: [[patterns/harness-engineering-casebook]] 추가 — 하네스 도메인 케이스 30 + Anthropic Academy 스터디 맵, 서브 퀘스트에 연결.
 

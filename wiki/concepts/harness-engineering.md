@@ -3,11 +3,12 @@ title: "Harness Engineering"
 category: concepts
 tags: [harness-engineering, ai-agent, infrastructure, orchestration]
 created: 2026-04-09
-updated: 2026-04-11
+updated: 2026-04-13
 sources:
   - "raw/notes/2026-04-09-engineering-paradigms-research.md"
   - "raw/notes/2026-04-11-orchestration-harness-server-supplement.md"
   - "raw/notes/2026-04-12-harness-engineering-deep-dive.md"
+  - "raw/notes/2026-04-13-harness-casebook-anthropic-academy.md"
 related:
   - "[[concepts/context-engineering]]"
   - "[[concepts/prompt-engineering]]"
@@ -21,6 +22,7 @@ related:
   - "[[concepts/gen-ai-observability]]"
   - "[[patterns/owasp-llm-typescript-mitigations]]"
   - "[[journal/2026-04-12]]"
+  - "[[patterns/harness-engineering-casebook]]"
 status: active
 confidence: high
 ---
@@ -156,6 +158,10 @@ Martin Fowler의 [Humans and Agents in Software Engineering Loops](https://marti
 
 AI 네이티브 프로그래머에게 Harness Engineering은 **가장 실전적인 스킬**이다. 모델은 바꿀 수 없지만, Harness는 설계할 수 있다. 좋은 Harness = 신뢰할 수 있는 에이전트.
 
+## 케이스별·Anthropic 스터디
+
+도메인이 달라질 때 Guides/Sensors/HITL이 어떻게 달라지는지, 그리고 **Anthropic Academy(공식 코스)**를 하네스 학습과 어떻게 짝지을지는 [[patterns/harness-engineering-casebook|Harness 케이스북 & Anthropic Academy 스터디 맵]]에 모아 두었다.
+
 ## 관련 개념
 
 - [[concepts/context-engineering]] — Harness의 하위 계층
@@ -167,6 +173,7 @@ AI 네이티브 프로그래머에게 Harness Engineering은 **가장 실전적�
 
 ## 참고 소스
 
+- [Harness 케이스북·Academy 큐레이션](raw/notes/2026-04-13-harness-casebook-anthropic-academy.md)
 - [Harness 심화 큐레이션](raw/notes/2026-04-12-harness-engineering-deep-dive.md)
 - [Engineering 패러다임 리서치](raw/notes/2026-04-09-engineering-paradigms-research.md)
 - [Martin Fowler — Harness engineering (본편)](https://martinfowler.com/articles/harness-engineering.html)

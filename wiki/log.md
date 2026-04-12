@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-04-12
+updated: 2026-04-13
 sources: []
 status: active
 ---
@@ -30,6 +30,13 @@ status: active
 
 - **Pages updated**: `patterns/llm-wiki.md`, `tools/obsidian.md`, `tools/claude-code.md`, `concepts/ai-native-programmer.md`, `concepts/ai-native-architecture.md`, `concepts/prompt-engineering.md`, `concepts/context-engineering.md`, `concepts/context-vs-prompt-practice.md`, `wiki/campaign-map.md`
 - **Notes**: 각 문서 하단에 `Chapter Clear 가이드`를 추가하여 퀘스트/클리어 조건/보상/다음 퀘스트를 통일. 월드맵과 개별 문서 간 진행 흐름을 양방향으로 맞춤.
+
+## [2026-04-13] create | Harness 케이스북 + Anthropic Academy 스터디 맵
+
+- **Sources**: `raw/notes/2026-04-13-harness-casebook-anthropic-academy.md`, [anthropic.com/learn](https://www.anthropic.com/learn), [Skilljar catalog](https://anthropic.skilljar.com/)
+- **Pages created**: `patterns/harness-engineering-casebook.md`
+- **Pages updated**: `concepts/harness-engineering.md`, `index.md`, `overview.md`, `log.md`
+- **Notes**: 도메인별 Guides/Sensors/HITL 30행 매트릭스. Anthropic Academy 코스 URL·하네스 축 매핑·트랙 A~D. 총 페이지 49.
 
 ## [2026-04-12] update | Chapter 3~7 문서 퀘스트 가이드 확장
 

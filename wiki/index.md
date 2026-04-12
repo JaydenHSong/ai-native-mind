@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-04-12
-total_pages: 48
+updated: 2026-04-13
+total_pages: 49
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 전체 48개 페이지 | 최종 업데이트: 2026-04-12 — 대부분 페이지에 **쉽게 읽기** 블록 있음
+> 전체 49개 페이지 | 최종 업데이트: 2026-04-13 — 대부분 페이지에 **쉽게 읽기** 블록 있음
 
 ## 쉽게 읽기
 
@@ -68,7 +68,7 @@ status: active
 - [[tools/gstack]] — 역할 기반 AI 팀 시뮬레이션 스킬 팩 (Claude Code 플러그인)
 - [[tools/vercel-workflow]] — Workflow DevKit, TypeScript 내구 워크플로·Webhook·에이전트 장기 실행
 
-## Patterns (18개)
+## Patterns (19개)
 
 ### 커리큘럼·실습 (읽기 순서 2→6)
 - [[patterns/preventing-context-rot]] — Context Rot·3계층 메모리 (커리큘럼 2)
@@ -82,6 +82,7 @@ status: active
 - [[patterns/bkit-superpowers-combo]] — bkit PDCA + Superpowers TDD 조합으로 단계 건너뛰기 방지
 
 ### AI 개발 실전 패턴
+- [[patterns/harness-engineering-casebook]] — 도메인 30케이스 매트릭스 + Anthropic Academy 스터디 맵
 - [[patterns/agent-planning-to-implementation]] — 기획·스펙·태스크→코드까지 에이전트 파이프라인과 HITL 게이트
 - [[patterns/agent-server-harness]] — HTTP·큐·SSE 뒤의 에이전트 백엔드·상태·보안 하네스
 - [[patterns/owasp-llm-typescript-mitigations]] — OWASP LLM Top 10 중 LLM01/06/10을 TS·AI SDK로 완화하는 패턴
