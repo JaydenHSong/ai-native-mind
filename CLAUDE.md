@@ -57,7 +57,7 @@ ai-native-mind/
 ```yaml
 ---
 title: "페이지 제목"
-category: concepts | tools | patterns | journal | comparisons
+category: concepts | tools | patterns | journal | comparisons | meta
 tags: [tag1, tag2]
 created: YYYY-MM-DD
 updated: YYYY-MM-DD
@@ -162,8 +162,8 @@ confidence: high | medium | low
 
 ## Current State
 
-- **총 페이지 수**: 49
-- **카테고리 현황**: concepts(16), tools(7), patterns(19), journal(1), comparisons(5)
+- **총 페이지 수**: 54 (콘텐츠 50 + meta 4)
+- **카테고리 현황**: concepts(18), tools(7), patterns(19), journal(1), comparisons(5), meta(4)
 - **소스 수**: 34개 (raw 노트 + papers; `2026-04-13-harness-casebook-anthropic-academy.md` 포함)
 - **최근 활동**: 2026-04-13 **Harness 케이스북**(`patterns/harness-engineering-casebook`) — 도메인 30케이스 + Anthropic Academy 코스 맵·4주 트랙. 이전: Chapter Clear 월드맵·`campaign-map`, 2026-04-11 커리큘럼 프랙티스 6편·쉽게 읽기 패스·OWASP×TS·WDK·OTel 보강.
 - **다음 할 일**: Anthropic 코스 이수 노트를 `journal/`에 남기기, 케이스북에서 본인 프로젝트 행만 골라 Guides/Sensors 적용

@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-04-13
-total_pages: 49
+updated: 2026-04-16
+total_pages: 54
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 전체 49개 페이지 | 최종 업데이트: 2026-04-13 — 대부분 페이지에 **쉽게 읽기** 블록 있음
+> 전체 54개 페이지 | 최종 업데이트: 2026-04-16 — 대부분 페이지에 **쉽게 읽기** 블록 있음
 
 ## 쉽게 읽기
 
@@ -26,7 +26,7 @@ status: active
 - **실전(Chapter 3~5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **엔드게임(Chapter 6~7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (16개)
+## Concepts (18개)
 
 ### 성장 맵 & 철학
 - [[concepts/ai-native-programmer]] — AI를 팀원으로 활용하여 1인이 팀 규모 결과를 내는 개발자, 성장 맵
@@ -111,6 +111,7 @@ status: active
 
 ## Meta
 
+- [[wiki/index]] — 전체 페이지 카탈로그 (현재 문서)
 - [[wiki/campaign-map]] — 챕터 클리어 월드맵 (메인 허브)
 - [[wiki/overview]] — 위키 전체 종합 현황
 - [[wiki/log]] — 시간순 작업 기록

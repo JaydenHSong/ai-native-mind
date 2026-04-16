@@ -3,7 +3,7 @@ title: "졸업 작품: 나만의 에이전틱 서비스 아키텍처 설계 (Cap
 category: patterns
 tags: [architecture, agent-server, capstone, curriculum]
 created: 2026-04-12
-updated: 2026-04-11
+updated: 2026-04-16
 sources:
   - "raw/notes/2026-04-12-practice-curriculum.md"
 related:

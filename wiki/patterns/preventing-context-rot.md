@@ -3,7 +3,7 @@ title: "Context Rot 예방: 기억력을 잃어가는 AI 구하기"
 category: patterns
 tags: [memory, context-rot, RAG, curriculum]
 created: 2026-04-12
-updated: 2026-04-11
+updated: 2026-04-16
 sources:
   - "raw/notes/2026-04-12-practice-curriculum.md"
 related:
