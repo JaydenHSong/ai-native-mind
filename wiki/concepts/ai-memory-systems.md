@@ -1,7 +1,7 @@
 ---
 title: "AI Memory Systems"
 category: concepts
-tags: [memory, agent, long-term, short-term, context, multi-party, group-memory, benchmark, probabilistic-memory, partial-observability]
+tags: [memory, agent, long-term, short-term, context, multi-party, group-memory, benchmark, probabilistic-memory, partial-observability, forgetting, consolidation]
 created: 2026-04-09
 updated: 2026-05-17
 sources:
@@ -9,6 +9,7 @@ sources:
   - "raw/articles/2026-05-03-zenbrain-7-layer-memory.md"
   - "raw/articles/2026-05-15-groupmembench-multi-party-memory.md"
   - "raw/articles/2026-05-17-belief-memory-partial-observability.md"
+  - "raw/articles/2026-05-17-human-inspired-memory-architecture.md"
 related:
   - "[[concepts/context-engineering]]"
   - "[[concepts/vector-db-embeddings]]"
@@ -234,6 +235,65 @@ ZenBrain(2026-05-03 보강)이 memory를 **7 계층 시스템**으로 확장했�
 
 → 2x3 좌표계의 **(prescriptive, 학습)** 칸을 채운다. Survey(2026-05-17)가 지형도를 주었다면, BeliefMem은 memory 내부 표현의 방향을 준다.
 
+## 2026-05-17 보강 — Human-Inspired Memory: consolidation·forgetting까지 설계하기 (arXiv 2605.08538)
+
+[Kerestecioglu et al.](https://arxiv.org/abs/2605.08538) (2026-05-08)은 장기 메모리 문제를 "더 많이 저장하자"가 아니라 **어떻게 압축·망각·재강화할까**의 문제로 다시 잡는다. 이 논문이 신선한 이유는 memory를 retrieval DB가 아니라 **운영 파이프라인**으로 취급한다는 점이다.
+
+### 여섯 가지 cognitive mechanism
+
+1. **sleep-phase consolidation**
+2. **interference-based forgetting**
+3. **engram maturation**
+4. **reconsolidation upon retrieval**
+5. **entity knowledge graphs**
+6. **hybrid multi-cue retrieval**
+
+→ 앞선 2026-05-03의 ZenBrain이 memory를 **계층(layer)** 으로, 2026-05-17의 BeliefMem이 memory를 **belief representation** 으로 봤다면, 이 논문은 memory를 **lifecycle operation** 으로 본다.
+
+### 왜 중요한가 — memory failure를 store 부족이 아니라 관리 실패로 본다
+
+이 논문이 겨냥하는 naive accumulation failure는 네 가지다.
+
+- 중복 기억이 쌓여 retrieval noise 증가
+- 오래된 기억과 새 기억의 **interference**
+- retrieval 순간에 기억이 다시 정리되지 않아 stale memory 고착
+- entity 관계 표현이 약해, 사람·이슈·사건 간 연결이 흐려짐
+
+즉 memory quality는 vector DB 유무보다 **consolidation / forgetting / reconsolidation policy** 유무에 더 좌우될 수 있다.
+
+### 정량 — 줄이면서 유지하기
+
+abstract 기준 결과:
+
+| 벤치마크 | 결과 |
+|---|---|
+| **VSCode issue-tracking** (13K issues / 120K events) | dedup-based consolidation으로 **97.2% retention precision**, **58% store reduction**, baseline 대비 **+21.8 pp** |
+| **LongMemEval** (475 sessions / ~540K unique turns) | **200K-token budget**에서 raw retrieval **71.2%** vs pipeline **70.1%** (95% CI overlap) |
+| **LongMemEval S-tier** (50 sessions) | preference recall **+13.3 pp** |
+
+→ 메시지는 단순하다: **큰 저장소 없이도, 잘 정리된 기억이 거의 같은 정확도를 낼 수 있다.**
+
+### ZenBrain · GroupMemBench · BeliefMem과의 관계
+
+| 페이지 | 이 논문이 더하는 것 |
+|---|---|
+| [[concepts/ai-memory-systems#2026-05-03 보강 — ZenBrain 7-계층 + Predictive Memory (arXiv 2604.23878)|ZenBrain]] | layer 위에 **maintenance policy**를 올림 |
+| [[concepts/ai-memory-systems#2026-05-15 보강 — GroupMemBench: Multi-Party Memory 측정 (arXiv 2605.14498)|GroupMemBench]] | memory 측정이 약하다고 말한 뒤, 여기서는 **store-size/accuracy trade-off**를 실제로 제시 |
+| [[concepts/ai-memory-systems#2026-05-17 보강 — BeliefMem: Partial Observability에서 memory를 belief state로 (arXiv 2605.05583)|BeliefMem]] | uncertainty 표현 규칙에 더해 **when to rewrite** 문제를 채움 |
+
+→ memory 설계 질문은 이제 최소 네 갈래가 된다:
+
+1. **어디에 저장하나** (layer)
+2. **무엇을 저장하나** (content)
+3. **얼마나 믿나** (belief)
+4. **언제 압축·망각·재강화하나** (lifecycle)
+
+### 1인 개발자 ROI 3개
+
+1. 프로젝트 노트·agent log를 무한히 쌓기보다, 주기적으로 **dedup + consolidation** 하는 잡 하나만 넣어도 retrieval 품질이 달라질 수 있다.
+2. memory 시스템 평가 시 accuracy만 보지 말고 **store reduction 대비 accuracy 유지율**을 같이 봐야 한다.
+3. `wiki/log.md`와 journal이 길어질수록, 장기적으로는 "최근 사건 요약본"과 "원본 로그"를 분리하는 mini-consolidation 계층이 필요하다.
+
 ## 참고 소스
 
 - [AI Memory Systems 리서치](raw/notes/2026-04-09-ai-memory-systems.md)
@@ -242,3 +302,4 @@ ZenBrain(2026-05-03 보강)이 memory를 **7 계층 시스템**으로 확장했�
 - [ZenBrain 7-Layer Memory Architecture (arXiv 2604.23878, 2026-04)](https://arxiv.org/abs/2604.23878)
 - [Memory for Autonomous LLM Agents — Survey (arXiv 2603.07670, 2026-03)](https://arxiv.org/html/2603.07670v1)
 - [GroupMemBench: Multi-Party Memory (arXiv 2605.14498, 2026-05)](https://arxiv.org/abs/2605.14498)
+- [Human-Inspired Memory Architecture for LLM Agents (arXiv 2605.08538, 2026-05)](https://arxiv.org/abs/2605.08538)

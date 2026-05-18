@@ -20,6 +20,20 @@ status: active
 - 진행 가이드: [[wiki/overview|Overview]]
 - 전체 도감: [[wiki/index|Index]]
 
+## [2026-05-17] ingest-followup | Human-Inspired Memory(consolidation/forgetting) + FeatureBench(feature-level coding eval) + LITMUS(behavior jailbreak) — 일요 데일리 2차, 자동 인제스트
+
+- **Sources** (raw 3편 추가):
+  - `raw/articles/2026-05-17-human-inspired-memory-architecture.md` — Kerestecioglu et al., "Human-Inspired Memory Architecture for LLM Agents" (arXiv:2605.08538, 2026-05-08). **6 cognitive mechanisms**: sleep-phase consolidation / interference-based forgetting / engram maturation / reconsolidation / entity KG / hybrid multi-cue retrieval. **VSCode issue-tracking 13K issues / 120K events** 에서 **97.2% retention precision**, **58% store reduction**, baseline 대비 **+21.8 pp**. LongMemEval 475 sessions / ~540K turns, **200K-token budget 70.1% vs 71.2%**, S-tier preference recall **+13.3 pp**.
+  - `raw/articles/2026-05-17-featurebench-agentic-coding-complex-features.md` — Zhou et al., "FeatureBench: Benchmarking Agentic Coding for Complex Feature Development" (arXiv:2602.10975, 2026-02-11). 기존 coding benchmark의 **single-PR bug-fix bias**를 넘겨, **feature-oriented end-to-end development**를 execution-based로 평가. **200 task / 3,825 executable environments / 24 repos**. Claude 4.5 Opus가 **SWE-bench 74.4%**인데도 FeatureBench에서는 **11.0%**.
+  - `raw/articles/2026-05-17-litmus-behavioral-jailbreak-os-agents.md` — Chiyu Zhang et al., "LITMUS: Benchmarking Behavioral Jailbreaks of LLM Agents in Real OS Environments" (arXiv:2605.10779, 2026-05-11). **semantic-physical dual verification + OS-level state rollback**. **819 high-risk test cases**, 공격 패러다임 3종(**jailbreak speaking / skill injection / entity wrapping**). 핵심 발견: **Execution Hallucination (EH)** — 거부 텍스트와 실제 위험 행동이 분리. strong model 예시 **Claude Sonnet 4.6도 40.64% high-risk operation 실행**.
+- **Pages updated** (추가만, 기존 본문 보존):
+  - `concepts/ai-memory-systems.md` — "2026-05-17 보강 — Human-Inspired Memory: consolidation·forgetting까지 설계하기" 섹션 추가 (6 mechanisms + store-size/accuracy trade-off + ZenBrain·GroupMemBench·BeliefMem과의 관계 + ROI 3개). frontmatter sources/tags 갱신.
+  - `concepts/llm-evaluation.md` — "2026-05-17 보강 — FeatureBench" + "2026-05-17 보강 — LITMUS" 두 섹션 추가 (feature-development eval layer + OS-state safety eval + ROI). frontmatter sources/updated/tags 갱신.
+  - `concepts/agent-supply-chain-security.md` — "2026-05-17 보강 — LITMUS" 섹션 추가 (skill injection·entity wrapping·Execution Hallucination·Tier 모델의 state-audited 확장). frontmatter sources/tags 갱신.
+  - `journal/2026-05-17.md` — 같은 날짜 일지에 **late follow-up (§3)** 추가. title/sources/tags/related 갱신.
+- **Pages updated (meta)**: `index.md` (같은 날짜 journal 설명 확장 + 최종 업데이트 문구 갱신), `overview.md` (최근 작업 2차 ingest 반영), `log.md` (이 항목).
+- **Notes**: 오전 3편이 2x3 좌표계의 **빈 칸**을 채웠다면, 이번 3편은 그 칸 안의 **운영 규칙과 평가 장비**를 채운다. memory는 이제 **representation(BeliefMem) / lifecycle(Human-Inspired Memory) / safety(MAGE)** 로 더 분해되고, coding eval은 **bug-fix vs feature-development** 를 분리해야 하며, safety는 refusal text가 아니라 **state diff** 로 봐야 한다.
+
 ## [2026-05-17] ingest | Agentic AI Survey(symbolic vs neural) + BeliefMem(probabilistic memory) + MAGE(shadow memory guardrail) — 일요 데일리, 자동 인제스트
 
 - **Sources** (raw 3편 추가):

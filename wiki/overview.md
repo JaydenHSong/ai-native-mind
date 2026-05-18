@@ -32,7 +32,12 @@ status: active
 - **총 페이지**: 73개
 - **카테고리**: concepts(20), tools(9), patterns(20), journal(12), comparisons(8), meta(4)
 - **시작일**: 2026-04-06
-- **최근 작업 (2026-05-17 데일리 ingest)**:
+- **최근 작업 (2026-05-17 데일리 ingest 2차)**:
+  - raw 3편: Human-Inspired Memory · FeatureBench · LITMUS
+  - 기존 페이지 보강 3개: [[concepts/ai-memory-systems]] · [[concepts/llm-evaluation]] · [[concepts/agent-supply-chain-security]]
+  - 같은 날짜 일지 [[journal/2026-05-17]] 에 late follow-up 섹션 추가
+  - 핵심 합류: 오전 3편이 채운 2x3 좌표계 위에, **memory lifecycle · feature-level coding eval · behavioral safety eval** 세 축을 덧댐
+- **직전 작업 (2026-05-17 데일리 ingest 1차)**:
   - raw 3편: Agentic AI Survey · BeliefMem · MAGE
   - 기존 페이지 보강 3개: [[concepts/agentic-engineering]] · [[concepts/ai-memory-systems]] · [[concepts/agent-supply-chain-security]]
   - 새 일지: [[journal/2026-05-17]]

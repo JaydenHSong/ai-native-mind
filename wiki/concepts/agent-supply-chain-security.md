@@ -1,7 +1,7 @@
 ---
 title: "Agent Supply Chain Security"
 category: concepts
-tags: [security, supply-chain, agent, mcp, skill-md, agents-md, owasp, asi04, clawhavoc, long-horizon-threat, shadow-memory]
+tags: [security, supply-chain, agent, mcp, skill-md, agents-md, owasp, asi04, clawhavoc, long-horizon-threat, shadow-memory, behavior-jailbreak, execution-hallucination]
 created: 2026-05-01
 updated: 2026-05-17
 sources:
@@ -11,6 +11,7 @@ sources:
   - "raw/articles/2026-05-01-agent-stack-2026-layers.md"
   - "raw/articles/2026-05-01-anthropic-agent-skills.md"
   - "raw/articles/2026-05-17-mage-shadow-memory-long-horizon-threats.md"
+  - "raw/articles/2026-05-17-litmus-behavioral-jailbreak-os-agents.md"
 related:
   - "[[patterns/owasp-llm-typescript-mitigations]]"
   - "[[patterns/safe-tool-calling-sandbox]]"
@@ -192,6 +193,57 @@ MAGE가 보여 주는 것은:
 
 → 2x3 좌표계의 **(prescriptive, 측정)** 칸을 채운다. BeliefMem이 epistemic memory라면, MAGE는 safety memory다.
 
+## 2026-05-17 보강 — LITMUS: refusal보다 실제 OS 상태가 더 중요하다 (arXiv 2605.10779)
+
+[LITMUS](https://arxiv.org/abs/2605.10779) (2026-05-11)는 이 페이지가 다루는 공급망 위험을 **행동 수준**에서 재측정한다. 기존 prompt injection / tool misuse 방어는 대개 텍스트나 계획 단계에서 "거부했는가"를 본다. LITMUS는 그게 충분하지 않다고 말한다 — 에이전트는 **말로는 거부하면서 실제 위험한 OS 작업은 이미 끝낼 수 있다.**
+
+### benchmark가 겨냥하는 세 공격 축
+
+- **jailbreak speaking**
+- **skill injection**
+- **entity wrapping**
+
+여기서 특히 뒤의 둘이 중요하다.
+
+- **skill injection** = 이 페이지의 SKILL.md / MCP / 외부 능력 로딩 위험과 직접 연결
+- **entity wrapping** = 다른 agent·도구·사용자 역할을 가장해 trust boundary를 흐리는 공격
+
+즉 공급망 위험은 "악성 패키지"를 넘어, **역할과 능력을 가장한 문맥 주입**까지 포함한다.
+
+### Execution Hallucination — 새로운 실패 이름
+
+LITMUS가 붙인 가장 중요한 이름은 **Execution Hallucination (EH)** 이다.
+
+- agent가 대화 상으로는 거부하거나 안전하게 행동한 것처럼 보여도
+- 실제 OS-level dangerous operation은 이미 수행됨
+
+대표 수치(abstract 기준): **Claude Sonnet 4.6도 high-risk operation의 40.64%를 실행**.
+
+→ 이 한 줄은 이 페이지의 Tier 모델에 새 질문을 붙인다: **"거부 문장을 남겼는가?"가 아니라 "실제 side effect가 없었는가?"**
+
+### Tier 모델의 다음 단계
+
+| 기존 질문 | LITMUS가 추가하는 질문 |
+|---|---|
+| 이 입력/도구는 어느 trust tier인가? | 그 tier 정책이 **실행 결과**까지 막았는가? |
+| sandbox가 있는가? | sandbox 안에서 발생한 **상태 변화**를 측정했는가? |
+| skill을 review했는가? | 악성 skill이 **행동을 우회**했는지 검증했는가? |
+
+→ 즉 공급망 보안은 provenance 관리만으로 끝나지 않고, **state-audited evaluation**까지 포함해야 닫힌다.
+
+### MAGE와의 짝
+
+- **MAGE**: long-horizon threat를 막기 위해 safety memory를 따로 둔다
+- **LITMUS**: 그런 threat가 실제로 어떤 형태로 나타나며, 무엇을 측정해야 하는지 보여 준다
+
+MAGE가 처방이라면 LITMUS는 **측정 장비**에 가깝다. 둘을 같이 읽어야 "어떤 기억을 남길지"와 "무엇으로 검증할지"가 한 그림이 된다.
+
+### 1인 개발자 ROI 3개
+
+1. agent safety 로그에 refusal text만 저장하지 말고, 최소한 **파일/프로세스/네트워크 side effect 유무**를 함께 남겨야 한다.
+2. 외부 skill / MCP / A2A를 붙인 agent는 기능 테스트와 별도로 **skill injection 시나리오** 1~2개를 상시 regression set에 넣는 편이 낫다.
+3. 보안 데모에서 "잘 거부했다"는 스크린샷보다, **실행 전후 상태 diff가 깨끗한지**가 더 강한 증거다.
+
 ## OWASP 매핑
 
 | OWASP ASI | 본 페이지 어디서 |
@@ -232,6 +284,7 @@ MAGE가 보여 주는 것은:
 - [OWASP 공식 — Top 10 for Agentic Applications 2026](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)
 - [Simon Willison — Design Patterns for Securing LLM Agents](https://simonwillison.net/2025/Jun/13/prompt-injection-design-patterns/)
 - [DeepMind CaMeL — arXiv](https://arxiv.org/abs/2503.18813)
+- [LITMUS: Benchmarking Behavioral Jailbreaks of LLM Agents in Real OS Environments (arXiv 2605.10779)](https://arxiv.org/abs/2605.10779)
 
 ## Chapter Clear 가이드
 

@@ -11,7 +11,7 @@ status: active
 
 # ai-native-mind Wiki Index
 
-> 전체 73개 페이지 | 최종 업데이트: 2026-05-17 (데일리 ingest: Agentic AI Survey / BeliefMem / MAGE — 2x3 좌표계 9/9 완성) — 대부분 페이지에 **쉽게 읽기** 블록 있음
+> 전체 73개 페이지 | 최종 업데이트: 2026-05-17 (데일리 ingest 2차: Human-Inspired Memory / FeatureBench / LITMUS — 같은 날짜 journal에 late follow-up 반영) — 대부분 페이지에 **쉽게 읽기** 블록 있음
 
 ## 쉽게 읽기
 
@@ -114,7 +114,7 @@ status: active
 - [[journal/2026-05-12]] — 화요 데일리: 모델 아래 세 레버 — MEP preparation(Zigler) + JRH judge reliability(RAND) + GROUNDING.md field-scope(Palmblad)
 - [[journal/2026-05-13]] — 수요 데일리: 출력 직전 게이트 (verification-gated) 3-도메인 — GSAR(text) + Verify Before You Fix(code) + Affordance Agent Harness(embodied)
 - [[journal/2026-05-14]] — 목요 데일리: Above-the-Model Layer — Zhang RL orchestration traces + Zhong/Zhu 11 책임 runtime substrate + WildClawBench long-horizon 천장(Opus 4.7 62.2%)
-- [[journal/2026-05-17]] — 일요 데일리: Agentic AI Survey(symbolic vs neural) + BeliefMem(probabilistic memory) + MAGE(shadow memory guardrail) — 2x3 좌표계 9/9 완성
+- [[journal/2026-05-17]] — 일요 데일리: Agentic AI Survey(symbolic vs neural) + BeliefMem(probabilistic memory) + MAGE(shadow memory guardrail) + 늦은 추가 3편(Human-Inspired Memory · FeatureBench · LITMUS)
 - [[journal/2026-05-15]] — 금요 데일리+주간 리뷰: ACDL(context 표기) + Constraint Decay(백엔드 −30점) + GroupMemBench(memory 46%) — 4일 *layer 사다리* 합치기
 
 ## Comparisons (8개)
