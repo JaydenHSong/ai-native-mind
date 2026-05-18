@@ -1,7 +1,7 @@
 ---
 title: "AI Memory Systems"
 category: concepts
-tags: [memory, agent, long-term, short-term, context, multi-party, group-memory, benchmark, probabilistic-memory, partial-observability, forgetting, consolidation]
+tags: [memory, agent, long-term, short-term, context, multi-party, group-memory, benchmark, probabilistic-memory, partial-observability, forgetting, consolidation, safety-memory, taxonomy]
 created: 2026-04-09
 updated: 2026-05-17
 sources:
@@ -10,11 +10,13 @@ sources:
   - "raw/articles/2026-05-15-groupmembench-multi-party-memory.md"
   - "raw/articles/2026-05-17-belief-memory-partial-observability.md"
   - "raw/articles/2026-05-17-human-inspired-memory-architecture.md"
+  - "raw/articles/2026-05-17-mage-shadow-memory-long-horizon-threats.md"
 related:
   - "[[concepts/context-engineering]]"
   - "[[concepts/vector-db-embeddings]]"
   - "[[concepts/harness-engineering]]"
   - "[[patterns/llm-wiki]]"
+  - "[[comparisons/agent-memory-taxonomy]]"
 status: active
 confidence: high
 ---
@@ -34,6 +36,19 @@ confidence: high
 ## 한줄 정의
 
 LLM의 컨텍스트 윈도우를 넘어선 **지속적 기억** 시스템. 2026년 AI 에이전트의 핵심 아키텍처 컴포넌트.
+
+## 빠른 분류 — memory를 한 덩어리로 부르지 않기
+
+최근 위키에 들어온 논문들을 합치면, 이제 memory는 최소 네 질문으로 나뉜다.
+
+| 질문 | 대표 개념 | 주로 보는 페이지 |
+|---|---|---|
+| 어디에 저장하나? | short-term / episodic / semantic / procedural / layered memory | 이 페이지 본문 |
+| 무엇을 얼마나 믿나? | **belief memory** | 이 페이지의 BeliefMem 섹션 |
+| 언제 압축·망각·재강화하나? | **lifecycle memory** | 이 페이지의 Human-Inspired Memory 섹션 |
+| 무엇을 안 잊어야 위험을 막나? | **safety memory** | [[concepts/agent-supply-chain-security]] 의 MAGE 섹션 |
+
+→ 자세한 비교표는 [[comparisons/agent-memory-taxonomy]] 에 정리했다. 이 페이지는 메모리의 **기본 구조와 memory 내부 변화**를, 비교 페이지는 **역할 분화**를 담당한다.
 
 ## 핵심 내용
 

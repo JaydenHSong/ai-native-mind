@@ -20,6 +20,26 @@ status: active
 - 진행 가이드: [[wiki/overview|Overview]]
 - 전체 도감: [[wiki/index|Index]]
 
+## [2026-05-17] weekly-review-followup | memory taxonomy로 중복 압축 + 주간 압축 메모 반영
+
+- **Review scope**: 최근 7일(2026-05-10 ~ 2026-05-17, America/Los_Angeles 기준) 동안 추가·수정된 `raw/`, `wiki/`, `journal/`을 다시 훑어 이번 주 지식이 어디서 겹치고 어디서 실제로 분화됐는지 점검.
+- **Compression verdict**: 삭제할 중복 페이지는 없고, 가장 큰 겹침은 **memory 관련 내용이 `ai-memory-systems` / `agent-supply-chain-security` / `journal/2026-05-17` 에 분산된 상태**였음. 삭제 대신 **상위 비교 레이어**를 추가해 구조적으로 압축.
+- **Pages created**:
+  - `comparisons/agent-memory-taxonomy.md` — **task/productivity vs belief vs lifecycle vs safety memory** 분류. ZenBrain·GroupMemBench·BeliefMem·Human-Inspired Memory·MAGE를 한 표에서 연결.
+- **Pages updated**:
+  - `concepts/ai-memory-systems.md` — 상단에 "빠른 분류" 추가, safety memory까지 포함한 네 질문으로 memory 구조 재정리, 새 비교 페이지 링크 연결.
+  - `concepts/agent-supply-chain-security.md` — MAGE/LITMUS 섹션에 taxonomy cross-link 추가, 이 페이지가 **safety memory** 담당임을 명시.
+  - `journal/2026-05-17.md` — §4 "주간 압축 메모" 추가. 이번 주를 memory 분화 / eval 분화 / worldview 선명화 3축으로 재요약.
+- **Pages updated (meta)**:
+  - `index.md` — total 73→74, comparisons 8→9, 새 비교 페이지 등록, 최종 업데이트 문구 갱신.
+  - `overview.md` — 최근 작업 항목에 weekly review follow-up 반영, 현재 상태 count 갱신.
+  - `log.md` — 이 항목.
+- **Preservation rule 준수**:
+  - raw source 경로는 기존 페이지와 새 비교 페이지 모두에 유지.
+  - BeliefMem / Human-Inspired Memory / MAGE 세부 설명은 기존 본문에 그대로 남김.
+  - MAGE는 security 페이지에 남겨 **context drift** 를 막고, taxonomy는 비교만 담당하도록 분리.
+- **Notes**: 이번 주 진짜 압축 포인트는 "새 논문이 많다"가 아니라 **memory라는 한 단어가 네 서브시스템으로 갈라졌다**는 점. 이 정리 덕분에 다음 주부터는 memory 관련 새 소스를 넣을 때 *representation / lifecycle / safety / productivity* 중 어디에 속하는지 먼저 분류할 수 있다.
+
 ## [2026-05-17] ingest-followup | Human-Inspired Memory(consolidation/forgetting) + FeatureBench(feature-level coding eval) + LITMUS(behavior jailbreak) — 일요 데일리 2차, 자동 인제스트
 
 - **Sources** (raw 3편 추가):

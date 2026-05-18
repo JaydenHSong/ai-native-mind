@@ -18,6 +18,7 @@ related:
   - "[[concepts/mcp]]"
   - "[[concepts/a2a-protocol]]"
   - "[[concepts/harness-engineering]]"
+  - "[[comparisons/agent-memory-taxonomy]]"
   - "[[tools/managed-agents]]"
   - "[[tools/deep-agents-deploy]]"
 status: active
@@ -237,6 +238,8 @@ LITMUS가 붙인 가장 중요한 이름은 **Execution Hallucination (EH)** 이
 - **LITMUS**: 그런 threat가 실제로 어떤 형태로 나타나며, 무엇을 측정해야 하는지 보여 준다
 
 MAGE가 처방이라면 LITMUS는 **측정 장비**에 가깝다. 둘을 같이 읽어야 "어떤 기억을 남길지"와 "무엇으로 검증할지"가 한 그림이 된다.
+
+또한 최근 위키에서는 이 둘을 [[comparisons/agent-memory-taxonomy]] 에서 **task / belief / lifecycle / safety memory** 중 어디에 놓을지 상위 분류로 압축했다. 이 페이지는 그중 **safety memory** 를 담당한다.
 
 ### 1인 개발자 ROI 3개
 

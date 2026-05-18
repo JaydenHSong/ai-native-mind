@@ -29,10 +29,15 @@ status: active
 
 ## 현재 상태
 
-- **총 페이지**: 73개
-- **카테고리**: concepts(20), tools(9), patterns(20), journal(12), comparisons(8), meta(4)
+- **총 페이지**: 74개
+- **카테고리**: concepts(20), tools(9), patterns(20), journal(12), comparisons(9), meta(4)
 - **시작일**: 2026-04-06
-- **최근 작업 (2026-05-17 데일리 ingest 2차)**:
+- **최근 작업 (2026-05-17 주간 리뷰 후속 정리)**:
+  - 새 비교 페이지: [[comparisons/agent-memory-taxonomy]]
+  - 기존 페이지 연결 보강: [[concepts/ai-memory-systems]] · [[concepts/agent-supply-chain-security]]
+  - 같은 날짜 일지 [[journal/2026-05-17]] 에 주간 압축 메모 추가
+  - 핵심 합류: memory를 **task / belief / lifecycle / safety** 네 층으로 다시 부르게 되어, 최근 중복이 삭제 없이 구조적으로 압축됨
+- **직전 작업 (2026-05-17 데일리 ingest 2차)**:
   - raw 3편: Human-Inspired Memory · FeatureBench · LITMUS
   - 기존 페이지 보강 3개: [[concepts/ai-memory-systems]] · [[concepts/llm-evaluation]] · [[concepts/agent-supply-chain-security]]
   - 같은 날짜 일지 [[journal/2026-05-17]] 에 late follow-up 섹션 추가

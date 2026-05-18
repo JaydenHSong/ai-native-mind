@@ -4,14 +4,14 @@ category: meta
 tags: [index, catalog]
 created: 2026-04-06
 updated: 2026-05-17
-total_pages: 73
+total_pages: 74
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 전체 73개 페이지 | 최종 업데이트: 2026-05-17 (데일리 ingest 2차: Human-Inspired Memory / FeatureBench / LITMUS — 같은 날짜 journal에 late follow-up 반영) — 대부분 페이지에 **쉽게 읽기** 블록 있음
+> 전체 74개 페이지 | 최종 업데이트: 2026-05-17 (주간 리뷰 후속: memory taxonomy 비교 페이지 추가, 2026-05-17 journal에 압축 메모 반영) — 대부분 페이지에 **쉽게 읽기** 블록 있음
 
 ## 쉽게 읽기
 
@@ -117,7 +117,7 @@ status: active
 - [[journal/2026-05-17]] — 일요 데일리: Agentic AI Survey(symbolic vs neural) + BeliefMem(probabilistic memory) + MAGE(shadow memory guardrail) + 늦은 추가 3편(Human-Inspired Memory · FeatureBench · LITMUS)
 - [[journal/2026-05-15]] — 금요 데일리+주간 리뷰: ACDL(context 표기) + Constraint Decay(백엔드 −30점) + GroupMemBench(memory 46%) — 4일 *layer 사다리* 합치기
 
-## Comparisons (8개)
+## Comparisons (9개)
 
 - [[comparisons/rag-vs-llm-wiki]] — RAG와 LLM-Wiki 방식 비교: 재발견 vs 축적
 - [[comparisons/claude-code-plugins]] — Claude Code 플러그인 4종 비교 + 조합 전략
@@ -127,6 +127,7 @@ status: active
 - [[comparisons/managed-vs-deep-agents]] — Claude Managed Agents vs LangChain Deep Agents Deploy: lock-in vs 자유도
 - [[comparisons/agent-eval-frameworks]] — DeepEval/LangSmith/Braintrust/Langfuse/Inspect AI/RAGAS 6대장
 - [[comparisons/agent-platforms-for-solo-dev]] — 1인 개발자 관점 4종 비교 (Managed/Deep Agents/Agents SDK/LangGraph 직접)
+- [[comparisons/agent-memory-taxonomy]] — task/productivity vs belief vs lifecycle vs safety memory 분류
 
 ## Meta
 
