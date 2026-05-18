@@ -1,10 +1,15 @@
 # bkit internal state (tool-generated, not for sharing)
 .bkit/
 
-# Obsidian local/workspace state (keep shared config)
+# Obsidian local/workspace state (keep shared config only)
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
 .obsidian/graph.json
+.obsidian/hotkeys.json
+.obsidian/plugins/
+
+# Claude/agent local state
+.claude/
 
 # Obsidian scratch canvas (default "Untitled" names — do not commit)
 무제.canvas

@@ -76,6 +76,24 @@ confidence: high | medium | low
 - `confidence`: 출처 1개 = low, 교차검증 = medium, 다수 출처 일치 = high
 - `status`: 초안 = draft, 검증됨 = active, 오래됨 = archived
 
+#### raw/ 파일 frontmatter (별도 표준)
+
+`raw/articles/` 파일은 위키 페이지가 아닌 **원본 캡처**이므로 별도 키 셋을 쓴다:
+
+```yaml
+---
+title: "원본 제목"
+source_url: "https://..."
+author: "저자 또는 발행처"
+published: YYYY-MM-DD          # 원문 게시일 (불명확하면 'YYYY-MM (approx)' 허용)
+collected: YYYY-MM-DD          # 위키에 수집한 날
+tags: [tag1, tag2]
+status: ingested               # 또는 captured (정독 전), reviewed (정독 완료)
+---
+```
+
+**규칙**: 새 raw 파일을 만들기 전에 **같은 폴더의 가장 최근 파일** 한 개를 열어 frontmatter 키 셋과 비교한다. 키가 다르면 기존 패턴을 따른다 (필드 이름 변경·추가·삭제 금지). 새 키가 정말 필요하면 이 CLAUDE.md를 먼저 업데이트한 뒤 반영한다.
+
 ### 파일 명명 규칙
 
 | 대상 | 규칙 | 예시 |
@@ -95,6 +113,43 @@ confidence: high | medium | low
 - 소스 참조: `[출처](raw/articles/파일명.md)`
 
 **Obsidian과 실제 경로 (`wiki/…`)**: 위키 파일은 `wiki/concepts/` 등 하위에 있지만, 링크는 `[[concepts/페이지명]]` 형태를 유지한다. 볼트 루트에 **심볼릭 링크** `concepts` → `wiki/concepts`, `patterns` → `wiki/patterns`, `tools` → `wiki/tools`, `comparisons` → `wiki/comparisons`, `journal` → `wiki/journal` 를 두어 Obsidian이 `[[concepts/…]]` 를 실제 파일로 해석하게 한다. (Windows에서는 개발자 모드 등으로 symlink 생성이 필요할 수 있다.)
+
+### 위키 포함/제외 규칙
+
+#### 위키에 들어가는 것
+
+- `wiki/**/*.md` — 정제된 지식 페이지, 일지, 메타 문서
+- `raw/**/*.md` — 원본 캡처·논문·노트 (읽기전용 source layer)
+- `templates/*.md` — 새 페이지 생성 템플릿
+- `CLAUDE.md` — 위키 운영 규칙 자체
+
+#### 위키에 들어가지 않는 것
+
+- `examples/` — 코드 스케치, widget, JSON trace 예시. **위키 본문이 아니라 보조 artifact**다.
+- `.obsidian/` — 볼트 앱 설정. 위키 지식이 아니라 뷰어/에디터 설정이다.
+- `.claude/`, `.bkit/` — 에이전트/도구 로컬 상태
+- `raw/assets/`의 바이너리 첨부 — source supporting asset이지 위키 본문이 아니다
+- `.git/`, OS 잡파일 (`.DS_Store` 등)
+
+#### Git에 올리는 것
+
+- 지식 본체: `wiki/`, `raw/`, `templates/`, `CLAUDE.md`
+- 재현 가능한 보조 artifact: `examples/`, `SECURITY.md`, `.gitleaks.toml`, `.github/` 등 저장소 운영 파일
+- 공유 가치가 있는 Obsidian 설정만 제한적으로 허용: `app.json`, `appearance.json`, `core-plugins.json`, `community-plugins.json`
+
+#### Git에 올리지 않는 것
+
+- 개인/로컬 상태: `.claude/`, `.bkit/`, `.obsidian/workspace.json`, `.obsidian/graph.json`, `.obsidian/workspace-mobile.json`, `.obsidian/hotkeys.json`
+- 설치형 플러그인 산출물: `.obsidian/plugins/`
+- 비밀값/환경파일: `.env*`, 키·인증서
+- OS/editor 잡파일: `.DS_Store`, `Thumbs.db`, swap, backup
+
+#### 운영 원칙
+
+- `wiki/`에 없는 파일은 **위키 지식으로 index/log에 등록하지 않는다**.
+- `examples/`는 위키에서 링크할 수는 있지만 페이지 수(total pages)에 포함하지 않는다.
+- 새 파일을 만들 때는 먼저 질문한다: **(1) 지식 본문인가? (2) 원본 source인가? (3) 실행 예시 artifact인가? (4) 로컬 상태인가?** 카테고리가 불명확하면 `raw/`나 `wiki/`에 밀어 넣지 말고 사용자 확인 또는 별도 보조 폴더를 만든다.
+- Git 기준은 "다른 기기/다른 시점에 다시 받아도 지식 또는 재현 가치가 있는가"이다. 개인 UI 상태·캐시·플러그인 설치물은 제외한다.
 
 ### 언어 규칙
 
@@ -162,9 +217,9 @@ confidence: high | medium | low
 
 ## Current State
 
-- **총 페이지 수**: 54 (콘텐츠 50 + meta 4)
-- **카테고리 현황**: concepts(18), tools(7), patterns(19), journal(1), comparisons(5), meta(4)
-- **소스 수**: 34개 (raw 노트 + papers; `2026-04-13-harness-casebook-anthropic-academy.md` 포함)
-- **최근 활동**: 2026-04-13 **Harness 케이스북**(`patterns/harness-engineering-casebook`) — 도메인 30케이스 + Anthropic Academy 코스 맵·4주 트랙. 이전: Chapter Clear 월드맵·`campaign-map`, 2026-04-11 커리큘럼 프랙티스 6편·쉽게 읽기 패스·OWASP×TS·WDK·OTel 보강.
-- **다음 할 일**: Anthropic 코스 이수 노트를 `journal/`에 남기기, 케이스북에서 본인 프로젝트 행만 골라 Guides/Sensors 적용
+- **총 페이지 수**: 72 (콘텐츠 68 + meta 4)
+- **카테고리 현황**: concepts(18), tools(9), patterns(19), journal(11), comparisons(8), meta(4) — *주: 일부 수치는 index.md 카탈로그가 ground truth*
+- **소스 수**: 46개 (raw 노트 + papers; 2026-05-15 추가분 3편 포함)
+- **최근 활동**: 2026-05-15 **금요 데일리 + 주간 리뷰** — arXiv 2605.01920 *Peleg Pelc · Kaminka · Goldberg* "A Language for Describing Agentic LLM Contexts" (2026-05-03, **CAIS '26** 채택) **ACDL** 4 구성(role-message sequence / dynamic content / time-indexed reference / conditional·iterative), 손그림과 정형 코드 양매체, <http://www.acdlang.org> + arXiv 2605.06445 *Dente · Satriani · Papotti* (EURECOM) "Constraint Decay: The Fragility of LLM Agents in Backend Code Generation" (2026-05-07) **100 task × 8 framework × unified API contract**, capable config **−30 points** baseline→fully specified, 약한 config ≈ 0 수렴, **Flask 강함 / FastAPI·Django 약함**, root cause 1순위 *data-layer defect* (ORM/query) + arXiv 2605.14498 *Yang et al.* "GroupMemBench: Multi-Party Memory" (2026-05) 최강 시스템 **46.0%**, knowledge update **27.1%**, term ambiguity **37.7%**, **BM25가 대부분의 agent memory system 매치 또는 능가**, 3 unmeasured(group dynamics / speaker-grounded belief / audience-adapted language), 6 question category. **주간 리뷰**: 4일 연속(05-12/13/14/15) 같은 한 문장(*"model alone is not enough — engineer the layer above"*) 위에 layer가 매일 한 칸씩 위로 — 12 모델 *아래* / 13 출력 *직전* / 14 모델 *위* / 15 layer를 *적고/재고/재단*. 2x3 좌표계 (descriptive/prescriptive/tooling × 학습/정형화/측정) **6/9 채움**(한 주 시작 1칸 → 끝 6칸), 남은 3칸: (descriptive,학습) / (prescriptive,학습) / (prescriptive,측정). **압축 작업 4건 검토 결과 모두 *그대로 유지*** — 위키 본문·링크 한 줄도 삭제되지 않음. 이전: 2026-05-14 Above-the-Model Layer(Zhang/Zhong-Zhu/WildClawBench), 2026-05-13 출력 직전 게이트(GSAR/VBYF/A-Harness), 2026-05-12 모델 아래 세 레버(MEP·JRH·GROUNDING.md), 2026-05-06 PM Wei/CAAF/Meta-Harness, 2026-05-06 AM 자동 하네스 진화 + Anthropic Trends, 2026-05-03 MS Agent Framework 1.0·Datadog·ZenBrain.
+- **다음 할 일**: Anthropic 코스 이수 노트를 `journal/`에 남기기, 케이스북에서 본인 프로젝트 행만 골라 Guides/Sensors 적용. 다음 주 데일리 후보: 월요(05-18) (prescriptive, 측정) 칸 충당 MAGE arXiv 2605.03228 또는 Belief Memory 2605.05583 / 화요(05-19) Agentic AI Survey 2510.25445로 (descriptive, 학습) 충당 / 수요(05-20) Zhong/Zhu 11 책임 본문 정독 후 [[patterns/harness-engineering-casebook]] 30 case를 11 책임 column으로 lint / 목요(05-21) Zhang JSON schema를 `examples/`에 1 trace 1 JSON mini-sketch / 금요(05-22) weekly review — 이번 주 prediction(framework AI-friendliness guide) 검증 + 어제 prediction(harness-as-variable in eval 6대장) 검증.
 - **보안**: `SECURITY.md`, `.gitleaks.toml`, GitHub Actions(Gitleaks·dependency review), Dependabot, 강화된 `.gitignore` — 비밀·키·`.env` 실값은 커밋 금지.
