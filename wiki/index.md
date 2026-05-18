@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-05-15
-total_pages: 72
+updated: 2026-05-17
+total_pages: 73
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 전체 72개 페이지 | 최종 업데이트: 2026-05-15 (금요 데일리 + 주간 리뷰: ACDL context 표기 / Constraint Decay 백엔드 코드 / GroupMemBench multi-party memory — 한 주 *layer 사다리* 합치기) — 대부분 페이지에 **쉽게 읽기** 블록 있음
+> 전체 73개 페이지 | 최종 업데이트: 2026-05-17 (데일리 ingest: Agentic AI Survey / BeliefMem / MAGE — 2x3 좌표계 9/9 완성) — 대부분 페이지에 **쉽게 읽기** 블록 있음
 
 ## 쉽게 읽기
 
@@ -26,7 +26,7 @@ status: active
 - **실전(Chapter 3~5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **엔드게임(Chapter 6~7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (18개)
+## Concepts (20개)
 
 ### 성장 맵 & 철학
 - [[concepts/ai-native-programmer]] — AI를 팀원으로 활용하여 1인이 팀 규모 결과를 내는 개발자, 성장 맵
@@ -72,7 +72,7 @@ status: active
 - [[tools/managed-agents]] — Anthropic의 클라우드 호스팅 에이전트 인프라 (2026-04-08 public beta)
 - [[tools/deep-agents-deploy]] — LangChain 오픈 소스 에이전트 하네스 + 배포 도구 (모델 무관, MIT)
 
-## Patterns (19개)
+## Patterns (20개)
 
 ### 커리큘럼·실습 (읽기 순서 2→6)
 - [[patterns/preventing-context-rot]] — Context Rot·3계층 메모리 (커리큘럼 2)
@@ -102,7 +102,7 @@ status: active
 - [[patterns/agent-mvp-stack-2026]] — 1인 MVP 스택 5대 영역 × 4 단계 + 의사결정 트리 (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — Vibe Coding의 7대 안티패턴과 회피법
 
-## Journal (11개)
+## Journal (12개)
 
 - [[journal/2026-04-12]] — Fowler Humans/Agents·on the loop·OWASP×TS 정리 일지
 - [[journal/2026-05-01]] — 오전 자동 인제스트 (스택 stratification·OTel·Cisco) + 금요 회고
@@ -114,6 +114,7 @@ status: active
 - [[journal/2026-05-12]] — 화요 데일리: 모델 아래 세 레버 — MEP preparation(Zigler) + JRH judge reliability(RAND) + GROUNDING.md field-scope(Palmblad)
 - [[journal/2026-05-13]] — 수요 데일리: 출력 직전 게이트 (verification-gated) 3-도메인 — GSAR(text) + Verify Before You Fix(code) + Affordance Agent Harness(embodied)
 - [[journal/2026-05-14]] — 목요 데일리: Above-the-Model Layer — Zhang RL orchestration traces + Zhong/Zhu 11 책임 runtime substrate + WildClawBench long-horizon 천장(Opus 4.7 62.2%)
+- [[journal/2026-05-17]] — 일요 데일리: Agentic AI Survey(symbolic vs neural) + BeliefMem(probabilistic memory) + MAGE(shadow memory guardrail) — 2x3 좌표계 9/9 완성
 - [[journal/2026-05-15]] — 금요 데일리+주간 리뷰: ACDL(context 표기) + Constraint Decay(백엔드 −30점) + GroupMemBench(memory 46%) — 4일 *layer 사다리* 합치기
 
 ## Comparisons (8개)

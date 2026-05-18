@@ -1,13 +1,14 @@
 ---
 title: "AI Memory Systems"
 category: concepts
-tags: [memory, agent, long-term, short-term, context, multi-party, group-memory, benchmark]
+tags: [memory, agent, long-term, short-term, context, multi-party, group-memory, benchmark, probabilistic-memory, partial-observability]
 created: 2026-04-09
-updated: 2026-05-15
+updated: 2026-05-17
 sources:
   - "raw/notes/2026-04-09-ai-memory-systems.md"
   - "raw/articles/2026-05-03-zenbrain-7-layer-memory.md"
   - "raw/articles/2026-05-15-groupmembench-multi-party-memory.md"
+  - "raw/articles/2026-05-17-belief-memory-partial-observability.md"
 related:
   - "[[concepts/context-engineering]]"
   - "[[concepts/vector-db-embeddings]]"
@@ -172,6 +173,66 @@ Context Engineering 5요소 중 **Memory/State** 계층. 우리 위키가 이미
 **한계**: 6명 저자 중 Yang 외 5명, "strongest memory system"의 구체 이름, 6 category별 score breakdown 모두 본문 정독 후 채우기. 합성 데이터 기반이라 실 deployment의 noise 분포와 다를 수 있음.
 
 → 2x3 좌표계의 (tooling, 측정) 칸에 WildClawBench(2026-05-14, 60 production-like task)와 *직교 도메인*(memory) 측정으로 추가됨. 같은 칸에 점이 둘 — 측정 표면 다양화의 신호.
+
+## 2026-05-17 보강 — BeliefMem: Partial Observability에서 memory를 belief state로 (arXiv 2605.05583)
+
+[Liao et al.](https://arxiv.org/abs/2605.05583) (2026-05-07)은 기존 agent memory가 관측 하나마다 **single deterministic conclusion**을 저장하면서 자기 오답을 장기 기억으로 굳혀 버린다고 지적한다. 예: 일시적 장애만 보고 "API X failed"를 메모리에 박아 두면, agent는 그 결론을 전제로 계속 행동하고 그 결론을 강화한다.
+
+### 핵심 전환 — memory를 fact cache가 아니라 belief state로
+
+| 기존 deterministic memory | BeliefMem |
+|---|---|
+| observation → conclusion 1개 | observation → candidate conclusion 여러 개 |
+| uncertainty 폐기 | uncertainty 보존 |
+| 나중에 수정 어려움 | 새 증거로 confidence 갱신 |
+| self-reinforcing error 위험 | 대안 가설을 계속 가시화 |
+
+구현 핵심은 단순하지만 함의가 크다:
+
+- **candidate conclusions**를 separate entry로 저장
+- 각 entry에 **probability** 부여
+- 새 관측이 들어올 때 **Noisy-OR** rule로 확률 갱신
+- retrieval 시에도 모든 후보와 확률을 함께 surface
+
+→ memory가 "무엇이 사실인가"를 단정하지 않고, "지금 무엇을 얼마나 믿는가"를 표현한다.
+
+### 왜 GroupMemBench 다음에 바로 중요해지는가
+
+2026-05-15의 [[concepts/ai-memory-systems#2026-05-15 보강 — GroupMemBench: Multi-Party Memory 측정 (arXiv 2605.14498)|GroupMemBench]]가 말한 문제는 **group context에서 current memory ingestion이 구조·어휘 신호를 지워 버린다**는 것이었다. BeliefMem은 다른 각도지만 같은 뿌리를 찌른다 — **메모리가 관측의 불확실성을 너무 일찍 압축**한다.
+
+- GroupMemBench = multi-party 상황에서 *무엇이 지워지는가*를 측정
+- BeliefMem = partial observability 상황에서 *어떻게 저장해야 덜 지우는가*를 처방
+
+즉 하나는 **measurement**, 다른 하나는 **prescription**이다.
+
+### 벤치마크 결과 (abstract 수준)
+
+- **LoCoMo / ALFWorld** 에서 평가
+- 제한된 데이터 조건에서도 **best average performance**
+- well-known baseline 대비 **remarkable outperformance**
+
+세부 표는 본문 정독이 필요하지만, 위 숫자보다 더 중요한 메시지는 이쪽이다: **partial observability 환경에서 deterministic memory는 구조적으로 불리하다**.
+
+### ZenBrain과의 짝
+
+ZenBrain(2026-05-03 보강)이 memory를 **7 계층 시스템**으로 확장했다면, BeliefMem은 그 계층 안의 representation rule을 바꾼다.
+
+- ZenBrain: forgetting / self / predictive memory까지 포함한 **architecture**
+- BeliefMem: observation을 단일 사실이 아닌 확률적 belief로 두는 **update rule**
+
+→ 앞으로 memory 설계 질문은 적어도 세 갈래가 된다:
+
+1. **어디에 저장하나** (layer)
+2. **무엇을 저장하나** (content)
+3. **얼마나 믿나** (belief / uncertainty)
+
+### 1인 개발자 ROI 3개
+
+1. 디버깅 로그·운영 메모를 요약할 때 "결론 1개"만 적지 말고, 최소한 **대안 가설 2개와 confidence**를 남기면 cognitive lock-in을 줄일 수 있다.
+2. agent memory 프레임워크를 볼 때 "vector DB냐 graph냐"보다 먼저 **uncertainty를 표현하는가**를 물어야 한다.
+3. 본 위키의 journal/log에서 후속 검증 전 가설은 단정형 서술보다 "약하게 살아 있음" 같은 confidence 언어를 유지하는 편이 BeliefMem 철학에 맞다.
+
+→ 2x3 좌표계의 **(prescriptive, 학습)** 칸을 채운다. Survey(2026-05-17)가 지형도를 주었다면, BeliefMem은 memory 내부 표현의 방향을 준다.
 
 ## 참고 소스
 

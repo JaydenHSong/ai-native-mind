@@ -1,13 +1,14 @@
 ---
 title: "Agentic Engineering"
 category: concepts
-tags: [agentic-engineering, vibe-coding, ai-development, karpathy]
+tags: [agentic-engineering, vibe-coding, ai-development, karpathy, symbolic-ai, neural-ai, hybrid-architecture, survey]
 created: 2026-04-09
-updated: 2026-05-01
+updated: 2026-05-17
 sources:
   - "raw/notes/2026-04-09-engineering-paradigms-research.md"
   - "raw/notes/2026-04-11-orchestration-harness-server-supplement.md"
   - "raw/articles/2026-05-01-agentic-engineering-cisco-langchain.md"
+  - "raw/articles/2026-05-17-agentic-ai-survey-dual-paradigm.md"
 related:
   - "[[concepts/harness-engineering]]"
   - "[[concepts/ai-orchestration]]"
@@ -86,6 +87,74 @@ Worker 간 통신은 **A2A 프로토콜**, 비지원 에이전트(IDE 코딩 에
 - **새 병목**: PR 리뷰 프로세스 자체(HITL 게이트)
 
 시사점: 진짜 병목은 코드 생성 속도가 아니라 **조정 비용·크로스팀 지연·컨텍스트 공유 부족**이다. Codex/Claude 같은 코딩 에이전트는 **Worker 안에 임베드되는 컴포넌트**이지 대체재가 아니라는 점도 명시. 본 위키의 [[patterns/agent-planning-to-implementation]] 4단계와 거의 일대일 매핑되며, 차이는 **Leader Agent 층(공유 프롬프트·툴 게이트웨이·장기 메모리)** 의 명시적 분리.
+
+## 2026-05-17 보강 — Agentic AI Survey: Symbolic vs Neural 두 계보로 다시 보기
+
+[Ali & Dornaika](https://arxiv.org/abs/2510.25445) (2025-10-29)는 Agentic AI를 한 덩어리 최신 유행어처럼 다루는 관행을 비판한다. 저자들이 붙이는 이름은 **conceptual retrofitting** — modern neural system과 오래된 symbolic system을 같은 "agent"라는 단어 아래 무비판적으로 섞어 버리는 것.
+
+### dual-paradigm framework
+
+| 계보 | 핵심 메커니즘 | 대표 냄새 |
+|---|---|---|
+| **Symbolic / Classical** | algorithmic planning, persistent state | 명시적 상태·규칙·고전 planning |
+| **Neural / Generative** | stochastic generation, prompt-driven orchestration | LLM 생성·tool use·prompt/harness 중심 |
+
+이 구분은 "누가 더 최신인가"가 아니라 **무슨 제약 아래서 더 자연스러운가**의 질문이다.
+
+### 우리 위키가 지금까지 강하게 다룬 쪽
+
+이 페이지와 주변 문서([[concepts/harness-engineering]], [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]])는 대부분 **Neural / Generative lineage**를 다뤄 왔다.
+
+- Worker / Leader control plane
+- prompt-driven orchestration
+- harness / verifier / evaluator
+- multi-agent delegation
+
+Survey가 주는 새 시각은 이것이다: 위 개념들은 "agent 일반론"이 아니라 **특정 lineage의 운영 기술**이다.
+
+### PRISMA 90-study가 주는 전략적 이득
+
+- **2018–2025** 문헌 90편 체계적 리뷰
+- 분석 축 3개:
+  1. architecture principle
+  2. healthcare / finance / robotics 적용
+  3. ethics / governance challenge
+
+abstract 결론 요약:
+
+- **healthcare** 같은 safety-critical domain → symbolic 쪽이 상대적으로 우세
+- **finance** 같은 adaptive/data-rich domain → neural 쪽이 상대적으로 우세
+- 장기 방향 → **hybrid neuro-symbolic** 통합 필요
+
+→ 즉 agentic engineering의 질문은 "에이전트를 쓸까 말까"가 아니라, **어느 계보를 어느 비율로 섞을까**가 된다.
+
+### 이 페이지 정의와의 관계
+
+기존 정의는 Agentic Engineering을 "구조화된 인간 감독 하에 작동하는 AI 개발 방법론"으로 잡았다. Survey를 붙이면 이 정의가 한 단계 선명해진다:
+
+- 이 페이지가 다루는 것은 **Neural / Generative Agentic Engineering** 이다.
+- 여기서 human oversight, harness, verifier는 stochastic generation을 production에 끌고 오기 위한 대응 장치다.
+- 반대로 symbolic 계열은 애초에 planning/state가 명시적이므로, 같은 문제를 다른 방식으로 푼다.
+
+### 왜 hybrid가 중요해지나
+
+Survey의 핵심 미래 주장은 **한 paradigm의 승리**가 아니라 **intentional integration**이다.
+
+우리 위키 문맥으로 번역하면:
+
+- **Neural 층**: 생성, 검색, tool-use, 오케스트레이션
+- **Symbolic 층**: policy, constraints, state machine, deterministic verifier
+- **Harness 층**: 둘을 붙이는 runtime substrate
+
+→ [[concepts/harness-engineering]]가 중요한 이유가 더 강해진다. Harness는 단순 보조 장치가 아니라 **neural generation과 symbolic constraint를 접착하는 층**이기 때문이다.
+
+### 1인 개발자 ROI 3개
+
+1. agentic architecture를 볼 때 "LangGraph냐 Managed Agents냐" 전에 **이 시스템이 neural-first인지 symbolic-first인지**를 먼저 물으면 비교가 쉬워진다.
+2. safety-critical workflow에는 자유 생성만 늘리지 말고 **symbolic state / rule / verifier 층**을 의도적으로 올려야 한다.
+3. 앞으로의 좋은 설계는 "LLM을 더 많이 부르기"가 아니라 **어디를 생성적으로 두고 어디를 결정적으로 잠글지**를 구분하는 설계가 된다.
+
+→ 2x3 좌표계의 **(descriptive, 학습)** 칸을 채운다. 지금 landscape를 배우는 지도 역할.
 
 ## 왜 중요한가
 

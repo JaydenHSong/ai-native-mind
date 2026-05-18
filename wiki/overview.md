@@ -29,24 +29,24 @@ status: active
 
 ## 현재 상태
 
-- **총 페이지**: 72개
-- **카테고리**: concepts(20), tools(9), patterns(20), journal(11), comparisons(8), meta(4)
+- **총 페이지**: 73개
+- **카테고리**: concepts(20), tools(9), patterns(20), journal(12), comparisons(8), meta(4)
 - **시작일**: 2026-04-06
-- **최근 작업 (2026-05-17 운영 정리)**:
+- **최근 작업 (2026-05-17 데일리 ingest)**:
+  - raw 3편: Agentic AI Survey · BeliefMem · MAGE
+  - 기존 페이지 보강 3개: [[concepts/agentic-engineering]] · [[concepts/ai-memory-systems]] · [[concepts/agent-supply-chain-security]]
+  - 새 일지: [[journal/2026-05-17]]
+  - 핵심 합류: 2026-05-14에 드러난 2x3 좌표계의 남은 3칸((descriptive, 학습) / (prescriptive, 학습) / (prescriptive, 측정))을 모두 채워 **9/9 완성**
+- **직전 작업 (2026-05-17 운영 정리)**:
   - 금요 리뷰 캐치업 확인: 실질 주간 리뷰는 [[journal/2026-05-15]]에 이미 정리되어 있음을 재확인
   - `CLAUDE.md`에 위키 포함/제외 규칙 추가
   - `.gitignore` 강화: `.claude/`, `.obsidian/plugins/`, `.obsidian/hotkeys.json` 제외
   - Dataview 플러그인 설치물은 Git 추적 대상에서 제거하여 로컬 상태와 저장소 산출물 분리
-- **직전 작업 (2026-05-15 금요 데일리 + 주간 리뷰)**:
-  - raw 3편: ACDL · Constraint Decay · GroupMemBench
-  - 기존 페이지 보강 3개: [[concepts/context-engineering]] · [[patterns/ai-code-review]] · [[concepts/ai-memory-systems]]
-  - 새 일지: [[journal/2026-05-15]]
-  - 핵심 합류: "model alone is not enough — engineer the layer above"를 4일 layer 사다리로 합치고, 링크/근거 무삭제 원칙으로 중복 후보를 검토
 - **운영 경계**:
   - 위키 본체: `wiki/`, `raw/`, `templates/`, `CLAUDE.md`
   - 보조 artifact: `examples/` (Git 추적 가능, 단 위키 페이지 수에는 미포함)
   - 로컬 상태: `.obsidian/` 일부, `.claude/`, `.bkit/` (Git 제외)
-- **소스**: raw 노트·papers 누적, 2026-05-15까지 인제스트 반영
+- **소스**: raw 노트·papers 누적, 2026-05-17까지 인제스트 반영
 
 ## 캠페인 모드: Chapter Clear 로드맵
 

@@ -20,6 +20,21 @@ status: active
 - 진행 가이드: [[wiki/overview|Overview]]
 - 전체 도감: [[wiki/index|Index]]
 
+## [2026-05-17] ingest | Agentic AI Survey(symbolic vs neural) + BeliefMem(probabilistic memory) + MAGE(shadow memory guardrail) — 일요 데일리, 자동 인제스트
+
+- **Sources** (raw 3편 추가):
+  - `raw/articles/2026-05-17-agentic-ai-survey-dual-paradigm.md` — Mohamad Abou Ali · Fadi Dornaika, "Agentic AI: A Comprehensive Survey of Architectures, Applications, and Future Directions" (arXiv:2510.25445, 2025-10-29). **PRISMA 90-study** review (2018–2025). dual-paradigm framework: **Symbolic/Classical**(algorithmic planning, persistent state) vs **Neural/Generative**(stochastic generation, prompt-driven orchestration). healthcare는 symbolic 쪽, finance는 neural 쪽이 더 자연스러운 경향. research gap: **symbolic governance 부족 + hybrid neuro-symbolic 필요**. → 2x3 좌표계 **(descriptive, 학습)** 칸 충당.
+  - `raw/articles/2026-05-17-belief-memory-partial-observability.md` — Junfeng Liao · Qizhou Wang · Jianing Zhu · Bo Du · Rui Yan · Xiuying Chen, "Belief Memory: Agent Memory Under Partial Observability" (arXiv:2605.05583, 2026-05-07). observation마다 단일 결론을 저장하는 deterministic memory 대신 **candidate conclusion + probability**를 유지하는 **BeliefMem** 제안. **Noisy-OR** 업데이트. **LoCoMo / ALFWorld**에서 제한된 데이터 조건에도 best average performance, baseline 대비 큰 개선. → **(prescriptive, 학습)** 칸 충당.
+  - `raw/articles/2026-05-17-mage-shadow-memory-long-horizon-threats.md` — Yuhui Wang · Tanqiu Jiang · Jiacheng Liang · Charles Fleming · Ting Wang, "MAGE: Safeguarding LLM Agents against Long-Horizon Threats via Shadow Memory" (arXiv:2605.03228, 2026-05-04). long-horizon threat 대응용 **Memory As Guardrail Enforcement**. 시스템 보안의 shadow stack처럼 **safety-focused shadow memory**를 별도 유지하고 action 직전 risk assess. HTML 본문 기준 AgentDojo **Banking / Slack** suite 사용. 결과: detection accuracy 향상, **majority early-stage detection**, utility overhead 미미. → **(prescriptive, 측정)** 칸 충당.
+- **Pages updated** (추가만, 기존 본문 보존):
+  - `concepts/agentic-engineering.md` — "2026-05-17 보강 — Agentic AI Survey: Symbolic vs Neural 두 계보로 다시 보기" 섹션 추가 (dual-paradigm 표 + PRISMA 90-study + domain-paradigm 매핑 + hybrid 의미 + 1인 개발자 ROI 3개). frontmatter sources/updated/tags 갱신.
+  - `concepts/ai-memory-systems.md` — "2026-05-17 보강 — BeliefMem: Partial Observability에서 memory를 belief state로" 섹션 추가 (deterministic vs probabilistic memory 표 + GroupMemBench와의 짝 + ZenBrain과의 관계 + ROI 3개). frontmatter sources/updated/tags 갱신.
+  - `concepts/agent-supply-chain-security.md` — "2026-05-17 보강 — MAGE: long-horizon threat에 대한 shadow memory guardrail" 섹션 추가 (dual-LLM/Brain-Hands/Tier 모델과의 차이 + trajectory 감시형 방어 + safety memory 해석 + ROI 3개). frontmatter sources/updated/tags 갱신.
+- **Pages created**:
+  - `journal/2026-05-17.md` — 일요 데일리 일지 (남은 3칸 채우기, 2x3 좌표계 9/9 완성, epistemic memory vs safety memory 구분, 자율 결정 사항, 다음 후보).
+- **Pages updated (meta)**: `index.md` (journal 11→12, total 72→73, counts 정정), `overview.md` (최근 작업 갱신), `log.md` (이 항목), `CLAUDE.md` (최근 활동/다음 할 일).
+- **Notes**: 2026-05-14에 생긴 2x3 좌표계(descriptive/prescriptive/tooling × 학습/정형화/측정)가 2026-05-15에 6/9까지 채워졌고, 오늘 마지막 3칸이 모두 채워져 **9/9 완성**. 특히 memory가 하나의 기능이 아니라 **belief memory**(BeliefMem)와 **safety memory**(MAGE)로 갈라진다는 해석이 새로 생김. Survey는 그 위에서 "우리가 다루는 agentic engineering은 neural/generative lineage 위에 있다"는 개념 경계를 다시 세워 줌.
+
 ## [2026-05-17] hygiene-review | 금요 리뷰 캐치업 + 위키/Git 경계 정리
 
 - **Review scope**: 이번 주 금요 정리 누락분을 점검. 실질 지식 리뷰는 이미 `journal/2026-05-15.md`에 존재함을 재확인했고, 오늘은 그 결과를 바탕으로 **운영 경계**를 명문화했다.

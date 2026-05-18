@@ -1,15 +1,16 @@
 ---
 title: "Agent Supply Chain Security"
 category: concepts
-tags: [security, supply-chain, agent, mcp, skill-md, agents-md, owasp, asi04, clawhavoc]
+tags: [security, supply-chain, agent, mcp, skill-md, agents-md, owasp, asi04, clawhavoc, long-horizon-threat, shadow-memory]
 created: 2026-05-01
-updated: 2026-05-01
+updated: 2026-05-17
 sources:
   - "raw/articles/2026-05-01-owasp-asi-2026.md"
   - "raw/articles/2026-05-01-dual-llm-camel-pattern.md"
   - "raw/articles/2026-05-01-prompt-injection-defense-2026.md"
   - "raw/articles/2026-05-01-agent-stack-2026-layers.md"
   - "raw/articles/2026-05-01-anthropic-agent-skills.md"
+  - "raw/articles/2026-05-17-mage-shadow-memory-long-horizon-threats.md"
 related:
   - "[[patterns/owasp-llm-typescript-mitigations]]"
   - "[[patterns/safe-tool-calling-sandbox]]"
@@ -133,6 +134,63 @@ OWASP **ASI04 Dynamic Runtime Composition**이 이 영역을 명시적으로 다
 - 모든 외부 의존성(도구·스킬·다른 에이전트)의 **호출 로그**
 - OTel 시맨틱 컨벤션으로 **표준 트레이스**에 출처 정보 포함
 - 사후 분석 시 어디서 어떤 외부 출력을 신뢰했는지 재구성 가능
+
+## 2026-05-17 보강 — MAGE: long-horizon threat에 대한 shadow memory guardrail (arXiv 2605.03228)
+
+[Wang et al.](https://arxiv.org/abs/2605.03228) (2026-05-04)은 기존 방어들이 prompt injection의 **단발성 입력**에는 강해도, 장시간 상호작용 안에서 안전 신호가 서서히 무너지는 **long-horizon threat**에는 약하다고 본다. 핵심 제안은 **MAGE (Memory As Guardrail Enforcement)** — productivity를 위한 메모리가 아니라 **안전을 위한 shadow memory**를 별도 운용하는 방식이다.
+
+### 무엇이 새로운가
+
+기존 이 페이지의 방어는 주로 "신뢰 등급을 나누고, untrusted 입력을 privileged plan으로 못 올리게 하자"였다.
+
+- **Dual LLM / CaMeL** = 입력 분리형 방어
+- **Brain/Hands sandbox** = 실행 격리형 방어
+- **Tier 0~3 모델** = 권한 분리형 방어
+
+MAGE는 여기에 **trajectory 감시형 방어**를 추가한다.
+
+- 에이전트 전체 실행 궤적에서 **safety-critical context만 distill**
+- 별도 **shadow memory**에 유지
+- pending action 실행 직전에 **risk assess**
+
+→ 즉 보안의 질문이 "지금 이 입력을 믿어도 되나"에서 "지금까지의 누적 맥락을 봤을 때 이 행동이 안전한가"로 올라간다.
+
+### 왜 supply chain 페이지와 맞물리나
+
+공급망 공격은 대개 한 번의 명령으로 끝나지 않는다. 악성 skill, 오염된 MCP 응답, 다른 agent의 악성 출력은 처음엔 사소해 보여도, 긴 실행에서 누적되며 목표를 바꾼다.
+
+MAGE가 보여 주는 것은:
+
+1. **외부 의존성의 위험은 stateful** 하다.
+2. 따라서 trust policy도 **step-local** 만으로는 부족하다.
+3. 장시간 agent에는 "무엇을 안 잊어야 안전한가"를 따로 저장하는 **safety memory**가 필요하다.
+
+### abstract / HTML 기준 결과
+
+- diverse long-horizon threat에서 기존 defense 대비 **detection accuracy 향상**
+- **majority of attacks를 early-stage에서 탐지**
+- agent utility에 주는 **overhead는 negligible**
+- HTML 본문 기준 실험 무대: AgentDojo의 **Banking / Slack** suite
+
+숫자 표는 본문 정독이 필요하지만, 구조적 메시지는 충분하다: **utility memory와 safety memory를 분리하면, 장기 실행의 보안 trade-off가 달라진다.**
+
+### Tier 모델의 다음 단계 해석
+
+| 기존 Tier 모델 질문 | MAGE가 더하는 질문 |
+|---|---|
+| 이 입력/도구는 어느 신뢰 등급인가? | 이 행동은 지금까지의 누적 위험과 모순되지 않는가? |
+| 권한을 어디까지 줄 것인가? | 위험 신호를 얼마나 오래 보존할 것인가? |
+| sandbox가 있는가? | action 직전 safety re-check가 있는가? |
+
+→ 실무적으로는 Tier 2/3 입력이 들어오는 모든 장기 agent에 대해, 일반 작업 메모리 옆에 **safety audit trail**을 별도로 두라는 함의다.
+
+### 1인 개발자 ROI 3개
+
+1. 장기 실행 agent를 만들 때 일반 메모리와 별도로 **"실행 금지 사유" 로그**를 남기면 mini-MAGE가 된다.
+2. MCP / skill / A2A 입력이 쌓이는 시스템일수록, 마지막 실행 직전에 "지금까지 위험 신호가 누적됐는가"를 보는 **pre-action verifier**를 둬야 한다.
+3. prompt injection 방어를 단일 turn 필터로 끝내지 말고, **trajectory-level memory defense**까지 생각해야 한다.
+
+→ 2x3 좌표계의 **(prescriptive, 측정)** 칸을 채운다. BeliefMem이 epistemic memory라면, MAGE는 safety memory다.
 
 ## OWASP 매핑
 
