@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-04-16
-total_pages: 54
+updated: 2026-05-15
+total_pages: 72
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 전체 54개 페이지 | 최종 업데이트: 2026-04-16 — 대부분 페이지에 **쉽게 읽기** 블록 있음
+> 전체 72개 페이지 | 최종 업데이트: 2026-05-15 (금요 데일리 + 주간 리뷰: ACDL context 표기 / Constraint Decay 백엔드 코드 / GroupMemBench multi-party memory — 한 주 *layer 사다리* 합치기) — 대부분 페이지에 **쉽게 읽기** 블록 있음
 
 ## 쉽게 읽기
 
@@ -45,6 +45,7 @@ status: active
 ### 핵심 기술
 - [[concepts/tool-use]] — LLM이 외부 함수/API를 호출하는 메커니즘
 - [[concepts/mcp]] — Model Context Protocol, AI와 외부 도구를 연결하는 오픈 표준 ("AI의 USB-C")
+- [[concepts/a2a-protocol]] — Agent-to-Agent 프로토콜, 서로 다른 에이전트의 협력 표준 (Linux Foundation)
 - [[concepts/structured-output]] — LLM이 특정 스키마에 맞는 출력을 생성하도록 강제
 - [[concepts/vector-db-embeddings]] — Vector DB와 임베딩, RAG의 기반 인프라
 - [[concepts/ai-memory-systems]] — Short/Long-term 메모리, Episodic/Semantic/Procedural 모달리티
@@ -57,8 +58,9 @@ status: active
 ### AI의 어두운 면
 - [[concepts/context-rot-hallucination]] — Context Rot, Hallucination, Error 누적 등 5대 실패 패턴
 - [[concepts/cognitive-debt]] — Technical Debt의 AI 버전, 개발자의 머릿속에 쌓이는 부채
+- [[concepts/agent-supply-chain-security]] — 외부 도구·스킬·에이전트의 신뢰 모델 + dual-LLM/CaMeL + Tier 등급
 
-## Tools (7개)
+## Tools (9개)
 
 - [[tools/claude-code]] — Anthropic의 CLI 기반 AI 코딩 도구, 위키 유지보수 LLM
 - [[tools/obsidian]] — 로컬 마크다운 기반 노트 앱, 위키 브라우저/IDE
@@ -67,6 +69,8 @@ status: active
 - [[tools/codex-plugin]] — OpenAI의 크로스-모델 코드 리뷰 도구 (Claude Code 플러그인)
 - [[tools/gstack]] — 역할 기반 AI 팀 시뮬레이션 스킬 팩 (Claude Code 플러그인)
 - [[tools/vercel-workflow]] — Workflow DevKit, TypeScript 내구 워크플로·Webhook·에이전트 장기 실행
+- [[tools/managed-agents]] — Anthropic의 클라우드 호스팅 에이전트 인프라 (2026-04-08 public beta)
+- [[tools/deep-agents-deploy]] — LangChain 오픈 소스 에이전트 하네스 + 배포 도구 (모델 무관, MIT)
 
 ## Patterns (19개)
 
@@ -95,19 +99,33 @@ status: active
 
 ### 제품 전략 & 안티패턴
 - [[patterns/solo-product-strategy]] — 1인 개발자 제품 전략, 마이크로 SaaS 기획·출시
+- [[patterns/agent-mvp-stack-2026]] — 1인 MVP 스택 5대 영역 × 4 단계 + 의사결정 트리 (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — Vibe Coding의 7대 안티패턴과 회피법
 
-## Journal (1개)
+## Journal (11개)
 
 - [[journal/2026-04-12]] — Fowler Humans/Agents·on the loop·OWASP×TS 정리 일지
+- [[journal/2026-05-01]] — 오전 자동 인제스트 (스택 stratification·OTel·Cisco) + 금요 회고
+- [[journal/2026-05-01-backfill]] — 오후 빅 백필: Theme A 딥다이브(Managed/Deep Agents·SKILL.md·AGENTS.md) + B/C/D 백필
+- [[journal/2026-05-02]] — 토요 데일리: 멀티 에이전트 정량 한계(Google) + 3-에이전트 분리(Anthropic) + 6 레버(HumanLayer)
+- [[journal/2026-05-03]] — 일요 데일리: MS Agent Framework 1.0(5 패턴) + Datadog 1,000+ 트레이스 + ZenBrain 7-계층 메모리
+- [[journal/2026-05-06]] — 수요 데일리: 자동 하네스 진화 2편(Last Harness·AHE) + Anthropic 2026 Agentic Coding Trends
+- [[journal/2026-05-06-pm]] — 수요 PM 후속: 하네스 연구 3좌표축 — Wei taxonomy(70 proj) + CAAF determinism + Stanford Meta-Harness
+- [[journal/2026-05-12]] — 화요 데일리: 모델 아래 세 레버 — MEP preparation(Zigler) + JRH judge reliability(RAND) + GROUNDING.md field-scope(Palmblad)
+- [[journal/2026-05-13]] — 수요 데일리: 출력 직전 게이트 (verification-gated) 3-도메인 — GSAR(text) + Verify Before You Fix(code) + Affordance Agent Harness(embodied)
+- [[journal/2026-05-14]] — 목요 데일리: Above-the-Model Layer — Zhang RL orchestration traces + Zhong/Zhu 11 책임 runtime substrate + WildClawBench long-horizon 천장(Opus 4.7 62.2%)
+- [[journal/2026-05-15]] — 금요 데일리+주간 리뷰: ACDL(context 표기) + Constraint Decay(백엔드 −30점) + GroupMemBench(memory 46%) — 4일 *layer 사다리* 합치기
 
-## Comparisons (5개)
+## Comparisons (8개)
 
 - [[comparisons/rag-vs-llm-wiki]] — RAG와 LLM-Wiki 방식 비교: 재발견 vs 축적
 - [[comparisons/claude-code-plugins]] — Claude Code 플러그인 4종 비교 + 조합 전략
 - [[comparisons/ai-coding-tools]] — AI 코딩 도구 비교: Claude Code vs Cursor vs Copilot vs Windsurf
-- [[comparisons/agent-frameworks]] — AI Agent 프레임워크 비교: LangGraph vs CrewAI vs OpenAI SDK
+- [[comparisons/agent-frameworks]] — AI Agent 프레임워크 비교: LangGraph vs CrewAI vs OpenAI SDK (+ 매니지드 두 종)
 - [[comparisons/fine-tuning-vs-prompting]] — Fine-tuning vs Prompting 결정 가이드, 하이브리드 패턴
+- [[comparisons/managed-vs-deep-agents]] — Claude Managed Agents vs LangChain Deep Agents Deploy: lock-in vs 자유도
+- [[comparisons/agent-eval-frameworks]] — DeepEval/LangSmith/Braintrust/Langfuse/Inspect AI/RAGAS 6대장
+- [[comparisons/agent-platforms-for-solo-dev]] — 1인 개발자 관점 4종 비교 (Managed/Deep Agents/Agents SDK/LangGraph 직접)
 
 ## Meta
 

@@ -3,10 +3,13 @@ title: "OWASP LLM Top 10 × TypeScript 완화 패턴"
 category: patterns
 tags: [security, owasp, typescript, agents, zod, ai-sdk]
 created: 2026-04-12
-updated: 2026-04-12
+updated: 2026-05-01
 sources:
   - "raw/notes/2026-04-12-security-typescript-corpus.md"
   - "raw/papers/owasp-genai-2025-llm-top-10.md"
+  - "raw/articles/2026-05-01-prompt-injection-defense-2026.md"
+  - "raw/articles/2026-05-01-dual-llm-camel-pattern.md"
+  - "raw/articles/2026-05-01-owasp-asi-2026.md"
 related:
   - "[[concepts/mcp]]"
   - "[[patterns/agent-server-harness]]"
@@ -14,6 +17,8 @@ related:
   - "[[concepts/harness-engineering]]"
   - "[[concepts/structured-output]]"
   - "[[tools/vercel-workflow]]"
+  - "[[concepts/agent-supply-chain-security]]"
+  - "[[patterns/safe-tool-calling-sandbox]]"
 status: active
 confidence: medium
 ---
@@ -74,6 +79,85 @@ confidence: medium
 - **모델 호출 budget**: `maxTokens` / 워크플로 단계별 timeout.  
 - **관측**: [AI SDK Telemetry](https://ai-sdk.dev/docs/ai-sdk-core/telemetry) + [[concepts/gen-ai-observability|OTel GenAI]]로 스팬 단위 비용 추적.
 
+## 2026-05 agentic 확장 — OWASP **ASI** 매핑 + dual-LLM/CaMeL
+
+기존 LLM01/06/10은 **단일 LLM 호출** 가정의 1차 방어다. 에이전트(장기 실행, 도구, 메모리, A2A) 위협은 **OWASP Top 10 for Agentic Applications 2026** ([공식 발표 2025-12-09](https://genai.owasp.org/2025/12/09/owasp-top-10-for-agentic-applications-the-benchmark-for-agentic-security-in-the-age-of-autonomous-ai/))에 ASI01~ASI10으로 정리됨.
+
+### ASI 항목 매핑 (TS·하네스 관점)
+
+| ASI | 이름 | 본 문서 어디서 + agentic 보강 |
+|-----|------|----------------------------|
+| **ASI01** | Goal Hijack | LLM01 확장 — **dual-LLM/CaMeL**로 plan 격리 |
+| **ASI02** | Tool Misuse | LLM06 + 도구 schema 좁히기 + [[patterns/safe-tool-calling-sandbox]] |
+| **ASI03** | Identity·Privilege Abuse | non-human identity 수명·권한 — Brain/Hands 격리 (Managed Agents 디폴트) |
+| **ASI04** | Dynamic Runtime Composition | **공급망 위험** — [[concepts/agent-supply-chain-security]] 본 문서 |
+| **ASI05** | Memory·State Manipulation | 장기 메모리 도입 시점부터 — Tier 3 untrusted로 다루기 |
+| **ASI06** | Inter-Agent Trust | A2A 메시지를 untrusted로 — Q-LLM 영역 |
+| **ASI07** | Resource Hijacking | LLM10 확장 + 인프라 rate limit + cost guardrails |
+| **ASI08** | Cascading Failures | sandbox·격리로 폭발 반경 제한 |
+| **ASI09** | Human-Agent Trust Exploit | UX에서 검증 단계를 명시 (anthropomorphism 경계) |
+| **ASI10** | Rogue Agents | 행동 drift 모니터링 — eval framework로 회귀 감지 |
+
+### 6층 Defense in Depth (TokenMix·SwarmSignal 종합)
+
+위 ASI들을 **단일 기법으로 못 막는다는 합의** 하의 layered 방어. 단일 layer로 끝내면 안 됨.
+
+| 층 | 기법 | TS·하네스 구현 위치 |
+|----|------|------------------|
+| 1 | Structured prompt format + output validation | [[concepts/structured-output]] · Zod `Output.object` |
+| 2 | Input filtering + rate limiting | Edge 미들웨어 + `@upstash/ratelimit` |
+| 3 | Advanced detection | PromptArmor (ICLR 2026) — false rate <1% (AgentDojo) |
+| 4 | **Architectural separation — dual-LLM / CaMeL** | 아래 ⬇ |
+| 5 | Tool sandboxing + privilege separation | [[patterns/safe-tool-calling-sandbox]], [[tools/managed-agents]] (Brain/Hands) |
+| 6 | HITL for sensitive operations | sensitive 액션(메일·결제·삭제)에만 — fatigue 회피 |
+
+### Dual-LLM / CaMeL 패턴 (architectural 답)
+
+자세한 raw: [Dual LLM + CaMeL 패턴](raw/articles/2026-05-01-dual-llm-camel-pattern.md). 위키 [[concepts/agent-supply-chain-security]] 의 Tier 3 untrusted를 architectural로 격리하는 답.
+
+```
+사용자 instruction → P-LLM (도구 사용 가능)
+                       │
+                       └─ "$ref-1을 사용자에게 보여 줘"
+                       │
+untrusted data ────→ Q-LLM (도구 0)
+                       │
+                       └─ ref-1에 결과 채움
+```
+
+**핵심**: 악성 토큰이 P-LLM에 도달하는 경로 자체가 없다. CaMeL은 여기에 **capability 메타데이터** + **locked-down Python 인터프리터**를 더해 **information flow integrity 증명 가능** (AgentDojo: 77% 태스크 provable security).
+
+### 1인 개발자 minimal TS 적용
+
+현 [[examples/agent-safety-sketch|examples/agent-safety-sketch]]에 dual-LLM 최소 sketch 추가. 핵심 idea: `Output.object`의 schema에 **plan 단계와 untrusted-data 처리 단계를 분리**.
+
+```typescript
+// P-LLM: 사용자 instruction만 본다, plan 생성
+const plan = await generateText({
+  model: openai("gpt-4o-mini"),
+  prompt: userInstruction,  // trusted
+  output: Output.object({
+    schema: z.object({
+      action: z.enum(["fetch_email", "summarize", "send_reply"]),
+      ref: z.string(),  // Q-LLM 결과의 reference만
+    }),
+  }),
+});
+
+// Q-LLM: untrusted data 처리, 도구 호출 없음
+const summary = await generateText({
+  model: openai("gpt-4o-mini"),
+  prompt: `Summarize: ${untrustedEmail}`,  // untrusted
+  // tools 없음
+  output: Output.object({
+    schema: z.object({ summary: z.string().max(500) }),
+  }),
+});
+// summary.output.summary는 P-LLM에 직접 전달되지 않고 ref로만 매핑
+```
+
+전체 코드는 [examples/agent-safety-sketch/dual-llm.ts](../../examples/agent-safety-sketch/dual-llm.ts).
+
 ## 하네스에 넣을 위치
 
 | OWASP 축 | Harness [[concepts/harness-engineering]] |
@@ -100,5 +184,12 @@ confidence: medium
 
 - [보안×TS 큐레이션](raw/notes/2026-04-12-security-typescript-corpus.md)
 - [OWASP LLM Top 10 요약 (papers)](raw/papers/owasp-genai-2025-llm-top-10.md)
+- [Prompt Injection Defense 2026 raw](raw/articles/2026-05-01-prompt-injection-defense-2026.md)
+- [Dual LLM + CaMeL raw](raw/articles/2026-05-01-dual-llm-camel-pattern.md)
+- [OWASP ASI 2026 raw](raw/articles/2026-05-01-owasp-asi-2026.md)
 - [OWASP GenAI — LLM Top 10](https://genai.owasp.org/llm-top-10/)
+- [OWASP — Top 10 for Agentic Applications 2026](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)
+- [Simon Willison — Design Patterns for Securing LLM Agents](https://simonwillison.net/2025/Jun/13/prompt-injection-design-patterns/)
+- [DeepMind CaMeL — arXiv](https://arxiv.org/abs/2503.18813)
 - [examples/agent-safety-sketch/README.md](../../examples/agent-safety-sketch/README.md)
+- [examples/agent-safety-sketch/dual-llm.ts](../../examples/agent-safety-sketch/dual-llm.ts)

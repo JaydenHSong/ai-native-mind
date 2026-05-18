@@ -3,9 +3,10 @@ title: "Subagents & 위임 패턴"
 category: patterns
 tags: [subagents, claude-code, delegation, orchestration]
 created: 2026-04-09
-updated: 2026-04-12
+updated: 2026-05-02
 sources:
   - "raw/notes/2026-04-09-subagents-delegation.md"
+  - "raw/articles/2026-05-02-humanlayer-skill-issue-harness.md"
 related:
   - "[[concepts/ai-orchestration]]"
   - "[[concepts/harness-engineering]]"
@@ -115,6 +116,27 @@ description: Reviews code for security vulnerabilities including SQL injection, 
 - **Haiku**: 간단한 작업 (파일 목록, 기본 탐색)
 - **Sonnet**: 일반 작업 (코드 수정, 리뷰)
 - **Opus**: 복잡한 추론 (아키텍처 결정)
+
+## Context firewall — sub-agent의 진짜 용도 (HumanLayer, 2026-03)
+
+[HumanLayer — Skill Issue: Harness Engineering for Coding Agents](https://www.humanlayer.dev/blog/skill-issue-harness-engineering-for-coding-agents)는 1년치 코딩 에이전트 운영 끝에 한 가지를 못박는다: "frontend engineer / backend engineer / data analyst" 식 **역할 분류 sub-agent는 안 먹힌다**. 먹히는 건 **context firewall**이다.
+
+- **부모 컨텍스트는 sub-agent에 보낸 프롬프트와 받은 최종 결과만 본다** — 중간 도구 호출, grep 결과, 파일 읽기는 부모로 흘러 들어오지 않는다.
+- Chroma의 [context rot 연구](https://research.trychroma.com/context-rot)(18 모델 needle-in-haystack)가 실증한 대로 컨텍스트가 길어질수록 단순 태스크에서도 성능이 저하된다. distractor는 길어질수록 **더 해롭다**.
+- **롱 컨텍스트 모델은 함정**: "needle"이 아니라 "haystack"이 커진다. 진짜로 필요한 건 격리된 작은 컨텍스트 윈도우의 **stitching**이고, 그게 sub-agent다.
+- **압축 결과만 반환** — 답 + `filepath:line` 또는 URL 인용만. 부모는 모든 소스를 다시 보지 않고도 필요할 때 추가로 들어갈 수 있다.
+
+위의 Explore-Plan-Execute는 같은 원칙의 한 형태다. 운영 노하우 한 줄: **결과는 짧게, 인용은 정확하게**.
+
+### 비용 통제도 같은 레버
+
+부모는 Opus 같은 추론·계획 모델로, sub-agent는 Sonnet/Haiku로 라우팅한다. 코드베이스 grep에 Opus 토큰을 태우지 않기 위해서다. 이는 [[patterns/ai-cost-management|모델 라우팅 비용 전략]]의 한 사례.
+
+### 안 먹힌 패턴 (HumanLayer 자기 보고)
+
+- "혹시 모르니까" 수십 개 sub-agent·skill 설치 — 실패하면 추가
+- sub-agent별로 어떤 도구를 쓸지 micro-optimize — tool thrash로 더 나빠짐
+- 1-shot 성공률 최적화 — 이터레이션 속도 최적화가 더 잘 작동
 
 ## [[concepts/ai-orchestration|AI 오케스트레이션]]과의 매핑
 

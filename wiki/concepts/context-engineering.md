@@ -1,12 +1,14 @@
 ---
 title: "Context Engineering"
 category: concepts
-tags: [context-engineering, prompt-engineering, ai-orchestration]
+tags: [context-engineering, prompt-engineering, ai-orchestration, mise-en-place, context-fluency]
 created: 2026-04-09
-updated: 2026-04-12
+updated: 2026-05-15
 sources:
   - "raw/notes/2026-04-09-ai-orchestration-research.md"
   - "raw/notes/2026-04-09-solo-dev-ai-research.md"
+  - "raw/articles/2026-05-12-mise-en-place-agentic-coding.md"
+  - "raw/articles/2026-05-15-acdl-context-description-language.md"
 related:
   - "[[concepts/prompt-engineering]]"
   - "[[concepts/harness-engineering]]"
@@ -98,6 +100,58 @@ Prompt Engineering   ← 1세대: 무엇을 질문하는가
 ```
 
 Context Engineering은 [[concepts/prompt-engineering|Prompt Engineering]]의 진화이며, [[concepts/harness-engineering|Harness Engineering]]의 핵심 하위 계층이다.
+
+## 2026-05-12 보강 — Mise en Place (MEP) & Context Fluency
+
+> 출처: Zigler, "Mise en Place for Agentic Coding" (arXiv:2605.05400, 2026-05-06)
+
+Context Engineering의 **workflow-level** 구현체로 *mise en place* (MEP) 3단계가 제안됐다. invocation scope의 prompt engineering보다 한 층 위, harness engineering보다 한 층 아래 — *implementation 전에* 모두 끝낸다는 phase-gating이 핵심.
+
+| Phase | 산출물 | 한 줄 |
+|---|---|---|
+| **1. Contextual Grounding** | 도메인 지식·tacit knowledge를 markdown briefing 문서로 외화 | "*Why* 까지 적어 둔다 — outcome부터 backward" |
+| **2. Collaborative Specification** | 인간-에이전트 대화로 spec (스크린·데이터 흐름·**무엇을 제외할지**) | "Spec이 agent의 micro-decision을 정렬한다" |
+| **3. Task Decomposition** | dependency-aware task records (예: Beads JSON+Git) | "Parallel agent execution의 인터페이스" |
+
+### Context Fluency — 새로운 개발자 스킬
+
+Prompt Engineering이 *invocation*을 튜닝한다면, Context Fluency는 그 *상위* 정보 아키텍처를 설계한다. 4 components: **Decomposition / Specification / Constraint definition / Domain encoding**. 함의 — 도메인 지식+교수법이 강한 사람이 agentic 워크플로우에서 disproportionately effective.
+
+### Hackathon Case Study (정량 근거)
+
+- 준비 2hr → 10 docs / 9,386 단어 / 64 beads
+- 실행 184min × 4 parallel agents → 43 beads closed, median **5.9 min/bead**
+- **Planning-to-code 1.10:1, prep-to-execute 5.7:1**, architectural rework ≈ 0
+- 버그 fix는 median **1.2 min** vs implementation task **9.7 min**
+
+비교 — [[journal/2026-05-02|Google 2026-05-02 17.2x vs 4.4x 오류 증폭]]의 *반대 측 증거*: 사전 정렬 충분 시 architectural rework가 0에 수렴.
+
+> 자세히: [Mise en Place 원본 노트](raw/articles/2026-05-12-mise-en-place-agentic-coding.md). 위치 비교 — MEP는 [[patterns/agent-planning-to-implementation]]의 phase-gated 인스턴스이자 [[patterns/claude-md-guide]]의 Phase 1 인용.
+
+## 2026-05-15 보강 — ACDL (Agentic Context Description Language)
+
+[Peleg Pelc · Kaminka · Goldberg](https://arxiv.org/abs/2605.01920) (CAIS '26, 2026-05-03)는 "context 합성에 *표준 표기*가 없다"를 문제로 잡고 **ACDL**을 제안한다 — role-message sequence · dynamic content · time-indexed reference · conditional/iterative structure 4구성. 손그림 화이트보드와 정형 코드 양쪽 매체에서 같은 의미를 보장. 프로젝트: <http://www.acdlang.org>.
+
+| ACDL 구성 | 본 위키 매핑 |
+|---|---|
+| Role message sequence | 시스템/사용자/도구 turn의 *순서* 명시 — [[patterns/preventing-context-rot]] 3계층 메모리의 *읽기 layer*와 짝 |
+| Dynamic content | tool output · retrieved doc 등 *시점별 변하는 자리* — [[concepts/rag|RAG]] 결과를 컨텍스트 *어디에* 꽂는지 |
+| Time-indexed reference | t-1, t-3 turn의 명시적 인용 — [[concepts/ai-memory-systems|단기 메모리]] FIFO 정책의 *공식 표기* |
+| Conditional / iterative | if · loop — [[concepts/ai-orchestration#오케스트레이션 6대 패턴|6 패턴]] 중 chaining/routing/loop의 *표기* |
+
+**Mise en Place(2026-05-12 보강)와의 짝**: MEP가 *프로세스*(준비 단계)를 정한다면 ACDL은 *결과 구조*(컨텍스트 흐름)를 그린다. 둘은 입/출 짝.
+
+**[[patterns/claude-md-guide|CLAUDE.md]] · GROUNDING.md(2026-05-12 보강)와의 짝**: 그쪽이 *constraint 텍스트*를 정한다면 ACDL은 그 텍스트가 *prompt에 어떻게 주입되는지*를 적는다.
+
+**1인 개발자 ROI 3개**:
+
+1. 본인 에이전트의 context flow를 ACDL diagram 1장으로 남기면, 6개월 뒤 자기 코드도 빠르게 다시 이해 — [[concepts/cognitive-debt|Cognitive Debt]] 축소 도구.
+2. 두 시스템 비교 시("LangGraph vs custom") 코드 까지 않고 *같은 표기* 위에 올려놓고 차이를 본다.
+3. 본 위키의 [[patterns/agent-server-harness]]·[[patterns/agent-planning-to-implementation]] 같은 패턴 페이지에 ACDL diagram을 *옵션 첨부*로 권장 — 표기 통일이 누적 가치 만든다.
+
+**한계**: 18페이지 CAIS '26 채택 1건 시점. 표준화 조직(W3C 등) 채택 흔적 없음. "표기법 만든다 vs 자연어로 충분" 논쟁의 한 쪽 — 본 위키 [[patterns/llm-wiki]]가 자연어만으로 6주째 운영되고 있다는 반례 존재.
+
+→ 2x3 좌표계(2026-05-14)에서 **(tooling, 정형화)** 칸이 채워졌다. 남은 빈 칸: (descriptive, 학습) / (descriptive, 측정) / (prescriptive, 학습) / (prescriptive, 측정). (descriptive, 측정)은 같은 날 ingest한 [[concepts/context-rot-hallucination#2026-05-15 보강 — Constraint Decay (백엔드 코드 생성의 구조 제약 붕괴)|Constraint Decay]]가 부분 충당.
 
 ## 관련 개념
 

@@ -3,13 +3,21 @@ title: "AI 비용 관리"
 category: patterns
 tags: [cost, pricing, optimization, anthropic, claude, openai]
 created: 2026-04-09
-updated: 2026-04-12
+updated: 2026-05-01
 sources:
   - "raw/notes/2026-04-09-ai-cost-management.md"
+  - "raw/articles/2026-05-01-anthropic-managed-agents-launch.md"
+  - "raw/articles/2026-05-01-anthropic-advisor-strategy.md"
+  - "raw/articles/2026-05-01-solo-founder-ai-stack-2026.md"
+  - "raw/articles/2026-05-01-1-person-saas-cost-deep.md"
+  - "raw/articles/2026-05-01-managed-vs-selfhost-breakeven.md"
 related:
   - "[[patterns/prompt-caching]]"
   - "[[patterns/subagents-delegation]]"
   - "[[patterns/solo-product-strategy]]"
+  - "[[tools/managed-agents]]"
+  - "[[tools/deep-agents-deploy]]"
+  - "[[comparisons/managed-vs-deep-agents]]"
 status: active
 confidence: high
 ---
@@ -30,15 +38,22 @@ confidence: high
 
 1인 개발자가 AI API 비용을 **95%까지 절감**하면서 프로덕션 품질을 유지하는 실전 전략.
 
-## 2026 Claude API 가격 (per 1M tokens)
+## 2026 Claude API 가격 (per 1M tokens, 2026-05 시점)
 
 | 모델 | Input | Output |
 |------|-------|--------|
-| **Opus 4.6** | $5 | $25 |
+| **Opus 4.7 / 4.6** | $5 | $25 |
 | **Sonnet 4.6** | $3 | $15 |
 | **Haiku 4.5** | $1 | $5 |
+| **Opus 4.6 fast mode** | $30 | $150 (6x premium) |
 
-**주목**: Opus가 $15/$75 → $5/$25로 **67% 인하** (2026년).
+**주목**:
+- Opus가 $15/$75 → $5/$25로 **67% 인하** (2026년)
+- 모든 모델이 일관 **5x output:input** 비율 → 응답 길이를 schema로 강제하는 게 큰 절감
+- **Batch API**: 50% 할인 (24h 비동기)
+- **Prompt caching**: 캐시된 input -90%
+
+→ 변곡점·시나리오는 [[examples/cost-simulator/index.html|인터랙티브 비용 시뮬레이터]]에서 직접 확인.
 
 ## 핵심 최적화 전략
 
@@ -167,6 +182,29 @@ def route_model(task_complexity: str) -> str:
 - 가장 비싼 작업 식별
 - 더 저렴한 모델로 이전 가능한지 확인
 - 캐싱 전략 최적화
+
+## 2026-04 신규 변수: Managed 플랫폼 세션 단가
+
+[[tools/managed-agents|Claude Managed Agents]] (2026-04-08 출시)는 토큰 비용 외에 **세션 활성 시간당 $0.08** 추가. 인프라 빌드/유지를 며칠로 단축하는 대신, **long-lived 세션이 많아지면 누적 부담** — 즉 시간을 사는 비용이다.
+
+### Managed vs Self-host 변곡점 (대략적, 검증 필요)
+
+| 시점 | 권장 |
+|------|------|
+| MVP, 0~100 사용자 | **Managed Agents** — 시간 절약 가치 압도적 |
+| 100~1,000 사용자 | 둘 다 viable, 비용·lock-in 비교 |
+| 1,000+ 사용자, long-lived 세션 다수 | **[[tools/deep-agents-deploy|Deep Agents Deploy]] 셀프 호스팅 검토** |
+| 정부·on-prem·다중 벤더 | 처음부터 Deep Agents Deploy |
+
+[[comparisons/managed-vs-deep-agents]] 에 더 자세한 비용 비교.
+
+## Advisor Strategy — 비싼 모델 + 저렴한 모델 라우팅의 새 변형
+
+[Anthropic 2026-04-09 발표](https://claude.com/blog/the-advisor-strategy)에 따르면, **메인 에이전트는 저렴/빠른 모델로 돌리고, 어렵거나 불확실한 결정에서만 더 똑똑한 advisor 모델에게 짧게 컨설팅**받는 패턴이 비용·지연·품질 절충을 다시 잡는다.
+
+- 비유: 메인 = 현장 직원, advisor = 상사 — 매 결정마다 부르면 비용 폭발하지만, **막힐 때만** 부르면 양쪽 시간을 다 아낀다.
+- 적합: long-running session에서 가끔 critical decision (코딩 에이전트의 아키텍처 선택, 디버깅 root cause 가설 검증)
+- 위 표의 "Model Routing"의 더 정밀한 변형으로 보면 됨
 
 ## ❌ 피해야 할 실수
 

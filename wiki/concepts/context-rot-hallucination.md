@@ -1,11 +1,12 @@
 ---
 title: "AI 실패 패턴 (Context Rot & Hallucination)"
 category: concepts
-tags: [failure, hallucination, context-rot, error, reliability]
+tags: [failure, hallucination, context-rot, error, reliability, grounding]
 created: 2026-04-09
-updated: 2026-04-11
+updated: 2026-05-13
 sources:
   - "raw/notes/2026-04-09-llm-failure-modes.md"
+  - "raw/articles/2026-05-13-gsar-typed-grounding-multiagent.md"
 related:
   - "[[concepts/harness-engineering]]"
   - "[[concepts/llm-evaluation]]"
@@ -116,6 +117,27 @@ AI 에이전트가 실패하는 주요 메커니즘들 — Hallucination, Contex
 - 컨텍스트 자동 압축
 - 토큰 버짓 관리
 - 재시도 로직
+
+## 2026-05-13 보강 — Typed Grounding (GSAR)
+
+[GSAR (arXiv 2604.23366)](https://arxiv.org/abs/2604.23366), Kamelhar/Oracle, 2026-04-25. Multi-agent operational-incident 보고서의 hallucination을 **binary가 아닌 4-way claim typology**로 분류해 게이트로 만든다.
+
+| Claim 타입 | 의미 | 점수 기여 |
+|---|---|---|
+| **Grounded** | Evidence가 claim을 직접 support | + (정상) |
+| **Ungrounded** | Evidence 없음/무관 | 0 |
+| **Contradicted** | Evidence와 정면 충돌 | **−(비대칭 큰 페널티)** |
+| **Complementary** | Evidence가 일부만 보조 | 부분 + |
+
+게이트 액션은 단일 점수가 아니라 **3-tier decision**: `proceed | regenerate | replan`. Bounded outer loop + 명시적 compute budget.
+
+**FEVER + gold Wikipedia evidence, 4 judge(gpt-5.4 / sonnet-4-6 / opus-4-7 / gemini-2.5-pro) 결과**:
+
+- GSAR default 100 proceed vs binary baseline 35 → **+185%** grounded-output rate
+- Weighted approach: proceed rate 16/50 → 18/50 (+4pp)
+- **Ablation**: contradiction penalty 제거 시 contradicted claim 포함 보고서가 advance — asymmetric penalty의 존재 이유 입증
+
+위키 위치 함의: 본 페이지의 1번 Hallucination 섹션은 "Zero hallucination은 불가능 / 불확실성 관리에 집중"이라는 입장이었다. GSAR는 **그 불확실성을 typed gate로 측정하고 출력 직전에 막는** 구체 메커니즘이다. 어제 [[journal/2026-05-12|JRH]]가 "judge가 universally reliable하지 않다"였다면, GSAR는 "그 unreliable한 judge들을 4-way typology + 4-judge 합의로 어떻게 묶어 게이트로 만드나"의 짝. 같은 날 [[concepts/harness-engineering#2026-05-13 보강 — Verification-Gated Harness, 3-도메인 매핑|Verification-Gated Harness 3-도메인]] 보강의 *text* 칸을 채운다.
 
 ## [[concepts/harness-engineering|Harness Engineering]]과의 관계
 

@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-04-13
+updated: 2026-05-17
 sources: []
 status: active
 ---
@@ -19,6 +19,217 @@ status: active
 - 월드맵 허브: [[wiki/campaign-map|Campaign Map]]
 - 진행 가이드: [[wiki/overview|Overview]]
 - 전체 도감: [[wiki/index|Index]]
+
+## [2026-05-17] hygiene-review | 금요 리뷰 캐치업 + 위키/Git 경계 정리
+
+- **Review scope**: 이번 주 금요 정리 누락분을 점검. 실질 지식 리뷰는 이미 `journal/2026-05-15.md`에 존재함을 재확인했고, 오늘은 그 결과를 바탕으로 **운영 경계**를 명문화했다.
+- **Weekly review verdict**: 2026-05-12 ~ 2026-05-15의 핵심 축은 그대로 유지. 중복 압축 후보(Wei↔Zhong/Zhu, verifier 3종↔structural verifier, ZenBrain↔GroupMemBench, 4일 연속 일지 메타)는 모두 **링크/근거 보존 우선** 원칙 유지.
+- **Rules updated**: `CLAUDE.md`에 "위키 포함/제외 규칙" 신설.
+  - `wiki/`, `raw/`, `templates/`, `CLAUDE.md` = 지식 본체
+  - `examples/` = 위키 본문이 아닌 보조 artifact (Git 추적 가능)
+  - `.obsidian/`, `.claude/`, `.bkit/` = 로컬 상태 (지식 본문 아님)
+- **Git hygiene**: `.gitignore`에 `.claude/`, `.obsidian/plugins/`, `.obsidian/hotkeys.json` 추가. Dataview 플러그인 설치물 3개는 Git 추적 대상에서 제거하여 로컬 설치물과 저장소 산출물을 분리.
+- **Meta note**: 앞으로 `examples/`는 위키에서 링크할 수는 있지만 `index.md`의 total pages에 포함하지 않는다.
+
+## [2026-05-15] ingest+weekly-review | ACDL(context 표기) + Constraint Decay(백엔드 코드) + GroupMemBench(multi-party memory) — 금요 데일리 + 주간 리뷰, 자동 인제스트
+
+- **Sources** (raw 3편 추가):
+  - `raw/articles/2026-05-15-acdl-context-description-language.md` — Peleg Pelc · Kaminka · Goldberg, "A Language for Describing Agentic LLM Contexts" (arXiv:2605.01920, 2026-05-03, CAIS '26 채택). ACDL 4 구성: role-message sequence / dynamic content / time-indexed reference / conditional·iterative. 손그림과 정형 코드 양매체 동의미. 프로젝트: <http://www.acdlang.org>. → 2x3 좌표계 **(tooling, 정형화)** 칸 충당.
+  - `raw/articles/2026-05-15-constraint-decay-backend-code-fragility.md` — Dente · Satriani · Papotti (EURECOM), "Constraint Decay: The Fragility of LLM Agents in Backend Code Generation" (arXiv:2605.06445, 2026-05-07). 100 task (80 greenfield + 20 feature) × 8 framework × unified API contract. Capable config **−30 points** (baseline → fully specified), 약한 config ≈ 0 수렴. **Flask 강함 / FastAPI · Django 약함**. Root cause 1순위: data-layer defect (ORM/query). → **(descriptive, 측정)** 칸 충당.
+  - `raw/articles/2026-05-15-groupmembench-multi-party-memory.md` — Yang et al. (6명), "GroupMemBench: Benchmarking LLM Agent Memory in Multi-Party Conversations" (arXiv:2605.14498, 2026-05). 최강 메모리 시스템 **46.0%**, knowledge update **27.1%**, term ambiguity **37.7%**, 단순 **BM25가 대부분의 agent memory system 매치 또는 능가**. 6 question category × adversarial query × graph-grounded synthesis. 3 unmeasured 속성: group dynamics / speaker-grounded belief / audience-adapted language. → **(tooling, 측정)** 칸에 WildClawBench와 직교 도메인(memory) 측정 추가.
+- **Pages updated** (추가만, 기존 본문 보존):
+  - `concepts/context-engineering.md` — "2026-05-15 보강 — ACDL (Agentic Context Description Language)" 섹션 추가 (4 구성 × 본 위키 매핑 표 + Mise en Place·GROUNDING.md와의 짝 + 1인 ROI 3개 + 한계 + 2x3 좌표계 갱신). frontmatter sources/updated/tags 갱신.
+  - `patterns/ai-code-review.md` — "2026-05-15 보강 — Constraint Decay (Functional + Structural Dual Evaluation)" 섹션 추가 (정량 표 + Plan-Review-Execute에 **Phase 2.5 Structural Verify** 끼우기 + Framework AI-friendliness 표 + 본 위키와의 짝 + 한계). frontmatter sources/updated/tags 갱신.
+  - `concepts/ai-memory-systems.md` — "2026-05-15 보강 — GroupMemBench: Multi-Party Memory 측정" 섹션 추가 (정량 표 + 3 unmeasured 속성 + ZenBrain과의 짝 + 1인 ROI 3개 + 한계). frontmatter sources/updated/tags 갱신.
+- **Pages created**:
+  - `journal/2026-05-15.md` — 금요 데일리 + 주간 리뷰 (§1 데일리: 3 source + 한 그림; §2 주간 리뷰: 4일 layer 사다리 합치기 + 2x3 좌표계 6/9 채움 + 압축 4건 검토(모두 *그대로 유지* 결정) + self-declared prediction 검증·신규 + 자율 결정 사항 + next-week rotate).
+- **Pages updated (meta)**: `index.md` (journal 10→11, total 71→72), `log.md` (이 항목), `CLAUDE.md` (최근 활동).
+- **Notes**: 금요라 *데일리 + 주간 리뷰*를 한 글에 묶음. 4일 연속(05-12 / 05-13 / 05-14 / 05-15) 같은 한 문장(*"model alone is not enough — engineer the layer above"*) 위에 layer가 매일 한 칸씩 위로 — 12: 모델 *아래* / 13: 출력 *직전* / 14: 모델 *위* / 15: layer를 *적고/재고/재단*. 9칸 2x3 좌표계 중 6칸 채움 (한 주 시작 1칸 → 끝 6칸), 남은 3칸: (descriptive, 학습) / (prescriptive, 학습) / (prescriptive, 측정). **압축 작업 4건 검토**: (1) Wei 5 dim ↔ Zhong/Zhu 11 책임 — [[concepts/harness-engineering]]에 이미 비교 표 존재, 그대로 유지. (2) 3 도메인 verifier에 *structural* 4번째 추가하는 표 갱신은 over-add 회피로 *journal에만* 명시. (3) ZenBrain ↔ GroupMemBench는 처방·측정 짝이라 압축하면 한 쪽 사라짐, 그대로 유지(cross-link만 추가). (4) 4일 일지 메타 페이지 신설은 1주 표본 작아 보류 (4주 누적 시 재검토). **위키 본문/링크는 한 줄도 삭제되지 않음** — Task 요구사항 "꼭 없어 지지 않도록 한다" 준수. **자율 결정 사항**(사용자 부재): 3편 선택은 "어제 좌표계의 *빈 칸 3개*를 정확히 채우는 조합"으로 ACDL/Constraint Decay/GroupMemBench. Agentic AI Survey 2510.25445는 descriptive-학습 축이 여전히 비어 있어 다음 주(05-19)로 이월. WebFetch rate limit으로 GroupMemBench는 abstract만 확보, raw 파일에 한계 명시. 어제 prediction(harness-as-variable in eval 6대장)은 *약하게 살아 있음* — Constraint Decay의 dual evaluation이 간접 증거. **오늘 새 prediction**: 향후 4주 내 Django/FastAPI/Flask 중 적어도 하나가 *AI-coding-friendliness 가이드*를 공식/community-blessed로 release. 검증은 2026-05-22 weekly review.
+
+## [2026-05-14] ingest | Above-the-Model Layer — Zhang(RL orchestration traces) + Zhong/Zhu(11 책임 runtime substrate) + WildClawBench(long-horizon 천장) — 목요 데일리, 자동 인제스트
+
+- **Sources** (raw 3편 추가):
+  - `raw/articles/2026-05-14-rl-multiagent-orchestration-traces.md` — Chenchen Zhang, "Reinforcement Learning for LLM-based Multi-Agent Systems through Orchestration Traces" (arXiv:2605.02801, 2026-05-04). 3 기술 축: 8 reward family(+orchestration reward: parallelism speedup·split correctness·aggregation quality) / 8 credit unit(token→team, **message-level counterfactual credit sparse**) / 5 sub-decision(spawn/delegate/communicate/aggregate/stop, **stopping decision RL training 0건 as of May 4, 2026**). 산업 평행: Kimi Agent Swarm·OpenAI Codex·Anthropic Claude Code (학술 검증 아님, scale gap). Artifact: 84-entry tagged pool + 32-record exclusion log + **replayable orchestration trace JSON schema** (<https://github.com/xxzcc/awesome-llm-mas-rl>).
+  - `raw/articles/2026-05-14-ai-harness-engineering-runtime-substrate.md` — Hailin Zhong & Shengxin Zhu, "AI Harness Engineering: A Runtime Substrate for Foundation-Model Software Agents" (arXiv:2605.13357, 2026-05-13). Thesis: **"Capability emerges from model-harness-environment system"**. **11 component responsibilities**: task spec · context selection · tool access · project memory · task state · observability · failure attribution · verification · permissions · entropy auditing · intervention recording. Wei 5 dimension(2026-04-20)과 비교 시 *3 책임이 증분*: failure attribution / entropy audit / intervention recording.
+  - `raw/articles/2026-05-14-wildclawbench-real-world-long-horizon.md` — InternLM, "WildClawBench: A Benchmark for Real-World, Long-Horizon Agent Evaluation" (arXiv:2605.10912v1, 2026-05-11). **60 task** (EN 36 + CN 24, multimodal 26 + text 34), 평균 ~8분 wall-clock + 20+ tool calls, Docker 격리, 실제 CLI 하네스 4종(OpenClaw·Claude Code·Codex·Hermes). **Hybrid grading**: rule-based check + env-state auditing + LLM/VLM judge. **19 frontier model — Best Opus 4.7 = 62.2%, 다른 모든 모델 < 60%**. 코드: <https://github.com/InternLM/WildClawBench>.
+- **Pages updated** (추가만, 기존 본문 보존):
+  - `concepts/ai-orchestration.md` — "2026-05-14 보강 — Orchestration as RL Target (Zhang, 2026-05-04)" 섹션 추가 (5 sub-decision × 학습 상태 표 + 8 reward family + message-level counterfactual 공백 + JSON schema 1인 ROI 3개). frontmatter sources/updated/tags 갱신.
+  - `concepts/harness-engineering.md` — "2026-05-14 보강 — Runtime Substrate: 11 Component Responsibilities (Zhong & Zhu)" 섹션 추가 (11 책임 × 본 위키 매핑 표 + Wei vs Zhong/Zhu 비교 표 + 어제 verification-gated와의 관계 + 즉효 ROI 3개). frontmatter sources/updated/tags 갱신.
+  - `concepts/llm-evaluation.md` — "2026-05-14 보강 — WildClawBench: Real-World Long-Horizon 천장" 섹션 추가 (구성·grading 표 + 정량 + Eval 3 layer 재정렬 표(judge / single output / trace) + 1인 ROI 3개). frontmatter sources/updated/tags 갱신.
+- **Pages created**:
+  - `journal/2026-05-14.md` — 목요 데일리 일지 ("Above-the-Model Layer" 3시점 프레임, 4일 연속 layer 이야기 표(05-12 모델 아래 → 05-13 출력 직전 → 05-14 모델 위), Wei/Zhong-Zhu vs Zhang/WildClawBench 2x3 좌표계 빈칸 매핑, 자율 결정 사항, self-declared prediction).
+- **Pages updated (meta)**: `index.md` (journal 9→10, total 70→71), `log.md` (이 항목), `CLAUDE.md` (최근 활동).
+- **Notes**: 4일 연속 같은 한 문장으로 묶임 — *"model alone is not enough — engineer the layer above"*. 다루는 layer가 한 칸씩 위로: 05-12 모델 *아래*(workflow 입구·eval 뒤·invocation 위) → 05-13 출력 *직전*(verification gate, 3 도메인) → 05-14 모델 *위*(학습·정형화·측정). 오늘 3편이 2x3 좌표계(*descriptive/prescriptive/tooling × 학습/정형화/측정*)에서 어디를 채우는지 명시: Zhong/Zhu = (prescriptive, 정형화), WildClawBench = (tooling, 측정), Zhang = (tooling, 학습) — 4개 빈 칸이 후속 후보로 자동 식별됨. **자율 결정 사항**(사용자 부재): Survey(arXiv 2510.25445)는 금요 weekly review용으로 계속 reserve, 오늘은 fresh May 2026 source 3편(05-04/05-11/05-13) 선택. WebFetch rate limit으로 Zhong/Zhu와 WildClawBench는 full PDF 미확보 — abstract+search snippet 수준으로 ingest하고 raw·wiki에 *한계 명시*. 신규 책임 페이지(failure attribution·entropy audit·intervention recording) 신설은 single-source 한계로 보류 — multi-source 누적 시 재검토. `comparisons/agent-eval-frameworks.md` 갱신도 카테고리 혼합 회피로 보류, 대신 `llm-evaluation.md` 본문에 *3 layer 재정렬 표*로 처리. 어제 self-declared prediction(judge reliability가 eval 프레임워크 글에 표준 항목)에 대해 WildClawBench hybrid grading이 *간접 증거*(judge를 셋 중 하나로 격하)만 제공, 강한 조건 미확인 — 금요 weekly review에서 lint 후보. 오늘 새 self-declared prediction: 향후 2주 내 eval 프레임워크 6대장 중 하나가 *harness-as-variable* 메뉴 노출. 상세는 `journal/2026-05-14.md` 하단.
+
+## [2026-05-13] ingest | 출력 직전 게이트 — GSAR(text) + Verify Before You Fix(code) + Affordance Agent Harness(embodied) — 수요 데일리, 자동 인제스트
+
+- **Sources** (raw 3편 추가):
+  - `raw/articles/2026-05-13-gsar-typed-grounding-multiagent.md` — Kamelhar (Oracle), "GSAR: Typed Grounding for Hallucination Detection and Recovery in Multi-Agent LLMs" (arXiv:2604.23366, 2026-04-25). 4-way claim typology(Grounded/Ungrounded/Contradicted/Complementary), evidence-weighted score + **asymmetric contradiction penalty**, **3-tier decision**(proceed/regenerate/replan), bounded outer loop. FEVER + gold Wikipedia evidence, 4 judge(gpt-5.4 / sonnet-4-6 / opus-4-7 / gemini-2.5-pro). **GSAR default 100 vs binary 35 proceed = +185%**, weighted 16/50→18/50, contradiction-penalty ablation으로 asymmetric design 입증, 6 structural properties proof.
+  - `raw/articles/2026-05-13-verify-before-you-fix-execution-grounding.md` — Gajjar (GWU), "Verify Before You Fix" (arXiv:2604.10800v1, 2026-04-12). 3-stage: hybrid structural-semantic detection(uAST + GraphSAGE + Qwen2.5-Coder-1.5B, two-way gating) → execution-grounded agentic validation → validation-aware iterative repair. **Strict invariant: "no repair without execution-confirmed exploitability"**. Java/Python/C++ cross-language via uAST. Framing: probabilistic inference ≠ verified conclusion → compounding failure 방지.
+  - `raw/articles/2026-05-13-affordance-agent-harness-verification-gated.md` — "Affordance Agent Harness: Verification-Gated Skill Orchestration" (arXiv:2605.00663, 2026-05-01). Evidence Store + adaptive Router + Episodic Memory + Verification Gate + Cost Control. **Verifier가 단순 score 대신 "무엇이 missing"인지 actionable diagnostic 출력**. Open-world embodied scene 도메인. (주의: WebFetch rate limit으로 abstract+검색결과만 확보, 본문 정독은 다음 데일리.)
+- **Pages updated** (추가만, 기존 본문 보존):
+  - `concepts/harness-engineering.md` — "2026-05-13 보강 — Verification-Gated Harness, 3-도메인 매핑" 섹션 추가 (text/code/embodied 게이트 비교 표 + Wei 5 dimension mapping + 3 즉효 ROI). frontmatter sources/updated/tags 갱신.
+  - `concepts/context-rot-hallucination.md` — "2026-05-13 보강 — Typed Grounding (GSAR)" 섹션 추가 (4-way claim typology + 3-tier decision + FEVER 정량 + JRH 짝). frontmatter sources/updated/tags 갱신.
+  - `patterns/ai-code-review.md` — "2026-05-13 보강 — Execution Grounding (Verify Before You Fix)" 섹션 추가 (3-stage pipeline + Plan-Review-Execute 3.5 verifier 확장 + 한계). frontmatter sources/updated/tags 갱신.
+- **Pages created**:
+  - `journal/2026-05-13.md` — 수요 데일리 일지 ("Verification-Gated Action" 3-도메인 프레임, 자율 결정 사항, 다음 후보, self-declared prediction).
+- **Pages updated (meta)**: `index.md` (journal 8→9, total 69→70), `log.md` (이 항목), `CLAUDE.md` (최근 활동).
+- **Notes**: 어제(2026-05-12 *모델 아래 세 레버*)가 workflow 입구/eval 뒤/invocation 위였다면 오늘 3편은 한 칸 더 내려가 **출력 직전 게이트**를 도메인별로 잠근다. 공통 구조: `Model 출력 → Evidence Store → Verifier → {proceed | regenerate | replan} → bounded retry`. 차이는 evidence 종류 — text(Wikipedia gold)·code(execution trace)·embodied(skill outputs + prior). GSAR의 4-judge consensus는 어제 JRH "단일 judge unreliable" 결과의 자연스러운 운영적 대응. **자율 결정 사항**(사용자 부재): 어제 명시된 후보 풀(GSAR/VBYF/Survey) 중 Survey는 금요 weekly review용으로 reserve, 대신 fresh May 2026 source인 Affordance Agent Harness(2605.00663)를 embodied 도메인 generalize용으로 추가. add-only 원칙 유지, 기존 본문·링크 무수정. 신규 패턴 페이지 신설 보류(3 도메인 single source씩이라 일반화 이르다). A-Harness raw는 abstract 기반, 본문 정독 후 update 가능. 어제 self-declared prediction(judge reliability가 eval 프레임워크 글에 표준 항목으로 등장)은 *간접 증거*(GSAR multi-judge)만 확보, 강한 조건 미확인 — 다음 데일리에서 lint check 후보. 상세는 `journal/2026-05-13.md` 하단.
+
+## [2026-05-12] ingest | 모델 아래 세 레버 — MEP(preparation) + JRH(judge reliability) + GROUNDING.md(field-scope) — 화요 데일리, 자동 인제스트
+
+- **Sources** (raw 3편 추가):
+  - `raw/articles/2026-05-12-mise-en-place-agentic-coding.md` — Zigler (LinearB), "Mise en Place for Agentic Coding: Deliberate Preparation as Context Engineering Methodology" (arXiv:2605.05400, 2026-05-06). 3-phase preparation (Contextual Grounding / Collaborative Specification / Task Decomposition), **Context Fluency**(4 components) = 새로운 개발자 skill. Hackathon: 9,386 단어 / 64 beads → 8,496 LOC / median **5.9 min/bead**, planning-to-code **1.10:1**, prep-to-execute **5.7:1**, architectural rework ≈ 0.
+  - `raw/articles/2026-05-12-judge-reliability-harness-rand.md` — Dev et al. (RAND), "Judge Reliability Harness" (arXiv:2603.05399, 2026-03-05). 4 judge × 4 benchmark × 8 perturbation. **어떤 judge도 universally reliable 아님.** Format perturbation > semantic perturbation drop. Llama 4 Maverick 17B가 cost-reliability sweet spot ($0.0010/accuracy point, Sonnet 4.5의 1/22). AgentHarm asymmetric failure (Opus 4.5 FN 31.3%, Gemini 2.5 Pro FP 25%). 코드: <https://github.com/RANDCorporation/judge-reliability-harness>.
+  - `raw/articles/2026-05-12-grounding-md-epistemic-agentic.md` — Palmblad, Ragland, Neely, "Epistemic Grounding via GROUNDING.md" (arXiv:2604.21744). Project/Method-scope 위에 **Field-scope, community-governed** GROUNDING.md 제안. **Hard Constraints가 user prompt를 override한다.** Mass spectrometry-based proteomics 예시.
+- **Pages updated** (추가만, 기존 본문 보존):
+  - `concepts/context-engineering.md` — "2026-05-12 보강 — Mise en Place (MEP) & Context Fluency" 섹션 추가 (3-phase 표 + Context Fluency 4 components + Hackathon 정량 + [[journal/2026-05-02]] Google 17.2x vs 4.4x와 대비). frontmatter sources/updated/tags 갱신.
+  - `concepts/llm-evaluation.md` — "2026-05-12 보강 — Judge Reliability Harness (RAND)" 섹션 추가 (5 perturbation family 표 + 정량 표 4건 + 1인 개발자 ROI 4개 + [[comparisons/agent-eval-frameworks]] 한 layer 아래 cross-link). frontmatter sources/updated/tags/related 갱신.
+  - `patterns/claude-md-guide.md` — "2026-05-12 보강 — GROUNDING.md (Field-Scoped Epistemic Grounding)" 섹션 추가 (Scope 계층 표 + 우선순위 역전 + 본 위키 적용 후보 단락). frontmatter sources/updated/tags/related 갱신.
+- **Pages created**:
+  - `journal/2026-05-12.md` — 화요 데일리 일지 (3소스 종합, "모델 아래 세 레버" 프레임, 자율 결정 사항, 다음 후보, self-declared prediction).
+- **Pages updated (meta)**: `index.md` (journal 7→8, total 68→69), `log.md` (이 항목), `CLAUDE.md` (최근 활동).
+- **Notes**: 세 편 모두 "agent 자율성을 어디서 잠가야 reliability가 생기나"라는 같은 질문을 다른 layer에서 답한다 — MEP는 workflow 입구, JRH는 eval 뒤, GROUNDING.md는 invocation 위. 이전 PM 인제스트([[journal/2026-05-06-pm|CAAF]])가 "H를 incorruptible asset으로 잠가라"였다면 오늘 3편은 그 정신을 세 layer로 분산 적용한 것. **자율 결정 사항**(사용자 부재): MEP/JRH/GROUNDING 3편 선택은 "위키 빈 자리 채우기 + 공통 주제 형성 + 정량 데이터"를 만족 (GSAR/Verify Before You Fix/Survey는 다음 데일리로). MEP 패턴 페이지 신설은 single-case study limitation으로 보류, multi-team replication 논문 나오면 검토. JRH는 [[comparisons/agent-eval-frameworks]] 7번째 행으로 넣지 않고 *한 layer 아래* cross-link로 처리 (카테고리 혼합 회피). 본 위키 GROUNDING.md 적용은 *제안만*, 실행은 사용자 확인 필요. WebFetch rate limit으로 세 번째 소스는 abstract만 확보 — `published: 2026-04 (approx)`로 불확실성 명시. 상세는 `journal/2026-05-12.md` 하단.
+
+## [2026-05-06 PM] ingest | 하네스 연구 3좌표축 (Descriptive · Prescriptive · Tooling) — 수요 PM 후속, 자동 인제스트
+
+- **Sources** (raw 3편 추가):
+  - `raw/articles/2026-05-06-pm-architectural-decisions-agent-harnesses.md` — Wei, "Architectural Design Decisions in AI Agent Harnesses" (arXiv 2604.18071, 2026-04-20). 70-project empirical study. **5 design dimensions** (subagent / context / tool / safety / orchestration), **5 architectural patterns**. file-persistent hybrid context **27.1% modal**, registry-based tool **34.3% > MCP 14.3% (emerging)**, container-isolation ↔ structured approval **lift 3.4**.
+  - `raw/articles/2026-05-06-pm-caaf-deterministic-harness.md` — Tianbao Zhang, "Harness as an Asset: CAAF" (arXiv 2604.17025, 2026-04-18). **Anti-evolution**: H를 진화시키지 말고 incorruptible asset으로 잠가라. RAD + HaaA + UAI + State Locking. L3 자율주행 paradox detection **30/30 vs monolithic GPT-4o no-hint 0/30**, multi-agent baseline (debate/sequential) 80 trial **모두 0%**.
+  - `raw/articles/2026-05-06-pm-meta-harness-stanford.md` — Lee et al. (Stanford·KRAFTON·MIT), "Meta-Harness" (arXiv 2603.28052, 2026-03-30). **Filesystem-as-memory**: coding-agent proposer가 grep/cat으로 prior 후보 inspect, **10 MTok/iter** (기존 0.002–0.026의 3 orders of magnitude up). 텍스트 분류 ACE 대비 **+7.7 points / 4× fewer tokens**, IMO math **+4.7 points (5 모델 평균)**, **TerminalBench-2 #1 (Haiku 4.5 부문)**.
+- **Pages updated** (추가만, 기존 본문 보존):
+  - `concepts/harness-engineering.md` — "2026-05-06 PM 보강 — 하네스 연구의 세 좌표축" 섹션 추가 (Descriptive/Prescriptive/Tooling 3축 표 + Wei 5 dimensions × CAAF 4 컴포넌트 매핑 + Meta-Harness vs 기존 text optimizer 비교 표 + 오전 3편과 합친 1년 지도). frontmatter sources에 raw 3건 추가만.
+- **Pages created**:
+  - `journal/2026-05-06-pm.md` — PM 후속 일지 (3소스 종합, 자율 결정 사항, 다음 후보).
+- **Pages updated (meta)**: `index.md` (journal 6→7, total 67→68), `log.md` (이 항목), `CLAUDE.md` (최근 활동).
+- **Notes**: 오전 3편(자동 진화 + 관측 + 시장)과 오후 3편(taxonomy + determinism + tooling)을 합치면 6편이 한 그림 — *자동 진화 라인(상단)*과 *결정적 잠금 라인(하단)*이 직교한다. Last Harness/AHE/Meta-Harness가 "H를 똑똑하게 만든다"면, CAAF는 "H를 신뢰 가능하게 만든다". 안전-크리티컬에서는 둘이 합쳐져야 함. **두 번째 정량 근거**(첫 번째: Google 2026-05-02 17.2x vs 4.4x)로 오케스트레이션 단독으로 reliability gap이 안 닫힌다(CAAF 80 trial 0%)가 들어옴. **자율 결정 사항**(사용자 부재): 세 번째 소스로 Affordance Agent Harness/SemaClaw/NL Agent Harnesses 대신 Meta-Harness 선택 (자동 진화 라인 마무리), journal은 별도 파일(`-pm.md`) 분리(2026-05-01-backfill 선례), comparison 페이지 신설은 다음 데일리 트리거까지 보류, 다른 페이지 보강은 over-engineering 회피로 손대지 않음. 상세는 `journal/2026-05-06-pm.md` 하단.
+
+## [2026-05-06] ingest | 자동 하네스 진화 두 편(arXiv) + Anthropic 2026 Agentic Coding Trends (수요 데일리, 자동 인제스트)
+
+- **Sources** (raw 3편 추가):
+  - `raw/articles/2026-05-06-anthropic-agentic-coding-trends-report.md` — Anthropic 2026 Agentic Coding Trends Report (PDF). 8 트렌드 / 3 카테고리. 60%/0–20% 격차, AI-assisted work의 27%는 이전엔 안 했을 일, Cowork 명시 호명.
+  - `raw/articles/2026-05-06-last-harness-meta-evolution.md` — Seong et al., "The Last Harness You'll Ever Build" (arXiv 2604.21003, 2026-04-22). 2-Level 메타 진화: L1 Worker/Evaluator/Evolution + L2 진화 프로토콜 `Λ` 자체를 task 간에 메타-학습.
+  - `raw/articles/2026-05-06-agentic-harness-engineering-observability.md` — "Agentic Harness Engineering" (arXiv 2604.25850). 3 observability pillars (component / experience / decision). Terminal-Bench 2 pass@1 69.7%→77.0% in 10 iter, 사람 SOTA(Codex-CLI 71.9%) 능가.
+- **Pages updated** (추가만, 기존 본문 보존):
+  - `concepts/harness-engineering.md` — "2026-05-06 보강 — 자동 하네스 진화 (Self-Evolving Harness)" 섹션 추가. 2-Level 표 + 3-Pillar 표 + Anthropic Trend 2/3/4 매핑.
+  - `concepts/gen-ai-observability.md` — "2026-05-06 보강 — Agent Design-Level Observability (AHE)" 섹션 + 인프라 레벨 / agent design 레벨 분리 표 + Datadog 보강과의 짝.
+- **Pages created**:
+  - `journal/2026-05-06.md` — 수요 데일리 일지 (3소스 종합).
+- **Pages updated (meta)**: `index.md` (journal 5→6, total +1), `log.md`, `CLAUDE.md` (최근 활동).
+- **Notes**: 같은 시점 두 arXiv가 일부러 짝으로 읽어야 함 — Last Harness가 자동 진화 약속을 내고, AHE가 그 약속이 trial-and-error로 안 무너지는 관측 디자인을 낸다. Anthropic 보고서가 그게 1년 동안 시장 트렌드라고 못박는다. **"H 자체가 변수다 → Λ도 변수다"**가 새 추상화 — 우리 위키의 [[patterns/harness-engineering-casebook]] 매트릭스가 자연스러운 `Λ` 학습 데이터 후보. 즉효 ROI: ingest log에 *self-declared prediction* 필드 한 줄 추가 → 모든 edit이 falsifiable contract. 자동 인제스트(`ai-news` 스케줄러), 사용자 부재 상태 자율 결정 사항은 `journal/2026-05-06.md` 하단 메모 참조. 기존 본문·링크 변경 없음.
+
+## [2026-05-03] ingest | MS Agent Framework 1.0 + Datadog State of AI Engineering + ZenBrain 7-계층 메모리 (일요 데일리)
+
+- **Sources** (raw 3편 추가):
+  - `raw/articles/2026-05-03-microsoft-agent-framework-v1.md` — Microsoft Agent Framework 1.0 GA (2026-04-03, .NET·Python, MIT) — Semantic Kernel + AutoGen 통합, 5 오케스트레이션 패턴(sequential/concurrent/handoff/group chat/Magentic-One), MCP·A2A 1차 지원, Claude Code SDK / GitHub Copilot SDK as harness
+  - `raw/articles/2026-05-03-datadog-state-of-ai-engineering-2026.md` — Datadog 1,000+ 고객 트레이스 7대 사실 (70%+ 3+ 모델, 프레임워크 채택 1년에 2배, 시스템 프롬프트 입력 토큰 69% / caching 28%만 활용, rate limit이 실패 모드 1위, 에이전트 59%는 단일 호출 모놀리식)
+  - `raw/articles/2026-05-03-zenbrain-7-layer-memory.md` — ZenBrain (arXiv 2604.23878, 2026-04-26): 신경과학 영감 7계층 메모리 + 9 알고리즘 + 6 PMA 컴포넌트, Self/Autobiographical·Predictive 두 신축 추가
+- **Pages updated** (추가만, 기존 본문 보존):
+  - `concepts/ai-orchestration.md` — "2026-05-03 보강 — Microsoft Agent Framework 1.0 (5 패턴) 매핑" 섹션 추가, 6대 패턴 ↔ MS 5 패턴 매핑 표
+  - `concepts/gen-ai-observability.md` — "2026-05-03 보강 — Datadog 1,000+ 트레이스" 섹션 추가, 7대 사실 표
+  - `concepts/ai-memory-systems.md` — "2026-05-03 보강 — ZenBrain 7-계층 + Predictive Memory" 섹션 + 참고 소스 2건 (ZenBrain + Memory survey)
+- **Pages created**:
+  - `journal/2026-05-03.md` — 일요 데일리 학습 일지 (3소스 종합)
+- **Pages updated (meta)**: `index.md` (총 페이지 65→66, journal 4→5), `log.md`
+- **Notes**: 세 글은 같은 시점의 다른 단면이다 — **표준화(MS 1.0) / 정량 진단(Datadog) / 다음 세대 모델(ZenBrain)**. 함류점: 인프라는 빠르게 굳고 있고, 운영 부채는 빠르게 쌓이고 있고, 메모리 모델은 한 단계 더 갈 곳이 명확하다. 1인 개발자 즉효 ROI 3가지 — caching prefix 정렬 / token·call budget / persona·forgetting 정책 명문화. 기존 본문·링크 변경 없음, frontmatter sources/updated만 갱신.
+
+## [2026-05-02] ingest | 멀티 에이전트 정량 한계 + 3-에이전트 분리 + 6 레버 (토요 데일리)
+
+- **Sources** (raw 3편 추가):
+  - `raw/articles/2026-05-02-google-scaling-agent-systems.md` — Google Research, "Towards a Science of Scaling Agent Systems" (180 컨피그 통제 실험, alignment principle, 17.2x vs 4.4x 오류 증폭)
+  - `raw/articles/2026-05-02-anthropic-three-agent-harness-infoq.md` — InfoQ 정리 + Anthropic 1차 출처 (Planner/Generator/Evaluator 3-에이전트, Playwright MCP 평가, 컨텍스트 리셋 + 핸드오프 아티팩트)
+  - `raw/articles/2026-05-02-humanlayer-skill-issue-harness.md` — HumanLayer (CLAUDE.md/MCP/Skills/Sub-agents/Hooks/Back-pressure 6 레버 + ETH Zurich 138-agentfile + Chroma context rot 인용)
+- **Pages updated** (추가만, 기존 본문 보존):
+  - `concepts/harness-engineering.md` — "2026-05 보강 — 정량 근거·3-에이전트 분리·6 레버" 섹션 추가
+  - `concepts/ai-orchestration.md` — "Alignment principle" 섹션 + 6대 패턴에 정량 매핑
+  - `patterns/subagents-delegation.md` — "Context firewall" 섹션 + HumanLayer 안티패턴 정리
+- **Pages created**:
+  - `journal/2026-05-02.md` — 토요 데일리 학습 일지
+- **Pages updated (meta)**: `index.md`, `overview.md`, `log.md`
+- **Notes**: 세 글은 같은 결론을 다른 각도에서 본다 — 데이터(Google) / 장시간 세션 실전(Anthropic) / 운영자 6 레버(HumanLayer). 핵심 합류점: **오케스트레이터/Evaluator는 성능 booster가 아니라 validation bottleneck = 안전 컴포넌트**. 위키에 마침내 17.2x vs 4.4x 오류 증폭이라는 정량 근거가 들어왔다. 기존 페이지 본문·링크 변경 없음, frontmatter sources/updated만 갱신.
+
+## [2026-05-01] deep-dive | Solo dev 라인 + 인터랙티브 비용 시뮬레이터 widget (저녁)
+
+- **Sources** (raw 3편 추가, 총 19편):
+  - `raw/articles/2026-05-01-1-person-saas-cost-deep.md` — Claude API 가격 (Haiku 4.5/Sonnet 4.6/Opus 4.7) + Senja·Rondot·Noosa 사례 + Modal/Daytona/Runloop 인프라 가격 + 1000+ 창업자 median 데이터
+  - `raw/articles/2026-05-01-managed-vs-selfhost-breakeven.md` — 변곡점 정량 모델 `T × S = 25 × F`. 시나리오 A($80) / B($200) / C($500) 변곡점 표
+  - `raw/articles/2026-05-01-mvp-stack-tools-2026.md` — 5대 영역 × 4 단계 매트릭스 + 단계별 budget + 의사결정 트리 + 채널 전략
+- **Pages created (2개)**:
+  - `wiki/patterns/agent-mvp-stack-2026.md` — 5대 영역 매트릭스 (에이전트 인프라 6번째 영역 추가) + 단계별 budget + 의사결정 트리 + 변곡점 + 사례 MRR + 채널 전략
+  - `wiki/comparisons/agent-platforms-for-solo-dev.md` — Managed Agents / Deep Agents Deploy / OpenAI Agents SDK / LangGraph 직접 4종 1인 관점 비교
+- **인터랙티브 widget 추가 (1개)**:
+  - `examples/cost-simulator/index.html` (369줄) — Vanilla HTML+JS+CSS 단일 파일. 트래픽·세션 시간·모델·토큰량·인프라비·MRR 슬라이더 → Managed vs Self-host 월 비용 실시간 비교 + 변곡점 분석 + MRR 대비 비용 비율 라벨링 (healthy <30% / warn <60% / bad)
+  - `examples/cost-simulator/README.md` — 보는 법, 가정·한계, 향후 확장 아이디어
+- **Pages updated (2개)**:
+  - `patterns/solo-product-strategy.md` — 단계 가이드를 후속 페이지로 분기 + 사례 MRR 현실 체크 (Senja·Rondot·Noosa) + 채널 패턴 추가
+  - `patterns/ai-cost-management.md` — 2026-05 가격 표 갱신 (Opus 4.7 추가, fast mode 메모, output:input 일관 5x), 인터랙티브 시뮬레이터 링크
+  - `wiki/index.md` (62→64), `wiki/log.md`(이 항목)
+- **Notes**: 사용자 요청 "또 할 거 알려줘" → 옵션 4개 중 A 선택. Theme D(Solo dev)를 마지막으로 4개 라인 다 채움 — A(Managed/Deep Agents) ✓ B(Multi-agent) ✓ C(보안·eval) ✓ D(Solo dev) ✓. **처음으로 인터랙티브 HTML widget**까지 들어가서, 위키가 markdown 외에 실증 코드(dual-llm.ts) + 인터랙티브 도구(cost-simulator)까지 포함하는 자료집으로 진화. 사용자가 "내 트래픽 가정으로 변곡점 어디인지" 슬라이더 만져서 직접 답을 얻을 수 있게 됨.
+
+## [2026-05-01] deep-dive | 보안·eval 라인 딥다이브 + dual-LLM 실증 코드 (오후 후반)
+
+- **Sources** (raw 3편 추가, 총 16편):
+  - `raw/articles/2026-05-01-dual-llm-camel-pattern.md` — [Simon Willison Dual LLM (2023)](https://simonwillison.net/2023/Apr/25/dual-llm-pattern/) + [Design Patterns for Securing LLM Agents (2025-06-13)](https://simonwillison.net/2025/Jun/13/prompt-injection-design-patterns/) + [DeepMind CaMeL — arXiv 2503.18813](https://arxiv.org/abs/2503.18813) 종합
+  - `raw/articles/2026-05-01-owasp-asi-2026.md` — [OWASP Top 10 for Agentic Applications 2026 (ASI01-ASI10)](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)
+  - `raw/articles/2026-05-01-eval-frameworks-deep.md` — Inspect AI · Langfuse · RAGAS 추가 분석
+- **Pages created (2개)**:
+  - `wiki/concepts/agent-supply-chain-security.md` — 4 supply chain 표면 + Tier 0~3 신뢰 모델 + dual-LLM/CaMeL/Brain-Hands 매핑
+  - `wiki/comparisons/agent-eval-frameworks.md` — 6 eval framework 풀 비교 + 결정 가이드 + 3 평가 전략 + 권장 조합
+- **Pages updated (1개)**: `wiki/patterns/owasp-llm-typescript-mitigations.md` — agentic 확장 (ASI01~ASI10 매핑 표 + 6층 layered defense + dual-LLM/CaMeL 패턴 섹션 + 실증 코드 링크)
+- **examples/ 코드 추가**: `examples/agent-safety-sketch/dual-llm.ts` — Vercel AI SDK 위 P-LLM(도구 사용) / Q-LLM(도구 0) 분리 minimal sketch. 이메일 본문에 prompt injection 심긴 시나리오에서 P-LLM 결정에 영향 안 가는지 직접 실행 가능. README도 dual-LLM 섹션 추가.
+- **Notes**: 사용자 요청 "다른 것도 계속" 후 Theme C 딥다이브 채택. 위키에서 가장 약했던 보안 라인 강화. 처음으로 **examples/ 폴더에 실증 코드까지** 내려가 over-engineering 함정을 회피. CaMeL의 information flow integrity 같은 깊이는 sketch에 안 넣고 raw에만 정리(필요 시 다음 단계).
+
+## [2026-05-01] big-backfill | Theme A 딥다이브 + B/C/D 백필 (오후 작업)
+
+- **Sources** (raw 10편 신규):
+  - 딥다이브 (Theme A — Managed/Deep Agents 플랫폼):
+    - `raw/articles/2026-05-01-anthropic-managed-agents-launch.md` — [Claude Managed Agents 공식 발표 (2026-04-08)](https://claude.com/blog/claude-managed-agents)
+    - `raw/articles/2026-05-01-anthropic-agent-skills.md` — [Anthropic Agent Skills (SKILL.md)](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills)
+    - `raw/articles/2026-05-01-langchain-deep-agents-skills.md` — [Deep Agents + Skills (Lance Martin, LangChain)](https://www.langchain.com/blog/using-skills-with-deep-agents)
+    - `raw/articles/2026-05-01-agents-md-spec.md` — [AGENTS.md 표준 (Linux Foundation, 60k+ 저장소)](https://agents.md)
+  - 백필 B (멀티에이전트):
+    - `raw/articles/2026-05-01-a2a-protocol-spec.md` — [A2A 프로토콜 스펙 (Google→Linux Foundation)](https://a2a-protocol.org/latest/specification/)
+    - `raw/articles/2026-05-01-langchain-langgraph-1-0.md` — [LangGraph 1.0 stability (LangChain)](https://blog.langchain.com/langchain-langgraph-1dot0/)
+  - 백필 C (보안·eval):
+    - `raw/articles/2026-05-01-prompt-injection-defense-2026.md` — OWASP #1 + dual-LLM 패턴 + 6층 defense in depth (다출처 종합)
+    - `raw/articles/2026-05-01-agent-eval-frameworks-2026.md` — DeepEval/LangSmith/Braintrust/Langfuse/Inspect AI/RAGAS 비교
+  - 백필 D (solo dev) + 보너스:
+    - `raw/articles/2026-05-01-solo-founder-ai-stack-2026.md` — 1인 창업자 2026 AI 스택 비용 모델
+    - `raw/articles/2026-05-01-anthropic-advisor-strategy.md` — [Anthropic Advisor Strategy (2026-04-09)](https://claude.com/blog/the-advisor-strategy)
+- **Pages created (4개)**:
+  - `wiki/tools/managed-agents.md` — Claude Managed Agents 도구 페이지
+  - `wiki/tools/deep-agents-deploy.md` — LangChain Deep Agents Deploy 도구 페이지
+  - `wiki/comparisons/managed-vs-deep-agents.md` — 두 플랫폼 비교
+  - `wiki/concepts/a2a-protocol.md` — A2A 프로토콜 개념
+  - `wiki/journal/2026-05-01-backfill.md` — 오후 작업 일지
+- **Pages updated (surgical, 6개)**:
+  - `concepts/mcp.md` — MCP의 자매 표준 A2A 섹션
+  - `concepts/ai-orchestration.md` — Advisor Strategy 7번째 패턴 + 4월 stability·플랫폼 진화
+  - `comparisons/agent-frameworks.md` — 매니지드 플랫폼 두 종 행 + LangGraph 1.0 + A2A 채택
+  - `patterns/solo-product-strategy.md` — 2026 5대 영역 비용 표 + Managed vs Self-host 변곡점
+  - `patterns/ai-cost-management.md` — Managed 세션 단가 모델 + Advisor Strategy 라우팅 변형
+  - `patterns/claude-md-guide.md` — CLAUDE.md ↔ AGENTS.md ↔ SKILL.md 가족 비교 표
+  - `wiki/index.md` (총 페이지 55→60), `wiki/log.md`(이 항목)
+- **Notes**: 사용자 직접 요청 — "2주 빠진 리서치 빡세게 채워 줘". 하이브리드 스코프(Theme A 딥다이브 + B/C/D 백필) 합의 후 약 1.5~2시간 작업. 큰 그림: **표준화 4단(MCP → SKILL.md → AGENTS.md → A2A)이 6개월 안에 다 일어남, Managed Agents와 Deep Agents Deploy가 동일 추상화에 도달하지만 패키징은 정반대**. 위키에 그동안 비어 있던 **"upper-middle 매니지드 플랫폼"** 칸이 채워짐.
+
+## [2026-05-01] ingest | AI 에이전트 엔지니어링 3편 + 금요 회고
+
+- **Sources**:
+  - `raw/articles/2026-05-01-agent-stack-2026-layers.md` — [Hieu TRAN, "The Agent Stack in 2026" (dev.to, 2026-04-14)](https://dev.to/hieu_tran_80c388add84c060/the-agent-stack-in-2026-layers-harnesses-and-where-you-actually-build-2e5g)
+  - `raw/articles/2026-05-01-otel-ai-agent-observability.md` — [Liu·Solomon, "AI Agent Observability — Evolving Standards and Best Practices" (OTel Blog, 2025-03-06)](https://opentelemetry.io/blog/2025/ai-agent-observability/)
+  - `raw/articles/2026-05-01-agentic-engineering-cisco-langchain.md` — [Kumar·Ramagopal (Cisco), "Agentic Engineering" (LangChain Blog, 2026-04-17)](https://www.langchain.com/blog/agentic-engineering-redefining-software-engineering)
+- **Pages created**: `wiki/journal/2026-05-01.md`
+- **Pages updated**: `concepts/harness-engineering.md` (스택 stratification·하네스 단순화 원칙·ClawHavoc 보안 교훈 섹션 추가), `concepts/gen-ai-observability.md` (Baked-in vs 외부 OTel 의사결정 가이드·app vs framework 구분 섹션 추가), `concepts/agentic-engineering.md` (Worker/Leader 제어 평면·Cisco 파일럿 수치 섹션 추가), `wiki/index.md`, `wiki/log.md`
+- **Notes**: 데일리 인제스트(스케줄 태스크 자동 실행). 세 글이 한 그림으로 모임 — "어디 레이어에 살 것인가(Hieu) / 어느 레이어든 텔레메트리는 표준에(OTel) / 제어 평면을 LangGraph 위에 얹어보니 조정 비용이 압축되더라(Cisco)". 기존 페이지 문구는 보존, 새 섹션만 추가.
+
+## [2026-05-01] weekly | 금요 회고 — 중복·압축 후보 점검 (실제 머지는 미실행)
+
+- **What I checked**: index.md 전체 + concepts·patterns·comparisons 페이지 페어들의 의도적 분리/실제 중복 여부.
+- **명확하게 분리되어 있고 그대로 두는 것이 좋은 페어**: `concepts/harness-engineering` ↔ `patterns/harness-engineering-casebook` (개념 vs 케이스북), `concepts/ai-orchestration` ↔ `patterns/orchestration-patterns-practice` (이론 vs 실습), `concepts/context-engineering` ↔ `concepts/context-vs-prompt-practice` (개념 vs 커리큘럼 1편).
+- **살짝 겹치는 영역 (압축이 아니라 교차 링크 보강이 답)**: `patterns/agent-server-harness` ↔ `patterns/harness-building-blocks` (~15% 겹침; 다음 작업 시 양 페이지 상단에 "어느 페이지에 무엇을 쓸지" 가이드 한 줄). `patterns/agent-planning-to-implementation` ↔ `patterns/agent-server-harness` ↔ `patterns/harness-engineering-casebook` (같은 파이프라인을 다른 각도에서 봄, 케이스북에 매핑 이미 존재).
+- **실제 머지·삭제는 보류**: 본 회고 원칙은 "링크와 핵심 내용은 절대 보존". 머지가 필요할 때 사용자 확인 후 진행.
+- **다음 작업 후보 (우선순위 순)**: (1) `comparisons/agent-frameworks`에 Managed Agents·Deep Agents Deploy 행 추가, (2) `tools/`에 Managed Agents 페이지 신설은 실사용 시점까지 보류(over-engineering 회피), (3) 다음 모델 업그레이드 시 우리 `examples/` 하네스에서 무엇을 줄일 수 있는지 별도 일지.
+- **상세 회고 노트**: [[journal/2026-05-01]] 의 "금요 회고" 섹션.
 
 ## [2026-04-12] update | Chapter Clear 월드맵 허브 연결
 

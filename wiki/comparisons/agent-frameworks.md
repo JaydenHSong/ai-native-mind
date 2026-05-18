@@ -3,13 +3,20 @@ title: "AI Agent 프레임워크 비교 (2026)"
 category: comparisons
 tags: [langgraph, crewai, openai-agents-sdk, multi-agent, framework]
 created: 2026-04-09
-updated: 2026-04-11
+updated: 2026-05-01
 sources:
   - "raw/notes/2026-04-09-agent-frameworks-comparison.md"
+  - "raw/articles/2026-05-01-langchain-langgraph-1-0.md"
+  - "raw/articles/2026-05-01-langchain-deep-agents-skills.md"
+  - "raw/articles/2026-05-01-anthropic-managed-agents-launch.md"
+  - "raw/articles/2026-05-01-a2a-protocol-spec.md"
 related:
   - "[[concepts/ai-orchestration]]"
   - "[[concepts/harness-engineering]]"
   - "[[tools/claude-code]]"
+  - "[[tools/managed-agents]]"
+  - "[[tools/deep-agents-deploy]]"
+  - "[[comparisons/managed-vs-deep-agents]]"
 status: active
 confidence: medium
 ---
@@ -73,8 +80,27 @@ confidence: medium
 | Orchestrator-Workers | ✅ | ✅ | ✅ |
 | Evaluator-Optimizer | ✅ | ✅ | - |
 
+## 2026-04 업데이트 — 매니지드 플랫폼 두 종 등장
+
+위 비교표는 **저수준~중간** 프레임워크들 간의 비교다. 2026년 4월 들어 그 위에 **upper-middle 매니지드 플랫폼 두 종**이 추가되었다 — 같은 라이브러리/프레임워크를 **운영까지 포함해서 패키징**한 변형.
+
+| 플랫폼 | 기반 | 모델 | 라이선스 | 가격 |
+|--------|------|------|---------|------|
+| [[tools/managed-agents]] (Claude Managed Agents, Anthropic) | Anthropic 자체 하네스 | Claude 전용 | 클로즈드 SaaS | 토큰 + $0.08/세션-시간 |
+| [[tools/deep-agents-deploy]] (LangChain Deep Agents Deploy) | LangGraph 1.0 + deepagents | 모델 무관 | MIT | 인프라 자체 부담 |
+
+자세한 비교: [[comparisons/managed-vs-deep-agents]].
+
+**LangGraph 1.0 stability**: [LangChain·LangGraph v1.0](https://blog.langchain.com/langchain-langgraph-1dot0/)이 2025-10에 발표되어, "**2.0 전까지 breaking change 없음**" 약속과 함께 production deploy의 안정성 보장이 들어왔다. Uber·LinkedIn·Klarna 등 widespread adoption.
+
+**A2A 프로토콜 채택**: 모든 매니지드 플랫폼과 LangGraph Agent Server가 [[concepts/a2a-protocol|A2A]] endpoint를 표준으로 노출 — 프레임워크가 달라도 에이전트끼리 통신 가능.
+
 ## 참고 소스
 
 - [Agent 프레임워크 비교 리서치](raw/notes/2026-04-09-agent-frameworks-comparison.md)
+- [LangGraph 1.0 stability](raw/articles/2026-05-01-langchain-langgraph-1-0.md)
+- [Deep Agents + Skills](raw/articles/2026-05-01-langchain-deep-agents-skills.md)
+- [Managed Agents 출시](raw/articles/2026-05-01-anthropic-managed-agents-launch.md)
+- [A2A 프로토콜](raw/articles/2026-05-01-a2a-protocol-spec.md)
 - [LangGraph vs CrewAI vs OpenAI SDK (Particula)](https://particula.tech/blog/langgraph-vs-crewai-vs-openai-agents-sdk-2026)
 - [AI Agent Frameworks Compared (Langfuse)](https://langfuse.com/blog/2025-03-19-ai-agent-comparison)

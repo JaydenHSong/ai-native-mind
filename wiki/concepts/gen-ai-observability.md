@@ -3,9 +3,12 @@ title: "GenAI·에이전트 관측 가능성 (OpenTelemetry)"
 category: concepts
 tags: [observability, opentelemetry, genai, agents, tracing, semconv]
 created: 2026-04-11
-updated: 2026-04-12
+updated: 2026-05-06
 sources:
   - "raw/notes/2026-04-11-vercel-workflow-otel-agents-research.md"
+  - "raw/articles/2026-05-01-otel-ai-agent-observability.md"
+  - "raw/articles/2026-05-03-datadog-state-of-ai-engineering-2026.md"
+  - "raw/articles/2026-05-06-agentic-harness-engineering-observability.md"
 related:
   - "[[concepts/llm-evaluation]]"
   - "[[patterns/agent-server-harness]]"
@@ -55,11 +58,82 @@ confidence: high
 
 어느 쪽이든 **에이전트 프레임워크 시맨틱 컨벤션에 맞출 것**이 상호운용의 전제로 강조된다 (OTel 블로그).
 
+### 두 갈래 의사결정 가이드 (2026-05-01 추가)
+
+OTel 공식 블로그 [AI Agent Observability — Evolving Standards and Best Practices (Liu·Solomon, 2025-03-06)](https://opentelemetry.io/blog/2025/ai-agent-observability/)의 트레이드오프를 표로 정리.
+
+| 항목 | Baked-in (예: CrewAI) | 외부 OTel 패키지 (Traceloop, Langtrace, [`instrumentation-genai`](https://github.com/open-telemetry/opentelemetry-python-contrib/tree/main/instrumentation-genai)) |
+|------|------|------|
+| 사용자 디폴트 | 켜져 있음 | 별도 추가 |
+| 신기능 동시 계측 | 쉽다 | 패키지 사이클 별도 |
+| Bloat | 관측 안 쓰는 사용자에게 부담 | 없음 |
+| OTel 버전 lock-in | 위험 (프레임워크가 따라가야 함) | 패키지 단위로 갱신 |
+| 고급 사용자 유연성 | 낮음 | 높음 |
+| OTel 컨벤션 추적 | 프레임워크 책임 | 커뮤니티 검토 가능 |
+
+**Baked-in 측 best practice**: 토글 설정, 외부 패키지와 충돌 회피, [OTel registry](https://opentelemetry.io/ecosystem/registry/) 등록.
+
+**장기 방향**: 외부 instrumentation도 자체 repo → OTel-owned repo로 이전(예: Traceloop의 [기증 진행](https://github.com/open-telemetry/community/issues/2571))이 권장된다.
+
+### AI agent application ≠ AI agent framework
+
+OTel 글의 핵심 구분:
+
+- **AI agent application**: 자율적으로 특정 태스크를 수행하는 개별 AI 엔티티
+- **AI agent framework**: 에이전트를 만들고/관리하고/배포할 인프라 — IBM Bee AI, IBM wxFlow, CrewAI, AutoGen, Semantic Kernel, LangGraph, PydanticAI 등
+
+→ 시맨틱 컨벤션도 **app convention**과 **framework convention**으로 나뉘며 ([app issue #1732](https://github.com/open-telemetry/semantic-conventions/issues/1732), [framework issue #1530](https://github.com/open-telemetry/semantic-conventions/issues/1530)), 프레임워크는 공통 표준 위에 자체 vendor convention을 얹을 수 있다.
+
+또한 텔레메트리는 단순 모니터링이 아니라 **eval 피드백 루프 입력**이다 — 트레이스의 `trace_id`·세션을 eval 데이터셋과 join하면 프레임워크가 달라도 비용·지연·품질 회귀를 통합 분석할 수 있다.
+
+### 2026-05-03 보강 — Datadog State of AI Engineering 2026 (1,000+ 고객 트레이스)
+
+[Datadog State of AI Engineering 2026](https://www.datadoghq.com/state-of-ai-engineering/) 리포트는 **1,000+ 고객사 LLM 트레이스**로 프로덕션 현실을 정량화. 관측이 옵션이 아니라는 본 페이지 주장에 데이터를 댄다.
+
+| 사실 | 수치 | 함의 |
+|------|------|------|
+| 모델 다변화 | **70%+ 조직이 3개+ 모델**, 6개+ 운용 비율 거의 2배 | 모델 게이트웨이가 표준 |
+| 옛 모델 잔존 | GPT-4o **22%**, Sonnet 4.5 **19%** (2026-03 기준) | "모델 부채"가 거버넌스 문제 |
+| 프레임워크 채택 | 1년 만에 **9% → 18%**, 서비스 수도 2배 | sprawl → 깊은 텔레메트리 필수 |
+| 시스템 프롬프트 비중 | 입력 토큰의 **69%** | scaffolded agent의 비용 핵심 |
+| Prompt caching 활용 | 지원 모델에서 **28%만** cached-read | [[patterns/prompt-caching|prompt caching]]은 여전히 가장 큰 미수확 ROI |
+| Top 실패 모드 | rate limit **30~60%** of all errors | backpressure·budget·queue가 1순위 안전 장치 |
+| 모놀리식 에이전트 | **59%가 단일 호출**, 3개+ 호출은 **18%** | 멀티 에이전트는 갈 길 멀고, 가는 순간 trace propagation이 필수 |
+
+핵심 메시지(Vercel Guillermo Rauch 인용 요지): "다음 에이전트 실패 물결은 *할 수 없는 것*이 아니라 *팀이 관측할 수 없는 것*에서 온다." 즉, **GenAI semconv → 트레이스 → eval 루프**의 본 페이지 흐름이 관측 사치가 아니라 신뢰성 인프라의 1번지라는 1,000개 회사 분량의 정량 근거다.
+
+운영 권고와의 연결:
+
+- **rate limit이 1위 실패 모드**는 [[patterns/agent-server-harness]]의 "타임아웃·취소·부분 실패" 표를 강화 — backpressure·budget이 nice-to-have가 아니다.
+- **system prompt 69% / cache 28%**는 [[patterns/prompt-caching]]의 "90% 절감"이 이론치가 아니라 **대다수 조직이 아직 안 한 것**이라는 데이터 — 캐시 prefix 재사용 가능한 prompt layout이 IDE-level 표준이 되어야.
+- **모델 부채**는 [[concepts/cognitive-debt]]의 AI 버전. 옛 모델 retire 정책을 운영 룰북에 명문화 필요.
+
 ## 서버 하네스와 연결
 
 - [[patterns/agent-server-harness]] 의 “관측: `run_id`, 단계 로그”를 **표준 스팬**으로 올리면, 이후 APM이 GenAI 컨벤션을 소비할 때 **동일 대시보드**로 모델·도구·에이전트 단계를 잇기 쉽다.
 - [[concepts/harness-engineering]] 의 **Sensors**를 “린트만”이 아니라 **분산 트레이스**까지 확장하는 그림.
 - [[concepts/llm-evaluation]] 과 짝: 트레이스에 붙은 `trace_id`·세션을 eval 데이터셋과 join하면 회귀 분석이 쉬워진다.
+
+## 2026-05-06 보강 — Agent Design-Level Observability (AHE)
+
+[Agentic Harness Engineering: Observability-Driven Automatic Evolution of Coding-Agent Harnesses (arXiv 2604.25850)](https://arxiv.org/abs/2604.25850)는 **인프라 레벨 관측(OTel/Datadog)**과 **agent design 레벨 관측**을 같은 단어 다른 레이어로 분리해 본다. 자동 하네스 진화가 trial-and-error로 붕괴하지 않으려면 셋이 **모두** 필요하다.
+
+| Pillar | OTel/인프라 레벨에 있는 것 | Agent design 레벨에서 추가로 필요한 것 |
+|--------|---------------------------|------------------------------------|
+| **Component observability** | 서비스·프로세스 토폴로지 | **편집 가능 컴포넌트(`H`의 prompt/tool/eval룰/orchestration 코드) 각각이 file-level로 분리**, revertible |
+| **Experience observability** | 트레이스·로그(원시) | 수백만 토큰 trajectory를 **layered drill-down evidence corpus**로 distill (= 진화 에이전트가 실제 소비 가능한 형태) |
+| **Decision observability** | 변경 이력(deploy log) | 모든 edit ↔ **self-declared prediction** → 다음 라운드 task 결과로 **falsifiable contract** 검증 |
+
+**정량**: AHE 10 iterations에서 Terminal-Bench 2 pass@1 **69.7% → 77.0%**, 사람이 만든 SOTA harness Codex-CLI(71.9%)와 ACE/TF-GRPO 능가. 즉 **관측 디자인이 잘 된 자동 진화**가 사람의 수공예 SOTA를 넘긴다.
+
+### 우리 위키에 즉시 적용
+
+- 현재 wiki의 **Sensors = lint + frontmatter 검증**은 component observability 만 충족. **decision observability** 가 없다 → ingest log에 *“이 edit이 무엇을 고칠 것이라 주장하는가”* 필드(self-declared prediction) 한 줄 추가하면 falsifiable contract가 생긴다.
+- 하네스 컴포넌트(CLAUDE.md, templates/, 프롬프트 스니펫, eval 룰)를 **하나의 큰 문서가 아니라 작은 파일들로** 유지 — revertible성과 attribution이 살아남는 이유는 component observability 정의 그대로다.
+
+### Datadog 정량 진단(2026-05-03)과 짝
+
+위쪽의 **"2026-05-03 보강 — Datadog State of AI Engineering 2026"** 섹션이 **인프라 측 운영 부채**(rate limit·cache 활용 부족)를 보여줬다면, AHE는 **agent design 측 관측 결손**(왜 그 edit이 좋아졌는지 attribute 못 함)을 보여준다. 둘은 같은 "보이지 않으면 못 고친다" 명제의 두 단면.
 
 ## 실무 체크리스트 (최소)
 

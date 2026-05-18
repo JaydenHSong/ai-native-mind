@@ -1,11 +1,13 @@
 ---
 title: "AI 코드 리뷰 워크플로우"
 category: patterns
-tags: [code-review, workflow, solo-developer, claude-code]
+tags: [code-review, workflow, solo-developer, claude-code, execution-grounding, constraint-decay, framework-sensitivity]
 created: 2026-04-09
-updated: 2026-04-12
+updated: 2026-05-15
 sources:
   - "raw/notes/2026-04-09-ai-code-review.md"
+  - "raw/articles/2026-05-13-verify-before-you-fix-execution-grounding.md"
+  - "raw/articles/2026-05-15-constraint-decay-backend-code-fragility.md"
 related:
   - "[[patterns/claude-md-guide]]"
   - "[[patterns/subagents-delegation]]"
@@ -160,6 +162,99 @@ jobs:
 1. CLAUDE.md 리팩토링 (200줄 이하 유지)
 2. 반복 작업 → slash command 추가
 3. 실수 패턴 → CLAUDE.md 금지 항목에 추가
+
+## 2026-05-13 보강 — Execution Grounding (Verify Before You Fix)
+
+[Verify Before You Fix (arXiv 2604.10800v1)](https://arxiv.org/abs/2604.10800v1), Gajjar/GWU, 2026-04-12. Cross-language(Java/Python/C++) vulnerability 탐지·수리 파이프라인에 **strict invariant**를 박는다: *"No repair action is taken without execution-based confirmation of exploitability."*
+
+### 3-stage pipeline
+
+```
+Stage 1: Hybrid Structural-Semantic Detection
+   - uAST (Universal AST: Java/Python/C++ → 공통 schema)
+   - GraphSAGE + Qwen2.5-Coder-1.5B embedding, two-way gating fusion
+
+Stage 2: Execution-Grounded Agentic Validation
+   - Stage 1 후보를 실행해 exploit 여부 확인
+   - 추론만으로 확정 금지
+
+Stage 3: Validation-Aware Iterative Repair
+   - Stage 2 confirm된 vulnerability만 repair
+   - Repair 결과도 execution으로 verify (loop)
+```
+
+학습된 classifier의 출력은 *probabilistic inference*이지 *verified conclusion*이 아니다 — 이 차이를 무시하고 repair로 직진하면 *compounding failure*(단계마다 작은 오탐이 곱해짐)가 누적된다.
+
+### 본 페이지의 "Plan-Review-Execute"와 짝
+
+위 1번 [Plan-Review-Execute 패턴](#1-plan-review-execute-패턴)은 "Claude A 계획 → Claude B 리뷰 → Claude A 실행"이다. Verify Before You Fix는 여기에 **Execute 직전 execution gate**를 추가한다:
+
+```
+1. Claude A: 계획
+2. Claude B: 리뷰
+3. Claude A: Patch 후보 작성
+3.5. Verifier: 단위 테스트/exploit 재현 실행 → PASS만 commit  ← 추가
+4. (PASS 시) Commit, (FAIL 시) Stage 3 루프
+```
+
+1인 개발자 즉시 적용 (over-engineering 없이):
+
+- `pre-commit` hook에 변경 영향 파일의 테스트만 자동 실행
+- AI가 제안한 fix에 대해 *exploit 재현 케이스*가 있다면 그 케이스로 회귀 테스트
+- Repair budget cap (e.g., 3회 retry) — 발산 방지
+
+### 한계
+
+- **Execution이 가능한 도메인에 한정**: 자연어 답변, 디자인 의사결정 등에는 직접 매핑 불가. Text 도메인은 같은 날 ingest한 [[concepts/context-rot-hallucination#2026-05-13 보강 — Typed Grounding GSAR|GSAR]](typed grounding)가 다른 verifier 형태로 답한다. 셋(GSAR / 본 논문 / Affordance Agent Harness)의 도메인-별 verifier 매핑은 [[concepts/harness-engineering#2026-05-13 보강 — Verification-Gated Harness, 3-도메인 매핑|Verification-Gated Harness 3-도메인 매핑]]에 정리.
+- **uAST 정확도가 cross-language 상한**: 세 언어를 잘 normalize 못하면 Stage 1이 무너진다.
+
+## 2026-05-15 보강 — Constraint Decay (Functional + Structural Dual Evaluation)
+
+[Dente · Satriani · Papotti](https://arxiv.org/abs/2605.06445) (EURECOM, 2026-05-07)는 LLM 에이전트가 *기능 정확성*은 잘 풀어도 **구조 제약**(아키텍처 패턴 · DB · ORM)을 *누적*해서 부과하면 capable model도 평균 30점 추락한다는 phenomenon을 *Constraint Decay*로 명명했다 (100 task × 8 web framework, unified API contract).
+
+| 발견 | 정량 |
+|---|---|
+| 구조 제약 누적 시 capable config | 평균 **−30 points** assertion pass rate |
+| 약한 configuration | **≈ 0** 수렴 |
+| Framework sensitivity | **Flask** 강함 / **FastAPI · Django** 평균적으로 substantially worse |
+| 주된 root cause | **Data-layer defect** — incorrect query composition, ORM runtime violation |
+
+### Plan-Review-Execute에 *Phase 2.5* 끼우기
+
+위의 [3-stage Verify-Before-You-Fix](#2026-05-13-보강-execution-grounding-verify-before-you-fix) 처방이 *exploit 재현*(보안)에 초점이라면, Constraint Decay는 *구조 idiom* — 둘은 같은 layer(Review)에서 *다른 verifier*가 필요함을 보인다.
+
+| Phase | Verifier | 출력 |
+|---|---|---|
+| 2. AI Review (기존) | LLM 자기 검토 | 코드 의견 |
+| **2.5 Structural Verify** ← 신규 | **Static framework idiom checker** (예: ruff + framework-specific rule pack) | "DRF ViewSet 누락" / "FastAPI dependency injection misuse" 등 구조 위반 enum |
+| 3. Execute (기존) | 테스트 실행 | pass/fail |
+
+→ 1인 개발자 ROI: AI가 짠 코드의 *PR 거절 사유 1순위*가 "팀 컨벤션 위반"인데, 단일 LLM은 이걸 못 본다. Static idiom rule pack(라이브러리별 lint plugin) 두 줄 추가가 30점 차이를 메운다.
+
+### Framework 선택 기준에 *AI-friendliness* 차원 추가
+
+| Framework | 구조 명시성 | AI 친화도 (논문 추정) |
+|---|---|---|
+| Flask | minimal, explicit | **상** |
+| FastAPI | convention-heavy (DI, Pydantic) | 중·하 |
+| Django | convention-heavy (apps, ORM, DRF) | 하 |
+
+→ "*인기 stack*"과 "*AI가 잘 짜는 stack*"이 같지 않다. 1인 개발자가 *AI 페어 코딩 비중 높은* 프로젝트를 시작한다면 framework 선택을 *그 비중* 기준으로 재가중. [[patterns/agent-server-harness]]의 백엔드 선택 가이드에 한 줄 추가 후보.
+
+### 본 위키와의 짝
+
+- [[concepts/context-rot-hallucination]] — Context Rot이 *입력 길이*에서 capability 곡선이 꺾이는 현상이라면, Constraint Decay는 *입력 제약 수*에서 꺾이는 현상. 둘 다 *Capability decay* family.
+- [[concepts/llm-evaluation]] — "Functional + Structural" *dual evaluation*은 [[comparisons/agent-eval-frameworks]] 6대장이 아직 표면에 노출하지 않은 메뉴 (2026-05-14 self-declared prediction의 *간접* 후속 증거).
+- [[patterns/agent-server-harness]] — 위 framework 표를 옮겨 갈 후보 위치.
+
+### 한계 (추정 — 본문 미독)
+
+- 100 task의 *동일 API contract* 가정이 prod 다양성을 압축할 수 있음.
+- 8 framework 중 본문 명시 3개(Flask/FastAPI/Django), 나머지 5는 PDF 정독 후.
+- "Configuration"의 모델·prompt·tool 세부는 본문 필요.
+- Framework idiom과 학습 corpus 비중 간 confound 분리 어려움.
+
+→ 2x3 좌표계의 **(descriptive, 측정)** 칸을 부분 충당. Wei(descriptive, 정형화)·WildClawBench(tooling, 측정) 사이의 *실태조사면서 정량* 위치.
 
 ## Chapter Clear 가이드
 

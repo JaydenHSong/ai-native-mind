@@ -1,16 +1,19 @@
 ---
 title: "LLM Evaluation (Evals)"
 category: concepts
-tags: [evaluation, testing, llm, quality, evals]
+tags: [evaluation, testing, llm, quality, evals, judge-reliability, long-horizon, native-runtime, benchmark]
 created: 2026-04-09
-updated: 2026-04-12
+updated: 2026-05-14
 sources:
   - "raw/notes/2026-04-09-llm-evaluation.md"
+  - "raw/articles/2026-05-12-judge-reliability-harness-rand.md"
+  - "raw/articles/2026-05-14-wildclawbench-real-world-long-horizon.md"
 related:
   - "[[concepts/harness-engineering]]"
   - "[[concepts/context-rot-hallucination]]"
   - "[[patterns/ai-code-review]]"
   - "[[concepts/gen-ai-observability]]"
+  - "[[comparisons/agent-eval-frameworks]]"
 status: active
 confidence: high
 ---
@@ -120,6 +123,95 @@ LLM이 자기 출력을 스스로 점수화.
 Evals는 Harness의 **Sensor (피드백 제어)** 계층. 에이전트가 행동한 후 품질을 측정하고 피드백을 제공.
 
 프로덕션에서는 [[concepts/gen-ai-observability|OpenTelemetry GenAI 관측]]으로 수집한 트레이스·세션을 eval 데이터셋과 붙이면, 회귀 원인을 **모델·도구·프롬프트** 단위로 좁히기 쉽다.
+
+## 2026-05-12 보강 — Judge Reliability Harness (RAND): 채점자도 채점해야 한다
+
+> 출처: Dev et al. (RAND), "Judge Reliability Harness: Stress Testing the Reliability of LLM Judges" (arXiv:2603.05399, 2026-03-05). 코드: <https://github.com/RANDCorporation/judge-reliability-harness>
+
+LLM-as-Judge가 modern benchmarking의 core element가 됐지만 **judge 자체의 reliability는 거의 측정되지 않는다**. JRH는 4 frontier judge × 4 benchmark × 8 perturbation을 통해 *어떤 judge도 universally reliable하지 않다*는 것을 보였다.
+
+### 5 Perturbation Family
+
+| Family | 변형 | 기대 동작 |
+|---|---|---|
+| **Label flip** (discriminative) | rubric 위반으로 재작성, 구조 보존 | 판정이 *뒤집혀야* |
+| **Format invariance** | 빈 줄·공백·인덴트 등 시각 레이아웃만 | 점수 *불변* |
+| **Semantic paraphrase** | 의미 보존, 단어·구조 변경 | 점수 *동일* |
+| **Verbosity bias** | 짧/긴 변형, 사실 보존 | 점수 *동일* (verbosity 보너스 금지) |
+| **Stochastic stability** | 동일 입력 반복 | 점수 *일관* |
+
+추가: **Synthetic Ordinal** (temperature ramp + few-shot + cosine sim), **Agentic Mode** (Inspect AI eval transcript 변형, HITL UI).
+
+### 주요 정량 발견
+
+- **Format perturbation > semantic perturbation drop**. typo/whitespace가 의미 변경보다 더 큰 reliability 손실.
+- **Persuade (ordinal 1–6)이 가장 fragile** — Claude Sonnet 4.5 mean 37.26% / std 17.18%. semantic_paraphrase 최저 floor 40% (Gemini 2.5 Pro).
+- **HarmBench (binary)가 가장 stable** — Llama 4 Maverick 73.92% mean / 16.33% std.
+- **Inverse volatility**: Claude는 binary 안정·ordinal 불안정, Gemini는 정반대 → reliability는 model property가 아니라 **task × model**.
+- **AgentHarm asymmetric failure**: Opus 4.5 high-FN (subtle violation miss 31.3%), Gemini 2.5 Pro high-FP (corrected transcript 오판 25%). Free-response judge 성능이 agentic으로 generalize되지 않음.
+- **Cost-reliability**: Llama 4 Maverick 17B가 Overall **$0.0010/accuracy point** — Sonnet 4.5의 **1/22**, GPT-4o의 1/20, Gemini 2.5 Pro의 1/8. "비싼 = 좋은 judge" 가정 무너짐.
+
+### 1인 개발자 즉효 ROI
+
+- **Judge 모델은 1차로 Llama 4 Maverick 17B로 검증** → cost 90%+ 절감 가능 (binary 안전·HarmBench류).
+- **Format invariance 테스트는 매번 빠르게 돌릴 것** — 4판 stress test 중 가장 *cheap to detect*하면서 가장 큰 reliability drop을 잡는다.
+- **Ordinal scoring 도입 전 sanity check** — multi-class scoring을 LLM judge에 맡기기 전에 그 judge의 ρ·MAE를 측정 (Persuade가 우리 케이스라면 어떨까).
+- **Agentic eval은 별도 검증** — free-response 성공 ≠ agentic 성공. multi-turn transcript 변형을 따로 시험.
+
+> 자세히: [JRH 원본 노트](raw/articles/2026-05-12-judge-reliability-harness-rand.md). 비교 — 우리 [[comparisons/agent-eval-frameworks]]의 6대장은 *프레임워크* 비교이고, JRH는 *judge 모델 자체*의 reliability — 한 layer 아래.
+
+## 2026-05-14 보강 — WildClawBench: Real-World Long-Horizon 천장
+
+출처: InternLM, "WildClawBench: A Benchmark for Real-World, Long-Horizon Agent Evaluation" (arXiv 2605.10912v1, 2026-05-11). 코드: <https://github.com/InternLM/WildClawBench>. [원본 노트](raw/articles/2026-05-14-wildclawbench-real-world-long-horizon.md).
+
+기존 agent benchmark의 4 가정 — *synthetic sandbox / short-horizon / mock-service API / final-answer check* — 은 production을 비추지 못한다. WildClawBench는 그 4개를 한꺼번에 부정하고, **Docker 컨테이너 안에서 실제 CLI 에이전트 하네스(OpenClaw / Claude Code / Codex / Hermes)가 실 tool을 사용**해 60개 human-authored task를 푼다.
+
+### 구성과 grading
+
+| 축 | 값 |
+|---|---|
+| Task 수 | 60 (human-authored) |
+| 언어 | English 36 + Chinese 24 (bilingual) |
+| 모달리티 | Multimodal 26 + Pure-text 34 |
+| 평균 길이 | ~8 분 wall-clock, 20+ tool calls/task |
+| 카테고리 | 6 thematic (이름은 본문 확인 필요) |
+| 하네스 | OpenClaw · Claude Code · Codex · Hermes Agent |
+
+**Hybrid grading**:
+
+1. Deterministic rule-based check (output 형식·exit code)
+2. Environment-state auditing (FS·network side effect)
+3. LLM/VLM judge (semantic verification)
+
+→ JRH가 *judge 안정성*을 의심했다면, WildClawBench는 **judge를 셋 중 하나의 신호로만** 쓴다. 1·2번이 deterministic이므로 judge 한 축이 흔들려도 score가 0이 안 된다.
+
+### 정량 — *천장이 낮다*
+
+- **19 frontier model 평가**
+- **Best: Claude Opus 4.7 → 62.2% (overall)**
+- **다른 모든 모델 < 60%**
+
+→ 모델 capability 곡선이 *real-world long-horizon*에서 평탄. 이 한 줄이 [[concepts/harness-engineering|Harness Engineering]] 페이지의 "Capability(agent) ≠ Capability(model)" thesis(2026-05-14 Zhong/Zhu)의 *경험적 증거*다.
+
+### Eval 페이지 3 layer 재정렬
+
+오늘 시점 본 페이지가 다루는 eval은 *3개 layer*로 정리할 수 있다:
+
+| Layer | 신호 | 대표 작업 | 본 위키 |
+|---|---|---|---|
+| **Judge** | 채점자 reliability 자체 | RAND JRH (2026-03-05) | 본 페이지 2026-05-12 섹션 |
+| **Single output / claim** | 출력 직전 verification gate | GSAR / Verify Before You Fix / A-Harness (2026-04~05) | [[journal/2026-05-13]] |
+| **Trace / environment** | 전체 task가 production-like runtime에서 통과 | **WildClawBench (2026-05-11)** | 본 섹션 |
+
+→ JRH가 *judge 모델 한 칸 아래*였다면, WildClawBench는 *데이터셋 한 칸 위* (=환경 통째로). 셋이 합쳐져 본 페이지의 eval 정의 surface가 한 행씩 채워진다.
+
+### 1인 개발자 즉효 ROI
+
+1. **내 워크플로의 *작업 길이 분포*가 8 min / 20+ tool calls와 닮았는지 비교**. 닮았다면 60%대 천장이 *내 운영 baseline*. 안 닮았다면 (예: 30초 짜리 단발 작업) WildClawBench 수치는 *상한 참고*로만.
+2. **Hybrid grading 패턴 직접 차용**: 내 PR-level eval에 (a) rule check (lint·format) + (b) env audit (test pass·exit code) + (c) LLM judge (semantic) **세 신호 모두** 박기. 어느 하나만으로는 부족.
+3. **Harness 선택을 score에 변수로 박을 것**: OpenClaw vs Claude Code vs Codex vs Hermes가 *같은 모델에서도 다른 score*를 낸다는 함의. [[comparisons/agent-eval-frameworks]] 다음 행으로 "환경/하네스 동변수" 행 후보.
+
+> 한계: WebFetch rate limit으로 full PDF 미확보 → 6 thematic category 이름·19 model 전체 list·score 분포 detail은 본문 확인 필요. "Opus 4.7" 표기는 [[journal/2026-05-13|어제 GSAR 4-judge]]와 동일 — 일관 유지.
 
 ## 1인 개발자에게
 

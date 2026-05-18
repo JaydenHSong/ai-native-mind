@@ -3,15 +3,17 @@ title: "MCP (Model Context Protocol)"
 category: concepts
 tags: [mcp, anthropic, protocol, tools, integration]
 created: 2026-04-09
-updated: 2026-04-11
+updated: 2026-05-01
 sources:
   - "raw/notes/2026-04-09-mcp-research.md"
+  - "raw/articles/2026-05-01-a2a-protocol-spec.md"
 related:
   - "[[concepts/context-engineering]]"
   - "[[concepts/harness-engineering]]"
   - "[[tools/claude-code]]"
   - "[[concepts/ai-orchestration]]"
   - "[[patterns/owasp-llm-typescript-mitigations]]"
+  - "[[concepts/a2a-protocol]]"
 status: active
 confidence: high
 ---
@@ -90,9 +92,23 @@ MCP는 Harness의 핵심 인프라. 에이전트가 외부 세계와 상호작�
 
 1인 개발자에게 MCP는 **도구 조합의 비용을 극적으로 낮춘다**. 커스텀 API 통합 없이, MCP 서버만 연결하면 AI가 바로 도구를 사용할 수 있다.
 
+## MCP의 자매 표준 — A2A (Agent-to-Agent)
+
+2026년 들어 자매 표준 [[concepts/a2a-protocol|A2A 프로토콜]]이 Linux Foundation 산하로 자리 잡으면서, "AI 표준 두 축"이 분명해졌다.
+
+| | MCP | A2A |
+|--|-----|-----|
+| 누구를 잇는가 | 에이전트 ↔ **도구·데이터·시스템** | 에이전트 ↔ **다른 에이전트** |
+| 비유 | USB-C (장치 ↔ 도구) | HTTP (서비스 ↔ 서비스) |
+| 발견 | Tools/Resources/Prompts 메타데이터 | Capability discovery |
+| 거버넌스 | Anthropic → 표준화 진행 중 | Google → Linux Foundation |
+
+**둘은 경쟁이 아니라 보완**: A2A로 발견한 다른 에이전트를 **MCP wrapper**로 도구처럼 호출 가능 ([[concepts/agentic-engineering]]의 Cisco 파일럿이 정확히 이 방법). 실무에서 둘을 같이 쓰는 게 표준 패턴.
+
 ## 참고 소스
 
 - [MCP 리서치](raw/notes/2026-04-09-mcp-research.md)
+- [A2A 프로토콜 정리 (2026-05-01)](raw/articles/2026-05-01-a2a-protocol-spec.md)
 - [Introducing MCP (Anthropic)](https://www.anthropic.com/news/model-context-protocol)
 - [MCP Specification](https://modelcontextprotocol.io/specification/2025-11-25)
 - [Code Execution with MCP (Anthropic)](https://www.anthropic.com/engineering/code-execution-with-mcp)

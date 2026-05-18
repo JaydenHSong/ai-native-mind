@@ -1,14 +1,28 @@
 ---
 title: "Harness Engineering"
 category: concepts
-tags: [harness-engineering, ai-agent, infrastructure, orchestration]
+tags: [harness-engineering, ai-agent, infrastructure, orchestration, verification-gated, grounding, runtime-substrate, 11-responsibilities]
 created: 2026-04-09
-updated: 2026-04-13
+updated: 2026-05-14
 sources:
   - "raw/notes/2026-04-09-engineering-paradigms-research.md"
   - "raw/notes/2026-04-11-orchestration-harness-server-supplement.md"
   - "raw/notes/2026-04-12-harness-engineering-deep-dive.md"
   - "raw/notes/2026-04-13-harness-casebook-anthropic-academy.md"
+  - "raw/articles/2026-05-01-agent-stack-2026-layers.md"
+  - "raw/articles/2026-05-02-google-scaling-agent-systems.md"
+  - "raw/articles/2026-05-02-anthropic-three-agent-harness-infoq.md"
+  - "raw/articles/2026-05-02-humanlayer-skill-issue-harness.md"
+  - "raw/articles/2026-05-06-anthropic-agentic-coding-trends-report.md"
+  - "raw/articles/2026-05-06-last-harness-meta-evolution.md"
+  - "raw/articles/2026-05-06-agentic-harness-engineering-observability.md"
+  - "raw/articles/2026-05-06-pm-architectural-decisions-agent-harnesses.md"
+  - "raw/articles/2026-05-06-pm-caaf-deterministic-harness.md"
+  - "raw/articles/2026-05-06-pm-meta-harness-stanford.md"
+  - "raw/articles/2026-05-13-affordance-agent-harness-verification-gated.md"
+  - "raw/articles/2026-05-13-gsar-typed-grounding-multiagent.md"
+  - "raw/articles/2026-05-13-verify-before-you-fix-execution-grounding.md"
+  - "raw/articles/2026-05-14-ai-harness-engineering-runtime-substrate.md"
 related:
   - "[[concepts/context-engineering]]"
   - "[[concepts/prompt-engineering]]"
@@ -128,11 +142,153 @@ Martin Fowler의 [Humans and Agents in Software Engineering Loops](https://marti
 - 3명 엔지니어 × 5개월 × ~1,500 PR × ~100만 줄
 - 핵심은 코드를 쓴 게 아니라 **Harness를 설계**한 것
 
+### 2026-04 스택 stratification — 어디 레이어에 살 것인가
+
+[Hieu TRAN, "The Agent Stack in 2026" (dev.to, 2026-04-14)](https://dev.to/hieu_tran_80c388add84c060/the-agent-stack-in-2026-layers-harnesses-and-where-you-actually-build-2e5g) 정리에 따르면, 2026년 4월 [Anthropic Managed Agents](https://www.anthropic.com/engineering/managed-agents)와 [LangChain Deep Agents Deploy](https://blog.langchain.com/deep-agents-deploy-an-open-alternative-to-claude-managed-agents/) 출시를 계기로 에이전트 스택이 4 레이어 스펙트럼으로 stratify되었다.
+
+| 레이어 | 무엇을 하는가 | 도구 |
+|--------|-------------|------|
+| Low end | 코드로 직접 오케스트레이션·툴 실행·상태·재시도 | LangGraph, Claude Agent SDK |
+| Middle | 프레임워크가 plumbing 처리 | LangChain agents |
+| **Upper-middle** | 플랫폼이 배포·런타임 소유(메모리, 샌드박스, 자격증명 격리, 프로토콜) | **Managed Agents, Deep Agents Deploy** |
+| High end | 시스템 프롬프트 + 도구만, 인프라 없음 | 잘 프롬프트된 모델 |
+
+핵심 메시지: **에이전트 정체성·능력은 이식 가능한 정의 레이어로(`AGENTS.md`, `SKILL.md`), 실행·메모리·보안·배포는 그 아래 인프라로** 분리하라. Managed Agents의 **Brain/Hands/Session** 분리(자격증명 0인 샌드박스 + append-only 세션 로그)가 같은 원칙을 인프라 디폴트로 만든 사례.
+
+또한 Anthropic의 [Harness Design for Long-Running Application Development](https://www.anthropic.com/engineering/harness-design-long-running-apps)는 Planner/Generator/Evaluator 3-에이전트 하네스를 만들었지만, Claude 4.5→4.6로 모델이 좋아지자 **하네스를 단순화했다**(sprint decomposition 제거, evaluator를 per-sprint→end-of-run으로). 시사점: **하네스 컴포넌트는 모델이 못 하는 것에 대한 가정의 인코딩**이므로, 모델이 발전하면 그 가정을 stress-test하라. "find the simplest solution possible, and only increase complexity when needed."
+
+### 보안 교훈 — ClawHavoc (2026-02)
+
+같은 글이 보고하는 OpenClaw의 ClawHub(커뮤니티 스킬 레지스트리) 공급망 공격: 12개 publisher 계정 침해, 1,184개 악성 스킬 배포. Snyk ToxicSkills 보고서는 ClawHub 스킬 36.8%가 어떤 형태든 취약, 13.4%는 critical로 평가. 한 번 에이전트 컨텍스트에 로드되면 자격증명 유출·도구 호출 리다이렉트·추론 오염 가능.
+
+교훈: 컨텍스트 레벨 에이전트 정의(개념 자체)는 위험한 게 아니다. 위험한 것은 **신뢰할 수 없는 publisher의 스킬을 자격증명 접근 가능한 실행 컨텍스트에 로드하는 것**이다. 즉 하네스 설계에서 **Brain/Hands 자격증명 격리 + 스킬 supply chain 신뢰 모델 + 감사 인프라** 셋이 한 묶음으로 가야 한다.
+
+### 2026-05 보강 — 정량 근거·3-에이전트 분리·6 레버
+
+세 개의 외부 출처를 같은 그림 위에 얹는다.
+
+**(1) Google Research, [Towards a Science of Scaling Agent Systems (2026-01)](https://research.google/blog/towards-a-science-of-scaling-agent-systems-when-and-why-agent-systems-work/) / [arXiv 2512.08296](https://arxiv.org/abs/2512.08296)** — 5 아키텍처 × 3 모델 패밀리 × 4 벤치마크 = **180 컨피그** 통제 실험. 결과는 **alignment principle**: 코디네이션 구조를 태스크 속성에 맞춰라.
+
+| 신호 | 수치 |
+|------|------|
+| Centralized vs SAS, parallelizable 태스크(Finance-Agent) | **+80.9%** |
+| 모든 멀티 에이전트 변형, 순차 태스크(PlanCraft) | **-39 ~ -70%** |
+| Independent (무통신 병렬) 오류 증폭 | **17.2x** |
+| Centralized (오케스트레이터) 오류 증폭 | **4.4x** |
+| 예측 모델이 미관찰 태스크에서 최적 아키텍처 적중 | **87%** |
+
+**하네스 디자인 함의**: 오케스트레이터는 "성능 booster"가 아니라 **validation bottleneck = 안전 컴포넌트**다. 도구가 16개를 넘으면 코디네이션 세금이 비례 이상으로 커지므로, 도구 밀도가 높은 태스크에서 무지성 멀티 에이전트 분해는 자해다.
+
+**(2) [Anthropic Harness Design (2026-04, InfoQ 정리)](https://www.infoq.com/news/2026/04/anthropic-three-agent-harness-ai/)** — 장시간(수 시간) 자율 코딩에서 **Planner / Generator / Evaluator 3-에이전트 분리**. 핵심 레버는 **컨텍스트 리셋 + 구조화 핸드오프 아티팩트**(JSON feature spec, init script, commit-by-commit progress)와 **별도 evaluator로 self-eval 양성 편향 차단**. Frontend 평가는 Playwright MCP로 라이브 페이지를 직접 조작하며 4축(design quality / originality / craft / functionality)으로 채점.
+
+> "Separating the agent doing the work from the agent judging it" — Prithvi Rajasekaran (Anthropic Labs)
+
+**(3) [HumanLayer — Skill Issue: Harness Engineering for Coding Agents (2026-03-12)](https://www.humanlayer.dev/blog/skill-issue-harness-engineering-for-coding-agents)** — 1년 운영 경험을 6 레버로 정리.
+
+| 레버 | 한 줄 처방 |
+|------|------------|
+| CLAUDE.md / AGENTS.md | 60줄 미만, less is more, auto-generate 금지, progressive disclosure (ETH Zurich 138 agentfile 연구가 LLM 생성 파일은 성능 저하 +20% 비용 확인) |
+| MCP 서버 | 도구가 도구 설명을 시스템 프롬프트에 주입함 — 학습 데이터에 잘 표현된 CLI(GitHub/Docker/DB)는 MCP 대신 CLI |
+| Skills | 필요할 때만 SKILL.md 로드(progressive disclosure). 레지스트리는 npm install처럼 의심하라 (ClawHavoc 인용) |
+| Sub-agents | "frontend/backend 분류"는 안 먹힌다. 먹히는 건 **context firewall** — 부모는 프롬프트와 최종 결과만 본다 |
+| Hooks | git hooks의 에이전트 버전. **성공은 침묵, 실패만 verbose**, exit 2로 하네스가 다시 깨움 |
+| Back-pressure | 자기 검증 메커니즘(typecheck/test/playwright)을 **컨텍스트 효율적**으로 — 통과 4,000줄을 컨텍스트에 쏟아붓지 마라 |
+
+**세 출처가 한 곡으로 모이는 지점**: 모델이 똑똑해도 비결정성이 사라지지는 않는다(HumanLayer). 그래서 멀티 에이전트는 **태스크 속성에 정렬**시켜야 하고(Google), 장시간 세션에서는 **생성과 평가를 분리**해야 한다(Anthropic). 셋 다 결국 [[concepts/context-engineering|컨텍스트 엔지니어링]]의 부분집합으로 환원된다.
+
+### 2026-05-06 보강 — 자동 하네스 진화 (Self-Evolving Harness)
+
+2026년 4월 후반 arXiv에 같은 시점 두 논문이 올라오면서, 하네스 엔지니어링은 **사람의 수공예**에서 **자동 진화 + 관측 가드레일**로 한 단계 더 추상화된다. Anthropic의 [2026 Agentic Coding Trends Report](https://resources.anthropic.com/hubfs/2026%20Agentic%20Coding%20Trends%20Report.pdf)도 같은 방향을 1년 예측의 첫 번째·두 번째 우선순위로 못박는다.
+
+**(1) Seong et al., ["The Last Harness You'll Ever Build" (arXiv 2604.21003, 2026-04-22)](https://arxiv.org/abs/2604.21003)** — **2-Level 메타 진화**.
+
+| 레벨 | 내용 |
+|------|------|
+| L1: Harness Evolution Loop | Worker `W_H` (실행) + Evaluator `V` (실패 진단·스코어) + Evolution Agent `E` (history 보고 `H` 수정) — 단일 task의 harness 최적화 |
+| L2: Meta-Evolution Loop | 진화 프로토콜 `Λ = (W_H, H^(0), V, E)` 자체를 다양한 task에 걸쳐 학습 → `Λ^(best)` |
+
+핵심 약속: **새 도메인에 적응할 때 사람의 harness engineering이 0**. 메타-러닝과의 형식적 대응을 명시.
+
+**(2) ["Agentic Harness Engineering: Observability-Driven Automatic Evolution of Coding-Agent Harnesses" (arXiv 2604.25850)](https://arxiv.org/abs/2604.25850)** — **3 Observability Pillars**가 자동 진화를 trial-and-error 붕괴에서 구한다.
+
+| 기둥 | 무엇을 관측하나 | 진화 루프에 주는 것 |
+|------|-----------------|---------------------|
+| Component observability | 모든 편집 가능 컴포넌트의 file-level 표현 | 액션 스페이스가 explicit·revertible |
+| Experience observability | 수백만 raw trajectory 토큰을 layered drill-down evidence corpus로 distill | evolving agent가 실제 소비 가능한 신호 |
+| Decision observability | 모든 edit ↔ self-declared prediction → 다음 라운드 결과로 검증 | 모든 edit이 falsifiable contract |
+
+**정량**: Terminal-Bench 2 pass@1 **69.7% → 77.0%** (10 iterations), 사람이 만든 SOTA harness Codex-CLI(71.9%)와 self-evolving baseline ACE/TF-GRPO 모두 능가.
+
+**(3) [Anthropic 2026 Agentic Coding Trends Report (2026-05)](https://resources.anthropic.com/hubfs/2026%20Agentic%20Coding%20Trends%20Report.pdf)** — 8 트렌드 중 **Trend 2(단일 → 조율된 팀)**, **Trend 3(장기 실행 에이전트 days/weeks)**, **Trend 4(human oversight 협업으로 스케일)**가 앞 두 논문의 **시장 측 등치**. 60% 사용 / 0–20% fully delegate 격차는 자동 진화가 옳다는 정량 신호이자, 사람이 빠질 자리가 아니라는 경고.
+
+**세 출처를 같은 그림으로**:
+
+```
+H 자체가 변수다  ─→  Last Harness:    H를 진화시키는 Λ
+                  AHE:             Λ가 trial-and-error로 안 빠지는 3 pillar
+                  Anthropic 2026:  시장은 이 방향으로 1년 더 간다
+```
+
+**Jayden 위키 함의 (3가지 즉효 ROI)**:
+
+1. **`patterns/harness-engineering-casebook`의 도메인 매트릭스를 Λ 학습 데이터처럼 다루기** — 케이스별 Guides/Sensors/HITL 차이를 component·decision observability 관점에서 다시 정리.
+2. **Sensors = component observability + decision observability**: Lint 워크플로우의 self-declared prediction(이 edit이 무엇을 고칠 것이라 주장하는가) 필드를 ingest log에 추가.
+3. **하네스 component를 file-level로 분리 유지**: CLAUDE.md, templates/, 프롬프트 스니펫, eval 룰을 한 큰 문서가 아니라 작은 파일로 — revertible성과 attribution이 살아남는다.
+
+### 2026-05-06 PM 보강 — 하네스 연구의 세 좌표축 (Descriptive · Prescriptive · Tooling)
+
+오전(자동 진화 + 관측)에 이어 오후 PM 인제스트는 **자동 진화 외부**의 세 좌표축을 채운다 — 같은 시점에 arXiv에 같이 떠 있던 세 논문이 서로 다른 질문에 답한다.
+
+| 좌표축 | 질문 | 논문 |
+|--------|------|------|
+| **Descriptive (지도 그리기)** | 실제 70개 프로젝트는 어떻게 생겼나? | [Wei, "Architectural Design Decisions in AI Agent Harnesses" (arXiv 2604.18071, 2026-04-20)](https://arxiv.org/abs/2604.18071) |
+| **Prescriptive (강제하기)** | 안전-크리티컬에서 LLM의 sycophantic compliance를 어떻게 막나? | [Zhang, "Harness as an Asset: CAAF" (arXiv 2604.17025, 2026-04-18)](https://arxiv.org/abs/2604.17025) |
+| **Tooling (자동화 구현)** | 자동 하네스 진화를 실제 코드로 어떻게 돌리나? | [Lee et al., "Meta-Harness" (arXiv 2603.28052, 2026-03-30, Stanford·KRAFTON·MIT)](https://arxiv.org/abs/2603.28052) |
+
+**(1) 5 Design Dimensions (Descriptive, n=70)** — Wei가 제안하는 **subagent architecture / context management / tool systems / safety mechanisms / orchestration** 5축은 우리 위키의 Guides/Sensors/HITL 분류와 **직교**한다. 둘을 곱한 5×3 매트릭스가 빈 칸을 보여 준다 — 예: "tool systems × Sensors"는 우리 위키에 거의 비어 있고, [[concepts/mcp]]가 자라야 할 자리. corpus 통계 핵심: **file-persistent hybrid context 27.1%** (가장 mature), **registry-based tool 34.3% > MCP 14.3%** (MCP는 "emerging"으로 명시), **container isolation ↔ structured approval 동시 출현 lift 3.4** — 격리와 승인은 짝으로 간다. 인용: "Capability growth does not automatically produce safety maturity."
+
+**(2) CAAF — Determinism via UAI + State Locking (Prescriptive)** — Zhang의 답: **`H`를 진화시키지 마라, `H`를 incorruptible asset으로 잠가라**.
+
+| CAAF 컴포넌트 | 역할 | 우리 위키 근사 |
+|---------------|------|----------------|
+| Recursive Atomic Decomposition | physically isolated nodes + context firewalls | [[patterns/subagents-delegation]]의 context firewall과 동형 |
+| Harness as an Asset (HaaA) | versioned YAML constraint registry | `CLAUDE.md` + `templates/` + frontmatter 스키마 |
+| Unified Assertion Interface (UAI) | LLM이 override 못 하는 deterministic PASS/FAIL | frontmatter validation + lint 워크플로우 |
+| State Locking | PASS된 schema를 read_only로 잠금 | PDCA 단계 게이트 ([[patterns/bkit-superpowers-combo]]와 같은 냄새) |
+
+정량 충격: **L3 자율주행 paradox detection — CAAF-GPT-4o-mini 30/30 vs monolithic GPT-4o no-hint 0/30**. **Multi-agent baseline (debate, sequential checker) 80 trial 모두 0%** — 오케스트레이션만으로는 reliability gap이 안 닫힌다는 *두 번째* 정량 근거(첫 번째는 [Google 2026-05-02 논문](https://arxiv.org/abs/...)의 17.2x vs 4.4x). 인용: "A system whose reliability depends on the presence of a specific linguistic trigger cannot be safely deployed."
+
+**(3) Meta-Harness — Filesystem as Memory (Tooling)** — Lee et al.의 답: 자동 하네스 진화를 **coding agent + filesystem**으로 한다.
+
+기존 text optimizer(OPRO/TextGrad/AlphaEvolve/GEPA/Feedback Descent)는 0.002–0.026 MTok/iter으로 feedback을 압축. Meta-Harness는 **10 MTok/iter** (3 orders of magnitude 더). Proposer가 raw LLM이 아니라 **coding agent**라서 grep/cat으로 prior 후보를 *선택적으로* inspect — median 82 files/iter, 20+ prior 후보 참조.
+
+정량: 텍스트 분류 ACE 대비 **+7.7 points, 4× fewer context tokens** (60 proposal → 4 evaluation으로 동일 정확도); IMO-level math 5 모델 평균 **+4.7 points**; **TerminalBench-2 #1 (Haiku 4.5 부문)** — AHE 77.0%·Codex-CLI 71.9%와 같은 벤치, 새로운 SOTA 기준점. 인용: "Compressed feedback often removes the information needed to trace downstream failures to earlier harness decisions."
+
+**세 논문을 같은 그림으로 (오전 3편과 합쳐 1년 지도)**:
+
+```
+(오전) "H는 변수다"        (오전) "Λ가 무너지지 않게"     (오후) "지도 그리기"
+Last Harness (L1+L2)  ── AHE (3 pillars) ──────── Wei 5 dimensions
+        │                       │                          │
+        ▼                       ▼                          ▼
+(오후) "코드로 구현"      (오후) "잠가서 강제"
+Meta-Harness          ── CAAF (UAI + locking)
+(filesystem proposer)    (anti-evolution: H는 asset)
+```
+
+**자동 진화 라인(상단)과 결정적 잠금 라인(하단)이 직교**한다. Last Harness/AHE/Meta-Harness가 *"`H`를 똑똑하게 만든다"* 면, CAAF는 *"`H`를 신뢰 가능하게 만든다"*. 안전-크리티컬에서는 둘이 합쳐져야 한다 — 진화된 `H`도 UAI로 잠긴 invariant를 통과해야 한다.
+
+**Jayden 위키 함의 (PM 추가 ROI 3가지)**:
+
+1. **`H` = asset framing 적용**: 우리 `CLAUDE.md`·`templates/`·frontmatter 스키마를 단순 prompt가 아니라 **machine-readable invariant registry**로 다시 본다. Lint 워크플로우가 mini-UAI다 — 이미 deterministic PASS/FAIL이다.
+2. **State Locking을 ingest 워크플로우에 내장**: 단계 N PASS → 단계 N의 산출물 read-only로 표시 → 단계 N+1만 oscillate 가능. PDCA 단계 건너뛰기 방지와 같은 결.
+3. **Wei의 5×3 매트릭스로 갭 진단**: subagent / context / tool / safety / orchestration × Guides / Sensors / HITL — 우리 위키에서 빈 칸이 많은 곳은 **tool systems × Sensors**, **subagent × HITL**. 다음 인제스트의 후보 영역.
+
 ## 우리가 이미 하고 있는 것
 
 | Harness 구성요소 | 우리의 구현 |
 |-----------------|-----------|
-| Guides (피드포워드) | CLAUDE.md Schema, PDCA Plan/Design 문서, 템플릿 |
+| Guides (피드포워드) | CLAUDE.md Schema, PDCA Plan/Design 문서, 템플릿, **raw frontmatter 표준 + "같은 폴더 최근 파일과 키 셋 일치" 룰** |
 | Sensors (피드백) | Gap Analysis, Lint 워크플로우, frontmatter 검증 |
 | Orchestration | PDCA 사이클, Ingest 10단계 체크리스트 |
 | Memory | wiki/ (누적 지식), index.md, log.md |
@@ -157,6 +313,89 @@ Martin Fowler의 [Humans and Agents in Software Engineering Loops](https://marti
 ## 왜 중요한가
 
 AI 네이티브 프로그래머에게 Harness Engineering은 **가장 실전적인 스킬**이다. 모델은 바꿀 수 없지만, Harness는 설계할 수 있다. 좋은 Harness = 신뢰할 수 있는 에이전트.
+
+## 2026-05-13 보강 — Verification-Gated Harness, 3-도메인 매핑
+
+같은 시점 arXiv 3편이 **"committing 전에 어떤 evidence를 어떻게 검증할 것인가"**를 도메인을 바꿔 가며 답한다. 어제 PM의 *결정적 잠금 라인*(CAAF, [[journal/2026-05-06-pm]])이 H를 잠갔다면, 오늘 3편은 **출력 단계의 게이트**를 도메인별로 잠근다.
+
+| 도메인 | 논문 | Evidence 종류 | 게이트 메커니즘 | 액션 분기 |
+|---|---|---|---|---|
+| Text / Claim | **GSAR** (arXiv 2604.23366, Kamelhar/Oracle) | Wikipedia gold evidence, 4-way claim typology | Weighted groundedness + asymmetric contradiction penalty | proceed / regenerate / replan |
+| Code | **Verify Before You Fix** (arXiv 2604.10800v1, Gajjar/GWU) | Execution trace (exploit 재현) | Strict invariant: "no repair without execution-confirmed exploitability" | detect → validate → repair (validation 통과 시만) |
+| Embodied / Visual | **Affordance Agent Harness** (arXiv 2605.00663, 2026-05-01) | Skill outputs(detection, segmentation) + episodic prior | Relative + actionable diagnostic("무엇이 missing"까지 진단) | adaptive Router로 다음 skill 호출, budget 내 retry |
+
+세 시스템 모두 공통 구조:
+
+```
+Skill/Model output → Evidence Store → Verifier → {commit | retry | replan}
+                                              ↑
+                                      bounded budget loop
+```
+
+**Wei 2026-05-06 PM의 5 design dimension에 mapping**(원문 [[journal/2026-05-06-pm]]):
+
+| Wei dimension | GSAR | Verify Before You Fix | A-Harness |
+|---|---|---|---|
+| Subagent | 4 judge 합의 | Detector/Validator/Repairer 3 stage | Skill registry |
+| Context | Evidence store(typed) | uAST + exec trace | Evidence store + episodic memory |
+| Tool | Score function | Execution sandbox | Skill toolbox |
+| Safety | Contradiction penalty | Strict invariant | Cost budget + retry cap |
+| Orchestration | 3-tier decision | 3-stage pipeline (validation 게이트) | Adaptive Router |
+
+**Jayden 위키 함의 (3 즉효 ROI)**:
+
+1. **Ingest log에 *typed claim* 필드 후보**: 위키 페이지 frontmatter에 `grounding: {claim, evidence, type}` 같은 컬럼이 들어가면 GSAR식 게이트가 mini-lint로 가능. 아직 제안 단계.
+2. **`examples/`에 execution-grounded mini-sketch**: 코드 변경 → 단위 테스트 실행 → 결과 PASS/FAIL이 commit 여부 결정 (Verify Before You Fix 코드 도메인 정신, 1인 개발자에게 즉시 적용 가능). over-engineering 회피 위해 minimal sketch.
+3. **하네스 케이스북에 visual/embodied 행 후보**: [[patterns/harness-engineering-casebook|케이스북]] 30 도메인 중 embodied 칸이 약하다면 A-Harness가 좋은 첫 행. 단, abstract 기반이라 fully populate는 본문 정독 후.
+
+> 어제(2026-05-12) MEP/JRH/GROUNDING.md가 **모델 아래 세 레버**(workflow 입구 / eval 뒤 / invocation 위)였다면, 오늘 3편은 **출력 directly 위의 게이트**를 세 도메인으로 분산한 것. 같은 1년 그림이 한 칸씩 채워지고 있다.
+
+## 2026-05-14 보강 — Runtime Substrate: 11 Component Responsibilities (Zhong & Zhu)
+
+출처: Zhong & Zhu, "AI Harness Engineering: A Runtime Substrate for Foundation-Model Software Agents" (arXiv 2605.13357, 2026-05-13). [원본 노트](raw/articles/2026-05-14-ai-harness-engineering-runtime-substrate.md).
+
+저자 thesis 한 줄: **"Software-engineering capability emerges from a model-harness-environment system."** 즉 reliability gap을 모델 capability 단일 변수로 환원하지 말고 *세 변수의 함수*로 보고, 그중 통제 가능한 가운데 항(harness)을 책임 enumeration으로 정형화하자.
+
+### 11 책임과 본 위키 매핑
+
+| # | Responsibility | 본 위키 매핑 | 비고 |
+|---|---|---|---|
+| 1 | Task specification | [[patterns/claude-md-guide]], MEP (Zigler) | "무엇을·언제 끝" |
+| 2 | Context selection | [[concepts/context-engineering]] | 노출할 파일·메모리 |
+| 3 | Tool access | [[concepts/tool-use]], [[concepts/mcp]] | 액션 schema·permission |
+| 4 | Project memory | [[concepts/ai-memory-systems]] | 장기 — repo state, lessons |
+| 5 | Task state | filesystem-as-memory (Stanford Meta-Harness, [[journal/2026-05-06-pm]]) | 단기 — plan·todo |
+| 6 | Observability | [[concepts/gen-ai-observability]] | trace·metric·log |
+| 7 | Failure attribution | RAND JRH 일부, OTel agent SC | 모델·툴·prompt·env 어느 탓 |
+| 8 | Verification | [[concepts/llm-evaluation]], Verify Before You Fix ([[journal/2026-05-13]]) | "변경이 *완료*" 입증 |
+| 9 | Permissions | Wei container ↔ approval lift 3.4 ([[journal/2026-05-06-pm]]) | sandbox·HITL gate |
+| 10 | Entropy auditing | RAND JRH (Stochastic stability family) | 결정 다양성·반복 stability |
+| 11 | Intervention recording | [[patterns/agent-server-harness]] | HITL을 *데이터*로 보존 |
+
+### Wei descriptive vs Zhong/Zhu prescriptive
+
+| 축 | Wei (arXiv 2604.18071) | Zhong/Zhu (arXiv 2605.13357) |
+|---|---|---|
+| **시선** | 70-project empirical, 무엇이 *있나* | Position/formalization, 무엇이 *있어야* 하나 |
+| **수** | 5 design dimension | 11 component responsibility |
+| **합** | Subagent/Context/Tool/Safety/Orchestration | Task spec · Context · Tool · Project mem · Task state · Observability · Failure attribution · Verification · Permission · Entropy audit · Intervention rec |
+| **세 칸 차이** | (없음) | Failure attribution / Entropy audit / Intervention rec — Wei dimension에 없던 *책임* |
+
+→ **3개 새 책임**(Failure attribution / Entropy auditing / Intervention recording)이 이번 페이퍼의 *증분*이다. 이 셋은 어제 GSAR/JRH의 *eval/judge 신호*가 자연스럽게 자라난 한 layer 위 책임으로 읽힌다.
+
+### 어제(2026-05-13)와의 관계
+
+- 어제 verification-gated 3편(GSAR / VBYF / A-Harness)은 **단일 책임(verification = #8)**을 도메인별로 잠갔다.
+- 오늘 Zhong/Zhu는 verification을 11개 책임 중 *한 칸*으로 위치시킨다 — **verification만 잠가도 reliability는 안 닫힌다**. Failure attribution(#7)·Entropy audit(#10)이 빠지면 verification 결과 *해석*이 안 된다.
+- 즉 어제가 "한 칸 깊게", 오늘이 "옆으로 펼쳐서 빈 칸 채움".
+
+### Jayden 위키 함의 (3 즉효 ROI)
+
+1. **케이스북 column upgrade**: [[patterns/harness-engineering-casebook|케이스북]] 30 case matrix를 *11 책임* 열로 점검 가능. 현재 어떤 domain은 #8 verification만 채워져 있고 #7·#10이 텅 비어 있을 가능성. lint 후보.
+2. **이 페이지 *formal definition* 자리**: 본 위키 [[concepts/harness-engineering]]는 지금까지 Guides/Sensors 같은 운영적 표현이었다. 11 책임 표가 *first formal definition*에 가까운 후보 — 단, abstract 기반이라 fully replace는 본문 정독 후.
+3. **[[concepts/llm-evaluation]] 분화 신호**: verification(#8) ≠ failure attribution(#7) ≠ entropy audit(#10). 본 위키 eval 페이지를 셋으로 나눠 보면 *내가 지금 어디만 잘하고 있는지* 식별 가능. 분리 페이지 신설은 아직 이르다(증거 single source).
+
+> 한계: WebFetch rate limit으로 full PDF 본문 미확보 — 11 책임 이름은 web search 응답 기준. *book/위키에 박기 전 PDF 검증 필요*. 매핑 표의 "본 위키 매핑" 열은 가설 수준.
 
 ## 케이스별·Anthropic 스터디
 

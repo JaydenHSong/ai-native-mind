@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>1인 SaaS — Managed vs Self-host 비용 시뮬레이터 (2026-05)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  :root {
+    --bg: #0f1419;
+    --card: #1a1f2e;
+    --border: #2a3142;
+    --text: #e6e9ef;
+    --muted: #7d8590;
+    --accent: #58a6ff;
+    --warn: #f0883e;
+    --good: #56d364;
+    --bad: #f85149;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 24px;
+    line-height: 1.5;
+  }
+  h1 { margin: 0 0 8px; font-size: 24px; }
+  .subtitle { color: var(--muted); margin: 0 0 24px; font-size: 14px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  @media (max-width: 800px) { .grid { grid-template-columns: 1fr; } }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+  }
+  h2 { margin: 0 0 16px; font-size: 16px; color: var(--accent); }
+  .control { margin-bottom: 16px; }
+  .control label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+    font-size: 13px;
+  }
+  .control label span:last-child {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  input[type="range"] { width: 100%; accent-color: var(--accent); }
+  select {
+    width: 100%; padding: 6px 8px;
+    background: var(--bg); color: var(--text);
+    border: 1px solid var(--border); border-radius: 4px;
+  }
+  .result-row {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 10px 0; border-bottom: 1px solid var(--border);
+  }
+  .result-row:last-child { border-bottom: none; }
+  .result-row .label { color: var(--muted); font-size: 13px; }
+  .result-row .value {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 18px; font-weight: 600;
+  }
+  .winner-managed { color: var(--good); }
+  .winner-selfhost { color: var(--warn); }
+  .winner-tie { color: var(--accent); }
+  .verdict {
+    margin-top: 12px; padding: 12px; border-radius: 6px;
+    font-size: 14px; font-weight: 500;
+  }
+  .verdict.managed { background: rgba(86,211,100,0.1); border: 1px solid var(--good); color: var(--good); }
+  .verdict.selfhost { background: rgba(240,136,62,0.1); border: 1px solid var(--warn); color: var(--warn); }
+  .verdict.tie { background: rgba(88,166,255,0.1); border: 1px solid var(--accent); color: var(--accent); }
+  .bar-row { display: flex; align-items: center; gap: 8px; margin: 8px 0; }
+  .bar-label { width: 100px; font-size: 12px; color: var(--muted); }
+  .bar-track {
+    flex: 1; height: 24px; background: var(--bg);
+    border: 1px solid var(--border); border-radius: 4px; overflow: hidden;
+    position: relative;
+  }
+  .bar-fill {
+    height: 100%; transition: width 0.3s ease;
+    display: flex; align-items: center; padding-left: 8px;
+    font-size: 11px; font-weight: 600; color: white;
+  }
+  .bar-fill.managed { background: var(--good); }
+  .bar-fill.selfhost { background: var(--warn); }
+  .breakdown {
+    margin-top: 12px; padding: 12px; background: var(--bg);
+    border-radius: 4px; font-size: 12px;
+  }
+  .breakdown div { display: flex; justify-content: space-between; padding: 2px 0; }
+  .breakdown .item { color: var(--muted); }
+  .breakdown .num { font-family: ui-monospace, monospace; }
+  .footer {
+    margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border);
+    font-size: 12px; color: var(--muted);
+  }
+  .footer a { color: var(--accent); text-decoration: none; }
+  .footer a:hover { text-decoration: underline; }
+  .mrr-bar {
+    margin-top: 16px; padding: 12px; background: var(--bg);
+    border-radius: 4px; font-size: 13px;
+  }
+  .mrr-line {
+    display: flex; align-items: center; gap: 12px; margin: 6px 0;
+  }
+  .mrr-pct { font-family: ui-monospace, monospace; font-weight: 600; min-width: 60px; }
+  .mrr-pct.healthy { color: var(--good); }
+  .mrr-pct.warn { color: var(--warn); }
+  .mrr-pct.bad { color: var(--bad); }
+</style>
+</head>
+<body>
+
+<h1>1인 SaaS — 에이전트 인프라 비용 시뮬레이터</h1>
+<p class="subtitle">
+  <strong>Claude Managed Agents</strong> vs <strong>Self-host (Deep Agents Deploy)</strong> — 슬라이더를 만져 본인 시나리오의 변곡점 보기. 가격 기준: 2026-05.
+</p>
+
+<div class="grid">
+  <!-- 입력 카드 -->
+  <div class="card">
+    <h2>📊 본인 시나리오 입력</h2>
+
+    <div class="control">
+      <label><span>일 평균 트래픽 (req/일)</span><span id="trafficVal">100</span></label>
+      <input type="range" id="traffic" min="10" max="5000" value="100" step="10">
+    </div>
+
+    <div class="control">
+      <label><span>req당 평균 세션 활성 시간 (분)</span><span id="sessionVal">10</span></label>
+      <input type="range" id="session" min="1" max="60" value="10" step="1">
+    </div>
+
+    <div class="control">
+      <label><span>모델</span></label>
+      <select id="model">
+        <option value="haiku">Claude Haiku 4.5 ($1 in / $5 out per 1M)</option>
+        <option value="sonnet" selected>Claude Sonnet 4.6 ($3 in / $15 out per 1M)</option>
+        <option value="opus">Claude Opus 4.7 ($5 in / $25 out per 1M)</option>
+      </select>
+    </div>
+
+    <div class="control">
+      <label><span>req당 input 토큰 (k)</span><span id="inputTokVal">2</span></label>
+      <input type="range" id="inputTok" min="0.5" max="50" value="2" step="0.5">
+    </div>
+
+    <div class="control">
+      <label><span>req당 output 토큰 (k)</span><span id="outputTokVal">1</span></label>
+      <input type="range" id="outputTok" min="0.1" max="10" value="1" step="0.1">
+    </div>
+
+    <div class="control">
+      <label><span>Self-host 고정 인프라비 ($/월)</span><span id="infraVal">80</span></label>
+      <input type="range" id="infra" min="20" max="500" value="80" step="10">
+    </div>
+
+    <div class="control">
+      <label><span>월간 매출 MRR ($, 0이면 비활성)</span><span id="mrrVal">500</span></label>
+      <input type="range" id="mrr" min="0" max="10000" value="500" step="50">
+    </div>
+  </div>
+
+  <!-- 결과 카드 -->
+  <div class="card">
+    <h2>💰 월 비용 비교</h2>
+
+    <div class="result-row">
+      <span class="label">Managed Agents (월)</span>
+      <span class="value" id="managedTotal">$—</span>
+    </div>
+    <div class="result-row">
+      <span class="label">Self-host (월)</span>
+      <span class="value" id="selfhostTotal">$—</span>
+    </div>
+    <div class="result-row">
+      <span class="label">차이</span>
+      <span class="value" id="diff">$—</span>
+    </div>
+
+    <div class="bar-row" style="margin-top: 12px;">
+      <span class="bar-label">Managed</span>
+      <div class="bar-track"><div class="bar-fill managed" id="managedBar"></div></div>
+    </div>
+    <div class="bar-row">
+      <span class="bar-label">Self-host</span>
+      <div class="bar-track"><div class="bar-fill selfhost" id="selfhostBar"></div></div>
+    </div>
+
+    <div id="verdict" class="verdict">—</div>
+
+    <div class="breakdown">
+      <div><span class="item">Managed: 토큰 비용</span><span class="num" id="mTokenCost">—</span></div>
+      <div><span class="item">Managed: 세션 단가 ($0.08/h)</span><span class="num" id="mSessionCost">—</span></div>
+      <div><span class="item">Self-host: 토큰 비용</span><span class="num" id="sTokenCost">—</span></div>
+      <div><span class="item">Self-host: 인프라 고정비</span><span class="num" id="sInfraCost">—</span></div>
+    </div>
+
+    <div id="mrrBox" class="mrr-bar" style="display:none;">
+      <strong>MRR 대비 비용 비율</strong>
+      <div class="mrr-line">
+        <span class="mrr-pct" id="mrrManagedPct">—</span>
+        <span style="color:var(--muted); font-size:12px;">Managed</span>
+      </div>
+      <div class="mrr-line">
+        <span class="mrr-pct" id="mrrSelfhostPct">—</span>
+        <span style="color:var(--muted); font-size:12px;">Self-host</span>
+      </div>
+      <div style="margin-top:8px; font-size:11px; color:var(--muted);">
+        권장: 수익 대비 AI 비용 &lt; 30% (위키 [[patterns/ai-cost-management]])
+      </div>
+    </div>
+  </div>
+
+  <!-- 변곡점 카드 -->
+  <div class="card" style="grid-column: 1 / -1;">
+    <h2>🎯 변곡점 분석</h2>
+    <p style="font-size: 13px; color: var(--muted); margin-top: 0;">
+      수식: <code>T × S = 25 × F</code> — 트래픽(T, req/일) × 세션 시간(S, 분)이 25×인프라비(F, $/월)를 넘으면 Self-host 유리.
+    </p>
+    <div class="result-row">
+      <span class="label">현재 T × S</span>
+      <span class="value" id="currentTS">—</span>
+    </div>
+    <div class="result-row">
+      <span class="label">변곡점 (25 × F)</span>
+      <span class="value" id="breakeven">—</span>
+    </div>
+    <div class="result-row">
+      <span class="label">변곡점까지 남은 트래픽 여유</span>
+      <span class="value" id="margin">—</span>
+    </div>
+    <div style="margin-top: 12px; padding: 10px; background: var(--bg); border-radius: 4px; font-size: 12px; color: var(--muted);">
+      💡 <strong>1인 가이드</strong>: 검증·MVP 단계엔 거의 항상 Managed (시간 가치 ↑). 변곡점 도달하면 Deep Agents Deploy 셀프호스팅 평가. 자세한 의사결정 트리: 위키 [[patterns/agent-mvp-stack-2026]].
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <strong>가정·한계</strong>:
+  Prompt caching (-90%) · Batch API (-50%) 미반영. Output:Input 비율은 모델별 고정 5x. Self-host 인프라비 F는 평균(트래픽 폭증 시 elastic 비용 별도). Managed Agents의 outcome-driven mode (research preview)는 미반영.
+  <br><br>
+  데이터 출처:
+  <a href="https://platform.claude.com/docs/en/about-claude/pricing" target="_blank">Claude API 공식 가격</a> ·
+  <a href="https://benchlm.ai/blog/posts/claude-api-pricing" target="_blank">2026-05 가격 정리</a> ·
+  <a href="https://northflank.com/blog/daytona-vs-modal" target="_blank">Modal vs Daytona</a>
+  <br>
+  관련 위키 페이지: <code>patterns/agent-mvp-stack-2026</code> · <code>comparisons/managed-vs-deep-agents</code> · <code>comparisons/agent-platforms-for-solo-dev</code> · <code>patterns/ai-cost-management</code>
+</div>
+
+<script>
+const PRICING = {
+  haiku:  { in: 1,  out: 5  },
+  sonnet: { in: 3,  out: 15 },
+  opus:   { in: 5,  out: 25 },
+};
+
+const ids = ["traffic", "session", "model", "inputTok", "outputTok", "infra", "mrr"];
+
+function read(id) {
+  const el = document.getElementById(id);
+  return el.tagName === "SELECT" ? el.value : parseFloat(el.value);
+}
+
+function fmtMoney(n) {
+  if (n >= 10000) return "$" + n.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  if (n >= 100) return "$" + n.toFixed(0);
+  if (n >= 10) return "$" + n.toFixed(1);
+  return "$" + n.toFixed(2);
+}
+
+function update() {
+  const T = read("traffic");
+  const S = read("session");
+  const model = read("model");
+  const I = read("inputTok"); // k tokens
+  const O = read("outputTok");
+  const F = read("infra");
+  const MRR = read("mrr");
+
+  // Update labels
+  document.getElementById("trafficVal").textContent = T + " req/일";
+  document.getElementById("sessionVal").textContent = S + " 분";
+  document.getElementById("inputTokVal").textContent = I + "k";
+  document.getElementById("outputTokVal").textContent = O + "k";
+  document.getElementById("infraVal").textContent = "$" + F;
+  document.getElementById("mrrVal").textContent = MRR === 0 ? "비활성" : "$" + MRR;
+
+  const reqPerMonth = T * 30;
+  const totalInputTokens_M = (reqPerMonth * I) / 1000; // millions
+  const totalOutputTokens_M = (reqPerMonth * O) / 1000;
+  const tokenCost = totalInputTokens_M * PRICING[model].in + totalOutputTokens_M * PRICING[model].out;
+
+  // Managed Agents
+  const sessionHours = (reqPerMonth * S) / 60;
+  const sessionCost = sessionHours * 0.08;
+  const managedTotal = tokenCost + sessionCost;
+
+  // Self-host
+  const selfhostTotal = tokenCost + F;
+
+  // Update result fields
+  document.getElementById("managedTotal").textContent = fmtMoney(managedTotal);
+  document.getElementById("selfhostTotal").textContent = fmtMoney(selfhostTotal);
+  document.getElementById("diff").textContent = fmtMoney(Math.abs(managedTotal - selfhostTotal));
+
+  document.getElementById("mTokenCost").textContent = fmtMoney(tokenCost);
+  document.getElementById("mSessionCost").textContent = fmtMoney(sessionCost);
+  document.getElementById("sTokenCost").textContent = fmtMoney(tokenCost);
+  document.getElementById("sInfraCost").textContent = fmtMoney(F);
+
+  // Bars
+  const max = Math.max(managedTotal, selfhostTotal, 1);
+  const mPct = (managedTotal / max) * 100;
+  const sPct = (selfhostTotal / max) * 100;
+  const managedBar = document.getElementById("managedBar");
+  const selfhostBar = document.getElementById("selfhostBar");
+  managedBar.style.width = mPct + "%";
+  managedBar.textContent = fmtMoney(managedTotal);
+  selfhostBar.style.width = sPct + "%";
+  selfhostBar.textContent = fmtMoney(selfhostTotal);
+
+  // Verdict
+  const verdict = document.getElementById("verdict");
+  const ratio = managedTotal / selfhostTotal;
+  if (ratio < 0.85) {
+    verdict.className = "verdict managed";
+    verdict.textContent = "✅ Managed Agents 명확히 유리 — 시간을 사라.";
+  } else if (ratio > 1.15) {
+    verdict.className = "verdict selfhost";
+    verdict.textContent = "✅ Self-host 명확히 유리 — Deep Agents Deploy로 마이그레이션 검토.";
+  } else {
+    verdict.className = "verdict tie";
+    verdict.textContent = "⚖️ 변곡점 근처 — 비용 외 lock-in·운영 시간·모델 무관성으로 결정.";
+  }
+
+  // 변곡점
+  const TS = T * S;
+  const breakeven = 25 * F;
+  document.getElementById("currentTS").textContent = TS.toLocaleString();
+  document.getElementById("breakeven").textContent = breakeven.toLocaleString();
+  const marginEl = document.getElementById("margin");
+  if (TS < breakeven) {
+    marginEl.textContent = "+" + (breakeven - TS).toLocaleString() + " (Managed 영역)";
+    marginEl.className = "value winner-managed";
+  } else {
+    marginEl.textContent = "−" + (TS - breakeven).toLocaleString() + " (Self-host 영역)";
+    marginEl.className = "value winner-selfhost";
+  }
+
+  // MRR ratio
+  const mrrBox = document.getElementById("mrrBox");
+  if (MRR > 0) {
+    mrrBox.style.display = "block";
+    const mPctMrr = (managedTotal / MRR) * 100;
+    const sPctMrr = (selfhostTotal / MRR) * 100;
+    function classify(p) {
+      if (p < 30) return "healthy";
+      if (p < 60) return "warn";
+      return "bad";
+    }
+    const m = document.getElementById("mrrManagedPct");
+    m.textContent = mPctMrr.toFixed(1) + "%";
+    m.className = "mrr-pct " + classify(mPctMrr);
+    const s = document.getElementById("mrrSelfhostPct");
+    s.textContent = sPctMrr.toFixed(1) + "%";
+    s.className = "mrr-pct " + classify(sPctMrr);
+  } else {
+    mrrBox.style.display = "none";
+  }
+}
+
+ids.forEach(id => {
+  document.getElementById(id).addEventListener("input", update);
+});
+
+update();
+</script>
+
+</body>
+</html>

@@ -3,10 +3,11 @@ title: "Agentic Engineering"
 category: concepts
 tags: [agentic-engineering, vibe-coding, ai-development, karpathy]
 created: 2026-04-09
-updated: 2026-04-11
+updated: 2026-05-01
 sources:
   - "raw/notes/2026-04-09-engineering-paradigms-research.md"
   - "raw/notes/2026-04-11-orchestration-harness-server-supplement.md"
+  - "raw/articles/2026-05-01-agentic-engineering-cisco-langchain.md"
 related:
   - "[[concepts/harness-engineering]]"
   - "[[concepts/ai-orchestration]]"
@@ -66,6 +67,25 @@ AI 에이전트가 계획·작성·테스트·반복하되, 구조화된 인간 
 - 전체 코드의 **41%**가 AI 생성
 - Vibe coding 사용자의 **63%**가 비개발자
 - Gartner: 2026년 말 기업 앱 **40%**에 AI 에이전트 내장
+
+### Worker / Leader 제어 평면 (2026-04 Cisco × LangChain 파일럿)
+
+[Renuka Kumar·Prashanth Ramagopal (Cisco), "Agentic Engineering" (LangChain Blog, 2026-04-17)](https://www.langchain.com/blog/agentic-engineering-redefining-software-engineering)는 Agentic Engineering을 "코딩 AI를 더 빠르게"가 아니라 **실제 엔지니어링 팀처럼 동작하는 multi-agent 제어 평면**으로 본다. LangGraph + LangSmith + LangMem 위에 두 역할을 얹는다.
+
+| 역할 | 책임 |
+|------|------|
+| **Worker Agent** (개별 기여자) | 의도 해석 → 계획 수립 → 컨텍스트 수집(repo/이슈/로그) → 실행 → 검증 → Leader에 보고 |
+| **Leader Agent** (프로젝트 리더) | 공유 prompt·workflow 라이브러리, 공통 tool gateway, swarm 장기 메모리, 글로벌 관측, "언제·어떻게" 오케스트레이션 |
+
+Worker 간 통신은 **A2A 프로토콜**, 비지원 에이전트(IDE 코딩 에이전트 등)와는 **MCP 어댑터 도구**로 연결 → IDE 무관성. 실행과 조정의 분리 → 엣지 자율성 + 규모의 일관성.
+
+**파일럿 결과 (보수적 측정)**:
+
+- 디버깅 워크플로(20+): time-to-root-cause **93% 단축**, 한 달 70명 사용자 **512 세션** → **200+ man-hour** 절감, QE 독립 평가에서 품질 손실 없음
+- 개발 워크플로(15+): 실행 시간 **65% 단축**. 단 **가장 큰 이득은 코드 생성 가속이 아니라 PR merge 이후 downstream 테스팅 압축**에서 옴
+- **새 병목**: PR 리뷰 프로세스 자체(HITL 게이트)
+
+시사점: 진짜 병목은 코드 생성 속도가 아니라 **조정 비용·크로스팀 지연·컨텍스트 공유 부족**이다. Codex/Claude 같은 코딩 에이전트는 **Worker 안에 임베드되는 컴포넌트**이지 대체재가 아니라는 점도 명시. 본 위키의 [[patterns/agent-planning-to-implementation]] 4단계와 거의 일대일 매핑되며, 차이는 **Leader Agent 층(공유 프롬프트·툴 게이트웨이·장기 메모리)** 의 명시적 분리.
 
 ## 왜 중요한가
 
