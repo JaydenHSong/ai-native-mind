@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-05-17
-total_pages: 74
+updated: 2026-05-18
+total_pages: 75
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 전체 74개 페이지 | 최종 업데이트: 2026-05-17 (주간 리뷰 후속: memory taxonomy 비교 페이지 추가, 2026-05-17 journal에 압축 메모 반영) — 대부분 페이지에 **쉽게 읽기** 블록 있음
+> 전체 75개 페이지 | 최종 업데이트: 2026-05-18 (harness shape · compiled skills · version-upgrade eval 반영, 2026-05-18 journal 추가) — 대부분 페이지에 **쉽게 읽기** 블록 있음
 
 ## 쉽게 읽기
 
@@ -102,7 +102,9 @@ status: active
 - [[patterns/agent-mvp-stack-2026]] — 1인 MVP 스택 5대 영역 × 4 단계 + 의사결정 트리 (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — Vibe Coding의 7대 안티패턴과 회피법
 
-## Journal (12개)
+## Journal (13개)
+
+- [[journal/2026-05-18]] — 월요 데일리: Effective Harness Engineering(Vesper·evaluation hack·worktree) + SkillSmith(compiled runtime interface) + RoadmapBench(version-upgrade eval)
 
 - [[journal/2026-04-12]] — Fowler Humans/Agents·on the loop·OWASP×TS 정리 일지
 - [[journal/2026-05-01]] — 오전 자동 인제스트 (스택 stratification·OTel·Cisco) + 금요 회고

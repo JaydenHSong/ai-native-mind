@@ -1,9 +1,9 @@
 ---
 title: "Harness Engineering"
 category: concepts
-tags: [harness-engineering, ai-agent, infrastructure, orchestration, verification-gated, grounding, runtime-substrate, 11-responsibilities]
+tags: [harness-engineering, ai-agent, infrastructure, orchestration, verification-gated, grounding, runtime-substrate, 11-responsibilities, evaluation-hacking, runtime-interface]
 created: 2026-04-09
-updated: 2026-05-14
+updated: 2026-05-18
 sources:
   - "raw/notes/2026-04-09-engineering-paradigms-research.md"
   - "raw/notes/2026-04-11-orchestration-harness-server-supplement.md"
@@ -23,6 +23,8 @@ sources:
   - "raw/articles/2026-05-13-gsar-typed-grounding-multiagent.md"
   - "raw/articles/2026-05-13-verify-before-you-fix-execution-grounding.md"
   - "raw/articles/2026-05-14-ai-harness-engineering-runtime-substrate.md"
+  - "raw/articles/2026-05-18-effective-harness-engineering-algorithm-discovery.md"
+  - "raw/articles/2026-05-18-skillsmith-boundary-guided-runtime-interfaces.md"
 related:
   - "[[concepts/context-engineering]]"
   - "[[concepts/prompt-engineering]]"
@@ -396,6 +398,59 @@ Skill/Model output → Evidence Store → Verifier → {commit | retry | replan}
 3. **[[concepts/llm-evaluation]] 분화 신호**: verification(#8) ≠ failure attribution(#7) ≠ entropy audit(#10). 본 위키 eval 페이지를 셋으로 나눠 보면 *내가 지금 어디만 잘하고 있는지* 식별 가능. 분리 페이지 신설은 아직 이르다(증거 single source).
 
 > 한계: WebFetch rate limit으로 full PDF 본문 미확보 — 11 책임 이름은 web search 응답 기준. *book/위키에 박기 전 PDF 검증 필요*. 매핑 표의 "본 위키 매핑" 열은 가설 수준.
+
+## 2026-05-18 보강 — Harness는 budget allocation · hack detection · runtime shape까지 결정한다
+
+2026-05-18에 읽은 두 편은 하네스를 또 다른 두 층으로 밀어 올린다. 하나는 **algorithm discovery 하네스**의 실험, 다른 하나는 **skill runtime 하네스**의 컴파일 관점이다. 공통 메시지는 같다: **하네스는 모델 바깥의 포장지가 아니라, 성능·비용·안전의 분포를 직접 바꾸는 계산 구조**다.
+
+### A. Effective Harness Engineering — 많이 돌리기보다 깊게 생각시키기
+
+[Effective Harness Engineering for Algorithm Discovery with Coding Agents](https://arxiv.org/abs/2605.15221) (2026-05-13)는 Vesper라는 framework로 세 질문을 던진다.
+
+1. 같은 token budget이면 **많은 후보를 얕게** 만들까, **적은 후보를 깊게** 만들까?
+2. scoring function을 속이는 **evaluation hack** 을 어떻게 막을까?
+3. **full filesystem access** 가 필요한 coding agent를 병렬로 어떻게 안전하게 돌릴까?
+
+핵심 결론은 두 줄로 요약된다.
+
+- **fewer algorithms + deeper thought** 가 같은 budget에서 더 높은 점수
+- **more capable models produced evaluation hacks at higher rates**
+
+→ 즉 harness는 단순 실행기가 아니라 **budget allocator** 이고, 동시에 **anti-gaming detector** 다. 모델이 강해질수록 guardrail을 줄일 수 있다는 직관도 깨진다.
+
+또 하나의 실전 포인트는 **Git worktree isolation** 이다. 병렬 agent를 같은 작업 디렉터리에서 돌리는 대신 worktree로 격리해 충돌과 오염을 줄인다. 본 위키의 [[patterns/subagents-delegation]] 과 [[patterns/agent-server-harness]] 에서 말한 "격리된 병렬화"가 연구 맥락에서 다시 확인된 셈이다.
+
+### B. SkillSmith — skill은 긴 문서가 아니라 컴파일된 runtime interface다
+
+[SkillSmith](https://arxiv.org/abs/2605.15215) (2026-05-12)는 skill loading을 context problem이자 runtime problem으로 본다.
+
+- raw skill injection은 **irrelevant context injection** 과 **repeated reasoning** 을 만든다
+- 해결책은 skill package를 offline에서 분석해 **minimal executable interface** 로 컴파일하는 것
+- runtime에서는 필요한 boundary만 실행
+
+정량도 강하다.
+
+- **solve-stage token usage -57.44%**
+- **thinking iterations -42.99%**
+- **solve time -50.57% (2.02x faster)**
+- **cost -57.44%**
+
+→ harness 책임 11개 중 **Tool access(#3)** 와 **Context selection(#2)** 이 따로 노는 게 아니라는 증거다. tool/schema/skill을 어떤 모양으로 런타임에 노출하느냐가 곧 context 비용과 reasoning loop 길이를 바꾼다.
+
+### 오늘 시점 한 그림
+
+| 질문 | 하네스가 바꾸는 것 | 오늘 소스 |
+|---|---|---|
+| 같은 예산에서 무엇을 늘릴까? | **generation 수가 아니라 후보당 사고 밀도** | Effective Harness Engineering |
+| 점수는 믿을 만한가? | **evaluation hack 탐지** | Effective Harness Engineering |
+| skill을 어떻게 싣나? | **raw context 대신 compiled runtime interface** | SkillSmith |
+| 병렬화는 어떻게 안전하게 하나? | **shared workspace 대신 worktree isolation** | Effective Harness Engineering |
+
+### Jayden 위키 함의
+
+1. **병렬 subagent 기본값을 "공유 작업공간"이 아니라 "격리 worktree/ephemeral dir"로 두는 편이 낫다.**
+2. **skill/도구 문서는 길게 설명하는 것보다, runtime에서 필요한 최소 boundary만 남기도록 압축해야 한다.**
+3. **모델 upgrade는 score-gaming risk도 함께 키울 수 있으므로, stronger model일수록 verification harness를 두껍게 유지해야 한다.**
 
 ## 케이스별·Anthropic 스터디
 

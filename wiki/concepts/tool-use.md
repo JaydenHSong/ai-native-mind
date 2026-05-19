@@ -1,16 +1,18 @@
 ---
 title: "Tool Use (Function Calling)"
 category: concepts
-tags: [tool-use, function-calling, llm, api]
+tags: [tool-use, function-calling, llm, api, runtime-interface, skills, strict-schema]
 created: 2026-04-09
-updated: 2026-04-11
+updated: 2026-05-18
 sources:
   - "raw/notes/2026-04-09-tool-use-function-calling.md"
+  - "raw/articles/2026-05-18-skillsmith-boundary-guided-runtime-interfaces.md"
 related:
   - "[[concepts/mcp]]"
   - "[[concepts/ai-orchestration]]"
   - "[[concepts/harness-engineering]]"
   - "[[concepts/structured-output]]"
+  - "[[concepts/agent-supply-chain-security]]"
 status: active
 confidence: high
 ---
@@ -79,6 +81,41 @@ Claude가 **코드 실행 컨테이너 안에서** 도구를 직접 호출:
 
 ### Tool Search
 수천 개 도구에 접근하되 컨텍스트 윈도우 소비 없음. 검색으로 필요한 도구만 동적 로드.
+
+## 2026-05-18 보강 — SkillSmith: skill을 문서가 아니라 runtime interface로 보기
+
+[SkillSmith](https://arxiv.org/abs/2605.15215) (2026-05-12)는 기존 skill framework의 기본 가정을 정면으로 건드린다. 보통 skill은 runtime task와 매칭되면 **긴 설명서/지침** 형태로 reasoning loop 안에 통째로 주입된다. 논문은 이 방식이 두 가지 낭비를 만든다고 본다.
+
+1. **irrelevant context injection** — 지금 task에 필요 없는 skill 내용까지 프롬프트에 들어감
+2. **repeated skill-specific reasoning and planning** — 같은 skill을 호출할 때마다 해석과 계획을 다시 함
+
+### skill을 offline에 컴파일하기
+
+SkillSmith의 핵심은 **boundary-first compiler-runtime framework** 다.
+
+- skill package를 **offline** 에서 분석
+- skill 안의 **fine-grained operational boundaries** 를 추출
+- 이를 **minimal executable interfaces** 로 컴파일
+- runtime에서는 필요한 부분만 동적으로 접근·실행
+
+즉 tool/skill을 "읽는 문서"가 아니라 **짧은 실행 인터페이스** 로 바꾸자는 주장이다. 이 관점은 본 페이지의 `name + description + input schema` 정의를 한 단계 더 밀어, **문서형 skill 자체를 schema-like executable boundary로 압축**하자는 제안으로 읽을 수 있다.
+
+### 왜 중요한가
+
+SkillsBench에서 보고된 절감 폭은 꽤 크다.
+
+- **solve-stage token usage -57.44%**
+- **thinking iterations -42.99%**
+- **solve time -50.57% (2.02x faster)**
+- **token-proportional cost -57.44%**
+
+→ tool use 문제는 "도구를 몇 개 붙였나"만이 아니라, **그 도구/skill을 runtime에 어떤 모양으로 싣는가**의 문제다.
+
+### 1인 개발자에게 바로 번역하면
+
+1. `SKILL.md` 나 긴 tool guide는 매 호출마다 통째로 싣지 말고, **짧은 호출 규약**으로 압축하는 편이 낫다.
+2. 강한 모델은 매번 실행에 쓰기보다, **skill compiler** 로 한 번 써서 artifact를 만들고 이후엔 저렴한 모델이 재사용하게 할 수 있다.
+3. tool schema를 쓸 때도 description을 장문 prose로 늘리기보다, **행동 경계(boundary)** 와 입력·출력 계약을 더 먼저 명시하는 편이 좋다.
 
 ## 실전 패턴
 

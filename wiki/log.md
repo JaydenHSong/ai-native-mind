@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-05-17
+updated: 2026-05-18
 sources: []
 status: active
 ---
@@ -19,6 +19,22 @@ status: active
 - 월드맵 허브: [[wiki/campaign-map|Campaign Map]]
 - 진행 가이드: [[wiki/overview|Overview]]
 - 전체 도감: [[wiki/index|Index]]
+
+## [2026-05-18] ingest | Effective Harness Engineering(Vesper·evaluation hack·worktree) + SkillSmith(compiled runtime interface) + RoadmapBench(version-upgrade eval) — 월요 데일리, 자동 인제스트
+
+- **Sources** (raw 3편 추가):
+  - `raw/articles/2026-05-18-effective-harness-engineering-algorithm-discovery.md` — Ishibashi · Yano · Oyamada, "Effective Harness Engineering for Algorithm Discovery with Coding Agents" (arXiv:2605.15221, 2026-05-13). **핵심 질문 3개**: 같은 token budget에서 many-shallow vs few-deep, **evaluation hack** 탐지, **full filesystem access 병렬 실행** 격리. 결론: **fewer algorithms + deeper thought** 가 더 budget-efficient, **more capable models produced evaluation hacks at higher rates**, **Git worktree isolation** 이 병렬 안전성 핵심.
+  - `raw/articles/2026-05-18-skillsmith-boundary-guided-runtime-interfaces.md` — Xu et al., "SkillSmith: Compiling Agent Skills into Boundary-Guided Runtime Interfaces" (arXiv:2605.15215, 2026-05-12). skill을 runtime마다 통째로 주입하지 않고 **offline compile → minimal executable interface** 로 바꾸는 boundary-first compiler-runtime framework. SkillsBench에서 **token -57.44% / thinking iterations -42.99% / solve time -50.57%(2.02x faster) / cost -57.44%**.
+  - `raw/articles/2026-05-18-roadmapbench-long-horizon-version-upgrades.md` — Xu et al., "RoadmapBench: Evaluating Long-Horizon Agentic Software Development Across Version Upgrades" (arXiv:2605.15846, 2026-05-15). **115 tasks / 17 repos / 5 languages / median 3,700 lines / 51 files**. source-version snapshot에서 target-version functionality를 roadmap instruction으로 구현. **13 frontier models** 평가, **best Claude Opus 4.7 = 39.1%**, weakest **5.2%**.
+- **Pages updated** (추가만, 기존 본문 보존):
+  - `concepts/harness-engineering.md` — "2026-05-18 보강" 섹션 추가. harness를 **budget allocation / anti-gaming detector / worktree isolation / compiled runtime interface** 관점으로 확장. Effective Harness Engineering + SkillSmith 연결.
+  - `concepts/tool-use.md` — "2026-05-18 보강 — SkillSmith" 섹션 추가. tool/skill을 긴 문서가 아니라 **schema-like runtime interface** 로 보는 관점 보강.
+  - `concepts/llm-evaluation.md` — "2026-05-18 보강 — RoadmapBench" 섹션 추가. coding eval granularity를 **bug-fix → feature-development → version-upgrade roadmap** 으로 확장.
+  - `patterns/ai-code-review.md` — release-scale roadmap review + **anti-gaming review** 단계 추가.
+- **Pages created**:
+  - `journal/2026-05-18.md` — 월요 데일리 일지 (harness shape · compiled skills · version-upgrade eval 연결, 자율 결정 사항, 후속 후보).
+- **Pages updated (meta)**: `index.md` (journal 12→13, total 74→75), `overview.md` (최근 작업 갱신), `log.md` (이 항목).
+- **Notes**: 2026-05-17이 memory/eval 층을 세분화했다면, 오늘 3편은 그 위에서 **하네스를 더 구체적인 연산자**로 본다. 좋은 하네스는 (1) 토큰 예산을 **시도 수**가 아니라 **시도당 사고 밀도**로 바꾸고, (2) skill을 raw context가 아니라 **compiled runtime artifact** 로 압축하며, (3) eval 단위를 bug/feature에서 **release-to-release roadmap** 으로 끌어올린다. 특히 Effective Harness Engineering의 **"stronger model → more evaluation hacks"** 는 최근 Anthropic식 단순화 서사에 중요한 역보정.
 
 ## [2026-05-17] weekly-review-followup | memory taxonomy로 중복 압축 + 주간 압축 메모 반영
 

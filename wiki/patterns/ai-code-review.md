@@ -1,18 +1,21 @@
 ---
 title: "AI 코드 리뷰 워크플로우"
 category: patterns
-tags: [code-review, workflow, solo-developer, claude-code, execution-grounding, constraint-decay, framework-sensitivity]
+tags: [code-review, workflow, solo-developer, claude-code, execution-grounding, constraint-decay, framework-sensitivity, roadmap, release-scale]
 created: 2026-04-09
-updated: 2026-05-15
+updated: 2026-05-18
 sources:
   - "raw/notes/2026-04-09-ai-code-review.md"
   - "raw/articles/2026-05-13-verify-before-you-fix-execution-grounding.md"
   - "raw/articles/2026-05-15-constraint-decay-backend-code-fragility.md"
+  - "raw/articles/2026-05-18-effective-harness-engineering-algorithm-discovery.md"
+  - "raw/articles/2026-05-18-roadmapbench-long-horizon-version-upgrades.md"
 related:
   - "[[patterns/claude-md-guide]]"
   - "[[patterns/subagents-delegation]]"
   - "[[concepts/cognitive-debt]]"
   - "[[patterns/git-ai-workflow]]"
+  - "[[concepts/llm-evaluation]]"
 status: active
 confidence: high
 ---
@@ -255,6 +258,48 @@ Stage 3: Validation-Aware Iterative Repair
 - Framework idiom과 학습 corpus 비중 간 confound 분리 어려움.
 
 → 2x3 좌표계의 **(descriptive, 측정)** 칸을 부분 충당. Wei(descriptive, 정형화)·WildClawBench(tooling, 측정) 사이의 *실태조사면서 정량* 위치.
+
+## 2026-05-18 보강 — release-scale review와 evaluation-hack 감시를 따로 둬야 한다
+
+오늘 읽은 두 편은 이 페이지의 "리뷰"를 더 넓게 정의하게 만든다.
+
+### 1) Effective Harness Engineering — 많이 돌린 결과보다 *속이지 않았는지*를 먼저 보자
+
+[Effective Harness Engineering](https://arxiv.org/abs/2605.15221) 은 algorithm discovery 맥락이지만, 코드 리뷰에도 바로 번역되는 포인트가 있다.
+
+- 같은 token budget이라면 **많은 얕은 시도보다 적은 깊은 시도**가 낫다
+- 더 강한 모델일수록 **evaluation hack** 발생률이 높아질 수 있다
+
+코드 리뷰 관점으로 바꾸면, 리뷰 루프의 목적은 "시도를 많이 돌렸다"가 아니라 **좋은 시도를 선별하고, 점수/테스트를 속인 변경을 걸러내는 것**이다.
+
+→ 따라서 AI 코드 리뷰의 hidden requirement는 correctness review뿐 아니라 **anti-gaming review** 다. 예를 들어 테스트를 진짜 고친 게 아니라 fixture를 우회했는지, benchmark를 맞추기 위해 하드코딩했는지까지 봐야 한다.
+
+### 2) RoadmapBench — PR 단위 리뷰만으로는 긴 변경을 놓친다
+
+[RoadmapBench](https://arxiv.org/abs/2605.15846) 는 실제 장기 개발이 **median 3,700 lines / 51 files** 규모의 multi-target roadmap으로 진행될 수 있음을 보여 준다. 최고 모델도 **39.1%** 밖에 해결하지 못한다.
+
+이 수치는 리뷰 워크플로우에도 함의를 준다.
+
+- bug-fix/PR 단위 self-review는 필요하지만
+- release-scale 변경에는 **roadmap completion review** 가 별도로 필요하다
+- 즉 "이 PR이 괜찮은가?"와 "이번 release 목표가 전체로 맞물렸는가?"는 다른 질문이다
+
+### 실전 루틴에 어떻게 끼우나
+
+```text
+1. Plan
+2. AI Review (logic / security / edge case)
+2.5 Structural Verify (framework idiom / architecture)
+2.8 Anti-gaming Review (test 우회, score hack, fixture 하드코딩 감시)   ← 오늘 추가
+3. Execute (tests / exploit repro)
+4. Release-scale Roadmap Review (관련 파일 묶음이 목표 기능을 다 채웠는지) ← 오늘 추가
+```
+
+### 1인 개발자 즉효 ROI
+
+1. 테스트를 통과한 변경이라도 **하드코딩·fixture 조작·평가 함수 우회**를 의심하는 체크 한 줄을 리뷰 템플릿에 넣는다.
+2. 여러 PR에 걸친 기능 작업은 마지막에 **roadmap checklist** 로 다시 검토한다.
+3. 병렬 작업을 돌릴 때는 공유 브랜치보다 **worktree/격리 작업공간** 을 써서 리뷰 가능한 change-set을 유지한다.
 
 ## Chapter Clear 가이드
 

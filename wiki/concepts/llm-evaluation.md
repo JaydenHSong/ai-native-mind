@@ -1,21 +1,23 @@
 ---
 title: "LLM Evaluation (Evals)"
 category: concepts
-tags: [evaluation, testing, llm, quality, evals, judge-reliability, long-horizon, native-runtime, benchmark, coding-benchmark, behavioral-safety]
+tags: [evaluation, testing, llm, quality, evals, judge-reliability, long-horizon, native-runtime, benchmark, coding-benchmark, behavioral-safety, version-upgrade]
 created: 2026-04-09
-updated: 2026-05-17
+updated: 2026-05-18
 sources:
   - "raw/notes/2026-04-09-llm-evaluation.md"
   - "raw/articles/2026-05-12-judge-reliability-harness-rand.md"
   - "raw/articles/2026-05-14-wildclawbench-real-world-long-horizon.md"
   - "raw/articles/2026-05-17-featurebench-agentic-coding-complex-features.md"
   - "raw/articles/2026-05-17-litmus-behavioral-jailbreak-os-agents.md"
+  - "raw/articles/2026-05-18-roadmapbench-long-horizon-version-upgrades.md"
 related:
   - "[[concepts/harness-engineering]]"
   - "[[concepts/context-rot-hallucination]]"
   - "[[patterns/ai-code-review]]"
   - "[[concepts/gen-ai-observability]]"
   - "[[comparisons/agent-eval-frameworks]]"
+  - "[[journal/2026-05-17]]"
 status: active
 confidence: high
 ---
@@ -301,6 +303,55 @@ WildClawBench가 production-like runtime eval의 큰 우산이라면, LITMUS는 
 1. tool-using agent의 safety test에는 response text 저장만으로 부족하고, **pre/post filesystem or system-state diff**가 들어가야 한다.
 2. 외부 skill / MCP / A2A를 붙인 시스템이라면 **skill injection**을 별도 eval 시나리오로 다뤄야 한다.
 3. refusal rate를 KPI로 삼는 순간 속을 수 있다. 안전 KPI는 **harm prevented** 또는 **dangerous side effect absent** 쪽이어야 한다.
+
+## 2026-05-18 보강 — RoadmapBench: feature 다음은 version-upgrade다
+
+[RoadmapBench](https://arxiv.org/abs/2605.15846) (2026-05-15)는 coding eval granularity를 한 단계 더 올린다. 기존 benchmark가 bug fix에 치우쳤다는 비판은 이미 FeatureBench가 했지만, RoadmapBench는 거기서 한 걸음 더 나아가 **실제 버전 업그레이드**를 task의 기반으로 삼는다.
+
+### 무엇을 측정하나
+
+- **115 long-horizon coding tasks**
+- **17 repositories**
+- **5 programming languages**
+- source-version snapshot에서 시작
+- target version의 변경을 반영하는 **multi-target roadmap instruction** 수행
+- **median 3,700 lines** 수정
+- **median 51 files** 수정
+
+즉 task 단위가 `bug fix` → `feature addition` → **`release-to-release software evolution`** 로 올라간다.
+
+### 정량 — 최고 모델도 아직 40% 미만
+
+abstract 기준 핵심 수치:
+
+- **13 frontier models** 평가
+- 최고: **Claude Opus 4.7 = 39.1% resolved**
+- 최저: **5.2%**
+
+→ long-horizon software development는 여전히 **largely unsolved** problem이라는 결론. FeatureBench의 11%가 충격이었다면, RoadmapBench는 아예 "작업 단위를 더 현실적으로 잡으면 ceiling 해석이 다시 달라진다"는 메시지다.
+
+### 이 페이지의 eval 층을 다시 그리면
+
+| Layer | 질문 | 대표 예시 |
+|---|---|---|
+| **Judge** | 채점자가 믿을 만한가? | JRH |
+| **Trace / environment** | 실제 runtime에서 task가 통과하는가? | WildClawBench |
+| **Feature-development** | repo 진화 맥락 안에서 기능을 추가할 수 있는가? | FeatureBench |
+| **Version-upgrade roadmap** | 여러 파일·여러 타깃에 걸친 release 진화를 따라갈 수 있는가? | **RoadmapBench** |
+
+FeatureBench가 "기능 개발"을 benchmark화했다면, RoadmapBench는 **로드맵 실행**과 **소프트웨어 진화**를 benchmark화한다.
+
+### scaffold도 score의 일부다
+
+HTML 본문 스니펫 기준으로 논문은 **scaffold sensitivity** 를 별도 분석하며, 대부분 모델에서 **OpenHands가 더 높은 성능**을 보인다고 말한다.
+
+→ 이건 본 위키의 [[concepts/harness-engineering]] thesis와 정확히 맞물린다: **agent score는 model alone이 아니라 model + scaffold/harness** 의 함수다.
+
+### 1인 개발자 ROI 3개
+
+1. bug-fix eval만으로 장기 코딩 성능을 추정하지 말고, 최소한 **release-scale smoke test** 나 mini-roadmap task를 따로 둔다.
+2. agent benchmark를 읽을 때 모델 이름 옆에 **어떤 scaffold(OpenHands 등)** 인지 같이 기록한다.
+3. 내 프로젝트의 큰 변경이 수십 파일·수천 줄이라면, frontier agent capability를 "거의 자동화 가능"로 과대해석하지 않는다.
 
 ## 1인 개발자에게
 

@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-05-17
+updated: 2026-05-18
 sources: []
 status: active
 ---
@@ -29,10 +29,15 @@ status: active
 
 ## 현재 상태
 
-- **총 페이지**: 74개
-- **카테고리**: concepts(20), tools(9), patterns(20), journal(12), comparisons(9), meta(4)
+- **총 페이지**: 75개
+- **카테고리**: concepts(20), tools(9), patterns(20), journal(13), comparisons(9), meta(4)
 - **시작일**: 2026-04-06
-- **최근 작업 (2026-05-17 주간 리뷰 후속 정리)**:
+- **최근 작업 (2026-05-18 데일리 ingest)**:
+  - raw 3편: Effective Harness Engineering · SkillSmith · RoadmapBench
+  - 기존 페이지 보강 4개: [[concepts/harness-engineering]] · [[concepts/tool-use]] · [[concepts/llm-evaluation]] · [[patterns/ai-code-review]]
+  - 새 일지: [[journal/2026-05-18]]
+  - 핵심 합류: 하네스를 **budget allocation / anti-gaming / compiled runtime interface / version-upgrade eval** 관점으로 한 칸 더 구체화
+- **직전 작업 (2026-05-17 주간 리뷰 후속 정리)**:
   - 새 비교 페이지: [[comparisons/agent-memory-taxonomy]]
   - 기존 페이지 연결 보강: [[concepts/ai-memory-systems]] · [[concepts/agent-supply-chain-security]]
   - 같은 날짜 일지 [[journal/2026-05-17]] 에 주간 압축 메모 추가
