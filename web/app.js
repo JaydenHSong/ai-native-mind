@@ -98,9 +98,10 @@ function initTheme() {
     document.querySelector('meta[name="color-scheme"]').content = nextTheme === "dark" ? "dark" : "light dark";
     updateThemeIcon(nextTheme);
     
-    // 그래프가 있는 경우 색상 리셋
+    // 그래프가 있는 경우 색상 리셋 및 시뮬레이션 깨우기
     if (graphSimulation) {
       graphSimulation.draw();
+      graphSimulation.wake();
     }
   });
 }
@@ -698,16 +699,30 @@ function initGraph() {
 
   // 카테고리 색상 리턴
   function getCategoryColor(cat) {
-    const rootStyle = getComputedStyle(document.documentElement);
-    switch (cat) {
-      case 'concepts': return rootStyle.getPropertyValue('--concepts-color').trim() || '#a78bfa';
-      case 'tools': return rootStyle.getPropertyValue('--tools-color').trim() || '#34d399';
-      case 'patterns': return rootStyle.getPropertyValue('--patterns-color').trim() || '#fb923c';
-      case 'comparisons': return rootStyle.getPropertyValue('--comparisons-color').trim() || '#f472b6';
-      case 'journal': return rootStyle.getPropertyValue('--journal-color').trim() || '#22d3ee';
-      case 'meta':
-      case 'wiki': return rootStyle.getPropertyValue('--meta-color').trim() || '#facc15';
-      default: return rootStyle.getPropertyValue('--accent-primary').trim() || '#6366f1';
+    // 동기식 테마 감지하여 스타일 동기화 딜레이에 관계없이 선명하고 완벽한 테마별 카테고리 컬러 즉각 반환
+    const isLight = document.documentElement.getAttribute("data-theme") === "light";
+    if (isLight) {
+      switch (cat) {
+        case 'concepts': return '#7c3aed';    // 진한 보라
+        case 'tools': return '#059669';       // 진한 에메랄드
+        case 'patterns': return '#ea580c';    // 진한 오렌지
+        case 'comparisons': return '#db2777'; // 진한 핑크
+        case 'journal': return '#0891b2';     // 진한 사이안
+        case 'meta':
+        case 'wiki': return '#ca8a04';        // 진한 골드
+        default: return '#4f46e5';            // 진한 인디고
+      }
+    } else {
+      switch (cat) {
+        case 'concepts': return '#a78bfa';    // 연한 보라 네온
+        case 'tools': return '#34d399';       // 연한 에메랄드 네온
+        case 'patterns': return '#fb923c';     // 연한 오렌지 네온
+        case 'comparisons': return '#f472b6';  // 연한 핑크 네온
+        case 'journal': return '#22d3ee';      // 연한 사이안 네온
+        case 'meta':
+        case 'wiki': return '#facc15';         // 연한 골드 네온
+        default: return '#6366f1';            // 연한 인디고
+      }
     }
   }
 
@@ -1160,6 +1175,9 @@ function initGraph() {
         n.color = getCategoryColor(n.category);
       });
       draw();
+    },
+    wake: () => {
+      wakeSimulation();
     }
   };
 }

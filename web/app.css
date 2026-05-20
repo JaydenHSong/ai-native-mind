@@ -374,8 +374,8 @@ body {
   transform: translateX(4px);
 }
 .doc-item.active {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.12);
+  background: var(--bg-surface-hover);
+  border-color: var(--border-color);
   box-shadow: inset 4px 0 0 var(--accent-primary);
 }
 /* 카테고리별 활성 바 */
@@ -532,10 +532,10 @@ body {
   background: var(--bg-surface-hover);
 }
 .tab-btn.active {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--bg-surface);
   border-color: var(--border-color);
   color: var(--text-primary);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
 .workspace-status {
@@ -705,8 +705,8 @@ body {
 }
 .chapter-card:hover {
   transform: translateY(-2px);
-  border-color: rgba(255, 255, 255, 0.12);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  border-color: var(--accent-primary);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
 }
 
 .chapter-header-info {
