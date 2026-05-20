@@ -456,6 +456,8 @@ function loadDocument(doc) {
   setTimeout(() => {
     const readingPanel = document.getElementById("reading-panel");
     if (window.innerWidth <= 992 && readingPanel) {
+      const offsetTop = readingPanel.offsetTop || 0;
+      window.scrollTo({ top: offsetTop - 12, behavior: "smooth" });
       readingPanel.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   }, 80);
@@ -534,6 +536,12 @@ function setupEventListeners() {
   if (mobileBackBtn) {
     mobileBackBtn.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
+      document.documentElement.scrollTo({ top: 0, behavior: "smooth" });
+      document.body.scrollTo({ top: 0, behavior: "smooth" });
+      const appContainer = document.getElementById("app-container");
+      if (appContainer) {
+        appContainer.scrollTo({ top: 0, behavior: "smooth" });
+      }
     });
   }
 }
