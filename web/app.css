@@ -645,6 +645,9 @@ body {
 .campaign-flow:empty::before {
   display: none !important;
 }
+.campaign-flow:has(.skeleton-row)::before {
+  display: none !important;
+}
 
 /* 챕터 로우 블록 */
 .chapter-row {
