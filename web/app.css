@@ -1317,6 +1317,10 @@ body {
   display: none !important;
 }
 
+.mobile-only-btn {
+  display: none !important;
+}
+
 /* ==========================================================================
    반응형 모바일 중단점 설정
    ========================================================================== */
@@ -1349,5 +1353,31 @@ body {
     width: 100%;
     height: auto;
     min-width: unset;
+  }
+  .mobile-only-btn {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 12px;
+    background: var(--accent-glow);
+    border: 1px solid var(--accent-primary);
+    border-radius: 12px;
+    color: var(--text-primary);
+    font-family: var(--font-title);
+    font-size: 0.88rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px var(--accent-glow);
+    transition: var(--transition-fast);
+  }
+  .mobile-only-btn:hover {
+    background: rgba(99, 102, 241, 0.2);
+    transform: translateY(-2px);
+  }
+  .mobile-only-btn:active {
+    transform: translateY(0);
   }
 }

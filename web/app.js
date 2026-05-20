@@ -451,6 +451,14 @@ function loadDocument(doc) {
   document.getElementById("reading-panel").scrollTop = 0;
   
   openReadingPanel();
+
+  // 모바일/세로 배치 레이아웃(992px 이하)에서 문서 클릭 시 본문 뷰어로 화면 스크롤을 즉시 부드럽게 내려줌
+  setTimeout(() => {
+    const readingPanel = document.getElementById("reading-panel");
+    if (window.innerWidth <= 992 && readingPanel) {
+      readingPanel.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, 80);
 }
 
 // Obsidian 위키링크 파싱 및 해시 링크로 변환
@@ -520,6 +528,14 @@ function setupEventListeners() {
       filterWiki();
     });
   });
+
+  // 모바일 전용 위로 가기 버튼 이벤트
+  const mobileBackBtn = document.getElementById("mobile-back-btn");
+  if (mobileBackBtn) {
+    mobileBackBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
 }
 
 function showTab(tabId) {
