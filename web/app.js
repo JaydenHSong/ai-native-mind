@@ -723,10 +723,10 @@ function initGraph() {
     if (draggedNode) {
       alpha = 1.0; // 드래그 중에는 식지 않도록 에너지 가득 공급
     } else {
-      alpha *= 0.955; // 90프레임 내외(약 1.5초)로 시간을 늘려 아주 은은하고 매끄러운 감속을 유도
+      alpha *= 0.967; // 냉각 인자를 높여 유영(잔여 모션) 수명을 약 2.2초로 대폭 늘려 매끄러운 감속 유도
     }
 
-    const decay = 0.86; // 관성력을 소폭 올려 미끄러지는 움직임의 수명을 1초~1.5초로 연장
+    const decay = 0.88; // 관성력을 올려 스르륵 미끄러지는 은하수 유영 효과 연장
     const gravity = 0.0012; // 가상 평원 은은한 중심 중력
     const coulombConstant = 10000; // 척력 강도를 적정히 낮추어 과격한 튕김 방지
     const hookeConstant = 0.016; // 스프링 장력을 부드럽게 완화하여 출렁임 소거
@@ -834,8 +834,8 @@ function initGraph() {
 
     draw();
 
-    // 완전히 멈춰 설 때까지 정지 조건을 매우 타이트하게 조율 (진짜 정지했을 때 애니메이션 루프 컷)
-    if ((alpha < 0.015 || totalVelocity < 0.08) && !draggedNode) {
+    // 완전히 멈춰 설 때까지 정지 조건을 더욱 은밀하게 조율 (더 길어진 유영 시간에 맞춰 컷 임계치 하향)
+    if ((alpha < 0.010 || totalVelocity < 0.04) && !draggedNode) {
       nodes.forEach(node => {
         node.vx = 0;
         node.vy = 0;
