@@ -699,10 +699,10 @@ function initGraph() {
     if (draggedNode) {
       alpha = 1.0; // 드래그 중에는 식지 않도록 에너지 가득 공급
     } else {
-      alpha *= 0.93; // 60프레임 내외로 시간을 늘려 아주 은은하고 매끄러운 감속을 유도
+      alpha *= 0.955; // 90프레임 내외(약 1.5초)로 시간을 늘려 아주 은은하고 매끄러운 감속을 유도
     }
 
-    const decay = 0.80; // 은은하게 미끄러지듯 부드럽게 흐르는 관성력 조정
+    const decay = 0.86; // 관성력을 소폭 올려 미끄러지는 움직임의 수명을 1초~1.5초로 연장
     const gravity = 0.0012; // 가상 평원 은은한 중심 중력
     const coulombConstant = 10000; // 척력 강도를 적정히 낮추어 과격한 튕김 방지
     const hookeConstant = 0.016; // 스프링 장력을 부드럽게 완화하여 출렁임 소거
@@ -811,7 +811,7 @@ function initGraph() {
     draw();
 
     // 완전히 멈춰 설 때까지 정지 조건을 매우 타이트하게 조율 (진짜 정지했을 때 애니메이션 루프 컷)
-    if ((alpha < 0.015 || totalVelocity < 0.15) && !draggedNode) {
+    if ((alpha < 0.015 || totalVelocity < 0.08) && !draggedNode) {
       nodes.forEach(node => {
         node.vx = 0;
         node.vy = 0;
