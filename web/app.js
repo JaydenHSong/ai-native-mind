@@ -867,19 +867,19 @@ function initGraph() {
 
     // 1. 엣지 연결선 렌더링
     ctx.strokeStyle = isLightTheme ? 'rgba(0,0,0,0.06)' : 'rgba(255,255,255,0.05)';
-    ctx.lineWidth = 1.2;
+    ctx.lineWidth = 0.6; // 엣지 연결선을 50% 얇게 처리하여 섬세하고 미니멀한 실선 효과 구현
     links.forEach(link => {
       ctx.beginPath();
       ctx.moveTo(link.source.x, link.source.y);
       ctx.lineTo(link.target.x, link.target.y);
       
-      // 하이라이트 노드 링킹은 더 밝고 두껍게
+      // 하이라이트 노드 링킹은 더 밝고 섬세하게
       if (hoveredNode && (link.source === hoveredNode || link.target === hoveredNode)) {
         ctx.strokeStyle = hoveredNode.color;
-        ctx.lineWidth = 2.2;
+        ctx.lineWidth = 1.1; // 하이라이트 두께도 50% 슬림화
         ctx.stroke();
         ctx.strokeStyle = isLightTheme ? 'rgba(0,0,0,0.06)' : 'rgba(255,255,255,0.05)';
-        ctx.lineWidth = 1.2;
+        ctx.lineWidth = 0.6; // 복귀 굵기도 50% 얇게 복구
       } else {
         ctx.stroke();
       }
