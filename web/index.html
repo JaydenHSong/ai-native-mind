@@ -13,8 +13,22 @@
       const savedTheme = localStorage.getItem("theme") || "dark";
       document.documentElement.setAttribute("data-theme", savedTheme);
       document.querySelector('meta[name="color-scheme"]').content = savedTheme === "dark" ? "dark" : "light dark";
+      
+      // 즉시 배경색을 적용하여 흰색 FOUC 깜빡임 방지
+      const style = document.createElement('style');
+      style.id = 'fouc-background-prevention';
+      style.innerHTML = `
+        html, body {
+          background-color: ${savedTheme === "dark" ? "#09090b" : "#f8fafc"} !important;
+          color: ${savedTheme === "dark" ? "#f4f4f5" : "#0f172a"} !important;
+        }
+      `;
+      document.head.appendChild(style);
     }
   </script>
+
+  <!-- Local Custom Styling (FOUC 방지를 위해 최상단 로드) -->
+  <link rel="stylesheet" href="app.css">
 
   <!-- 프리미엄 타이포그래피 (Outfit & Inter) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,9 +38,6 @@
   <!-- FontAwesome Icons & Prism.js Code Highlight -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
-  
-  <!-- Custom Styling -->
-  <link rel="stylesheet" href="app.css">
 </head>
 <body>
   <!-- 백그라운드 매쉬 그라데이션 및 노이즈 효과 -->
@@ -83,7 +94,7 @@
       <nav class="nav-container">
         <div class="nav-section-title">
           <span>문서 목록</span>
-          <span id="doc-count" class="count-badge">0</span>
+          <span id="doc-count" class="count-badge">...</span>
         </div>
         <ul id="document-list" class="doc-list">
           <!-- JS에서 동적으로 생성 -->
@@ -113,7 +124,7 @@
         
         <div class="workspace-status">
           <span class="status-indicator active"><span class="pulse-dot"></span></span>
-          <span id="quick-stats">76 Pages loaded</span>
+          <span id="quick-stats">Loading database...</span>
         </div>
       </header>
 
@@ -129,7 +140,40 @@
           <div class="campaign-container">
             <!-- 챕터별 카드 렌더링 영역 (JS에서 동적 생성) -->
             <div id="campaign-flow" class="campaign-flow">
-              <!-- JS 동적 로드 -->
+              <!-- 데이터 로딩 전 임시 스켈레톤 로더 (연결선 붕괴 방지) -->
+              <div class="chapter-row active skeleton-row">
+                <div class="chapter-marker skeleton-marker">
+                  <span class="ch-num">CH</span>
+                  <span class="ch-id">..</span>
+                </div>
+                <div class="chapter-card glass-panel skeleton-card">
+                  <div class="skeleton-line skeleton-title"></div>
+                  <div class="skeleton-line skeleton-text"></div>
+                  <div class="skeleton-line skeleton-text-short"></div>
+                </div>
+              </div>
+              <div class="chapter-row skeleton-row">
+                <div class="chapter-marker skeleton-marker">
+                  <span class="ch-num">CH</span>
+                  <span class="ch-id">..</span>
+                </div>
+                <div class="chapter-card glass-panel skeleton-card">
+                  <div class="skeleton-line skeleton-title"></div>
+                  <div class="skeleton-line skeleton-text"></div>
+                  <div class="skeleton-line skeleton-text-short"></div>
+                </div>
+              </div>
+              <div class="chapter-row skeleton-row">
+                <div class="chapter-marker skeleton-marker">
+                  <span class="ch-num">CH</span>
+                  <span class="ch-id">..</span>
+                </div>
+                <div class="chapter-card glass-panel skeleton-card">
+                  <div class="skeleton-line skeleton-title"></div>
+                  <div class="skeleton-line skeleton-text"></div>
+                  <div class="skeleton-line skeleton-text-short"></div>
+                </div>
+              </div>
             </div>
           </div>
         </section>

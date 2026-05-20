@@ -14,6 +14,7 @@
   --bg-surface-hover: rgba(255, 255, 255, 0.05);
   --border-color: rgba(255, 255, 255, 0.06);
   --border-focus: rgba(99, 102, 241, 0.4);
+  --skeleton-bg: linear-gradient(90deg, rgba(255, 255, 255, 0.03) 25%, rgba(255, 255, 255, 0.08) 50%, rgba(255, 255, 255, 0.03) 75%);
   
   /* 카테고리별 테마 네온 컬러 */
   --concepts-color: #a78bfa;     /* 펄플 */
@@ -47,6 +48,7 @@
   --bg-surface-hover: rgba(0, 0, 0, 0.03);
   --border-color: rgba(0, 0, 0, 0.06);
   --border-focus: rgba(99, 102, 241, 0.4);
+  --skeleton-bg: linear-gradient(90deg, rgba(0, 0, 0, 0.03) 25%, rgba(0, 0, 0, 0.08) 50%, rgba(0, 0, 0, 0.03) 75%);
 
   /* 카테고리별 라이트 톤 최적화 */
   --concepts-color: #7c3aed;
@@ -416,10 +418,70 @@ body {
 .skeleton-item {
   height: 48px;
   border-radius: 10px;
-  background: linear-gradient(90deg, rgba(255,255,255,0.03) 25%, rgba(255,255,255,0.07) 50%, rgba(255,255,255,0.03) 75%);
+  background: var(--skeleton-bg);
   background-size: 200% 100%;
   animation: loading-skeleton 1.5s infinite;
   margin-bottom: 4px;
+}
+.skeleton-marker {
+  background: var(--skeleton-bg) !important;
+  background-size: 200% 100% !important;
+  animation: loading-skeleton 1.5s infinite !important;
+  border-color: var(--border-color) !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-muted) !important;
+}
+.skeleton-card {
+  height: 180px;
+  background: var(--bg-surface) !important;
+  border-color: var(--border-color) !important;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  padding: 24px !important;
+  position: relative;
+  overflow: hidden;
+}
+/* 카드 자체에 스켈레톤 흐름 광원 애니메이션 추가 */
+.skeleton-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--skeleton-bg);
+  background-size: 200% 100%;
+  animation: loading-skeleton 1.5s infinite;
+  pointer-events: none;
+  opacity: 0.6;
+}
+.skeleton-line {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  position: relative;
+  z-index: 1;
+}
+[data-theme="light"] .skeleton-line {
+  background: rgba(0, 0, 0, 0.05);
+}
+.skeleton-title {
+  width: 30%;
+  height: 20px;
+  margin-bottom: 8px;
+}
+.skeleton-text {
+  width: 80%;
+  height: 14px;
+}
+.skeleton-text-short {
+  width: 50%;
+  height: 14px;
 }
 @keyframes loading-skeleton {
   0% { background-position: 200% 0; }
@@ -579,6 +641,9 @@ body {
   opacity: 0.3;
   z-index: 0;
   border-radius: 2px;
+}
+.campaign-flow:empty::before {
+  display: none !important;
 }
 
 /* 챕터 로우 블록 */
