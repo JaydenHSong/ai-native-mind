@@ -873,13 +873,21 @@ function initGraph() {
       ctx.moveTo(link.source.x, link.source.y);
       ctx.lineTo(link.target.x, link.target.y);
       
-      // 하이라이트 노드 링킹은 더 밝고 섬세하게
-      if (hoveredNode && (link.source === hoveredNode || link.target === hoveredNode)) {
-        ctx.strokeStyle = hoveredNode.color;
-        ctx.lineWidth = 1.1; // 하이라이트 두께도 50% 슬림화
+      const isHoveredLink = hoveredNode && (link.source === hoveredNode || link.target === hoveredNode);
+      const isActiveLink = currentDoc && (link.source.id === currentDoc.id || link.target.id === currentDoc.id);
+
+      // 호버 상태이거나 활성 노드에 연결된 엣지는 네온 하이라이트 부여
+      if (isHoveredLink || isActiveLink) {
+        // 호버 노드 색상을 우선 적용하고, 호버가 아니면 현재 활성 문서의 노드 색상을 적용
+        const activeColor = (hoveredNode && (link.source === hoveredNode || link.target === hoveredNode))
+          ? hoveredNode.color
+          : (currentDoc && link.source.id === currentDoc.id ? link.source.color : link.target.color);
+
+        ctx.strokeStyle = activeColor;
+        ctx.lineWidth = 1.1; // 하이라이트 엣지 연결선 굵기도 50% 슬림화된 1.1px로 통일
         ctx.stroke();
         ctx.strokeStyle = isLightTheme ? 'rgba(0,0,0,0.06)' : 'rgba(255,255,255,0.05)';
-        ctx.lineWidth = 0.6; // 복귀 굵기도 50% 얇게 복구
+        ctx.lineWidth = 0.6; // 복귀 굵기
       } else {
         ctx.stroke();
       }
@@ -894,11 +902,17 @@ function initGraph() {
       ctx.fillStyle = node.color;
       ctx.shadowBlur = 0;
       
-      // 마우스 오버 상태 하이라이트 네온 글로우
+      const isActiveNode = currentDoc && node.id === currentDoc.id;
+
+      // 마우스 오버 상태 또는 클릭 활성화 상태 네온 글로우
       if (node === hoveredNode) {
         ctx.shadowColor = node.color;
         ctx.shadowBlur = isLightTheme ? 8 : 16;
         ctx.arc(node.x, node.y, node.radius + 3, 0, Math.PI * 2);
+      } else if (isActiveNode) {
+        ctx.shadowColor = node.color;
+        ctx.shadowBlur = isLightTheme ? 6 : 12; // 클릭 상태의 차분하고 고급스러운 은은한 네온 글로우
+        ctx.arc(node.x, node.y, node.radius + 1.5, 0, Math.PI * 2);
       }
       ctx.fill();
       ctx.shadowBlur = 0; // 섀도우 복원
@@ -908,10 +922,11 @@ function initGraph() {
       ctx.lineWidth = 1.5;
       ctx.stroke();
 
-      // 노드 라벨 텍스트
-      if (transform.scale > 0.6 || node === hoveredNode) {
+      // 노드 라벨 텍스트 (호버 상태이거나 클릭 활성화 상태일 경우 무조건 글자 굵게 표시)
+      const shouldShowLabel = transform.scale > 0.6 || node === hoveredNode || isActiveNode;
+      if (shouldShowLabel) {
         ctx.fillStyle = isLightTheme ? '#334155' : '#e4e4e7';
-        ctx.font = node === hoveredNode 
+        ctx.font = (node === hoveredNode || isActiveNode) 
           ? `bold ${11 / transform.scale}px var(--font-title)`
           : `${9 / transform.scale}px var(--font-title)`;
         ctx.textAlign = "center";
@@ -1067,6 +1082,11 @@ function initGraph() {
     hoveredNode = null;
     tooltip.classList.add("hidden");
     draw();
+  });
+
+  // 해시 변경 시 시뮬레이션을 다시 깨워 활성화된 노드/엣지 하이라이트를 부드럽고 생동감 있게 렌더링
+  window.addEventListener("hashchange", () => {
+    wakeSimulation();
   });
 
   // 마우스 휠 줌 기능 추가 (마우스 포인터 중심 스케일링으로 프리미엄 UX 구현)
