@@ -1,14 +1,15 @@
 ---
 title: "CLAUDE.md 작성 가이드"
 category: patterns
-tags: [claude-md, harness-engineering, context-engineering, best-practices, grounding-md]
+tags: [claude-md, harness-engineering, context-engineering, best-practices, grounding-md, natural-language-harness, agents-md]
 created: 2026-04-09
-updated: 2026-05-12
+updated: 2026-05-19
 sources:
   - "raw/notes/2026-04-09-claude-md-best-practices.md"
   - "raw/articles/2026-05-01-agents-md-spec.md"
   - "raw/articles/2026-05-01-anthropic-agent-skills.md"
   - "raw/articles/2026-05-12-grounding-md-epistemic-agentic.md"
+  - "raw/articles/2026-05-19-natural-language-agent-harnesses.md"
 related:
   - "[[concepts/harness-engineering]]"
   - "[[concepts/context-engineering]]"
@@ -167,6 +168,54 @@ GROUNDING.md가 들어오면 다음과 같이 *역전*된다:
 사실 우리 CLAUDE.md의 일부 규칙(특히 raw/ 별도 표준 섹션)이 이미 GROUNDING.md 스타일 — *user 요청과 충돌 시 schema가 이긴다*. 다만 *field-scope*는 아니고 *vault-scope*. 미래에 다른 ai-native-mind 위키가 생기면 그때 field-scope GROUNDING.md로 분리.
 
 > 자세히: [GROUNDING.md 원본 노트](raw/articles/2026-05-12-grounding-md-epistemic-agentic.md).
+
+## 2026-05-19 보강 — Natural-Language Agent Harnesses: CLAUDE.md를 "설명서"에서 "정책 객체"로 보기
+
+> 출처: Pan et al., "Natural-Language Agent Harnesses" (arXiv:2603.25723)
+
+이 위키는 이미 `CLAUDE.md`를 단순한 메모가 아니라 **작업 규칙이 담긴 운영 문서**로 쓰고 있다. [Natural-Language Agent Harnesses](https://arxiv.org/abs/2603.25723)는 이 직관을 한 단계 더 밀어붙인다.
+
+- **NLAH** = run-level harness policy를 적는 자연어 문서
+- **IHR** = 그 문서를 읽어 handoff / state update / validation gate / artifact contract를 실행하는 shared runtime
+
+핵심 메시지는 "자연어도 실행된다"가 아니라 **하네스의 재사용 가능한 부분은 코드가 아니라 정책**이라는 점이다.
+
+### 왜 CLAUDE.md와 직접 연결되나
+
+논문은 하네스 로직이 controller code에 묻히면 세 가지가 어려워진다고 말한다.
+
+1. **inspect** — 지금 무슨 정책이 적용되는지 읽기 어려움
+2. **compare** — 다른 하네스와 어디가 다른지 비교 어려움
+3. **transfer / ablate** — 다른 runtime으로 옮기거나 모듈별 효과 검증 어려움
+
+이건 `CLAUDE.md`를 잘 쓰는 이유와 거의 같다. 문서화된 정책은:
+
+- 사람이 먼저 읽을 수 있고
+- 에이전트가 매번 같은 규칙을 다시 볼 수 있고
+- diff와 code review 대상이 되며
+- 다른 프로젝트로 **portable** 하다
+
+### 논문에서 얻는 실증 근거
+
+본문 기준 NLAH는 code harness와 비슷한 성능을 내면서 정책 표면을 크게 줄였다.
+
+- **OSWorld**: NLAH **46.3** vs code harness **47.1**
+- **SWE Verified Live-SWE**: code **60.10k tokens / 68 files** vs NLAH **2.90k / 3 files**
+- **TB2 MHTBA**: code **10.50k / 3 files** vs NLAH **0.80k / 1 file**
+
+→ 즉 운영 규칙을 code 바깥 문서로 뺀다고 해서 자동으로 성능이 무너지는 것은 아니다. 오히려 **정책 표면을 작게 유지하면서 비교 가능성**을 얻는다.
+
+### 이 페이지에 주는 새 해석
+
+이제 `CLAUDE.md` / `AGENTS.md` / `SKILL.md`는 다음처럼 볼 수 있다.
+
+| 파일 | 기존 해석 | 오늘 추가된 해석 |
+|---|---|---|
+| `CLAUDE.md` | 프로젝트 설명서 | **project-scope natural-language harness policy** |
+| `AGENTS.md` | 에이전트용 README 표준 | **cross-tool portable harness policy** |
+| `SKILL.md` | 태스크 매뉴얼 | **method-scope policy module** |
+
+다만 NLAH 논문이 동시에 알려 주는 제한도 있다: **문서만으로 충분한 것은 아니고, 일관되게 해석하는 runtime charter가 필요하다.** 그래서 좋은 `CLAUDE.md`는 길이만 줄이는 게 아니라, 런타임이 해석하기 쉬운 **명시적 규칙·경계·artifact 계약** 을 써야 한다.
 
 ## 참고 소스
 

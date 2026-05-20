@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-05-18
+updated: 2026-05-19
 sources: []
 status: active
 ---
@@ -29,10 +29,15 @@ status: active
 
 ## 현재 상태
 
-- **총 페이지**: 75개
-- **카테고리**: concepts(20), tools(9), patterns(20), journal(13), comparisons(9), meta(4)
+- **총 페이지**: 76개
+- **카테고리**: concepts(20), tools(9), patterns(20), journal(14), comparisons(9), meta(4)
 - **시작일**: 2026-04-06
-- **최근 작업 (2026-05-18 데일리 ingest)**:
+- **최근 작업 (2026-05-19 데일리 ingest)**:
+  - raw 3편: HarnessAudit · ClawVM · Natural-Language Agent Harnesses
+  - 기존 페이지 보강 4개: [[concepts/harness-engineering]] · [[concepts/llm-evaluation]] · [[concepts/ai-memory-systems]] · [[patterns/claude-md-guide]]
+  - 새 일지: [[journal/2026-05-19]]
+  - 핵심 합류: 하네스를 **trajectory audit / virtual memory contract / natural-language policy object** 관점으로 한 칸 더 확장
+- **직전 작업 (2026-05-18 데일리 ingest)**:
   - raw 3편: Effective Harness Engineering · SkillSmith · RoadmapBench
   - 기존 페이지 보강 4개: [[concepts/harness-engineering]] · [[concepts/tool-use]] · [[concepts/llm-evaluation]] · [[patterns/ai-code-review]]
   - 새 일지: [[journal/2026-05-18]]

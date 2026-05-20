@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-05-18
+updated: 2026-05-19
 sources: []
 status: active
 ---
@@ -19,6 +19,22 @@ status: active
 - 월드맵 허브: [[wiki/campaign-map|Campaign Map]]
 - 진행 가이드: [[wiki/overview|Overview]]
 - 전체 도감: [[wiki/index|Index]]
+
+## [2026-05-19] ingest | HarnessAudit(trajectory boundary audit) + ClawVM(virtual memory contract) + Natural-Language Agent Harnesses(policy object) — 화요 데일리, 자동 인제스트
+
+- **Sources** (raw 3편 추가):
+  - `raw/articles/2026-05-19-harnessaudit-trajectory-safety.md` — Liu et al., "Auditing Agent Harness Safety" (arXiv:2605.14271, 2026-05-14; v2 2026-05-16). **핵심 전환**: final output가 아니라 **full execution trajectory** 를 감사. **3 layer**: boundary compliance / execution fidelity / system stability. **HarnessAudit-Bench = 210 tasks / 8 domains / 24 scenarios**, single-agent·multi-agent 둘 다 포함. 발견: **best overall score 0.32**, task completion과 safety compliance **misaligned**, multi-agent coordination이 **information-flow / resource-access violation** 증폭.
+  - `raw/articles/2026-05-19-clawvm-harness-managed-virtual-memory.md` — Rafique · Bindschaedler, "ClawVM: Harness-Managed Virtual Memory for Stateful Tool-Using LLM Agents" (arXiv:2604.10352, 2026-04-11). memory를 retrieval store가 아니라 **typed pages + minimum-fidelity invariants + validated writeback** 으로 관리하는 virtual memory contract로 재정의. 본문 기준 **12 real-session traces**, budget 180 task replay에서 **100% success vs baseline 76.7%**, overhead **18–44μs/turn**.
+  - `raw/articles/2026-05-19-natural-language-agent-harnesses.md` — Pan et al., "Natural-Language Agent Harnesses" (arXiv:2603.25723, 2026-03-26; v2 2026-05-18). 하네스를 controller code에 묻지 않고 **자연어 정책 문서(NLAH) + shared runtime(IHR)** 로 분리. **OSWorld 46.3 vs code 47.1**, **SWE code 60.10k tokens / 68 files vs NLAH 2.90k / 3 files**, file-backed state·verifier 모듈 ablation 가능.
+- **Pages updated** (추가만, 기존 본문 보존):
+  - `concepts/harness-engineering.md` — "2026-05-19 보강" 섹션 추가. 하네스를 **trajectory audit substrate + policy representation object** 로 확장. HarnessAudit + NLAH 연결.
+  - `concepts/llm-evaluation.md` — "2026-05-19 보강 — HarnessAudit" 섹션 추가. eval 표면에 **boundary-compliance / trajectory audit** 층 추가.
+  - `concepts/ai-memory-systems.md` — "2026-05-19 보강 — ClawVM" 섹션 추가. memory를 **belief / lifecycle / safety** 다음에 **runtime enforcement** 질문으로 확장.
+  - `patterns/claude-md-guide.md` — "2026-05-19 보강 — Natural-Language Agent Harnesses" 섹션 추가. `CLAUDE.md` / `AGENTS.md` / `SKILL.md`를 **natural-language harness policy** 로 재해석.
+- **Pages created**:
+  - `journal/2026-05-19.md` — 화요 데일리 일지 (trajectory audit · virtual memory · natural-language harness 연결, 기존 지식과의 다리, 자율 결정 사항, 후속 후보).
+- **Pages updated (meta)**: `index.md` (journal 13→14, total 75→76), `overview.md` (최근 작업 갱신), `log.md` (이 항목).
+- **Notes**: 2026-05-18이 하네스를 **예산 배분 / skill 압축 / release-scale eval** 관점으로 구체화했다면, 오늘 3편은 그 하네스를 더 아래와 더 위로 동시에 펼친다. 아래로는 **ClawVM** 이 memory flush/reset/writeback을 하네스 계약으로 만들고, 위로는 **NLAH** 가 정책을 코드 밖 문서 객체로 드러낸다. 그 사이에서 **HarnessAudit** 가 "잘 풀었는가"보다 "규정 위반 없이 풀었는가"를 묻는다. 결과적으로 하네스는 점점 **glue code**가 아니라 **감사 가능하고, 보존 가능하고, 표현 가능한 아키텍처 레이어**로 선명해진다.
 
 ## [2026-05-18] ingest | Effective Harness Engineering(Vesper·evaluation hack·worktree) + SkillSmith(compiled runtime interface) + RoadmapBench(version-upgrade eval) — 월요 데일리, 자동 인제스트
 

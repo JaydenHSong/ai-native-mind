@@ -1,9 +1,9 @@
 ---
 title: "Harness Engineering"
 category: concepts
-tags: [harness-engineering, ai-agent, infrastructure, orchestration, verification-gated, grounding, runtime-substrate, 11-responsibilities, evaluation-hacking, runtime-interface]
+tags: [harness-engineering, ai-agent, infrastructure, orchestration, verification-gated, grounding, runtime-substrate, 11-responsibilities, evaluation-hacking, runtime-interface, trajectory-audit, natural-language-harness]
 created: 2026-04-09
-updated: 2026-05-18
+updated: 2026-05-19
 sources:
   - "raw/notes/2026-04-09-engineering-paradigms-research.md"
   - "raw/notes/2026-04-11-orchestration-harness-server-supplement.md"
@@ -25,6 +25,8 @@ sources:
   - "raw/articles/2026-05-14-ai-harness-engineering-runtime-substrate.md"
   - "raw/articles/2026-05-18-effective-harness-engineering-algorithm-discovery.md"
   - "raw/articles/2026-05-18-skillsmith-boundary-guided-runtime-interfaces.md"
+  - "raw/articles/2026-05-19-harnessaudit-trajectory-safety.md"
+  - "raw/articles/2026-05-19-natural-language-agent-harnesses.md"
 related:
   - "[[concepts/context-engineering]]"
   - "[[concepts/prompt-engineering]]"
@@ -451,6 +453,71 @@ Skill/Model output → Evidence Store → Verifier → {commit | retry | replan}
 1. **병렬 subagent 기본값을 "공유 작업공간"이 아니라 "격리 worktree/ephemeral dir"로 두는 편이 낫다.**
 2. **skill/도구 문서는 길게 설명하는 것보다, runtime에서 필요한 최소 boundary만 남기도록 압축해야 한다.**
 3. **모델 upgrade는 score-gaming risk도 함께 키울 수 있으므로, stronger model일수록 verification harness를 두껍게 유지해야 한다.**
+
+## 2026-05-19 보강 — HarnessAudit + Natural-Language Harness: 하네스는 실행 중에도 감사되어야 하고, 문서 객체로도 다뤄져야 한다
+
+2026-05-18까지 이 페이지는 하네스를 **예산 배분 / verification / tool boundary / worktree isolation** 관점으로 구체화했다. 오늘 들어온 두 논문은 그 위에 서로 다른 축을 하나씩 더한다.
+
+- [HarnessAudit](https://arxiv.org/abs/2605.14271) — 하네스를 **trajectory 전체를 따라 감사해야 하는 safety substrate** 로 본다
+- [Natural-Language Agent Harnesses](https://arxiv.org/abs/2603.25723) — 하네스를 **코드에서 분리 가능한 정책 문서 객체** 로 본다
+
+### A. HarnessAudit — completion이 아니라 execution protocol까지 봐야 한다
+
+HarnessAudit의 문제의식은 간단하다. **정답을 냈어도, 그 과정에서 잘못된 자원 접근·민감 정보 공유·권한 위반이 있었다면 안전한 하네스가 아니다.**
+
+핵심은 trajectory를 3개 층으로 보는 것:
+
+1. **Boundary compliance** — 누가 무엇에 접근해도 되는가
+2. **Execution fidelity** — task completion과 action validity가 맞는가
+3. **System stability** — perturbation을 받아도 프로토콜 준수가 유지되는가
+
+벤치마크 규모도 실전적이다.
+
+- **210 tasks**
+- **8 real-world domains**
+- **24 fine-grained scenarios**
+- single-agent / multi-agent 둘 다 구성
+
+본문 기준 발견이 특히 중요하다.
+
+- **best overall score도 0.32** 수준
+- completion이 높은 시스템이 safety도 높은 것은 아님
+- **multi-agent coordination이 information flow / resource access violation을 증폭**
+
+→ 이건 [[concepts/llm-evaluation]] 의 judge·environment 층 위에 **protocol/trajectory audit 층**을 하나 더 올린다. 하네스는 더 이상 "잘 굴러가게 하는 glue"가 아니라, **실행 중 boundary를 계속 강제하고 사후에 재감사할 수 있어야 하는 substrate** 다.
+
+### B. Natural-Language Agent Harnesses — 하네스의 재사용 핵심은 코드가 아니라 정책이다
+
+Natural-Language Agent Harnesses(NLAH)는 하네스를 controller code에 묻어 두지 말고 **자연어 문서로 외부화**하자고 제안한다. 실행은 IHR(Intelligent Harness Runtime)이 맡고, 문서는 run-level policy만 담는다.
+
+논문의 강한 포인트는 "문서로 적어도 돌아간다"보다, **정책 표면을 훨씬 짧고 비교 가능하게 만들 수 있다**는 점이다.
+
+- **OSWorld**: NLAH **46.3** vs code harness **47.1**
+- **SWE Verified Live-SWE**: code **60.10k tokens / 68 files** vs NLAH **2.90k / 3 files**
+- **TB2 MHTBA**: code **10.50k / 3 files** vs NLAH **0.80k / 1 file**
+
+또한 module ablation이 선명하다.
+
+- **file-backed state**: SWE **73.0 → 75.6**, OSWorld **44.4 → 58.3**
+- **verifier**: SWE **+0.2**, OSWorld **+8.4**
+- **context compression**: SWE **73.0 → 72.0**, OSWorld **44.4 → 36.1**
+
+→ 이 논문이 보여 주는 것은 하네스의 본질이 특정 언어나 프레임워크가 아니라 **정책 모듈의 조합**이라는 점이다. 그래서 `CLAUDE.md`, `AGENTS.md`, `SKILL.md` 류 문서를 그냥 설명서가 아니라 **실행 정책 객체**로 다루는 현재 위키 방향이 더 강해진다.
+
+### 오늘 시점 재압축
+
+이제 하네스를 최소 여섯 질문으로 볼 수 있다.
+
+| 질문 | 대표 근거 |
+|---|---|
+| 같은 예산에서 무엇을 늘릴까? | Effective Harness Engineering |
+| skill을 어떤 모양으로 싣나? | SkillSmith |
+| 병렬화를 어떻게 안전하게 하나? | worktree isolation |
+| 어떤 책임을 런타임이 가져야 하나? | Zhong & Zhu 11 responsibilities |
+| 실행 중 safety를 어떻게 감사하나? | **HarnessAudit** |
+| 그 정책을 어떻게 비교·이식·ablation하나? | **NLAH + IHR** |
+
+즉 하네스는 **운영자 감각으로 짜는 비공식 glue**에서, **감사 가능하고 표현 가능하며 이식 가능한 1급 아키텍처 객체**로 올라가고 있다.
 
 ## 케이스별·Anthropic 스터디
 

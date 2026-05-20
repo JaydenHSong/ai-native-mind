@@ -1,9 +1,9 @@
 ---
 title: "AI Memory Systems"
 category: concepts
-tags: [memory, agent, long-term, short-term, context, multi-party, group-memory, benchmark, probabilistic-memory, partial-observability, forgetting, consolidation, safety-memory, taxonomy]
+tags: [memory, agent, long-term, short-term, context, multi-party, group-memory, benchmark, probabilistic-memory, partial-observability, forgetting, consolidation, safety-memory, taxonomy, virtual-memory, token-budget]
 created: 2026-04-09
-updated: 2026-05-17
+updated: 2026-05-19
 sources:
   - "raw/notes/2026-04-09-ai-memory-systems.md"
   - "raw/articles/2026-05-03-zenbrain-7-layer-memory.md"
@@ -11,6 +11,7 @@ sources:
   - "raw/articles/2026-05-17-belief-memory-partial-observability.md"
   - "raw/articles/2026-05-17-human-inspired-memory-architecture.md"
   - "raw/articles/2026-05-17-mage-shadow-memory-long-horizon-threats.md"
+  - "raw/articles/2026-05-19-clawvm-harness-managed-virtual-memory.md"
 related:
   - "[[concepts/context-engineering]]"
   - "[[concepts/vector-db-embeddings]]"
@@ -308,6 +309,64 @@ abstract 기준 결과:
 1. 프로젝트 노트·agent log를 무한히 쌓기보다, 주기적으로 **dedup + consolidation** 하는 잡 하나만 넣어도 retrieval 품질이 달라질 수 있다.
 2. memory 시스템 평가 시 accuracy만 보지 말고 **store reduction 대비 accuracy 유지율**을 같이 봐야 한다.
 3. `wiki/log.md`와 journal이 길어질수록, 장기적으로는 "최근 사건 요약본"과 "원본 로그"를 분리하는 mini-consolidation 계층이 필요하다.
+
+## 2026-05-19 보강 — ClawVM: memory는 저장소가 아니라 runtime contract이기도 하다 (arXiv 2604.10352)
+
+[ClawVM](https://arxiv.org/abs/2604.10352) (2026-04-11)은 이 페이지의 memory 논의를 한 단계 더 낮은 시스템 층으로 끌어내린다. 지금까지 최근 위키는 memory를 크게 세 방식으로 다뤘다.
+
+- **BeliefMem** — 무엇을 얼마나 믿을까
+- **Human-Inspired Memory** — 언제 압축·망각·재강화할까
+- **MAGE** — 무엇을 안 잊어야 안전한가
+
+ClawVM은 여기에 네 번째 질문을 붙인다.
+
+> **그 기억을 누가, 어떤 lifecycle boundary에서, 어떤 불변식으로 지킬 것인가?**
+
+### 문제의 재정의 — memory failure는 종종 retrieval failure가 아니라 lifecycle failure다
+
+논문이 지적하는 recurring failure는 세 가지다.
+
+- compaction 뒤 **lost state**
+- reset 시 **flush bypass**
+- 잘못된 **destructive writeback**
+
+즉 메모리 오류는 "못 찾았다"보다 먼저 **제대로 보존·반영되지 않았다**는 문제일 수 있다.
+
+### ClawVM의 핵심 구조
+
+- **typed pages** 로 상태를 분리
+- 각 page에 **minimum-fidelity invariants** 부여
+- token budget 안에서 **multi-resolution representation** 선택
+- compaction / reset / save 같은 lifecycle boundary마다 **validated writeback** 수행
+
+이 구조는 memory를 vector DB plugin이 아니라 **virtual memory contract** 로 취급한다.
+
+### 왜 이 페이지에 중요한가
+
+ClawVM은 memory 시스템 논의를 다음 표처럼 바꾼다.
+
+| 질문 | 대표 자료 | 초점 |
+|---|---|---|
+| 무엇을 얼마나 믿나? | BeliefMem | belief representation |
+| 언제 압축·망각하나? | Human-Inspired Memory | lifecycle policy |
+| 무엇을 안 잊어야 안전한가? | MAGE | safety memory |
+| **어떻게 절대 안 잃게 강제하나?** | **ClawVM** | **runtime enforcement** |
+
+### 정량 신호
+
+HTML 본문 기준:
+
+- **12 real-session traces** + adversarial stress tests
+- task replay에서 budget 180 기준 **100% success** vs baseline **76.7%**
+- policy-engine overhead **median 18–44μs/turn**, p95 **< 60μs**
+
+→ 아주 작은 runtime cost로 state-loss 계열 실패를 크게 줄인다는 주장이다.
+
+### 1인 개발자 ROI 3개
+
+1. 장기 실행 agent를 만들 때 memory store 추가보다 먼저 **flush/reset/save 경계**를 명시하는 편이 더 즉효일 수 있다.
+2. 메모리를 한 덩어리 요약으로 다루지 말고, 최소한 **"절대 안 잃을 페이지"와 "압축 가능한 페이지"** 를 나눠 보는 것이 좋다.
+3. memory benchmark를 볼 때 retrieval accuracy뿐 아니라 **writeback correctness / compaction fault / reset safety** 같은 운영 지표도 질문해야 한다.
 
 ## 참고 소스
 

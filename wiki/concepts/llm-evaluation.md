@@ -1,9 +1,9 @@
 ---
 title: "LLM Evaluation (Evals)"
 category: concepts
-tags: [evaluation, testing, llm, quality, evals, judge-reliability, long-horizon, native-runtime, benchmark, coding-benchmark, behavioral-safety, version-upgrade]
+tags: [evaluation, testing, llm, quality, evals, judge-reliability, long-horizon, native-runtime, benchmark, coding-benchmark, behavioral-safety, version-upgrade, trajectory-audit, harness-safety]
 created: 2026-04-09
-updated: 2026-05-18
+updated: 2026-05-19
 sources:
   - "raw/notes/2026-04-09-llm-evaluation.md"
   - "raw/articles/2026-05-12-judge-reliability-harness-rand.md"
@@ -11,6 +11,7 @@ sources:
   - "raw/articles/2026-05-17-featurebench-agentic-coding-complex-features.md"
   - "raw/articles/2026-05-17-litmus-behavioral-jailbreak-os-agents.md"
   - "raw/articles/2026-05-18-roadmapbench-long-horizon-version-upgrades.md"
+  - "raw/articles/2026-05-19-harnessaudit-trajectory-safety.md"
 related:
   - "[[concepts/harness-engineering]]"
   - "[[concepts/context-rot-hallucination]]"
@@ -352,6 +353,65 @@ HTML 본문 스니펫 기준으로 논문은 **scaffold sensitivity** 를 별도
 1. bug-fix eval만으로 장기 코딩 성능을 추정하지 말고, 최소한 **release-scale smoke test** 나 mini-roadmap task를 따로 둔다.
 2. agent benchmark를 읽을 때 모델 이름 옆에 **어떤 scaffold(OpenHands 등)** 인지 같이 기록한다.
 3. 내 프로젝트의 큰 변경이 수십 파일·수천 줄이라면, frontier agent capability를 "거의 자동화 가능"로 과대해석하지 않는다.
+
+## 2026-05-19 보강 — HarnessAudit: 정답뿐 아니라 실행 궤적의 boundary 위반까지 재기 (arXiv 2605.14271)
+
+[HarnessAudit](https://arxiv.org/abs/2605.14271) (2026-05-14)는 이 페이지가 최근 쌓아 온 eval 층을 한 단계 더 확장한다. 지금까지 흐름을 단순화하면 이랬다.
+
+| Layer | 대표 질문 | 예시 |
+|---|---|---|
+| Judge | 채점자가 믿을 만한가? | JRH |
+| Output / claim gate | 출력 직전에 regenerate / replan 할까? | GSAR, Verify Before You Fix |
+| Runtime / environment | 실제 환경에서 task가 통과하는가? | WildClawBench, LITMUS |
+| Software evolution | repo 진화를 따라 기능/버전 업그레이드를 할 수 있는가? | FeatureBench, RoadmapBench |
+
+HarnessAudit가 붙이는 새 질문은 이것이다.
+
+> **task는 끝났는데, 그 과정에서 금지된 자원 접근이나 잘못된 정보 공유가 있었던 건 아닌가?**
+
+### 무엇을 새로 재나
+
+HarnessAudit는 final answer만이 아니라 **full execution trajectory** 를 감사한다.
+
+- **Boundary compliance** — permission / information-flow 위반이 없었는가
+- **Execution fidelity** — task completion이 실제 유효한 action으로 이뤄졌는가
+- **System stability** — perturbation을 줘도 protocol adherence가 유지되는가
+
+즉 eval 단위가 `출력`이나 `종료 상태`에서 **실행 중간 과정의 위반**까지 내려간다.
+
+### 벤치마크 규모와 핵심 발견
+
+- **210 tasks**
+- **8 real-world domains**
+- **24 scenarios**
+- single-agent / multi-agent 둘 다 포함
+
+본문 기준으로 특히 중요한 발견:
+
+- **best overall score도 0.32**
+- **task completion과 safety compliance는 misaligned**
+- OpenClaw 설정에서 **Gemini 3.1 Pro**는 completion 최강이 아니어도 safety가 더 강해 overall 최고
+- **multi-agent** 는 single-agent보다 information-flow / resource-access violation이 더 많음
+
+→ 이건 [[concepts/harness-engineering]] 페이지의 "agent score = model + harness" 주장을 **safety eval** 쪽에서 다시 입증한다.
+
+### 이 페이지의 eval 표면을 다시 그리면
+
+이제 본 페이지가 다루는 eval은 최소 다섯 질문으로 나뉜다.
+
+1. **Judge가 믿을 만한가**
+2. **출력 직전에 재생성/재계획이 필요한가**
+3. **실제 환경에서 side effect까지 포함해 통과했는가**
+4. **feature / version-upgrade 같은 더 현실적인 소프트웨어 단위를 풀 수 있는가**
+5. **그 모든 과정에서 boundary 위반 없이 실행되었는가**
+
+HarnessAudit는 특히 5번을 1급 질문으로 올린다.
+
+### 1인 개발자 ROI 3개
+
+1. agent eval 로그에 최종 답만 남기지 말고, 최소한 **tool call trace + resource access trace + handoff trace** 를 같이 남기는 편이 낫다.
+2. 멀티에이전트 시스템은 pass/fail보다 **누가 누구에게 무엇을 넘겼는지**를 따로 점검해야 한다.
+3. 안전 점수는 completion과 별개로 저장하고, 가능하면 **completion × safety** 같은 복합 지표를 봐야 한다.
 
 ## 1인 개발자에게
 
