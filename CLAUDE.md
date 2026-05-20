@@ -126,6 +126,7 @@ status: ingested               # 또는 captured (정독 전), reviewed (정독 
 #### 위키에 들어가지 않는 것
 
 - `examples/` — 코드 스케치, widget, JSON trace 예시. **위키 본문이 아니라 보조 artifact**다.
+- `web/` — Vercel 배포용 독립 웹 앱 루트. 위키 본문/카탈로그 대상이 아니다.
 - `.obsidian/` — 볼트 앱 설정. 위키 지식이 아니라 뷰어/에디터 설정이다.
 - `.claude/`, `.bkit/` — 에이전트/도구 로컬 상태
 - `raw/assets/`의 바이너리 첨부 — source supporting asset이지 위키 본문이 아니다
@@ -134,6 +135,7 @@ status: ingested               # 또는 captured (정독 전), reviewed (정독 
 #### Git에 올리는 것
 
 - 지식 본체: `wiki/`, `raw/`, `templates/`, `CLAUDE.md`
+- 독립 앱/코드: `web/` (Vercel 배포용 웹 소스)
 - 재현 가능한 보조 artifact: `examples/`, `SECURITY.md`, `.gitleaks.toml`, `.github/` 등 저장소 운영 파일
 - 공유 가치가 있는 Obsidian 설정만 제한적으로 허용: `app.json`, `appearance.json`, `core-plugins.json`, `community-plugins.json`
 

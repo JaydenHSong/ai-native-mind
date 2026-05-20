@@ -44,6 +44,7 @@ dist/
 .cache/
 .turbo/
 .vercel/
+web/wiki-data.json
 
 # Keys & keystores (if ever added by mistake)
 *.pem
@@ -67,3 +68,4 @@ known_hosts.bak
 .AppleDouble
 .LSOverride
 *.orig
+.vercel

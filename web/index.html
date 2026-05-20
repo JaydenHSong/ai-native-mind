@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ai-native-mind // AI-Native Programmer Knowledge Base</title>
+  <meta name="description" content="Jayden Song의 AI 네이티브 프로그래머 성장 지식 위키 대시보드">
+  
+  <!-- FOUC (Flash of Unstyled Content) 방지 스크립트 -->
+  <meta name="color-scheme" content="light dark">
+  <script>
+    {
+      const savedTheme = localStorage.getItem("theme") || "dark";
+      document.documentElement.setAttribute("data-theme", savedTheme);
+      document.querySelector('meta[name="color-scheme"]').content = savedTheme === "dark" ? "dark" : "light dark";
+    }
+  </script>
+
+  <!-- 프리미엄 타이포그래피 (Outfit & Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons & Prism.js Code Highlight -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+  
+  <!-- Custom Styling -->
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <!-- 백그라운드 매쉬 그라데이션 및 노이즈 효과 -->
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+  <div class="bg-noise"></div>
+
+  <div id="app-container">
+    <!-- 1. LEFT SIDEBAR: 탐색 및 검색 -->
+    <aside id="sidebar" class="glass-panel">
+      <div class="sidebar-header">
+        <div class="logo">
+          <span class="logo-icon"><i class="fa-solid fa-brain"></i></span>
+          <div class="logo-text">
+            <h1>ai-native-mind</h1>
+            <span class="subtext">Knowledge Hub</span>
+          </div>
+        </div>
+        <button id="theme-toggle" class="icon-btn" aria-label="테마 전환" title="라이트/다크 모드 전환">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+      </div>
+
+      <!-- 통합 실시간 퍼지 검색바 -->
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input type="text" id="search-input" placeholder="제목, 태그, 내용 검색..." autocomplete="off">
+        <button id="search-clear-btn" class="hidden" aria-label="검색 지우기"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+
+      <!-- 카테고리 빠른 필터 칩 -->
+      <div class="category-filters">
+        <button class="filter-chip active" data-category="all">
+          <span class="dot"></span>전체
+        </button>
+        <button class="filter-chip" data-category="concepts" style="--accent: var(--concepts-color)">
+          <span class="dot"></span>Concepts
+        </button>
+        <button class="filter-chip" data-category="tools" style="--accent: var(--tools-color)">
+          <span class="dot"></span>Tools
+        </button>
+        <button class="filter-chip" data-category="patterns" style="--accent: var(--patterns-color)">
+          <span class="dot"></span>Patterns
+        </button>
+        <button class="filter-chip" data-category="comparisons" style="--accent: var(--comparisons-color)">
+          <span class="dot"></span>Comparisons
+        </button>
+        <button class="filter-chip" data-category="journal" style="--accent: var(--journal-color)">
+          <span class="dot"></span>Journal
+        </button>
+      </div>
+
+      <!-- 문서 탐색 리스트 -->
+      <nav class="nav-container">
+        <div class="nav-section-title">
+          <span>문서 목록</span>
+          <span id="doc-count" class="count-badge">0</span>
+        </div>
+        <ul id="document-list" class="doc-list">
+          <!-- JS에서 동적으로 생성 -->
+          <li class="skeleton-item"></li>
+          <li class="skeleton-item"></li>
+          <li class="skeleton-item"></li>
+          <li class="skeleton-item"></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- 2. MAIN CONTENT AREA: 그래프, 캠페인맵, 또는 인덱스 뷰 -->
+    <main id="main-workspace">
+      <!-- 뷰 모드 탭 헤더 -->
+      <header class="workspace-header glass-panel">
+        <div class="tabs">
+          <button class="tab-btn active" data-tab="campaign">
+            <i class="fa-solid fa-map-location-dot"></i> Campaign Map
+          </button>
+          <button class="tab-btn" data-tab="graph">
+            <i class="fa-solid fa-circle-nodes"></i> Knowledge Graph
+          </button>
+          <button class="tab-btn" data-tab="index">
+            <i class="fa-solid fa-list-ul"></i> Library Index
+          </button>
+        </div>
+        
+        <div class="workspace-status">
+          <span class="status-indicator active"><span class="pulse-dot"></span></span>
+          <span id="quick-stats">76 Pages loaded</span>
+        </div>
+      </header>
+
+      <!-- 탭 컨텐츠 컨테이너 -->
+      <div class="workspace-content">
+        <!-- 탭 A: 캠페인 맵 (게임화 챕터 테크트리) -->
+        <section id="campaign-tab" class="tab-panel active">
+          <div class="panel-intro">
+            <h2><i class="fa-solid fa-gamepad text-gradient"></i> AI-Native Campaign Road</h2>
+            <p>위키 전체를 "챕터 클리어 게임"처럼 따라가는 성장 캠페인 월드맵입니다. 각 챕터의 문서를 읽고 조건과 산출물을 달성해 보세요.</p>
+          </div>
+          
+          <div class="campaign-container">
+            <!-- 챕터별 카드 렌더링 영역 (JS에서 동적 생성) -->
+            <div id="campaign-flow" class="campaign-flow">
+              <!-- JS 동적 로드 -->
+            </div>
+          </div>
+        </section>
+
+        <!-- 탭 B: 관계망 지식 그래프 -->
+        <section id="graph-tab" class="tab-panel">
+          <div class="panel-intro">
+            <h2><i class="fa-solid fa-network-wired text-gradient"></i> Dynamic Knowledge Graph</h2>
+            <p>문서 간의 상호 연결망(Wikilink)을 시각화한 양방향 그래프입니다. 드래그하여 탐색하고, 노드를 클릭하여 해당 지식 문서를 펼쳐보세요.</p>
+            <div class="graph-legend">
+              <span class="legend-item"><span class="legend-dot" style="background: var(--concepts-color)"></span>Concepts</span>
+              <span class="legend-item"><span class="legend-dot" style="background: var(--tools-color)"></span>Tools</span>
+              <span class="legend-item"><span class="legend-dot" style="background: var(--patterns-color)"></span>Patterns</span>
+              <span class="legend-item"><span class="legend-dot" style="background: var(--comparisons-color)"></span>Comparisons</span>
+              <span class="legend-item"><span class="legend-dot" style="background: var(--journal-color)"></span>Journal</span>
+            </div>
+          </div>
+          
+          <div class="graph-canvas-container">
+            <canvas id="knowledge-graph-canvas"></canvas>
+            <div class="graph-controls">
+              <button id="zoom-in-btn" class="icon-btn" title="확대"><i class="fa-solid fa-plus"></i></button>
+              <button id="zoom-out-btn" class="icon-btn" title="축소"><i class="fa-solid fa-minus"></i></button>
+              <button id="reset-graph-btn" class="icon-btn" title="중앙 정렬"><i class="fa-solid fa-arrows-to-dot"></i></button>
+            </div>
+            <div id="graph-tooltip" class="glass-panel hidden"></div>
+          </div>
+        </section>
+
+        <!-- 탭 C: 전통적 라이브러리 인덱스 리스트 -->
+        <section id="index-tab" class="tab-panel">
+          <div class="panel-intro">
+            <h2><i class="fa-solid fa-book-bookmark text-gradient"></i> Wiki Library</h2>
+            <p>카테고리별로 정제된 전체 위키 지식 목록입니다. 한눈에 보고 빠르게 읽어보세요.</p>
+          </div>
+          
+          <div id="library-grid" class="library-grid">
+            <!-- JS 동적 로드 -->
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- 3. RIGHT READING PANEL: 문서 읽기 영역 -->
+    <article id="reading-panel" class="glass-panel">
+      <!-- 문서 로드 안 되었을 때의 대기 화면 -->
+      <div id="reading-placeholder" class="reading-placeholder-content">
+        <div class="placeholder-icon"><i class="fa-solid fa-book-open"></i></div>
+        <h3>지식 문서 읽기</h3>
+        <p>왼쪽 목록, 지식 그래프, 혹은 캠페인 맵에서 문서를 선택하여 본문을 확인해 보세요.</p>
+      </div>
+
+      <!-- 실제 문서 렌더링 뷰 -->
+      <div id="reading-content" class="reading-content-view hidden">
+        <header class="doc-header">
+          <div class="doc-meta-top">
+            <span id="doc-category" class="doc-category-badge">CONCEPTS</span>
+            <div class="doc-meta-right">
+              <span id="doc-confidence" class="meta-item" title="신뢰도"><i class="fa-solid fa-shield-halved"></i> <span>High</span></span>
+              <span id="doc-status" class="meta-item" title="상태"><i class="fa-solid fa-circle-check"></i> <span>Active</span></span>
+            </div>
+          </div>
+          <h2 id="doc-title">문서 제목</h2>
+          <div class="doc-tags" id="doc-tags">
+            <!-- 태그 동적 삽입 -->
+          </div>
+        </header>
+
+        <!-- 핵심 요약 (쉽게 읽기) 퀵 패널 -->
+        <div id="easy-read-panel" class="easy-read-panel glass-panel">
+          <div class="easy-read-title">
+            <i class="fa-solid fa-bolt-lightning text-gradient"></i> <strong>쉽게 읽기 (Quick Summary)</strong>
+          </div>
+          <div id="easy-read-body" class="easy-read-body">
+            <!-- 쉽게 읽기 마크다운 요약본 렌더링 -->
+          </div>
+        </div>
+
+        <!-- 마크다운 본문 출력 영역 -->
+        <div id="markdown-viewer" class="markdown-body">
+          <!-- 마크다운 변환 본문 로드 -->
+        </div>
+
+        <!-- 하단 메타정보 및 연결망 -->
+        <footer class="doc-footer">
+          <div class="doc-dates">
+            <span><i class="fa-regular fa-calendar-plus"></i> 생성일: <strong id="doc-created">2026-05-20</strong></span>
+            <span><i class="fa-regular fa-calendar-check"></i> 최종 수정일: <strong id="doc-updated">2026-05-20</strong></span>
+          </div>
+          
+          <div class="doc-relations-section">
+            <h4><i class="fa-solid fa-link"></i> 연관 지식 링크</h4>
+            <div id="doc-related-links" class="related-links-grid">
+              <!-- 연관 링크 버튼들 동적 삽입 -->
+            </div>
+          </div>
+
+          <div class="doc-sources-section">
+            <h4><i class="fa-solid fa-scroll"></i> 참고 소스 (Layer 1)</h4>
+            <ul id="doc-sources-list">
+              <!-- 참고 원천 소스 파일 리스트 -->
+            </ul>
+          </div>
+        </footer>
+      </div>
+    </article>
+  </div>
+
+  <!-- CDN 종속성 로드 -->
+  <!-- Marked 마크다운 파서 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.3.0/marked.min.js"></script>
+  <!-- Prism 코드 하이라이터 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+  <!-- Canvas Confetti 이펙트 (챕터 클리어용) -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  
+  <!-- 코어 애플리케이션 JS -->
+  <script src="app.js" type="module"></script>
+</body>
+</html>

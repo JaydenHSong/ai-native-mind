@@ -1,0 +1,13 @@
+{
+  "name": "ai-native-mind-web",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "node compile.js && vite",
+    "build": "node compile.js && vite build && node -e \"require('fs').copyFileSync('wiki-data.json', 'dist/wiki-data.json')\"",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.2.0"
+  }
+}
