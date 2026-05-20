@@ -16,6 +16,24 @@
   --border-focus: rgba(99, 102, 241, 0.4);
   --skeleton-bg: linear-gradient(90deg, rgba(255, 255, 255, 0.03) 25%, rgba(255, 255, 255, 0.08) 50%, rgba(255, 255, 255, 0.03) 75%);
   
+  /* 테마별 반응형 UI 배경 변수 */
+  --pre-bg: #111116;
+  --pre-text: #f4f4f5;
+  --pre-border: rgba(255, 255, 255, 0.06);
+  --inline-code-bg: rgba(0, 0, 0, 0.25);
+  --inline-code-color: var(--concepts-color);
+  
+  --search-input-bg: rgba(0, 0, 0, 0.2);
+  --search-input-focus-bg: rgba(0, 0, 0, 0.35);
+  --filter-chip-bg: rgba(0, 0, 0, 0.15);
+  --quest-board-bg: rgba(0, 0, 0, 0.15);
+  --graph-container-bg: rgba(0, 0, 0, 0.2);
+  
+  --blockquote-bg: rgba(99, 102, 241, 0.02);
+  --easy-read-bg: rgba(99, 102, 241, 0.02);
+  --easy-read-border: rgba(99, 102, 241, 0.2);
+  --table-th-bg: rgba(0, 0, 0, 0.15);
+  
   /* 카테고리별 테마 네온 컬러 */
   --concepts-color: #a78bfa;     /* 펄플 */
   --tools-color: #34d399;        /* 에메랄드 */
@@ -49,6 +67,24 @@
   --border-color: rgba(0, 0, 0, 0.06);
   --border-focus: rgba(99, 102, 241, 0.4);
   --skeleton-bg: linear-gradient(90deg, rgba(0, 0, 0, 0.03) 25%, rgba(0, 0, 0, 0.08) 50%, rgba(0, 0, 0, 0.03) 75%);
+
+  /* 라이트모드 반응형 UI 배경 변수 오버라이드 */
+  --pre-bg: #f1f5f9;
+  --pre-text: #0f172a;
+  --pre-border: rgba(0, 0, 0, 0.08);
+  --inline-code-bg: rgba(0, 0, 0, 0.04);
+  --inline-code-color: #6d28d9; /* 가독성 높은 진보라 */
+  
+  --search-input-bg: rgba(0, 0, 0, 0.03);
+  --search-input-focus-bg: rgba(0, 0, 0, 0.06);
+  --filter-chip-bg: rgba(0, 0, 0, 0.03);
+  --quest-board-bg: rgba(0, 0, 0, 0.03);
+  --graph-container-bg: rgba(0, 0, 0, 0.015);
+  
+  --blockquote-bg: rgba(79, 70, 229, 0.05);
+  --easy-read-bg: rgba(79, 70, 229, 0.04);
+  --easy-read-border: rgba(79, 70, 229, 0.15);
+  --table-th-bg: rgba(0, 0, 0, 0.04);
 
   /* 카테고리별 라이트 톤 최적화 */
   --concepts-color: #7c3aed;
@@ -237,7 +273,7 @@ body {
 }
 #search-input {
   width: 100%;
-  background: rgba(0, 0, 0, 0.2);
+  background: var(--search-input-bg);
   border: 1px solid var(--border-color);
   border-radius: 12px;
   padding: 12px 16px 12px 38px;
@@ -249,7 +285,7 @@ body {
 }
 #search-input:focus {
   border-color: var(--accent-primary);
-  background: rgba(0, 0, 0, 0.35);
+  background: var(--search-input-focus-bg);
   box-shadow: 0 0 0 3px var(--accent-glow);
 }
 #search-clear-btn {
@@ -275,7 +311,7 @@ body {
   border-bottom: 1px solid var(--border-color);
 }
 .filter-chip {
-  background: rgba(0, 0, 0, 0.15);
+  background: var(--filter-chip-bg);
   border: 1px solid var(--border-color);
   color: var(--text-secondary);
   border-radius: 20px;
@@ -801,7 +837,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
-  background: rgba(0, 0, 0, 0.15);
+  background: var(--quest-board-bg);
   border: 1px solid var(--border-color);
   padding: 10px 14px;
   border-radius: 8px;
@@ -829,7 +865,7 @@ body {
    -------------------------------------------------------------------------- */
 .graph-canvas-container {
   flex-grow: 1;
-  background: rgba(0,0,0,0.2);
+  background: var(--graph-container-bg);
   border: 1px solid var(--border-color);
   border-radius: 12px;
   position: relative;
@@ -1094,8 +1130,8 @@ body {
 /* 쉽게 읽기 전용 요약 카드 */
 .easy-read-panel {
   padding: 16px;
-  border-color: rgba(99, 102, 241, 0.2);
-  background: rgba(99, 102, 241, 0.02);
+  border-color: var(--easy-read-border);
+  background: var(--easy-read-bg);
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -1124,7 +1160,7 @@ body {
   text-align: left;
 }
 .easy-read-body th {
-  background: rgba(0, 0, 0, 0.15);
+  background: var(--table-th-bg);
 }
 
 /* 마크다운 스타일링 */
@@ -1151,25 +1187,25 @@ body {
 .markdown-body li { margin-bottom: 4px; }
 .markdown-body code {
   font-family: 'Courier New', Courier, monospace;
-  background: rgba(0,0,0,0.25);
+  background: var(--inline-code-bg);
   border: 1px solid var(--border-color);
   padding: 2px 6px;
   border-radius: 4px;
   font-size: 0.82rem;
-  color: var(--concepts-color);
+  color: var(--inline-code-color);
 }
 .markdown-body pre {
   margin-bottom: 16px;
   border-radius: 8px;
   overflow: hidden;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--pre-border);
 }
 .markdown-body pre code {
   display: block;
   padding: 14px;
   overflow-x: auto;
-  background: #111116;
-  color: #f4f4f5;
+  background: var(--pre-bg);
+  color: var(--pre-text);
   border: none;
 }
 .markdown-body table {
@@ -1182,12 +1218,12 @@ body {
   padding: 8px 12px;
 }
 .markdown-body th {
-  background: rgba(0,0,0,0.15);
+  background: var(--table-th-bg);
   font-weight: 600;
 }
 .markdown-body blockquote {
   border-left: 4px solid var(--accent-primary);
-  background: rgba(99, 102, 241, 0.02);
+  background: var(--blockquote-bg);
   padding: 10px 16px;
   border-radius: 0 8px 8px 0;
   margin-bottom: 16px;
@@ -1387,3 +1423,55 @@ body {
     transform: translateY(0);
   }
 }
+
+/* Prism.js 라이트 테마 구문 강조 최적화 */
+[data-theme="light"] .markdown-body pre code .token.keyword,
+[data-theme="light"] .markdown-body pre code .token.selector,
+[data-theme="light"] .markdown-body pre code .token.important,
+[data-theme="light"] .token.keyword,
+[data-theme="light"] .token.selector,
+[data-theme="light"] .token.atrule {
+  color: #4f46e5 !important; /* 인디고 키워드 */
+  font-weight: 700;
+}
+[data-theme="light"] .markdown-body pre code .token.string,
+[data-theme="light"] .markdown-body pre code .token.char,
+[data-theme="light"] .markdown-body pre code .token.attr-value,
+[data-theme="light"] .token.string,
+[data-theme="light"] .token.regex {
+  color: #059669 !important; /* 그린 계열 문자열 */
+}
+[data-theme="light"] .markdown-body pre code .token.comment,
+[data-theme="light"] .markdown-body pre code .token.prolog,
+[data-theme="light"] .markdown-body pre code .token.doctype,
+[data-theme="light"] .markdown-body pre code .token.cdata,
+[data-theme="light"] .token.comment {
+  color: #64748b !important; /* 차분한 회색 주석 */
+  font-style: italic;
+}
+[data-theme="light"] .markdown-body pre code .token.function,
+[data-theme="light"] .markdown-body pre code .token.class-name,
+[data-theme="light"] .token.function,
+[data-theme="light"] .token.class-name {
+  color: #2563eb !important; /* 블루 계열 함수/클래스 */
+  font-weight: 600;
+}
+[data-theme="light"] .markdown-body pre code .token.number,
+[data-theme="light"] .markdown-body pre code .token.boolean,
+[data-theme="light"] .token.number,
+[data-theme="light"] .token.boolean {
+  color: #d97706 !important; /* 오렌지 계열 숫자/불리언 */
+}
+[data-theme="light"] .markdown-body pre code .token.operator,
+[data-theme="light"] .markdown-body pre code .token.punctuation,
+[data-theme="light"] .token.punctuation,
+[data-theme="light"] .token.operator {
+  color: #475569 !important; /* 연산자 및 기호 */
+}
+[data-theme="light"] .markdown-body pre code .token.property,
+[data-theme="light"] .markdown-body pre code .token.tag,
+[data-theme="light"] .token.property,
+[data-theme="light"] .token.tag {
+  color: #ea580c !important; /* 오렌지 계열 프로퍼티/태그 */
+}
+
