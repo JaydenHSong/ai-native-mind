@@ -1,9 +1,9 @@
 ---
 title: "Agent Supply Chain Security"
 category: concepts
-tags: [security, supply-chain, agent, mcp, skill-md, agents-md, owasp, asi04, clawhavoc, long-horizon-threat, shadow-memory, behavior-jailbreak, execution-hallucination]
+tags: [security, supply-chain, agent, mcp, skill-md, agents-md, owasp, asi04, clawhavoc, long-horizon-threat, shadow-memory, behavior-jailbreak, execution-hallucination, privacy-benchmark, policy-leakage, intent-following]
 created: 2026-05-01
-updated: 2026-05-17
+updated: 2026-05-20
 sources:
   - "raw/articles/2026-05-01-owasp-asi-2026.md"
   - "raw/articles/2026-05-01-dual-llm-camel-pattern.md"
@@ -12,6 +12,7 @@ sources:
   - "raw/articles/2026-05-01-anthropic-agent-skills.md"
   - "raw/articles/2026-05-17-mage-shadow-memory-long-horizon-threats.md"
   - "raw/articles/2026-05-17-litmus-behavioral-jailbreak-os-agents.md"
+  - "raw/articles/2026-05-20-polar-bench-privacy-utility-tradeoffs.md"
 related:
   - "[[patterns/owasp-llm-typescript-mitigations]]"
   - "[[patterns/safe-tool-calling-sandbox]]"
@@ -246,6 +247,63 @@ MAGE가 처방이라면 LITMUS는 **측정 장비**에 가깝다. 둘을 같이 
 1. agent safety 로그에 refusal text만 저장하지 말고, 최소한 **파일/프로세스/네트워크 side effect 유무**를 함께 남겨야 한다.
 2. 외부 skill / MCP / A2A를 붙인 agent는 기능 테스트와 별도로 **skill injection 시나리오** 1~2개를 상시 regression set에 넣는 편이 낫다.
 3. 보안 데모에서 "잘 거부했다"는 스크린샷보다, **실행 전후 상태 diff가 깨끗한지**가 더 강한 증거다.
+
+## 2026-05-20 보강 — POLAR-Bench: trusted agent도 third-party probing 앞에서 privacy를 잃을 수 있다 (arXiv 2605.19127)
+
+[POLAR-Bench](https://arxiv.org/abs/2605.19127) (2026-05-20)는 이 페이지의 공급망 관점을 한 단계 넓힌다. 지금까지 우리는 주로 다음을 봤다.
+
+- 악성 **tool / skill / agent** 자체
+- long-horizon threat 속 **goal hijack / behavior jailbreak**
+- refusal text와 실제 side effect의 분리
+
+POLAR-Bench가 추가하는 질문은 더 조용하지만 매우 실무적이다.
+
+> **신뢰한 내 agent가, 외부 third-party와 정상적으로 대화하는 과정에서 민감 속성을 조금씩 흘리면 어떻게 할 것인가?**
+
+### 문제 설정
+
+- trusted model은 **privacy policy + task** 를 받음
+- third-party model은 대화 속에서 **task-relevant attribute** 와 **protected attribute** 를 캐내려 함
+- benchmark는 privacy와 utility를 동시에 측정
+
+규모:
+
+- **10 domains**
+- **7,852 samples**
+- **5 x 5 diagnostic surface**
+- privacy policy dimension × attack strategy를 **직교 축**으로 분리
+
+즉 "안전하지만 쓸모없는 agent"와 "쓸모는 있지만 다 새는 agent"를 분리해서 볼 수 있다.
+
+### 핵심 발견
+
+1. current frontier models는 protected attribute를 **99% 이상 withholding**
+2. 사용자가 직접 trusted agent로 돌리기 쉬운 **1B~30B open-weight 모델**은 훨씬 취약
+3. weakest model은 protected attribute를 **절반 이상 유출**
+
+→ 로컬에서 돌린다고 자동으로 privacy가 확보되는 것은 아니다. **policy-following 자체의 품질**을 따로 검증해야 한다.
+
+### 이 페이지의 Tier 모델에 붙는 새 질문
+
+| 기존 질문 | POLAR-Bench가 더하는 질문 |
+|---|---|
+| 이 tool / skill / agent는 어느 trust tier인가? | 외부와 대화하면서 **policy에 없는 속성**을 누설하지 않는가? |
+| sandbox / approval이 있는가? | sandbox 밖으로 나가는 **정보 자체**가 최소화됐는가? |
+| prompt injection을 막았는가? | 공격적이진 않지만 집요한 **social probing** 에도 intent를 지키는가? |
+
+### LITMUS / MAGE와의 연결
+
+- **LITMUS**: 위험 행동이 실제로 실행됐는가를 state diff로 본다
+- **MAGE**: long-horizon threat에서 safety-critical context를 별도 기억한다
+- **POLAR-Bench**: 그 사이에서 **무엇을 말하면 안 되는가**를 policy regression surface로 만든다
+
+즉 safety는 이제 단순 실행 차단뿐 아니라 **attribute disclosure control** 까지 포함한다.
+
+### 1인 개발자 ROI 3개
+
+1. agent privacy를 말할 때 "로컬 실행"만 강조하지 말고 **민감 속성 누설 회귀 테스트**를 2~3개라도 둔다.
+2. third-party API / A2A 상호작용에는 기능 테스트 외에 **policy-aware transcript audit** 를 붙인다.
+3. 작은 open-weight trusted agent를 쓸수록, privacy policy는 선언이 아니라 **benchmarkable contract** 로 관리해야 한다.
 
 ## OWASP 매핑
 

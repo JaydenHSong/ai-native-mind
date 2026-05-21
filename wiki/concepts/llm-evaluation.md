@@ -1,9 +1,9 @@
 ---
 title: "LLM Evaluation (Evals)"
 category: concepts
-tags: [evaluation, testing, llm, quality, evals, judge-reliability, long-horizon, native-runtime, benchmark, coding-benchmark, behavioral-safety, version-upgrade, trajectory-audit, harness-safety]
+tags: [evaluation, testing, llm, quality, evals, judge-reliability, long-horizon, native-runtime, benchmark, coding-benchmark, behavioral-safety, version-upgrade, trajectory-audit, harness-safety, artifact-aware-review, delegation-benchmark, privacy-benchmark]
 created: 2026-04-09
-updated: 2026-05-19
+updated: 2026-05-20
 sources:
   - "raw/notes/2026-04-09-llm-evaluation.md"
   - "raw/articles/2026-05-12-judge-reliability-harness-rand.md"
@@ -12,6 +12,8 @@ sources:
   - "raw/articles/2026-05-17-litmus-behavioral-jailbreak-os-agents.md"
   - "raw/articles/2026-05-18-roadmapbench-long-horizon-version-upgrades.md"
   - "raw/articles/2026-05-19-harnessaudit-trajectory-safety.md"
+  - "raw/articles/2026-05-20-decisionbench-emergent-delegation.md"
+  - "raw/articles/2026-05-20-researcharena-true-auto-research-gap.md"
 related:
   - "[[concepts/harness-engineering]]"
   - "[[concepts/context-rot-hallucination]]"
@@ -412,6 +414,70 @@ HarnessAudit는 특히 5번을 1급 질문으로 올린다.
 1. agent eval 로그에 최종 답만 남기지 말고, 최소한 **tool call trace + resource access trace + handoff trace** 를 같이 남기는 편이 낫다.
 2. 멀티에이전트 시스템은 pass/fail보다 **누가 누구에게 무엇을 넘겼는지**를 따로 점검해야 한다.
 3. 안전 점수는 completion과 별개로 저장하고, 가능하면 **completion × safety** 같은 복합 지표를 봐야 한다.
+
+## 2026-05-20 보강 — DecisionBench + ResearchArena: quality-only eval을 넘겨 내부 delegation과 artifact truth를 같이 보기
+
+오늘 들어온 두 소스는 이 페이지의 오래된 약점을 다른 방향에서 찌른다.
+
+- **DecisionBench**: 최종 품질만 보면 **delegation quality** 가 거의 보이지 않는다
+- **ResearchArena**: manuscript-only review만 보면 **execution truth** 가 과대평가된다
+
+즉 eval은 점점 "결과가 괜찮아 보이는가"에서 멈추지 않고, **누가 누구에게 왜 넘겼는지**, 그리고 **문서 뒤에 실제 artifact가 있는지**까지 내려간다.
+
+### A. DecisionBench — orchestration signal은 quality-only score에 숨어 버린다
+
+[DecisionBench](https://arxiv.org/abs/2605.19099) (2026-05-20)는 long-horizon agentic workflow의 delegation을 위한 benchmark substrate다.
+
+- **11 models / 7 vendor families**
+- **23,375 task instances** reference sweep
+- metric: quality / cost / latency / delegation rate / routing fidelity-at-k / vendor self-preference / **counterfactual-delegation ceiling**
+
+핵심은 이것이다.
+
+1. awareness condition을 바꿔도 **mean end-task quality는 거의 구분되지 않음**
+   - **|beta| <= 0.010, p >= 0.21**
+2. 하지만 **routing fidelity-at-1은 7.5% ~ 29.5%**
+3. perfect delegation ceiling은 실제보다 **15~31 percentage points** 높음
+
+→ 즉 quality-only eval은 "오케스트레이션이 얼마나 잘 되고 있는가"라는 신호를 놓친다.
+
+### B. ResearchArena — manuscript-only judge는 plausibility를 과대평가한다
+
+[How Far Are We From True Auto-Research?](https://arxiv.org/abs/2605.19156) (2026-05-20)는 off-the-shelf agent로 연구 전체 루프를 돌리고, 그 결과를 세 층으로 본다.
+
+- **13 seeds × 3 trials × 3 agent families = 117 papers**
+- agent: **Claude Code / Codex / Kimi Code**
+- 평가: **SAR(manuscript-only)** / **PR(artifact-aware peer review)** / **human meta-review**
+
+발견:
+
+- SAR만 보면 Claude Code는 매우 강해 보이고, weighted-average human ICLR 2025 submission과 비슷하게도 보임
+- 하지만 **artifact-aware PR** 로 가면 점수가 크게 하락
+- 핵심 실패는 **fabricated results / underpowered experiments / plan-execution mismatch**
+- **117편 중 top-tier acceptance bar를 넘은 논문은 0편**
+
+→ judge가 텍스트만 보면 쉽게 속을 수 있다. 실제 workspace·실험 artifact·trace를 같이 봐야 한다.
+
+### 이 페이지의 eval 층을 다시 그리면
+
+이제 최근 위키 흐름을 합치면 적어도 일곱 층으로 볼 수 있다.
+
+| Layer | 질문 | 예시 |
+|---|---|---|
+| **Judge reliability** | 채점자 자체가 믿을 만한가? | JRH |
+| **Claim / output gate** | 출력 직전에 regenerate / replan 해야 하는가? | GSAR, Verify Before You Fix |
+| **Runtime / state safety** | 실제 환경에서 위험 side effect 없이 통과했는가? | LITMUS, WildClawBench |
+| **Software evolution** | feature / version-upgrade 같은 현실 단위를 풀 수 있는가? | FeatureBench, RoadmapBench |
+| **Trajectory boundary** | 실행 과정에서 boundary 위반이 없었는가? | HarnessAudit |
+| **Delegation quality** | 누구에게 어떻게 넘겼는지가 맞았는가? | **DecisionBench** |
+| **Artifact truth** | 결과 문서 뒤에 실제 artifact가 받쳐 주는가? | **ResearchArena** |
+
+### 1인 개발자 ROI 4개
+
+1. subagent를 쓰면 pass/fail 옆에 **routing fidelity** 또는 최소한 "왜 이 에이전트에게 넘겼는가" 로그를 남긴다.
+2. AI가 쓴 보고서·리뷰·설계 문서는 텍스트만 채점하지 말고 **workspace / test / command trace** 를 같이 본다.
+3. coding agent 비교에서 평균 점수 하나보다 **failure taxonomy** 가 더 실무적일 수 있다.
+4. 평가 설계 시 quality-only 지표가 높은데도 운영 감각이 나쁘다면, **delegation layer** 나 **artifact verification layer** 가 빠진 것일 수 있다.
 
 ## 1인 개발자에게
 

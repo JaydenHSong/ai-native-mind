@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-05-19
-total_pages: 76
+updated: 2026-05-20
+total_pages: 77
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 전체 76개 페이지 | 최종 업데이트: 2026-05-19 (trajectory audit · virtual memory · natural-language harness 반영, 2026-05-19 journal 추가) — 대부분 페이지에 **쉽게 읽기** 블록 있음
+> 전체 77개 페이지 | 최종 업데이트: 2026-05-20 (delegation substrate · privacy diagnostic · artifact-aware auto-research 반영, 2026-05-20 journal 추가) — 대부분 페이지에 **쉽게 읽기** 블록 있음
 
 ## 쉽게 읽기
 
@@ -102,8 +102,9 @@ status: active
 - [[patterns/agent-mvp-stack-2026]] — 1인 MVP 스택 5대 영역 × 4 단계 + 의사결정 트리 (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — Vibe Coding의 7대 안티패턴과 회피법
 
-## Journal (14개)
+## Journal (15개)
 
+- [[journal/2026-05-20]] — 수요 데일리: DecisionBench(delegation fidelity) + POLAR-Bench(privacy-utility diagnostic) + ResearchArena(artifact-aware auto-research eval)
 - [[journal/2026-05-19]] — 화요 데일리: HarnessAudit(trajectory boundary audit) + ClawVM(virtual memory contract) + Natural-Language Agent Harnesses(CLAUDE.md를 policy object로 보기)
 - [[journal/2026-05-18]] — 월요 데일리: Effective Harness Engineering(Vesper·evaluation hack·worktree) + SkillSmith(compiled runtime interface) + RoadmapBench(version-upgrade eval)
 

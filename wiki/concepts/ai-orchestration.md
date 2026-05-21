@@ -1,9 +1,9 @@
 ---
 title: "AI 오케스트레이션"
 category: concepts
-tags: [ai-orchestration, multi-agent, patterns, anthropic, rl-traces, credit-assignment]
+tags: [ai-orchestration, multi-agent, patterns, anthropic, rl-traces, credit-assignment, delegation-benchmark, decisionbench]
 created: 2026-04-09
-updated: 2026-05-14
+updated: 2026-05-20
 sources:
   - "raw/notes/2026-04-09-ai-orchestration-research.md"
   - "raw/notes/2026-04-11-orchestration-harness-server-supplement.md"
@@ -13,6 +13,7 @@ sources:
   - "raw/articles/2026-05-02-google-scaling-agent-systems.md"
   - "raw/articles/2026-05-03-microsoft-agent-framework-v1.md"
   - "raw/articles/2026-05-14-rl-multiagent-orchestration-traces.md"
+  - "raw/articles/2026-05-20-decisionbench-emergent-delegation.md"
 related:
   - "[[concepts/ai-native-programmer]]"
   - "[[concepts/context-engineering]]"
@@ -210,6 +211,58 @@ token → action → step → turn → episode → **message** → sub-agent →
 3. **Stop-decision은 학습보다 *규칙*으로**: 학술이 아직 못 푼 stopping이라면 *우리는 명시적 규칙·HITL*로 둔다는 결정의 *증거* — [[patterns/agent-server-harness]]의 cancel/timeout policy를 더 보수적으로 유지.
 
 > 어제(2026-05-13) verification-gated 게이트가 *출력 직전*을 잠갔다면, 오늘 Zhang은 *오케스트레이션 결정 표면 자체*에 보상 신호를 박는 한 layer 더 위. Zhong/Zhu의 11 책임 중 **Task state(#5)·Observability(#6)·Failure attribution(#7)** 가 trace artifact로 한꺼번에 풀린다.
+
+## 2026-05-20 보강 — DecisionBench: delegation은 quality만으로 보이지 않는다 (arXiv 2605.19099)
+
+[DecisionBench](https://arxiv.org/abs/2605.19099) (2026-05-20)는 delegation을 "잘하면 좋다" 수준이 아니라 **측정 가능한 오케스트레이션 substrate** 로 고정하려는 benchmark다. 최근 이 페이지가 쌓아 온 질문은 대략 이랬다.
+
+- Anthropic 6대 패턴: **어떻게 나눌까**
+- Google alignment principle: **언제 멀티에이전트가 맞을까**
+- Zhang RL traces: **어떤 orchestration decision에 학습 신호를 줄까**
+
+DecisionBench가 추가하는 질문은 이것이다.
+
+> **"위임을 잘했는지"를 최종 품질과 분리해 따로 잴 수 있는가?**
+
+### 무엇을 고정하나
+
+- **Task suite**: GAIA · tau-bench · BFCL multi-turn
+- **Peer-model pool**: **11 models / 7 vendor families**
+- **Delegation interface**: `call_model` + optional `read_profile`
+- **Metric suite**: quality / cost / latency / delegation rate / routing fidelity-at-k / vendor self-preference / **counterfactual-delegation ceiling**
+
+즉 오케스트레이션의 핵심 변수인 **누구에게, 어떤 정보 채널로, 어떤 기대를 가지고 넘겼는가**를 benchmark surface 위로 끌어낸다.
+
+### 핵심 발견 3개
+
+full pool **23,375 task instances** reference sweep에서 가장 중요한 결과는 quality-only 평가가 delegation 차이를 거의 못 본다는 점이다.
+
+1. awareness condition을 바꿔도 **mean end-task quality는 통계적으로 거의 차이 없음**
+   - **|beta| <= 0.010, p >= 0.21**
+2. 반면 **routing fidelity-at-1은 7.5% ~ 29.5%**로 크게 벌어진다
+3. **perfect delegation ceiling은 실제보다 15~31 percentage points 높다**
+
+→ 현재 frontier orchestration은 "겉보기 결과는 비슷하지만, 내부 delegation은 아직 많이 서툴다"는 뜻이다.
+
+### 우리 위키 관점에서 새로 선명해진 점
+
+#### 1) routing은 pattern이 아니라 별도 측정 대상이다
+
+이제 [[concepts/ai-orchestration]] 의 routing / orchestrator-worker / evaluator-optimizer를 읽을 때 단순 성공률만 보지 않고 **routing fidelity** 를 별도 메트릭으로 붙일 수 있다.
+
+#### 2) profile 내용보다 전달 채널이 중요할 수 있다
+
+논문은 peer description의 풍부함보다 **on-demand tool vs preloaded description** 같은 **delivery channel** 차이가 더 클 수 있다고 말한다. 이는 [[concepts/context-engineering]] 과도 연결된다. 좋은 orchestration은 "정보를 많이 준다"가 아니라 **필요할 때 꺼내 쓰게 설계한다**에 가깝다.
+
+#### 3) counterfactual ceiling이 있으면 라우터 한계를 분리할 수 있다
+
+모델 자체 한계와 위임 정책 한계를 섞지 않으려면, 가능한 경우 **"완벽하게 위임했으면 어느 정도였나"** 같은 상한선을 같이 기록하는 편이 낫다.
+
+### 1인 개발자 ROI 3개
+
+1. subagent 실험을 할 때 최종 성공률만 보지 말고 **누구에게 넘겼는지 / 왜 넘겼는지 / 맞게 넘겼는지**를 로그로 남긴다.
+2. agent profile은 README처럼 미리 다 넣기보다 **tool처럼 필요 시 조회**하게 만드는 편이 더 나을 수 있다.
+3. 멀티에이전트 성능이 기대보다 낮을 때, 모델을 바꾸기 전에 **delegation channel 설계**를 먼저 의심한다.
 
 ## 왜 중요한가
 

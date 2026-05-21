@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-05-19
+updated: 2026-05-20
 sources: []
 status: active
 ---
@@ -19,6 +19,21 @@ status: active
 - 월드맵 허브: [[wiki/campaign-map|Campaign Map]]
 - 진행 가이드: [[wiki/overview|Overview]]
 - 전체 도감: [[wiki/index|Index]]
+
+## [2026-05-20] ingest | DecisionBench(delegation fidelity) + POLAR-Bench(privacy-utility diagnostic) + ResearchArena(artifact-aware auto-research eval) — 수요 데일리, 자동 인제스트
+
+- **Sources** (raw 3편 추가):
+  - `raw/articles/2026-05-20-decisionbench-emergent-delegation.md` — Gao et al., "DecisionBench: A Benchmark for Emergent Delegation in Long-Horizon Agentic Workflows" (arXiv:2605.19099, 2026-05-20). **11 models / 7 vendor families / 23,375 task instances**. quality-only 평가로는 orchestration signal이 잘 안 보이며, **routing fidelity-at-1 7.5%~29.5%**, **perfect delegation ceiling +15~31 points**. profile 내용보다 **delivery channel(on-demand vs preloaded)** 영향이 큼.
+  - `raw/articles/2026-05-20-polar-bench-privacy-utility-tradeoffs.md` — Zheng et al., "POLAR-Bench: A Diagnostic Benchmark for Privacy-Utility Trade-offs in LLM Agents" (arXiv:2605.19127, 2026-05-20). trusted agent가 adversarial third party와 대화할 때 **privacy vs utility** 를 함께 측정. **10 domains / 7,852 samples / 5x5 diagnostic surface**. frontier model은 protected attribute를 **99%+ withholding**, **1B~30B open-weight** 계열은 취약, weakest는 **절반 이상 유출**.
+  - `raw/articles/2026-05-20-researcharena-true-auto-research-gap.md` — Zhang et al., "How Far Are We From True Auto-Research?" (arXiv:2605.19156, 2026-05-20). **ResearchArena** 위에서 Claude Code / Codex / Kimi Code가 ideation→experiment→paper→self-refine 전체 루프 수행. **13 seeds × 3 trials = 117 papers**. **SAR(manuscript-only)** 는 낙관적이지만 **artifact-aware PR** 에서 점수 하락, 병목은 **fabricated results / underpowered experiments / plan-execution mismatch**, **top-tier acceptance 0편**.
+- **Pages updated** (추가만, 기존 본문 보존):
+  - `concepts/ai-orchestration.md` — "2026-05-20 보강" 섹션 추가. delegation을 **routing fidelity / delivery channel / counterfactual ceiling** 관점으로 확장.
+  - `concepts/llm-evaluation.md` — "2026-05-20 보강 — DecisionBench + ResearchArena" 섹션 추가. eval 표면에 **delegation quality / artifact truth** 층 추가.
+  - `concepts/agent-supply-chain-security.md` — "2026-05-20 보강 — POLAR-Bench" 섹션 추가. supply chain security를 **attribute disclosure / privacy-policy regression** 까지 확장.
+- **Pages created**:
+  - `journal/2026-05-20.md` — 수요 데일리 일지 (delegation substrate · privacy diagnostic · artifact-aware auto-research 연결, 자율 결정 사항, 후속 후보).
+- **Pages updated (meta)**: `index.md` (journal 14→15, total 76→77), `overview.md` (최근 작업 갱신), `log.md` (이 항목).
+- **Notes**: 어제(2026-05-19)가 하네스를 **trajectory / memory lifecycle / policy document** 로 넓혔다면, 오늘 3편은 그 위에서 "좋은 agent를 어떻게 속지 않고 재나"를 더 세분화한다. DecisionBench는 **누구에게 넘겼는가**, POLAR-Bench는 **무엇을 말하지 말아야 하는가**, ResearchArena는 **문서 뒤에 실제 artifact가 있는가**를 묻는다. 결과적으로 eval은 정답률에서 멀어지고 **위임 품질 / 정보 경계 / 산출물 진실성** 쪽으로 내려간다.
 
 ## [2026-05-19] ingest | HarnessAudit(trajectory boundary audit) + ClawVM(virtual memory contract) + Natural-Language Agent Harnesses(policy object) — 화요 데일리, 자동 인제스트
 
