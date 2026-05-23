@@ -1,19 +1,22 @@
 ---
 title: "Agent Memory Taxonomy — Task vs Belief vs Lifecycle vs Safety"
 category: comparisons
-tags: [memory, taxonomy, belief-memory, safety-memory, lifecycle-memory, agent]
+tags: [memory, taxonomy, belief-memory, safety-memory, lifecycle-memory, agent, virtual-memory, usable-scale-boundary]
 created: 2026-05-17
-updated: 2026-05-17
+updated: 2026-05-22
 sources:
   - "raw/articles/2026-05-03-zenbrain-7-layer-memory.md"
   - "raw/articles/2026-05-15-groupmembench-multi-party-memory.md"
   - "raw/articles/2026-05-17-belief-memory-partial-observability.md"
   - "raw/articles/2026-05-17-human-inspired-memory-architecture.md"
   - "raw/articles/2026-05-17-mage-shadow-memory-long-horizon-threats.md"
+  - "raw/articles/2026-05-19-clawvm-harness-managed-virtual-memory.md"
+  - "raw/articles/2026-05-22-scale-conditioned-agent-memory-evaluation.md"
 related:
   - "[[concepts/ai-memory-systems]]"
   - "[[concepts/agent-supply-chain-security]]"
   - "[[concepts/harness-engineering]]"
+  - "[[concepts/llm-evaluation]]"
   - "[[journal/2026-05-17]]"
 status: active
 confidence: high
@@ -93,6 +96,30 @@ MAGE가 추가한 층이다. 일반 작업 메모리와 별도로 **위험 신�
 - action 직전 risk assess가 필요한 장기 실행 agent에서 중요
 
 이 층은 productivity와 목적이 다르다. 생산성 메모리는 "더 잘 하게" 만들고, safety memory는 "하지 말아야 할 것을 멈추게" 만든다.
+
+## 2026-05-22 보강 — 역할 taxonomy 위에 "경계" 질문을 덧댄다
+
+이번 주 후반 source들을 다시 겹쳐 읽으면, memory 중복은 "종류가 너무 많다"가 아니라 **역할을 말하는 표와, 그 역할이 언제 깨지는지 말하는 표가 분리되지 않았기 때문**에 생겼다.
+
+이 페이지의 네 분류는 **역할 taxonomy** 다. 여기에 아래의 **경계 질문**을 덧대면, 최근 페이지들 사이 겹침이 더 잘 정리된다.
+
+| 경계 질문 | 대표 source | 이 taxonomy에서 읽는 법 |
+|---|---|---|
+| **얼마나 커져도 계속 쓸 만한가?** | Scale-Conditioned Evaluation | task/productivity memory만의 문제가 아니라, 어떤 memory든 **irrelevant session 증가 아래 usable evidence를 유지하는가**를 따로 재야 한다. |
+| **기억을 실제 런타임에서 잃지 않게 강제하는가?** | ClawVM | belief / lifecycle / safety 구분과 별개로, writeback·flush·reset을 누가 책임지는지라는 **runtime enforcement** 질문이 있다. |
+| **위험을 막는 기억이 실제 행동 차단으로 이어지는가?** | MAGE + LITMUS | safety memory는 "있다"로 끝나지 않고, action 직전 re-check와 state-audited eval이 짝이 되어야 한다. |
+
+즉 최근 memory 논의는 두 축으로 압축된다.
+
+1. **역할 축** — task / belief / lifecycle / safety
+2. **경계 축** — scale boundary / runtime enforcement / action-time safety check
+
+이렇게 보면 페이지 배치도 선명해진다.
+
+- [[concepts/ai-memory-systems]] = memory의 기본 구조 + belief/lifecycle/productivity
+- [[concepts/agent-supply-chain-security]] = safety memory + 실제 공격 표면
+- [[concepts/llm-evaluation]] = memory를 어디서 어떻게 재는가
+- 이 페이지 = 그 셋을 잇는 **상위 naming layer**
 
 ## 무엇을 통합했고 무엇을 남겼나
 

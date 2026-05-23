@@ -20,6 +20,23 @@ status: active
 - 진행 가이드: [[wiki/overview|Overview]]
 - 전체 도감: [[wiki/index|Index]]
 
+## [2026-05-22] weekly-review | boundary design 관점으로 최근 7일 지식 압축
+
+- **Review scope**: 최근 7일(2026-05-16 ~ 2026-05-22, America/Los_Angeles 기준) 동안 추가·수정된 `raw/`, `wiki/`, `journal/`을 재검토. focus는 최근 agent engineering 지식이 실제로 어디서 중복되고, 어디서 서로 다른 경계 질문으로 분화됐는지 확인하는 것.
+- **Compression verdict**: 삭제할 중복 페이지는 없고, 가장 큰 겹침은 **memory / eval / orchestration / tool-use 논의가 사실상 boundary design 질문을 서로 다른 이름으로 반복하는 상태**였음. 삭제 대신 **기존 비교 페이지 확장 + 금요 review section 추가**로 압축.
+- **Pages updated**:
+  - `comparisons/agent-memory-taxonomy.md` — 기존 **task / belief / lifecycle / safety** 분류 위에 **scale boundary / runtime enforcement / action-time safety check** overlay 추가. ClawVM·Scale-Conditioned Evaluation을 taxonomy와 다시 연결.
+  - `journal/2026-05-22.md` — §9 금요 주간 리뷰 추가. 최근 6개 journal과 7개 중심 concept/comparison 페이지를 다시 읽고, 이번 주 핵심 중복이 **같은 시스템의 다른 경계면**을 서로 다른 이름으로 부른 데 있었다는 점을 요약.
+- **Pages updated (meta)**:
+  - `index.md` — 2026-05-22 일지 설명을 "금요 데일리 + 주간 리뷰"로 확장, `agent-memory-taxonomy` 설명에 boundary overlay 반영.
+  - `overview.md` — 최근 작업 항목을 데일리 ingest + weekly compression follow-up 기준으로 갱신.
+  - `log.md` — 이 항목.
+- **Preservation rule 준수**:
+  - raw source 경로와 기존 핵심 수치·세부 주장은 원래 concept/journal 페이지에 그대로 유지.
+  - 비교 페이지는 세부 내용을 대체하지 않고, 어느 페이지가 어떤 역할을 맡는지 알려 주는 **상위 naming / routing layer** 로만 동작.
+  - 페이지 삭제나 리다이렉션은 없고, 해석층만 추가.
+- **Notes**: 이번 주 agent engineering의 진짜 공통점은 새로운 기능이 아니라 **경계 설계(boundary design)** 였다. memory는 scale·writeback·safety 경계로, eval은 truth·control·disclosure 경계로, orchestration은 handoff 경계로, tool/skill은 capability boundary로 더 세분화됐다. 이번 리뷰는 그 공통 구조를 드러내는 작업이었다.
+
 ## [2026-05-22] ingest | Code as Agent Harness(code substrate) + Scale-Conditioned Memory Eval(usable-scale boundary) + Benchmark Disclosure Audit(run disclosure quality) — 금요 데일리, 자동 인제스트
 
 - **Sources** (raw 3편 추가):

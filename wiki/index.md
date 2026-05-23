@@ -11,7 +11,7 @@ status: active
 
 # ai-native-mind Wiki Index
 
-> 전체 79개 페이지 | 최종 업데이트: 2026-05-22 (code substrate · memory usable-scale boundary · benchmark disclosure audit 반영) — 대부분 페이지에 **쉽게 읽기** 블록 있음
+> 전체 79개 페이지 | 최종 업데이트: 2026-05-22 (code substrate · memory usable-scale boundary · benchmark disclosure audit + 금요 weekly compression 반영) — 대부분 페이지에 **쉽게 읽기** 블록 있음
 
 ## 쉽게 읽기
 
@@ -104,7 +104,7 @@ status: active
 
 ## Journal (17개)
 
-- [[journal/2026-05-22]] — 금요 데일리: Code as Agent Harness(code substrate) + Scale-Conditioned Memory Eval(usable-scale boundary) + Benchmark Disclosure Audit(run disclosure quality)
+- [[journal/2026-05-22]] — 금요 데일리 + 주간 리뷰: Code as Agent Harness(code substrate) + Scale-Conditioned Memory Eval(usable-scale boundary) + Benchmark Disclosure Audit(run disclosure quality) + boundary-compression 메모
 - [[journal/2026-05-21]] — 목요 데일리: SpecBench(reward hacking gap) + ProcBench(process controllability) + Insights Generator(corpus-level trace diagnostics) + Learning to Hand Off(handoff interface) + Progressive Autonomy(trust-calibrated HITL) + Library Drift(skill lifecycle governance) + Formal Skill(runtime capability object)
 - [[journal/2026-05-20]] — 수요 데일리: DecisionBench(delegation fidelity) + POLAR-Bench(privacy-utility diagnostic) + ResearchArena(artifact-aware auto-research eval)
 - [[journal/2026-05-19]] — 화요 데일리: HarnessAudit(trajectory boundary audit) + ClawVM(virtual memory contract) + Natural-Language Agent Harnesses(CLAUDE.md를 policy object로 보기)
@@ -133,7 +133,7 @@ status: active
 - [[comparisons/managed-vs-deep-agents]] — Claude Managed Agents vs LangChain Deep Agents Deploy: lock-in vs 자유도
 - [[comparisons/agent-eval-frameworks]] — DeepEval/LangSmith/Braintrust/Langfuse/Inspect AI/RAGAS 6대장
 - [[comparisons/agent-platforms-for-solo-dev]] — 1인 개발자 관점 4종 비교 (Managed/Deep Agents/Agents SDK/LangGraph 직접)
-- [[comparisons/agent-memory-taxonomy]] — task/productivity vs belief vs lifecycle vs safety memory 분류
+- [[comparisons/agent-memory-taxonomy]] — task/productivity vs belief vs lifecycle vs safety memory 분류 + scale boundary / runtime enforcement overlay
 
 ## Meta
 

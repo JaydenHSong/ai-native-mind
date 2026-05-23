@@ -32,11 +32,12 @@ status: active
 - **총 페이지**: 79개
 - **카테고리**: concepts(20), tools(9), patterns(20), journal(17), comparisons(9), meta(4)
 - **시작일**: 2026-04-06
-- **최근 작업 (2026-05-22 데일리 ingest)**:
+- **최근 작업 (2026-05-22 금요 데일리 ingest + weekly compression follow-up)**:
   - raw 3편: Code as Agent Harness · Scale-Conditioned Memory Eval · Benchmark Disclosure Audit
   - 기존 페이지 보강 3개: [[concepts/harness-engineering]] · [[concepts/ai-memory-systems]] · [[concepts/llm-evaluation]]
-  - 새 일지: [[journal/2026-05-22]]
-  - 핵심 합류: agent engineering의 초점이 **결과물** 에서 더 아래의 **code substrate / memory usable-scale boundary / benchmark run disclosure** 로 이동
+  - 기존 비교 페이지 확장: [[comparisons/agent-memory-taxonomy]] 에 **scale boundary / runtime enforcement / action-time safety check** overlay 추가
+  - 기존 일지 확장: [[journal/2026-05-22]] 에 금요 주간 리뷰 추가
+  - 핵심 합류: agent engineering의 초점이 **결과물** 에서 더 아래의 **code substrate / memory usable-scale boundary / benchmark run disclosure** 로 이동했고, 주간 압축 결과 그 흐름이 더 상위의 **boundary design** 문제로 묶임
 - **직전 작업 (2026-05-21 데일리 ingest + late follow-up)**:
   - raw 7편: SpecBench · ProcBench · Insights Generator · Learning to Hand Off · Progressive Autonomy · Library Drift · Formal Skill
   - 기존 페이지 보강 6개: [[concepts/llm-evaluation]] · [[patterns/ai-code-review]] · [[concepts/harness-engineering]] · [[concepts/ai-orchestration]] · [[patterns/safe-tool-calling-sandbox]] · [[concepts/tool-use]]
