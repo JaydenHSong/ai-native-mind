@@ -1,9 +1,9 @@
 ---
 title: "Harness Engineering"
 category: concepts
-tags: [harness-engineering, ai-agent, infrastructure, orchestration, verification-gated, grounding, runtime-substrate, 11-responsibilities, evaluation-hacking, runtime-interface, trajectory-audit, natural-language-harness]
+tags: [harness-engineering, ai-agent, infrastructure, orchestration, verification-gated, grounding, runtime-substrate, 11-responsibilities, evaluation-hacking, runtime-interface, trajectory-audit, natural-language-harness, trace-diagnostics, corpus-level-observability, skill-governance, library-drift, code-as-harness, shared-artifact]
 created: 2026-04-09
-updated: 2026-05-19
+updated: 2026-05-22
 sources:
   - "raw/notes/2026-04-09-engineering-paradigms-research.md"
   - "raw/notes/2026-04-11-orchestration-harness-server-supplement.md"
@@ -27,6 +27,9 @@ sources:
   - "raw/articles/2026-05-18-skillsmith-boundary-guided-runtime-interfaces.md"
   - "raw/articles/2026-05-19-harnessaudit-trajectory-safety.md"
   - "raw/articles/2026-05-19-natural-language-agent-harnesses.md"
+  - "raw/articles/2026-05-21-insights-generator-trace-diagnostics.md"
+  - "raw/articles/2026-05-21-library-drift-self-evolving-skill-libraries.md"
+  - "raw/articles/2026-05-22-code-as-agent-harness.md"
 related:
   - "[[concepts/context-engineering]]"
   - "[[concepts/prompt-engineering]]"
@@ -518,6 +521,179 @@ Natural-Language Agent Harnesses(NLAH)는 하네스를 controller code에 묻어
 | 그 정책을 어떻게 비교·이식·ablation하나? | **NLAH + IHR** |
 
 즉 하네스는 **운영자 감각으로 짜는 비공식 glue**에서, **감사 가능하고 표현 가능하며 이식 가능한 1급 아키텍처 객체**로 올라가고 있다.
+
+## 2026-05-21 보강 — Insights Generator: trace를 저장하는 것에서 trace 코퍼스를 진단하는 것으로
+
+오늘 source는 이 페이지의 observability 이야기를 한 단계 더 밀어 올린다. 좋은 하네스는 이제 trace를 "남기는 것"에서 멈추지 않고, **trace 코퍼스 전체를 읽어 다음 하네스 수정으로 이어지는 진단 보고서** 를 만들 수 있어야 한다.
+
+### 1) production trace는 샘플 몇 개 읽기로는 안 보인다
+
+[Insights Generator](https://arxiv.org/abs/2605.21347) 는 LLM agent failure diagnosis가 여전히 수동 trace inspection에 크게 의존한다고 지적한다.
+
+- 운영자는 trace 몇 개만 읽고
+- ad-hoc 가설을 세우고
+- scaffold를 손본 뒤
+- 다시 일부만 확인한다
+
+하지만 실제 production corpora에서는
+
+- 개별 trace가 **수만 토큰** 길고
+- 중요한 패턴은 **trace population 전체** 에서만 드러날 수 있다
+
+즉 trace를 남겼다는 사실만으로는 observability가 완성되지 않는다.
+
+### 2) 하네스는 corpus-level trace diagnostics 능력까지 가져야 한다
+
+논문은 문제를 이렇게 정식화한다.
+
+- 입력: execution trace들의 **corpus**
+- 출력: systematic behavioral pattern을 설명하는 **grounded natural-language insights**
+- 조건: 모든 insight는 **supporting evidence** 와 연결되어야 함
+
+이 framing은 중요하다. dashboard가 숫자로 "이상함"을 알려 준다면, corpus-level diagnostics는 **"왜 이런 이상이 반복되는가"** 를 설명한다.
+
+### 3) scout-investigator 구조는 하네스의 "진단 서브에이전트" 로 읽을 수 있다
+
+IG는 diagnostic question에 대해
+
+- 가설을 제안하고
+- trace corpus에서 시험하고
+- evidence-backed insight report를 만든다
+
+이건 단순 분석기가 아니라, 하네스 안에서 **trace를 읽고 하네스 수정 제안을 만드는 evaluator / analyst agent** 역할로 해석할 수 있다.
+
+### 4) observability가 실제 scaffold 개선 루프에 연결된다
+
+가장 중요한 정량은 이것이다.
+
+- human expert가 IG report를 사용하면
+- **baseline scaffold 대비 30.4 percentage points 성능 향상**
+- coding agent가 IG-derived insight를 활용해도 **consistent and stable gains**
+
+즉 observability가 단순 관측 대시보드가 아니라 **하네스 진화 입력** 으로 작동한다.
+
+### 오늘 시점 재압축
+
+최근 source를 합치면 trace 관련 하네스 질문은 세 층으로 정리된다.
+
+| 층 | 질문 | 대표 근거 |
+|---|---|---|
+| **개별 trajectory 감사** | 실행 한 번이 boundary를 어겼는가? | HarnessAudit |
+| **정책 표현과 이식** | 그 규칙을 문서 객체로 드러내고 비교할 수 있는가? | NLAH + IHR |
+| **코퍼스 진단** | 수많은 trace를 모아 반복 패턴과 개선안을 뽑아낼 수 있는가? | **Insights Generator** |
+
+→ 이제 하네스는 action loop만 설계하는 층이 아니라, **자기 실행 흔적을 해석해 다음 버전 규칙으로 되먹이는 메타 루프** 까지 품는 구조로 보인다.
+
+### 1인 개발자 ROI 3개
+
+1. trace를 쌓아 두기만 하지 말고, 주간 단위로 **반복 실패 패턴 메모** 를 남긴다.
+2. 수동 회고도 "가설 → 근거 trace → 수정 규칙" 형식으로 적으면 나중에 `CLAUDE.md` / harness policy로 승격하기 쉽다.
+3. 운영 로그 분석의 목표를 dashboard 숫자 하나가 아니라 **다음 하네스 변경 1개를 정당화하는 evidence memo** 로 잡는다.
+
+## 2026-05-21 보강 — Library Drift: self-evolving agent에도 skill garbage collection이 필요하다
+
+[Library Drift](https://arxiv.org/abs/2605.19576) (2026-05-19)는 최근 이 페이지가 다뤄 온 **self-evolving harness** 이야기에 중요한 역보정을 넣는다. 지금까지의 질문이 "하네스를 어떻게 자동 진화시킬까"였다면, 이 논문은 그 진화가 **무한 skill 축적** 으로 흐를 때 어떤 silent failure가 생기는지를 짚는다.
+
+### drift는 skill 품질만의 문제가 아니라 lifecycle 부재의 문제다
+
+논문이 정의한 **library drift** 증상은 다음과 같다.
+
+- unbounded skill accumulation
+- retrieval degradation
+- false-positive injection
+- performance stagnation
+
+즉 self-improvement loop가 있다고 해서 자동으로 더 좋아지는 것이 아니라, **퇴역(retirement)과 active-cap이 없는 증식** 은 오히려 성능을 망칠 수 있다.
+
+### 관측 포인트: trace-level evidence log가 drift를 먼저 보여 준다
+
+저자들은 최종 task score만 보지 않고 다음을 기록한다.
+
+- **per-skill contribution score**
+- **attribution verdict**
+- **router engagement metric**
+
+이건 [[concepts/harness-engineering]] 이 최근 쌓아 온 observability 논의와 정확히 맞물린다. trace observability의 대상이 이제 action trajectory뿐 아니라 **skill lifecycle** 로 확장된 셈이다.
+
+### 처방은 생각보다 작다: retirement + cap + prior
+
+논문이 제시한 최소 governance recipe는 세 가지다.
+
+1. **outcome-driven retirement**
+2. **bounded active-cap**
+3. **meta-skill authoring prior**
+
+MBPP+ hard-100 / 100 rounds에서 held-out pass@1이 **0.258 → 0.584**, rolling gain **+0.328** 까지 오르는 결과는, 큰 새 모델보다 **작은 운영 규칙** 이 load-bearing일 수 있음을 보여 준다.
+
+### 오늘 시점 재압축
+
+최근 하네스 소스를 합치면 self-improvement는 이제 네 질문으로 쪼개진다.
+
+| 질문 | 대표 근거 |
+|---|---|
+| 어떻게 하네스를 진화시킬까? | Last Harness / AHE |
+| 어떤 evidence로 진화를 정당화할까? | Insights Generator |
+| 어떤 정책 문서로 유지할까? | NLAH |
+| **언제 skill을 퇴역시킬까?** | **Library Drift** |
+
+→ 하네스 진화는 생성 loop만이 아니라, **쓸모없는 capability를 제거하는 lifecycle governance** 까지 포함해야 성숙하다.
+
+### 1인 개발자 ROI 3개
+
+1. `SKILL.md` / tool registry를 늘리는 것 자체를 성과로 세지 말고 **active set 크기** 를 관리한다.
+2. skill 호출 뒤에는 "도움 됨 / 무관 / 방해됨" 같은 **경량 attribution 로그** 를 남긴다.
+3. 월간 정리 때 새 skill 추가만 보지 말고 **삭제·퇴역된 skill 수** 도 함께 본다.
+
+## 2026-05-22 보강 — Code as Agent Harness: code를 결과물에서 runtime substrate로 보기
+
+[Code as Agent Harness](https://arxiv.org/abs/2605.18747) (2026-05-18)는 최근 이 페이지에 들어온 source들을 한 단계 더 상위 개념으로 묶어 준다. 요지는 간단하다. **code는 agent가 만들어 내는 output인 동시에, agent reasoning·action·verification을 떠받치는 harness 그 자체** 라는 것이다.
+
+### 1) 하네스의 중심이 prompt에서 executable artifact로 이동한다
+
+이 논문이 주는 가장 큰 압축은, planning / memory / tool use / verification을 각각 독립 토픽으로 보지 않고 **code-backed harness mechanisms** 로 재정렬한다는 점이다.
+
+- interface: code가 reasoning·action·environment modeling을 연결
+- mechanisms: planning / memory / tool use / feedback-driven control
+- scale: multi-agent coordination / review / verification
+
+즉 이 페이지가 최근 쌓아 온
+
+- [[concepts/tool-use]]
+- [[concepts/ai-memory-systems]]
+- [[concepts/ai-orchestration]]
+- [[concepts/llm-evaluation]]
+
+흐름을, "모두 code substrate 위에서 도는 하네스 메커니즘"으로 다시 한 장에 붙여 준다.
+
+### 2) multi-agent coordination의 핵심은 shared artifact다
+
+최근 위키는 orchestration을 delegation·handoff·policy boundary로 세분화해 왔다. 이 논문은 그 옆에서 coordination의 매개를 더 분명히 한다.
+
+- message passing만으로는 부족하고
+- **shared file / diff / test harness / stateful code artifact**
+- 가 multi-agent의 실제 coordination surface다
+
+이 관점은 [[concepts/ai-orchestration]] 의 orchestration을 prompt choreography보다 **artifact-mediated workflow** 로 더 강하게 읽게 만든다.
+
+### 3) 최근 open problem들이 하나의 하네스 체크리스트로 묶인다
+
+논문이 짚는 open challenge는 이 페이지의 최근 보강과 거의 일대일 대응된다.
+
+| 열린 질문 | 최근 위키 대응 소스 |
+|---|---|
+| final success 너머의 evaluation | SpecBench / ProcBench / HarnessAudit |
+| incomplete feedback 아래 verification | GSAR / Verify Before You Fix |
+| regression-free harness improvement | AHE / Insights Generator |
+| consistent shared state | ClawVM / BeliefMem / Formal Skill |
+| safety-critical human oversight | Progressive Autonomy / MAGE |
+
+→ 이 표가 말해 주는 것은, 최근 일주일간 쌓인 논문들이 사실 따로 노는 것이 아니라 **"code as harness"라는 상위 프레임으로 수렴** 한다는 점이다.
+
+### 1인 개발자 ROI 3개
+
+1. repo를 단순 작업 대상이 아니라 **agent runtime state space** 로 본다 — 파일 구조, 테스트, diff 자체가 하네스다.
+2. 장기 작업은 prose instruction보다 **실행 가능한 중간 산출물**(spec 파일, check script, state file)을 더 많이 남길수록 안정적이다.
+3. multi-agent를 붙일 때는 역할 설명보다 먼저 **무엇을 공유 artifact로 둘지** 를 설계한다.
 
 ## 케이스별·Anthropic 스터디
 

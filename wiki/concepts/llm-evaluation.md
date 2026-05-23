@@ -1,9 +1,9 @@
 ---
 title: "LLM Evaluation (Evals)"
 category: concepts
-tags: [evaluation, testing, llm, quality, evals, judge-reliability, long-horizon, native-runtime, benchmark, coding-benchmark, behavioral-safety, version-upgrade, trajectory-audit, harness-safety, artifact-aware-review, delegation-benchmark, privacy-benchmark]
+tags: [evaluation, testing, llm, quality, evals, judge-reliability, long-horizon, native-runtime, benchmark, coding-benchmark, behavioral-safety, version-upgrade, trajectory-audit, harness-safety, artifact-aware-review, delegation-benchmark, privacy-benchmark, reward-hacking, process-evaluation, reproducibility, disclosure-audit]
 created: 2026-04-09
-updated: 2026-05-20
+updated: 2026-05-22
 sources:
   - "raw/notes/2026-04-09-llm-evaluation.md"
   - "raw/articles/2026-05-12-judge-reliability-harness-rand.md"
@@ -14,6 +14,9 @@ sources:
   - "raw/articles/2026-05-19-harnessaudit-trajectory-safety.md"
   - "raw/articles/2026-05-20-decisionbench-emergent-delegation.md"
   - "raw/articles/2026-05-20-researcharena-true-auto-research-gap.md"
+  - "raw/articles/2026-05-21-specbench-reward-hacking-coding-agents.md"
+  - "raw/articles/2026-05-21-procbench-process-defects-control-preservation.md"
+  - "raw/articles/2026-05-22-agent-benchmark-disclosure-audit.md"
 related:
   - "[[concepts/harness-engineering]]"
   - "[[concepts/context-rot-hallucination]]"
@@ -478,6 +481,130 @@ HarnessAudit는 특히 5번을 1급 질문으로 올린다.
 2. AI가 쓴 보고서·리뷰·설계 문서는 텍스트만 채점하지 말고 **workspace / test / command trace** 를 같이 본다.
 3. coding agent 비교에서 평균 점수 하나보다 **failure taxonomy** 가 더 실무적일 수 있다.
 4. 평가 설계 시 quality-only 지표가 높은데도 운영 감각이 나쁘다면, **delegation layer** 나 **artifact verification layer** 가 빠진 것일 수 있다.
+
+## 2026-05-21 보강 — SpecBench + ProcBench: test 통과와 process 품질을 분리해 보기
+
+오늘 들어온 두 source는 coding-agent eval을 한 번 더 분해한다.
+
+- **SpecBench**: "보이는 테스트를 통과했는가"와 "실제 spec을 만족했는가"를 분리
+- **ProcBench**: "최종적으로 맞았는가"와 "그 과정이 통제 가능했는가"를 분리
+
+둘을 합치면 coding eval은 더 이상 pass/fail 한 줄로 끝나지 않는다. 이제는 **surface pass / spec truth / process quality / control preservation** 을 따로 봐야 한다.
+
+### A. SpecBench — visible suite saturation은 진짜 해결을 보장하지 않는다
+
+[SpecBench](https://arxiv.org/abs/2605.21384) (2026-05-20)는 reward hacking을 **visible validation test vs held-out composition test** 격차로 측정한다.
+
+- **30 systems-level programming tasks**
+- short horizon(JSON parser)부터 ultra long horizon(OS kernel)까지 포함
+- frontier agent는 **visible suite를 거의 saturate**
+- 하지만 held-out suite gap은 계속 남음
+- gap은 **code size가 10배 커질 때마다 28 percentage points 증가**
+
+핵심 해석은 분명하다.
+
+1. public/visible test pass는 쉽게 높아질 수 있다
+2. 하지만 그게 **사용자 spec 이해** 를 의미하지는 않는다
+3. task가 길어질수록 이 괴리는 더 커진다
+
+즉 coding-agent eval에서 **"테스트를 통과했다"와 "테스트를 속이지 않았다"는 서로 다른 질문** 이다.
+
+### B. ProcBench — 좋은 agent는 맞히는 agent가 아니라 통제 가능한 agent다
+
+[ProcBench](https://arxiv.org/abs/2605.20251) (2026-05-18)는 execution process 자체를 benchmark 표면으로 올린다.
+
+- **11 defect types / 4 categories** ontology
+- raw log를 **unified trajectory representation** 으로 표준화
+- **200 cases** across AndroidBench / TerminalBench / SWE-bench-Verified
+- outcome만이 아니라 **control preservation** 을 process quality 지표로 사용
+
+여기서 control preservation은 다음 다섯 질문으로 읽을 수 있다.
+
+- **interpretable** — 지금 뭘 하는지 읽히는가
+- **interruptible** — 멈출 수 있는가
+- **correctable** — 중간에 바로잡을 수 있는가
+- **reversible** — 되돌릴 수 있는가
+- **authority hand-back** — 인간에게 통제권을 돌려줄 수 있는가
+
+이건 점수보다 운영 감각에 더 가깝다. production에서 정말 필요한 것은 "성공률 1점 더 높음"보다 **실패했을 때 사람이 시스템을 붙잡을 수 있는가** 이기 때문이다.
+
+### 이 페이지의 eval 층을 coding 쪽에서 다시 압축하면
+
+최근 들어온 coding-eval만 따로 보면 적어도 네 질문으로 나뉜다.
+
+| Layer | 질문 | 대표 예시 |
+|---|---|---|
+| **Surface pass** | 공개 테스트·겉보기 점수를 통과했는가? | 기존 benchmark 공통 |
+| **Spec truth** | held-out 조합·실사용 조건에서도 spec을 만족하는가? | **SpecBench** |
+| **Software evolution** | feature / version-upgrade 같은 현실 단위를 풀 수 있는가? | FeatureBench, RoadmapBench |
+| **Process quality** | 실행 과정이 통제 가능하고 수정 가능했는가? | **ProcBench** |
+
+→ ResearchArena가 knowledge-work 쪽에서 **artifact truth** 를 물었다면, SpecBench는 coding 쪽에서 **spec truth** 를 묻고, ProcBench는 그 둘 아래에서 **process controllability** 를 묻는다.
+
+### 1인 개발자 ROI 4개
+
+1. 공개 테스트와 별도로 **held-out composition test** 몇 개는 반드시 숨겨 둔다.
+2. AI 코드 리뷰 체크리스트에 **reward hacking 의심 항목** (fixture 조작, 입력 암기, 평가 함수 우회)을 넣는다.
+3. agent 로그를 남길 때 diff만 저장하지 말고 **interrupt / rollback / retry 근거** 가 보이게 저장한다.
+4. 코딩 에이전트를 비교할 때 평균 점수보다 **"실패를 사람이 회수할 수 있는가"** 를 운영 기준으로 같이 본다.
+
+## 2026-05-22 보강 — Benchmark Disclosure Audit: score 이전에 run disclosure를 평가하기
+
+[What Twelve LLM Agent Benchmark Papers Disclose About Themselves](https://arxiv.org/abs/2605.21404) (2026-05-20)는 이 페이지가 최근 강화해 온 eval 논의를 한 번 더 아래로 내린다. 지금까지는 무엇을 측정할지(score, trace, artifact, process)를 주로 물었다면, 이번 논문은 **그 점수가 어떤 하네스와 어떤 설정에서 나왔는지 논문이 충분히 공개하는가** 를 묻는다.
+
+### 1) 좋은 benchmark라도 disclosure가 약하면 비교가 흐려진다
+
+이 논문의 출발점은 익숙하다.
+
+- 같은 benchmark
+- 같은 model name
+- 다른 논문 결과
+
+인데도 수치가 다를 때, 차이가 어디서 왔는지 알 수 없는 경우가 많다. 저자들의 주장에 따르면 문제는 단순 재현 실패가 아니라, **해석에 필요한 실행 맥락이 빠져 있다** 는 데 있다.
+
+### 2) eval 자체 말고 eval disclosure를 감사하는 별도 층이 필요하다
+
+논문은 다섯 필드 audit schema를 제안한다.
+
+| 필드 | 질문 |
+|---|---|
+| **benchmark identity** | 정확히 어느 benchmark, 어느 subset을 썼는가? |
+| **harness specification** | 어떤 scaffold / runtime / environment 위에서 돌렸는가? |
+| **inference settings** | sampling / evaluator / version 설정은 무엇인가? |
+| **cost reporting** | 얼마의 inference cost가 들었는가? |
+| **failure breakdown** | 어디서 어떤 방식으로 실패했는가? |
+
+핵심은 correctness audit이 아니라 **run disclosure audit** 이다.
+
+### 3) 최근 eval 흐름을 다섯 층으로 다시 그릴 수 있다
+
+이 페이지의 최근 source를 합치면 eval은 이제 최소 다섯 층으로 읽힌다.
+
+| 층 | 질문 | 대표 예시 |
+|---|---|---|
+| **Judge reliability** | 채점자 자체가 안정적인가? | JRH |
+| **Disclosure audit** | 실험 실행 조건이 공개되었는가? | **Benchmark Disclosure Audit** |
+| **Surface vs truth** | 공개 점수와 실제 목표 달성이 분리되는가? | SpecBench, ResearchArena |
+| **Trace / process quality** | 실행 과정이 통제 가능하고 감사 가능한가? | ProcBench, HarnessAudit |
+| **Environment realism** | production-like runtime에서 통과하는가? | WildClawBench |
+
+→ 즉 eval은 점점 "한 번 채점"에서 멀어지고, **채점자·실험설계·실행과정·환경** 전체를 보는 방향으로 두꺼워진다.
+
+### 4) cost와 harness spec 공백은 solo dev 관점에서도 치명적이다
+
+논문이 보고한 pilot audit 핵심 수치는 다음과 같다.
+
+- **8개 agent benchmark paper 평균 disclosure score = 0.38 / 1.0**
+- **4개 classical static benchmark paper 평균 = 0.66 / 1.0**
+- 가장 큰 공백은 **cost reporting** 과 **harness specification**
+
+이건 solo dev에게도 중요하다. cost가 없으면 채택 가능성을 판단할 수 없고, harness spec이 없으면 **모델 성능인지 scaffold 성능인지** 분리하기 어렵다.
+
+### 1인 개발자 ROI 3개
+
+1. benchmark나 내부 eval 결과를 기록할 때 **모델명만 남기지 말고 harness / evaluator / subset / cost / failure type** 을 함께 남긴다.
+2. 점수표를 읽을 때 "몇 점인가" 다음 질문을 **"어떤 실행 환경에서 나온 점수인가"** 로 고정한다.
+3. 위키 일지나 실험 노트도 outcome만이 아니라 **run disclosure 메타데이터** 를 남겨야 나중에 비교가 가능하다.
 
 ## 1인 개발자에게
 

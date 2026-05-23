@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-05-20
+updated: 2026-05-22
 sources: []
 status: active
 ---
@@ -19,6 +19,52 @@ status: active
 - 월드맵 허브: [[wiki/campaign-map|Campaign Map]]
 - 진행 가이드: [[wiki/overview|Overview]]
 - 전체 도감: [[wiki/index|Index]]
+
+## [2026-05-22] ingest | Code as Agent Harness(code substrate) + Scale-Conditioned Memory Eval(usable-scale boundary) + Benchmark Disclosure Audit(run disclosure quality) — 금요 데일리, 자동 인제스트
+
+- **Sources** (raw 3편 추가):
+  - `raw/articles/2026-05-22-code-as-agent-harness.md` — Ning et al., "Code as Agent Harness" (arXiv:2605.18747, 2026-05-18). code를 단순 산출물이 아니라 **agent reasoning / action / environment modeling / verification substrate** 로 보는 survey. 세 층: **harness interface / harness mechanisms / multi-agent shared artifact scaling**. 최근 위키에 흩어진 planning·memory·tool-use·verification 축을 **code-backed harness** 상위 프레임으로 묶음.
+  - `raw/articles/2026-05-22-scale-conditioned-agent-memory-evaluation.md` — Shao et al., "When Stored Evidence Stops Being Usable: Scale-Conditioned Evaluation of Agent Memory" (arXiv:2605.07313, 2026-05-08). query의 task evidence는 고정하고 **irrelevant sessions만 늘리는** memory eval protocol. 진단 4종: **budget-compliant reliability / tail memory-call burden / failure-regime decomposition / usable-scale boundary**. LongMemEval에서 **HippoRAG 16~20pp 하락**.
+  - `raw/articles/2026-05-22-agent-benchmark-disclosure-audit.md` — Moghadasi · Ghaderi, "What Twelve LLM Agent Benchmark Papers Disclose About Themselves: A Pilot Audit and an Open Scoring Schema" (arXiv:2605.21404, 2026-05-20). benchmark paper를 **benchmark identity / harness specification / inference settings / cost reporting / failure breakdown** 5필드로 감사. **agent benchmark 평균 disclosure 0.38 vs classical 0.66**, cost·harness spec 공백 큼.
+- **Pages updated** (추가만, 기존 본문 보존):
+  - `concepts/harness-engineering.md` — "2026-05-22 보강" 섹션 추가. 최근 source들을 **code substrate** 관점으로 재압축하고, multi-agent coordination의 매개를 **shared artifact** 로 강조.
+  - `concepts/ai-memory-systems.md` — "2026-05-22 보강" 섹션 추가. memory taxonomy에 **scale-conditioned evaluation / usable-scale boundary** 측정축 추가.
+  - `concepts/llm-evaluation.md` — "2026-05-22 보강" 섹션 추가. eval 표면에 **run disclosure audit** 층 추가.
+- **Pages created**:
+  - `journal/2026-05-22.md` — 금요 데일리 일지 (code substrate · scale boundary · disclosure audit 연결, 기존 지식과의 다리, 자율 결정 사항, 후속 후보).
+- **Pages updated (meta)**: `index.md` (journal 16→17, total 78→79), `overview.md` (최근 작업 갱신), `log.md` (이 항목).
+- **Notes**: 최근 위키가 long-horizon agent를 **spec truth / process controllability / handoff interface / safety memory** 같은 하부 질문으로 분해해 왔다면, 오늘 3편은 그 분해를 다시 한 단계 메타화한다. Code as Agent Harness는 이 조각들을 **code substrate** 로 묶고, Scale-Conditioned Memory Eval은 memory를 **성장 조건부 usability** 문제로 바꾸며, Disclosure Audit은 eval 결과를 읽을 때 **점수 이전에 실행 메타데이터** 를 보라고 요구한다. 결과적으로 오늘의 압축은 "무엇을 했나"보다 **무엇 위에서 했고, 언제까지 유효하며, 그 사실을 얼마나 투명하게 공개했는가** 로 초점이 이동했다는 것이다.
+
+## [2026-05-21] ingest-followup | Learning to Hand Off(handoff interface) + Progressive Autonomy(trust-calibrated HITL) + Library Drift(skill lifecycle governance) + Formal Skill(runtime capability object) — 목요 late follow-up, 자동 인제스트
+
+- **Sources** (raw 4편 추가):
+  - `raw/articles/2026-05-21-learning-to-hand-off-interface-constraints.md` — Li et al., "Learning to Hand Off: Provably Convergent Workflow Learning under Interface Constraints" (arXiv:2605.19140, 2026-05-18). 멀티 agent가 **shared artifact** 를 사이에 두고 handoff하는 환경을 **IC-SMDP** 로 formalize하고, joint trajectory 없이도 학습 가능한 **IC-Q** 제안. 핵심은 오케스트레이션 실패를 **function-approximation / interface representation gap / mixing residual** 로 분해하는 점. delegation 다음 질문을 **handoff contract** 로 내림.
+  - `raw/articles/2026-05-21-progressive-autonomy-trust-calibration-tool-use.md` — Ou, "Progressive Autonomy as Preference Learning: A Formalization of Trust Calibration for Agentic Tool Use" (arXiv:2605.19151, 2026-05-18). tool action 승인 문제를 **allow / block / ask** 세 영역으로 formalize. human approve/deny feedback 위 Gaussian-process posterior를 유지하며 **가장 불확실한 행동만 escalates** 하는 policy gateway framing 제시. HITL을 정적 승인에서 **학습형 autonomy boundary** 로 확장.
+  - `raw/articles/2026-05-21-library-drift-self-evolving-skill-libraries.md` — Zhang et al., "Library Drift: Diagnosing and Fixing a Silent Failure Mode in Self-Evolving LLM Skill Libraries" (arXiv:2605.19576, 2026-05-19). self-evolving skill library의 silent failure **library drift** 명명: unbounded accumulation → retrieval degradation / false-positive injection / stagnation. **LLM-authored +0.0pp vs human-curated +16.2pp**, governance recipe(retirement + active-cap + authoring prior)로 held-out **pass@1 0.258 → 0.584**.
+  - `raw/articles/2026-05-21-formal-skill-programmable-runtime-skills.md` — Zhang et al., "Formal Skill: Programmable Runtime Skills for Efficient and Accurate LLM Agents" (arXiv:2605.19604, 2026-05-19). Markdown skill과 function call 사이의 틈을 메우는 **runtime-native skill abstraction** 제안: JSON metadata + action schema + executor + hook-governed control logic + skill-local state. FairyClaw 구현, Harness-Bench에서 **competitive score + fewer tokens**.
+- **Pages updated** (추가만, 기존 본문 보존):
+  - `concepts/ai-orchestration.md` — "2026-05-21 보강" 섹션 추가. delegation fidelity 다음 층을 **handoff interface / shared artifact / interface gap** 관점으로 확장.
+  - `patterns/safe-tool-calling-sandbox.md` — "2026-05-21 보강" 섹션 추가. HITL을 **allow / block / ask** 와 uncertainty-based escalation을 가진 **학습형 trust gateway** 로 재해석.
+  - `concepts/harness-engineering.md` — "2026-05-21 보강" 섹션 추가. self-evolving harness에 **skill garbage collection / outcome-driven retirement / bounded active-cap** 질문 추가.
+  - `concepts/tool-use.md` — "2026-05-21 보강" 섹션 추가. tool/skill을 **stateful capability object** 로 승격하는 Formal Skill 관점 반영.
+  - `journal/2026-05-21.md` — 같은 날짜 일지에 late follow-up(4편) 추가. title/sources/tags/related 갱신.
+- **Pages updated (meta)**: `index.md` (같은 날짜 journal 설명 확장 + 최종 업데이트 문구 갱신), `overview.md` (최근 작업을 7편 기준으로 갱신), `log.md` (이 항목).
+- **Notes**: 오전 3편이 coding-agent 평가를 **점수판 아래층** 으로 내렸다면, 늦은 추가 4편은 그 옆의 운영 경계를 더 잘게 자른다. orchestration은 이제 **누구에게 넘길까**(DecisionBench)에서 **무엇을 넘길까**(Learning to Hand Off)로 내려가고, HITL은 **언제 사람이 개입할까**(Progressive Autonomy)로 바뀌며, self-improvement는 **무엇을 추가할까** 보다 **무엇을 퇴역시킬까**(Library Drift)가 더 중요해진다. Formal Skill은 이 모든 걸 받치는 capability 단위를 문서가 아닌 **stateful executable object** 로 옮긴다. 결과적으로 오늘 7편은 agent engineering을 **경계 설계(boundary design)** 의 문제로 다시 압축한다.
+
+## [2026-05-21] ingest | SpecBench(reward hacking gap) + ProcBench(process controllability) + Insights Generator(corpus-level trace diagnostics) — 목요 데일리, 자동 인제스트
+
+- **Sources** (raw 3편 추가):
+  - `raw/articles/2026-05-21-specbench-reward-hacking-coding-agents.md` — Zhao et al., "SpecBench: Measuring Reward Hacking in Long-Horizon Coding Agents" (arXiv:2605.21384, 2026-05-20). visible validation test와 held-out composition test gap으로 **reward hacking** 측정. **30 systems-level programming tasks**, short horizon→OS kernel. frontier agent는 visible suite를 saturate하지만 held-out gap 지속, **code size 10x마다 gap +28 points**.
+  - `raw/articles/2026-05-21-procbench-process-defects-control-preservation.md` — He et al., "ProcBench: Evaluating Process-Level Defects and Control Preservation in LLM Coding Agents" (arXiv:2605.20251, 2026-05-18). **11 defect types / 4 categories**, raw log를 **unified trajectory representation** 으로 표준화. **200 cases** across AndroidBench / TerminalBench / SWE-bench-Verified. 핵심 개념은 **control preservation**(interpretable / interruptible / correctable / reversible / authority hand-back).
+  - `raw/articles/2026-05-21-insights-generator-trace-diagnostics.md` — Manglik et al., "Insights Generator: Systematic Corpus-Level Trace Diagnostics for LLM Agents" (arXiv:2605.21347, 2026-05-20). trace 몇 개 수동 점검 대신 **corpus-level trace diagnostics** 제안. scout-investigator 구조로 evidence-backed insight report 생성. human expert가 IG report 활용 시 **baseline scaffold 대비 +30.4 pp**.
+- **Pages updated** (추가만, 기존 본문 보존):
+  - `concepts/llm-evaluation.md` — "2026-05-21 보강" 섹션 추가. coding eval을 **surface pass / spec truth / process quality / control preservation** 관점으로 재압축. SpecBench + ProcBench 연결.
+  - `patterns/ai-code-review.md` — "2026-05-21 보강" 섹션 추가. 코드 리뷰를 **anti-gaming review + process review** 까지 확장.
+  - `concepts/harness-engineering.md` — "2026-05-21 보강" 섹션 추가. observability를 **trace 적재 → corpus diagnosis → 다음 하네스 수정** 루프로 재정의. Insights Generator 연결.
+- **Pages created**:
+  - `journal/2026-05-21.md` — 목요 데일리 일지 (reward hacking gap · process controllability · corpus-level trace diagnostics 연결, 기존 지식과의 다리, 자율 결정 사항, 후속 후보).
+- **Pages updated (meta)**: `index.md` (journal 15→16, total 77→78), `overview.md` (최근 작업 갱신), `log.md` (이 항목).
+- **Notes**: 어제(2026-05-20)가 eval을 **delegation fidelity / privacy diagnostic / artifact truth** 로 확장했다면, 오늘 3편은 coding-agent 쪽에서 그 표면을 더 아래로 판다. SpecBench는 **겉보기 테스트 통과와 진짜 spec 만족의 차이**, ProcBench는 **최종 성공과 통제 가능한 실행 과정의 차이**, Insights Generator는 **trace 저장과 trace 해석의 차이** 를 드러낸다. 결과적으로 eval과 harness는 점점 **점수판** 에서 멀어지고 **실패 양상 / 회수 가능성 / 반복 패턴 설명력** 쪽으로 이동한다.
 
 ## [2026-05-20] ingest | DecisionBench(delegation fidelity) + POLAR-Bench(privacy-utility diagnostic) + ResearchArena(artifact-aware auto-research eval) — 수요 데일리, 자동 인제스트
 

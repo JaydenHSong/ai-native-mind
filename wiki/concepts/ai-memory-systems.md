@@ -1,9 +1,9 @@
 ---
 title: "AI Memory Systems"
 category: concepts
-tags: [memory, agent, long-term, short-term, context, multi-party, group-memory, benchmark, probabilistic-memory, partial-observability, forgetting, consolidation, safety-memory, taxonomy, virtual-memory, token-budget]
+tags: [memory, agent, long-term, short-term, context, multi-party, group-memory, benchmark, probabilistic-memory, partial-observability, forgetting, consolidation, safety-memory, taxonomy, virtual-memory, token-budget, scalability, usable-scale-boundary]
 created: 2026-04-09
-updated: 2026-05-19
+updated: 2026-05-22
 sources:
   - "raw/notes/2026-04-09-ai-memory-systems.md"
   - "raw/articles/2026-05-03-zenbrain-7-layer-memory.md"
@@ -12,6 +12,7 @@ sources:
   - "raw/articles/2026-05-17-human-inspired-memory-architecture.md"
   - "raw/articles/2026-05-17-mage-shadow-memory-long-horizon-threats.md"
   - "raw/articles/2026-05-19-clawvm-harness-managed-virtual-memory.md"
+  - "raw/articles/2026-05-22-scale-conditioned-agent-memory-evaluation.md"
 related:
   - "[[concepts/context-engineering]]"
   - "[[concepts/vector-db-embeddings]]"
@@ -368,6 +369,68 @@ HTML 본문 기준:
 2. 메모리를 한 덩어리 요약으로 다루지 말고, 최소한 **"절대 안 잃을 페이지"와 "압축 가능한 페이지"** 를 나눠 보는 것이 좋다.
 3. memory benchmark를 볼 때 retrieval accuracy뿐 아니라 **writeback correctness / compaction fault / reset safety** 같은 운영 지표도 질문해야 한다.
 
+## 2026-05-22 보강 — Scale-Conditioned Memory Eval: 저장된 증거가 언제부터 안 쓰이기 시작하는가
+
+[When Stored Evidence Stops Being Usable](https://arxiv.org/abs/2605.07313) (2026-05-08)은 이 페이지의 memory 논의를 한 가지 중요한 방향으로 넓힌다. 지금까지는 memory를 **무엇을 저장하나 / 어떻게 갱신하나 / 어떻게 안전하게 보존하나** 쪽으로 많이 봤다면, 이 논문은 한 걸음 물러나 **store가 커질수록 그 증거가 계속 usable한가** 를 묻는다.
+
+### 핵심 전환 — fixed snapshot accuracy보다 growth 조건이 중요하다
+
+기존 memory eval은 종종 현재 시점 정확도나 retrieval quality를 말한다. 하지만 production memory는 시간이 지나면서 **irrelevant session** 이 계속 쌓인다. 이 논문은 query마다 task evidence는 고정하고 irrelevant session만 늘려, 그 조건에서 성능이 어떻게 무너지는지 본다.
+
+즉 질문이 이렇게 바뀐다.
+
+- 예전: "지금 잘 찾는가?"
+- 이제: **"쓸모없는 기록이 계속 쌓여도, 필요한 증거를 예산 안에서 계속 꺼낼 수 있는가?"**
+
+### 네 가지 진단 지표
+
+논문은 scale-conditioned memory eval을 다음 네 지표로 나눈다.
+
+| 지표 | 질문 |
+|---|---|
+| **budget-compliant reliability** | 호출 예산 안에서 여전히 정답에 도달하는가? |
+| **tail memory-call burden** | 어려운 사례에서 memory 호출이 얼마나 길게 늘어지는가? |
+| **failure-regime decomposition** | 실패가 retrieval miss인지, budget overflow인지, interface 문제인지 구분되는가? |
+| **usable-scale boundary** | 어느 규모부터 target reliability 아래로 떨어지는가? |
+
+이 네 개는 memory benchmark를 accuracy 한 줄에서 **운영형 진단 도구** 로 바꿔 준다.
+
+### 왜 최근 memory taxonomy와 잘 붙는가
+
+최근 위키에서 memory는 이미 네 질문으로 쪼개졌다.
+
+| 질문 | 대표 근거 |
+|---|---|
+| 무엇을 얼마나 믿나? | BeliefMem |
+| 언제 압축·망각하나? | Human-Inspired Memory |
+| 무엇을 안 잊어야 안전한가? | MAGE |
+| 어떻게 절대 안 잃게 강제하나? | ClawVM |
+
+이번 논문은 여기에 다섯 번째 질문을 추가한다.
+
+| 새 질문 | 대표 근거 |
+|---|---|
+| **얼마나 커져도 계속 쓸 만한가?** | **Scale-Conditioned Evaluation** |
+
+즉 memory 설계는 저장 방식만의 문제가 아니라, **규모가 커질 때 usability가 어떻게 붕괴하는지** 까지 포함해야 한다.
+
+### 정량 신호
+
+abstract 기준 핵심 수치는 다음과 같다.
+
+- LongMemEval에서 **HippoRAG** 는 two-call budget을 지키지만 irrelevant session이 늘수록 **budget-compliant reliability가 16~20 percentage points 하락**
+- **LiCoMemory** 는 agent 의존성이 큼
+  - Qwen3-8B는 budget 초과
+  - Qwen3-32B / Qwen3-235B는 시험 범위 내 상대적으로 안정
+
+→ memory 성능 주장은 이제 모델명 하나가 아니라 **agent × interface × scale range × budget** 조건부 문장으로 써야 한다.
+
+### 1인 개발자 ROI 3개
+
+1. memory 시스템을 볼 때 demo accuracy보다 먼저 **history가 10배 늘어도 latency·호출 수·정확도가 어떻게 변하는지** 질문한다.
+2. memory eval을 설계할 때 gold evidence를 바꾸지 말고 **irrelevant history만 늘리는 실험** 을 따로 만든다.
+3. 본 위키처럼 장기 로그가 쌓이는 시스템은 "검색된다"보다 **실제로 예산 안에서 유용하게 다시 꺼내 쓸 수 있는가** 를 기준으로 구조를 점검한다.
+
 ## 참고 소스
 
 - [AI Memory Systems 리서치](raw/notes/2026-04-09-ai-memory-systems.md)
@@ -377,3 +440,4 @@ HTML 본문 기준:
 - [Memory for Autonomous LLM Agents — Survey (arXiv 2603.07670, 2026-03)](https://arxiv.org/html/2603.07670v1)
 - [GroupMemBench: Multi-Party Memory (arXiv 2605.14498, 2026-05)](https://arxiv.org/abs/2605.14498)
 - [Human-Inspired Memory Architecture for LLM Agents (arXiv 2605.08538, 2026-05)](https://arxiv.org/abs/2605.08538)
+- [When Stored Evidence Stops Being Usable: Scale-Conditioned Evaluation of Agent Memory (arXiv 2605.07313, 2026-05)](https://arxiv.org/abs/2605.07313)
