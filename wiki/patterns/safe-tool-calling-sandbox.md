@@ -1,14 +1,17 @@
 ---
 title: "안전한 툴 호출과 샌드박싱: 칼을 쥐여주기 전에 칼집부터"
 category: patterns
-tags: [tool-use, mcp, sandboxing, security, curriculum]
+tags: [tool-use, mcp, sandboxing, security, curriculum, hitl, trust-calibration, progressive-autonomy, checkpoint-rollback, stateful-sandbox]
 created: 2026-04-12
-updated: 2026-04-12
+updated: 2026-05-23
 sources:
   - "raw/notes/2026-04-12-practice-curriculum.md"
+  - "raw/articles/2026-05-21-progressive-autonomy-trust-calibration-tool-use.md"
+  - "raw/articles/2026-05-23-deltabox-millisecond-sandbox-checkpoint-rollback.md"
 related:
   - "[[concepts/tool-use]]"
   - "[[concepts/mcp]]"
+  - "[[concepts/harness-engineering]]"
 status: active
 confidence: high
 ---
@@ -75,6 +78,94 @@ AI의 위험한 행동을 막으려면 3중 방어막을 쳐야 합니다.
 
 ---
 *선생님의 한마디: "보안이 없는 에이전트는 해커가 마음대로 조종할 수 있는 좀비 PC와 같습니다. 안전이 최우선입니다!"*
+
+## 2026-05-21 보강 — HITL은 정적 승인 버튼이 아니라 학습형 trust gateway일 수 있다
+
+[Progressive Autonomy as Preference Learning](https://arxiv.org/abs/2605.19151) (2026-05-18)은 이 페이지의 3단계 방어 중 **방어 3단계: HITL** 을 더 정교하게 만든다. 기존 설명은 "위험 행동 앞에 승인 버튼을 둔다"였는데, 논문은 한 걸음 더 나아가 이렇게 묻는다.
+
+> **어떤 행동은 자동 실행하고, 어떤 행동은 차단하고, 어떤 행동만 사람에게 물어보게 할 수 있을까?**
+
+### allow / block / ask 세 구역으로 생각하기
+
+논문은 tool action 공간을 세 구역으로 나눈다.
+
+- **allow** — 자율 실행 가능
+- **block** — 항상 차단
+- **ask** — 사람 승인 필요
+
+즉 HITL은 모든 위험 행동에 동일하게 붙는 단일 스위치가 아니라, **자율성 경계면** 을 설계하는 문제다.
+
+### 사람 승인 로그를 risk-tolerance 학습 데이터로 보기
+
+저자 framing에서 policy gateway는 인간의 **approve / deny** 피드백을 모아 latent risk tolerance를 추정하고, **가장 불확실한 행동만** 사람에게 escalates 한다. 실무적으로 번역하면:
+
+1. 처음에는 넓게 `ask`
+2. 반복적으로 안전하다고 확인된 행동은 `allow` 로 이동
+3. 반복적으로 거절되는 행동은 `block` 으로 이동
+
+이렇게 하면 사람 승인 과정이 단순 병목이 아니라 **점진적 자율화 데이터** 가 된다.
+
+### 이 페이지에 바로 덧붙일 운영 원칙
+
+1. **권한 제한** 은 그대로 유지한다 — 학습형 gateway가 있어도 sandbox와 schema는 없어지지 않는다.
+2. **승인 로그를 남긴다** — 어떤 action이 왜 승인/거절됐는지 기록해야 progressive autonomy가 가능하다.
+3. **애매한 행동만 사람에게 보낸다** — 모든 행동 승인 요구는 안전하지만 확장성이 없다.
+
+즉 이 페이지의 3중 방어는 이제 **권한 / 격리 / 학습형 승인 경계** 로 다시 읽을 수 있다.
+
+## 2026-05-23 보강 — DeltaBox: 샌드박스는 안전장치이면서 branchable runtime이다
+
+[DeltaBox](https://arxiv.org/abs/2605.22781) (2026-05-21)는 이 페이지의 "샌드박스" 개념을 한 단계 더 깊게 만든다. 지금까지 여기서는 sandbox를 주로 **진짜 시스템을 망가뜨리지 않기 위한 격리 방** 으로 설명했다. 맞는 설명이지만, long-horizon agent에는 하나가 더 필요하다.
+
+> **sandbox는 안전한 방이면서 동시에, 여러 시도를 빠르게 되감고 갈라칠 수 있는 실행 substrate** 여야 한다.
+
+### 왜 새로운 관점이 필요한가
+
+test-time search, branch exploration, reinforcement learning, multi-attempt coding agent를 생각하면 agent는 같은 환경에서
+
+- 시도 A를 해 보고
+- 실패하면 직전 상태로 돌아가고
+- 시도 B로 갈라지고
+- 여러 분기를 병렬로 돌려야 한다
+
+기존 sandbox가 매번 전체 파일·프로세스 상태를 통째로 복제하면, checkpoint/rollback latency가 **수백 ms~수 초** 까지 커져 search budget을 잡아먹는다.
+
+### DeltaBox의 핵심
+
+논문은 연속 checkpoint들이 대부분 비슷하다는 점을 이용해, **변경된 것만 저장하는 change-based checkpoint/rollback** 을 제안한다.
+
+- **DeltaFS** — filesystem layer를 copy-on-write로 관리
+- **DeltaCR** — process state를 incremental dump로 관리
+
+결과적으로 rollback이 "무거운 복원 작업"이 아니라 **빠른 layer switch / template fork** 에 가까워진다.
+
+### 왜 이 페이지에 중요한가
+
+이 패턴 페이지의 3단계 방어는 원래
+
+1. 권한 제한
+2. 격리
+3. 사람 승인
+
+이었다. DeltaBox를 넣고 다시 읽으면 2번 "격리" 안에도 두 하위 질문이 생긴다.
+
+- **안전하게 가둘 수 있는가?**
+- **빠르게 되돌리고 여러 분기를 탐색할 수 있는가?**
+
+즉 sandbox는 security primitive이면서 동시에 **agent throughput primitive** 다.
+
+### 기억해 둘 정량 신호
+
+- checkpoint **14ms**
+- rollback **5ms**
+
+이 수치의 의미는 단순 성능 자랑보다, 같은 wall-clock 예산 아래 **더 많은 branch를 시험할 수 있다** 는 데 있다.
+
+### 실전 번역
+
+1. 샌드박스를 평가할 때 "격리되나?"만 보지 말고 **reset latency** 도 함께 본다.
+2. long-horizon coding agent에서 병렬 fan-out이 느리면 모델보다 먼저 **environment rollback 비용** 을 의심한다.
+3. 안전한 tool-use infrastructure는 policy prompt만이 아니라 **state reset / checkpoint / rollback 설계** 까지 포함한다.
 
 ## Chapter Clear 가이드
 

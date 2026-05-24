@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-05-22
-total_pages: 79
+updated: 2026-05-23
+total_pages: 80
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 전체 79개 페이지 | 최종 업데이트: 2026-05-22 (code substrate · memory usable-scale boundary · benchmark disclosure audit + 금요 weekly compression 반영) — 대부분 페이지에 **쉽게 읽기** 블록 있음
+> 전체 80개 페이지 | 최종 업데이트: 2026-05-23 (interface adaptation · terminal benchmark provenance · unified MCP/HTTP capability · branchable sandbox runtime 반영) — 대부분 페이지에 **쉽게 읽기** 블록 있음
 
 ## 쉽게 읽기
 
@@ -102,8 +102,9 @@ status: active
 - [[patterns/agent-mvp-stack-2026]] — 1인 MVP 스택 5대 영역 × 4 단계 + 의사결정 트리 (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — Vibe Coding의 7대 안티패턴과 회피법
 
-## Journal (17개)
+## Journal (18개)
 
+- [[journal/2026-05-23]] — 토요 데일리: Life-Harness(interface adaptation) + TerminalWorld(benchmark provenance) + HarnessAPI(single-source MCP/HTTP capability) + DeltaBox(branchable sandbox runtime)
 - [[journal/2026-05-22]] — 금요 데일리 + 주간 리뷰: Code as Agent Harness(code substrate) + Scale-Conditioned Memory Eval(usable-scale boundary) + Benchmark Disclosure Audit(run disclosure quality) + boundary-compression 메모
 - [[journal/2026-05-21]] — 목요 데일리: SpecBench(reward hacking gap) + ProcBench(process controllability) + Insights Generator(corpus-level trace diagnostics) + Learning to Hand Off(handoff interface) + Progressive Autonomy(trust-calibrated HITL) + Library Drift(skill lifecycle governance) + Formal Skill(runtime capability object)
 - [[journal/2026-05-20]] — 수요 데일리: DecisionBench(delegation fidelity) + POLAR-Bench(privacy-utility diagnostic) + ResearchArena(artifact-aware auto-research eval)

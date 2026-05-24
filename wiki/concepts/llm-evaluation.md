@@ -1,9 +1,9 @@
 ---
 title: "LLM Evaluation (Evals)"
 category: concepts
-tags: [evaluation, testing, llm, quality, evals, judge-reliability, long-horizon, native-runtime, benchmark, coding-benchmark, behavioral-safety, version-upgrade, trajectory-audit, harness-safety, artifact-aware-review, delegation-benchmark, privacy-benchmark, reward-hacking, process-evaluation, reproducibility, disclosure-audit]
+tags: [evaluation, testing, llm, quality, evals, judge-reliability, long-horizon, native-runtime, benchmark, coding-benchmark, behavioral-safety, version-upgrade, trajectory-audit, harness-safety, artifact-aware-review, delegation-benchmark, privacy-benchmark, reward-hacking, process-evaluation, reproducibility, disclosure-audit, terminal-benchmark, benchmark-provenance]
 created: 2026-04-09
-updated: 2026-05-22
+updated: 2026-05-23
 sources:
   - "raw/notes/2026-04-09-llm-evaluation.md"
   - "raw/articles/2026-05-12-judge-reliability-harness-rand.md"
@@ -17,6 +17,7 @@ sources:
   - "raw/articles/2026-05-21-specbench-reward-hacking-coding-agents.md"
   - "raw/articles/2026-05-21-procbench-process-defects-control-preservation.md"
   - "raw/articles/2026-05-22-agent-benchmark-disclosure-audit.md"
+  - "raw/articles/2026-05-23-terminalworld-real-world-terminal-benchmark.md"
 related:
   - "[[concepts/harness-engineering]]"
   - "[[concepts/context-rot-hallucination]]"
@@ -605,6 +606,71 @@ HarnessAudit는 특히 5번을 1급 질문으로 올린다.
 1. benchmark나 내부 eval 결과를 기록할 때 **모델명만 남기지 말고 harness / evaluator / subset / cost / failure type** 을 함께 남긴다.
 2. 점수표를 읽을 때 "몇 점인가" 다음 질문을 **"어떤 실행 환경에서 나온 점수인가"** 로 고정한다.
 3. 위키 일지나 실험 노트도 outcome만이 아니라 **run disclosure 메타데이터** 를 남겨야 나중에 비교가 가능하다.
+
+## 2026-05-23 보강 — TerminalWorld: real terminal workflow를 자동으로 benchmark로 재구성하기
+
+[TerminalWorld](https://arxiv.org/abs/2605.22535) (2026-05-21)는 이 페이지의 최근 흐름에서 **environment realism** 을 한 단계 더 구체화한다. WildClawBench가 production-like runtime 위에서 human-authored long-horizon task를 돌렸다면, TerminalWorld는 아예 benchmark 생성의 출발점을 **실제 terminal recording** 으로 옮긴다.
+
+### 1) 사람이 손으로 쓴 task보다 실제 녹화가 더 load-bearing할 수 있다
+
+저자들의 핵심 주장은 terminal eval의 현실성을 높이려면, expert가 "그럴듯한 문제"를 설계하는 것만으로는 부족하다는 것이다. 실제 현업 shell 사용은
+
+- command 조합의 생태
+- step 길이 분포
+- 자주 등장하는 우회·수정 패턴
+- category별 반복 습관
+
+을 갖는데, 이런 신호는 **실제 recording** 에 더 많이 남아 있다.
+
+### 2) benchmark provenance 자체가 평가 축이 된다
+
+논문이 제시한 data engine은 다음 규모를 다룬다.
+
+- **80,870 terminal recordings**
+- **1,530 validated tasks**
+- **18 real-world categories**
+- **1,280 unique commands**
+- 이 중 **200개 Verified subset** 을 수동 검토
+
+즉 이 benchmark의 새로움은 단순히 task 수가 아니라, **task provenance가 현실 workflow에서 왔다** 는 점이다.
+
+### 3) terminal domain의 ceiling도 아직 낮다
+
+TerminalWorld-Verified에서
+
+- **8 frontier models / 6 agents** 평가
+- 최고 pass rate는 **62.5%**
+
+에 그친다. 이 수치는 최근 real-world eval 계열과 잘 맞물린다. long-horizon, tool-heavy, stateful environment로 갈수록 frontier system의 ceiling이 생각보다 빨리 낮아진다.
+
+### 4) 기존 benchmark와 상관이 약하다는 점이 중요하다
+
+논문은 Terminal-Bench 같은 기존 expert-curated benchmark와의 상관이 낮다고 보고한다.
+
+- **Pearson r = 0.20**
+
+이 말은 "어느 쪽이 더 옳다"보다, **두 benchmark가 서로 다른 능력을 재고 있다** 는 신호다. 즉 앞으로는 benchmark score를 볼 때 이름만이 아니라 **task provenance** 까지 함께 읽어야 한다.
+
+### 오늘 시점 eval 층에 무엇을 더하나
+
+최근 이 페이지의 eval 층을 다시 쓰면 이렇게 된다.
+
+| 층 | 질문 | 대표 예시 |
+|---|---|---|
+| **Judge reliability** | 채점자 자체가 안정적인가? | JRH |
+| **Disclosure audit** | 실행 메타데이터가 충분히 공개되었는가? | Benchmark Disclosure Audit |
+| **Surface vs truth** | 겉보기 점수와 진짜 목표가 갈라지는가? | SpecBench, ResearchArena |
+| **Trace / process quality** | 실행 과정이 통제 가능하고 감사 가능한가? | ProcBench, HarnessAudit |
+| **Environment realism** | production-like runtime에서 통과하는가? | WildClawBench |
+| **Benchmark provenance** | benchmark task가 현실 workflow를 얼마나 반영하는가? | **TerminalWorld** |
+
+→ 이제 eval은 점수표 이전에 **누가 채점했나 / 무엇을 공개했나 / 어떤 환경에서 돌렸나 / 그 task가 어디서 왔나** 까지 묻게 된다.
+
+### 1인 개발자 ROI 3개
+
+1. terminal agent를 평가할 때 synthetic smoke test와 **실제 작업 녹화 기반 replay set** 를 분리해 운영한다.
+2. benchmark 선택 시 task 이름보다 먼저 **task provenance** 를 본다 — human-authored인지, trace-derived인지, repo-history-derived인지.
+3. 내 agent가 특정 benchmark에서 강해도, 실제 shell workflow와 상관이 약할 수 있으니 **현실 작업 로그에서 mini benchmark** 를 뽑는 습관을 들인다.
 
 ## 1인 개발자에게
 

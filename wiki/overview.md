@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-05-22
+updated: 2026-05-23
 sources: []
 status: active
 ---
@@ -29,10 +29,15 @@ status: active
 
 ## 현재 상태
 
-- **총 페이지**: 79개
-- **카테고리**: concepts(20), tools(9), patterns(20), journal(17), comparisons(9), meta(4)
+- **총 페이지**: 80개
+- **카테고리**: concepts(20), tools(9), patterns(20), journal(18), comparisons(9), meta(4)
 - **시작일**: 2026-04-06
-- **최근 작업 (2026-05-22 금요 데일리 ingest + weekly compression follow-up)**:
+- **최근 작업 (2026-05-23 토요 데일리 ingest)**:
+  - raw 4편: Life-Harness · TerminalWorld · HarnessAPI · DeltaBox
+  - 기존 페이지 보강 4개: [[concepts/harness-engineering]] · [[concepts/llm-evaluation]] · [[concepts/tool-use]] · [[patterns/safe-tool-calling-sandbox]]
+  - 새 일지: [[journal/2026-05-23]]
+  - 핵심 합류: agent engineering의 관심사가 **모델 자체** 보다 바깥의 **environment interface / benchmark provenance / MCP↔HTTP capability deployment / branchable sandbox runtime** 으로 더 세분화됨
+- **직전 작업 (2026-05-22 금요 데일리 ingest + weekly compression follow-up)**:
   - raw 3편: Code as Agent Harness · Scale-Conditioned Memory Eval · Benchmark Disclosure Audit
   - 기존 페이지 보강 3개: [[concepts/harness-engineering]] · [[concepts/ai-memory-systems]] · [[concepts/llm-evaluation]]
   - 기존 비교 페이지 확장: [[comparisons/agent-memory-taxonomy]] 에 **scale boundary / runtime enforcement / action-time safety check** overlay 추가

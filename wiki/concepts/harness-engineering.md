@@ -1,9 +1,9 @@
 ---
 title: "Harness Engineering"
 category: concepts
-tags: [harness-engineering, ai-agent, infrastructure, orchestration, verification-gated, grounding, runtime-substrate, 11-responsibilities, evaluation-hacking, runtime-interface, trajectory-audit, natural-language-harness, trace-diagnostics, corpus-level-observability, skill-governance, library-drift, code-as-harness, shared-artifact]
+tags: [harness-engineering, ai-agent, infrastructure, orchestration, verification-gated, grounding, runtime-substrate, 11-responsibilities, evaluation-hacking, runtime-interface, trajectory-audit, natural-language-harness, trace-diagnostics, corpus-level-observability, skill-governance, library-drift, code-as-harness, shared-artifact, interface-adaptation, stateful-sandbox]
 created: 2026-04-09
-updated: 2026-05-22
+updated: 2026-05-23
 sources:
   - "raw/notes/2026-04-09-engineering-paradigms-research.md"
   - "raw/notes/2026-04-11-orchestration-harness-server-supplement.md"
@@ -30,6 +30,8 @@ sources:
   - "raw/articles/2026-05-21-insights-generator-trace-diagnostics.md"
   - "raw/articles/2026-05-21-library-drift-self-evolving-skill-libraries.md"
   - "raw/articles/2026-05-22-code-as-agent-harness.md"
+  - "raw/articles/2026-05-23-life-harness-runtime-interface-adaptation.md"
+  - "raw/articles/2026-05-23-deltabox-millisecond-sandbox-checkpoint-rollback.md"
 related:
   - "[[concepts/context-engineering]]"
   - "[[concepts/prompt-engineering]]"
@@ -694,6 +696,82 @@ MBPP+ hard-100 / 100 rounds에서 held-out pass@1이 **0.258 → 0.584**, rollin
 1. repo를 단순 작업 대상이 아니라 **agent runtime state space** 로 본다 — 파일 구조, 테스트, diff 자체가 하네스다.
 2. 장기 작업은 prose instruction보다 **실행 가능한 중간 산출물**(spec 파일, check script, state file)을 더 많이 남길수록 안정적이다.
 3. multi-agent를 붙일 때는 역할 설명보다 먼저 **무엇을 공유 artifact로 둘지** 를 설계한다.
+
+## 2026-05-23 보강 — Life-Harness + DeltaBox: interface adaptation과 branchable runtime
+
+어제([[concepts/harness-engineering]]의 2026-05-22 보강)는 code를 **runtime substrate** 로 보는 상위 프레임을 줬다. 오늘 들어온 두 편은 그 substrate 안쪽을 다시 둘로 쪼갠다.
+
+1. **interface layer** — 모델과 환경 사이 규약을 어떻게 맞출 것인가?
+2. **runtime systems layer** — 여러 시도를 얼마나 빠르게 되돌리고 갈라칠 수 있는가?
+
+### 1) Life-Harness: 많은 실패는 model quality가 아니라 interface mismatch다
+
+[Adapting the Interface, Not the Model](https://arxiv.org/abs/2605.22166) (2026-05-21)은 deterministic, rule-governed domain에서 agent 실패의 원인을 **모델 성능 부족** 보다 **model-environment interface mismatch** 에서 찾는다.
+
+저자들이 제안한 **Life-Harness** 는 training trajectory에서 recurring failure를 모아, 다음 네 곳에 재사용 가능한 intervention을 심는다.
+
+- **environment contracts**
+- **procedural skills**
+- **action realization**
+- **trajectory regulation**
+
+핵심은 model weight를 건드리지 않고, **환경 쪽 구조를 하네스 자산으로 축적** 한다는 점이다.
+
+### 2) Life-Harness가 말하는 하네스의 새 역할
+
+최근 이 페이지는 하네스를
+
+- policy object
+- observability loop
+- self-evolving capability governance
+
+로 넓혀 왔다. Life-Harness는 여기에 한 층을 더 추가한다.
+
+> **하네스는 모델의 실수를 사후에 막는 것만이 아니라, 모델과 환경 사이 인터페이스를 사전에 맞춰 주는 번역층이다.**
+
+논문이 보고한 결과도 이 주장을 뒷받침한다.
+
+- **7 deterministic environments**
+- **18 model backbones**
+- **126 settings 중 116개 개선**
+- **평균 상대 향상 88.5%**
+
+특히 Qwen3-4B-Instruct trajectory에서 진화한 하네스가 **다른 17개 모델에도 전이** 된다는 결과는, 하네스가 모델별 비법이 아니라 **environment-side regularity** 를 담을 수 있음을 시사한다.
+
+### 3) DeltaBox: sandbox는 security box이면서 branchable runtime이다
+
+[DeltaBox](https://arxiv.org/abs/2605.22781) (2026-05-21)는 같은 하네스를 더 아래 systems layer로 내린다. long-horizon agent가 deep search, fan-out, reinforcement learning을 하려면 환경 상태를 자주 **checkpoint / rollback** 해야 하는데, 기존 방식은 파일·프로세스 상태를 통째로 복제해 latency가 너무 크다.
+
+이 논문은 연속 checkpoint 사이 변화량이 작다는 점에 주목해, **change-based checkpoint/rollback** 을 제안한다.
+
+- **DeltaFS** — layered filesystem + copy-on-write
+- **DeltaCR** — incremental process-state dump + template-based restore
+
+결과는 다음과 같다.
+
+- checkpoint **14ms**
+- rollback **5ms**
+
+즉 sandbox는 "안전한 격리 공간"일 뿐 아니라, **많은 시도를 빠르게 분기하는 계산 substrate** 로 다시 읽혀야 한다.
+
+### 4) 오늘 시점 재압축
+
+오늘 두 편을 합치면 하네스는 최소 네 층으로 분해된다.
+
+| 층 | 질문 | 대표 근거 |
+|---|---|---|
+| **policy / representation** | 규칙을 어떤 문서·artifact에 싣는가? | NLAH, CLAUDE.md |
+| **interface adaptation** | 모델과 환경 사이 규약을 어떻게 맞출까? | **Life-Harness** |
+| **runtime control** | 실행 중 state를 어떻게 보존·되돌릴까? | **DeltaBox, ClawVM** |
+| **evolution / governance** | 실패를 어떻게 다음 하네스 규칙으로 바꿀까? | AHE, Insights Generator, Library Drift |
+
+→ 어제의 "code as harness"가 상위 프레임이라면, 오늘은 그 안에 **interface layer와 systems layer** 가 더 분명히 들어왔다.
+
+### 1인 개발자 ROI 3개
+
+1. deterministic workflow가 자꾸 실패하면 모델 업그레이드 전에 **tool contract / observation format / trajectory regulation** 부터 감사한다.
+2. branch search나 multi-attempt coding을 붙일 때는 모델보다 먼저 **reset latency** 를 측정한다.
+3. trajectory log는 디버그 기록이 아니라, **interface intervention library** 를 만드는 학습 재료로 본다.
 
 ## 케이스별·Anthropic 스터디
 

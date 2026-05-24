@@ -1,12 +1,14 @@
 ---
 title: "Tool Use (Function Calling)"
 category: concepts
-tags: [tool-use, function-calling, llm, api, runtime-interface, skills, strict-schema]
+tags: [tool-use, function-calling, llm, api, runtime-interface, skills, strict-schema, formal-skill, skill-state, policy-hooks, mcp-tooling, skill-first-api]
 created: 2026-04-09
-updated: 2026-05-18
+updated: 2026-05-23
 sources:
   - "raw/notes/2026-04-09-tool-use-function-calling.md"
   - "raw/articles/2026-05-18-skillsmith-boundary-guided-runtime-interfaces.md"
+  - "raw/articles/2026-05-21-formal-skill-programmable-runtime-skills.md"
+  - "raw/articles/2026-05-23-harnessapi-skill-first-unified-mcp-http.md"
 related:
   - "[[concepts/mcp]]"
   - "[[concepts/ai-orchestration]]"
@@ -116,6 +118,107 @@ SkillsBench에서 보고된 절감 폭은 꽤 크다.
 1. `SKILL.md` 나 긴 tool guide는 매 호출마다 통째로 싣지 말고, **짧은 호출 규약**으로 압축하는 편이 낫다.
 2. 강한 모델은 매번 실행에 쓰기보다, **skill compiler** 로 한 번 써서 artifact를 만들고 이후엔 저렴한 모델이 재사용하게 할 수 있다.
 3. tool schema를 쓸 때도 description을 장문 prose로 늘리기보다, **행동 경계(boundary)** 와 입력·출력 계약을 더 먼저 명시하는 편이 좋다.
+
+## 2026-05-21 보강 — Formal Skill: schema 다음은 stateful capability object다
+
+[Formal Skill](https://arxiv.org/abs/2605.19604) (2026-05-19)는 이 페이지의 기본 단위를 다시 묻는다. 지금까지 Tool Use를 `name + description + input schema` 중심으로 설명했다면, 이 논문은 그 단위가 장기 작업에는 너무 작다고 본다.
+
+### 기존 구도: 문서형 skill vs 함수형 tool
+
+논문이 겨냥하는 현재 생태계는 대략 두 극단이다.
+
+- **Markdown skill / instruction pack** — 절차는 풍부하지만 길고 비형식적이다
+- **function calling / MCP tool** — action은 구조화하지만 workflow state와 policy는 바깥에 남는다
+
+저자들의 주장은 이 둘 사이에 **stateful, enforceable capability layer** 가 필요하다는 것이다.
+
+### Formal Skill의 구성
+
+Formal Skill은 다음 조합으로 정의된다.
+
+- **JSON metadata**
+- **action schema**
+- **reliable Python executor**
+- **hook-governed control logic**
+- **skill-local runtime state**
+- **routing support**
+
+즉 tool은 단발 함수가 아니라, **상태와 훅과 실행기를 가진 작은 런타임 객체** 로 승격된다.
+
+### SkillSmith와의 차이
+
+- [[concepts/tool-use]]의 2026-05-18 보강(SkillSmith) = 긴 skill 문서를 **compiled runtime interface** 로 압축
+- 오늘 Formal Skill = 그 interface를 다시 **stateful executable skill object** 로 확장
+
+둘을 합치면 흐름은 이렇게 된다.
+
+1. 문서형 skill을 boundary 중심으로 압축한다
+2. 그 경계를 schema로 만든다
+3. schema 위에 **state / hook / executor** 를 붙여 재사용 capability로 만든다
+
+### 왜 중요한가
+
+논문은 FairyClaw runtime으로 이를 구현했고, Harness-Bench에서 **competitive score + substantially fewer tokens** 를 보고한다. 수치보다 더 중요한 메시지는 이것이다.
+
+> 절차를 자연어로 반복 설명하는 대신, 절차 자체를 **실행 가능한 상태 기계** 로 올려라.
+
+### 1인 개발자에게 바로 번역하면
+
+1. 반복 절차는 길게 설명하는 `SKILL.md` 대신 **state field + hook + completion condition** 으로 표현하는 편이 낫다.
+2. tool 정의 시 입력 스키마만 만들지 말고, **언제 종료인지 / 실패 시 어떤 훅을 태울지** 까지 capability 안에 넣는다.
+3. MCP는 transport 표준이고, Formal Skill은 그 위의 **작업 단위 abstraction** 으로 볼 수 있다.
+
+## 2026-05-23 보강 — HarnessAPI: tool은 schema를 넘어 deployable dual-surface capability다
+
+[HarnessAPI](https://arxiv.org/abs/2605.22733) (2026-05-21)는 이 페이지의 기본 정의를 한 단계 더 운영 쪽으로 민다. 지금까지 여기서는 Tool Use를 `name + description + input schema` 중심으로 설명했지만, 실제 서비스에서는 같은 capability가 보통 **두 surface** 를 동시에 가져야 한다.
+
+- 사람·CI가 호출하는 **HTTP API**
+- agent runtime이 호출하는 **MCP tool**
+
+문제는 둘이 business logic는 같아도 routing / validation / serialization / streaming / schema maintenance를 따로 유지하면서 drift가 나기 쉽다는 점이다.
+
+### skill-first single source of truth
+
+HarnessAPI의 주장은 간단하다.
+
+> **typed skill folder 하나를 단일 source of truth로 두고, 여기서 HTTP와 MCP surface를 같이 파생하라.**
+
+논문 기준으로 한 skill artifact에서 다음이 동시에 나온다.
+
+1. **SSE streaming endpoint**
+2. **OpenAPI / Swagger UI**
+3. **zero-configuration MCP tool**
+
+즉 tool을 문서형 description이 아니라 **배포 가능한 capability object** 로 보는 관점이다.
+
+### 왜 중요한가
+
+이 framing은 최근 이 페이지에 들어온 두 source와 자연스럽게 이어진다.
+
+- [[concepts/tool-use]]의 2026-05-18 보강(SkillSmith) = 문서형 skill을 **minimal runtime interface** 로 압축
+- 2026-05-21 보강(Formal Skill) = 그 interface 위에 **state / hook / executor** 를 올림
+- 오늘 HarnessAPI = 같은 capability를 **HTTP + MCP deployment surface** 로 동시에 노출
+
+세 흐름을 이어 읽으면, tool/skill abstraction은 이렇게 성숙한다.
+
+1. 긴 설명문을 줄인다
+2. 실행 경계를 schema로 만든다
+3. state와 hook를 붙인다
+4. 그 capability를 여러 transport에 **중복 없이 배포** 한다
+
+### 정량 신호
+
+논문은 6개 representative skill 기준으로, 수작업 dual-stack(FastAPI + FastMCP) 대비 **framework-facing boilerplate 74% 감소** 를 보고한다.
+
+수치보다 중요한 메시지는 이것이다.
+
+> MCP와 HTTP를 따로 설계할수록 tool contract drift가 생기고, capability를 한 artifact에서 파생할수록 하네스 유지비가 줄어든다.
+
+### 1인 개발자에게 바로 번역하면
+
+1. 기존 FastAPI endpoint가 있다면, MCP 도입을 "새 서버 하나 더 만들기"가 아니라 **같은 skill contract의 추가 surface** 로 보는 편이 낫다.
+2. tool 설명을 prose로 길게 늘리기보다 **typed schema + shared handler** 를 중심에 둔다.
+3. agent 전용 인터페이스와 사람 전용 인터페이스가 따로 진화하지 않게, **single-source capability registry** 를 먼저 설계한다.
 
 ## 실전 패턴
 

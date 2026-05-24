@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-05-22
+updated: 2026-05-23
 sources: []
 status: active
 ---
@@ -19,6 +19,23 @@ status: active
 - 월드맵 허브: [[wiki/campaign-map|Campaign Map]]
 - 진행 가이드: [[wiki/overview|Overview]]
 - 전체 도감: [[wiki/index|Index]]
+
+## [2026-05-23] ingest | Life-Harness(interface adaptation) + TerminalWorld(benchmark provenance) + HarnessAPI(single-source MCP/HTTP capability) + DeltaBox(branchable sandbox runtime) — 토요 데일리, 자동 인제스트
+
+- **Sources** (raw 4편 추가):
+  - `raw/articles/2026-05-23-life-harness-runtime-interface-adaptation.md` — Xu et al., "Adapting the Interface, Not the Model: Runtime Harness Adaptation for Deterministic LLM Agents" (arXiv:2605.22166, 2026-05-21). deterministic domain의 agent failure를 **model-environment interface mismatch** 로 해석하고, recurring trajectory failure를 **environment contracts / procedural skills / action realization / trajectory regulation** intervention으로 바꾸는 **Life-Harness** 제안. **7 environments / 18 backbones / 126 settings 중 116개 개선 / 평균 상대 향상 88.5%**, Qwen3-4B로 진화한 harness가 **17개 다른 모델에 전이**.
+  - `raw/articles/2026-05-23-terminalworld-real-world-terminal-benchmark.md` — Chu et al., "TerminalWorld: Benchmarking Agents on Real-World Terminal Tasks" (arXiv:2605.22535, 2026-05-21). **80,870 terminal recordings** 에서 **1,530 validated tasks / 18 categories / 1,280 unique commands** 를 자동 역구성하고, **200 verified subset** 으로 평가. **8 models / 6 agents 최고 62.5%**, Terminal-Bench와 **Pearson r=0.20** 으로 낮은 상관 → terminal eval에 **benchmark provenance** 층 추가.
+  - `raw/articles/2026-05-23-harnessapi-skill-first-unified-mcp-http.md` — Edwin Jose, "HarnessAPI: A Skill-First Framework for Unified Streaming APIs and MCP Tools" (arXiv:2605.22733, 2026-05-21). typed skill folder를 **single source of truth** 로 두고 같은 구현에서 **SSE HTTP endpoint + OpenAPI UI + zero-config MCP tool** 을 동시에 파생. 수작업 dual-stack(FastAPI + FastMCP) 대비 **framework-facing boilerplate 74% 감소**.
+  - `raw/articles/2026-05-23-deltabox-millisecond-sandbox-checkpoint-rollback.md` — Dong et al., "DeltaBox: Scaling Stateful AI Agents with Millisecond-Level Sandbox Checkpoint/Rollback" (arXiv:2605.22781, 2026-05-21). agent sandbox를 full-copy가 아닌 **change-based checkpoint/rollback** 으로 재설계. **DeltaFS + DeltaCR** 로 checkpoint **14ms**, rollback **5ms**. sandbox를 security box가 아니라 **branchable execution substrate** 로 재해석.
+- **Pages updated** (추가만, 기존 본문 보존):
+  - `concepts/harness-engineering.md` — "2026-05-23 보강" 섹션 추가. 최근 **code substrate** 상위 프레임 아래에 **interface adaptation (Life-Harness)** 과 **runtime systems / branchable sandbox (DeltaBox)** 두 층을 더 선명하게 추가.
+  - `concepts/llm-evaluation.md` — "2026-05-23 보강" 섹션 추가. eval 층을 **judge / disclosure / truth / process / environment realism / benchmark provenance** 로 확장하고, TerminalWorld를 provenance 계층에 배치.
+  - `concepts/tool-use.md` — "2026-05-23 보강" 섹션 추가. Tool Use를 schema 중심 설명에서 **HTTP + MCP dual-surface deployable capability** 관점으로 확장. SkillSmith → Formal Skill → HarnessAPI 흐름으로 재정리.
+  - `patterns/safe-tool-calling-sandbox.md` — "2026-05-23 보강" 섹션 추가. 샌드박스를 격리 방에서 **checkpoint/rollback 가능한 branchable runtime** 으로 재해석.
+- **Pages created**:
+  - `journal/2026-05-23.md` — 토요 데일리 일지 (interface adaptation · benchmark provenance · capability deployment · branchable runtime 연결, 기존 지식과의 다리, 자율 결정 사항, 후속 후보).
+- **Pages updated (meta)**: `index.md` (journal 17→18, total 79→80), `overview.md` (최근 작업 갱신), `log.md` (이 항목).
+- **Notes**: 어제(2026-05-22)가 agent engineering의 초점을 **substrate / scale boundary / disclosure metadata** 로 내렸다면, 오늘 4편은 그 substrate의 실제 구성 단위를 더 잘게 보여 준다. Life-Harness는 **모델-환경 인터페이스** 를, TerminalWorld는 **benchmark task provenance** 를, HarnessAPI는 **capability deployment surface** 를, DeltaBox는 **branchable runtime state** 를 전면에 올린다. 결과적으로 최근 위키의 boundary design 흐름이 한 단계 더 미세화됐다 — 이제 질문은 "좋은 agent인가"가 아니라 **어느 interface가 깨졌고, 그 benchmark는 어디서 왔고, capability는 어떤 surface로 배포되며, sandbox는 얼마나 빨리 되감을 수 있는가** 로 바뀐다.
 
 ## [2026-05-22] weekly-review | boundary design 관점으로 최근 7일 지식 압축
 
