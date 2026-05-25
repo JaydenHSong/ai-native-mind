@@ -1,9 +1,9 @@
 ---
 title: "AI 오케스트레이션"
 category: concepts
-tags: [ai-orchestration, multi-agent, patterns, anthropic, rl-traces, credit-assignment, delegation-benchmark, decisionbench]
+tags: [ai-orchestration, multi-agent, patterns, anthropic, rl-traces, credit-assignment, delegation-benchmark, decisionbench, handoff, interface-constraints]
 created: 2026-04-09
-updated: 2026-05-20
+updated: 2026-05-21
 sources:
   - "raw/notes/2026-04-09-ai-orchestration-research.md"
   - "raw/notes/2026-04-11-orchestration-harness-server-supplement.md"
@@ -14,6 +14,7 @@ sources:
   - "raw/articles/2026-05-03-microsoft-agent-framework-v1.md"
   - "raw/articles/2026-05-14-rl-multiagent-orchestration-traces.md"
   - "raw/articles/2026-05-20-decisionbench-emergent-delegation.md"
+  - "raw/articles/2026-05-21-learning-to-hand-off-interface-constraints.md"
 related:
   - "[[concepts/ai-native-programmer]]"
   - "[[concepts/context-engineering]]"
@@ -263,6 +264,57 @@ full pool **23,375 task instances** reference sweep에서 가장 중요한 결�
 1. subagent 실험을 할 때 최종 성공률만 보지 말고 **누구에게 넘겼는지 / 왜 넘겼는지 / 맞게 넘겼는지**를 로그로 남긴다.
 2. agent profile은 README처럼 미리 다 넣기보다 **tool처럼 필요 시 조회**하게 만드는 편이 더 나을 수 있다.
 3. 멀티에이전트 성능이 기대보다 낮을 때, 모델을 바꾸기 전에 **delegation channel 설계**를 먼저 의심한다.
+
+## 2026-05-21 보강 — Learning to Hand Off: delegation 다음은 handoff interface다 (arXiv 2605.19140)
+
+[Learning to Hand Off](https://arxiv.org/abs/2605.19140) (2026-05-18)는 최근 이 페이지가 쌓아 온 질문을 한 단계 더 아래로 내린다.
+
+- DecisionBench: **누구에게 넘겼는가**
+- Zhang RL traces: **어떤 orchestration decision에 학습 신호를 줄 것인가**
+- 오늘 논문: **joint trajectory 없이 handoff 자체를 어떻게 학습할 것인가**
+
+### 핵심 전환: orchestration을 agent 내부가 아니라 handoff boundary로 본다
+
+논문이 겨냥하는 현실은 아주 실무적이다.
+
+- specialized agent들이 하나의 **shared artifact** 를 두고 handoff한다
+- 각 agent는 artifact의 **local function** 만 본다
+- 중앙 학습기는 **joint trajectory** 를 통째로 보지 못한다
+
+즉 멀티 에이전트 파이프라인의 어려움은 "누가 더 똑똑한가"보다 **어떤 경계면으로 넘기느냐** 에 있다는 말이다.
+
+### IC-SMDP + IC-Q: handoff당 scalar 하나로 coordination하기
+
+저자들은 이 환경을 **interface-constrained semi-Markov decision process (IC-SMDP)** 로 formalize하고, **IC-Q** 를 제안한다.
+
+- decision epoch = token step이 아니라 **handoff 시점**
+- cross-agent coordination = handoff마다 **scalar 하나**
+- error source 분해:
+  1. **neural function-approximation error**
+  2. **interface representation gap**
+  3. **mixing-time residual**
+
+이 분해가 중요한 이유는 멀티에이전트 실패를 "모델이 약함" 하나로 뭉개지 않고, **handoff schema 설계 실패** 를 별도 원인으로 분리해 주기 때문이다.
+
+### 기존 위키 관점에서 새로 선명해진 점
+
+#### 1) delegation fidelity 다음에는 handoff fidelity가 온다
+
+DecisionBench가 delegation 품질을 측정했다면, 오늘 논문은 그 delegation이 실제로 **어떤 interface를 통해 전달되는가** 를 학습 문제로 만든다. 즉 routing 다음 질문은 **handoff contract** 다.
+
+#### 2) shared artifact가 곧 오케스트레이션 substrate다
+
+handoff memo, task state file, structured JSON handoff는 단순 편의가 아니라 **coordination information carrier** 다. [[patterns/agent-planning-to-implementation]] 의 문서 handoff, [[patterns/subagents-delegation]] 의 context firewall도 같은 눈으로 다시 읽을 수 있다.
+
+#### 3) joint trace가 없을수록 interface 품질이 더 중요하다
+
+조직·벤더·신뢰 경계 때문에 모든 실행 기록을 한곳에 모을 수 없다면, centralized planner보다 **경계 친화적 handoff interface** 를 잘 만드는 편이 더 현실적이다.
+
+### 1인 개발자 ROI 3개
+
+1. subagent를 붙일 때 prompt보다 먼저 **handoff artifact 형식(JSON/체크리스트/상태 파일)** 을 정의한다.
+2. 멀티 agent 실패를 모델 품질 문제와 **interface representation gap** 문제로 나눠 본다.
+3. 장기적으로는 "누구에게 넘겼는가" 로그뿐 아니라 **넘긴 artifact가 충분했는가** 까지 기록한다.
 
 ## 왜 중요한가
 

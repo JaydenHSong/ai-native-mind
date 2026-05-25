@@ -6,77 +6,118 @@ let wikiData = [];
 let currentDoc = null;
 let graphSimulation = null;
 
-// 챕터 데이터 정의 (campaign-map.md 기준)
+let currentLanguage = localStorage.getItem("lang") || "ko";
+
+// 다국어 (i18n) 사전 정의
+const i18n = {
+  ko: {
+    quickStats: "개 문서 로드됨",
+    searchPlaceholder: "제목, 태그, 내용 검색...",
+    docCountLabel: "문서 목록",
+    tabCampaign: "성장 로드맵",
+    tabLibrary: "지식 인덱스",
+    tabGraph: "지식 관계망",
+    chapterClear: "Clear!",
+    chapterComplete: "클리어하기",
+    requiredDocs: "필수 수행 문서",
+    clearCond: "클리어 조건",
+    questReward: "퀘스트 보상",
+    fallbackNotice: "영어 번역 준비 중 - 국문 본문 제공",
+    noResults: "검색 결과가 없습니다.",
+    relatedDocs: "연관 지식 링크",
+    originalSources: "참고 및 출처 소스"
+  },
+  en: {
+    quickStats: "pages loaded",
+    searchPlaceholder: "Search titles, tags, content...",
+    docCountLabel: "Documents",
+    tabCampaign: "Growth Roadmap",
+    tabLibrary: "Knowledge Index",
+    tabGraph: "Knowledge Graph",
+    chapterClear: "Clear!",
+    chapterComplete: "Complete",
+    requiredDocs: "Prerequisite Readings",
+    clearCond: "Clear Conditions",
+    questReward: "Quest Rewards",
+    fallbackNotice: "Translation in progress. Showing Korean version.",
+    noResults: "No results found.",
+    relatedDocs: "Related Knowledge Links",
+    originalSources: "Sources & References"
+  }
+};
+
+// 챕터 데이터 정의 (campaign-map.md 기준, 다국어 지원)
 const CHAPTERS = [
   {
     num: 0,
-    title: "튜토리얼 (Tutorial)",
-    desc: "개인 지식 위키의 운영 규칙과 기본 도구 이해",
+    title: { ko: "튜토리얼 (Tutorial)", en: "Tutorial" },
+    desc: { ko: "개인 지식 위키의 운영 규칙 and 기본 도구 이해", en: "Understand the operating rules and basic tools of your personal knowledge wiki" },
     docs: ["patterns/llm-wiki", "tools/obsidian", "tools/claude-code"],
-    quest: "ingest/query/lint 흐름을 3문장으로 설명하기",
-    reward: "개인 위키 사용 규칙 메모 작성"
+    quest: { ko: "ingest/query/lint 흐름을 3문장으로 설명하기", en: "Explain the ingest/query/lint flow in 3 sentences" },
+    reward: { ko: "개인 위키 사용 규칙 메모 작성", en: "Create a memo of personal wiki usage rules" }
   },
   {
     num: 1,
-    title: "세계관 이해 (Worldview)",
-    desc: "AI 네이티브 개발의 3대 핵심 역량 이해",
+    title: { ko: "세계관 이해 (Worldview)", en: "Worldview" },
+    desc: { ko: "AI 네이티브 개발의 3대 핵심 역량 이해", en: "Understand the three core competencies of AI-native development" },
     docs: ["concepts/ai-native-programmer", "concepts/ai-native-architecture"],
-    quest: "AI 네이티브 방식이 필요한 이유 5문장 정리",
-    reward: "내 개발 방식 Before/After 노트"
+    quest: { ko: "AI 네이티브 방식이 필요한 이유 5문장 정리", en: "Summarize in 5 sentences why the AI-native approach is needed" },
+    reward: { ko: "내 개발 방식 Before/After 노트", en: "Before/After notes on my development methodology" }
   },
   {
     num: 2,
-    title: "기본 전투 (Basic Combat)",
-    desc: "컨텍스트와 프롬프트 엔지니어링의 차이와 실습",
+    title: { ko: "기본 전투 (Basic Combat)", en: "Basic Combat" },
+    desc: { ko: "컨텍스트와 프롬프트 엔지니어링의 차이와 실습", en: "Differences and practices of context vs prompt engineering" },
     docs: ["concepts/context-engineering", "concepts/prompt-engineering", "concepts/context-vs-prompt-practice"],
-    quest: "직면한 개발 문제를 prompt vs context로 분류하기",
-    reward: "내 컨텍스트 소스 목록 도출"
+    quest: { ko: "직면한 개발 문제를 prompt vs context로 분류하기", en: "Classify a development issue as prompt vs context-driven" },
+    reward: { ko: "내 컨텍스트 소스 목록 도출", en: "Define my own context sources inventory" }
   },
   {
     num: 3,
-    title: "파티 운영 (Orchestration)",
-    desc: "여러 AI 에이전트 조율 및 워크플로우 설계",
+    title: { ko: "파티 운영 (Orchestration)", en: "Orchestration" },
+    desc: { ko: "여러 AI 에이전트 조율 및 워크플로우 설계", en: "Orchestrate multiple AI agents and design workflows" },
     docs: ["concepts/ai-orchestration", "patterns/orchestration-patterns-practice"],
-    quest: "현재 개발 작업을 6대 패턴으로 직접 분류해보기",
-    reward: "개인 최적 작업 흐름도 작성"
+    quest: { ko: "현재 개발 작업을 6대 패턴으로 직접 분류해보기", en: "Classify your current development tasks into the 6 core patterns" },
+    reward: { ko: "개인 최적 작업 흐름도 작성", en: "Draft your own optimized workflow diagram" }
   },
   {
     num: 4,
-    title: "제작소 (Plan & Build)",
-    desc: "Subagents 위임을 통한 기능 분해 및 TDD 구현",
+    title: { ko: "제작소 (Plan & Build)", en: "Plan & Build" },
+    desc: { ko: "Subagents 위임을 통한 기능 분해 및 TDD 구현", en: "Decompose features via subagents delegation and execute TDD loops" },
     docs: ["patterns/agent-planning-to-implementation", "patterns/subagents-delegation"],
-    quest: "기능 1개를 기획->스펙->구현->검증으로 세분화",
-    reward: "실제 구현 기능 1개 체크리스트"
+    quest: { ko: "기능 1개를 기획->스펙->구현->검증으로 세분화", en: "Decompose one feature into Plan -> Specs -> Implementation -> Verification" },
+    reward: { ko: "실제 구현 기능 1개 체크리스트", en: "Create a checklist for a single implemented feature" }
   },
   {
     num: 5,
-    title: "안전 던전 (Sandbox & Harness)",
-    desc: "샌드박스 보안 설계 및 에이전트 가드레일 하네스 구축",
+    title: { ko: "안전 던전 (Sandbox & Harness)", en: "Sandbox & Harness" },
+    desc: { ko: "샌드박스 보안 설계 및 에이전트 가드레일 하네스 구축", en: "Design sandbox security and establish agent guardrail harnesses" },
     docs: ["patterns/agent-server-harness", "patterns/safe-tool-calling-sandbox", "patterns/owasp-llm-typescript-mitigations"],
-    quest: "서버의 권한/검증/로깅/재시도 누락 지점 1개 발견",
-    reward: "보안 가이드라인 체크리스트 v1"
+    quest: { ko: "서버의 권한/검증/로깅/재시도 누락 지점 1개 발견", en: "Find one missing permission/validation/logging/retry spot in your server" },
+    reward: { ko: "보안 가이드라인 체크리스트 v1", en: "Draft the security guidelines checklist v1" }
   },
   {
     num: 6,
-    title: "운영 보스전 (Eval & Observability)",
-    desc: "품질 평가 방법론(Evals) 및 OTel 오픈 표준 계측",
+    title: { ko: "운영 보스전 (Eval & Observability)", en: "Eval & Observability" },
+    desc: { ko: "품질 평가 방법론(Evals) 및 OTel 오픈 표준 계측", en: "Understand Evals methodology and OTel open standard observability" },
     docs: ["concepts/llm-evaluation", "concepts/gen-ai-observability"],
-    quest: "현재 제품의 품질 지표 2개 + 관측 지표 2개 설정",
-    reward: "대시보드 설계 초안 지표 카드"
+    quest: { ko: "현재 제품의 품질 지표 2개 + 관측 지표 2개 설정", en: "Set up 2 quality metrics + 2 observability metrics for your app" },
+    reward: { ko: "대시보드 설계 초안 지표 카드", en: "Mock up a metrics card dashboard draft" }
   },
   {
     num: 7,
-    title: "엔드게임 (Playbook)",
-    desc: "PR/커밋 자동화 및 비용 최적화(95% 절감)",
+    title: { ko: "엔드게임 (Playbook)", en: "Playbook" },
+    desc: { ko: "PR/커밋 자동화 및 비용 최적화(95% 절감)", en: "Automate PR/commits and optimize AI API costs (95% savings)" },
     docs: ["patterns/git-ai-workflow", "patterns/ai-code-review", "patterns/ai-cost-management"],
-    quest: "반복적인 개발 루틴 중 1개를 완전 자동화",
-    reward: "나만의 AI 개발 플레이북 1페이지"
+    quest: { ko: "반복적인 개발 루틴 중 1개를 완전 자동화", en: "Fully automate one repetitive development routine" },
+    reward: { ko: "나만의 AI 개발 플레이북 1페이지", en: "Create your own 1-page AI development playbook" }
   }
 ];
 
 // 초기화
 document.addEventListener("DOMContentLoaded", () => {
   initTheme();
+  initLanguage();
   fetchWikiData();
   setupEventListeners();
 });
@@ -91,6 +132,17 @@ function initTheme() {
   document.documentElement.setAttribute("data-theme", currentTheme);
   updateThemeIcon(currentTheme);
 
+  // FOUC 방지용 인라인 !important 스타일 즉각 제거하여 CSS transition 및 변수 실시간 구동 허용
+  const removeFoucStyle = () => {
+    const foucStyle = document.getElementById("fouc-background-prevention");
+    if (foucStyle) {
+      foucStyle.remove();
+    }
+  };
+
+  // 초기 구동 시 즉각 락 해제
+  removeFoucStyle();
+
   themeToggle.addEventListener("click", () => {
     const nextTheme = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
     document.documentElement.setAttribute("data-theme", nextTheme);
@@ -98,10 +150,82 @@ function initTheme() {
     document.querySelector('meta[name="color-scheme"]').content = nextTheme === "dark" ? "dark" : "light dark";
     updateThemeIcon(nextTheme);
     
+    // 혹시라도 남아있을 FOUC 스타일 락 완전 격파
+    removeFoucStyle();
+    
     // 그래프가 있는 경우 색상 리셋 및 시뮬레이션 깨우기
     if (graphSimulation) {
       graphSimulation.draw();
       graphSimulation.wake();
+    }
+  });
+}
+
+// ==========================================================================
+// 1.1. 언어 관리 (Language Manager)
+// ==========================================================================
+function initLanguage() {
+  const langToggle = document.getElementById("lang-toggle");
+  if (!langToggle) return;
+
+  updateUILanguage();
+
+  langToggle.addEventListener("click", () => {
+    currentLanguage = currentLanguage === "ko" ? "en" : "ko";
+    localStorage.setItem("lang", currentLanguage);
+    
+    // UI 전체 리렌더링
+    updateUILanguage();
+    filterWiki();
+    renderLibraryIndex();
+    renderCampaignMap();
+    
+    // 물리 그래프 재생성 (리스너 및 시뮬레이션 교체)
+    initGraph();
+    
+    // 현재 읽던 문서가 있다면 대칭 라우팅 실행
+    if (currentDoc) {
+      handleRouting();
+    }
+  });
+}
+
+function updateUILanguage() {
+  const t = i18n[currentLanguage];
+  if (!t) return;
+
+  // 1. 탭 버튼 번역
+  const tabCampaign = document.querySelector('.tab-btn[data-tab="campaign"]');
+  if (tabCampaign) tabCampaign.innerHTML = `<i class="fa-solid fa-map"></i> ${t.tabCampaign}`;
+  
+  const tabLibrary = document.querySelector('.tab-btn[data-tab="library"]');
+  if (tabLibrary) tabLibrary.innerHTML = `<i class="fa-solid fa-list-check"></i> ${t.tabLibrary}`;
+  
+  const tabGraph = document.querySelector('.tab-btn[data-tab="graph"]');
+  if (tabGraph) tabGraph.innerHTML = `<i class="fa-solid fa-circle-nodes"></i> ${t.tabGraph}`;
+  
+  // 2. 검색 플레이스홀더 번역
+  const searchInput = document.getElementById("search-input");
+  if (searchInput) searchInput.placeholder = t.searchPlaceholder;
+  
+  // 3. 문서 목록 헤더 번역
+  const listHeader = document.querySelector(".nav-section-title span:first-child");
+  if (listHeader) listHeader.textContent = t.docCountLabel;
+  
+  // 4. 모바일 위로 가기 버튼 번역
+  const mobileBackBtn = document.getElementById("mobile-back-btn");
+  if (mobileBackBtn) mobileBackBtn.innerHTML = `<i class="fa-solid fa-chevron-up"></i> ${currentLanguage === 'ko' ? '위로 가기' : 'Go Top'}`;
+
+  // 5. 로고 서브텍스트 번역
+  const logoSubtext = document.querySelector(".logo-text .subtext");
+  if (logoSubtext) logoSubtext.textContent = currentLanguage === 'ko' ? "지식 위키" : "Knowledge Hub";
+  
+  // 6. 언어 토글 칩 액티브 상태 반영
+  document.querySelectorAll(".lang-label").forEach(lbl => {
+    if (lbl.getAttribute("data-lang") === currentLanguage) {
+      lbl.classList.add("active");
+    } else {
+      lbl.classList.remove("active");
     }
   });
 }
@@ -124,12 +248,11 @@ async function fetchWikiData() {
     if (!response.ok) throw new Error("데이터 파일을 불러올 수 없습니다.");
     wikiData = await response.json();
     
-    // 로드 통계 업데이트
-    document.getElementById("quick-stats").textContent = `${wikiData.length} Pages loaded`;
-    document.getElementById("doc-count").textContent = wikiData.length;
-
-    // UI 렌더링
-    renderDocumentList(wikiData);
+    // UI 다국어 번역 즉시 동기화
+    updateUILanguage();
+    
+    // UI 필터링 렌더링
+    filterWiki();
     renderLibraryIndex();
     renderCampaignMap();
     initGraph();
@@ -148,9 +271,10 @@ async function fetchWikiData() {
 function renderDocumentList(data) {
   const listElement = document.getElementById("document-list");
   listElement.innerHTML = "";
+  const t = i18n[currentLanguage];
   
   if (data.length === 0) {
-    listElement.innerHTML = '<li class="no-results">검색 결과가 없습니다.</li>';
+    listElement.innerHTML = `<li class="no-results">${t.noResults}</li>`;
     return;
   }
 
@@ -190,7 +314,7 @@ function renderLibraryIndex() {
   };
 
   Object.entries(categories).forEach(([key, cat]) => {
-    const pages = wikiData.filter(d => d.category === key || (key === 'meta' && d.category === 'wiki'));
+    const pages = wikiData.filter(d => d.lang === currentLanguage && (d.category === key || (key === 'meta' && d.category === 'wiki')));
     if (pages.length === 0) return;
 
     const card = document.createElement("div");
@@ -231,6 +355,8 @@ function renderCampaignMap() {
   
   const completedChapters = JSON.parse(localStorage.getItem("completed-chapters") || "[]");
 
+  const t = i18n[currentLanguage];
+  
   CHAPTERS.forEach(ch => {
     const isCompleted = completedChapters.includes(ch.num);
     const row = document.createElement("div");
@@ -239,7 +365,11 @@ function renderCampaignMap() {
 
     // 연관된 문서들 칩 마크업 생성
     const docsHTML = ch.docs.map(docId => {
-      const doc = wikiData.find(d => d.id === docId || d.filename === docId.split('/').pop());
+      // 해당 챕터용 문서 매칭 (언어 및 폴백 처리)
+      let doc = wikiData.find(d => (d.id === docId || d.filename === docId.split('/').pop()) && d.lang === currentLanguage);
+      if (!doc) {
+        doc = wikiData.find(d => (d.id === docId || d.filename === docId.split('/').pop()) && d.lang === 'ko');
+      }
       const title = doc ? doc.title : docId.split('/').pop();
       return `
         <a class="ch-doc-link" data-id="${doc ? doc.id : docId}">
@@ -249,7 +379,7 @@ function renderCampaignMap() {
     }).join("");
 
     row.innerHTML = `
-      <div class="chapter-marker" title="챕터 ${ch.num} 상세">
+      <div class="chapter-marker" title="CH ${ch.num}">
         <span class="ch-num">CH</span>
         <span class="ch-id">${ch.num}</span>
       </div>
@@ -257,17 +387,17 @@ function renderCampaignMap() {
       <div class="chapter-card glass-panel">
         <div class="chapter-header-info">
           <div>
-            <h3>${ch.title}</h3>
-            <div class="ch-desc">${ch.desc}</div>
+            <h3>${ch.title[currentLanguage] || ch.title['ko']}</h3>
+            <div class="ch-desc">${ch.desc[currentLanguage] || ch.desc['ko']}</div>
           </div>
           <button class="chapter-check-btn" data-num="${ch.num}">
             <i class="fa-solid ${isCompleted ? 'fa-circle-check' : 'fa-circle'}"></i> 
-            <span>${isCompleted ? 'Clear!' : '클리어하기'}</span>
+            <span>${isCompleted ? t.chapterClear : t.chapterComplete}</span>
           </button>
         </div>
 
         <div class="chapter-docs-section">
-          <span class="section-lbl">필수 수행 문서</span>
+          <span class="section-lbl">${t.requiredDocs}</span>
           <div class="chapter-links">
             ${docsHTML}
           </div>
@@ -275,12 +405,12 @@ function renderCampaignMap() {
 
         <div class="quest-reward-board">
           <div class="quest-item">
-            <span class="board-lbl"><i class="fa-solid fa-bullseye"></i> 클리어 조건</span>
-            <span>${ch.quest}</span>
+            <span class="board-lbl"><i class="fa-solid fa-bullseye"></i> ${t.clearCond}</span>
+            <span>${ch.quest[currentLanguage] || ch.quest['ko']}</span>
           </div>
           <div class="reward-item">
-            <span class="board-lbl"><i class="fa-solid fa-gift"></i> 퀘스트 보상</span>
-            <span>${ch.reward}</span>
+            <span class="board-lbl"><i class="fa-solid fa-gift"></i> ${t.questReward}</span>
+            <span>${ch.reward[currentLanguage] || ch.reward['ko']}</span>
           </div>
         </div>
       </div>
@@ -314,8 +444,9 @@ function toggleChapterCompletion(num) {
     // 클리어 처리
     completed.push(num);
     localStorage.setItem("completed-chapters", JSON.stringify(completed));
+    const t = i18n[currentLanguage];
     row.classList.add("completed");
-    btn.innerHTML = `<i class="fa-solid fa-circle-check"></i> <span>Clear!</span>`;
+    btn.innerHTML = `<i class="fa-solid fa-circle-check"></i> <span>${t.chapterClear}</span>`;
     
     // 폭죽 효과 (canvas-confetti)
     if (typeof confetti === "function") {
@@ -327,10 +458,11 @@ function toggleChapterCompletion(num) {
     }
   } else {
     // 취소 처리
+    const t = i18n[currentLanguage];
     completed.splice(index, 1);
     localStorage.setItem("completed-chapters", JSON.stringify(completed));
     row.classList.remove("completed");
-    btn.innerHTML = `<i class="fa-solid fa-circle"></i> <span>클리어하기</span>`;
+    btn.innerHTML = `<i class="fa-solid fa-circle"></i> <span>${t.chapterComplete}</span>`;
   }
 }
 
@@ -347,25 +479,33 @@ function handleRouting() {
     return;
   }
 
-  // 문서 찾기 (id 일치 또는 filename 일치)
-  const doc = wikiData.find(d => d.id === hash || d.filename === hash || d.path === hash);
+  // 1. 현재 선택된 언어에서 매칭되는 문서 찾기
+  let doc = wikiData.find(d => (d.id === hash || d.filename === hash || d.path === hash) && d.lang === currentLanguage);
+  let isFallback = false;
+  
+  // 2. 만약 현재 언어가 영어인데 찾지 못했다면 국문 파일로 자동 폴백 매핑
+  if (!doc && currentLanguage === 'en') {
+    doc = wikiData.find(d => (d.id === hash || d.filename === hash || d.path === hash) && d.lang === 'ko');
+    if (doc) isFallback = true;
+  }
   
   if (doc) {
-    loadDocument(doc);
+    loadDocument(doc, isFallback);
   } else {
     console.warn("문서를 찾을 수 없습니다:", hash);
     // 깨진 링크이거나 찾지 못한 경우
     document.getElementById("reading-placeholder").innerHTML = `
       <div class="placeholder-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
-      <h3>문서를 찾을 수 없음</h3>
-      <p>"${hash}" 경로는 위키에 존재하지 않거나 잘못된 링킹입니다.</p>
+      <h3>${currentLanguage === 'ko' ? '문서를 찾을 수 없음' : 'Document Not Found'}</h3>
+      <p>"${hash}" ${currentLanguage === 'ko' ? '경로는 위키에 존재하지 않거나 잘못된 링킹입니다.' : 'path does not exist in the wiki or contains an invalid link.'}</p>
     `;
     openReadingPanel();
   }
 }
 
-function loadDocument(doc) {
+function loadDocument(doc, isFallback = false) {
   currentDoc = doc;
+  const t = i18n[currentLanguage];
   
   // 사이드바 활성 아이템 강조
   document.querySelectorAll(".doc-item").forEach(item => {
@@ -382,7 +522,7 @@ function loadDocument(doc) {
   reader.classList.remove("hidden");
 
   // 메타 정보
-  document.getElementById("doc-category").textContent = doc.category;
+  document.getElementById("doc-category").textContent = doc.category.toUpperCase();
   document.getElementById("reading-panel").setAttribute("data-category", doc.category);
   document.getElementById("doc-title").textContent = doc.title;
   document.getElementById("doc-confidence").querySelector("span").textContent = doc.confidence.toUpperCase();
@@ -398,6 +538,7 @@ function loadDocument(doc) {
   const easyReadPanel = document.getElementById("easy-read-panel");
   if (doc.easyRead) {
     easyReadPanel.classList.remove("hidden");
+    easyReadPanel.querySelector(".section-lbl").innerHTML = `<i class="fa-solid fa-book-open"></i> ${currentLanguage === 'ko' ? '쉽게 읽기 요약' : 'Easy Read Summary'}`;
     document.getElementById("easy-read-body").innerHTML = resolveWikilinks(marked.parse(doc.easyRead));
   } else {
     easyReadPanel.classList.add("hidden");
@@ -406,10 +547,27 @@ function loadDocument(doc) {
   // 본문 마크다운 렌더링
   const bodyViewer = document.getElementById("markdown-viewer");
   let bodyHTML = marked.parse(doc.body);
-  bodyViewer.innerHTML = resolveWikilinks(bodyHTML);
+  
+  // 스마트 폴백 공지 인젝션
+  if (isFallback) {
+    bodyViewer.innerHTML = `
+      <div class="fallback-banner">
+        <i class="fa-solid fa-circle-info"></i>
+        <div>
+          <strong>English translation in progress.</strong> Showing Korean version.
+        </div>
+      </div>
+      ${resolveWikilinks(bodyHTML)}
+    `;
+  } else {
+    bodyViewer.innerHTML = resolveWikilinks(bodyHTML);
+  }
 
   // 연관 지식 링킹 버튼 생성
   const relContainer = document.getElementById("doc-related-links");
+  const relLabel = relContainer.parentElement.querySelector(".section-lbl");
+  if (relLabel) relLabel.textContent = t.relatedDocs;
+  
   const allRelated = [...new Set([...doc.related, ...doc.extractedRelated])];
   
   // 자기 자신 링크 제외
@@ -420,7 +578,13 @@ function loadDocument(doc) {
     relContainer.innerHTML = filteredRelated.map(linkPath => {
       // 카테고리 추출 및 타이틀 찾기
       const cleanPath = linkPath.replace(/^\[\[|\]\]$/g, '');
-      const relatedDoc = wikiData.find(d => d.id === cleanPath || d.filename === cleanPath || d.id.endsWith(cleanPath));
+      
+      // 연관 링크도 현재 언어에 맞게 찾고 폴백
+      let relatedDoc = wikiData.find(d => (d.id === cleanPath || d.filename === cleanPath || d.id.endsWith(cleanPath)) && d.lang === currentLanguage);
+      if (!relatedDoc) {
+        relatedDoc = wikiData.find(d => (d.id === cleanPath || d.filename === cleanPath || d.id.endsWith(cleanPath)) && d.lang === 'ko');
+      }
+      
       const title = relatedDoc ? relatedDoc.title : cleanPath.split('/').pop();
       return `<a class="related-link-btn" data-id="${relatedDoc ? relatedDoc.id : cleanPath}">${title}</a>`;
     }).join("");
@@ -436,6 +600,9 @@ function loadDocument(doc) {
 
   // 원천 소스 리스트
   const sourcesContainer = document.getElementById("doc-sources-list");
+  const sourcesLabel = sourcesContainer.parentElement.querySelector(".section-lbl");
+  if (sourcesLabel) sourcesLabel.textContent = t.originalSources;
+  
   if (doc.sources && doc.sources.length > 0) {
     sourcesContainer.parentElement.classList.remove("hidden");
     sourcesContainer.innerHTML = doc.sources.map(s => `<li>${s}</li>`).join("");
@@ -468,15 +635,23 @@ function loadDocument(doc) {
 function resolveWikilinks(htmlContent) {
   // [[category/page-name|보여질 이름]] 또는 [[category/page-name]] 형태 매칭
   return htmlContent.replace(/\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g, (match, linkPath, linkText) => {
-    const cleanPath = linkPath.trim();
+    let cleanPath = linkPath.trim().replace(/\\/g, '/');
+    if (cleanPath.startsWith('ko/')) {
+      cleanPath = cleanPath.slice(3);
+    } else if (cleanPath.startsWith('en/')) {
+      cleanPath = cleanPath.slice(3);
+    }
     const text = linkText ? linkText.trim() : cleanPath.split('/').pop();
     
     // 파일명 또는 ID 매칭 확인
     const exists = wikiData.some(d => d.id === cleanPath || d.filename === cleanPath || d.id.endsWith(cleanPath));
     const classList = exists ? 'wikilink' : 'wikilink broken-link';
     
-    // 위키 데이터에서 실제 매칭되는 ID 획득
-    const matchedDoc = wikiData.find(d => d.id === cleanPath || d.filename === cleanPath || d.id.endsWith(cleanPath));
+    // 위키 데이터에서 실제 매칭되는 ID 획득 (현재 언어 우선 검색, 없으면 일반 검색)
+    let matchedDoc = wikiData.find(d => (d.id === cleanPath || d.filename === cleanPath || d.id.endsWith(cleanPath)) && d.lang === currentLanguage);
+    if (!matchedDoc) {
+      matchedDoc = wikiData.find(d => d.id === cleanPath || d.filename === cleanPath || d.id.endsWith(cleanPath));
+    }
     const finalHash = matchedDoc ? matchedDoc.id : cleanPath;
     
     return `<a href="#${finalHash}" class="${classList}">${text}</a>`;
@@ -576,7 +751,11 @@ function filterWiki() {
   const activeChip = document.querySelector(".filter-chip.active");
   const category = activeChip ? activeChip.getAttribute("data-category") : "all";
 
-  let filtered = wikiData;
+  // 0. 현재 언어 데이터셋 추출
+  let filtered = wikiData.filter(doc => doc.lang === currentLanguage);
+  
+  // 로드 통계 카운터 갱신
+  updateDocCount();
 
   // 1. 카테고리 필터링
   if (category !== "all") {
@@ -597,12 +776,36 @@ function filterWiki() {
   renderDocumentList(filtered);
 }
 
+function updateDocCount() {
+  const langDocs = wikiData.filter(d => d.lang === currentLanguage);
+  const docCountLabel = document.getElementById("doc-count");
+  if (docCountLabel) docCountLabel.textContent = langDocs.length;
+  
+  const quickStats = document.getElementById("quick-stats");
+  if (quickStats) {
+    if (currentLanguage === "ko") {
+      quickStats.textContent = `${langDocs.length}개 문서 로드됨`;
+    } else {
+      quickStats.textContent = `${langDocs.length} ${i18n.en.quickStats}`;
+    }
+  }
+}
+
 // ==========================================================================
 // 5. 인터랙티브 지식 관계망 그래프 (Custom Physics Canvas Graph)
 // ==========================================================================
 function initGraph() {
-  const canvas = document.getElementById("knowledge-graph-canvas");
-  if (!canvas) return;
+  const oldCanvas = document.getElementById("knowledge-graph-canvas");
+  if (!oldCanvas) return;
+
+  // 이전 루프 정지
+  if (graphSimulation && graphSimulation.stop) {
+    graphSimulation.stop();
+  }
+
+  // 이전 리스너들 한방에 제거하기 위해 캔버스 노드 복제 교체 (이벤트 누수 철저 방어)
+  const canvas = oldCanvas.cloneNode(true);
+  oldCanvas.parentNode.replaceChild(canvas, oldCanvas);
 
   const ctx = canvas.getContext("2d");
   const container = canvas.parentElement;
@@ -613,7 +816,6 @@ function initGraph() {
   canvas.width = width;
   canvas.height = height;
 
-  // 가상 물리 월드 평원 크기 정의 (76개 노드가 140px 거리를 두고 겹침 없이 퍼질 수 있는 넉넉한 2400x1800 공간 제공)
   const worldWidth = 2400;
   const worldHeight = 1800;
 
@@ -629,10 +831,12 @@ function initGraph() {
     }
   });
 
+  // 1. 현재 언어 데이터셋 추출
+  const langDocs = wikiData.filter(d => d.lang === currentLanguage);
+
   // 노드 및 링크 데이터 매핑
-  const nodes = wikiData.map((doc, i) => {
-    const angle = (i / wikiData.length) * Math.PI * 2;
-    // 가상 월드의 중심을 기준으로 고르게 흩뿌림
+  const nodes = langDocs.map((doc, i) => {
+    const angle = (i / langDocs.length) * Math.PI * 2;
     const r = Math.min(worldWidth, worldHeight) * 0.3 * Math.random() + 100;
     return {
       id: doc.id,
@@ -649,7 +853,7 @@ function initGraph() {
   });
 
   const links = [];
-  wikiData.forEach(doc => {
+  langDocs.forEach(doc => {
     const allRelated = [...new Set([...doc.related, ...doc.extractedRelated])];
     allRelated.forEach(rel => {
       const cleanRel = rel.replace(/^\[\[|\]\]$/g, '');
@@ -657,7 +861,6 @@ function initGraph() {
       const sourceNode = nodes.find(n => n.id === doc.id);
       
       if (sourceNode && targetNode && sourceNode !== targetNode) {
-        // 중복 방지
         const exists = links.some(l => 
           (l.source.id === sourceNode.id && l.target.id === targetNode.id) ||
           (l.source.id === targetNode.id && l.target.id === sourceNode.id)
@@ -1168,6 +1371,11 @@ function initGraph() {
     },
     stop: () => {
       activeAnimation = false;
+      isLooping = false;
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+        animationFrameId = null;
+      }
     },
     draw: () => {
       // 실시간 바뀐 CSS 토큰 다시 적용 후 리드로우

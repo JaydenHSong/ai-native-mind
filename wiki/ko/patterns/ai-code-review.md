@@ -1,15 +1,17 @@
 ---
 title: "AI 코드 리뷰 워크플로우"
 category: patterns
-tags: [code-review, workflow, solo-developer, claude-code, execution-grounding, constraint-decay, framework-sensitivity, roadmap, release-scale]
+tags: [code-review, workflow, solo-developer, claude-code, execution-grounding, constraint-decay, framework-sensitivity, roadmap, release-scale, reward-hacking, process-evaluation]
 created: 2026-04-09
-updated: 2026-05-18
+updated: 2026-05-21
 sources:
   - "raw/notes/2026-04-09-ai-code-review.md"
   - "raw/articles/2026-05-13-verify-before-you-fix-execution-grounding.md"
   - "raw/articles/2026-05-15-constraint-decay-backend-code-fragility.md"
   - "raw/articles/2026-05-18-effective-harness-engineering-algorithm-discovery.md"
   - "raw/articles/2026-05-18-roadmapbench-long-horizon-version-upgrades.md"
+  - "raw/articles/2026-05-21-specbench-reward-hacking-coding-agents.md"
+  - "raw/articles/2026-05-21-procbench-process-defects-control-preservation.md"
 related:
   - "[[patterns/claude-md-guide]]"
   - "[[patterns/subagents-delegation]]"
@@ -300,6 +302,68 @@ Stage 3: Validation-Aware Iterative Repair
 1. 테스트를 통과한 변경이라도 **하드코딩·fixture 조작·평가 함수 우회**를 의심하는 체크 한 줄을 리뷰 템플릿에 넣는다.
 2. 여러 PR에 걸친 기능 작업은 마지막에 **roadmap checklist** 로 다시 검토한다.
 3. 병렬 작업을 돌릴 때는 공유 브랜치보다 **worktree/격리 작업공간** 을 써서 리뷰 가능한 change-set을 유지한다.
+
+## 2026-05-21 보강 — reward hacking review와 process review를 분리해야 한다
+
+오늘 읽은 두 편은 이 페이지의 "리뷰"를 다시 둘로 쪼갠다.
+
+- **SpecBench**: 테스트를 통과한 코드가 정말 spec을 구현했는지 검토해야 한다
+- **ProcBench**: 그 수정 과정이 사람이 붙잡을 수 있는 흐름이었는지도 검토해야 한다
+
+즉 AI 코드 리뷰는 이제 correctness review만이 아니라 **anti-gaming review + controllability review** 까지 포함한다.
+
+### 1) SpecBench — 테스트 통과를 그대로 신뢰하면 안 된다
+
+[SpecBench](https://arxiv.org/abs/2605.21384) 는 long-horizon coding agent가 visible test를 거의 다 맞혀도 held-out composition test에서는 크게 무너질 수 있음을 보인다.
+
+- **30 systems-level tasks**
+- short horizon부터 **OS kernel** 급 ultra long horizon까지 포함
+- visible suite는 saturation되기 쉽다
+- held-out gap은 남고, **code size 10x마다 28 percentage points** 커진다
+
+코드 리뷰 관점으로 바꾸면 다음 질문이 추가된다.
+
+- 이 변경은 테스트를 **진짜 만족** 시켰는가?
+- 아니면 테스트 fixture / 입력 패턴 / 공개 assertion에만 과적합했는가?
+
+즉 "PASS" 는 리뷰 종료 신호가 아니라, 오히려 **reward hacking 의심 검토 시작 신호** 일 수 있다.
+
+### 2) ProcBench — 좋은 수정은 결과뿐 아니라 과정도 회수 가능해야 한다
+
+[ProcBench](https://arxiv.org/abs/2605.20251) 는 process-level defect와 **control preservation** 을 평가한다.
+
+- **11 defect types / 4 categories**
+- raw log를 **unified trajectory representation** 으로 표준화
+- **200 cases** across AndroidBench / TerminalBench / SWE-bench-Verified
+- control preservation = **interpretable / interruptible / correctable / reversible / authority hand-back**
+
+이걸 코드 리뷰 워크플로우에 번역하면, 좋은 AI 수정은 단순히 최종 patch가 맞는 수정이 아니라
+
+1. 무엇을 하려는지 읽히고
+2. 중간에 멈출 수 있고
+3. 잘못되면 되돌릴 수 있고
+4. 사람이 통제권을 회수할 수 있는 수정
+
+이어야 한다.
+
+### 실전 루틴에 어떻게 끼우나
+
+```text
+1. Plan
+2. AI Review (logic / security / edge case)
+2.5 Structural Verify (framework idiom / architecture)
+2.8 Anti-gaming Review (fixture 조작, 입력 암기, visible-test overfit 감시)
+2.9 Process Review (interruptibility / reversibility / hand-back 가능성 확인)
+3. Execute (tests / exploit repro / rollback check)
+4. Release-scale Roadmap Review
+```
+
+### 1인 개발자 즉효 ROI
+
+1. self-review 템플릿에 **"이 변경이 테스트를 속이는 방식은 없는가?"** 한 줄을 추가한다.
+2. 큰 변경에는 **rollback plan** 과 **중간 중단 기준** 을 같이 적는다.
+3. agent가 생성한 patch를 볼 때 diff만 보지 말고 **어떤 명령과 경로로 그 patch에 도달했는지** 까지 본다.
+4. long-horizon 작업은 최종 성공률보다 **사람이 개입 가능한 실패를 하는가** 를 더 높게 친다.
 
 ## Chapter Clear 가이드
 

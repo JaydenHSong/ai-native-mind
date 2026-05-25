@@ -79,6 +79,19 @@ function parseFrontmatter(frontmatterStr) {
 function parseMarkdownFile(filePath) {
   const content = fs.readFileSync(filePath, 'utf-8');
   const relPath = path.relative(WIKI_DIR, filePath);
+  const normalizedRelPath = relPath.replace(/\\/g, '/');
+  
+  // 언어 파악 및 대칭 경로 산출
+  let lang = 'ko';
+  let cleanRelPath = normalizedRelPath;
+  
+  if (normalizedRelPath.startsWith('ko/')) {
+    lang = 'ko';
+    cleanRelPath = normalizedRelPath.slice(3);
+  } else if (normalizedRelPath.startsWith('en/')) {
+    lang = 'en';
+    cleanRelPath = normalizedRelPath.slice(3);
+  }
   
   const frontmatterRegex = /^---\r?\n([\s\S]*?)\r?\n---/;
   const fmMatch = content.match(frontmatterRegex);
@@ -91,30 +104,48 @@ function parseMarkdownFile(filePath) {
     body = content.slice(fmMatch[0].length).trim();
   }
   
-  // 쉽게 읽기 섹션 추출
-  const easyReadMatch = body.match(/(?:#|##)\s*쉽게\s*읽기([\s\S]*?)(?=\n(?:#|##)\s|$)/i);
+  // 쉽게 읽기 / Easy Read 섹션 추출 (영어/한글 모두 지원)
+  const easyReadMatch = body.match(/(?:#|##)\s*(?:쉽게\s*읽기|Easy\s*Read)([\s\S]*?)(?=\n(?:#|##)\s|$)/i);
   const easyRead = easyReadMatch ? easyReadMatch[1].trim() : '';
 
   // 기본 메타데이터 보강
-  const filename = path.basename(relPath, '.md');
-  const defaultCategory = path.dirname(relPath) === '.' ? 'meta' : path.dirname(relPath);
+  const filename = path.basename(cleanRelPath, '.md');
+  const defaultCategory = path.dirname(cleanRelPath) === '.' ? 'meta' : path.dirname(cleanRelPath);
 
-  // Wikilink 파싱하여 연결망(Edge) 추출 (예: [[concepts/ai-native-programmer|AI 네이티브]])
+  // Wikilink 파싱하여 연결망(Edge) 추출 (언어 네임스페이스 제외)
   const relatedLinks = [];
   const wikilinkRegex = /\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g;
   let match;
   while ((match = wikilinkRegex.exec(body)) !== null) {
-    const linkPath = match[1].trim();
+    let linkPath = match[1].trim().replace(/\\/g, '/');
+    if (linkPath.startsWith('ko/')) {
+      linkPath = linkPath.slice(3);
+    } else if (linkPath.startsWith('en/')) {
+      linkPath = linkPath.slice(3);
+    }
     // 중복 제거 및 유효한 링크만 추가
     if (!relatedLinks.includes(linkPath)) {
       relatedLinks.push(linkPath);
     }
   }
+
+  // frontmatter의 related 대칭 매핑
+  const cleanedRelated = (metadata.related || []).map(link => {
+    let cleanLink = link.replace(/\\/g, '/');
+    if (cleanLink.startsWith('ko/')) {
+      cleanLink = cleanLink.slice(3);
+    } else if (cleanLink.startsWith('en/')) {
+      cleanLink = cleanLink.slice(3);
+    }
+    cleanLink = cleanLink.replace(/^\[\[|\]\]$/g, '');
+    return cleanLink;
+  });
   
   return {
-    id: relPath.replace('.md', ''),
+    id: cleanRelPath.replace('.md', ''),
+    lang: lang,
     filename: filename,
-    path: relPath,
+    path: normalizedRelPath,
     title: metadata.title || filename,
     category: metadata.category || defaultCategory,
     tags: metadata.tags || [],
@@ -123,7 +154,7 @@ function parseMarkdownFile(filePath) {
     sources: metadata.sources || [],
     status: metadata.status || 'draft',
     confidence: metadata.confidence || 'medium',
-    related: metadata.related || [],
+    related: cleanedRelated,
     extractedRelated: relatedLinks, // 본문 검색으로 얻은 실제 연결망
     easyRead: easyRead,
     body: body
@@ -147,12 +178,12 @@ try {
   fs.writeFileSync(OUT_FILE, JSON.stringify(wikiData, null, 2), 'utf-8');
   console.log(`✨ 컴파일 성공! 데이터 파일이 저장되었습니다: ${OUT_FILE}`);
   console.log(`📊 빌드 완료 통계:
-  - 총 페이지 수: ${wikiData.length}
+  - 총 페이지 수: ${wikiData.length} (KO: ${wikiData.filter(d => d.lang === 'ko').length}개 / EN: ${wikiData.filter(d => d.lang === 'en').length}개)
   - Concepts: ${wikiData.filter(d => d.category === 'concepts').length}개
   - Tools: ${wikiData.filter(d => d.category === 'tools').length}개
   - Patterns: ${wikiData.filter(d => d.category === 'patterns').length}개
   - Comparisons: ${wikiData.filter(d => d.category === 'comparisons').length}개
-  - Journal: ${wikiData.filter(d => d.category === 'journal').length}개
+  - Journal: ${wikiData.filter(d => d.lang === 'ko' && d.category === 'journal').length}개 (KO) / ${wikiData.filter(d => d.lang === 'en' && d.category === 'journal').length}개 (EN)
   - Meta: ${wikiData.filter(d => d.category === 'meta' || d.category === 'wiki').length}개
   `);
 } catch (error) {

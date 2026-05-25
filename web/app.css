@@ -4,6 +4,14 @@
 
 /* 1. 디자인 시스템 토큰 & 테마 정의 */
 :root {
+  /* 카테고리별 테마 네온 컬러 (종속성 상부 선언) */
+  --concepts-color: #a78bfa;     /* 펄플 */
+  --tools-color: #34d399;        /* 에메랄드 */
+  --patterns-color: #fb923c;     /* 오렌지 */
+  --comparisons-color: #f472b6;  /* 핑크 */
+  --journal-color: #22d3ee;      /* 사이안 */
+  --meta-color: #facc15;         /* 골드 */
+
   /* 글로벌 폰트 패밀리 */
   --font-title: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -20,8 +28,8 @@
   --pre-bg: #111116;
   --pre-text: #f4f4f5;
   --pre-border: rgba(255, 255, 255, 0.06);
-  --inline-code-bg: rgba(0, 0, 0, 0.25);
-  --inline-code-color: var(--concepts-color);
+  --inline-code-bg: rgba(255, 255, 255, 0.04);
+  --inline-code-color: #c084fc; /* 기본 연보라 (다이나믹 카테고리 폴백) */
   
   --search-input-bg: rgba(0, 0, 0, 0.2);
   --search-input-focus-bg: rgba(0, 0, 0, 0.35);
@@ -33,14 +41,6 @@
   --easy-read-bg: rgba(99, 102, 241, 0.02);
   --easy-read-border: rgba(99, 102, 241, 0.2);
   --table-th-bg: rgba(0, 0, 0, 0.15);
-  
-  /* 카테고리별 테마 네온 컬러 */
-  --concepts-color: #a78bfa;     /* 펄플 */
-  --tools-color: #34d399;        /* 에메랄드 */
-  --patterns-color: #fb923c;     /* 오렌지 */
-  --comparisons-color: #f472b6;  /* 핑크 */
-  --journal-color: #22d3ee;      /* 사이안 */
-  --meta-color: #facc15;         /* 골드 */
 
   /* 기본 컬러 */
   --text-primary: #f4f4f5;
@@ -61,6 +61,14 @@
 
 /* 라이트 모드 오버라이드 */
 [data-theme="light"] {
+  /* 카테고리별 라이트 톤 최적화 (종속성 상부 선언) */
+  --concepts-color: #7c3aed;
+  --tools-color: #059669;
+  --patterns-color: #ea580c;
+  --comparisons-color: #db2777;
+  --journal-color: #0891b2;
+  --meta-color: #ca8a04;
+
   --bg-base: #f8fafc;
   --bg-surface: rgba(255, 255, 255, 0.65);
   --bg-surface-hover: rgba(0, 0, 0, 0.03);
@@ -72,8 +80,8 @@
   --pre-bg: #f1f5f9;
   --pre-text: #0f172a;
   --pre-border: rgba(0, 0, 0, 0.08);
-  --inline-code-bg: rgba(0, 0, 0, 0.04);
-  --inline-code-color: #6d28d9; /* 가독성 높은 진보라 */
+  --inline-code-bg: rgba(0, 0, 0, 0.03);
+  --inline-code-color: #6d28d9; /* 기본 진보라 (다이나믹 카테고리 폴백) */
   
   --search-input-bg: rgba(0, 0, 0, 0.03);
   --search-input-focus-bg: rgba(0, 0, 0, 0.06);
@@ -85,14 +93,6 @@
   --easy-read-bg: rgba(79, 70, 229, 0.04);
   --easy-read-border: rgba(79, 70, 229, 0.15);
   --table-th-bg: rgba(0, 0, 0, 0.04);
-
-  /* 카테고리별 라이트 톤 최적화 */
-  --concepts-color: #7c3aed;
-  --tools-color: #059669;
-  --patterns-color: #ea580c;
-  --comparisons-color: #db2777;
-  --journal-color: #0891b2;
-  --meta-color: #ca8a04;
 
   --text-primary: #0f172a;
   --text-secondary: #475569;
@@ -189,6 +189,67 @@ body {
 }
 .icon-btn:active {
   transform: translateY(0);
+}
+
+/* 다국어 전환 버튼 & 폴백 배너 */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lang-btn {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  height: 34px;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  font-family: var(--font-title);
+  transition: var(--transition-fast);
+  letter-spacing: 0.5px;
+}
+.lang-btn:hover {
+  background: var(--bg-surface-hover);
+  border-color: var(--text-secondary);
+}
+.lang-label {
+  transition: var(--transition-fast);
+  padding: 2px 4px;
+}
+.lang-label.active {
+  color: var(--accent-primary);
+  text-shadow: 0 0 8px var(--accent-glow);
+}
+.lang-divider {
+  color: var(--border-color);
+  font-weight: 300;
+  margin: 0 2px;
+}
+
+.fallback-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: rgba(251, 146, 60, 0.06);
+  border: 1px dashed rgba(251, 146, 60, 0.25);
+  border-radius: 10px;
+  margin-bottom: 24px;
+  color: var(--patterns-color);
+  font-size: 0.82rem;
+  font-weight: 500;
+  line-height: 1.45;
+  box-shadow: 0 4px 12px rgba(251, 146, 60, 0.03);
+}
+.fallback-banner i {
+  font-size: 0.95rem;
+  flex-shrink: 0;
 }
 
 .text-gradient {
@@ -1019,6 +1080,14 @@ body {
   flex-direction: column;
 }
 
+/* 읽기 패널 카테고리별 다이내믹 컬러 변수 매핑 */
+#reading-panel[data-category="concepts"] { --current-category-color: var(--concepts-color); }
+#reading-panel[data-category="tools"] { --current-category-color: var(--tools-color); }
+#reading-panel[data-category="patterns"] { --current-category-color: var(--patterns-color); }
+#reading-panel[data-category="comparisons"] { --current-category-color: var(--comparisons-color); }
+#reading-panel[data-category="journal"] { --current-category-color: var(--journal-color); }
+#reading-panel[data-category="meta"] { --current-category-color: var(--meta-color); }
+
 .reading-placeholder-content {
   flex-grow: 1;
   display: flex;
@@ -1192,7 +1261,7 @@ body {
   padding: 2px 6px;
   border-radius: 4px;
   font-size: 0.82rem;
-  color: var(--inline-code-color);
+  color: var(--current-category-color, var(--inline-code-color));
 }
 .markdown-body pre {
   margin-bottom: 16px;
@@ -1222,7 +1291,7 @@ body {
   font-weight: 600;
 }
 .markdown-body blockquote {
-  border-left: 4px solid var(--accent-primary);
+  border-left: 4px solid var(--current-category-color, var(--accent-primary));
   background: var(--blockquote-bg);
   padding: 10px 16px;
   border-radius: 0 8px 8px 0;
@@ -1233,16 +1302,17 @@ body {
 
 /* Obsidian Wikilink 커스텀 스타일 */
 .wikilink {
-  color: var(--accent-primary);
+  color: var(--current-category-color, var(--accent-primary));
   text-decoration: none;
   font-weight: 600;
-  border-bottom: 1px dashed var(--accent-primary);
+  border-bottom: 1px dashed var(--current-category-color, var(--accent-primary));
   transition: var(--transition-fast);
 }
 .wikilink:hover {
-  color: var(--concepts-color);
+  color: var(--current-category-color, var(--accent-primary));
+  opacity: 0.85;
   border-bottom-style: solid;
-  border-color: var(--concepts-color);
+  border-color: var(--current-category-color, var(--accent-primary));
 }
 
 /* 푸터 정보 */
@@ -1424,54 +1494,42 @@ body {
   }
 }
 
-/* Prism.js 라이트 테마 구문 강조 최적화 */
+/* Prism.js 라이트 테마 구문 강조 최적화 (오염 방지를 위해 .markdown-body pre code 내부로 엄격 격리) */
 [data-theme="light"] .markdown-body pre code .token.keyword,
 [data-theme="light"] .markdown-body pre code .token.selector,
 [data-theme="light"] .markdown-body pre code .token.important,
-[data-theme="light"] .token.keyword,
-[data-theme="light"] .token.selector,
-[data-theme="light"] .token.atrule {
+[data-theme="light"] .markdown-body pre code .token.atrule {
   color: #4f46e5 !important; /* 인디고 키워드 */
   font-weight: 700;
 }
 [data-theme="light"] .markdown-body pre code .token.string,
 [data-theme="light"] .markdown-body pre code .token.char,
 [data-theme="light"] .markdown-body pre code .token.attr-value,
-[data-theme="light"] .token.string,
-[data-theme="light"] .token.regex {
+[data-theme="light"] .markdown-body pre code .token.regex {
   color: #059669 !important; /* 그린 계열 문자열 */
 }
 [data-theme="light"] .markdown-body pre code .token.comment,
 [data-theme="light"] .markdown-body pre code .token.prolog,
 [data-theme="light"] .markdown-body pre code .token.doctype,
-[data-theme="light"] .markdown-body pre code .token.cdata,
-[data-theme="light"] .token.comment {
+[data-theme="light"] .markdown-body pre code .token.cdata {
   color: #64748b !important; /* 차분한 회색 주석 */
   font-style: italic;
 }
 [data-theme="light"] .markdown-body pre code .token.function,
-[data-theme="light"] .markdown-body pre code .token.class-name,
-[data-theme="light"] .token.function,
-[data-theme="light"] .token.class-name {
+[data-theme="light"] .markdown-body pre code .token.class-name {
   color: #2563eb !important; /* 블루 계열 함수/클래스 */
   font-weight: 600;
 }
 [data-theme="light"] .markdown-body pre code .token.number,
-[data-theme="light"] .markdown-body pre code .token.boolean,
-[data-theme="light"] .token.number,
-[data-theme="light"] .token.boolean {
+[data-theme="light"] .markdown-body pre code .token.boolean {
   color: #d97706 !important; /* 오렌지 계열 숫자/불리언 */
 }
 [data-theme="light"] .markdown-body pre code .token.operator,
-[data-theme="light"] .markdown-body pre code .token.punctuation,
-[data-theme="light"] .token.punctuation,
-[data-theme="light"] .token.operator {
+[data-theme="light"] .markdown-body pre code .token.punctuation {
   color: #475569 !important; /* 연산자 및 기호 */
 }
 [data-theme="light"] .markdown-body pre code .token.property,
-[data-theme="light"] .markdown-body pre code .token.tag,
-[data-theme="light"] .token.property,
-[data-theme="light"] .token.tag {
+[data-theme="light"] .markdown-body pre code .token.tag {
   color: #ea580c !important; /* 오렌지 계열 프로퍼티/태그 */
 }
 
