@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-05-23
+updated: 2026-05-24
 sources: []
 status: active
 ---
@@ -32,7 +32,12 @@ status: active
 - **총 페이지**: 80개
 - **카테고리**: concepts(20), tools(9), patterns(20), journal(18), comparisons(9), meta(4)
 - **시작일**: 2026-04-06
-- **최근 작업 (2026-05-23 토요 데일리 ingest)**:
+- **최근 작업 (2026-05-24 일요 데일리 ingest)**:
+  - raw 3편: MOSS · WorkstreamBench · ActiveGraph
+  - 기존 페이지 보강 3개: [[concepts/harness-engineering]] · [[concepts/llm-evaluation]] · [[concepts/gen-ai-observability]]
+  - 새 일지: [[journal/2026-05-24]]
+  - 핵심 합류: agent engineering의 초점이 **text-level prompt 조정** 에서 더 아래의 **source-level harness evolution**, **workflow artifact quality**, **log-first runtime substrate** 로 이동
+- **직전 작업 (2026-05-23 토요 데일리 ingest)**:
   - raw 4편: Life-Harness · TerminalWorld · HarnessAPI · DeltaBox
   - 기존 페이지 보강 4개: [[concepts/harness-engineering]] · [[concepts/llm-evaluation]] · [[concepts/tool-use]] · [[patterns/safe-tool-calling-sandbox]]
   - 새 일지: [[journal/2026-05-23]]

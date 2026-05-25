@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-05-23
+updated: 2026-05-24
 sources: []
 status: active
 ---
@@ -19,6 +19,21 @@ status: active
 - 월드맵 허브: [[wiki/campaign-map|Campaign Map]]
 - 진행 가이드: [[wiki/overview|Overview]]
 - 전체 도감: [[wiki/index|Index]]
+
+## [2026-05-24] ingest | MOSS(source-level harness evolution) + WorkstreamBench(spreadsheet workflow eval) + ActiveGraph(log-first runtime) — 일요 데일리, 자동 인제스트
+
+- **Sources** (raw 3편 추가):
+  - `raw/articles/2026-05-24-moss-source-level-self-evolution.md` — MOSS, "Self-Evolution through Source-Level Rewriting in Autonomous Agent Systems" (arXiv:2605.22794, 2026-05-22). self-evolving agent의 개선 대상을 prompt·skill 텍스트가 아니라 **harness source code** 까지 확장. production failure evidence → deterministic evolution pipeline → external coding-agent CLI code rewrite → ephemeral replay validation → user-consent-gated promotion + rollback. OpenClaw 예시에서 **four-task mean grader score 0.25 → 0.61**.
+  - `raw/articles/2026-05-24-workstreambench-finance-spreadsheet-agents.md` — WorkstreamBench, "Evaluating LLM Agents on End-to-End Spreadsheet Tasks in Finance" (arXiv:2605.22664, 2026-05-22). spreadsheet agent 평가를 QA/single-formula에서 **financial modeling · forecasting · scenario analysis** 같은 end-to-end workflow로 확장. rubric은 **Accuracy / Formula / Format** 3축, strongest model도 professional finance standard에 자주 미달.
+  - `raw/articles/2026-05-24-activegraph-log-is-the-agent.md` — ActiveGraph, "The Log is the Agent: Event-Sourced Reactive Graphs for Auditable, Forkable Agentic Systems" (arXiv:2605.21997, 2026-05-21). append-only event log를 **runtime source of truth** 로 두고 deterministic replay / cheap forking / lineage-preserving audit를 가능하게 하는 log-first agent substrate 제안.
+- **Pages updated** (추가만, 기존 본문 보존):
+  - `concepts/harness-engineering.md` — "2026-05-24 보강" 섹션 추가. self-evolving harness를 **source-level rewriting** 까지 확장하고, policy / interface / runtime / source-level evolution / governance 5층으로 재압축.
+  - `concepts/llm-evaluation.md` — "2026-05-24 보강" 섹션 추가. terminal provenance 다음 축으로 **workflow artifact quality** 를 추가하고, WorkstreamBench를 spreadsheet-centric knowledge-work eval로 배치.
+  - `concepts/gen-ai-observability.md` — "2026-05-24 보강" 섹션 추가. observability를 telemetry 수집에서 **runtime auditability / replay / forkability** 를 갖는 log-first runtime substrate로 확장.
+- **Pages created**:
+  - `journal/2026-05-24.md` — 일요 데일리 일지 (source-level evolution · artifact-quality eval · log-first runtime 연결, 기존 지식과의 다리, 후속 후보).
+- **Pages updated (meta)**: `index.md` (최종 업데이트 문구 + journal 항목 갱신), `overview.md` (최근 작업 갱신), `log.md` (이 항목).
+- **Notes**: 어제(2026-05-23)가 interface adaptation / benchmark provenance / branchable sandbox를 다뤘다면, 오늘 3편은 그 위에서 **무엇을 수정 가능하게 둘 것인가(MOSS)**, **무엇을 성공으로 셀 것인가(WorkstreamBench)**, **무엇을 시스템의 진짜 상태로 볼 것인가(ActiveGraph)** 를 묻는다. 결과적으로 최근 위키의 관심사는 모델 capability 자체보다 더 바깥의 **mutable substrate / artifact rubric / execution history substrate** 로 이동했다.
 
 ## [2026-05-23] ingest | Life-Harness(interface adaptation) + TerminalWorld(benchmark provenance) + HarnessAPI(single-source MCP/HTTP capability) + DeltaBox(branchable sandbox runtime) — 토요 데일리, 자동 인제스트
 

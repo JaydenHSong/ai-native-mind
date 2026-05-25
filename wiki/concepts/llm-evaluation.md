@@ -1,9 +1,9 @@
 ---
 title: "LLM Evaluation (Evals)"
 category: concepts
-tags: [evaluation, testing, llm, quality, evals, judge-reliability, long-horizon, native-runtime, benchmark, coding-benchmark, behavioral-safety, version-upgrade, trajectory-audit, harness-safety, artifact-aware-review, delegation-benchmark, privacy-benchmark, reward-hacking, process-evaluation, reproducibility, disclosure-audit, terminal-benchmark, benchmark-provenance]
+tags: [evaluation, testing, llm, quality, evals, judge-reliability, long-horizon, native-runtime, benchmark, coding-benchmark, behavioral-safety, version-upgrade, trajectory-audit, harness-safety, artifact-aware-review, delegation-benchmark, privacy-benchmark, reward-hacking, process-evaluation, reproducibility, disclosure-audit, terminal-benchmark, benchmark-provenance, workflow-evaluation, artifact-quality]
 created: 2026-04-09
-updated: 2026-05-23
+updated: 2026-05-24
 sources:
   - "raw/notes/2026-04-09-llm-evaluation.md"
   - "raw/articles/2026-05-12-judge-reliability-harness-rand.md"
@@ -18,6 +18,7 @@ sources:
   - "raw/articles/2026-05-21-procbench-process-defects-control-preservation.md"
   - "raw/articles/2026-05-22-agent-benchmark-disclosure-audit.md"
   - "raw/articles/2026-05-23-terminalworld-real-world-terminal-benchmark.md"
+  - "raw/articles/2026-05-24-workstreambench-finance-spreadsheet-agents.md"
 related:
   - "[[concepts/harness-engineering]]"
   - "[[concepts/context-rot-hallucination]]"
@@ -671,6 +672,48 @@ TerminalWorld-Verified에서
 1. terminal agent를 평가할 때 synthetic smoke test와 **실제 작업 녹화 기반 replay set** 를 분리해 운영한다.
 2. benchmark 선택 시 task 이름보다 먼저 **task provenance** 를 본다 — human-authored인지, trace-derived인지, repo-history-derived인지.
 3. 내 agent가 특정 benchmark에서 강해도, 실제 shell workflow와 상관이 약할 수 있으니 **현실 작업 로그에서 mini benchmark** 를 뽑는 습관을 들인다.
+
+## 2026-05-24 보강 — WorkstreamBench: terminal task 다음은 spreadsheet workflow artifact를 재야 한다
+
+[WorkstreamBench](https://arxiv.org/abs/2605.22664) (2026-05-22)는 이 페이지의 최근 흐름에서 **environment realism** 을 office-workflow 쪽으로 밀어낸다. WildClawBench와 TerminalWorld가 CLI·terminal 중심의 현실 작업을 다뤘다면, WorkstreamBench는 실제 지식노동에서 자주 등장하는 **spreadsheet-centric financial workflow** 를 benchmark의 전면으로 올린다.
+
+### 1) 문서 한 장이 아니라 workbook 전체가 산출물이다
+
+이 benchmark의 핵심 차이는 task를 "정답 텍스트"가 아니라 **작업 산출물 artifact** 로 본다는 데 있다.
+
+- 입력은 재무/스프레드시트 맥락의 업무 지시이고
+- agent는 여러 단계 workflow를 수행하며
+- 최종 평가는 답변 문장보다 **spreadsheet 상태와 산출물 품질** 을 본다
+
+즉 ResearchArena가 논문 뒤의 실험 artifact를 보자고 했다면, WorkstreamBench는 knowledge-work 쪽에서 **artifact-aware evaluation** 을 더 일상적인 오피스 업무로 끌어내린 셈이다.
+
+### 2) evaluation granularity가 bug-fix도 terminal task도 아닌 workflow artifact로 이동한다
+
+최근 이 페이지의 eval 층은 점점 세분화돼 왔다.
+
+- FeatureBench: feature-development
+- RoadmapBench: version-upgrade roadmap
+- TerminalWorld: real terminal provenance
+- ResearchArena: manuscript 뒤의 artifact truth
+
+WorkstreamBench는 여기에 **financial spreadsheet workflow** 라는 별도 층을 붙인다. 즉 coding benchmark와 terminal benchmark 사이 어딘가에 있던 "실무 지식노동 workflow" 가 독립 평가면으로 드러난다.
+
+### 3) 오늘 시점 coding/agent eval 지도를 다시 그리면 workflow artifact 층이 보인다
+
+| 층 | 질문 | 대표 예시 |
+|---|---|---|
+| **Environment realism** | 실제 runtime에서 작업이 통과하는가? | WildClawBench, TerminalWorld |
+| **Software evolution** | repo를 진화시키는 현실 단위를 풀 수 있는가? | FeatureBench, RoadmapBench |
+| **Artifact truth** | 결과 문서 뒤에 실제 실행 artifact가 있는가? | ResearchArena |
+| **Workflow artifact quality** | 도메인 산출물 자체가 실무적으로 usable한가? | **WorkstreamBench** |
+
+→ 이 추가로 eval은 "에이전트가 답했는가"를 넘어, **실무 산출물 객체를 끝까지 만들어 냈는가** 를 더 명확하게 묻게 된다.
+
+### 4) 1인 개발자 ROI 3개
+
+1. terminal benchmark가 높아도 spreadsheet·docs·dashboard 같은 **office artifact workflow** 성능은 별도로 봐야 한다.
+2. agent 평가에서 최종 답변 로그만 저장하지 말고 **산출 파일(diff, workbook state, generated artifact)** 를 같이 보관한다.
+3. 실무 자동화 후보를 고를 때는 "질문응답형"보다 **artifact completion quality를 자동 채점할 수 있는 workflow** 부터 선택하는 편이 낫다.
 
 ## 1인 개발자에게
 

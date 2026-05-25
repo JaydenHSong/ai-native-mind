@@ -1,9 +1,9 @@
 ---
 title: "Harness Engineering"
 category: concepts
-tags: [harness-engineering, ai-agent, infrastructure, orchestration, verification-gated, grounding, runtime-substrate, 11-responsibilities, evaluation-hacking, runtime-interface, trajectory-audit, natural-language-harness, trace-diagnostics, corpus-level-observability, skill-governance, library-drift, code-as-harness, shared-artifact, interface-adaptation, stateful-sandbox]
+tags: [harness-engineering, ai-agent, infrastructure, orchestration, verification-gated, grounding, runtime-substrate, 11-responsibilities, evaluation-hacking, runtime-interface, trajectory-audit, natural-language-harness, trace-diagnostics, corpus-level-observability, skill-governance, library-drift, code-as-harness, shared-artifact, interface-adaptation, stateful-sandbox, source-level-evolution]
 created: 2026-04-09
-updated: 2026-05-23
+updated: 2026-05-24
 sources:
   - "raw/notes/2026-04-09-engineering-paradigms-research.md"
   - "raw/notes/2026-04-11-orchestration-harness-server-supplement.md"
@@ -32,6 +32,7 @@ sources:
   - "raw/articles/2026-05-22-code-as-agent-harness.md"
   - "raw/articles/2026-05-23-life-harness-runtime-interface-adaptation.md"
   - "raw/articles/2026-05-23-deltabox-millisecond-sandbox-checkpoint-rollback.md"
+  - "raw/articles/2026-05-24-moss-source-level-self-evolution.md"
 related:
   - "[[concepts/context-engineering]]"
   - "[[concepts/prompt-engineering]]"
@@ -772,6 +773,54 @@ MBPP+ hard-100 / 100 rounds에서 held-out pass@1이 **0.258 → 0.584**, rollin
 1. deterministic workflow가 자꾸 실패하면 모델 업그레이드 전에 **tool contract / observation format / trajectory regulation** 부터 감사한다.
 2. branch search나 multi-attempt coding을 붙일 때는 모델보다 먼저 **reset latency** 를 측정한다.
 3. trajectory log는 디버그 기록이 아니라, **interface intervention library** 를 만드는 학습 재료로 본다.
+
+## 2026-05-24 보강 — MOSS: 하네스는 source-level로도 자기 자신을 다시 쓸 수 있다
+
+어제([[concepts/harness-engineering]]의 2026-05-23 보강)가 **interface adaptation** 과 **branchable runtime** 을 분리했다면, 오늘 들어온 [MOSS](https://arxiv.org/abs/2605.22794) (2026-05-22)는 그 위에 **source-level evolution** 층을 올린다. 요지는 단순하다. 좋은 coding harness는 prompt 몇 줄을 미세조정하는 데서 멈추지 않고, **agent를 감싸는 scaffold code 자체를 다시 쓸 수 있어야 한다**.
+
+### 1) MOSS가 겨냥하는 병목은 "task 실패"보다 "scaffold 고착"이다
+
+논문의 문제의식은 최근 self-evolving harness 흐름과 닿아 있지만, 대상이 더 구체적이다.
+
+- 많은 coding agent는 실행 중 task를 풀 수는 있어도
+- 반복적으로 드러나는 실패 패턴을
+- **harness source code 수준** 에서 구조적으로 흡수하지 못한다
+
+즉 같은 실패가 다시 나오면 모델이 더 열심히 생각하게 만드는 대신, **worker loop / retry policy / verifier wiring / tool orchestration code** 자체를 고쳐야 할 때가 있다.
+
+### 2) 하네스 진화의 단위를 prompt edit에서 code edit로 내린다
+
+MOSS의 핵심 기여는 하네스 개선을 "지시문 보강"이 아니라 **source-level self-evolution** 으로 본다는 점이다.
+
+- edit 대상이 명시적 파일 집합으로 드러나고
+- 변경은 diff로 남으며
+- 실패/개선이 다음 라운드 code revision 근거가 된다
+
+이 관점은 이 페이지가 계속 쌓아 온 세 흐름을 한 번에 묶는다.
+
+1. **AHE** — 어떤 edit가 어떤 개선을 낼지 prediction을 남겨야 한다
+2. **Meta-Harness** — filesystem이 곧 진화 작업공간이 될 수 있다
+3. **Code as Agent Harness** — code는 산출물이 아니라 runtime substrate다
+
+MOSS는 이 셋을 더 실천적으로 압축해, **"하네스를 바꾸는 행위" 자체를 coding task로 취급** 한다.
+
+### 3) 오늘 시점 하네스 층을 다시 그리면 source-level evolution이 보인다
+
+| 층 | 질문 | 대표 근거 |
+|---|---|---|
+| **policy / representation** | 규칙을 어떤 문서·artifact에 싣는가? | NLAH, `CLAUDE.md` |
+| **interface adaptation** | 모델과 환경 사이 규약을 어떻게 맞출까? | Life-Harness |
+| **runtime control** | 실행 중 state를 얼마나 빨리 분기·복구할까? | DeltaBox, ClawVM |
+| **source-level evolution** | 하네스 파일 자체를 어떻게 다시 쓸까? | **MOSS** |
+| **governance / observability** | 그 변경을 어떻게 검증·감사할까? | AHE, Insights Generator, Library Drift |
+
+→ 이제 하네스는 문서/규약/runtime만이 아니라, **자기 자신의 source code를 수정 가능한 1급 객체** 로 취급된다.
+
+### 4) 1인 개발자 ROI 3개
+
+1. 반복 실패가 보이면 prompt 길이를 늘리기 전에 **어느 harness 파일을 바꿔야 하는가** 를 먼저 묻는다.
+2. 하네스 변경은 prose memo가 아니라 **diff 가능한 작은 파일 단위** 로 유지해야 다음 진화 루프가 가능하다.
+3. "이 수정이 무엇을 고칠 것인가"를 commit/message/log에 남기면, source-level evolution이 AHE식 decision observability와 바로 연결된다.
 
 ## 케이스별·Anthropic 스터디
 

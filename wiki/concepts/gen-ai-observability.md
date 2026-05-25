@@ -1,14 +1,15 @@
 ---
 title: "GenAI·에이전트 관측 가능성 (OpenTelemetry)"
 category: concepts
-tags: [observability, opentelemetry, genai, agents, tracing, semconv]
+tags: [observability, opentelemetry, genai, agents, tracing, semconv, event-sourcing, runtime-audit]
 created: 2026-04-11
-updated: 2026-05-06
+updated: 2026-05-24
 sources:
   - "raw/notes/2026-04-11-vercel-workflow-otel-agents-research.md"
   - "raw/articles/2026-05-01-otel-ai-agent-observability.md"
   - "raw/articles/2026-05-03-datadog-state-of-ai-engineering-2026.md"
   - "raw/articles/2026-05-06-agentic-harness-engineering-observability.md"
+  - "raw/articles/2026-05-24-activegraph-log-is-the-agent.md"
 related:
   - "[[concepts/llm-evaluation]]"
   - "[[patterns/agent-server-harness]]"
@@ -134,6 +135,50 @@ OTel 글의 핵심 구분:
 ### Datadog 정량 진단(2026-05-03)과 짝
 
 위쪽의 **"2026-05-03 보강 — Datadog State of AI Engineering 2026"** 섹션이 **인프라 측 운영 부채**(rate limit·cache 활용 부족)를 보여줬다면, AHE는 **agent design 측 관측 결손**(왜 그 edit이 좋아졌는지 attribute 못 함)을 보여준다. 둘은 같은 "보이지 않으면 못 고친다" 명제의 두 단면.
+
+## 2026-05-24 보강 — ActiveGraph: log를 남기는 것에서 log가 곧 runtime이 되는 것으로
+
+[The Log is the Agent](https://arxiv.org/abs/2605.21997) / ActiveGraph (2026-05-21)는 이 페이지의 관측 논의를 한 단계 더 밀어 올린다. 지금까지는 좋은 관측이란 **실행 후에 trace를 잘 남기는 것** 에 가까웠다. 이 논문이 내미는 전환은 더 급진적이다.
+
+> **log는 사후 기록이 아니라, agent runtime의 중심 데이터 구조가 될 수 있다.**
+
+### 1) traceability를 feature가 아니라 실행 모델로 본다
+
+ActiveGraph의 핵심 직관은 event-sourced system과 닮아 있다.
+
+- action과 state transition이 append-only log에 남고
+- 그 log를 기반으로 replay / fork / audit이 가능하며
+- 관측과 실행이 서로 다른 부가 기능이 아니라 같은 substrate를 공유한다
+
+즉 "관측 가능한 agent" 를 넘어서 **"관측 구조 위에서 직접 실행되는 agent"** 로 개념을 바꾼다.
+
+### 2) 왜 이게 observability 문서에 중요한가
+
+최근 위키의 관련 흐름을 나란히 놓으면 차이가 잘 보인다.
+
+- **OTel / Datadog** — 실행을 추적하는 표준화된 telemetry surface
+- **AHE** — 하네스 edit와 결과를 잇는 decision observability
+- **HarnessAudit / ProcBench** — trajectory 전체를 감사하고 process를 해석
+- **ActiveGraph** — 아예 log 자체를 branchable runtime substrate로 사용
+
+즉 ActiveGraph는 observability를 dashboard나 postmortem 도구에서 멈추지 않고, **state management / replayability / auditability** 의 핵심 설계 원리로 끌어올린다.
+
+### 3) 오늘 시점 관측 층을 다시 그리면 runtime-audit 축이 선명해진다
+
+| 층 | 질문 | 대표 근거 |
+|---|---|---|
+| **Telemetry standard** | 무엇을 어떤 이름으로 남길까? | OTel GenAI semconv |
+| **Operational diagnosis** | 비용·지연·실패 모드를 어떻게 읽을까? | Datadog |
+| **Design observability** | 어떤 하네스 변경이 어떤 결과를 냈는가? | AHE |
+| **Runtime auditability** | 실행 기록을 replay / fork / 감사 가능한가? | **ActiveGraph** |
+
+→ 이제 observability는 단순 수집이 아니라, **forkable execution history를 갖는 runtime architecture** 문제로 확장된다.
+
+### 4) 1인 개발자 ROI 3개
+
+1. 중요한 agent workflow는 "로그를 남긴다"보다 **어디까지 replay 가능한가** 를 기준으로 설계하는 편이 낫다.
+2. 수동 디버깅 메모보다 **append-only event sequence** 가 남는 구조가 나중에 audit과 재현에 강하다.
+3. subagent나 장기 작업을 붙일수록 trace 저장소와 상태 저장소를 따로 보기보다, **동일 history substrate로 합칠 수 있는지** 검토할 가치가 있다.
 
 ## 실무 체크리스트 (최소)
 
