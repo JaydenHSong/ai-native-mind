@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-05-24
-total_pages: 80
+updated: 2026-06-25
+total_pages: 84
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 전체 80개 페이지 | 최종 업데이트: 2026-05-24 (source-level harness evolution · spreadsheet workflow eval · log-first runtime 반영) — 대부분 페이지에 **쉽게 읽기** 블록 있음
+> 전체 84개 페이지 | 최종 업데이트: 2026-06-25 (weekday maintenance: 한국어 정본 정합성 재검사, 신규 ingest 없음) — 대부분 페이지에 **쉽게 읽기** 블록 있음
 
 ## 쉽게 읽기
 
@@ -19,7 +19,7 @@ status: active
 
 ## Chapter Clear 시작점
 
-게임처럼 순서대로 가고 싶다면 먼저 [[wiki/campaign-map|Campaign Map]]을 열고, 필요할 때 [[wiki/overview|Overview]]로 보조 설명을 본다.
+게임처럼 순서대로 가고 싶다면 먼저 [[campaign-map|Campaign Map]]을 열고, 필요할 때 [[overview|Overview]]로 보조 설명을 본다.
 
 - **튜토리얼(Chapter 0)**: [[patterns/llm-wiki]], [[tools/obsidian]], [[tools/claude-code]]
 - **기본기(Chapter 1~2)**: [[concepts/ai-native-programmer]], [[concepts/context-engineering]]
@@ -72,7 +72,7 @@ status: active
 - [[tools/managed-agents]] — Anthropic의 클라우드 호스팅 에이전트 인프라 (2026-04-08 public beta)
 - [[tools/deep-agents-deploy]] — LangChain 오픈 소스 에이전트 하네스 + 배포 도구 (모델 무관, MIT)
 
-## Patterns (20개)
+## Patterns (22개)
 
 ### 커리큘럼·실습 (읽기 순서 2→6)
 - [[patterns/preventing-context-rot]] — Context Rot·3계층 메모리 (커리큘럼 2)
@@ -84,8 +84,10 @@ status: active
 ### LLM-Wiki & 메타 패턴
 - [[patterns/llm-wiki]] — LLM이 유지보수하는 개인 지식 위키 패턴 (Tobi Lütke)
 - [[patterns/bkit-superpowers-combo]] — bkit PDCA + Superpowers TDD 조합으로 단계 건너뛰기 방지
+- [[patterns/agents-md-skill-md]] — repo-scope `AGENTS.md` 와 task-scope `SKILL.md` 를 분리해 portability와 progressive disclosure를 같이 얻는 패턴
 
 ### AI 개발 실전 패턴
+- [[patterns/ai-news-scouting-taxonomy]] — HN 중심 흐름을 frontier/open/coding-agent/runtime/eval 레이어로 재편하는 AI 뉴스 스카우팅 분류안
 - [[patterns/harness-engineering-casebook]] — 도메인 30케이스 매트릭스 + Anthropic Academy 스터디 맵
 - [[patterns/agent-planning-to-implementation]] — 기획·스펙·태스크→코드까지 에이전트 파이프라인과 HITL 게이트
 - [[patterns/agent-server-harness]] — HTTP·큐·SSE 뒤의 에이전트 백엔드·상태·보안 하네스
@@ -102,8 +104,9 @@ status: active
 - [[patterns/agent-mvp-stack-2026]] — 1인 MVP 스택 5대 영역 × 4 단계 + 의사결정 트리 (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — Vibe Coding의 7대 안티패턴과 회피법
 
-## Journal (18개)
+## Journal (20개)
 
+- [[journal/2026-05-25]] — weekday watch kick-off: Cline / browser-use / LangGraph / Langfuse를 통해 integration surface · operator control · trace artifact화 우선순위 재확인
 - [[journal/2026-05-24]] — 일요 데일리: MOSS(source-level harness evolution) + WorkstreamBench(spreadsheet workflow eval) + ActiveGraph(log-first runtime)
 - [[journal/2026-05-23]] — 토요 데일리: Life-Harness(interface adaptation) + TerminalWorld(benchmark provenance) + HarnessAPI(single-source MCP/HTTP capability) + DeltaBox(branchable sandbox runtime)
 - [[journal/2026-05-22]] — 금요 데일리 + 주간 리뷰: Code as Agent Harness(code substrate) + Scale-Conditioned Memory Eval(usable-scale boundary) + Benchmark Disclosure Audit(run disclosure quality) + boundary-compression 메모
@@ -139,7 +142,7 @@ status: active
 
 ## Meta
 
-- [[wiki/index]] — 전체 페이지 카탈로그 (현재 문서)
-- [[wiki/campaign-map]] — 챕터 클리어 월드맵 (메인 허브)
-- [[wiki/overview]] — 위키 전체 종합 현황
-- [[wiki/log]] — 시간순 작업 기록
+- [[index]] — 전체 페이지 카탈로그 (현재 문서)
+- [[campaign-map]] — 챕터 클리어 월드맵 (메인 허브)
+- [[overview]] — 위키 전체 종합 현황
+- [[log]] — 시간순 작업 기록

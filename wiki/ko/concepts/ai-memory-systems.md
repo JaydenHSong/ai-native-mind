@@ -186,7 +186,7 @@ Context Engineering 5요소 중 **Memory/State** 계층. 우리 위키가 이미
 
 1. 본 위키 자체가 *Episodic(log) / Semantic(concepts) / Procedural(CLAUDE.md)* 분리로 group-grade memory 구조를 *수동* 구현 중. GroupMemBench의 BM25-equivalence 결과는 본 위키의 *자연어 검색*(Obsidian grep)이 자동 메모리 시스템보다 *덜 손해 보지 않을 수 있음*을 시사 — 위키 패턴([[patterns/llm-wiki]]) 정당화의 정량적 근거.
 2. 메모리 프레임워크를 도입할 때 *벤더 데모*가 1:1만 보여주면 "그룹/채널에서 어떤가" 한 줄 질문. 미답이면 도입 보류.
-3. *Knowledge update 27.1%* 가 가장 약한 항목 — 본 위키가 갱신 빈도 높은 사실(예: "현재 사용하는 도구"는 [[tools/]] 페이지)을 *page-level*로 분리해 둔 구조가 이 약점을 회피한다.
+3. *Knowledge update 27.1%* 가 가장 약한 항목 — 본 위키가 갱신 빈도 높은 사실(예: "현재 사용하는 도구")을 `wiki/ko/tools/` 아래 개별 page-level로 분리해 둔 구조가 이 약점을 회피한다.
 
 **한계**: 6명 저자 중 Yang 외 5명, "strongest memory system"의 구체 이름, 6 category별 score breakdown 모두 본문 정독 후 채우기. 합성 데이터 기반이라 실 deployment의 noise 분포와 다를 수 있음.
 

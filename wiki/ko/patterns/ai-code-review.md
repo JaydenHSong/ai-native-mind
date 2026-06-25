@@ -3,7 +3,7 @@ title: "AI 코드 리뷰 워크플로우"
 category: patterns
 tags: [code-review, workflow, solo-developer, claude-code, execution-grounding, constraint-decay, framework-sensitivity, roadmap, release-scale, reward-hacking, process-evaluation]
 created: 2026-04-09
-updated: 2026-05-21
+updated: 2026-06-02
 sources:
   - "raw/notes/2026-04-09-ai-code-review.md"
   - "raw/articles/2026-05-13-verify-before-you-fix-execution-grounding.md"
@@ -371,7 +371,7 @@ Stage 3: Validation-Aware Iterative Repair
 - **퀘스트**: 최근 변경 1개를 self-review와 AI review 두 단계로 점검한다.
 - **클리어 조건**: correctness/보안/엣지 케이스 중 최소 1개 개선점을 찾아 반영한다.
 - **보상(산출물)**: 내 코드 리뷰 체크리스트 v1
-- **다음 퀘스트**: [[patterns/ai-cost-management]] -> [[wiki/campaign-map]]
+- **다음 퀘스트**: [[patterns/ai-cost-management]] -> [[campaign-map]]
 
 ## 참고 소스
 

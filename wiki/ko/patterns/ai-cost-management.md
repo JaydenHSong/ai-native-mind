@@ -3,7 +3,7 @@ title: "AI 비용 관리"
 category: patterns
 tags: [cost, pricing, optimization, anthropic, claude, openai]
 created: 2026-04-09
-updated: 2026-05-01
+updated: 2026-06-02
 sources:
   - "raw/notes/2026-04-09-ai-cost-management.md"
   - "raw/articles/2026-05-01-anthropic-managed-agents-launch.md"
@@ -53,7 +53,7 @@ confidence: high
 - **Batch API**: 50% 할인 (24h 비동기)
 - **Prompt caching**: 캐시된 input -90%
 
-→ 변곡점·시나리오는 [[examples/cost-simulator/index.html|인터랙티브 비용 시뮬레이터]]에서 직접 확인.
+→ 변곡점·시나리오는 [인터랙티브 비용 시뮬레이터](../../examples/cost-simulator/index.html)에서 직접 확인.
 
 ## 핵심 최적화 전략
 
@@ -220,7 +220,7 @@ def route_model(task_complexity: str) -> str:
 - **퀘스트**: 내 사용 패턴 기준으로 model routing 규칙 1개와 예산 상한 1개를 정한다.
 - **클리어 조건**: 비용 최적화 전후를 숫자로 비교할 수 있다.
 - **보상(산출물)**: 월간 AI 비용 운영표 v1
-- **다음 퀘스트**: [[wiki/campaign-map]] -> [[wiki/log]]
+- **다음 퀘스트**: [[campaign-map]] -> [[log]]
 
 ## 참고 소스
 

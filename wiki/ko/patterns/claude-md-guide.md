@@ -99,6 +99,8 @@ CLAUDE.md는 Martin Fowler가 말한 **Guide (피드포워드 제어)**의 핵�
 - **AGENTS.md ↔ SKILL.md**: AGENTS.md는 "여기 환경의 사규", SKILL.md는 "여기서 X 작업할 때 매뉴얼". **상호 보완**.
 - **거버넌스**: AGENTS.md는 [Linux Foundation 산하 Agentic AI Foundation](https://aaif.io)으로 이관. MCP가 표준화된 경로와 같음.
 
+→ 두 파일의 역할 분담을 패턴으로 따로 정리한 페이지는 [[patterns/agents-md-skill-md]] 이다.
+
 ### 실증 데이터 (atlan.com 정리)
 
 - 사람이 직접 쓴 AGENTS.md → 태스크 성공률 **약 4%↑**, 에이전트 생성 버그 **35~55%↓**

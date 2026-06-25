@@ -3,7 +3,7 @@ title: "Harness 엔지니어링 케이스북 & Anthropic Academy 스터디 맵"
 category: patterns
 tags: [harness-engineering, case-studies, anthropic, curriculum, guides, sensors]
 created: 2026-04-13
-updated: 2026-04-13
+updated: 2026-06-02
 sources:
   - "raw/notes/2026-04-13-harness-casebook-anthropic-academy.md"
   - "https://www.anthropic.com/learn"
@@ -15,7 +15,7 @@ related:
   - "[[patterns/safe-tool-calling-sandbox]]"
   - "[[concepts/gen-ai-observability]]"
   - "[[concepts/llm-evaluation]]"
-  - "[[wiki/campaign-map]]"
+  - "[[campaign-map]]"
 status: active
 confidence: medium
 ---

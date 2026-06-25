@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-05-24
+updated: 2026-06-25
 sources: []
 status: active
 ---
@@ -16,9 +16,347 @@ status: active
 
 날짜별로 **무엇을 바꿨는지**만 적어 둔다. 개념 설명은 `wiki/concepts/` 등 본문 페이지를 보면 된다.
 
-- 월드맵 허브: [[wiki/campaign-map|Campaign Map]]
-- 진행 가이드: [[wiki/overview|Overview]]
-- 전체 도감: [[wiki/index|Index]]
+- 월드맵 허브: [[campaign-map|Campaign Map]]
+- 진행 가이드: [[overview|Overview]]
+- 전체 도감: [[index|Index]]
+
+## [2026-06-25] maintain | 한국어 정본 정합성 재검사 + 신규 ingest 없음 확인
+
+- **Pages updated**:
+  - `index.md` — 최종 업데이트 문구를 2026-06-25 weekday maintenance 기준으로 갱신.
+  - `overview.md` — 최근 작업에 이번 정합성 재검사 결과와 보류 중인 hygiene 후보를 추가.
+  - `log.md` — 이 항목 추가.
+- **Verification**:
+  - `raw/**/*.md` 110개 중 `wiki/ko`에서 source reference가 전혀 없는 파일: 0개.
+  - `wiki/ko` 기준 wikilink 검사: broken link 0개.
+  - `wiki/ko/index.md` 등록 누락: 0개.
+  - `wiki/ko/**/*.md` frontmatter 필수 필드 누락: 0개.
+  - `wiki/ko` 카테고리 폴더와 frontmatter `category` 불일치: 0개.
+- **Notes**:
+  - 새 raw source는 없어서 신규 ingest는 수행하지 않았다.
+  - `raw/articles/`의 최근 파일들은 `source_type` / `authors` / `fetched` 키를 쓰고, CLAUDE.md의 raw 예시는 `author` / `collected` 키를 쓰는 drift가 남아 있다. 원본 layer는 이번 평일 ko maintenance 범위에서 수정하지 않고 다음 별도 hygiene 후보로 남긴다.
+  - 초기 Claude Code 플러그인 계열 페이지 일부는 frontmatter `sources: []` 상태지만, 대응 raw source가 명확하지 않아 이번에도 임의 source를 만들지 않았다.
+  - 이번 작업은 영어판을 수정하지 않는 평일 한국어 정본 maintenance 범위 안에서만 수행했다.
+
+## [2026-06-24] maintain | 한국어 정본 정합성 재검사 + 신규 ingest 없음 확인
+
+- **Pages updated**:
+  - `index.md` — 최종 업데이트 문구를 2026-06-24 weekday maintenance 기준으로 갱신.
+  - `overview.md` — 최근 작업에 이번 정합성 재검사 결과와 보류 중인 hygiene 후보를 추가.
+  - `log.md` — 이 항목 추가.
+- **Verification**:
+  - `raw/**/*.md` 110개 중 `wiki/ko`에서 source reference가 전혀 없는 파일: 0개.
+  - `wiki/ko` 기준 wikilink 검사: broken link 0개.
+  - `wiki/ko/index.md` 등록 누락: 0개.
+  - `wiki/ko/**/*.md` frontmatter 필수 필드 누락: 0개.
+  - `wiki/ko` 카테고리 폴더와 frontmatter `category` 불일치: 0개.
+- **Notes**:
+  - 새 raw source는 없어서 신규 ingest는 수행하지 않았다.
+  - `raw/articles/`의 최근 파일들은 `source_type` / `authors` / `fetched` 키를 쓰고, CLAUDE.md의 raw 예시는 `author` / `collected` 키를 쓰는 drift가 남아 있다. 원본 layer는 이번 평일 ko maintenance 범위에서 수정하지 않고 다음 별도 hygiene 후보로 남긴다.
+  - 초기 Claude Code 플러그인 계열 페이지 일부는 frontmatter `sources: []` 상태지만, 대응 raw source가 명확하지 않아 이번에도 임의 source를 만들지 않았다.
+  - 이번 작업은 영어판을 수정하지 않는 평일 한국어 정본 maintenance 범위 안에서만 수행했다.
+
+## [2026-06-23] maintain | AI 뉴스 taxonomy source reference 보강 + 한국어 정본 정합성 재검사
+
+- **Pages updated**:
+  - `patterns/ai-news-scouting-taxonomy.md` — frontmatter `sources`가 비어 있어, 실제 근거 raw note인 `raw/notes/2026-05-25-weekday-ai-software-watch.md`를 연결하고 `updated`를 갱신.
+  - `index.md` — 최종 업데이트 문구를 2026-06-23 weekday maintenance 기준으로 갱신.
+  - `overview.md` — 최근 작업에 이번 source reference 보강과 정합성 재검사 결과를 추가.
+  - `log.md` — 이 항목 추가.
+- **Verification**:
+  - `raw/**/*.md` 110개 중 `wiki/ko`에서 source reference가 전혀 없는 파일: 0개.
+  - `wiki/ko` 기준 wikilink 검사: broken link 0개.
+  - `wiki/ko/index.md` 등록 누락: 0개.
+  - `wiki/ko/**/*.md` frontmatter 필수 필드 누락: 0개.
+  - `wiki/ko` 카테고리 폴더와 frontmatter `category` 불일치: 0개.
+- **Notes**:
+  - 새 raw source는 없어서 신규 ingest는 수행하지 않았다.
+  - `raw/articles/`의 최근 파일들은 `source_type` / `authors` / `fetched` 키를 쓰고, CLAUDE.md의 raw 예시는 `author` / `collected` 키를 쓰는 drift가 남아 있다. 원본 layer는 이번 평일 ko maintenance 범위에서 수정하지 않고 다음 별도 hygiene 후보로 남긴다.
+  - 초기 Claude Code 플러그인 계열 페이지 일부는 frontmatter `sources: []` 상태지만, 대응 raw source가 명확하지 않아 이번에는 임의 source를 만들지 않았다.
+  - 이번 작업은 영어판을 수정하지 않는 평일 한국어 정본 maintenance 범위 안에서만 수행했다.
+
+## [2026-06-20] maintain | 한국어 정본 정합성 재검사 + 신규 ingest 없음 확인
+
+- **Pages updated**:
+  - `index.md` — 최종 업데이트 문구를 2026-06-20 scheduled maintenance 기준으로 갱신.
+  - `overview.md` — 최근 작업에 이번 정합성 재검사 결과와 raw frontmatter drift 보류 메모를 추가.
+  - `log.md` — 이 항목 추가.
+- **Verification**:
+  - `raw/**/*.md` 110개 중 `wiki/ko`에서 source reference가 전혀 없는 파일: 0개.
+  - `wiki/ko` 기준 wikilink 검사: broken link 0개.
+  - `wiki/ko/index.md` 등록 누락: 0개.
+  - `wiki/ko/**/*.md` frontmatter 필수 필드 누락: 0개.
+  - `wiki/ko` 카테고리 폴더와 frontmatter `category` 불일치: 0개.
+- **Notes**:
+  - 새 raw source는 없어서 신규 ingest는 수행하지 않았다.
+  - `raw/articles/`의 최근 파일들은 `source_type` / `authors` / `fetched` 키를 쓰고, CLAUDE.md의 raw 예시는 `author` / `collected` 키를 쓰는 drift가 남아 있다. 원본 layer는 이번 ko maintenance 범위에서 수정하지 않고 다음 별도 hygiene 후보로 남긴다.
+  - 이번 작업은 영어판을 수정하지 않는 한국어 정본 maintenance 범위 안에서만 수행했다.
+
+## [2026-06-19] maintain | 한국어 정본 정합성 재검사 + 신규 ingest 없음 확인
+
+- **Pages updated**:
+  - `index.md` — 최종 업데이트 문구를 2026-06-19 weekday maintenance 기준으로 갱신.
+  - `overview.md` — 최근 작업에 이번 정합성 재검사 결과와 raw frontmatter drift 보류 메모를 추가.
+  - `log.md` — 이 항목 추가.
+- **Verification**:
+  - `raw/**/*.md` 110개 중 `wiki/ko`에서 source reference가 전혀 없는 파일: 0개.
+  - `wiki/ko` 기준 wikilink 검사: broken link 0개.
+  - `wiki/ko/index.md` 등록 누락: 0개.
+  - `wiki/ko/**/*.md` frontmatter 필수 필드 누락: 0개.
+  - `wiki/ko` 카테고리 폴더와 frontmatter `category` 불일치: 0개.
+- **Notes**:
+  - 새 raw source는 없어서 신규 ingest는 수행하지 않았다.
+  - `raw/articles/`의 최근 파일들은 `source_type` / `authors` / `fetched` 키를 쓰고, CLAUDE.md의 raw 예시는 `author` / `collected` 키를 쓰는 drift가 남아 있다. 원본 layer는 이번 평일 ko maintenance 범위에서 수정하지 않고 다음 별도 hygiene 후보로 남긴다.
+  - 이번 작업은 영어판을 수정하지 않는 평일 한국어 정본 maintenance 범위 안에서만 수행했다.
+
+## [2026-06-18] maintain | 한국어 정본 정합성 재검사 + 신규 ingest 없음 확인
+
+- **Pages updated**:
+  - `index.md` — 최종 업데이트 문구를 2026-06-18 weekday maintenance 기준으로 갱신.
+  - `overview.md` — 최근 작업에 이번 정합성 재검사 결과와 raw frontmatter drift 보류 메모를 추가.
+  - `log.md` — 이 항목 추가.
+- **Verification**:
+  - `raw/**/*.md` 110개 중 `wiki/ko`에서 source reference가 전혀 없는 파일: 0개.
+  - `wiki/ko` 기준 wikilink 검사: broken link 0개.
+  - `wiki/ko/index.md` 등록 누락: 0개.
+  - `wiki/ko/**/*.md` frontmatter 필수 필드 누락: 0개.
+  - `wiki/ko` 카테고리 폴더와 frontmatter `category` 불일치: 0개.
+- **Notes**:
+  - 새 raw source는 없어서 신규 ingest는 수행하지 않았다.
+  - `raw/articles/`의 최근 파일들은 `source_type` / `authors` / `fetched` 키를 쓰고, CLAUDE.md의 raw 예시는 `author` / `collected` 키를 쓰는 drift가 남아 있다. 원본 layer는 이번 평일 ko maintenance 범위에서 수정하지 않고 다음 별도 hygiene 후보로 남긴다.
+  - 이번 작업은 영어판을 수정하지 않는 평일 한국어 정본 maintenance 범위 안에서만 수행했다.
+
+## [2026-06-17] maintain | 한국어 정본 정합성 재검사 + 신규 ingest 없음 확인
+
+- **Pages updated**:
+  - `index.md` — 최종 업데이트 문구를 2026-06-17 weekday maintenance 기준으로 갱신.
+  - `overview.md` — 최근 작업에 이번 정합성 재검사 결과와 raw frontmatter drift 보류 메모를 추가.
+  - `log.md` — 이 항목 추가.
+- **Verification**:
+  - `raw/**/*.md` 110개 중 `wiki/ko`에서 source reference가 전혀 없는 파일: 0개.
+  - `wiki/ko` 기준 wikilink 검사: broken link 0개.
+  - `wiki/ko/index.md` 등록 누락: 0개.
+  - `wiki/ko/**/*.md` frontmatter 필수 필드 누락: 0개.
+  - `wiki/ko` 카테고리 폴더와 frontmatter `category` 불일치: 0개.
+- **Notes**:
+  - 새 raw source는 없어서 신규 ingest는 수행하지 않았다.
+  - `raw/articles/`의 최근 파일들은 `source_type` / `authors` / `fetched` 키를 쓰고, CLAUDE.md의 raw 예시는 `author` / `collected` 키를 쓰는 drift가 남아 있다. 원본 layer는 이번 평일 ko maintenance 범위에서 수정하지 않고 다음 별도 hygiene 후보로 남긴다.
+  - 이번 작업은 영어판을 수정하지 않는 평일 한국어 정본 maintenance 범위 안에서만 수행했다.
+
+## [2026-06-16] maintain | 한국어 정본 정합성 재검사 + 신규 ingest 없음 확인
+
+- **Pages updated**:
+  - `index.md` — 최종 업데이트 문구를 2026-06-16 weekday maintenance 기준으로 갱신.
+  - `overview.md` — 최근 작업에 이번 정합성 재검사 결과와 raw frontmatter drift 보류 메모를 추가.
+  - `log.md` — 이 항목 추가.
+- **Verification**:
+  - `raw/**/*.md` 110개 중 `wiki/ko`에서 source reference가 전혀 없는 파일: 0개.
+  - `wiki/ko` 기준 wikilink 검사: broken link 0개.
+  - `wiki/ko/index.md` 등록 누락: 0개.
+  - `wiki/ko/**/*.md` frontmatter 필수 필드 누락: 0개.
+  - `wiki/ko` 카테고리 폴더와 frontmatter `category` 불일치: 0개.
+- **Notes**:
+  - 새 raw source는 없어서 신규 ingest는 수행하지 않았다.
+  - `raw/articles/`의 최근 파일들은 `source_type` / `authors` / `fetched` 키를 쓰고, CLAUDE.md의 raw 예시는 `author` / `collected` 키를 쓰는 drift가 남아 있다. 원본 layer는 이번 평일 ko maintenance 범위에서 수정하지 않고 다음 별도 hygiene 후보로 남긴다.
+  - 이번 작업은 영어판을 수정하지 않는 평일 한국어 정본 maintenance 범위 안에서만 수행했다.
+
+## [2026-06-13] maintain | 한국어 정본 정합성 재검사 + 신규 ingest 없음 확인
+
+- **Pages updated**:
+  - `index.md` — 최종 업데이트 문구를 2026-06-13 weekday maintenance 기준으로 갱신.
+  - `overview.md` — 최근 작업에 이번 정합성 재검사 결과와 raw frontmatter drift 보류 메모를 추가.
+  - `log.md` — 이 항목 추가.
+- **Verification**:
+  - `raw/**/*.md` 110개 중 `wiki/ko`에서 source reference가 전혀 없는 파일: 0개.
+  - `wiki/ko` 기준 wikilink 검사: broken link 0개.
+  - `wiki/ko/index.md` 등록 누락: 0개.
+  - `wiki/ko/**/*.md` frontmatter 필수 필드 누락: 0개.
+  - `wiki/ko` 카테고리 폴더와 frontmatter `category` 불일치: 0개.
+- **Notes**:
+  - 새 raw source는 없어서 신규 ingest는 수행하지 않았다.
+  - `raw/articles/`의 최근 파일들은 `source_type` / `authors` / `fetched` 키를 쓰고, CLAUDE.md의 raw 예시는 `author` / `collected` 키를 쓰는 drift가 남아 있다. 원본 layer는 이번 평일 ko maintenance 범위에서 수정하지 않고 다음 별도 hygiene 후보로 남긴다.
+  - 이번 작업은 영어판을 수정하지 않는 평일 한국어 정본 maintenance 범위 안에서만 수행했다.
+
+## [2026-06-12] maintain | 한국어 정본 정합성 재검사 + 신규 ingest 없음 확인
+
+- **Pages updated**:
+  - `index.md` — 최종 업데이트 문구를 2026-06-12 weekday maintenance 기준으로 갱신.
+  - `overview.md` — 최근 작업에 이번 정합성 재검사 결과와 raw frontmatter drift 보류 메모를 추가.
+  - `log.md` — 이 항목 추가.
+- **Verification**:
+  - `raw/**/*.md` 110개 중 `wiki/ko`에서 source reference가 전혀 없는 파일: 0개.
+  - `wiki/ko` 기준 wikilink 검사: broken link 0개.
+  - `wiki/ko/index.md` 등록 누락: 0개.
+  - `wiki/ko/**/*.md` frontmatter 필수 필드 누락: 0개.
+  - `wiki/ko` 카테고리 폴더와 frontmatter `category` 불일치: 0개.
+- **Notes**:
+  - 새 raw source는 없어서 신규 ingest는 수행하지 않았다.
+  - `raw/articles/`의 최근 파일들은 `source_type` / `authors` / `fetched` 키를 쓰고, CLAUDE.md의 raw 예시는 `author` / `collected` 키를 쓰는 drift가 남아 있다. 원본 layer는 이번 평일 ko maintenance 범위에서 수정하지 않고 다음 별도 hygiene 후보로 남긴다.
+  - 이번 작업은 영어판을 수정하지 않는 평일 한국어 정본 maintenance 범위 안에서만 수행했다.
+
+## [2026-06-11] maintain | 한국어 정본 정합성 재검사 + 신규 ingest 없음 확인
+
+- **Pages updated**:
+  - `index.md` — 최종 업데이트 문구를 2026-06-11 weekday maintenance 기준으로 갱신.
+  - `overview.md` — 최근 작업에 이번 정합성 재검사 결과와 raw frontmatter drift 보류 메모를 추가.
+  - `log.md` — 이 항목 추가.
+- **Verification**:
+  - `raw/**/*.md` 110개 중 `wiki/ko`에서 source reference가 전혀 없는 파일: 0개.
+  - `wiki/ko` 기준 wikilink 검사: broken link 0개.
+  - `wiki/ko/index.md` 등록 누락: 0개.
+  - `wiki/ko/**/*.md` frontmatter 필수 필드 누락: 0개.
+  - `wiki/ko` 카테고리 폴더와 frontmatter `category` 불일치: 0개.
+- **Notes**:
+  - 새 raw source는 없어서 신규 ingest는 수행하지 않았다.
+  - `raw/articles/`의 최근 파일들은 `source_type` / `authors` / `fetched` 키를 쓰고, CLAUDE.md의 raw 예시는 `author` / `collected` 키를 쓰는 drift가 남아 있다. 원본 layer는 이번 평일 ko maintenance 범위에서 수정하지 않고 다음 별도 hygiene 후보로 남긴다.
+  - 이번 작업은 영어판을 수정하지 않는 평일 한국어 정본 maintenance 범위 안에서만 수행했다.
+
+## [2026-06-10] maintain | 한국어 정본 정합성 재검사 + 신규 ingest 없음 확인
+
+- **Pages updated**:
+  - `index.md` — 최종 업데이트 문구를 2026-06-10 weekday maintenance 기준으로 갱신.
+  - `overview.md` — 최근 작업에 이번 정합성 재검사 결과와 raw frontmatter drift 보류 메모를 추가.
+  - `log.md` — 이 항목 추가.
+- **Verification**:
+  - `raw/**/*.md` 110개 중 `wiki/ko`에서 source reference가 전혀 없는 파일: 0개.
+  - `wiki/ko` 기준 wikilink 검사: broken link 0개.
+  - `wiki/ko/index.md` 등록 누락: 0개.
+  - `wiki/ko/**/*.md` frontmatter 필수 필드 누락: 0개.
+  - `wiki/ko` 카테고리 폴더와 frontmatter `category` 불일치: 0개.
+- **Notes**:
+  - 새 raw source는 없어서 신규 ingest는 수행하지 않았다.
+  - `raw/articles/`의 최근 파일들은 `source_type` / `authors` / `fetched` 키를 쓰고, CLAUDE.md의 raw 예시는 `author` / `collected` 키를 쓰는 drift가 남아 있다. 원본 layer는 이번 평일 ko maintenance 범위에서 수정하지 않고 다음 별도 hygiene 후보로 남긴다.
+  - 이번 작업은 영어판을 수정하지 않는 평일 한국어 정본 maintenance 범위 안에서만 수행했다.
+
+## [2026-06-09] maintain | 한국어 정본 정합성 재검사 + 신규 ingest 없음 확인
+
+- **Pages updated**:
+  - `index.md` — 최종 업데이트 문구를 2026-06-09 weekday maintenance 기준으로 갱신.
+  - `overview.md` — 최근 작업에 이번 정합성 재검사 결과와 raw frontmatter drift 보류 메모를 추가.
+  - `log.md` — 이 항목 추가.
+- **Verification**:
+  - `raw/**/*.md` 110개 중 `wiki/ko`에서 source reference가 전혀 없는 파일: 0개.
+  - `wiki/ko` 기준 wikilink 검사: broken link 0개.
+  - `wiki/ko/index.md` 등록 누락: 0개.
+  - `wiki/ko/**/*.md` frontmatter 필수 필드 누락: 0개.
+  - `wiki/ko` 카테고리 폴더와 frontmatter `category` 불일치: 0개.
+- **Notes**:
+  - 새 raw source는 없어서 신규 ingest는 수행하지 않았다.
+  - `raw/articles/`의 최근 파일들은 `source_type` / `authors` / `fetched` 키를 쓰고, CLAUDE.md의 raw 예시는 `author` / `collected` 키를 쓰는 drift가 남아 있다. 원본 layer는 이번 평일 ko maintenance 범위에서 수정하지 않고 다음 별도 hygiene 후보로 남긴다.
+  - 이번 작업은 영어판을 수정하지 않는 평일 한국어 정본 maintenance 범위 안에서만 수행했다.
+
+## [2026-06-06] maintain | 한국어 정본 정합성 재검사 + raw ingest 상태 확인
+
+- **Pages updated**:
+  - `index.md` — 최종 업데이트 문구를 2026-06-06 weekday maintenance 기준으로 갱신.
+  - `overview.md` — 최근 작업에 이번 정합성 재검사 결과와 raw frontmatter drift 보류 메모를 추가.
+  - `log.md` — 이 항목 추가.
+- **Verification**:
+  - `raw/**/*.md` 110개 중 `wiki/ko`에서 source reference가 전혀 없는 파일: 0개.
+  - `wiki/ko` 기준 wikilink 검사: broken link 0개.
+  - `wiki/ko/index.md` 등록 누락: 0개.
+  - `wiki/ko/**/*.md` frontmatter 필수 필드 누락: 0개.
+- **Notes**:
+  - 새 raw source는 없어서 신규 ingest는 수행하지 않았다.
+  - `raw/articles/`의 최근 파일들은 `source_type` / `authors` / `fetched` 키를 쓰고, CLAUDE.md의 raw 예시는 `author` / `collected` 키를 쓰는 drift가 남아 있다. 원본 layer는 이번 평일 ko maintenance 범위에서 수정하지 않고 다음 별도 hygiene 후보로 남긴다.
+  - 이번 작업은 영어판을 수정하지 않는 평일 한국어 정본 maintenance 범위 안에서만 수행했다.
+
+## [2026-06-03] maintain | placeholder wikilink 오탐 보수 + 정합성 재검사
+
+- **Pages updated**:
+  - `overview.md` — 전날 작업 설명 안의 예시용 `wiki/...` placeholder가 실제 wikilink처럼 잡히지 않도록 문구를 일반 텍스트로 바꾸고 최근 작업 항목을 갱신.
+  - `log.md` — 전날 log 항목의 예시용 `wiki/...` placeholder를 일반 텍스트로 바꾸고 이 항목 추가.
+  - `index.md` — 최종 업데이트 문구를 2026-06-03 maintenance 기준으로 갱신.
+- **Verification**:
+  - `wiki/ko` 기준 wikilink 검사: broken link 2개 → 0개.
+  - `wiki/ko/index.md` 등록 누락: 0개.
+  - `raw/**/*.md` source reference 누락: 0개.
+  - `wiki/ko/**/*.md` frontmatter 필수 필드 누락: 0개.
+- **Notes**:
+  - 새 raw source는 없어서 신규 ingest는 수행하지 않았다.
+  - 이번 작업은 영어판을 수정하지 않는 평일 한국어 정본 maintenance 범위 안에서만 수행했다.
+
+## [2026-06-02] maintain | meta wikilink 정합성 보수
+
+- **Pages updated**:
+  - `index.md` — 예시용 `wiki/...` meta 링크를 실제 루트 파일 링크(`[[campaign-map]]`, `[[overview]]`, `[[index]]`, `[[log]]`)로 정리하고 최종 업데이트 문구 갱신.
+  - `overview.md` — 상단 navigation과 Campaign Map 안내 링크를 루트 meta 링크로 정리하고 최근 작업 항목 추가.
+  - `campaign-map.md` — 월드맵 허브의 Overview/Index/Log 링크를 실제 존재 파일로 연결.
+  - `log.md` — 상단 navigation 링크를 루트 meta 링크로 정리하고 이 항목 추가.
+  - `journal/2026-05-15.md` — 금요 리뷰 메타 링크 2개를 실제 루트 meta 링크로 수정.
+  - `patterns/ai-code-review.md` — Campaign Map 링크 1개를 실제 루트 meta 링크로 수정.
+  - `patterns/ai-cost-management.md` — Campaign Map/Log 링크 2개를 실제 루트 meta 링크로 수정.
+  - `patterns/harness-engineering-casebook.md` — Campaign Map 링크 1개를 실제 루트 meta 링크로 수정.
+- **Verification**:
+  - `wiki/ko` 기준 wikilink 검사에서 broken link 22개 → 0개로 해소.
+  - 총 페이지 수는 84개 그대로 유지. 새 source ingest는 없음.
+- **Notes**:
+  - 이번 작업은 영어판을 수정하지 않는 평일 한국어 정본 maintenance 범위 안에서만 수행했다.
+
+## [2026-05-26] maintain | examples 링크 정리 + source 고아 해소 + Obsidian placeholder link 보수
+
+- **Pages updated**:
+  - `tools/obsidian.md` — 예시용 `\[\[링크\]\]`, `\[\[페이지이름\]\]` 표기를 코드 형태로 감싸 실제 깨진 wikilink로 해석되지 않게 수정.
+  - `patterns/solo-product-strategy.md` — `raw/notes/2026-04-09-solo-dev-cases-detail.md` 를 sources/참고 소스에 연결하고, examples 비용 시뮬레이터 참조를 일반 링크로 변경.
+  - `patterns/ai-cost-management.md` — examples 비용 시뮬레이터 참조를 wikilink에서 일반 Markdown 링크로 변경.
+  - `patterns/agent-mvp-stack-2026.md` — examples 비용 시뮬레이터 3곳을 일반 링크로 바꿔 위키/보조 artifact 경계를 맞춤.
+  - `comparisons/agent-platforms-for-solo-dev.md` — examples widget 참조를 일반 링크로 변경.
+  - `patterns/owasp-llm-typescript-mitigations.md` — `examples/agent-safety-sketch` 참조를 README 기준 일반 링크로 변경.
+- **Pages updated (ko meta)**:
+  - `index.md` — 최종 업데이트 문구를 maintenance 기준으로 갱신.
+  - `overview.md` — 이번 maintenance의 성격(artifact 링크 정리 + source 고아 해소)을 최근 작업에 반영.
+  - `log.md` — 이 항목 추가.
+- **Notes**:
+  - `examples/` 는 위키 페이지 수에 포함되지 않는 보조 artifact 이므로, 앞으로 본문에서 참조할 때는 기본적으로 wikilink보다 상대 Markdown 링크를 우선한다.
+  - raw source 참조 검사 결과 `raw/notes/2026-04-09-solo-dev-cases-detail.md` 1개만 위키 본문에 직접 연결되지 않아 있었고, 이번에 `solo-product-strategy`에 귀속시켜 source layer 정합성을 맞췄다.
+
+## [2026-05-25] maintain | AGENTS.md + SKILL.md 패턴 정리 + 링크 정합성 보수
+
+- **Pages created**:
+  - `patterns/agents-md-skill-md.md` — `AGENTS.md` 를 **repo-scope policy**, `SKILL.md` 를 **task-scope progressive disclosure manual** 로 분리해 portability와 token efficiency를 동시에 얻는 하네스 문서 패턴 정리.
+- **Pages updated**:
+  - `patterns/claude-md-guide.md` — `CLAUDE.md ↔ AGENTS.md ↔ SKILL.md` 섹션에서 새 [[patterns/agents-md-skill-md]] 로 바로 건너갈 수 있게 교차링크 추가.
+  - `comparisons/claude-code-plugins.md` — 표 안 wikilink escape 오타 수정으로 `bkit`·`Superpowers`·`Codex`·`gstack` 링크 복구.
+- **Pages updated (ko meta)**:
+  - `index.md` — total 83→84, patterns 21→22, 새 패턴 등록, 최종 업데이트 문구 갱신.
+  - `overview.md` — 현재 상태 수치 갱신, 새 패턴과 링크 정합성 보수 반영.
+  - `log.md` — 이 항목 추가.
+- **Notes**:
+  - 기존 `tools/managed-agents.md` / `tools/deep-agents-deploy.md` 가 가리키던 `[[patterns/agents-md-skill-md]]` 빈 링크를 실제 패턴 페이지로 채워 upper-middle agent platform 관련 지식의 연결을 복구했다.
+  - 평일 위키 유지보수 관점에서, 오늘은 새 개념을 무리하게 늘리기보다 **이미 여러 페이지가 전제하던 문서 패턴을 명시적으로 승격**하는 편이 정합성 대비 효율이 높았다.
+
+## [2026-05-25] watch | weekday watch kick-off + operator/runtime/observability 우선순위 검증
+
+- **Pages created**:
+  - `journal/2026-05-25.md` — weekday watch 첫 calibration 일지. Cline · browser-use · LangGraph · Langfuse release를 통해 **integration surface / operator control / trace artifact화** 가 평일 watch의 우선 신호임을 정리.
+- **Sources captured**:
+  - `raw/notes/2026-05-25-weekday-ai-software-watch.md` — 공식 release/news 링크 기준 shortlist와 보류 판단 메모.
+- **Pages updated (ko meta)**:
+  - `index.md` — total 82→83, journal 19→20, 새 2026-05-25 일지 등록, 최종 업데이트 문구 갱신.
+  - `overview.md` — weekday watch kick-off 항목 추가, 현재 상태 수치 갱신.
+  - `log.md` — 이 항목 추가.
+- **Watch verdict**:
+  - **채택**: Cline v3.85.0, browser-use 0.12.8, LangGraph 1.2.1, Langfuse v3.175.0.
+  - **보류**: Anthropic Project Glasswing 초기 업데이트는 중요하지만, 오늘 시점에는 직접 product/API/workflow 변경보다 security program update 성격이 강해 본문 반영 대신 watchlist 유지.
+- **Notes**:
+  - 오늘은 새 개념 페이지를 늘리기보다, 방금 만든 [[patterns/ai-news-scouting-taxonomy]] 가 실제로 어떤 신호를 상위에 올리는지 **운영 기준을 검증** 하는 쪽이 더 가치 있었다.
+  - 결론적으로 평일 저녁 watch에서 frontier headline보다 **coding-agent integration surface / self-hosted operator safety / trace artifact exportability** 가 더 빠르게 workflow를 바꾼다.
+
+## [2026-05-25] meta | AI 뉴스 스카우팅 taxonomy v1 정리 + 한영 메타 정합성 보정
+
+- **Pages created**:
+  - `patterns/ai-news-scouting-taxonomy.md` — HN 중심 흐름을 **frontier 모델·제품 / open-free 모델 생태계 / AI coding software / operator·runtime / eval·observability** 레이어로 재편하는 뉴스 큐레이션 분류안 초안.
+- **Pages updated (ko meta)**:
+  - `index.md` — total 81→82, patterns 20→21, 새 taxonomy 링크 추가, 최종 업데이트 문구 갱신.
+  - `overview.md` — 현재 상태 수치 갱신, 2026-05-25 taxonomy 정리 항목 추가.
+  - `log.md` — 이 항목 추가.
+- **Pages updated (en meta sync)**:
+  - `../en/index.md` — 영어 미러가 full journal line + synced quest log를 포함하도록 상태 문구 갱신.
+  - `../en/overview.md` — `wiki/en/log.md` 미러 상태와 최신 journal 동기화 상태 명시.
+- **Notes**:
+  - 이번 taxonomy의 기준은 "AI 일반 뉴스"가 아니라 **software work를 수행하는 모델·도구·에이전트·런타임 변화** 다.
+  - 기본 제외 규칙은 하드웨어·투자 잡음 축소, 예외는 실제 API/제품 사용성에 직접 영향 주는 경우만 포함.
+  - 영어판은 이번에 메타 정합성까지는 맞췄지만, 새 taxonomy 본문 페이지는 아직 한국어 정본만 존재한다.
 
 ## [2026-05-24] ingest | MOSS(source-level harness evolution) + WorkstreamBench(spreadsheet workflow eval) + ActiveGraph(log-first runtime) — 일요 데일리, 자동 인제스트
 

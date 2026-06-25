@@ -36,7 +36,7 @@ confidence: medium
 
 ## 비교표
 
-| 기준 | [[tools/bkit\|bkit]] | [[tools/superpowers\|Superpowers]] | [[tools/codex-plugin\|Codex]] | [[tools/gstack\|gstack]] |
+| 기준 | [[tools/bkit|bkit]] | [[tools/superpowers|Superpowers]] | [[tools/codex-plugin|Codex]] | [[tools/gstack|gstack]] |
 |------|------|------------|-------|--------|
 | **만든 사람** | popup-studio-ai (한국) | Jesse Vincent (obra) | OpenAI (공식) | Garry Tan (YC CEO) |
 | **핵심 비유** | "개발 OS" | "시니어 개발자" | "제2의 눈" | "역할극 팀" |

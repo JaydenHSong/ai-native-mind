@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-05-24
+updated: 2026-06-25
 sources: []
 status: active
 ---
@@ -16,9 +16,9 @@ status: active
 
 이 문서는 위키 **목차 겸 학습 지도**다. 아래 링크들은 "다 읽어야 하는 숙제 목록"이 아니라, 현재 필요에 맞춰 꺼내 보는 **참조 지도**다. 어려운 글은 각 페이지 맨 위 **「쉽게 읽기」**부터 보면 된다.
 
-- 월드맵 허브: [[wiki/campaign-map|Campaign Map]]
-- 전체 도감: [[wiki/index|Index]]
-- 진행 기록: [[wiki/log|Log]]
+- 월드맵 허브: [[campaign-map|Campaign Map]]
+- 전체 도감: [[index|Index]]
+- 진행 기록: [[log|Log]]
 
 ## 시작 방법 (5분)
 
@@ -29,9 +29,91 @@ status: active
 
 ## 현재 상태
 
-- **총 페이지**: 80개
-- **카테고리**: concepts(20), tools(9), patterns(20), journal(18), comparisons(9), meta(4)
+- **총 페이지**: 84개
+- **카테고리**: concepts(20), tools(9), patterns(22), journal(20), comparisons(9), meta(4)
 - **시작일**: 2026-04-06
+- **최근 작업 (2026-06-25 weekday maintenance)**:
+  - `raw/**/*.md` 110개가 모두 `wiki/ko` 본문 또는 frontmatter의 source reference에 연결되어 있음을 재확인
+  - `wiki/ko` 기준 wikilink / index 등록 / 위키 frontmatter 필수 필드 / 카테고리-폴더 일치 검사를 다시 수행했고 신규 ingest 대상은 없었음
+  - 영어판은 수정하지 않았고, raw source frontmatter의 과거 키 drift와 일부 초기 Claude Code 플러그인 계열 페이지의 빈 `sources`는 별도 정리 후보로 계속 보류
+- **직전 작업 (2026-06-24 weekday maintenance)**:
+  - `raw/**/*.md` 110개가 모두 `wiki/ko` 본문 또는 frontmatter의 source reference에 연결되어 있음을 재확인
+  - `wiki/ko` 기준 wikilink / index 등록 / 위키 frontmatter 필수 필드 / 카테고리-폴더 일치 검사를 다시 수행했고 신규 ingest 대상은 없었음
+  - 영어판은 수정하지 않았고, raw source frontmatter의 과거 키 drift와 일부 초기 Claude Code 플러그인 계열 페이지의 빈 `sources`는 별도 정리 후보로 계속 보류
+- **직전 작업 (2026-06-23 weekday maintenance)**:
+  - [[patterns/ai-news-scouting-taxonomy]] frontmatter에 누락되어 있던 `raw/notes/2026-05-25-weekday-ai-software-watch.md` source reference를 연결
+  - `raw/**/*.md` 110개가 모두 `wiki/ko` 본문 또는 frontmatter의 source reference에 연결되어 있음을 재확인
+  - `wiki/ko` 기준 wikilink / index 등록 / 위키 frontmatter 필수 필드 / 카테고리-폴더 일치 검사를 다시 수행했고 신규 ingest 대상은 없었음
+  - 영어판은 수정하지 않았고, raw source frontmatter의 과거 키 drift와 일부 초기 도구 페이지의 빈 `sources`는 별도 정리 후보로 계속 보류
+- **직전 작업 (2026-06-20 scheduled maintenance)**:
+  - `raw/**/*.md` 110개가 모두 `wiki/ko` 본문 또는 frontmatter의 source reference에 연결되어 있음을 재확인
+  - `wiki/ko` 기준 wikilink / index 등록 / 위키 frontmatter 필수 필드 / 카테고리-폴더 일치 검사를 다시 수행했고 신규 수정 대상은 없었음
+  - 영어판은 수정하지 않았고, raw source frontmatter의 과거 키 drift는 별도 정리 후보로 계속 보류
+- **직전 작업 (2026-06-19 weekday maintenance)**:
+  - `raw/**/*.md` 110개가 모두 `wiki/ko` 본문 또는 frontmatter의 source reference에 연결되어 있음을 재확인
+  - `wiki/ko` 기준 wikilink / index 등록 / 위키 frontmatter 필수 필드 / 카테고리-폴더 일치 검사를 다시 수행했고 신규 수정 대상은 없었음
+  - 영어판은 수정하지 않았고, raw source frontmatter의 과거 키 drift는 별도 정리 후보로 계속 보류
+- **직전 작업 (2026-06-18 weekday maintenance)**:
+  - `raw/**/*.md` 110개가 모두 `wiki/ko` 본문 또는 frontmatter의 source reference에 연결되어 있음을 재확인
+  - `wiki/ko` 기준 wikilink / index 등록 / 위키 frontmatter 필수 필드 / 카테고리-폴더 일치 검사를 다시 수행했고 신규 수정 대상은 없었음
+  - 영어판은 수정하지 않았고, raw source frontmatter의 과거 키 drift는 별도 정리 후보로 계속 보류
+- **직전 작업 (2026-06-17 weekday maintenance)**:
+  - `raw/**/*.md` 110개가 모두 `wiki/ko` 본문 또는 frontmatter의 source reference에 연결되어 있음을 재확인
+  - `wiki/ko` 기준 wikilink / index 등록 / 위키 frontmatter 필수 필드 / 카테고리-폴더 일치 검사를 다시 수행했고 신규 수정 대상은 없었음
+  - 영어판은 수정하지 않았고, raw source frontmatter의 과거 키 drift는 별도 정리 후보로 계속 보류
+- **직전 작업 (2026-06-16 weekday maintenance)**:
+  - `raw/**/*.md` 110개가 모두 `wiki/ko` 본문 또는 frontmatter의 source reference에 연결되어 있음을 재확인
+  - `wiki/ko` 기준 wikilink / index 등록 / 위키 frontmatter 필수 필드 / 카테고리-폴더 일치 검사를 다시 수행했고 신규 수정 대상은 없었음
+  - 영어판은 수정하지 않았고, raw source frontmatter의 과거 키 drift는 별도 정리 후보로 계속 보류
+- **직전 작업 (2026-06-13 weekday maintenance)**:
+  - `raw/**/*.md` 110개가 모두 `wiki/ko` 본문 또는 frontmatter의 source reference에 연결되어 있음을 재확인
+  - `wiki/ko` 기준 wikilink / index 등록 / 위키 frontmatter 필수 필드 / 카테고리-폴더 일치 검사를 다시 수행했고 신규 수정 대상은 없었음
+  - 영어판은 수정하지 않았고, raw source frontmatter의 과거 키 drift는 별도 정리 후보로 계속 보류
+- **직전 작업 (2026-06-12 weekday maintenance)**:
+  - `raw/**/*.md` 110개가 모두 `wiki/ko` 본문 또는 frontmatter의 source reference에 연결되어 있음을 재확인
+  - `wiki/ko` 기준 wikilink / index 등록 / 위키 frontmatter 필수 필드 / 카테고리-폴더 일치 검사를 다시 수행했고 신규 수정 대상은 없었음
+  - 영어판은 수정하지 않았고, raw source frontmatter의 과거 키 drift는 별도 정리 후보로 계속 보류
+- **직전 작업 (2026-06-11 weekday maintenance)**:
+  - `raw/**/*.md` 110개가 모두 `wiki/ko` 본문 또는 frontmatter의 source reference에 연결되어 있음을 재확인
+  - `wiki/ko` 기준 wikilink / index 등록 / 위키 frontmatter 필수 필드 / 카테고리-폴더 일치 검사를 다시 수행했고 신규 수정 대상은 없었음
+  - 영어판은 수정하지 않았고, raw source frontmatter의 과거 키 drift는 별도 정리 후보로 계속 보류
+- **직전 작업 (2026-06-10 weekday maintenance)**:
+  - `raw/**/*.md` 110개가 모두 `wiki/ko` 본문 또는 frontmatter의 source reference에 연결되어 있음을 재확인
+  - `wiki/ko` 기준 wikilink / index 등록 / 위키 frontmatter 필수 필드 / 카테고리-폴더 일치 검사를 다시 수행했고 신규 수정 대상은 없었음
+  - 영어판은 수정하지 않았고, raw source frontmatter의 과거 키 drift는 별도 정리 후보로 계속 보류
+- **직전 작업 (2026-06-09 weekday maintenance)**:
+  - `raw/**/*.md` 110개가 모두 `wiki/ko` 본문 또는 frontmatter의 source reference에 연결되어 있음을 재확인
+  - `wiki/ko` 기준 wikilink / index 등록 / 위키 frontmatter 필수 필드 / 카테고리-폴더 일치 검사를 다시 수행했고 신규 수정 대상은 없었음
+  - 영어판은 수정하지 않았고, raw source frontmatter의 과거 키 drift는 별도 정리 후보로 계속 보류
+- **직전 작업 (2026-06-06 weekday maintenance)**:
+  - `raw/**/*.md` 110개가 모두 `wiki/ko` 본문 또는 frontmatter의 source reference에 연결되어 있음을 재확인
+  - `wiki/ko` 기준 wikilink / index 등록 / 위키 frontmatter 필수 필드 검사를 다시 수행했고 신규 수정 대상은 없었음
+  - 영어판은 수정하지 않았고, raw source frontmatter의 과거 키 drift는 별도 정리 후보로 보류
+- **직전 작업 (2026-06-03 weekday maintenance)**:
+  - 전날 maintenance 기록 안의 예시용 `wiki/...` placeholder가 Obsidian wikilink로 오탐되는 문제를 정리
+  - `wiki/ko` 기준 wikilink / index 등록 / raw source reference / frontmatter 필수 필드 검사를 다시 수행
+  - raw 신규 source는 없어서 새 ingest 없이 링크 정합성 보수만 수행
+- **직전 작업 (2026-06-02 weekday maintenance)**:
+  - 예시용 `wiki/...` 형태로 남아 있던 meta navigation 링크를 실제 `wiki/ko` 루트 파일에 맞춰 `[[index]]`, `[[overview]]`, `[[campaign-map]]`, `[[log]]` 형태로 정리
+  - 영향 범위: meta 4개(index/overview/campaign-map/log), 관련 journal/pattern 페이지 4개
+  - raw 신규 source는 없어서 새 ingest 없이 링크 정합성 보수만 수행
+- **직전 작업 (2026-05-26 weekday maintenance)**:
+  - examples 폴더는 위키 본문이 아니라는 운영 원칙에 맞춰, `\[\[examples/...\]\]` 형태의 깨진 wikilink를 일반 Markdown 링크로 정리
+  - [[patterns/solo-product-strategy]] 에 누락돼 있던 `raw/notes/2026-04-09-solo-dev-cases-detail.md` source reference를 연결해 source layer 고아를 해소
+  - [[tools/obsidian]] 의 예시용 Wikilink 표기를 코드 형태로 감싸 placeholder link 오탐을 제거
+- **직전 작업 (2026-05-25 AGENTS.md + SKILL.md 패턴 정리)**:
+  - 새 패턴 페이지: [[patterns/agents-md-skill-md]]
+  - 핵심 구조: **repo-scope policy(`AGENTS.md`)** 와 **task-scope progressive disclosure(`SKILL.md`)** 를 분리하는 하네스 문서 패턴 정리
+  - 정합성 보수: [[comparisons/claude-code-plugins]] 의 깨진 wikilink 수정, [[patterns/claude-md-guide]] 에 새 패턴 교차링크 추가
+- **최근 작업 (2026-05-25 weekday watch kick-off)**:
+  - 새 raw note: `raw/notes/2026-05-25-weekday-ai-software-watch.md`
+  - 새 일지: [[journal/2026-05-25]]
+  - shortlist 기준: Cline · browser-use · LangGraph · Langfuse의 공식 release를 중심으로 **integration surface / operator control / trace artifact화** 를 우선 관찰
+  - 보류 판단: Anthropic Project Glasswing은 중요하지만, 오늘 시점에는 직접 product/API change보다 security program update 성격이 강해 watchlist로만 유지
+- **최근 작업 (2026-05-25 AI 뉴스 taxonomy 정리)**:
+  - 새 패턴 페이지: [[patterns/ai-news-scouting-taxonomy]]
+  - 핵심 구조: HN 중심 일반 개발자 화제 추적을 **frontier 모델·제품 / open 모델 생태계 / 코딩 에이전트 / operator·runtime / eval·observability** 레이어로 재편
+  - 편집 원칙: 하드웨어·투자 잡음보다 **실제 workflow impact** 와 **공식 릴리스 노트** 를 우선
 - **최근 작업 (2026-05-24 일요 데일리 ingest)**:
   - raw 3편: MOSS · WorkstreamBench · ActiveGraph
   - 기존 페이지 보강 3개: [[concepts/harness-engineering]] · [[concepts/llm-evaluation]] · [[concepts/gen-ai-observability]]
@@ -96,7 +178,7 @@ status: active
 
 ## 캠페인 모드: Chapter Clear 로드맵
 
-전체 지도를 한 눈에 보려면 [[wiki/campaign-map|Campaign Map]]을 기준 허브로 사용한다.
+전체 지도를 한 눈에 보려면 [[campaign-map|Campaign Map]]을 기준 허브로 사용한다.
 
 ### Chapter 0 - 튜토리얼: 지도 읽기
 - 읽기: [[patterns/llm-wiki|LLM-Wiki 패턴]], [[tools/obsidian|Obsidian]], [[tools/claude-code|Claude Code]]

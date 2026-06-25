@@ -1,5 +1,5 @@
 ---
-title: "Agent Memory Taxonomy: Task vs. Belief vs. Lifecycle vs. Safety"
+title: "Agent Memory Taxonomy — Task vs Belief vs Lifecycle vs Safety"
 category: comparisons
 tags: [memory, taxonomy, belief-memory, safety-memory, lifecycle-memory, agent, virtual-memory, usable-scale-boundary]
 created: 2026-05-17
@@ -21,144 +21,128 @@ status: active
 confidence: high
 ---
 
-# Agent Memory Taxonomy: Task vs. Belief vs. Lifecycle vs. Safety
+# Agent Memory Taxonomy — Task vs Belief vs Lifecycle vs Safety
 
-## Easy Read
+## Start here
 
-**In a Nutshell**: Treating "memory" as a single monolithic block obscures key engineering decisions. Current research maps the agent memory space into four distinct functional layers:
+If we call everything “memory,” multiple design questions get mixed together. The recent papers accumulated in this wiki suggest at least four layers:
 
-1. **Task / Productivity Memory**: Helps the agent maintain continuity and execute its current assignment.
-2. **Belief Memory**: Captures and updates hypotheses under uncertainty.
-3. **Lifecycle Memory**: Governs compression, pruning, forgetting, and consolidation.
-4. **Safety Memory**: Stores critical system flags and threat signatures to prevent exploits.
+1. **task / productivity memory** — memory that helps the agent keep doing the work
+2. **belief memory** — memory that preserves what the agent believes, and with what confidence
+3. **lifecycle memory** — memory that governs when to compress, forget, and reinforce
+4. **safety memory** — memory that preserves what must not be forgotten in order to block risky behavior
 
----
+## Core difference
 
-## Core Differences
+Even if all of them are called “memory,” their objective functions differ:
+- productivity memory tries to help the agent finish work faster and with less context loss
+- belief memory tries to preserve uncertainty instead of collapsing too early
+- lifecycle memory tries to keep the store healthy over time
+- safety memory tries to stop dangerous actions
 
-**Each memory layer has a unique objective function**: Productivity memory optimizes for execution speed and accuracy; belief memory preserves uncertainty; lifecycle memory keeps storage footprints healthy; and safety memory focuses on preventing hazardous actions.
+## Comparison table
 
----
-
-## The Four Memory Dimensions
-
-| Dimension | Task / Productivity Memory | Belief Memory | Lifecycle Memory | Safety Memory |
+| Category | task / productivity memory | belief memory | lifecycle memory | safety memory |
 |---|---|---|---|---|
-| **Core Question** | What context is required to execute the active task? | What does the agent currently believe, and with what confidence? | When should data be compressed, forgotten, or reinforced? | Does executing this action pose a system security risk? |
-| **Leading Research** | ZenBrain, GroupMemBench | BeliefMem | Human-Inspired Memory | MAGE |
-| **Storage Unit** | Summaries, states, code variables | Candidate conclusions + probability values | Consolidated traces, deduped entities, graphs | Safety-critical signals, risk cues, prohibited patterns |
-| **Failure Modes** | Context rot, retrieval noise, stale summaries | Self-reinforcing biases, premature assumptions | Context bloat, interference, memory solidification | Long-horizon exploit accumulation, delayed attacks |
-| **Design Pattern** | Decouple working/episodic/semantic tiers | Preserve probabilistic uncertainty states | Enforce strict forgetting policies | Isolate a dedicated shadow memory block |
-| **Key Benchmark** | GroupMemBench 46.0% (BM25 matches/beats custom systems) | LoCoMo / ALFWorld best average performance | VSCode issue tracking: 97.2% precision, 58% bloat reduction | AgentDojo Banking/Slack; excellent early-stage hijack detection |
-| **Symmetric Wiki** | [[concepts/ai-memory-systems]] | [[concepts/ai-memory-systems]] | [[concepts/ai-memory-systems]] | [[concepts/agent-supply-chain-security]] |
+| Core question | What is needed to continue the current work? | What do we currently believe, and how strongly? | When should we compress, forget, or reinforce? | Is taking this action now risky? |
+| Representative source | ZenBrain, GroupMemBench | BeliefMem | Human-Inspired Memory | MAGE |
+| Storage unit | summaries, facts, state, recall candidates | candidate conclusion + probability | consolidated trace, deduped memory, entity link | safety-critical signal, prohibited pattern, risk cue |
+| Failure mode | context rot, retrieval noise, stale summary | self-reinforcing error, premature commitment | store bloat, interference, stale-memory fixation | long-horizon threat accumulation, delayed attack, unsafe action |
+| Good design | separate working / episodic / semantic / procedural memory | do not discard uncertainty | treat forgetting and reconsolidation as policy | keep separate shadow memory from normal task memory |
+| Benchmark / evidence | GroupMemBench 46.0%, BM25 matched or beat many systems | best average performance on LoCoMo / ALFWorld | 97.2% retention precision + 58% store reduction | AgentDojo Banking / Slack with stronger early-stage detection |
+| Main wiki page | [[concepts/ai-memory-systems]] | [[concepts/ai-memory-systems]] | [[concepts/ai-memory-systems]] | [[concepts/agent-supply-chain-security]] |
 
----
+## 1. Task / productivity memory
 
-## 1. Task / Productivity Memory
+This is the broadest bucket. The traditional short-term / long-term and episodic / semantic / procedural splits live here.
 
-This category is the most widely implemented. It encompasses classic short-term vs. long-term, and episodic vs. semantic vs. procedural memory architectures.
-- Built on the core systems of [[concepts/ai-memory-systems]].
-- ZenBrain's 7-layer memory model.
-- GroupMemBench limitations on multi-party conversation memory.
+- the basic structure in [[concepts/ai-memory-systems]]
+- ZenBrain’s 7-layer memory
+- the limitations exposed by GroupMemBench for multi-party settings
 
-*Design Rule*: **Value retrieval precision over raw storage volume.** GroupMemBench demonstrated that standard BM25 keyword matching often outperforms complex summarization architectures. This is because aggressive compression pipelines frequently discard subtle context signals essential for multi-agent coordination.
+The key question is not “how much do we store?” but **“does this memory help the agent continue the work?”** GroupMemBench showed that automatic systems can compress away the very group structure signals that matter for productivity.
 
----
+## 2. Belief memory
 
-## 2. Belief Memory
+This layer is what BeliefMem makes explicit.
 
-Championed by the BeliefMem framework, this model decouples state tracking:
-- **Deterministic Memory**: Observation $\to$ Single fixed conclusion.
-- **Belief Memory**: Observation $\to$ Multiple candidate conclusions + probability distribution.
+- deterministic memory: observation → one conclusion
+- belief memory: observation → multiple candidate conclusions + probability
 
-*Design Rule*: **Never prematurely discard uncertainty.** In partially observable environments, representing current states as a "set of competing hypotheses" is far more accurate than forcing the model to select a single "fact."
+The key principle is **do not discard uncertainty**. Under partial observability, “current hypothesis set” can be a more honest representation than “stored fact.”
 
-### When to Implement:
-- When system logs are noisy or incomplete.
-- When collaborating agents provide conflicting observation states.
-- When debugging systems where the root cause of an error is still unconfirmed.
+This matters when:
+- logs are incomplete
+- multiple agents produce conflicting observations
+- the debugging story has not hardened into one root cause yet
 
----
+## 3. Lifecycle memory
 
-## 3. Lifecycle Memory
+This is the layer added by the Human-Inspired Memory line. Memory is treated not as a retrieval database but as an **operational pipeline**.
 
-Pioneered by Human-Inspired Memory research, this layer treats memory as an **active maintenance pipeline** rather than a passive database:
-- **Sleep-phase consolidation**: Compressing logs during idle cycles.
-- **Interference-based forgetting**: Pruning inactive memory nodes.
-- **Engram maturation**: Deepening key structural patterns.
-- **Reconsolidation on retrieval**: Updating stored memories upon recall.
-- **Entity knowledge graphs**: Linking related terms and states.
+- sleep-phase consolidation
+- interference-based forgetting
+- engram maturation
+- reconsolidation upon retrieval
+- entity knowledge graph
+- hybrid multi-cue retrieval
 
-*Design Rule*: **High-performance memory relies on efficient pruning, not infinite storage.** If you can maintain task accuracy while reducing database footprint, your primary engineering bottleneck is your consolidation policy, not the model's context size.
+The main point is that **good memory is not just well-stored memory; it is well-maintained memory**. If you can reduce storage volume while keeping accuracy, the bottleneck may be maintenance policy rather than model capability.
 
----
+## 4. Safety memory
 
-## 4. Safety Memory
+This is the layer added by MAGE. Instead of mixing everything into normal task memory, it keeps a separate **shadow memory** specialized for risk signals.
 
-Introduced by MAGE, this architecture maintains a **Shadow Memory** completely isolated from the standard working memory, dedicated entirely to tracking risk signatures:
-- Tracks cumulative inputs from external tools, scripts, and third-party agents.
-- Provides a trajectory-level safety check rather than a simple input filter.
-- Critical for long-running, autonomous agents executing OS transactions.
+This matters when:
+- outputs from external tools, skills, or agents accumulate over a long trajectory
+- single-shot filtering is not enough and a trajectory-level guardrail is needed
+- a long-running agent needs a risk re-check right before action
 
-*Design Rule*: **Keep productivity and safety memories completely decoupled.** Productivity memory is optimized to help the agent take action; safety memory is designed to block actions when danger thresholds are cleared.
+Its purpose is different from productivity memory. Productivity memory helps the agent **do more**. Safety memory helps it **refuse what it should not do**.
 
----
+## 2026-05-22 update — add boundary questions on top of the role taxonomy
 
-## 2026-05-22 Update — Memory Boundary Dimensions
+Re-reading this week’s sources together suggests that the recent overlap in memory discussions comes from mixing two different tables:
+1. a table that names **memory roles**
+2. a table that asks **when those roles break down**
 
-Recent research highlights that memory issues arise not just from having too many categories, but from failing to separate **Functional Roles** from **System Boundaries**:
+This page provides the **role taxonomy**. To make recent pages line up better, add these **boundary questions** on top.
 
-```
-FUNCTIONAL ROLES             SYSTEM BOUNDARIES
-┌────────────────────────┐   ┌───────────────────────────┐
-│ Task / Productivity    │   │ Scale Boundaries          │
-├────────────────────────┤   ├───────────────────────────┤
-│ Belief Representation  │   │ Runtime Enforcement       │
-├────────────────────────┤   ├───────────────────────────┤
-│ Lifecycle Consolidation│   │ Action-Time Safety Gates  │
-├────────────────────────┤   └───────────────────────────┘
-│ Safety Confinement     │
-└────────────────────────┘
-```
-
-These core system boundaries govern memory operations:
-
-| Boundary Dimension | Key Research | System Definition |
+| Boundary question | Representative source | How to read it in this taxonomy |
 |---|---|---|
-| **Scale Boundaries** | Scale-Conditioned Evaluation | Testing if an agent can preserve usable evidence as irrelevant session noise scales up. |
-| **Runtime Enforcement** | ClawVM | Decoupling the writeback, flush, and reset routines to make memory operations programmatically enforceable. |
-| **Action-Time Safety Gates** | MAGE + LITMUS | Coupling safety memory with pre-action audit gates to block malicious execution steps. |
+| **How large can memory grow before it stops being practically usable?** | Scale-Conditioned Evaluation | not just a task-memory issue; any memory system must keep surfacing usable evidence even as irrelevant sessions accumulate |
+| **Is memory actually enforced at runtime so it is not silently lost?** | ClawVM | independent of belief/lifecycle/safety distinctions; this is a question about who owns writeback, flush, and reset |
+| **Does the memory that notices risk actually block actions?** | MAGE + LITMUS | safety memory is incomplete unless it is paired with pre-action re-checks and state-audited evaluation |
 
----
+So recent memory work compresses into two axes:
+1. **Role axis** — task / belief / lifecycle / safety
+2. **Boundary axis** — scale boundary / runtime enforcement / action-time safety check
 
-## Systems Architecture Mapping
+That makes the page layout clearer:
+- [[concepts/ai-memory-systems]] = basic memory structure + belief/lifecycle/productivity
+- [[concepts/agent-supply-chain-security]] = safety memory + actual attack surface
+- [[concepts/llm-evaluation]] = where and how memory gets measured
+- this page = the **higher naming layer** that connects the three
 
-- [[concepts/ai-memory-systems]] maps the primary memory layout alongside Belief, Lifecycle, and Productivity models.
-- [[concepts/agent-supply-chain-security]] details the implementation of Safety Shadow Memory systems.
-- [[concepts/llm-evaluation]] details metrics used to audit memory and retrieval performance.
-- **This Taxonomy acts as the connecting naming directory across these domains.**
+## What this integrates, and what it leaves in place
 
----
+This taxonomy does not delete existing pages. It **re-arranges them by role**.
 
-## Solo Developer Memory Design Checklist
+- ZenBrain, GroupMemBench, BeliefMem, and Human-Inspired Memory stay in [[concepts/ai-memory-systems]]
+- MAGE stays in [[concepts/agent-supply-chain-security]]
+- this page sits above them as a comparison layer
 
-1. Is this memory designed to **assist task execution** or **prevent system hazards**?
-2. Does this system **track probability values and alternative hypotheses**?
-3. Does the system have a **formal forgetting and consolidation policy**?
-4. Is there a **pre-action safety gate** decoupled from standard semantic recall?
+So the problem “memory-related content is scattered across several pages” is compressed not by deletion, but by **naming and linking**.
 
-If a subsystem answers differently to these questions, it represents a **fundamentally different memory subsystem** and must be decoupled.
+## Solo developer design checklist
 
----
+1. Is this memory for **helping the work** or for **blocking risk**?
+2. Does this memory represent **probabilities / alternative hypotheses**?
+3. Does this memory have a policy for **when to forget**?
+4. Does this memory include a **pre-action safety check** separate from normal recall?
 
-## Summary
+If even one answer differs, then even if the label is still “memory,” it is actually a **different subsystem**.
 
-Memory is no longer a simple database hook. Engineering highly resilient agents requires designing separate subsystems for **task execution (productivity)**, **uncertainty tracking (belief)**, **database cleanup (lifecycle)**, and **threat isolation (safety)**.
+## Conclusion
 
-## References
-
-- [ZenBrain 7-Layer Memory Specifications](raw/articles/2026-05-03-zenbrain-7-layer-memory.md)
-- [GroupMemBench Multi-Party Memory Benchmarks](raw/articles/2026-05-15-groupmembench-multi-party-memory.md)
-- [BeliefMem: Belief State Tracking (arXiv:2605.18833)](raw/articles/2026-05-17-belief-memory-partial-observability.md)
-- [Human-Inspired Memory Consolidation Runtimes](raw/articles/2026-05-17-human-inspired-memory-architecture.md)
-- [MAGE Shadow Memory and Safe Execution Systems](raw/articles/2026-05-17-mage-shadow-memory-long-horizon-threats.md)
+Memory is no longer a single feature. It is no longer enough to ask only about **where memory is stored**. We now need to separate **uncertainty representation (belief)**, **maintenance policy (lifecycle)**, and **risk defense (safety)** as first-class design questions.

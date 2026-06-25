@@ -3,8 +3,9 @@ title: "1인 개발자 제품 전략"
 category: patterns
 tags: [solo-developer, micro-saas, product-strategy, indie-hacker]
 created: 2026-04-09
-updated: 2026-05-01
+updated: 2026-05-26
 sources:
+  - "raw/notes/2026-04-09-solo-dev-cases-detail.md"
   - "raw/notes/2026-04-09-solo-product-strategy.md"
   - "raw/articles/2026-05-01-solo-founder-ai-stack-2026.md"
   - "raw/articles/2026-05-01-anthropic-managed-agents-launch.md"
@@ -129,7 +130,7 @@ AI customer support 에이전트가 티켓의 **60~80%를 자동 처리**, 복�
 
 ### 단계별 권장 스택과 비용 시뮬레이터
 
-본 페이지의 단계 가이드를 **5대 영역 × 4 단계** 매트릭스로 자세히 풀어 둔 후속 페이지: [[patterns/agent-mvp-stack-2026]]. 변곡점은 [[examples/cost-simulator/index.html|인터랙티브 비용 시뮬레이터]]에서 슬라이더로 직접 만져 볼 수 있다.
+본 페이지의 단계 가이드를 **5대 영역 × 4 단계** 매트릭스로 자세히 풀어 둔 후속 페이지: [[patterns/agent-mvp-stack-2026]]. 변곡점은 [인터랙티브 비용 시뮬레이터](../../examples/cost-simulator/index.html)에서 슬라이더로 직접 만져 볼 수 있다.
 
 플랫폼 4종 (Managed Agents · Deep Agents Deploy · OpenAI Agents SDK · LangGraph 직접) 1인 관점 비교: [[comparisons/agent-platforms-for-solo-dev]].
 
@@ -148,6 +149,7 @@ AI customer support 에이전트가 티켓의 **60~80%를 자동 처리**, 복�
 ## 참고 소스
 
 - [1인 제품 전략 리서치](raw/notes/2026-04-09-solo-product-strategy.md)
+- [1인 개발자 AI 성공 사례 상세](raw/notes/2026-04-09-solo-dev-cases-detail.md)
 - [Solo Founder AI Stack 2026 (raw)](raw/articles/2026-05-01-solo-founder-ai-stack-2026.md)
 - [Managed Agents 출시](raw/articles/2026-05-01-anthropic-managed-agents-launch.md)
 - [Micro SaaS Ideas 2026 (NxCode)](https://www.nxcode.io/resources/news/micro-saas-ideas-2026)

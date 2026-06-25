@@ -3,7 +3,7 @@ title: "1인 개발자 MVP 스택 2026"
 category: patterns
 tags: [solo-developer, micro-saas, mvp, stack-2026, cost-management, product-strategy]
 created: 2026-05-01
-updated: 2026-05-01
+updated: 2026-05-26
 sources:
   - "raw/articles/2026-05-01-1-person-saas-cost-deep.md"
   - "raw/articles/2026-05-01-managed-vs-selfhost-breakeven.md"
@@ -151,7 +151,7 @@ T (req/일) × S (분/req) = 25 × F (self-host 인프라비 $/월)
 | $200/월 | 5,000 |
 | $500/월 | 12,500 |
 
-**[[examples/cost-simulator/index.html|인터랙티브 비용 시뮬레이터]]** 에서 슬라이더로 직접 만져 볼 수 있음.
+**[인터랙티브 비용 시뮬레이터](../../examples/cost-simulator/index.html)** 에서 슬라이더로 직접 만져 볼 수 있음.
 
 ## 사례 MRR (현실 체크)
 
@@ -200,7 +200,7 @@ T (req/일) × S (분/req) = 25 × F (self-host 인프라비 $/월)
 - [[tools/managed-agents]] · [[tools/deep-agents-deploy]] — 두 인프라 옵션
 - [[comparisons/managed-vs-deep-agents]] — 둘 비교
 - [[comparisons/agent-platforms-for-solo-dev]] — 1인 관점 4개 옵션 비교
-- [[examples/cost-simulator/index.html|비용 시뮬레이터]] — 변곡점 인터랙티브
+- [비용 시뮬레이터](../../examples/cost-simulator/index.html) — 변곡점 인터랙티브
 
 ## 참고 소스
 
@@ -217,4 +217,4 @@ T (req/일) × S (분/req) = 25 × F (self-host 인프라비 $/월)
 
 - **소속 챕터**: Chapter 5 (실전 보스전)
 - **클리어 조건**: 본인의 단계(0~3) 진단 + 5대 영역 도구 1개씩 선택
-- **다음 퀘스트**: [[examples/cost-simulator/index.html|비용 시뮬레이터]]에서 본인 트래픽 가정으로 변곡점 만져 보기
+- **다음 퀘스트**: [비용 시뮬레이터](../../examples/cost-simulator/index.html)에서 본인 트래픽 가정으로 변곡점 만져 보기

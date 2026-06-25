@@ -3,99 +3,104 @@ title: "Campaign Map"
 category: meta
 tags: [map, campaign, navigation]
 created: 2026-04-12
-updated: 2026-04-13
+updated: 2026-06-20
 sources:
- - "wiki/overview.md"
- - "wiki/index.md"
- - "wiki/log.md"
+  - "wiki/overview.md"
+  - "wiki/index.md"
+  - "wiki/log.md"
 status: active
 confidence: high
 ---
 
 # ai-native-mind Campaign Map
 
-> A world map to navigate the entire wiki like a "Chapter Clear Game."
+> A world map for following the wiki like a “chapter clear” game.
 
-## Easy Read
+## Start here
 
-This is not a document to read from beginning to end. Choose the chapter that matches your current experience level, and aim to accomplish the **Clear Condition + Deliverable**.
+This is not a document you read from top to bottom. Pick one chapter that matches your current level, then satisfy only its **clear condition + artifact**.
 
-## World Map Hub
+## World map hub
 
-- Starting Village: [[wiki/overview|Overview]]
-- Catalog (Complete List): [[wiki/index|Index]]
-- Quest Record: [[wiki/log|Log]]
-- Play Log: [[journal/2026-04-12|Journal Sample]]
+- Starting village: [[overview|Overview]]
+- Full catalog: [[index|Index]]
+- Quest log: [[log|Log]]
+- Play journal sample: [[journal/2026-04-12|Journal sample]]
 
-## Main Quest Line (Recommended)
+## Main quest line
 
-### Chapter 0 - Tutorial
-- Readings: [[patterns/llm-wiki]], [[tools/obsidian]], [[tools/claude-code]]
-- Clear Condition: Explain the ingest/query/lint flow in 3 sentences
-- Deliverable: Personal wiki usage rules memo
+### Chapter 0 — Tutorial
+- Docs: [[patterns/llm-wiki]], [[tools/obsidian]], [[tools/claude-code]]
+- Clear condition: explain the ingest/query/lint flow in 3 sentences
+- Artifact: a personal wiki-usage rule note
 
-### Chapter 1 - Worldview
-- Readings: [[concepts/ai-native-programmer]], [[concepts/ai-native-architecture]]
-- Clear Condition: Summarize in 5 sentences why the AI-native approach is needed
-- Deliverable: Before/After notes on my development methodology
+### Chapter 1 — Understand the worldview
+- Docs: [[concepts/ai-native-programmer]], [[concepts/ai-native-architecture]]
+- Clear condition: summarize in 5 sentences why an AI-native way of working matters
+- Artifact: a before/after note about your development style
 
-### Chapter 2 - Basic Combat
-- Readings: [[concepts/context-engineering]], [[concepts/prompt-engineering]], [[concepts/context-vs-prompt-practice]]
-- Clear Condition: Classify development issues as prompt vs. context-driven
-- Deliverable: My custom context sources inventory
+### Chapter 2 — Basic combat
+- Docs: [[concepts/context-engineering]], [[concepts/prompt-engineering]], [[concepts/context-vs-prompt-practice]]
+- Clear condition: classify a problem as prompt vs context
+- Artifact: your context-source list
 
-### Chapter 3 - Party Orchestration
-- Readings: [[concepts/ai-orchestration]], [[patterns/orchestration-patterns-practice]]
-- Clear Condition: Classify your current development tasks into the 6 core patterns
-- Deliverable: Draft your own workflow diagram (text format accepted)
+### Chapter 3 — Party operations
+- Docs: [[concepts/ai-orchestration]], [[patterns/orchestration-patterns-practice]]
+- Clear condition: classify your current work into one of the six major patterns
+- Artifact: a workflow diagram, even in text
 
-### Chapter 4 - Plan & Build
-- Readings: [[patterns/agent-planning-to-implementation]], [[patterns/subagents-delegation]]
-- Clear Condition: Decompose one feature into Plan -> Specs -> Implementation -> Verification
-- Deliverable: Checklists for a single implemented feature
+### Chapter 4 — Workshop
+- Docs: [[patterns/agent-planning-to-implementation]], [[patterns/subagents-delegation]]
+- Clear condition: decompose one feature into planning → spec → implementation → verification
+- Artifact: a checklist for one feature
 
-### Chapter 5 - Sandbox & Harness
-- Readings: [[patterns/agent-server-harness]], [[patterns/safe-tool-calling-sandbox]], [[patterns/owasp-llm-typescript-mitigations]]
-- Clear Condition: Find at least one missing permission/validation/logging/retry spot in your server
-- Deliverable: Security guidelines checklist v1
+### Chapter 5 — Safety dungeon
+- Docs: [[patterns/agent-server-harness]], [[patterns/safe-tool-calling-sandbox]], [[patterns/owasp-llm-typescript-mitigations]]
+- Clear condition: find at least one missing safeguard among permissions, verification, logging, and retries
+- Artifact: Security Checklist v1
 
-### Chapter 6 - Boss Fight (Evals & Observability)
-- Readings: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]]
-- Clear Condition: Set up 2 quality metrics + 2 observability metrics for your app
-- Deliverable: Metrics card dashboard draft (dashboard mock)
+### Chapter 6 — Operations boss fight
+- Docs: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]]
+- Clear condition: define 2 quality metrics + 2 observability metrics
+- Artifact: a metric card or dashboard draft
 
-### Chapter 7 - Endgame
-- Readings: [[patterns/git-ai-workflow]], [[patterns/ai-code-review]], [[patterns/ai-cost-management]]
-- Clear Condition: Automate and standardize at least one highly repetitive workflow
-- Deliverable: Your own custom 1-page AI development playbook
+### Chapter 7 — Endgame
+- Docs: [[patterns/git-ai-workflow]], [[patterns/ai-code-review]], [[patterns/ai-cost-management]]
+- Clear condition: automate or standardize one recurring task
+- Artifact: a one-page personal AI development playbook
 
-## Sub-Quest Lines (Optional)
+## Side quest lines
 
-- **Advanced Harness & Official Study**: [[patterns/harness-engineering-casebook]] (30-case matrix + Anthropic Academy map)
-- **Security Track**: [[patterns/owasp-llm-typescript-mitigations]] -> [[patterns/safe-tool-calling-sandbox]] -> [[concepts/context-rot-hallucination]]
-- **Tool Comparison**: [[comparisons/claude-code-plugins]] -> [[comparisons/ai-coding-tools]] -> [[comparisons/agent-frameworks]]
-- **Cost & Efficiency**: [[patterns/prompt-caching]] -> [[patterns/ai-cost-management]] -> [[concepts/structured-output]]
+- **Harness deep dive + official study**: [[patterns/harness-engineering-casebook]]
+- **Security specialization**: [[patterns/owasp-llm-typescript-mitigations]] → [[patterns/safe-tool-calling-sandbox]] → [[concepts/context-rot-hallucination]]
+- **Tool comparisons**: [[comparisons/claude-code-plugins]] → [[comparisons/ai-coding-tools]] → [[comparisons/agent-frameworks]]
+- **Cost / efficiency**: [[patterns/prompt-caching]] → [[patterns/ai-cost-management]] → [[concepts/structured-output]]
 
-## Progress Tracker
+## Progress tracker
 
-- [ ] Chapter 0 Cleared
-- [ ] Chapter 1 Cleared
-- [ ] Chapter 2 Cleared
-- [ ] Chapter 3 Cleared
-- [ ] Chapter 4 Cleared
-- [ ] Chapter 5 Cleared
-- [ ] Chapter 6 Cleared
-- [ ] Chapter 7 Cleared
+- [ ] Chapter 0 clear
+- [ ] Chapter 1 clear
+- [ ] Chapter 2 clear
+- [ ] Chapter 3 clear
+- [ ] Chapter 4 clear
+- [ ] Chapter 5 clear
+- [ ] Chapter 6 clear
+- [ ] Chapter 7 clear
 
-## Play Rules
+## Play rules
 
 1. Clear only one chapter per day.
-2. Focus on producing deliverables rather than just reading passively.
-3. If you get stuck, go back to the previous chapter and try again.
-4. Record your clear evidence in `wiki/journal/` or inside your project notes.
+2. Leave artifacts, not just reading notes.
+3. If you get stuck, go back to an earlier chapter and retry.
+4. Leave proof of completion in `wiki/journal/` or in project docs.
 
-## Patch Notes
+## Patch notes
 
-- 2026-04-12: Added a `Chapter Clear Guide` section to core documents in Chapters 0~2 to prevent quest flow interruptions.
-- 2026-04-12: Expanded `Chapter Clear Guide` to Chapters 3~7 core documents to ensure sequential continuity.
-- 2026-04-13: Added [[patterns/harness-engineering-casebook]] — featuring 30 harness domain cases + Anthropic Academy study map, connected to sub-quests.
+- 2026-04-12: Added a shared `Chapter Clear Guide` section to the core docs for Chapters 0–2 so the quest flow continues at the document level.
+- 2026-04-12: Extended the same guide to the core docs for Chapters 3–7 so the whole chapter line stays connected page by page.
+- 2026-04-13: Added [[patterns/harness-engineering-casebook]] — 30 harness domain cases + Anthropic Academy study map — and linked it as a side quest.
+- 2026-05-24: Synced the English meta hub with the current Korean source-of-truth navigation, including the quest log and full journal line.
+- 2026-05-26: Checked during English batch sync; navigation still matches the current Chapter Clear structure while index/overview/log carry the new 2026-05-25/26 updates.
+- 2026-06-02: Synced meta navigation links to the actual English root files: [[index]], [[overview]], [[campaign-map]], and [[log]].
+- 2026-06-13: Checked during Friday English batch sync; the Chapter Clear route still matches the Korean source-of-truth map while `index`, `overview`, and `log` carry the latest maintenance state.
+- 2026-06-20: Checked during Friday English batch sync; no campaign-route drift from the Korean source-of-truth map was found, and `index`, `overview`, and `log` now mirror maintenance through 2026-06-20.
