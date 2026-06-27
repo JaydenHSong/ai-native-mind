@@ -3,7 +3,7 @@ title: "Campaign Map"
 category: meta
 tags: [map, campaign, navigation]
 created: 2026-04-12
-updated: 2026-06-20
+updated: 2026-06-27
 sources:
   - "wiki/overview.md"
   - "wiki/index.md"
@@ -104,3 +104,4 @@ This is not a document you read from top to bottom. Pick one chapter that matche
 - 2026-06-02: Synced meta navigation links to the actual English root files: [[index]], [[overview]], [[campaign-map]], and [[log]].
 - 2026-06-13: Checked during Friday English batch sync; the Chapter Clear route still matches the Korean source-of-truth map while `index`, `overview`, and `log` carry the latest maintenance state.
 - 2026-06-20: Checked during Friday English batch sync; no campaign-route drift from the Korean source-of-truth map was found, and `index`, `overview`, and `log` now mirror maintenance through 2026-06-20.
+- 2026-06-27: Checked during Friday English batch sync; no campaign-route drift from the Korean source-of-truth map was found, and English meta pages now mirror maintenance through 2026-06-27.

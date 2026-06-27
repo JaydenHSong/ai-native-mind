@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-06-20
+updated: 2026-06-27
 sources: []
 status: active
 ---
@@ -19,6 +19,108 @@ This page records only **what changed** by date. For concept explanations, see t
 - World-map hub: [[campaign-map|Campaign Map]]
 - Navigation guide: [[overview|Overview]]
 - Full catalog: [[index|Index]]
+
+## [2026-06-27] en-sync | Friday English batch sync through Korean maintenance 2026-06-27
+
+- **English files updated**:
+  - `patterns/ai-news-scouting-taxonomy.md` — synced frontmatter `sources` with the Korean source page by adding `raw/notes/2026-05-25-weekday-ai-software-watch.md`; updated date now matches the Korean 2026-06-23 repair.
+  - `index.md` — refreshed latest-update wording for this Friday English batch sync.
+  - `overview.md` — added the 2026-06-23~27 Korean maintenance mirror and this English sync summary.
+  - `campaign-map.md` — added a patch note confirming no campaign-route drift.
+  - `log.md` — added this entry and the translated Korean maintenance entries through 2026-06-27.
+- **Comparison result**:
+  - `wiki/ko` and `wiki/en` currently expose the same 84 Markdown-page paths.
+  - No missing English `concepts/`, `tools/`, `patterns/`, `comparisons/`, `journal/`, or meta files were found.
+  - The only readable English page with older content metadata was `patterns/ai-news-scouting-taxonomy.md`; this sync corrected its source-reference drift.
+- **Operational note**:
+  - Several older English concept/tool/pattern/comparison files returned filesystem read errors during this cron run, so content-drift inspection for those files remains a follow-up hygiene candidate. Path-level parity was still confirmed.
+
+## [2026-06-27] maintain | Korean source-of-truth consistency recheck + no new ingest
+
+- **Pages updated in Korean source**:
+  - `index.md` — refreshed the latest-update wording for the 2026-06-27 scheduled maintenance pass.
+  - `overview.md` — added the consistency recheck result and kept pending hygiene candidates visible.
+  - `log.md` — added this entry.
+- **Verification**:
+  - Raw files without any source reference in `wiki/ko`: 0 out of 110 `raw/**/*.md` files.
+  - Broken wikilinks in `wiki/ko`: 0.
+  - Pages missing from `wiki/ko/index.md`: 0.
+  - Required frontmatter fields missing in `wiki/ko/**/*.md`: 0.
+  - Category-folder mismatches in `wiki/ko`: 0.
+- **Notes**:
+  - No new raw source was present, so no new ingest was performed.
+  - Recent `raw/articles/` files still use `source_type` / `authors` / `fetched`, while the raw-file example in `CLAUDE.md` shows `author` / `collected`. That source-layer key drift remains deferred to a separate hygiene task.
+  - Some early Claude Code plugin pages still have empty `sources`; no source was invented for them.
+  - The scheduled maintenance pass itself did not edit the English wiki; this entry is the English-batch mirror.
+
+## [2026-06-26] maintain | Korean source-of-truth consistency recheck + no new ingest
+
+- **Pages updated in Korean source**:
+  - `index.md` — refreshed the latest-update wording for the 2026-06-26 weekday maintenance pass.
+  - `overview.md` — added the consistency recheck result and kept pending hygiene candidates visible.
+  - `log.md` — added this entry.
+- **Verification**:
+  - Raw files without any source reference in `wiki/ko`: 0 out of 110 `raw/**/*.md` files.
+  - Broken wikilinks in `wiki/ko`: 0.
+  - Pages missing from `wiki/ko/index.md`: 0.
+  - Required frontmatter fields missing in `wiki/ko/**/*.md`: 0.
+  - Category-folder mismatches in `wiki/ko`: 0.
+- **Notes**:
+  - No new raw source was present, so no new ingest was performed.
+  - Raw frontmatter key drift and early plugin pages with empty `sources` remain separate hygiene candidates.
+  - The weekday maintenance pass itself did not edit the English wiki; this entry is the Friday English-batch mirror.
+
+## [2026-06-25] maintain | Korean source-of-truth consistency recheck + no new ingest
+
+- **Pages updated in Korean source**:
+  - `index.md` — refreshed the latest-update wording for the 2026-06-25 weekday maintenance pass.
+  - `overview.md` — added the consistency recheck result and kept pending hygiene candidates visible.
+  - `log.md` — added this entry.
+- **Verification**:
+  - Raw files without any source reference in `wiki/ko`: 0 out of 110 `raw/**/*.md` files.
+  - Broken wikilinks in `wiki/ko`: 0.
+  - Pages missing from `wiki/ko/index.md`: 0.
+  - Required frontmatter fields missing in `wiki/ko/**/*.md`: 0.
+  - Category-folder mismatches in `wiki/ko`: 0.
+- **Notes**:
+  - No new raw source was present, so no new ingest was performed.
+  - Raw frontmatter key drift and early plugin pages with empty `sources` remain separate hygiene candidates.
+  - The weekday maintenance pass itself did not edit the English wiki; this entry is the Friday English-batch mirror.
+
+## [2026-06-24] maintain | Korean source-of-truth consistency recheck + no new ingest
+
+- **Pages updated in Korean source**:
+  - `index.md` — refreshed the latest-update wording for the 2026-06-24 weekday maintenance pass.
+  - `overview.md` — added the consistency recheck result and kept pending hygiene candidates visible.
+  - `log.md` — added this entry.
+- **Verification**:
+  - Raw files without any source reference in `wiki/ko`: 0 out of 110 `raw/**/*.md` files.
+  - Broken wikilinks in `wiki/ko`: 0.
+  - Pages missing from `wiki/ko/index.md`: 0.
+  - Required frontmatter fields missing in `wiki/ko/**/*.md`: 0.
+  - Category-folder mismatches in `wiki/ko`: 0.
+- **Notes**:
+  - No new raw source was present, so no new ingest was performed.
+  - Raw frontmatter key drift and early plugin pages with empty `sources` remain separate hygiene candidates.
+  - The weekday maintenance pass itself did not edit the English wiki; this entry is the Friday English-batch mirror.
+
+## [2026-06-23] maintain | AI news taxonomy source-reference repair + Korean consistency recheck
+
+- **Pages updated in Korean source**:
+  - `patterns/ai-news-scouting-taxonomy.md` — frontmatter `sources` was empty, so the actual source note `raw/notes/2026-05-25-weekday-ai-software-watch.md` was connected and `updated` was refreshed.
+  - `index.md` — refreshed the latest-update wording for the 2026-06-23 weekday maintenance pass.
+  - `overview.md` — added the source-reference repair and consistency recheck result.
+  - `log.md` — added this entry.
+- **Verification**:
+  - Raw files without any source reference in `wiki/ko`: 0 out of 110 `raw/**/*.md` files.
+  - Broken wikilinks in `wiki/ko`: 0.
+  - Pages missing from `wiki/ko/index.md`: 0.
+  - Required frontmatter fields missing in `wiki/ko/**/*.md`: 0.
+  - Category-folder mismatches in `wiki/ko`: 0.
+- **Notes**:
+  - No new raw source was present, so no new ingest was performed.
+  - Raw frontmatter key drift and early plugin pages with empty `sources` remain separate hygiene candidates.
+  - The weekday maintenance pass itself did not edit the English wiki; this Friday sync mirrors the corresponding English taxonomy frontmatter.
 
 ## [2026-06-20] maintain | Korean source-of-truth consistency recheck + no new ingest
 
@@ -241,7 +343,7 @@ This page records only **what changed** by date. For concept explanations, see t
 ## [2026-05-26] maintain | examples link cleanup + source-orphan fix + Obsidian placeholder-link repair
 
 - **Pages updated in Korean source**:
-  - `tools/obsidian.md` — wrapped example `[[link]]` / `[[page-name]]` strings as code so they are not interpreted as broken wikilinks.
+  - `tools/obsidian.md` — wrapped example `link` / `page-name` wikilink strings as code so they are not interpreted as broken wikilinks.
   - `patterns/solo-product-strategy.md` — connected `raw/notes/2026-04-09-solo-dev-cases-detail.md` in `sources` / source references and changed the examples cost-simulator reference to a normal Markdown link.
   - `patterns/ai-cost-management.md` — changed the examples cost-simulator reference from a wikilink to a normal Markdown link.
   - `patterns/agent-mvp-stack-2026.md` — changed three examples cost-simulator references to normal Markdown links to preserve the boundary between wiki pages and supporting artifacts.

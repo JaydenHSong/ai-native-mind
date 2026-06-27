@@ -3,8 +3,9 @@ title: "AI News Scouting Taxonomy"
 category: patterns
 tags: [ai-news, taxonomy, scouting, curation, agents]
 created: 2026-05-25
-updated: 2026-05-25
-sources: []
+updated: 2026-06-23
+sources:
+  - "raw/notes/2026-05-25-weekday-ai-software-watch.md"
 related:
   - "[[concepts/agentic-engineering]]"
   - "[[concepts/harness-engineering]]"

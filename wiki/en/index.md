@@ -3,7 +3,7 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-06-20
+updated: 2026-06-27
 total_pages: 84
 sources: []
 status: active
@@ -11,7 +11,7 @@ status: active
 
 # ai-native-mind Wiki Index
 
-> 84 managed pages total | Last updated: 2026-06-20 (Friday EN sync: Korean source-of-truth maintenance log mirrored through 2026-06-20) — most pages include a **Start here** block.
+> 84 managed pages total | Last updated: 2026-06-27 (Friday EN sync: Korean source-of-truth maintenance log mirrored through 2026-06-27; AI news taxonomy source reference synced) — most pages include a **Start here** block.
 
 ## Start here
 
