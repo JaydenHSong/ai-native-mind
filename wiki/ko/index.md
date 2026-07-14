@@ -3,7 +3,7 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-07-10
+updated: 2026-07-14
 total_pages: 84
 sources: []
 status: active
@@ -11,7 +11,7 @@ status: active
 
 # ai-native-mind Wiki Index
 
-> 전체 84개 페이지 | 최종 업데이트: 2026-07-10 (weekday maintenance: 한국어 정본 정합성 재검사, 신규 ingest 없음) — 대부분 페이지에 **쉽게 읽기** 블록 있음
+> 전체 84개 페이지 | 최종 업데이트: 2026-07-14 (weekday maintenance: 한국어 정본 정합성 재검사, 신규 ingest 없음) — 대부분 페이지에 **쉽게 읽기** 블록 있음
 
 ## 쉽게 읽기
 

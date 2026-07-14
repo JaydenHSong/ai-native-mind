@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-07-10
+updated: 2026-07-14
 sources: []
 status: active
 ---
@@ -32,7 +32,11 @@ status: active
 - **총 페이지**: 84개
 - **카테고리**: concepts(20), tools(9), patterns(22), journal(20), comparisons(9), meta(4)
 - **시작일**: 2026-04-06
-- **최근 작업 (2026-07-10 weekday maintenance)**:
+- **최근 작업 (2026-07-14 weekday maintenance)**:
+  - `raw/**/*.md` 110개가 모두 `wiki/ko` 본문 또는 frontmatter의 source reference에 연결되어 있음을 재확인
+  - `wiki/ko` 기준 wikilink / index 등록 / 위키 frontmatter 필수 필드 / 카테고리-폴더 일치 검사를 다시 수행했고 신규 ingest 대상은 없었음
+  - 영어판은 수정하지 않았고, raw source frontmatter의 과거 키 drift와 일부 초기 Claude Code 플러그인 계열 페이지의 빈 `sources`는 별도 정리 후보로 계속 보류
+- **직전 작업 (2026-07-10 weekday maintenance)**:
   - `raw/**/*.md` 110개가 모두 `wiki/ko` 본문 또는 frontmatter의 source reference에 연결되어 있음을 재확인
   - `wiki/ko` 기준 wikilink / index 등록 / 위키 frontmatter 필수 필드 / 카테고리-폴더 일치 검사를 다시 수행했고 신규 ingest 대상은 없었음
   - 영어판은 수정하지 않았고, raw source frontmatter의 과거 키 drift와 일부 초기 Claude Code 플러그인 계열 페이지의 빈 `sources`는 별도 정리 후보로 계속 보류
