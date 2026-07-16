@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-07-15
+updated: 2026-07-16
 sources: []
 status: active
 ---
@@ -19,6 +19,24 @@ status: active
 - 월드맵 허브: [[campaign-map|Campaign Map]]
 - 진행 가이드: [[overview|Overview]]
 - 전체 도감: [[index|Index]]
+
+## [2026-07-16] maintain | 한국어 정본 정합성 재검사 + 신규 ingest 없음 확인
+
+- **Pages updated**:
+  - `index.md` — 최종 업데이트 문구를 2026-07-16 weekday maintenance 기준으로 갱신.
+  - `overview.md` — 최근 작업에 이번 정합성 재검사 결과와 보류 중인 hygiene 후보를 추가.
+  - `log.md` — 이 항목 추가.
+- **Verification**:
+  - `raw/**/*.md` 110개 중 `wiki/ko`에서 source reference가 전혀 없는 파일: 0개.
+  - `wiki/ko` 기준 wikilink 검사: broken link 0개.
+  - `wiki/ko/index.md` 등록 누락: 0개.
+  - `wiki/ko/**/*.md` frontmatter 필수 필드 누락: 0개.
+  - `wiki/ko` 카테고리 폴더와 frontmatter `category` 불일치: 0개.
+- **Notes**:
+  - 새 raw source는 없어서 신규 ingest는 수행하지 않았다.
+  - `raw/articles/`의 최근 파일들은 `source_type` / `authors` / `fetched` 키를 쓰고, CLAUDE.md의 raw 예시는 `author` / `collected` 키를 쓰는 drift가 남아 있다. 원본 layer는 이번 ko maintenance 범위에서 수정하지 않고 다음 별도 hygiene 후보로 남긴다.
+  - 초기 Claude Code 플러그인 계열 페이지 6개는 frontmatter `sources: []` 상태지만, 대응 raw source가 명확하지 않아 이번에도 임의 source를 만들지 않았다.
+  - 이번 작업은 영어판을 수정하지 않는 평일 한국어 정본 maintenance 범위 안에서만 수행했다.
 
 ## [2026-07-15] maintain | 한국어 정본 정합성 재검사 + 신규 ingest 없음 확인
 
