@@ -3,7 +3,7 @@ title: "Campaign Map"
 category: meta
 tags: [map, campaign, navigation]
 created: 2026-04-12
-updated: 2026-07-10
+updated: 2026-07-18
 sources:
   - "wiki/overview.md"
   - "wiki/index.md"
@@ -107,3 +107,4 @@ This is not a document you read from top to bottom. Pick one chapter that matche
 - 2026-06-27: Checked during Friday English batch sync; no campaign-route drift from the Korean source-of-truth map was found, and English meta pages now mirror maintenance through 2026-06-27.
 - 2026-07-04: Checked during Friday English batch sync; no campaign-route drift from the Korean source-of-truth map was found, and English meta pages now mirror maintenance through 2026-07-04.
 - 2026-07-10: Checked during Friday English batch sync; no campaign-route drift from the Korean source-of-truth map was found, and English meta pages now mirror maintenance through 2026-07-10.
+- 2026-07-18: Checked during weekly English batch sync; no campaign-route drift from the Korean source-of-truth map was found, and English meta pages now mirror maintenance through 2026-07-18.

@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-07-10
+updated: 2026-07-18
 sources: []
 status: active
 ---
@@ -32,11 +32,28 @@ This page is a **table of contents and learning map** for the wiki. The links be
 - **Total pages**: 84
 - **Categories**: concepts(20), tools(9), patterns(22), journal(20), comparisons(9), meta(4)
 - **Start date**: 2026-04-06
-- **Latest work (2026-07-10 Friday EN sync)**:
+- **Latest work (2026-07-18 weekly EN sync)**:
+  - Mirrored Korean source-of-truth maintenance through 2026-07-18 into `wiki/en/log.md`, covering the 2026-07-14~2026-07-18 no-new-ingest consistency checks.
+  - Confirmed that `wiki/ko` and `wiki/en` still expose the same 84 Markdown-page paths; no missing English journal/concept/tool/pattern/comparison/meta files were found.
+  - Refreshed English `index.md`, this overview, and the Campaign Map patch note for the latest weekly batch state.
+  - No concept/tool/pattern/comparison/journal body required translation this week; the Korean source changes were maintenance/meta-only.
+- **Previous work (2026-07-18 scheduled maintenance in Korean source)**:
+  - Rechecked that all 110 `raw/**/*.md` files are connected through source references in the Korean source-of-truth wiki.
+  - Re-ran Korean wikilink / index-registration / required-frontmatter / category-folder checks; no new ingest target was found.
+  - The maintenance pass itself did not edit the English wiki; this English batch mirrors it.
+- **Previous work (2026-07-17 weekday maintenance in Korean source)**:
+  - Rechecked raw source references, wikilinks, index registration, required frontmatter, and category-folder consistency in `wiki/ko`; no new ingest or repair target was found.
+  - Raw article frontmatter key drift and six early Claude Code plugin pages with empty `sources` remain deferred hygiene candidates.
+- **Previous work (2026-07-16 weekday maintenance in Korean source)**:
+  - Rechecked raw source references, wikilinks, index registration, required frontmatter, and category-folder consistency in `wiki/ko`; no new ingest or repair target was found.
+- **Previous work (2026-07-15 weekday maintenance in Korean source)**:
+  - Rechecked raw source references, wikilinks, index registration, required frontmatter, and category-folder consistency in `wiki/ko`; no new ingest or repair target was found.
+- **Previous work (2026-07-14 weekday maintenance in Korean source)**:
+  - Rechecked raw source references, wikilinks, index registration, required frontmatter, and category-folder consistency in `wiki/ko`; no new ingest or repair target was found.
+- **Previous work (2026-07-10 Friday EN sync)**:
   - Mirrored Korean source-of-truth maintenance through 2026-07-10 into `wiki/en/log.md`, covering the 2026-07-07~2026-07-10 no-new-ingest consistency checks.
   - Confirmed that `wiki/ko` and `wiki/en` still expose the same 84 Markdown-page paths; no missing English journal/concept/tool/pattern/comparison/meta files were found.
   - Refreshed English `index.md`, this overview, and the Campaign Map patch note for the latest Friday batch state.
-  - No concept/tool/pattern/comparison body required translation this week; the Korean source changes were maintenance/meta-only.
 - **Previous work (2026-07-10 weekday maintenance in Korean source)**:
   - Rechecked that all 110 `raw/**/*.md` files are connected through source references in the Korean source-of-truth wiki.
   - Re-ran Korean wikilink / index-registration / required-frontmatter / category-folder checks; no new ingest target was found.

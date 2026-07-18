@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-07-10
+updated: 2026-07-18
 sources: []
 status: active
 ---
@@ -19,6 +19,110 @@ This page records only **what changed** by date. For concept explanations, see t
 - World-map hub: [[campaign-map|Campaign Map]]
 - Navigation guide: [[overview|Overview]]
 - Full catalog: [[index|Index]]
+
+## [2026-07-18] en-sync | Weekly English batch sync through Korean maintenance 2026-07-18
+
+- **English files updated**:
+  - `index.md` — refreshed latest-update wording for this weekly English batch sync.
+  - `overview.md` — added the 2026-07-14~2026-07-18 Korean maintenance mirror and this English sync summary.
+  - `campaign-map.md` — added a patch note confirming no campaign-route drift.
+  - `log.md` — added this entry and the translated Korean maintenance entries through 2026-07-18.
+- **Comparison result**:
+  - `wiki/ko` and `wiki/en` currently expose the same 84 Markdown-page paths.
+  - No missing English `concepts/`, `tools/`, `patterns/`, `comparisons/`, `journal`, or meta files were found.
+  - Korean source changes since the previous English batch were maintenance/meta-only: no new raw source, no new ingest, and no concept/tool/pattern/comparison/journal body translation was required.
+- **Operational note**:
+  - Several older English concept/tool/pattern/comparison files still returned filesystem read errors during this cron run, so deep content-drift inspection for those files remains a follow-up hygiene candidate. Path-level parity was still confirmed.
+
+## [2026-07-18] maintain | Korean source-of-truth consistency recheck + no new ingest
+
+- **Pages updated in Korean source**:
+  - `index.md` — refreshed the latest-update wording for the 2026-07-18 scheduled maintenance pass.
+  - `overview.md` — added the consistency recheck result and kept pending hygiene candidates visible.
+  - `log.md` — added this entry.
+- **Verification**:
+  - Raw files without any source reference in `wiki/ko`: 0 out of 110 `raw/**/*.md` files.
+  - Broken wikilinks in `wiki/ko`: 0.
+  - Pages missing from `wiki/ko/index.md`: 0.
+  - Required frontmatter fields missing in `wiki/ko/**/*.md`: 0.
+  - Category-folder mismatches in `wiki/ko`: 0.
+- **Notes**:
+  - No new raw source was present, so no new ingest was performed.
+  - Recent `raw/articles/` files still use `source_type` / `authors` / `fetched`, while the raw-file example in `CLAUDE.md` shows `author` / `collected`. That source-layer key drift remains deferred to a separate hygiene task.
+  - Six early Claude Code plugin pages still have empty `sources`; no source was invented for them.
+  - The scheduled maintenance pass itself did not edit the English wiki; this entry is the English-batch mirror.
+
+## [2026-07-17] maintain | Korean source-of-truth consistency recheck + no new ingest
+
+- **Pages updated in Korean source**:
+  - `index.md` — refreshed the latest-update wording for the 2026-07-17 weekday maintenance pass.
+  - `overview.md` — added the consistency recheck result and kept pending hygiene candidates visible.
+  - `log.md` — added this entry.
+- **Verification**:
+  - Raw files without any source reference in `wiki/ko`: 0 out of 110 `raw/**/*.md` files.
+  - Broken wikilinks in `wiki/ko`: 0.
+  - Pages missing from `wiki/ko/index.md`: 0.
+  - Required frontmatter fields missing in `wiki/ko/**/*.md`: 0.
+  - Category-folder mismatches in `wiki/ko`: 0.
+- **Notes**:
+  - No new raw source was present, so no new ingest was performed.
+  - Recent `raw/articles/` files still use `source_type` / `authors` / `fetched`, while the raw-file example in `CLAUDE.md` shows `author` / `collected`. That source-layer key drift remains deferred to a separate hygiene task.
+  - Six early Claude Code plugin pages still have empty `sources`; no source was invented for them.
+  - The weekday maintenance pass itself did not edit the English wiki; this entry is the Friday English-batch mirror.
+
+## [2026-07-16] maintain | Korean source-of-truth consistency recheck + no new ingest
+
+- **Pages updated in Korean source**:
+  - `index.md` — refreshed the latest-update wording for the 2026-07-16 weekday maintenance pass.
+  - `overview.md` — added the consistency recheck result and kept pending hygiene candidates visible.
+  - `log.md` — added this entry.
+- **Verification**:
+  - Raw files without any source reference in `wiki/ko`: 0 out of 110 `raw/**/*.md` files.
+  - Broken wikilinks in `wiki/ko`: 0.
+  - Pages missing from `wiki/ko/index.md`: 0.
+  - Required frontmatter fields missing in `wiki/ko/**/*.md`: 0.
+  - Category-folder mismatches in `wiki/ko`: 0.
+- **Notes**:
+  - No new raw source was present, so no new ingest was performed.
+  - Recent `raw/articles/` files still use `source_type` / `authors` / `fetched`, while the raw-file example in `CLAUDE.md` shows `author` / `collected`. That source-layer key drift remains deferred to a separate hygiene task.
+  - Six early Claude Code plugin pages still have empty `sources`; no source was invented for them.
+  - The weekday maintenance pass itself did not edit the English wiki; this entry is the Friday English-batch mirror.
+
+## [2026-07-15] maintain | Korean source-of-truth consistency recheck + no new ingest
+
+- **Pages updated in Korean source**:
+  - `index.md` — refreshed the latest-update wording for the 2026-07-15 weekday maintenance pass.
+  - `overview.md` — added the consistency recheck result and kept pending hygiene candidates visible.
+  - `log.md` — added this entry.
+- **Verification**:
+  - Raw files without any source reference in `wiki/ko`: 0 out of 110 `raw/**/*.md` files.
+  - Broken wikilinks in `wiki/ko`: 0.
+  - Pages missing from `wiki/ko/index.md`: 0.
+  - Required frontmatter fields missing in `wiki/ko/**/*.md`: 0.
+  - Category-folder mismatches in `wiki/ko`: 0.
+- **Notes**:
+  - No new raw source was present, so no new ingest was performed.
+  - Recent `raw/articles/` files still use `source_type` / `authors` / `fetched`, while the raw-file example in `CLAUDE.md` shows `author` / `collected`. That source-layer key drift remains deferred to a separate hygiene task.
+  - Six early Claude Code plugin pages still have empty `sources`; no source was invented for them.
+  - The weekday maintenance pass itself did not edit the English wiki; this entry is the Friday English-batch mirror.
+
+## [2026-07-14] maintain | Korean source-of-truth consistency recheck + no new ingest
+
+- **Pages updated in Korean source**:
+  - `index.md` — refreshed the latest-update wording for the 2026-07-14 weekday maintenance pass.
+  - `overview.md` — added the consistency recheck result and kept pending hygiene candidates visible.
+  - `log.md` — added this entry.
+- **Verification**:
+  - Raw files without any source reference in `wiki/ko`: 0 out of 110 `raw/**/*.md` files.
+  - Broken wikilinks in `wiki/ko`: 0.
+  - Pages missing from `wiki/ko/index.md`: 0.
+  - Required frontmatter fields missing in `wiki/ko/**/*.md`: 0.
+  - Category-folder mismatches in `wiki/ko`: 0.
+- **Notes**:
+  - No new raw source was present, so no new ingest was performed.
+  - Recent `raw/articles/` files still use `source_type` / `authors` / `fetched`, while the raw-file example in `CLAUDE.md` shows `author` / `collected`. That source-layer key drift remains deferred to a separate hygiene task.
+  - Some early Claude Code plugin pages still have empty `sources`; no source was invented for them.
+  - The weekday maintenance pass itself did not edit the English wiki; this entry is the Friday English-batch mirror.
 
 ## [2026-07-10] en-sync | Friday English batch sync through Korean maintenance 2026-07-10
 
