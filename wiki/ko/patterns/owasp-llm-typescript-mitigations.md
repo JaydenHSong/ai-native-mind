@@ -3,7 +3,7 @@ title: "OWASP LLM Top 10 × TypeScript 완화 패턴"
 category: patterns
 tags: [security, owasp, typescript, agents, zod, ai-sdk]
 created: 2026-04-12
-updated: 2026-05-01
+updated: 2026-05-26
 sources:
   - "raw/notes/2026-04-12-security-typescript-corpus.md"
   - "raw/papers/owasp-genai-2025-llm-top-10.md"
@@ -129,7 +129,7 @@ untrusted data ────→ Q-LLM (도구 0)
 
 ### 1인 개발자 minimal TS 적용
 
-현 [[examples/agent-safety-sketch|examples/agent-safety-sketch]]에 dual-LLM 최소 sketch 추가. 핵심 idea: `Output.object`의 schema에 **plan 단계와 untrusted-data 처리 단계를 분리**.
+현 [examples/agent-safety-sketch](../../examples/agent-safety-sketch/README.md)에 dual-LLM 최소 sketch 추가. 핵심 idea: `Output.object`의 schema에 **plan 단계와 untrusted-data 처리 단계를 분리**.
 
 ```typescript
 // P-LLM: 사용자 instruction만 본다, plan 생성

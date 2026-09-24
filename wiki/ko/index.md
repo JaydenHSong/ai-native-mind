@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-05-24
-total_pages: 80
+updated: 2026-09-24
+total_pages: 90
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 전체 80개 페이지 | 최종 업데이트: 2026-05-24 (source-level harness evolution · spreadsheet workflow eval · log-first runtime 반영) — 대부분 페이지에 **쉽게 읽기** 블록 있음
+> 전체 90개 페이지 | 최종 업데이트: 2026-09-24 (데일리 ingest: AI 뉴스 6건 수집 + 한/영 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
 
 ## 쉽게 읽기
 
@@ -19,7 +19,7 @@ status: active
 
 ## Chapter Clear 시작점
 
-게임처럼 순서대로 가고 싶다면 먼저 [[wiki/campaign-map|Campaign Map]]을 열고, 필요할 때 [[wiki/overview|Overview]]로 보조 설명을 본다.
+게임처럼 순서대로 가고 싶다면 먼저 [[campaign-map|Campaign Map]]을 열고, 필요할 때 [[overview|Overview]]로 보조 설명을 본다.
 
 - **튜토리얼(Chapter 0)**: [[patterns/llm-wiki]], [[tools/obsidian]], [[tools/claude-code]]
 - **기본기(Chapter 1~2)**: [[concepts/ai-native-programmer]], [[concepts/context-engineering]]
@@ -60,7 +60,7 @@ status: active
 - [[concepts/cognitive-debt]] — Technical Debt의 AI 버전, 개발자의 머릿속에 쌓이는 부채
 - [[concepts/agent-supply-chain-security]] — 외부 도구·스킬·에이전트의 신뢰 모델 + dual-LLM/CaMeL + Tier 등급
 
-## Tools (9개)
+## Tools (12개)
 
 - [[tools/claude-code]] — Anthropic의 CLI 기반 AI 코딩 도구, 위키 유지보수 LLM
 - [[tools/obsidian]] — 로컬 마크다운 기반 노트 앱, 위키 브라우저/IDE
@@ -71,8 +71,11 @@ status: active
 - [[tools/vercel-workflow]] — Workflow DevKit, TypeScript 내구 워크플로·Webhook·에이전트 장기 실행
 - [[tools/managed-agents]] — Anthropic의 클라우드 호스팅 에이전트 인프라 (2026-04-08 public beta)
 - [[tools/deep-agents-deploy]] — LangChain 오픈 소스 에이전트 하네스 + 배포 도구 (모델 무관, MIT)
+- [[tools/alibaba-agentcore]] — 알리바바의 기업용 에이전트 플랫폼 + agentic cloud 로드맵 (2026-09-24)
+- [[tools/claude-marketplace]] — Claude용 커넥터·플러그인 마켓플레이스 2,000+ (2026-09-24)
+- [[tools/codex-security]] — 취약점 탐지→패치→수정을 한 루프로 묶은 OpenAI 보안 에이전트 (리서치 프리뷰, 2026-09-24)
 
-## Patterns (20개)
+## Patterns (24개)
 
 ### 커리큘럼·실습 (읽기 순서 2→6)
 - [[patterns/preventing-context-rot]] — Context Rot·3계층 메모리 (커리큘럼 2)
@@ -84,8 +87,10 @@ status: active
 ### LLM-Wiki & 메타 패턴
 - [[patterns/llm-wiki]] — LLM이 유지보수하는 개인 지식 위키 패턴 (Tobi Lütke)
 - [[patterns/bkit-superpowers-combo]] — bkit PDCA + Superpowers TDD 조합으로 단계 건너뛰기 방지
+- [[patterns/agents-md-skill-md]] — repo-scope `AGENTS.md` 와 task-scope `SKILL.md` 를 분리해 portability와 progressive disclosure를 같이 얻는 패턴
 
 ### AI 개발 실전 패턴
+- [[patterns/ai-news-scouting-taxonomy]] — HN 중심 흐름을 frontier/open/coding-agent/runtime/eval 레이어로 재편하는 AI 뉴스 스카우팅 분류안
 - [[patterns/harness-engineering-casebook]] — 도메인 30케이스 매트릭스 + Anthropic Academy 스터디 맵
 - [[patterns/agent-planning-to-implementation]] — 기획·스펙·태스크→코드까지 에이전트 파이프라인과 HITL 게이트
 - [[patterns/agent-server-harness]] — HTTP·큐·SSE 뒤의 에이전트 백엔드·상태·보안 하네스
@@ -96,14 +101,17 @@ status: active
 - [[patterns/ai-code-review]] — 1인 개발자를 위한 AI 기반 코드 리뷰 워크플로우
 - [[patterns/git-ai-workflow]] — Claude Code의 Git 통합, 커밋/PR/브랜치 자동화
 - [[patterns/ai-cost-management]] — Model routing + caching + batch로 95% 비용 절감
+- [[patterns/agentic-coding]] — 에이전트가 코드를 통째로 작성하는 방식, 신뢰성은 워크플로의 속성 (2026-09-24)
+- [[patterns/agentic-commerce]] — 에이전트가 상품을 고르고 결제하는 패러다임, "에이전트가 누구 편인가" (2026-09-24)
 
 ### 제품 전략 & 안티패턴
 - [[patterns/solo-product-strategy]] — 1인 개발자 제품 전략, 마이크로 SaaS 기획·출시
 - [[patterns/agent-mvp-stack-2026]] — 1인 MVP 스택 5대 영역 × 4 단계 + 의사결정 트리 (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — Vibe Coding의 7대 안티패턴과 회피법
 
-## Journal (18개)
+## Journal (20개)
 
+- [[journal/2026-05-25]] — weekday watch kick-off: Cline / browser-use / LangGraph / Langfuse를 통해 integration surface · operator control · trace artifact화 우선순위 재확인
 - [[journal/2026-05-24]] — 일요 데일리: MOSS(source-level harness evolution) + WorkstreamBench(spreadsheet workflow eval) + ActiveGraph(log-first runtime)
 - [[journal/2026-05-23]] — 토요 데일리: Life-Harness(interface adaptation) + TerminalWorld(benchmark provenance) + HarnessAPI(single-source MCP/HTTP capability) + DeltaBox(branchable sandbox runtime)
 - [[journal/2026-05-22]] — 금요 데일리 + 주간 리뷰: Code as Agent Harness(code substrate) + Scale-Conditioned Memory Eval(usable-scale boundary) + Benchmark Disclosure Audit(run disclosure quality) + boundary-compression 메모
@@ -125,7 +133,7 @@ status: active
 - [[journal/2026-05-17]] — 일요 데일리: Agentic AI Survey(symbolic vs neural) + BeliefMem(probabilistic memory) + MAGE(shadow memory guardrail) + 늦은 추가 3편(Human-Inspired Memory · FeatureBench · LITMUS)
 - [[journal/2026-05-15]] — 금요 데일리+주간 리뷰: ACDL(context 표기) + Constraint Decay(백엔드 −30점) + GroupMemBench(memory 46%) — 4일 *layer 사다리* 합치기
 
-## Comparisons (9개)
+## Comparisons (10개)
 
 - [[comparisons/rag-vs-llm-wiki]] — RAG와 LLM-Wiki 방식 비교: 재발견 vs 축적
 - [[comparisons/claude-code-plugins]] — Claude Code 플러그인 4종 비교 + 조합 전략
@@ -136,10 +144,11 @@ status: active
 - [[comparisons/agent-eval-frameworks]] — DeepEval/LangSmith/Braintrust/Langfuse/Inspect AI/RAGAS 6대장
 - [[comparisons/agent-platforms-for-solo-dev]] — 1인 개발자 관점 4종 비교 (Managed/Deep Agents/Agents SDK/LangGraph 직접)
 - [[comparisons/agent-memory-taxonomy]] — task/productivity vs belief vs lifecycle vs safety memory 분류 + scale boundary / runtime enforcement overlay
+- [[comparisons/frontier-lab-economics]] — 저가 파괴자 vs 가격 결정력 인프라, DeepSeek 사례 (2026-09-24)
 
 ## Meta
 
-- [[wiki/index]] — 전체 페이지 카탈로그 (현재 문서)
-- [[wiki/campaign-map]] — 챕터 클리어 월드맵 (메인 허브)
-- [[wiki/overview]] — 위키 전체 종합 현황
-- [[wiki/log]] — 시간순 작업 기록
+- [[index]] — 전체 페이지 카탈로그 (현재 문서)
+- [[campaign-map]] — 챕터 클리어 월드맵 (메인 허브)
+- [[overview]] — 위키 전체 종합 현황
+- [[log]] — 시간순 작업 기록

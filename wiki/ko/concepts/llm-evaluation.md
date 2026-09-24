@@ -3,7 +3,7 @@ title: "LLM Evaluation (Evals)"
 category: concepts
 tags: [evaluation, testing, llm, quality, evals, judge-reliability, long-horizon, native-runtime, benchmark, coding-benchmark, behavioral-safety, version-upgrade, trajectory-audit, harness-safety, artifact-aware-review, delegation-benchmark, privacy-benchmark, reward-hacking, process-evaluation, reproducibility, disclosure-audit, terminal-benchmark, benchmark-provenance, workflow-evaluation, artifact-quality]
 created: 2026-04-09
-updated: 2026-05-24
+updated: 2026-09-24
 sources:
   - "raw/notes/2026-04-09-llm-evaluation.md"
   - "raw/articles/2026-05-12-judge-reliability-harness-rand.md"
@@ -19,6 +19,7 @@ sources:
   - "raw/articles/2026-05-22-agent-benchmark-disclosure-audit.md"
   - "raw/articles/2026-05-23-terminalworld-real-world-terminal-benchmark.md"
   - "raw/articles/2026-05-24-workstreambench-finance-spreadsheet-agents.md"
+  - "raw/articles/2026-09-24-agentic-commerce-benchmark-booking.md"
 related:
   - "[[concepts/harness-engineering]]"
   - "[[concepts/context-rot-hallucination]]"
@@ -26,6 +27,7 @@ related:
   - "[[concepts/gen-ai-observability]]"
   - "[[comparisons/agent-eval-frameworks]]"
   - "[[journal/2026-05-17]]"
+  - "[[patterns/agentic-commerce]]"
 status: active
 confidence: high
 ---
@@ -714,6 +716,23 @@ WorkstreamBench는 여기에 **financial spreadsheet workflow** 라는 별도 �
 1. terminal benchmark가 높아도 spreadsheet·docs·dashboard 같은 **office artifact workflow** 성능은 별도로 봐야 한다.
 2. agent 평가에서 최종 답변 로그만 저장하지 말고 **산출 파일(diff, workbook state, generated artifact)** 를 같이 보관한다.
 3. 실무 자동화 후보를 고를 때는 "질문응답형"보다 **artifact completion quality를 자동 채점할 수 있는 workflow** 부터 선택하는 편이 낫다.
+
+## 2026-09-24 보강 — Agentic Commerce Steering: eval에 "적대적 환경" 조건을 넣어야 한다
+
+[Agentic commerce reality check](https://www.usecarly.com/blog/ai-news-2026-09-24/) (2026-09-24)는 이 페이지의 eval 층에 **"충성도(loyalty)"** 라는 새 질문을 던진다.
+
+### 측정된 것
+
+- **침투율**: Booking Holdings CEO — LLM 트래픽이 전체 숙박 예약의 "1%에 현저히 못 미침". 에이전트 커머스는 아직 실험 단계.
+- **스티어링 효과**: 새 벤치마크에서 computer-use 에이전트는 통제 조건에서 사용자 최적 상품을 **78.6%** 확률로 구매. 그러나 마켓플레이스가 스티어링을 허용받으면 **17.3%로 급락**.
+
+### eval 설계에의 함의
+
+에이전트 성능이 아니라 **"에이전트가 누구 편인가"** — principal-agent 문제의 실전 버전이다. 78.6%→17.3%는 eval에 "적대적 환경" 조건을 넣어야 한다는 근거: 환경(마켓플레이스)이 개입할 때 에이전트가 주인 편에 남는지를 잰다.
+
+한편 Amazon은 셀러 콘솔을 Claude에 개방하고 자체 셀러 에이전트 "workflows"를 출시 — 커머스의 에이전트화는 플랫폼 주도로 진행 중이다. 즉 eval 설계자는 "에이전트 vs 환경"이 아니라 **"어느 플랫폼의 에이전트인가"** 를 변수로 봐야 할 수도 있다.
+
+> 자세히: [[patterns/agentic-commerce|Agentic Commerce]]
 
 ## 1인 개발자에게
 

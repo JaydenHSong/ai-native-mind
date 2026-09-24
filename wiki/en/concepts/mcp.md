@@ -3,7 +3,7 @@ title: "MCP (Model Context Protocol)"
 category: concepts
 tags: [mcp, anthropic, protocol, tools, integration]
 created: 2026-04-09
-updated: 2026-05-01
+updated: 2026-09-24
 sources:
   - "raw/notes/2026-04-09-mcp-research.md"
   - "raw/articles/2026-05-01-a2a-protocol-spec.md"
@@ -14,6 +14,7 @@ related:
   - "[[concepts/ai-orchestration]]"
   - "[[patterns/owasp-llm-typescript-mitigations]]"
   - "[[concepts/a2a-protocol]]"
+  - "[[tools/claude-marketplace]]"
 status: active
 confidence: high
 ---
@@ -104,6 +105,14 @@ In 2026, the sister [[concepts/a2a-protocol|A2A Protocol]] was established under
 | **Governance** | Anthropic $\to$ Open Standards | Google $\to$ Linux Foundation |
 
 **Synergy over Competition**: An agent discovered via the A2A protocol can be cleanly wrapped as an **MCP tool** (the exact design pattern deployed in Cisco's 2026 pilots). Utilizing both protocols together is the recommended architectural pattern in [[concepts/agentic-engineering]].
+
+## The Layer Above MCP — Marketplaces
+
+On 2026-09-23 Anthropic launched the Claude Marketplace, adding a **discovery, payment, and governance** layer on top of the "connections" MCP standardized. Find 2,000+ connectors and plugins in one place and pay for third-party software with committed spend.
+
+For solo developers, searching the marketplace for ready-made connectors is the fast path before building an MCP server from scratch. The trust model for third-party connectors should still be read alongside [[concepts/agent-supply-chain-security|Agent Supply Chain Security]].
+
+> Details: [[tools/claude-marketplace|Claude Marketplace]]
 
 ## References
 

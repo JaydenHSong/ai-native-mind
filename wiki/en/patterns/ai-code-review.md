@@ -3,7 +3,7 @@ title: "AI Code Review Workflow"
 category: patterns
 tags: [code-review, workflow, solo-developer, claude-code, execution-grounding, constraint-decay, framework-sensitivity, roadmap, release-scale, reward-hacking, process-evaluation]
 created: 2026-04-09
-updated: 2026-05-21
+updated: 2026-09-24
 sources:
   - "raw/notes/2026-04-09-ai-code-review.md"
   - "raw/articles/2026-05-13-verify-before-you-fix-execution-grounding.md"
@@ -18,6 +18,8 @@ related:
   - "[[concepts/cognitive-debt]]"
   - "[[patterns/git-ai-workflow]]"
   - "[[concepts/llm-evaluation]]"
+  - "[[patterns/agentic-coding]]"
+  - "[[tools/codex-security]]"
 status: active
 confidence: high
 ---
@@ -312,6 +314,16 @@ Control preservation is mapped across five dimensions:
 2. Ensure complex, long-running agent workflows document clear **rollback steps** and **cancellation thresholds** upfront.
 3. Do not audit diffs in isolation; review the **terminal command trace and execution trajectory** that produced the patch.
 4. When comparing coding agents, value **process controllability and graceful human hand-back** above raw test-passing metrics.
+
+## 2026-09-24 Addendum — Codex Security: From Review to Automatic Fixes
+
+[OpenAI Codex Security](https://news.bloomberglaw.com/tech-and-telecom-law/openai-releases-ai-agent-security-tool-for-research-preview) (research preview, 2026-09-24) pushes this page's "Plan-Review-Execute" loop one step further. The agent takes over vulnerability scanning → "easy-to-accept patch" proposals → **direct fixes**.
+
+The key metric is not detection rate but the **share of patches that get merged**. The review loop's success metric shifts from "bugs found" to "fixes a human accepts as-is."
+
+Caveat: still in research preview, so real-world false-positive rates are unverified. An agent editing code directly is a [[concepts/agent-supply-chain-security|trust-model]] question, so keep a verification step before applying patches.
+
+> Details: [[tools/codex-security|Codex Security]], [[patterns/agentic-coding|Agentic Coding]]
 
 ## Chapter Clear Guide
 

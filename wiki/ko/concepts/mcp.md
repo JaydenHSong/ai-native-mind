@@ -3,7 +3,7 @@ title: "MCP (Model Context Protocol)"
 category: concepts
 tags: [mcp, anthropic, protocol, tools, integration]
 created: 2026-04-09
-updated: 2026-05-01
+updated: 2026-09-24
 sources:
   - "raw/notes/2026-04-09-mcp-research.md"
   - "raw/articles/2026-05-01-a2a-protocol-spec.md"
@@ -14,6 +14,7 @@ related:
   - "[[concepts/ai-orchestration]]"
   - "[[patterns/owasp-llm-typescript-mitigations]]"
   - "[[concepts/a2a-protocol]]"
+  - "[[tools/claude-marketplace]]"
 status: active
 confidence: high
 ---
@@ -104,6 +105,14 @@ MCP는 Harness의 핵심 인프라. 에이전트가 외부 세계와 상호작�
 | 거버넌스 | Anthropic → 표준화 진행 중 | Google → Linux Foundation |
 
 **둘은 경쟁이 아니라 보완**: A2A로 발견한 다른 에이전트를 **MCP wrapper**로 도구처럼 호출 가능 ([[concepts/agentic-engineering]]의 Cisco 파일럿이 정확히 이 방법). 실무에서 둘을 같이 쓰는 게 표준 패턴.
+
+## MCP 위의 다음 레이어 — 마켓플레이스
+
+2026-09-23 Anthropic이 Claude Marketplace를 공개하면서, MCP가 표준화한 "연결" 위에 **발견·결제·거버넌스** 레이어가 얹혔다. 2,000개 이상의 커넥터·플러그인을 한 곳에서 찾고, 약정 예산으로 서드파티 SW를 결제한다.
+
+1인 개발자에게는 직접 MCP 서버를 만들기 전에 마켓플레이스에서 기성 커넥터를 먼저 뒤지는 게 빠른 길이다. 다만 서드파티 커넥터의 신뢰 모델은 [[concepts/agent-supply-chain-security|Agent Supply Chain Security]]와 함께 봐야 한다.
+
+> 자세히: [[tools/claude-marketplace|Claude Marketplace]]
 
 ## 참고 소스
 

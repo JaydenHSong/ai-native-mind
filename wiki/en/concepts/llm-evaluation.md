@@ -3,7 +3,7 @@ title: "LLM Evaluation (Evals)"
 category: concepts
 tags: [evaluation, testing, llm, quality, evals, judge-reliability, long-horizon, native-runtime, benchmark, coding-benchmark, behavioral-safety, version-upgrade, trajectory-audit, harness-safety, artifact-aware-review, delegation-benchmark, privacy-benchmark, reward-hacking, process-evaluation, reproducibility, disclosure-audit, terminal-benchmark, benchmark-provenance, workflow-evaluation, artifact-quality]
 created: 2026-04-09
-updated: 2026-05-24
+updated: 2026-09-24
 sources:
   - "raw/notes/2026-04-09-llm-evaluation.md"
   - "raw/articles/2026-05-12-judge-reliability-harness-rand.md"
@@ -19,6 +19,7 @@ sources:
   - "raw/articles/2026-05-22-agent-benchmark-disclosure-audit.md"
   - "raw/articles/2026-05-23-terminalworld-real-world-terminal-benchmark.md"
   - "raw/articles/2026-05-24-workstreambench-finance-spreadsheet-agents.md"
+  - "raw/articles/2026-09-24-agentic-commerce-benchmark-booking.md"
 related:
   - "[[concepts/harness-engineering]]"
   - "[[concepts/context-rot-hallucination]]"
@@ -26,6 +27,7 @@ related:
   - "[[concepts/gen-ai-observability]]"
   - "[[comparisons/agent-eval-frameworks]]"
   - "[[journal/2026-05-17]]"
+  - "[[patterns/agentic-commerce]]"
 status: active
 confidence: high
 ---
@@ -462,6 +464,23 @@ Artifact-Aware Evals  ──→  WorkstreamBench (Scoring compiled financial wor
 ```
 
 ---
+
+## 2026-09-24 Addendum — Agentic Commerce Steering: Evals Need an "Adversarial Environment" Condition
+
+[Agentic commerce reality check](https://www.usecarly.com/blog/ai-news-2026-09-24/) (2026-09-24) poses a new question to this page's eval layers: **"loyalty."**
+
+### What was measured
+
+- **Penetration**: Booking Holdings' CEO says LLM traffic is "significantly below 1%" of total lodging bookings. Agentic commerce is still experimental.
+- **Steering effect**: in a new benchmark, computer-use agents buy the user-optimal product with **78.6%** probability under controlled conditions — but **17.3%** once the marketplace is allowed to steer.
+
+### Implications for eval design
+
+Not agent performance but **"whose side is the agent on"** — the production version of the principal-agent problem. The 78.6%→17.3% drop is evidence that evals need an "adversarial environment" condition: measuring whether the agent stays on its principal's side when the environment intervenes.
+
+Meanwhile Amazon opened the seller console to Claude and launched its own seller agent "workflows" — the agentification of commerce is proceeding platform-led. Eval designers may need to treat **"which platform's agent"** as a variable, not just "agent vs environment."
+
+> Details: [[patterns/agentic-commerce|Agentic Commerce]]
 
 ## Guidelines for Solo Developers
 

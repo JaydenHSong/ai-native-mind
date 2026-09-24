@@ -1,5 +1,5 @@
 ---
-title: "Safe Tool Calling & Sandboxing: Harnessing the Agent's Capabilities"
+title: "Safe Tool Calling and Sandboxing: sheath first, knife later"
 category: patterns
 tags: [tool-use, mcp, sandboxing, security, curriculum, hitl, trust-calibration, progressive-autonomy, checkpoint-rollback, stateful-sandbox]
 created: 2026-04-12
@@ -16,168 +16,145 @@ status: active
 confidence: high
 ---
 
-# Safe Tool Calling & Sandboxing
+# Safe Tool Calling and Sandboxing
 
-## Easy Read
+## Start here
 
-**In a Nutshell**: Instead of giving an agent broad terminal access to execute arbitrary scripts, we provide it with a **restricted set of specific tools**. We confine its execution inside a **secure virtual playground (a Sandbox)** and place a **Human-in-the-Loop approval gate** before any critical mutations occur.
+**One line**: instead of giving AI one dangerous free-form command, give it **tools that only expose allowed actions**, run those tools inside an **isolated sandbox**, and put **human approval** in front of irreversible operations.
 
-```
-                  [ TOOL INVOCATION ]
-                           │
-                           ▼
-┌────────────────────────────────────────────────────────┐
-│  1. SCHEMAS: Safe Tool Definitions                     │
-│   └── Restrict paths, parameters, and scopes           │
-└──────────────────────────┬─────────────────────────────┘
-                           │ Validation passes
-                           ▼
-┌────────────────────────────────────────────────────────┐
-│  2. SANDBOXES: Ephemeral Isolation                    │
-│   ├── Run processes in locked-down Docker containers   │
-│   └── Enable instant state rollback & restoration      │
-└──────────────────────────┬─────────────────────────────┘
-                           │ Safe execution confirmed
-                           ▼
-┌────────────────────────────────────────────────────────┐
-│  3. APPROVAL: Trust Gateways (HITL)                    │
-│   └── Ask human authorization for high-risk actions    │
-└────────────────────────────────────────────────────────┘
-```
+| Defense | Core idea |
+|---|---|
+| **Schema** | split and restrict permissions |
+| **Sandbox** | isolate execution so failure does not damage the real system |
+| **HITL** | require human confirmation before consequential actions |
 
-| Security Layer | In a Nutshell |
-|------|------|
-| **Safe Schemas** | Pruning and partitioning tool capabilities |
-| **Sandboxes** | Confining process executions to prevent system corruption |
-| **HITL Approvals** | Placing confirmation steps before sensitive mutations |
+## One-line description
 
----
+A pattern for permission control and isolation that prevents accidents when an agent executes external tools such as files, networks, and terminals.
 
-## 🏫 Welcome to Class: "When Agents Get Hands and Feet"
+## The problem: “the fear of `rm -rf /`”
 
-Large Language Models have evolved from conversational text generators into active virtual workers equipped with hands and feet—known as **Tools**.
+- **Accidental deletion**: “Delete unused files” becomes `rm -rf` over the whole project.
+- **SSRF**: a malicious instruction tricks the agent into opening internal admin pages and leaking credentials.
+- **Runaway spending**: a hallucinating agent loops and spins up cloud resources indefinitely.
 
-However, just as you would not hand a sharp kitchen knife to a toddler, you must never grant an unconstrained agent raw terminal access to your local machine. Doing so risks immediate system corruption.
+## Three layers of defense
 
-## One-Line Definition
+### 1) Make the tool itself safe
+Do not hand the agent a maximally dangerous tool in the first place.
 
-A system design pattern that secures agentic interactions with external environments by combining strict tool-calling schemas, virtual sandboxing, and dynamic human approval boundaries.
+- **Bad tool**: `run_bash_command(cmd: string)` — can do anything.
+- **Safer tool**: `delete_file_in_temp_dir(filename: string)` — can delete only within a temp directory.
 
----
+This is also the core philosophy of [[concepts/mcp]]: the agent acts only through predefined protocol surfaces.
 
-## 🚨 The Pain Points: Runaway Shell Scripting
+### 2) Sandboxing
+Even if the agent escapes the intended path, it should still be trapped inside a disposable room.
 
-- **Accidental Deletions**: An agent is instructed to "clear temporary logs," but mistakenly generates a broad `rm -rf /` script that targets the entire project root.
-- **Server-Side Request Forgery (SSRF)**: A malicious user feeds an injection prompt telling the agent to "fetch raw responses from `localhost:8080/admin/secrets`" and the model complies.
-- **Runaway Cost Drains**: A looping agent compiles recursive Docker setups or spawns a cluster of cloud server instances without restriction.
+- **Docker container**: the agent writes code and runs commands only inside a container.
+- **Cloud sandbox**: infra like E2B or Replit provides isolated execution environments for AI workflows.
 
----
+### 3) Human in the loop (HITL)
+Irreversible or high-impact actions should require an approval button.
 
-## 🛠️ The Solution: The 3-Tier Tool Defense Model
+Examples:
+- deleting a database table
+- deploying to production
+- triggering payment-related actions
 
-### Layer 1: Secure Tool Schemas (Feedforward Control)
-We do not expose broad, open-ended shell utilities to the agent.
-- **Vulnerable Schema**: `run_shell_cmd(cmd: string)` — Too broad; permits arbitrary command execution.
-- **Secure Schema**: `delete_temp_log_file(filename: string)` — Restricts operations strictly to the `/tmp` directory, limiting the agent's actions to verified targets.
-- *The MCP Philosophy*: This design maps to the core tenets of the **Model Context Protocol (MCP)**. Agents operate strictly within strongly-typed, schema-validated parameters.
+## Applied example: a safe code-fixing agent
 
-### Layer 2: Secure Sandboxes (Process Confinement)
-If an agent generates a malicious file script, we ensure the payload executes within a locked-down virtual machine.
-- **Docker Isolation**: The agent writes code and executes compilers inside isolated containers. If a regression occurs, the system simply terminates the container and boots a clean template.
-- **Managed Playgrounds**: Integrating dedicated cloud sandbox runtimes (e.g., E2B or Replit Sandboxes) designed specifically for agent execution.
+1. The user asks: “Fix this bug.”
+2. The agent uses `edit_file`, but the tool is restricted to files under `src/`.
+3. To run tests or commands, execution happens inside a sandboxed container, not on the real machine.
+4. Before pushing or deploying the final result, the workflow asks for human approval.
 
-### Layer 3: Human-in-the-Loop (HITL) Gateways
-We configure explicit approval checkpoints before running mutations like database truncation, payment execution, or production deployments.
-- **Agent**: *"I intend to truncate table `user_billing`. Do you authorize this transaction?"*
-- **Human**: *"No. Reject. ❌"*
+## 2026-05-21 update — HITL can be a learned trust gateway, not just a static approval button
 
----
+[Progressive Autonomy as Preference Learning](https://arxiv.org/abs/2605.19151) upgrades the third defense layer. Instead of treating approval as one uniform switch, it asks:
 
-## 🎯 Production Case Study: Secure File Editor
+> **Which actions should run automatically, which should always be blocked, and which should be escalated to a human?**
 
-1. A developer triggers a prompt: *"Fix the bug in our router module."*
-2. The agent attempts to call `edit_file`. However, the tool schema is restricted strictly to targets within the `src/` directory **(Layer 1)**.
-3. The agent triggers a shell command to compile and test the edit. The script runs inside a secure, ephemeral Docker container, isolated from the developer's host machine **(Layer 2)**.
-4. Once the code passes compilation, the agent requests permission to commit the changes: *"Authorize git commit payload X?"* **(Layer 3)**.
+### Think in three zones: allow / block / ask
 
----
+- **allow** — safe to execute autonomously
+- **block** — always denied
+- **ask** — requires human approval
 
-## 2026-05-21 Update — Dynamic Trust Gateways (Progressive Autonomy)
+So HITL is not one generic brake. It is a problem of designing the **autonomy boundary**.
 
-> Source: "Progressive Autonomy as Preference Learning in Agentic Systems" (arXiv:2605.19151).
+### Approval logs become training data for risk tolerance
 
-This research upgrades traditional static HITL gates into **Adaptive Trust Gateways**. Instead of prompting a user for every single transaction, the gateway maps the tool execution space into three dynamic zones:
+The paper frames the policy gateway as a learner over human **approve / deny** feedback:
+1. start with a wide `ask` zone
+2. move repeatedly safe actions into `allow`
+3. move repeatedly rejected actions into `block`
 
-```
-┌────────────────────────────────────────────────────────┐
-│  ALLOW ZONE   ──→ Executed autonomously (Zero prompting)│
-├────────────────────────────────────────────────────────┤
-│  ASK ZONE     ──→ Prompts the user for manual consent  │
-├────────────────────────────────────────────────────────┤
-│  BLOCK ZONE   ──→ Terminated instantly (Always banned)  │
-└────────────────────────────────────────────────────────┘
-```
+That turns approval from a pure bottleneck into data for **progressive autonomy**.
 
-### Preference Learning & Escalation
-Rather than relying on fixed checklists, the trust gateway logs human `approve` and `deny` patterns to model active risk tolerance.
-- Trivial, repeatedly verified tasks migrate from the `Ask` zone to the `Allow` zone.
-- Frequently rejected mutations shift into the `Block` zone.
-- **The system escalates runs to the human only when decision uncertainty is high.** This prevents "approval fatigue" while maintaining security.
+### Immediate operating rules to add
 
----
+1. **Keep permission restriction** — a learned gateway does not replace schemas or sandboxing.
+2. **Log approvals** — progressive autonomy needs reasons and outcomes, not just binary clicks.
+3. **Escalate only uncertain actions** — asking for every action is safe but does not scale.
 
-## 2026-05-23 Update — DeltaBox: Millisecond Rollbacks
+So the original three-layer defense is now better read as **permission / isolation / learned approval boundary**.
 
-> Source: "DeltaBox: High-Throughput Stateful Sandboxing for Long-Horizon Agents" (arXiv:2605.22781).
+## 2026-05-23 update — DeltaBox: a sandbox is both a safety primitive and a branchable runtime
 
-Modern agent workflows require more than just security; they demand high-throughput execution. During test-time search, parallel tree exploration, or iterative code refactoring, agents need to:
-- Test candidate implementation A.
-- If it fails, instantly roll back the filesystem to the prior state.
-- Fork a new branch to test implementation B.
+[DeltaBox](https://arxiv.org/abs/2605.22781) deepens the meaning of “sandbox.” Up to now, the sandbox was mostly described as an isolated room that protects the real system. That is correct, but long-horizon agents need one more property.
 
-Traditional sandboxes that clone entire virtual filesystems take seconds to reset, dragging down agent execution speeds.
+> **A sandbox should be a safe room and also an execution substrate that can rewind and branch quickly.**
 
-```
-                      [ BASELINE IMAGE STATE ]
-                                │
-                 ┌──────────────┴──────────────┐
-                 ▼                             ▼
-           [ FORK RUN A ]                [ FORK RUN B ]
-           (Copy-on-Write)               (Copy-on-Write)
-                 │                             │
-          Failed! Rollback              Succeeded! Commit
-                 │                             │
-                 ▼                             ▼
-          [ RESTORE 5ms ]               [ MERGE STATE ]
-```
+### Why the new view matters
 
-### Incremental State Tracking
-DeltaBox introduces change-based checkpoint and rollback layers:
-- **DeltaFS**: Filesystem changes are tracked using highly optimized copy-on-write virtual layers.
-- **DeltaCR**: Process memories are managed via incremental diff dumps.
+For test-time search, branch exploration, RL-style loops, or multi-attempt coding agents, the agent may need to:
+- try path A
+- roll back to the previous state on failure
+- fork into path B
+- run several branches in parallel
 
-*Performance Impact*: State rollbacks drop from seconds to a mere **5 milliseconds**, enabling coding agents to explore many implementation pathways in parallel without latency bottlenecks.
+If every checkpoint clones the full filesystem and process state, rollback latency can eat the search budget.
 
----
+### DeltaBox core idea
 
-## The Complete Secure Execution Matrix
+The paper exploits the fact that consecutive checkpoints are usually very similar.
 
-| Strategy | Security Value | Agent Throughput Value |
-|------|------|------|
-| **Tool Schemas** | Restricts parameters and scopes | Speeds up execution via structured payloads |
-| **Sandboxes** | Confines exploits inside Docker | Enables millisecond state rollbacks (DeltaBox) |
-| **HITL Gates** | Places human barriers before mutations | Adapts boundaries via Preference Learning |
+- **DeltaFS** — manages the filesystem with copy-on-write layers
+- **DeltaCR** — stores process state as incremental dumps
 
-## Chapter Clear Guide
+Rollback becomes closer to a **fast layer switch / template fork** than a heavy restore operation.
 
-- **Chapter**: Chapter 5 (The Secure Crypt)
-- **Quest**: Map the 3-Layer Tool Defense model (Schemas, Sandboxes, HITL) to your active software project's tools.
-- **Clear Condition**: Identify at least 1 high-risk command in your stack and document the exact security layer designed to contain it.
-- **Reward (Deliverable)**: 1 Safe Tool-Calling Architecture Blueprint.
-- **Next Quest**: [[patterns/owasp-llm-typescript-mitigations]] $\to$ [[concepts/llm-evaluation]].
+### Why this matters for this page
 
-## References
+The original three defense layers were:
+1. permission restriction
+2. isolation
+3. human approval
 
-- [Safe Tool Calling Curation Research Notes](raw/notes/2026-04-12-practice-curriculum.md)
-- [Progressive Autonomy in Agentic Tool Use (arXiv:2605.19151)](https://arxiv.org/abs/2605.19151)
-- [DeltaBox: Stateful Sandboxing for Coding Agents (arXiv:2605.22781)](https://arxiv.org/abs/2605.22781)
+With DeltaBox, layer 2 now contains two sub-questions:
+- **Can we isolate execution safely?**
+- **Can we reset quickly and explore multiple branches efficiently?**
+
+So the sandbox is both a **security primitive** and an **agent throughput primitive**.
+
+### Quantitative signal worth remembering
+
+- checkpoint: **14 ms**
+- rollback: **5 ms**
+
+The meaning is not just performance bragging. Under the same wall-clock budget, faster reset means **more branches can be tried**.
+
+### Practical translation
+
+1. When evaluating sandboxes, check not only isolation but also **reset latency**.
+2. If parallel fan-out in a long-horizon coding agent feels slow, suspect **environment rollback cost** before blaming the model.
+3. Safe tool-use infrastructure includes not only prompts and policy, but also **state reset / checkpoint / rollback design**.
+
+## Chapter Clear guide
+
+- **Chapter**: Chapter 5 (Safety Dungeon)
+- **Quest**: map your tool-use flow onto the three defense layers: permission / isolation / HITL
+- **Clear condition**: explain which layer blocks one risky action
+- **Reward artifact**: Safe Tool Calling Checklist v1
+- **Next quest**: [[patterns/owasp-llm-typescript-mitigations]] → [[concepts/llm-evaluation]]

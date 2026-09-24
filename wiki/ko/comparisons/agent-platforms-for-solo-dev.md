@@ -3,7 +3,7 @@ title: "1인 개발자 관점 — 에이전트 플랫폼 4종 비교"
 category: comparisons
 tags: [solo-developer, comparison, managed-agents, deep-agents, openai-agents-sdk, langgraph, mvp]
 created: 2026-05-01
-updated: 2026-05-01
+updated: 2026-05-26
 sources:
   - "raw/articles/2026-05-01-1-person-saas-cost-deep.md"
   - "raw/articles/2026-05-01-managed-vs-selfhost-breakeven.md"
@@ -107,7 +107,7 @@ T (req/일) × S (분/req) = 25 × F (self-host 인프라비 $/월)
 | $200/월 | 5,000 | 500 req/일 × 10분 |
 | $500/월 | 12,500 | 매우 높은 트래픽까지 Managed 우위 |
 
-→ **[[examples/cost-simulator/index.html|비용 시뮬레이터 widget]]** 에서 슬라이더로 본인 시나리오 확인.
+→ **[비용 시뮬레이터 widget](../../examples/cost-simulator/index.html)** 에서 슬라이더로 본인 시나리오 확인.
 
 ## 1인 mover 추천 경로
 

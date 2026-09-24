@@ -23,17 +23,39 @@ ai-native-mind/
 │   ├── papers/         # 논문, 기술 문서
 │   ├── notes/          # 개인 메모, 대화 기록
 │   └── assets/         # 이미지, 첨부파일
-├── wiki/               # Layer 2: LLM이 관리하는 위키
-│   ├── index.md        # 전체 페이지 카탈로그
-│   ├── log.md          # 시간순 작업 기록
-│   ├── overview.md     # 위키 전체 종합
-│   ├── concepts/       # AI/프로그래밍 개념
-│   ├── tools/          # 도구, 프레임워크
-│   ├── patterns/       # 코딩 패턴, 방법론
-│   ├── journal/        # 학습 일지
-│   └── comparisons/    # 비교 분석
+├── wiki/               # Layer 2: LLM이 관리하는 이중언어 위키
+│   ├── ko/             # 한국어 정본 (source of truth)
+│   │   ├── index.md
+│   │   ├── log.md
+│   │   ├── overview.md
+│   │   ├── campaign-map.md
+│   │   ├── concepts/
+│   │   ├── tools/
+│   │   ├── patterns/
+│   │   ├── journal/
+│   │   └── comparisons/
+│   └── en/             # 영어 번역본/파생본
+│       ├── index.md
+│       ├── log.md
+│       ├── overview.md
+│       ├── campaign-map.md
+│       ├── concepts/
+│       ├── tools/
+│       ├── patterns/
+│       ├── journal/
+│       └── comparisons/
 └── templates/          # 위키 페이지 템플릿
 ```
+
+### Bilingual 운영 원칙
+
+- `wiki/ko/`가 **정본(source of truth)** 이다. 새 지식은 먼저 한국어 위키에 반영한다.
+- `wiki/en/`은 **번역본/파생본** 이다. 영어판은 한국어판을 기준으로 동기화한다.
+- 가능하면 `ko`와 `en`은 **같은 slug / 같은 카테고리 경로**를 유지한다.
+- 평일 유지보수/ingest는 기본적으로 `wiki/ko/`만 대상으로 한다.
+- 영어판은 배치 동기화가 기본이며, 특히 `concepts/`, `tools/`, `patterns/`, `comparisons/`, `journal/`, `index.md`, `overview.md`, `campaign-map.md`를 우선 관리한다.
+- `wiki/en/`에도 `log.md`를 둘 수 있다. 한국어 `wiki/ko/log.md`가 canonical 운영 기록이지만, 영어판에는 이를 번역/요약한 대응 `wiki/en/log.md`를 유지할 수 있다.
+- `journal/`은 학습 과정의 1차 기록이지만 영어판에서도 대응 문서를 유지한다. 기본 원칙은 한국어 원문을 먼저 쓰고, 영어판은 배치 동기화한다.
 
 ### 카테고리 분류 기준
 
@@ -112,7 +134,7 @@ status: ingested               # 또는 captured (정독 전), reviewed (정독 
 - 존재하지 않는 페이지도 링크 가능 (Obsidian이 빨간색 표시 → 추후 생성)
 - 소스 참조: `[출처](raw/articles/파일명.md)`
 
-**Obsidian과 실제 경로 (`wiki/…`)**: 위키 파일은 `wiki/concepts/` 등 하위에 있지만, 링크는 `[[concepts/페이지명]]` 형태를 유지한다. 볼트 루트에 **심볼릭 링크** `concepts` → `wiki/concepts`, `patterns` → `wiki/patterns`, `tools` → `wiki/tools`, `comparisons` → `wiki/comparisons`, `journal` → `wiki/journal` 를 두어 Obsidian이 `[[concepts/…]]` 를 실제 파일로 해석하게 한다. (Windows에서는 개발자 모드 등으로 symlink 생성이 필요할 수 있다.)
+**Obsidian과 실제 경로 (`wiki/ko`, `wiki/en`)**: 기본 작업공간은 한국어 정본 `wiki/ko/` 이다. 따라서 일반적인 wikilink는 계속 `[[concepts/페이지명]]` 형태를 유지하고, Obsidian에서는 이를 `wiki/ko/concepts/…`로 해석하도록 맞춘다. 영어판은 `wiki/en/...`에 실제 파일을 두되, 번역/동기화 작업에서 같은 상대 경로(slug)를 유지한다. 필요하면 언어별 워크스페이스/루트 매핑을 별도로 두되, 본문 안 링크 규칙 자체는 복잡하게 늘리지 않는다.
 
 ### 위키 포함/제외 규칙
 
@@ -155,9 +177,11 @@ status: ingested               # 또는 captured (정독 전), reviewed (정독 
 
 ### 언어 규칙
 
-- 본문: **한국어**
+- `wiki/ko/` 본문: **한국어**
+- `wiki/en/` 본문: **자연스러운 기술 영어**
 - 기술 용어: 영어 그대로 유지 (RAG, LLM, fine-tuning, prompt 등)
-- 처음 등장 시 한국어 설명 병기: "RAG(Retrieval-Augmented Generation, 검색 증강 생성)"
+- 한국어 문서에서 처음 등장 시 한국어 설명 병기: "RAG(Retrieval-Augmented Generation, 검색 증강 생성)"
+- 영어 문서는 한국어 정본의 의미를 충실히 번역하되, 새 주장·새 근거·새 결론을 임의로 추가하지 않는다.
 - 코드, 명령어: 영어 그대로
 
 ## Workflows
@@ -170,39 +194,56 @@ status: ingested               # 또는 captured (정독 전), reviewed (정독 
 2. 핵심 개념, 주장, 데이터 추출
 3. 사용자에게 요약 + 핵심 포인트 공유하고 피드백 받기
 4. 기존 위키 페이지와 겹치는 내용 확인
-5. 새 페이지 생성 또는 기존 페이지 업데이트
+5. 새 페이지 생성 또는 기존 페이지 업데이트 (`wiki/ko/` 기준)
 6. 모든 관련 페이지에 교차참조(wikilink) 추가
 7. frontmatter 완성 (모든 필수 필드)
-8. `wiki/index.md`에 새 페이지 등록
-9. `wiki/log.md`에 ingest 기록 추가
+8. `wiki/ko/index.md`에 새 페이지 등록
+9. `wiki/ko/log.md`에 ingest 기록 추가
 10. 모순되는 기존 내용 있으면 플래그하고 사용자에게 알림
 
 **변경된 파일 목록을 반드시 보고한다.**
+
+**중요**: ingest 단계에서는 영어판을 즉시 수정하지 않아도 된다. 영어판 반영은 별도 번역/동기화 사이클에서 처리한다.
+
+### EN Sync 워크플로우
+
+사용자가 영어판 번역/동기화를 요청하거나 정기 금요일 배치 작업을 돌릴 때:
+
+1. `wiki/ko/`와 `wiki/en/`의 대응 경로를 비교한다.
+2. 영어판에 없는 문서, 한국어판보다 `updated`가 뒤처진 문서, 메타 문서 차이를 찾는다.
+3. 우선순위는 `concepts/`, `tools/`, `patterns/`, `comparisons/`, `journal/`, `en/index.md`, `en/log.md`, `en/overview.md`, `en/campaign-map.md` 이다.
+4. 대응 영어 문서가 없으면 새로 만들고, 있으면 한국어 정본에 맞춰 갱신한다.
+5. `journal/` 날짜 문서는 한국어판과 같은 파일명/slug를 유지하면서 영어로 번역한다.
+6. `ko/log.md`도 영어판에 대응 문서를 유지한다. `wiki/en/log.md`를 한국어 정본 기준으로 번역/동기화한다.
+7. 번역 후 관련 메타 문서(`en/index.md`, `en/log.md`, 필요시 `en/overview.md`, `en/campaign-map.md`)도 함께 정리한다.
+8. 최종 보고에는 생성/수정한 영어 파일 목록과 아직 남은 번역 공백을 함께 적는다.
 
 ### Query 워크플로우
 
 사용자가 질문하면:
 
-1. `wiki/index.md` 읽어서 관련 페이지 탐색
+1. 기본적으로 `wiki/ko/index.md` 읽어서 관련 페이지 탐색
 2. 관련 위키 페이지들 읽기
 3. 필요시 `raw/` 소스도 참조
 4. 답변에 근거 위키 페이지 인용: `> 참조: [[concepts/페이지]]`
-5. 위키에 없는 내용은 명시: "위키에 아직 이 주제 페이지가 없습니다"
-6. 좋은 분석/비교가 나오면 사용자에게 위키 저장 제안
+5. 질문이 영어판 기준인지 명확하면 `wiki/en/`도 함께 확인한다.
+6. 위키에 없는 내용은 명시: "위키에 아직 이 주제 페이지가 없습니다"
+7. 좋은 분석/비교가 나오면 사용자에게 위키 저장 제안
 
 ### Lint 워크플로우
 
 사용자가 "lint 해줘"라고 요청하면:
 
-1. 전체 위키 페이지 스캔
+1. 전체 위키 페이지 스캔 (`wiki/ko`, `wiki/en` 모두)
 2. 체크 항목:
    - 깨진 wikilink (대상 파일 없음)
-   - 고아 페이지 (index.md에 미등록)
+   - 고아 페이지 (언어별 index.md에 미등록)
    - frontmatter 누락/불일치
    - 페이지 간 모순되는 내용
    - 오래된 정보 (updated가 6개월 이상 전)
    - 빈 카테고리 폴더
    - confidence: low인데 관련 소스가 여러 개인 페이지
+   - ko/en 대응 문서 간 누락 또는 과도한 드리프트
 3. 건강 보고서 출력
 4. 요청 시 자동 수정 가능한 것 수정, 수동 필요한 것 목록화
 
@@ -219,8 +260,9 @@ status: ingested               # 또는 captured (정독 전), reviewed (정독 
 
 ## Current State
 
-- **총 페이지 수**: 74 (콘텐츠 70 + meta 4)
-- **카테고리 현황**: concepts(20), tools(9), patterns(20), journal(12), comparisons(9), meta(4) — *index.md 카탈로그가 ground truth*
+- **위키 구조**: `wiki/ko`(한국어 정본) + `wiki/en`(영어 번역본) 이중언어 운영
+- **페이지 수**: `wiki/ko` 81개 / `wiki/en` 61개
+- **카테고리 현황**: ko = concepts(20), tools(9), patterns(20), comparisons(9), journal(19), meta(4) / en = concepts(20), tools(9), patterns(20), comparisons(9), meta(3, `log.md` 없음)
 - **소스 수**: 49개 (raw 노트 + papers; 2026-05-17 추가분 3편 포함)
 - **최근 활동**: 2026-05-17 **일요 데일리 ingest + weekly review follow-up** — arXiv 2510.25445 *Mohamad Abou Ali · Fadi Dornaika* "Agentic AI: A Comprehensive Survey of Architectures, Applications, and Future Directions" (2025-10-29) **PRISMA 90-study** review, dual paradigm **Symbolic/Classical vs Neural/Generative**, healthcare↔symbolic / finance↔neural, **hybrid neuro-symbolic** 필요 + arXiv 2605.05583 *Liao et al.* "Belief Memory: Agent Memory Under Partial Observability" (2026-05-07) **candidate conclusion + probability**, **Noisy-OR**, LoCoMo·ALFWorld에서 best average performance, deterministic memory의 self-reinforcing error 비판 + arXiv 2605.03228 *Wang et al.* "MAGE: Safeguarding LLM Agents against Long-Horizon Threats via Shadow Memory" (2026-05-04) **Memory As Guardrail Enforcement**, safety-focused **shadow memory**, AgentDojo Banking/Slack, detection accuracy 향상·majority early-stage detection·utility overhead 미미 + late follow-up 3편(Human-Inspired Memory / FeatureBench / LITMUS) 반영. **후속 정리**: `comparisons/agent-memory-taxonomy.md` 신설로 memory를 **task/productivity / belief / lifecycle / safety** 네 층으로 재분류. **결론**: 2026-05-14에 생긴 2x3 좌표계(descriptive/prescriptive/tooling × 학습/정형화/측정)가 2026-05-15의 6/9에서 오늘 **9/9 완성**됐고, 그 위에서 memory taxonomy까지 한 번 더 압축됨. 이전: 2026-05-17 hygiene-review(운영 경계 정리), 2026-05-15 금요 데일리+주간 리뷰(ACDL·Constraint Decay·GroupMemBench), 2026-05-14 Above-the-Model Layer(Zhang/Zhong-Zhu/WildClawBench).
 - **다음 할 일**: Anthropic 코스 이수 노트를 `journal/`에 남기기, 케이스북에서 본인 프로젝트 행만 골라 Guides/Sensors 적용. 후속 후보: (1) 새 [[comparisons/agent-memory-taxonomy]] 를 바탕으로 `[[concepts/ai-memory-systems]]` 본문에 productivity/task memory까지 포함한 정식 taxonomy 표 승격, (2) Zhong/Zhu 11 책임 본문 정독 후 [[patterns/harness-engineering-casebook]] 30 case를 11 책임 column으로 lint, (3) Zhang JSON schema를 `examples/`에 1 trace 1 JSON mini-sketch, (4) 다음 weekly review에서 framework AI-friendliness guide prediction과 harness-as-variable prediction 검증.

@@ -3,7 +3,7 @@ title: "Campaign Map"
 category: meta
 tags: [map, campaign, navigation]
 created: 2026-04-12
-updated: 2026-04-13
+updated: 2026-06-02
 sources:
  - "wiki/overview.md"
  - "wiki/index.md"
@@ -22,9 +22,9 @@ confidence: high
 
 ## 월드맵 허브
 
-- 시작 마을: [[wiki/overview|Overview]]
-- 도감(전체 목록): [[wiki/index|Index]]
-- 퀘스트 기록: [[wiki/log|Log]]
+- 시작 마을: [[overview|Overview]]
+- 도감(전체 목록): [[index|Index]]
+- 퀘스트 기록: [[log|Log]]
 - 플레이 일지: [[journal/2026-04-12|Journal 샘플]]
 
 ## 메인 퀘스트 라인 (권장)

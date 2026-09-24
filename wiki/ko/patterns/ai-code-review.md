@@ -3,7 +3,7 @@ title: "AI 코드 리뷰 워크플로우"
 category: patterns
 tags: [code-review, workflow, solo-developer, claude-code, execution-grounding, constraint-decay, framework-sensitivity, roadmap, release-scale, reward-hacking, process-evaluation]
 created: 2026-04-09
-updated: 2026-05-21
+updated: 2026-09-24
 sources:
   - "raw/notes/2026-04-09-ai-code-review.md"
   - "raw/articles/2026-05-13-verify-before-you-fix-execution-grounding.md"
@@ -18,6 +18,8 @@ related:
   - "[[concepts/cognitive-debt]]"
   - "[[patterns/git-ai-workflow]]"
   - "[[concepts/llm-evaluation]]"
+  - "[[patterns/agentic-coding]]"
+  - "[[tools/codex-security]]"
 status: active
 confidence: high
 ---
@@ -365,13 +367,23 @@ Stage 3: Validation-Aware Iterative Repair
 3. agent가 생성한 patch를 볼 때 diff만 보지 말고 **어떤 명령과 경로로 그 patch에 도달했는지** 까지 본다.
 4. long-horizon 작업은 최종 성공률보다 **사람이 개입 가능한 실패를 하는가** 를 더 높게 친다.
 
+## 2026-09-24 보강 — Codex Security: 리뷰에서 자동 수정까지
+
+[OpenAI Codex Security](https://news.bloomberglaw.com/tech-and-telecom-law/openai-releases-ai-agent-security-tool-for-research-preview) (리서치 프리뷰, 2026-09-24)는 이 페이지의 "Plan-Review-Execute" 루프를 한 칸 더 밀어낸다. 취약점 스캔 → "받아들이기 쉬운 패치" 제안 → **직접 수정**까지 에이전트가 맡는다.
+
+핵심은 탐지율이 아니라 **머지되는 패치의 비율**이다. 즉 리뷰 루프의 성공 지표가 "찾아낸 버그 수"에서 "사람이 그대로 받아들인 수정 수"로 이동한다.
+
+주의: 리서치 프리뷰 단계라 실전 false positive율은 미검증. 에이전트가 코드를 직접 고친다는 건 [[concepts/agent-supply-chain-security|신뢰 모델]] 문제와 직결되므로, 패치 적용 전 검증 단계는 유지한다.
+
+> 자세히: [[tools/codex-security|Codex Security]], [[patterns/agentic-coding|Agentic Coding]]
+
 ## Chapter Clear 가이드
 
 - **소속 챕터**: Chapter 7 (엔드게임)
 - **퀘스트**: 최근 변경 1개를 self-review와 AI review 두 단계로 점검한다.
 - **클리어 조건**: correctness/보안/엣지 케이스 중 최소 1개 개선점을 찾아 반영한다.
 - **보상(산출물)**: 내 코드 리뷰 체크리스트 v1
-- **다음 퀘스트**: [[patterns/ai-cost-management]] -> [[wiki/campaign-map]]
+- **다음 퀘스트**: [[patterns/ai-cost-management]] -> [[campaign-map]]
 
 ## 참고 소스
 
