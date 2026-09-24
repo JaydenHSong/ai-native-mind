@@ -232,11 +232,26 @@ function updateUILanguage() {
 
 function updateThemeIcon(theme) {
   const icon = document.querySelector("#theme-toggle i");
+  if (!icon) return;
   if (theme === "dark") {
     icon.className = "fa-solid fa-sun";
   } else {
     icon.className = "fa-solid fa-moon";
   }
+}
+
+function showNonBlockingError(message) {
+  const listElement = document.getElementById("document-list");
+  if (!listElement) return;
+  const existing = listElement.querySelector(".error-item");
+  if (existing) {
+    existing.textContent = message;
+    return;
+  }
+  const li = document.createElement("li");
+  li.className = "error-item";
+  li.textContent = message;
+  listElement.prepend(li);
 }
 
 // ==========================================================================
@@ -247,7 +262,16 @@ async function fetchWikiData() {
     const response = await fetch("wiki-data.json");
     if (!response.ok) throw new Error("데이터 파일을 불러올 수 없습니다.");
     wikiData = await response.json();
-    
+  } catch (error) {
+    console.error("데이터 로드 실패:", error);
+    const listElement = document.getElementById("document-list");
+    if (listElement) {
+      listElement.innerHTML = `<li class="error-item">데이터 로드 실패: ${error.message}</li>`;
+    }
+    return;
+  }
+
+  try {
     // UI 다국어 번역 즉시 동기화
     updateUILanguage();
     
@@ -260,16 +284,16 @@ async function fetchWikiData() {
     // 해시 라우팅 처리
     handleRouting();
     window.addEventListener("hashchange", handleRouting);
-    
   } catch (error) {
-    console.error("데이터 로드 실패:", error);
-    document.getElementById("document-list").innerHTML = `<li class="error-item">데이터 로드 실패: ${error.message}</li>`;
+    console.error("위키 렌더링 실패:", error);
+    showNonBlockingError(`렌더링 오류: ${error.message}`);
   }
 }
 
 // 왼쪽 문서 사이드바 리스트 렌더링
 function renderDocumentList(data) {
   const listElement = document.getElementById("document-list");
+  if (!listElement) return;
   listElement.innerHTML = "";
   const t = i18n[currentLanguage];
   
@@ -302,6 +326,7 @@ function renderDocumentList(data) {
 // Library Index 탭 렌더링
 function renderLibraryIndex() {
   const grid = document.getElementById("library-grid");
+  if (!grid) return;
   grid.innerHTML = "";
 
   const categories = {
@@ -351,6 +376,7 @@ function renderLibraryIndex() {
 // Campaign Map 탭 렌더링
 function renderCampaignMap() {
   const container = document.getElementById("campaign-flow");
+  if (!container) return;
   container.innerHTML = "";
   
   const completedChapters = JSON.parse(localStorage.getItem("completed-chapters") || "[]");
@@ -494,7 +520,9 @@ function handleRouting() {
   } else {
     console.warn("문서를 찾을 수 없습니다:", hash);
     // 깨진 링크이거나 찾지 못한 경우
-    document.getElementById("reading-placeholder").innerHTML = `
+    const placeholder = document.getElementById("reading-placeholder");
+    if (!placeholder) return;
+    placeholder.innerHTML = `
       <div class="placeholder-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
       <h3>${currentLanguage === 'ko' ? '문서를 찾을 수 없음' : 'Document Not Found'}</h3>
       <p>"${hash}" ${currentLanguage === 'ko' ? '경로는 위키에 존재하지 않거나 잘못된 링킹입니다.' : 'path does not exist in the wiki or contains an invalid link.'}</p>
@@ -517,8 +545,10 @@ function loadDocument(doc, isFallback = false) {
   });
 
   // 우측 리더 뷰 채우기
-  document.getElementById("reading-placeholder").classList.add("hidden");
+  const placeholder = document.getElementById("reading-placeholder");
   const reader = document.getElementById("reading-content");
+  if (placeholder) placeholder.classList.add("hidden");
+  if (!reader) return;
   reader.classList.remove("hidden");
 
   // 메타 정보
@@ -532,21 +562,24 @@ function loadDocument(doc, isFallback = false) {
 
   // 태그 렌더링
   const tagsContainer = document.getElementById("doc-tags");
-  tagsContainer.innerHTML = doc.tags.map(t => `<span class="doc-tag">#${t}</span>`).join("");
+  if (tagsContainer) tagsContainer.innerHTML = (doc.tags || []).map(t => `<span class="doc-tag">#${t}</span>`).join("");
 
   // 쉽게 읽기 렌더링
   const easyReadPanel = document.getElementById("easy-read-panel");
-  if (doc.easyRead) {
+  if (easyReadPanel && doc.easyRead) {
     easyReadPanel.classList.remove("hidden");
-    easyReadPanel.querySelector(".section-lbl").innerHTML = `<i class="fa-solid fa-book-open"></i> ${currentLanguage === 'ko' ? '쉽게 읽기 요약' : 'Easy Read Summary'}`;
-    document.getElementById("easy-read-body").innerHTML = resolveWikilinks(marked.parse(doc.easyRead));
-  } else {
+    const easyReadLabel = easyReadPanel.querySelector(".section-lbl");
+    if (easyReadLabel) easyReadLabel.innerHTML = `<i class="fa-solid fa-book-open"></i> ${currentLanguage === 'ko' ? '쉽게 읽기 요약' : 'Easy Read Summary'}`;
+    const easyReadBody = document.getElementById("easy-read-body");
+    if (easyReadBody) easyReadBody.innerHTML = resolveWikilinks(marked.parse(doc.easyRead));
+  } else if (easyReadPanel) {
     easyReadPanel.classList.add("hidden");
   }
 
   // 본문 마크다운 렌더링
   const bodyViewer = document.getElementById("markdown-viewer");
-  let bodyHTML = marked.parse(doc.body);
+  if (!bodyViewer) return;
+  let bodyHTML = marked.parse(doc.body || "");
   
   // 스마트 폴백 공지 인젝션
   if (isFallback) {
@@ -565,7 +598,7 @@ function loadDocument(doc, isFallback = false) {
 
   // 연관 지식 링킹 버튼 생성
   const relContainer = document.getElementById("doc-related-links");
-  const relLabel = relContainer.parentElement.querySelector(".section-lbl");
+  const relLabel = relContainer && relContainer.parentElement ? relContainer.parentElement.querySelector(".section-lbl") : null;
   if (relLabel) relLabel.textContent = t.relatedDocs;
   
   const allRelated = [...new Set([...doc.related, ...doc.extractedRelated])];
@@ -573,7 +606,7 @@ function loadDocument(doc, isFallback = false) {
   // 자기 자신 링크 제외
   const filteredRelated = allRelated.filter(r => r !== doc.id && r !== doc.filename);
 
-  if (filteredRelated.length > 0) {
+  if (relContainer && relContainer.parentElement && filteredRelated.length > 0) {
     relContainer.parentElement.classList.remove("hidden");
     relContainer.innerHTML = filteredRelated.map(linkPath => {
       // 카테고리 추출 및 타이틀 찾기
@@ -594,19 +627,19 @@ function loadDocument(doc, isFallback = false) {
         window.location.hash = btn.getAttribute("data-id");
       });
     });
-  } else {
+  } else if (relContainer && relContainer.parentElement) {
     relContainer.parentElement.classList.add("hidden");
   }
 
   // 원천 소스 리스트
   const sourcesContainer = document.getElementById("doc-sources-list");
-  const sourcesLabel = sourcesContainer.parentElement.querySelector(".section-lbl");
+  const sourcesLabel = sourcesContainer && sourcesContainer.parentElement ? sourcesContainer.parentElement.querySelector(".section-lbl") : null;
   if (sourcesLabel) sourcesLabel.textContent = t.originalSources;
   
-  if (doc.sources && doc.sources.length > 0) {
+  if (sourcesContainer && sourcesContainer.parentElement && doc.sources && doc.sources.length > 0) {
     sourcesContainer.parentElement.classList.remove("hidden");
     sourcesContainer.innerHTML = doc.sources.map(s => `<li>${s}</li>`).join("");
-  } else {
+  } else if (sourcesContainer && sourcesContainer.parentElement) {
     sourcesContainer.parentElement.classList.add("hidden");
   }
 
@@ -616,7 +649,8 @@ function loadDocument(doc, isFallback = false) {
   }
 
   // 스크롤 탑
-  document.getElementById("reading-panel").scrollTop = 0;
+  const readingPanelForScroll = document.getElementById("reading-panel");
+  if (readingPanelForScroll) readingPanelForScroll.scrollTop = 0;
   
   openReadingPanel();
 
@@ -662,8 +696,10 @@ function openReadingPanel() {
   // 모바일/태블릿 등에서 레이아웃 조정 시 활용 가능
 }
 function closeReadingPanel() {
-  document.getElementById("reading-placeholder").classList.remove("hidden");
-  document.getElementById("reading-content").classList.add("hidden");
+  const placeholder = document.getElementById("reading-placeholder");
+  const content = document.getElementById("reading-content");
+  if (placeholder) placeholder.classList.remove("hidden");
+  if (content) content.classList.add("hidden");
 }
 
 // ==========================================================================
@@ -681,7 +717,7 @@ function setupEventListeners() {
   const searchInput = document.getElementById("search-input");
   const clearBtn = document.getElementById("search-clear-btn");
   
-  searchInput.addEventListener("input", (e) => {
+  if (searchInput) searchInput.addEventListener("input", (e) => {
     const q = e.target.value.toLowerCase().trim();
     if (q) {
       clearBtn.classList.remove("hidden");
@@ -691,7 +727,7 @@ function setupEventListeners() {
     filterWiki();
   });
 
-  clearBtn.addEventListener("click", () => {
+  if (clearBtn && searchInput) clearBtn.addEventListener("click", () => {
     searchInput.value = "";
     clearBtn.classList.add("hidden");
     filterWiki();
@@ -747,7 +783,8 @@ function showTab(tabId) {
 
 // 카테고리 칩 및 검색 통합 필터링
 function filterWiki() {
-  const query = document.getElementById("search-input").value.toLowerCase().trim();
+  const searchInput = document.getElementById("search-input");
+  const query = searchInput ? searchInput.value.toLowerCase().trim() : "";
   const activeChip = document.querySelector(".filter-chip.active");
   const category = activeChip ? activeChip.getAttribute("data-category") : "all";
 
