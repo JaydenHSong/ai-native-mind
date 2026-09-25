@@ -1,9 +1,9 @@
 ---
 title: "AI 비용 관리"
 category: patterns
-tags: [cost, pricing, optimization, anthropic, claude, openai]
+tags: [cost, pricing, optimization, anthropic, claude, openai, model-routing, liner]
 created: 2026-04-09
-updated: 2026-06-02
+updated: 2026-09-25
 sources:
   - "raw/notes/2026-04-09-ai-cost-management.md"
   - "raw/articles/2026-05-01-anthropic-managed-agents-launch.md"
@@ -11,6 +11,7 @@ sources:
   - "raw/articles/2026-05-01-solo-founder-ai-stack-2026.md"
   - "raw/articles/2026-05-01-1-person-saas-cost-deep.md"
   - "raw/articles/2026-05-01-managed-vs-selfhost-breakeven.md"
+  - "raw/articles/2026-09-25-liner-model-api-routing.md"
 related:
   - "[[patterns/prompt-caching]]"
   - "[[patterns/subagents-delegation]]"
@@ -205,6 +206,24 @@ def route_model(task_complexity: str) -> str:
 - 비유: 메인 = 현장 직원, advisor = 상사 — 매 결정마다 부르면 비용 폭발하지만, **막힐 때만** 부르면 양쪽 시간을 다 아낀다.
 - 적합: long-running session에서 가끔 critical decision (코딩 에이전트의 아키텍처 선택, 디버깅 root cause 가설 검증)
 - 위 표의 "Model Routing"의 더 정밀한 변형으로 보면 됨
+
+## 2026-09-25 신규 변수: 라우팅이 상품으로 — Liner Model API
+
+이 페이지의 전략 1 (Model Routing)이 이제 **개발자의 수작업이 아니라 API 상품**으로 나왔다. Liner Model API (2026-09-24 출시):
+
+- 각 요청의 **예상 품질·비용을 평가**해 그 요청을 처리할 수 있는 가장 저렴한 모델로 자동 라우팅
+- 요청마다 **단일 모델** 선택 (멀티 모델 동시 호출 아님 — 추가 토큰 비용 회피)
+- Liner 자사 수치: Orchestrator 배포 후 8월 내부 토큰 비용이 2026년 상반기 대비 **50%+ 감소**
+- 가격: input **$1**/1M, output **$6**/1M, cached input **$0.10**/1M — 동급 성능대 대비 최소 50% 저렴 주장
+- 벤치마크 비교 대상: Claude Sonnet 5, GPT-5.6-Terra (2026 신형) + 비용 절감 계산기 공개
+
+> "Routing every query to a frontier model is the equivalent of spinning up a supercomputer just to solve basic arithmetic." — Luke Kim, Liner CEO
+
+### 1인 개발자 함의
+
+1. **라우팅 규칙을 직접 짜지 말고 라우터 상품을 먼저 평가** — 직접 구현 비용 vs API 마진 비교.
+2. 다만 출처는 **보도자료(자기 주장)** — 벤치마크 수치의 독립 검증 필요. 자사 트래픽으로 A/B 후 도입.
+3. [[comparisons/frontier-lab-economics]]와 연결: 프론티어 랩의 가격 결정력 vs 라우터의 저가 파괴 — AI 비용 축이 "모델 선택"에서 "**분배·오케스트레이션**"으로 이동 중.
 
 ## ❌ 피해야 할 실수
 

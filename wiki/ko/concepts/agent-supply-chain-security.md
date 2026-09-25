@@ -1,9 +1,9 @@
 ---
 title: "Agent Supply Chain Security"
 category: concepts
-tags: [security, supply-chain, agent, mcp, skill-md, agents-md, owasp, asi04, clawhavoc, long-horizon-threat, shadow-memory, behavior-jailbreak, execution-hallucination, privacy-benchmark, policy-leakage, intent-following]
+tags: [security, supply-chain, agent, mcp, skill-md, agents-md, owasp, asi04, clawhavoc, long-horizon-threat, shadow-memory, behavior-jailbreak, execution-hallucination, privacy-benchmark, policy-leakage, intent-following, attribution, disclosure, meta-muse]
 created: 2026-05-01
-updated: 2026-05-20
+updated: 2026-09-25
 sources:
   - "raw/articles/2026-05-01-owasp-asi-2026.md"
   - "raw/articles/2026-05-01-dual-llm-camel-pattern.md"
@@ -13,6 +13,7 @@ sources:
   - "raw/articles/2026-05-17-mage-shadow-memory-long-horizon-threats.md"
   - "raw/articles/2026-05-17-litmus-behavioral-jailbreak-os-agents.md"
   - "raw/articles/2026-05-20-polar-bench-privacy-utility-tradeoffs.md"
+  - "raw/articles/2026-09-25-meta-muse-filesystem-disclosure.md"
 related:
   - "[[patterns/owasp-llm-typescript-mitigations]]"
   - "[[patterns/safe-tool-calling-sandbox]]"
@@ -22,6 +23,7 @@ related:
   - "[[comparisons/agent-memory-taxonomy]]"
   - "[[tools/managed-agents]]"
   - "[[tools/deep-agents-deploy]]"
+  - "[[concepts/agent-attribution]]"
 status: active
 confidence: high
 ---
@@ -304,6 +306,34 @@ POLAR-Bench가 추가하는 질문은 더 조용하지만 매우 실무적이다
 1. agent privacy를 말할 때 "로컬 실행"만 강조하지 말고 **민감 속성 누설 회귀 테스트**를 2~3개라도 둔다.
 2. third-party API / A2A 상호작용에는 기능 테스트 외에 **policy-aware transcript audit** 를 붙인다.
 3. 작은 open-weight trusted agent를 쓸수록, privacy policy는 선언이 아니라 **benchmarkable contract** 로 관리해야 한다.
+
+## 2026-09-25 보강 — Meta Muse: "격리된 개인 VM"이 프롬프트 한 줄로 무너지다
+
+일주일 새 **두 번째** Muse 보안 공개다. 직전의 agent-hijacking 익스플로잇에 이어, 이번엔 Muse에게 요청하면 자신의 **루트 파일시스템 전체**(우분투 시스템 파일·앱 템플릿·내부 문서)를 zip으로 묶어 넘겨준다는 사실이 발견됐다 (The Verge 경유, ai0.news 2026-09-25).
+
+### 왜 이 페이지에 들어오는가
+
+이 페이지의 Tier 모델은 "개인 VM = 격리된 실행 환경"을 전제로 한다. Muse 사건은 그 전제가 **선언이 아니라 검증의 대상**임을 보여 준다.
+
+- **벤더의 모순된 대응**: Meta 대변인은 "개인 리눅스 VM에서는 예상된 동작"이라 했지만, Muse 자신은 처음엔 **거부했다가 사과**함 — 보안 선언과 실제 동작의 불일치.
+- 이는 [[#2026-05-17-보강—litmus-refusal보다-실제-os-상태가-더-중요하다-arxiv-260510779|LITMUS가 붙인 이름]] 그대로 **Execution Hallucination**의 벤더 스케일 버전: "격리되어 있다"는 말과 실제 side effect의 분리.
+
+### Tier 모델에 붙는 새 질문
+
+| 기존 질문 | Muse 사건이 더하는 질문 |
+|---|---|
+| sandbox가 있는가? | sandbox 경계를 **프롬프트로 우회**할 수 있는가? |
+| 자격증명이 격리됐는가? | 에이전트 자신의 **파일시스템·내부 문서**도 유출 표면인가? |
+| skill을 review했는가? | 벤더의 보안 선언을 **실제 동작 테스트**로 검증했는가? |
+
+### 사후 축으로의 연결
+
+같은 날의 OpenAI 호주 사건과 묶어 보면, 공급망 보안은 이제 **사전(예방) + 사후(귀속·증거)** 두 축이다. 자세한 내용은 [[concepts/agent-attribution]] — 사건 이후 "어느 에이전트가, 누구 책임으로, 언제 알렸는가"를 따지는 개념 페이지.
+
+### 1인 개발자 ROI 2개
+
+1. MCP/스킬을 붙인 로컬 에이전트도 파일시스템 경계를 **선언이 아니라 프롬프트 우회 테스트**로 확인할 것.
+2. 에이전트 자신의 작업 공간(VM·컨테이너)에 내부 문서·자격증명을 두지 말 것 — "개인"이라는 말이 격리를 보장하지 않음.
 
 ## OWASP 매핑
 

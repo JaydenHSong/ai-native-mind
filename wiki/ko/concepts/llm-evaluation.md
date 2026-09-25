@@ -1,9 +1,9 @@
 ---
 title: "LLM Evaluation (Evals)"
 category: concepts
-tags: [evaluation, testing, llm, quality, evals, judge-reliability, long-horizon, native-runtime, benchmark, coding-benchmark, behavioral-safety, version-upgrade, trajectory-audit, harness-safety, artifact-aware-review, delegation-benchmark, privacy-benchmark, reward-hacking, process-evaluation, reproducibility, disclosure-audit, terminal-benchmark, benchmark-provenance, workflow-evaluation, artifact-quality]
+tags: [evaluation, testing, llm, quality, evals, judge-reliability, long-horizon, native-runtime, benchmark, coding-benchmark, behavioral-safety, version-upgrade, trajectory-audit, harness-safety, artifact-aware-review, delegation-benchmark, privacy-benchmark, reward-hacking, process-evaluation, reproducibility, disclosure-audit, terminal-benchmark, benchmark-provenance, workflow-evaluation, artifact-quality, claim-scrutiny, agent-scientific-discovery]
 created: 2026-04-09
-updated: 2026-09-24
+updated: 2026-09-25
 sources:
   - "raw/notes/2026-04-09-llm-evaluation.md"
   - "raw/articles/2026-05-12-judge-reliability-harness-rand.md"
@@ -20,6 +20,7 @@ sources:
   - "raw/articles/2026-05-23-terminalworld-real-world-terminal-benchmark.md"
   - "raw/articles/2026-05-24-workstreambench-finance-spreadsheet-agents.md"
   - "raw/articles/2026-09-24-agentic-commerce-benchmark-booking.md"
+  - "raw/articles/2026-09-25-anthropic-claude-crispr-art-enzyme.md"
 related:
   - "[[concepts/harness-engineering]]"
   - "[[concepts/context-rot-hallucination]]"
@@ -28,6 +29,7 @@ related:
   - "[[comparisons/agent-eval-frameworks]]"
   - "[[journal/2026-05-17]]"
   - "[[patterns/agentic-commerce]]"
+  - "[[patterns/agent-scientific-discovery]]"
 status: active
 confidence: high
 ---
@@ -733,6 +735,25 @@ WorkstreamBench는 여기에 **financial spreadsheet workflow** 라는 별도 �
 한편 Amazon은 셀러 콘솔을 Claude에 개방하고 자체 셀러 에이전트 "workflows"를 출시 — 커머스의 에이전트화는 플랫폼 주도로 진행 중이다. 즉 eval 설계자는 "에이전트 vs 환경"이 아니라 **"어느 플랫폼의 에이전트인가"** 를 변수로 봐야 할 수도 있다.
 
 > 자세히: [[patterns/agentic-commerce|Agentic Commerce]]
+
+## 2026-09-25 보강 — "AI discovers X" 주장의 평가 프레임
+
+Anthropic의 Claude ART 효소 발표(2026-09-23)는 eval 관점에서 **주장 검증(claim scrutiny)** 의 교과서 사례다. 헤드라인 "AI가 CRISPR 닮은 효소를 발견했다"를 eval 설계자는 단계별로 쪼개야 한다.
+
+| 주장 강도 단계 | 이번 사건의 상태 |
+|---|---|
+| **가설 생성** (에이전트가 후보를 냈다) | ✅ 950 에이전트 → 20 보고서 → 1개 플래그 |
+| **in-silico 지지** (측정·문헌 대조) | ✅ 반복 수·간격 측정, 선행 보고 문헌 대조 |
+| **lab 확인** (물리 실험) | ⚠️ 어레이의 짧은 RNA 발현만 확인, **기능은 미지** |
+| **peer 통과** (독립 검증) | ❌ pre-print + 블로그, Anthropic 스스로 "admittedly premature" |
+
+HN 토론(566 pts)이 던진 eval 질문들:
+
+- RT 자체는 알려진 것 → "새로움"의 단위가 무엇인가? (효소 vs 배열 vs 시스템)
+- 블로그 발표는 심사 논문이 아님 → **발표 채널도 주장 강도의 일부**
+- LLM 탐색의 재현성 약함 → 같은 탐색을 다시 돌리면 같은 결과가 나오는가?
+
+→ 에이전트의 "발견"을 eval할 때는 **주장의 강도를 단계별로 표기**하고, 각 단계의 통과 기준을 미리 정한다. 자세한 패턴: [[patterns/agent-scientific-discovery|Agent Scientific Discovery]]
 
 ## 1인 개발자에게
 

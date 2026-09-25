@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-09-24
+updated: 2026-09-25
 sources: []
 status: active
 ---
@@ -19,6 +19,39 @@ status: active
 - 월드맵 허브: [[campaign-map|Campaign Map]]
 - 진행 가이드: [[overview|Overview]]
 - 전체 도감: [[index|Index]]
+
+## [2026-09-25] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + 한/영 위키 정제
+
+- **Raw collected** (raw/articles/, 6건):
+  - `2026-09-25-openai-agent-australia-breach.md` — OpenAI 에이전트의 호주 정부 포털 침해 + Transluce 패턴 (2025-11로 거슬러 올라감)
+  - `2026-09-25-meta-muse-filesystem-disclosure.md` — Muse가 루트 파일시스템을 zip으로 넘김 (일주일 새 2번째 공개)
+  - `2026-09-25-anthropic-claude-crispr-art-enzyme.md` — Claude 950개 에이전트의 ART 효소 발견 (HN 566 pts)
+  - `2026-09-25-gemini-live-avatar-business-calling-suncatcher.md` — Gemini 전화 대행 + Live Avatar + Project Suncatcher 궤도 TPU
+  - `2026-09-25-liner-model-api-routing.md` — Liner Model API, 요청별 라우팅으로 토큰 비용 50%+ 절감 주장
+  - `2026-09-25-lm-studio-agent-canvas.md` — LM Studio Agent Canvas (Gmail 뉴스레터, 인간-에이전트 공유 캔버스)
+- **Pages created** (wiki/ko — status: draft):
+  - `concepts/agent-attribution.md` (confidence: medium) — 에이전트 사건의 귀속(행위자·책임·공개 시점)
+  - `patterns/agent-scientific-discovery.md` (confidence: medium) — 문헌 접지→in-silico 가설→wet-lab 검증
+  - `patterns/shared-agent-canvas.md` (confidence: low) — 인간-에이전트 공동 편집 캔버스
+  - `journal/2026-09-25.md` (status: active, confidence: medium) — 금요 데일리 일지
+- **Pages updated**:
+  - `concepts/agent-supply-chain-security.md` — Meta Muse 2026-09-25 보강 (프롬프트로 무너지는 "개인 VM" 경계)
+  - `patterns/agentic-commerce.md` — Gemini 음성 커머스 보강 (스티어링 축의 음성 채널 확장)
+  - `patterns/ai-cost-management.md` — Liner Model API 보강 (라우팅이 상품으로)
+  - `concepts/llm-evaluation.md` — "AI discovers X" 주장의 평가 프레임 보강
+  - `index.md` — 90→94페이지, 신규 4개 등록 (attribution·scientific-discovery·shared-agent-canvas·journal/2026-09-25)
+  - `overview.md` — 총 페이지·카테고리 수 갱신, 최근 작업 항목 추가.
+  - `log.md` — 이 항목 추가.
+- **Excluded (watch-only)**: AudioEye 에이전트 접근성 연구 (eval 보강 후보), Conference Board 5단계 프레임워크 (기업 HR 중심), Zoho Zia (어제 주제와 겹침), MaaseAI (스팸성 보도자료), Hostinger .si 도메인 (AI 무관).
+- **English sync**: wiki/en에 동일 slug 신규 4개 + 업데이트 4개 미러링, en/index.md·en/log.md·en/overview.md·en/campaign-map.md 정리.
+- **Verification**:
+  - 신규 raw 6개 모두 wiki/ko 본문 source reference에 연결됨.
+  - 어제 주제(agentic-coding/fuzz, agentic-commerce 벤치마크, DeepSeek 매출, Codex 보안 에이전트, Claude 마켓플레이스, Alibaba AgentCore)와 중복 없음.
+  - 모순되는 기존 내용 없음. Meta의 "예상된 동작" 주장은 LITMUS의 execution-hallucination 주장과 일치하는 재확인 사례로 처리.
+- **Notes**:
+  - 사용자 피드백 단계는 생략하고 신규 페이지는 status: draft로 생성 — 추후 검수·승격 필요.
+  - git 커밋은 수행하지 않음 (Mac에 git 실행 권한 없음).
+  - raw frontmatter 키셋은 2026-09-24 파일과 동일하게 유지 (title/source_url/source_type/authors/published/fetched/tags/status).
 
 ## [2026-09-24] ingest | 데일리 AI 뉴스 스크랩 파이프라인 테스트 — raw 6건 + 한/영 위키 정제
 

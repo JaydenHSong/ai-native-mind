@@ -29,10 +29,16 @@ status: active
 
 ## 현재 상태
 
-- **총 페이지**: 90개
-- **카테고리**: concepts(20), tools(12), patterns(24), journal(20), comparisons(10), meta(4)
+- **총 페이지**: 94개
+- **카테고리**: concepts(21), tools(12), patterns(26), journal(21), comparisons(10), meta(4)
 - **시작일**: 2026-04-06
-- **최근 작업 (2026-09-24 데일리 ingest — 스크랩 파이프라인 테스트)**:
+- **최근 작업 (2026-09-25 데일리 ingest — 에이전트 보안의 날)**:
+  - AI 뉴스 6건을 `raw/articles/`에 수집 (어제 주제와 중복 없음)
+  - wiki/ko에 신규 페이지 4개 생성 (concepts/agent-attribution, patterns/agent-scientific-discovery, patterns/shared-agent-canvas, journal/2026-09-25 — status: draft)
+  - wiki/ko 기존 페이지 4개 보강 (agent-supply-chain-security, agentic-commerce, ai-cost-management, llm-evaluation)
+  - wiki/en에 동일 slug 신규 4개 + 업데이트 4개 미러링, index·log·overview·campaign-map 정리
+  - 총 페이지 90→94개
+- **직전 작업 (2026-09-24 데일리 ingest — 스크랩 파이프라인 테스트)**:
   - AI 뉴스 6건을 `raw/articles/`에 수집하고 맥락 재평가 (교체/제외 없음)
   - wiki/ko에 신규 페이지 6개 생성 (tools 3, patterns 2, comparisons 1 — status: draft)
   - wiki/en에 동일 slug 6개 동기화, index·log·overview·campaign-map 정리

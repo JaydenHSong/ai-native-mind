@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-09-24
-total_pages: 90
+updated: 2026-09-25
+total_pages: 94
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 전체 90개 페이지 | 최종 업데이트: 2026-09-24 (데일리 ingest: AI 뉴스 6건 수집 + 한/영 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
+> 전체 94개 페이지 | 최종 업데이트: 2026-09-25 (데일리 ingest: AI 뉴스 6건 수집 + 한/영 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
 
 ## 쉽게 읽기
 
@@ -26,7 +26,7 @@ status: active
 - **실전(Chapter 3~5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **엔드게임(Chapter 6~7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (20개)
+## Concepts (21개)
 
 ### 성장 맵 & 철학
 - [[concepts/ai-native-programmer]] — AI를 팀원으로 활용하여 1인이 팀 규모 결과를 내는 개발자, 성장 맵
@@ -59,6 +59,7 @@ status: active
 - [[concepts/context-rot-hallucination]] — Context Rot, Hallucination, Error 누적 등 5대 실패 패턴
 - [[concepts/cognitive-debt]] — Technical Debt의 AI 버전, 개발자의 머릿속에 쌓이는 부채
 - [[concepts/agent-supply-chain-security]] — 외부 도구·스킬·에이전트의 신뢰 모델 + dual-LLM/CaMeL + Tier 등급
+- [[concepts/agent-attribution]] — 에이전트 보안 사건의 귀속(행위자·책임·공개 시점), 호주 OpenAI 사건 (2026-09-25)
 
 ## Tools (12개)
 
@@ -75,7 +76,7 @@ status: active
 - [[tools/claude-marketplace]] — Claude용 커넥터·플러그인 마켓플레이스 2,000+ (2026-09-24)
 - [[tools/codex-security]] — 취약점 탐지→패치→수정을 한 루프로 묶은 OpenAI 보안 에이전트 (리서치 프리뷰, 2026-09-24)
 
-## Patterns (24개)
+## Patterns (26개)
 
 ### 커리큘럼·실습 (읽기 순서 2→6)
 - [[patterns/preventing-context-rot]] — Context Rot·3계층 메모리 (커리큘럼 2)
@@ -102,14 +103,18 @@ status: active
 - [[patterns/git-ai-workflow]] — Claude Code의 Git 통합, 커밋/PR/브랜치 자동화
 - [[patterns/ai-cost-management]] — Model routing + caching + batch로 95% 비용 절감
 - [[patterns/agentic-coding]] — 에이전트가 코드를 통째로 작성하는 방식, 신뢰성은 워크플로의 속성 (2026-09-24)
-- [[patterns/agentic-commerce]] — 에이전트가 상품을 고르고 결제하는 패러다임, "에이전트가 누구 편인가" (2026-09-24)
+- [[patterns/agentic-commerce]] — 에이전트가 상품을 고르고 결제하는 패러다임, "에이전트가 누구 편인가" + 음성 채널 (2026-09-24/25)
+- [[patterns/agent-scientific-discovery]] — 연구급 에이전트의 발견 파이프라인: 문헌 접지→in-silico 가설→wet-lab 검증 (2026-09-25)
+- [[patterns/shared-agent-canvas]] — 인간-에이전트 공유 캔버스 공동 편집 협업 (LM Studio, 2026-09-25)
 
 ### 제품 전략 & 안티패턴
 - [[patterns/solo-product-strategy]] — 1인 개발자 제품 전략, 마이크로 SaaS 기획·출시
 - [[patterns/agent-mvp-stack-2026]] — 1인 MVP 스택 5대 영역 × 4 단계 + 의사결정 트리 (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — Vibe Coding의 7대 안티패턴과 회피법
 
-## Journal (20개)
+## Journal (21개)
+
+- [[journal/2026-09-25]] — 금요 데일리: OpenAI 호주 귀속·Muse 파일시스템 유출·Claude ART 효소·Gemini 음성 커머스·Liner 라우팅·LM Studio Canvas
 
 - [[journal/2026-05-25]] — weekday watch kick-off: Cline / browser-use / LangGraph / Langfuse를 통해 integration surface · operator control · trace artifact화 우선순위 재확인
 - [[journal/2026-05-24]] — 일요 데일리: MOSS(source-level harness evolution) + WorkstreamBench(spreadsheet workflow eval) + ActiveGraph(log-first runtime)

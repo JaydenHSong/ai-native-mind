@@ -1,11 +1,12 @@
 ---
 title: "Agentic Commerce"
 category: patterns
-tags: [agentic-commerce, shopping-agents, benchmarks, principal-agent, computer-use, steering]
+tags: [agentic-commerce, shopping-agents, benchmarks, principal-agent, computer-use, steering, voice-agent, gemini]
 created: 2026-09-24
-updated: 2026-09-24
+updated: 2026-09-25
 sources:
   - "raw/articles/2026-09-24-agentic-commerce-benchmark-booking.md"
+  - "raw/articles/2026-09-25-gemini-live-avatar-business-calling-suncatcher.md"
 related:
   - "[[concepts/llm-evaluation]]"
   - "[[comparisons/agent-eval-frameworks]]"
@@ -56,6 +57,25 @@ confidence: low
 - [[comparisons/agent-eval-frameworks|Agent Eval Frameworks]] — 기존 6대장 프레임워크에 스티어링/충성도 축이 없음 — 확장 후보
 - [[concepts/agent-supply-chain-security|Agent Supply Chain Security]] — 마켓플레이스라는 "환경" 자체가 신뢰 모델의 일부가 됨
 
+## 2026-09-25 보강 — Gemini 음성 커머스: "에이전트가 누구 편인가"에 음성 채널 추가
+
+Gemini가 Pixel 11 유료 구독자를 대신해 **사업자에 직접 전화**를 건다 — 예약, 대기 음악(hold music) 감내, phone-tree(IVR) 탐색까지. computer-use의 음성 버전이다: "GUI 클릭"이 "IVR 버튼 누르기"로 바뀐 것.
+
+### 스티어링 축의 확장
+
+어제의 스티어링 벤치마크(충성도 78.6%→17.3%)는 **웹 UI** 환경이었다. 음성 채널에서는 스티어링이 다른 형태로 일어난다:
+
+- 통화 상대의 **목소리 톤·영업 멘트** — 텍스트 추천보다 설득력이 강함
+- **대기 시간** — 기다리게 만들어 특정 선택으로 유도
+- Phone-tree 구조 자체가 선택지를 좁힘
+
+→ "적대적 환경" eval 조건에 **음성 채널 시나리오**를 추가해야 한다는 함의. [[comparisons/agent-eval-frameworks]]의 확장 후보에 음성 스티어링 축 메모.
+
+### 실무 적용
+
+음성 에이전트를 만들 때: (1) 통화 transcript를 principal 최적과 대조 로깅, (2) 예약·결제 전 **음성 확인 + 텍스트 요약** 이중 확인, (3) 대기·유도 패턴 탐지 시 사용자에게 에스컬레이션.
+
 ## 참고 소스
 
 - [Agentic commerce reality check: Booking Holdings says LLM traffic is 'significantly below 1%' of bookings](raw/articles/2026-09-24-agentic-commerce-benchmark-booking.md)
+- [Gemini 3.8 Live Avatar, business-calling agents, and TPUs on a Falcon 9 (Project Suncatcher)](raw/articles/2026-09-25-gemini-live-avatar-business-calling-suncatcher.md)
