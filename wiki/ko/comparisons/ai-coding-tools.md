@@ -3,9 +3,10 @@ title: "AI 코딩 도구 비교 (2026)"
 category: comparisons
 tags: [claude-code, cursor, copilot, windsurf, ai-tools]
 created: 2026-04-09
-updated: 2026-04-11
+updated: 2026-09-26
 sources:
   - "raw/notes/2026-04-09-ai-coding-tools-comparison.md"
+  - "raw/articles/2026-09-26-microsoft-copilot-code-autopilot.md"
 related:
   - "[[tools/claude-code]]"
   - "[[concepts/ai-orchestration]]"
@@ -85,8 +86,16 @@ Copilot    → 인라인 완성 ($10/월)
 Claude Code → 전부 (CLAUDE.md로 컨텍스트 관리)
 ```
 
+## 2026-09-26 업데이트 — Microsoft Copilot "Code": 자연어 앱 빌드의 기업판
+
+- Copilot 앱에 **"Code"** 도구 추가 (Reuters 2026-09-25): 자연어 프롬프트로 앱·대시보드 등 소프트웨어 생성, **GitHub Copilot과 같은 기술** 기반. 이달 말 얼리 액세스, 365 Premium/Pro는 올해 말 프리뷰.
+- **"Autopilot"** 에이전트: 6월 "Scout"의 개편판, 이달 말 프라이빗 프리뷰. 회사 디렉토리 내 **자체 정체성** + 사용자가 제어하는 **특정 권한** — 엔터프라이즈 에이전트의 신뢰 인프라 방향.
+- 비교표 관점: Copilot 열의 "인라인 완성 전문가" 정체에 **"앱 빌더 + Office 내장 + 엔터프라이즈 권한 모델"** 행 추가. Claude Code(터미널 아키텍트)·Cursor(IDE 코더)와의 차별점은 **비개발자 사무직까지의 도달**과 Office 스위트 내장.
+- [[patterns/ai-cost-management]]의 2026-09-26 보강(사용자 직접 비용 가시성)과 함께 보면: Copilot은 "만들기"와 "쓰는 만큼 알기"를 한 앱에 묶는 중.
+
 ## 참고 소스
 
 - [AI 코딩 도구 비교 리서치](raw/notes/2026-04-09-ai-coding-tools-comparison.md)
 - [Every Major AI Coding Tool Compared (Medium)](https://murphye.medium.com/i-compared-every-major-ai-coding-tool-so-you-dont-have-to-f05a6915c0d4)
 - [Cursor vs Windsurf vs Claude Code (DEV)](https://dev.to/pockit_tools/cursor-vs-windsurf-vs-claude-code-in-2026-the-honest-comparison-after-using-all-three-3gof)
+- [Microsoft revamps Copilot with code generation, agentic AI tools (Reuters, 2026-09-25)](raw/articles/2026-09-26-microsoft-copilot-code-autopilot.md)

@@ -1,12 +1,13 @@
 ---
 title: "Agentic Commerce"
 category: patterns
-tags: [agentic-commerce, shopping-agents, benchmarks, principal-agent, computer-use, steering, voice-agent, gemini]
+tags: [agentic-commerce, shopping-agents, benchmarks, principal-agent, computer-use, steering, voice-agent, gemini, accessibility]
 created: 2026-09-24
-updated: 2026-09-25
+updated: 2026-09-26
 sources:
   - "raw/articles/2026-09-24-agentic-commerce-benchmark-booking.md"
   - "raw/articles/2026-09-25-gemini-live-avatar-business-calling-suncatcher.md"
+  - "raw/articles/2026-09-26-audioeye-agent-accessibility-study.md"
 related:
   - "[[concepts/llm-evaluation]]"
   - "[[comparisons/agent-eval-frameworks]]"
@@ -63,9 +64,17 @@ When building a shopping agent: (1) steering detection — log how far recommend
 - "Whose side is the agent on" gains a **voice channel**: steering can now arrive through the caller's voice, wait times, and phone-tree narrowing.
 - Companion data point: Project Suncatcher puts TPUs on a Falcon 9 (Oct 1) — the chips run ~15 minutes before needing to cool. Compute pushing against the heat wall; same current as Mercury 2.5's 770 tok/s — tokens are becoming too cheap to meter, and the bottleneck shifts to **distribution and orchestration**.
 
+### 2026-09-26 — AudioEye: the accessibility backlog is the agent-conversion backlog
+
+- 1,560 agents on 6 commercial models, 13 tasks, 2 months: on the least-accessible site, task completion fell from **96% to 31%** (~two-thirds drop); the median run consumed **43% more tokens** (128k vs. 90k), up to **6x** on the worst runs.
+- Agents read the accessibility tree — a decade of ignored WCAG fixes is now a **per-transaction tax on agents**.
+- NIQ: 51% of US consumers used an AI shopping tool in the past month (~500 respondents, ±4.4pp). Note the metric gap: Booking's "<1% of bookings" counts completed transactions; NIQ counts any tool use. **Not a contradiction — different denominators.**
+- Solo-dev takeaway: test agent flows on your **worst**-accessibility pages first, and instrument **tokens per completed task** — that's where the cost hides.
+
 ---
 
 ## Sources
 
 - [Agentic commerce reality check: Booking Holdings says LLM traffic is 'significantly below 1%' of bookings](raw/articles/2026-09-24-agentic-commerce-benchmark-booking.md)
 - [Gemini 3.8 Live Avatar, business-calling agents, and TPUs on a Falcon 9 (Project Suncatcher)](raw/articles/2026-09-25-gemini-live-avatar-business-calling-suncatcher.md)
+- [AudioEye: agent completion collapses on inaccessible sites (2026-09-24 study)](raw/articles/2026-09-26-audioeye-agent-accessibility-study.md)

@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-09-25
+updated: 2026-09-26
 sources: []
 status: active
 ---
@@ -19,6 +19,40 @@ This page records only **what changed** by date. For concept explanations, see t
 - World-map hub: [[campaign-map|Campaign Map]]
 - Navigation guide: [[overview|Overview]]
 - Full catalog: [[index|Index]]
+
+## [2026-09-26] ingest | Daily AI news scrape — 6 raw sources + ko/en wiki refinement
+
+- **Raw collected** (raw/articles/, 6):
+  - `2026-09-26-openai-misaligned-model-review.md` — OpenAI's newly published "misaligned model activity" review: government-site engagements (2 SEC sites + Census Bureau) + 53 leaked ChatGPT user images + Transluce's independent investigation
+  - `2026-09-26-stanford-paper2agent.md` — Stanford Paper2Agent (Nature 2026-09-16): paper-to-working-agent in ~45 min, ~$14; 74/100 computational-biology papers agentified
+  - `2026-09-26-multi-agent-dialect-governance-risk.md` — Multi-agent "dialect" report (PANews citing CCTV): grammar compression + metaphor generation, "partial loss of control" framing
+  - `2026-09-26-audioeye-agent-accessibility-study.md` — AudioEye study: completion 96%→31% on inaccessible sites, +43% tokens
+  - `2026-09-26-microsoft-copilot-code-autopilot.md` — Microsoft Copilot revamp: "Code" tool + always-on "Autopilot" agent + user-facing cost visibility
+  - `2026-09-26-dataiku-agent-management.md` — Dataiku Agent Management: cross-platform agent inventory, performance measurement, risk flags
+- **Pages created** (wiki/ko — status: draft):
+  - `concepts/agent-data-leakage.md` (confidence: medium) — outbound data leakage of training/eval agents
+  - `concepts/multi-agent-dialect.md` (confidence: low) — spontaneous agent dialects, interpretability loss (single secondhand source)
+  - `journal/2026-09-26.md` (status: active) — Saturday daily journal
+- **Pages updated**:
+  - `concepts/agent-attribution.md` — 2026-09-25 review reinforcement (government-site engagements + formalized disclosure criteria + attribution-uncertainty as 4th axis)
+  - `patterns/agent-scientific-discovery.md` — Paper2Agent case (literature grounding upgraded to tool calls)
+  - `patterns/agentic-commerce.md` — AudioEye accessibility reinforcement (completion bottleneck + metric-definition-difference flag)
+  - `patterns/ai-cost-management.md` — demand-side cost-axis reinforcement (Copilot cost visibility + accessibility token tax)
+  - `comparisons/ai-coding-tools.md` — Copilot "Code" update
+  - `concepts/gen-ai-observability.md` — Dataiku Agent Management reinforcement (inventory as step zero of governance)
+  - `index.md` — 94→97 pages, 3 new entries registered (agent-data-leakage, multi-agent-dialect, journal/2026-09-26)
+  - `overview.md` — page/category counts refreshed, latest-work entry added
+  - `log.md` — this entry added
+- **Excluded (watch-only)**: Gmail AI newsletters — none received in the last 24h (one Inflearn informational email excluded).
+- **English sync**: wiki/en mirrors of the 3 new + 6 updated pages under the same slugs; en/index.md, en/log.md, en/overview.md, en/campaign-map.md tidied.
+- **Verification**:
+  - All 6 new raw sources are referenced from wiki/ko pages.
+  - No overlap with yesterday's topics (liner-routing, lm-studio-canvas, claude-crispr-art, gemini-avatar-suncatcher, openai-australia-breach, meta-muse-disclosure).
+  - Booking "<1%" vs. NIQ "51%": flagged as a metric-definition difference, not a contradiction.
+- **Notes**:
+  - User feedback step skipped; new pages created with status: draft — need later review and promotion.
+  - No git commit (no git execution on the Mac).
+  - Raw frontmatter keyset kept identical to the 2026-09-25 files (title/source_url/source_type/authors/published/fetched/tags/status).
 
 ## [2026-09-25] ingest | Daily AI news scrape — 6 raw sources + ko/en wiki refinement
 

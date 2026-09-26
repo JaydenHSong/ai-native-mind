@@ -3,13 +3,14 @@ title: "GenAI and Agent Observability (OpenTelemetry)"
 category: concepts
 tags: [observability, opentelemetry, genai, agents, tracing, semconv, event-sourcing, runtime-audit]
 created: 2026-04-11
-updated: 2026-05-24
+updated: 2026-09-26
 sources:
   - "raw/notes/2026-04-11-vercel-workflow-otel-agents-research.md"
   - "raw/articles/2026-05-01-otel-ai-agent-observability.md"
   - "raw/articles/2026-05-03-datadog-state-of-ai-engineering-2026.md"
   - "raw/articles/2026-05-06-agentic-harness-engineering-observability.md"
   - "raw/articles/2026-05-24-activegraph-log-is-the-agent.md"
+  - "raw/articles/2026-09-26-dataiku-agent-management.md"
 related:
   - "[[concepts/llm-evaluation]]"
   - "[[patterns/agent-server-harness]]"
@@ -161,6 +162,17 @@ That means observability is no longer just dashboards and postmortems. It become
 1. For important agent workflows, design not just for “logging exists” but for **how far replay is possible**.
 2. Append-only event sequences are more useful than ad hoc debugging notes when you later need auditability or reproducibility.
 3. As long-running jobs and subagents increase, it is worth asking whether trace storage and state storage can share the **same history substrate**.
+
+### 2026-09-24 — Dataiku Agent Management: inventory is step zero of governance
+
+- Dataiku's Agent Management: a **cross-platform agent inventory** — which agents exist, how they perform, and risk flags — across frameworks.
+- It fills the layer below this page's OTel stack: before you can trace an agent's behavior, you need to **know the agent exists**.
+- Extends the runtime-audit axis with an **inventory** layer:
+
+| Layer | Question | Representative evidence |
+|---|---|---|
+| **Inventory** | Which agents exist at all? | Dataiku Agent Management |
+| Telemetry standard | What do we record, and under what names? | OTel GenAI semantic conventions |
 
 ## Minimal implementation checklist
 

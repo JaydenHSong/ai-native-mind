@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-09-25
-total_pages: 94
+updated: 2026-09-26
+total_pages: 97
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 94 managed pages total | Last updated: 2026-09-25 (daily ingest: 6 AI news sources collected + ko/en wiki refinement) — most pages include a **Start here** block.
+> 97 managed pages total | Last updated: 2026-09-26 (daily ingest: 6 AI news sources collected + ko/en wiki refinement) — most pages include a **Start here** block.
 
 ## Start here
 
@@ -26,7 +26,7 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - **Practice (Chapters 3–5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **Endgame (Chapters 6–7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (21)
+## Concepts (23)
 
 ### Growth map & philosophy
 - [[concepts/ai-native-programmer]] — a developer who uses AI as teammates to achieve team-scale outcomes solo; growth map
@@ -60,6 +60,8 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[concepts/cognitive-debt]] — the AI-native version of technical debt: debt that piles up in the developer’s head
 - [[concepts/agent-supply-chain-security]] — trust models for external tools, skills, and agents + dual-LLM/CaMeL + tier grading
 - [[concepts/agent-attribution]] — attribution of agent security incidents: actor, responsibility, disclosure timing (2026-09-25)
+- [[concepts/agent-data-leakage]] — outbound data leakage of training/eval agents: OpenAI's 53 leaked user images (2026-09-26)
+- [[concepts/multi-agent-dialect]] — spontaneous agent "dialects" and interpretability loss (2026-09-26)
 
 ## Tools (12)
 
@@ -101,10 +103,10 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[patterns/prompt-caching]] — reducing costs up to 90% by caching repeated prompt prefixes
 - [[patterns/ai-code-review]] — AI-assisted code review workflow for solo developers
 - [[patterns/git-ai-workflow]] — commit/PR/branch automation through Claude Code’s Git integration
-- [[patterns/ai-cost-management]] — reducing costs up to 95% through model routing, caching, and batching
+- [[patterns/ai-cost-management]] — reducing costs up to 95% through model routing, caching, and batching (+ 2026-09-26: demand-side cost visibility & the accessibility token tax)
 - [[patterns/agentic-coding]] — agents writing code end to end; reliability as a workflow property (2026-09-24)
-- [[patterns/agentic-commerce]] — agents picking and paying for products; "whose side is the agent on" + voice channel (2026-09-24/25)
-- [[patterns/agent-scientific-discovery]] — the research-grade discovery pipeline: literature grounding → in-silico hypothesis → wet-lab validation (2026-09-25)
+- [[patterns/agentic-commerce]] — agents picking and paying for products; "whose side is the agent on" + voice channel + accessibility backlog (2026-09-24/25/26)
+- [[patterns/agent-scientific-discovery]] — the research-grade discovery pipeline: literature grounding → in-silico hypothesis → wet-lab validation + Paper2Agent's 45-min/$14 agentification (2026-09-25/26)
 - [[patterns/shared-agent-canvas]] — a shared human-agent canvas for co-edited collaboration (LM Studio, 2026-09-25)
 
 ### Product strategy & anti-patterns
@@ -112,7 +114,9 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[patterns/agent-mvp-stack-2026]] — solo MVP stack: 5 areas × 4 stages + decision tree (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — seven major anti-patterns in vibe coding and how to avoid them
 
-## Journal (21)
+## Journal (22)
+
+- [[journal/2026-09-26]] — Saturday daily: OpenAI misaligned review · Paper2Agent · multi-agent dialect · AudioEye accessibility · Copilot revamp · Dataiku governance
 
 - [[journal/2026-09-25]] — Friday daily: OpenAI Australia attribution · Muse filesystem leak · Claude ART enzyme · Gemini voice commerce · Liner routing · LM Studio Canvas
 
@@ -141,7 +145,7 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 
 - [[comparisons/rag-vs-llm-wiki]] — comparing RAG and LLM-Wiki: rediscovery vs accumulation
 - [[comparisons/claude-code-plugins]] — four Claude Code plugins + combination strategy
-- [[comparisons/ai-coding-tools]] — AI coding tools: Claude Code vs Cursor vs Copilot vs Windsurf
+- [[comparisons/ai-coding-tools]] — AI coding tools: Claude Code vs Cursor vs Copilot vs Windsurf (+ Copilot "Code"/Autopilot update, 2026-09-26)
 - [[comparisons/agent-frameworks]] — AI agent frameworks: LangGraph vs CrewAI vs OpenAI SDK (+ two managed platforms)
 - [[comparisons/fine-tuning-vs-prompting]] — fine-tuning vs prompting decision guide and hybrid patterns
 - [[comparisons/managed-vs-deep-agents]] — Claude Managed Agents vs LangChain Deep Agents Deploy: lock-in vs freedom

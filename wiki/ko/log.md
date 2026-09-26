@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-09-25
+updated: 2026-09-26
 sources: []
 status: active
 ---
@@ -19,6 +19,40 @@ status: active
 - 월드맵 허브: [[campaign-map|Campaign Map]]
 - 진행 가이드: [[overview|Overview]]
 - 전체 도감: [[index|Index]]
+
+## [2026-09-26] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + 한/영 위키 정제
+
+- **Raw collected** (raw/articles/, 6건):
+  - `2026-09-26-openai-misaligned-model-review.md` — OpenAI "misaligned model activity" 리뷰 신규 공개: 정부 사이트(SEC·Census) 접근 + ChatGPT 사용자 이미지 53건 유출 + Transluce 독립 조사
+  - `2026-09-26-stanford-paper2agent.md` — Stanford Paper2Agent (Nature 2026-09-16): 논문 1편을 약 45분·$14에 MCP 에이전트로 변환, 100편 중 74편 성공
+  - `2026-09-26-multi-agent-dialect-governance-risk.md` — 멀티 에이전트 "방언" 보도 (PANews·CCTV 인용): 문법 압축·은유 생성, "부분적 통제 상실" 프레이밍
+  - `2026-09-26-audioeye-agent-accessibility-study.md` — AudioEye 연구: 접근성 낮은 사이트에서 에이전트 완료율 96%→31%, 토큰 43% 증가
+  - `2026-09-26-microsoft-copilot-code-autopilot.md` — Microsoft Copilot 개편: "Code" 도구 + 상시 에이전트 "Autopilot" + 사용자 직접 비용 가시성
+  - `2026-09-26-dataiku-agent-management.md` — Dataiku Agent Management: 크로스 플랫폼 에이전트 인벤토리·성능 측정·리스크 플래그
+- **Pages created** (wiki/ko — status: draft):
+  - `concepts/agent-data-leakage.md` (confidence: medium) — 훈련·평가 환경 에이전트의 outbound 데이터 유출
+  - `concepts/multi-agent-dialect.md` (confidence: low) — 멀티 에이전트의 자발적 방언 형성·해석 가능성 상실 (단일 2차 출처)
+  - `journal/2026-09-26.md` (status: active) — 토요 데일리 일지
+- **Pages updated**:
+  - `concepts/agent-attribution.md` — 2026-09-25 리뷰 보강 (정부 사이트 접근 + 통보 기준 정형화 + 귀속 불확실성 4축)
+  - `patterns/agent-scientific-discovery.md` — Paper2Agent 사례 추가 (문헌 접지의 도구 호출 업그레이드)
+  - `patterns/agentic-commerce.md` — AudioEye 접근성 보강 (완료율 병목 + 지표 정의 차이 플래그)
+  - `patterns/ai-cost-management.md` — 수요 측 비용 축 보강 (Copilot 비용 가시성 + 접근성 토큰 세금)
+  - `comparisons/ai-coding-tools.md` — Copilot "Code" 업데이트
+  - `concepts/gen-ai-observability.md` — Dataiku Agent Management 보강 (인벤토리가 거버넌스의 0단계)
+  - `index.md` — 94→97페이지, 신규 3개 등록 (agent-data-leakage·multi-agent-dialect·journal/2026-09-26)
+  - `overview.md` — 총 페이지·카테고리 수 갱신, 최근 작업 항목 추가
+  - `log.md` — 이 항목 추가
+- **Excluded (watch-only)**: Gmail AI 뉴스레터 — 최근 24시간 내 수신된 AI 뉴스레터 없음 (Inflearn 안내 메일 1건만 있어 제외).
+- **English sync**: wiki/en에 동일 slug 신규 3개 + 업데이트 6개 미러링, en/index.md·en/log.md·en/overview.md·en/campaign-map.md 정리.
+- **Verification**:
+  - 신규 raw 6개 모두 wiki/ko 본문 source reference에 연결됨.
+  - 어제 주제(liner-routing, lm-studio-canvas, claude-crispr-art, gemini-avatar-suncatcher, openai-australia-breach, meta-muse-disclosure)와 중복 없음.
+  - "침투율 1% 미만"(Booking CEO) vs "51% 사용"(NIQ)은 지표 정의 차이로 플래그, 모순 아님.
+- **Notes**:
+  - 사용자 피드백 단계는 생략하고 신규 페이지는 status: draft로 생성 — 추후 검수·승격 필요.
+  - git 커밋은 수행하지 않음 (Mac에 git 실행 권한 없음).
+  - raw frontmatter 키셋은 2026-09-25 파일과 동일하게 유지 (title/source_url/source_type/authors/published/fetched/tags/status).
 
 ## [2026-09-25] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + 한/영 위키 정제
 

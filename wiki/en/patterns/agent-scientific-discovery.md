@@ -3,12 +3,14 @@ title: "Agent Scientific Discovery"
 category: patterns
 tags: [agentic-research, scientific-discovery, evaluation, anthropic, claude, claims]
 created: 2026-09-25
-updated: 2026-09-25
+updated: 2026-09-26
 sources:
   - "raw/articles/2026-09-25-anthropic-claude-crispr-art-enzyme.md"
+  - "raw/articles/2026-09-26-stanford-paper2agent.md"
 related:
   - "[[concepts/llm-evaluation]]"
   - "[[concepts/harness-engineering]]"
+  - "[[concepts/mcp]]"
 status: draft
 confidence: medium
 ---
@@ -61,6 +63,14 @@ What the agent then did:
 - ART's **function is still unknown** — no claim that it is programmable
 - Feng Zhang (MIT·Broad), after reviewing the pre-print: "genuinely intriguing"
 - No peer review yet — Anthropic itself called the announcement "admittedly premature"
+
+### 2026-09-26 — Paper2Agent: from paper to working agent in ~45 minutes, ~$14
+
+- Stanford's Paper2Agent (Nature, 2026-09-16; Miao, Davis, Zhang, Pritchard, Zou) turns a computational-biology paper into a working **MCP-based agent** in about 45 minutes for roughly **$14** per paper.
+- 74 of 100 papers successfully "agentified"; 593 validated tools; on AlphaGenome benchmarks the agent reached **98.7% vs. 82.7%** for the direct-repo baseline; 91.2% average across benchmarks.
+- The upgrade over this page's template: **literature grounding is upgraded into callable tools** — the paper's methods become MCP tools the agent actually invokes ("virtual corresponding author").
+- The 26 failures double as a **reproducibility audit** — papers that couldn't become agents often couldn't be reproduced at all.
+- Open questions: author consent for agentification, and generalization beyond computational biology.
 
 ## Example application
 

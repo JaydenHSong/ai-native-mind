@@ -3,7 +3,7 @@ title: "AI Cost Management"
 category: patterns
 tags: [cost, pricing, optimization, anthropic, claude, openai, model-routing, liner]
 created: 2026-04-09
-updated: 2026-09-25
+updated: 2026-09-26
 sources:
   - "raw/notes/2026-04-09-ai-cost-management.md"
   - "raw/articles/2026-05-01-anthropic-managed-agents-launch.md"
@@ -12,6 +12,8 @@ sources:
   - "raw/articles/2026-05-01-1-person-saas-cost-deep.md"
   - "raw/articles/2026-05-01-managed-vs-selfhost-breakeven.md"
   - "raw/articles/2026-09-25-liner-model-api-routing.md"
+  - "raw/articles/2026-09-26-microsoft-copilot-code-autopilot.md"
+  - "raw/articles/2026-09-26-audioeye-agent-accessibility-study.md"
 related:
   - "[[patterns/prompt-caching]]"
   - "[[patterns/subagents-delegation]]"
@@ -207,6 +209,12 @@ Anthropic's **Advisor Strategy** pattern maps execution to a fast, low-cost mode
 - Liner's Model API **routes each request to the right model automatically** — claims internal token spend down **50%+** vs. H1 2026 (their own numbers, unverified).
 - Pricing: $1/1M input, $6/1M output, $0.10/1M cached input — benchmarked against Claude Sonnet 5 and GPT-5.6-Terra.
 - "Which model to use" moves from developer handwork to the **infrastructure layer** — the premise of this page's Advisor Strategy changes: routing rules are no longer yours to write, but a vendor's to sell.
+
+### 2026-09-26 — the demand side: Copilot makes cost user-visible; inaccessible sites tax tokens
+
+- Microsoft's Copilot revamp (Reuters, 2026-09-25): the new "Code" tool and always-on "Autopilot" agent come with **user-facing cost visibility inside Office** — "who pays how much" becomes a product surface, not a dashboard afterthought.
+- The AudioEye study adds the **environmental** cost axis: on the least-accessible site, agents burned **43% more tokens per run** (128k vs. 90k; up to 6x on the worst runs).
+- The page's new working equation: **cost = tokens × infrastructure quality** — the routing/caching levers above (supply side) now meet demand-side cost visibility and site-quality token taxes.
 
 ---
 

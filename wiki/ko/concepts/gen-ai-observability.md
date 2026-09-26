@@ -3,13 +3,14 @@ title: "GenAI·에이전트 관측 가능성 (OpenTelemetry)"
 category: concepts
 tags: [observability, opentelemetry, genai, agents, tracing, semconv, event-sourcing, runtime-audit]
 created: 2026-04-11
-updated: 2026-05-24
+updated: 2026-09-26
 sources:
   - "raw/notes/2026-04-11-vercel-workflow-otel-agents-research.md"
   - "raw/articles/2026-05-01-otel-ai-agent-observability.md"
   - "raw/articles/2026-05-03-datadog-state-of-ai-engineering-2026.md"
   - "raw/articles/2026-05-06-agentic-harness-engineering-observability.md"
   - "raw/articles/2026-05-24-activegraph-log-is-the-agent.md"
+  - "raw/articles/2026-09-26-dataiku-agent-management.md"
 related:
   - "[[concepts/llm-evaluation]]"
   - "[[patterns/agent-server-harness]]"
@@ -180,6 +181,16 @@ ActiveGraph의 핵심 직관은 event-sourced system과 닮아 있다.
 2. 수동 디버깅 메모보다 **append-only event sequence** 가 남는 구조가 나중에 audit과 재현에 강하다.
 3. subagent나 장기 작업을 붙일수록 trace 저장소와 상태 저장소를 따로 보기보다, **동일 history substrate로 합칠 수 있는지** 검토할 가치가 있다.
 
+## 2026-09-26 보강 — Dataiku Agent Management: 인벤토리가 거버넌스의 0단계
+
+관측(observability) → **관리(governance)** 로의 축 이동이 상용 제품으로 나왔다.
+
+- **제품**: Dataiku "Agent Management" (2026-09-24, Succeed 컨퍼런스) — 플랫폼 무관 에이전트 **인벤토리** + 비즈니스·기술 성능 측정 + **리스크 플래그**가 가장 큰 에이전트 식별.
+- **연결 범위**: AWS Bedrock, Databricks Agents, Google Vertex, Microsoft Copilot Studio + Azure Foundry, Salesforce Agentforce, Snowflake Cortex, Dataiku + 커스텀 환경은 **OpenTelemetry** 지원.
+- **문제 규모**: IBM "AI in Motion" — 완전·최신 인벤토리 유지 조직 **5곳 중 1곳 미만**. 같은 주 Harris Poll(CIO 685명)에서는 **10명 중 9명**이 "완전히 추적 중"이라고 자신 — 자기 인식과 실제의 간극.
+- **이 페이지와의 연결**: OTel GenAI semconv(표준 계측)가 있으면 커스텀 하네스도 상용 관리 도구와 연동 가능 — **표준 계측 = 관리 가능성**의 전제. [[concepts/agent-supply-chain-security]]의 "무엇이 돌아가고 있는지 아는 것"이 신뢰 모델의 출발점이라는 주장에 제품 카테고리 차원의 근거.
+- **한계**: 벤더가 자사 제품 문제를 크기 재기 위해 인용한 수치 — 모집단·정의가 달라 간극은 "시사적이지만 미증명".
+
 ## 실무 체크리스트 (최소)
 
 - [ ] 모델 호출 스팬에 **요청 메타**(모델 id, 토큰 요약/카운트 정책) 일관 적용  
@@ -208,3 +219,4 @@ ActiveGraph의 핵심 직관은 event-sourced system과 닮아 있다.
 - [OpenTelemetry — Gen AI semantic conventions](https://opentelemetry.io/docs/specs/semconv/gen-ai/)
 - [OpenTelemetry Blog — AI Agent Observability](https://opentelemetry.io/blog/2025/ai-agent-observability/)
 - [OpenTelemetry community — Gen AI project](https://github.com/open-telemetry/community/blob/main/projects/gen-ai.md)
+- [Dataiku launches Agent Management: cross-platform agent inventory, performance and risk flags](raw/articles/2026-09-26-dataiku-agent-management.md)

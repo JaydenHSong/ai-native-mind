@@ -3,7 +3,7 @@ title: "AI 비용 관리"
 category: patterns
 tags: [cost, pricing, optimization, anthropic, claude, openai, model-routing, liner]
 created: 2026-04-09
-updated: 2026-09-25
+updated: 2026-09-26
 sources:
   - "raw/notes/2026-04-09-ai-cost-management.md"
   - "raw/articles/2026-05-01-anthropic-managed-agents-launch.md"
@@ -12,6 +12,8 @@ sources:
   - "raw/articles/2026-05-01-1-person-saas-cost-deep.md"
   - "raw/articles/2026-05-01-managed-vs-selfhost-breakeven.md"
   - "raw/articles/2026-09-25-liner-model-api-routing.md"
+  - "raw/articles/2026-09-26-microsoft-copilot-code-autopilot.md"
+  - "raw/articles/2026-09-26-audioeye-agent-accessibility-study.md"
 related:
   - "[[patterns/prompt-caching]]"
   - "[[patterns/subagents-delegation]]"
@@ -224,6 +226,22 @@ def route_model(task_complexity: str) -> str:
 1. **라우팅 규칙을 직접 짜지 말고 라우터 상품을 먼저 평가** — 직접 구현 비용 vs API 마진 비교.
 2. 다만 출처는 **보도자료(자기 주장)** — 벤치마크 수치의 독립 검증 필요. 자사 트래픽으로 A/B 후 도입.
 3. [[comparisons/frontier-lab-economics]]와 연결: 프론티어 랩의 가격 결정력 vs 라우터의 저가 파괴 — AI 비용 축이 "모델 선택"에서 "**분배·오케스트레이션**"으로 이동 중.
+
+## 2026-09-26 신규 변수: 수요 측 비용 가시성 — Copilot + "접근성 세금"
+
+지금까지 이 페이지의 레버는 **공급 측**(라우팅·캐싱·배치)이었다. 9/26 뉴스 두 건이 **수요 측** 비용 축을 추가한다.
+
+### Microsoft Copilot: 사용자 직접 비용 가시성
+
+- Copilot 앱 개편(Reuters 2026-09-25): "Code"(자연어 앱 빌드, GitHub Copilot 기술 기반) + 상시 에이전트 "Autopilot"(디렉토리 정체성 + 사용자 제어 권한) + Word/Excel/PowerPoint 내장.
+- **비용 관리 기능**: 직원이 자신의 AI 사용 비용을 직접 확인 — 비용 통제가 중앙 FinOps가 아니라 **개별 사용자 행동** 레벨로 내려옴.
+- 1인 개발자 관점: "누가 얼마나 쓰는지"를 본인이 실시간으로 보는 습관 = 가장 싼 비용 통제. `/cost` 세션 추적의 조직판.
+
+### AudioEye: 접근성 부족 = 토큰 43% 세금
+
+- 접근성 낮은 사이트에서 에이전트 실행 시 중앙값 기준 **토큰 43% 증가**(128k vs 90k), 최악 6배.
+- 비용 절감이 모델 선택만이 아니라 **읽을 대상의 품질**에도 달려 있음 — 에이전트가 헤매는 페이지는 "토큰 세금"을 매김.
+- 에이전트 서비스를 만들 때: 타겟 사이트의 접근성 트리 품질을 **비용 모델의 입력**으로 둔다.
 
 ## ❌ 피해야 할 실수
 

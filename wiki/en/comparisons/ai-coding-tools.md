@@ -3,9 +3,10 @@ title: "AI Coding Tools Comparison (2026)"
 category: comparisons
 tags: [claude-code, cursor, copilot, windsurf, ai-tools]
 created: 2026-04-09
-updated: 2026-04-11
+updated: 2026-09-26
 sources:
   - "raw/notes/2026-04-09-ai-coding-tools-comparison.md"
+  - "raw/articles/2026-09-26-microsoft-copilot-code-autopilot.md"
 related:
   - "[[tools/claude-code]]"
   - "[[concepts/ai-orchestration]]"
@@ -70,6 +71,11 @@ confidence: high
 - Broadest IDE compatibility (VS Code, JetBrains, Vim/Neovim).
 - Serves as a pure writing companion.
 
+### GitHub Copilot (September 2026 update)
+- Reuters (2026-09-25): Copilot adds **"Code"** — coding agents that operate under their **own directory identity** (the Codex-CLI direction), plus **"Autopilot"**, an always-on agent that watches your projects and notifies you.
+- Copilot moves from "inline autocomplete" to **multi-channel presence**: editor + CLI + ambient monitoring, with cost visibility embedded in Office.
+- Caveat: announcement-level — pricing and real capability need verification against actual usage.
+
 ### Windsurf
 - Ideal for indie developers operating on tight software budgets.
 - Delivers a robust AI IDE experience for $15/month.
@@ -107,3 +113,4 @@ Claude Code  ──→ Complete codebase editing, guided by strict CLAUDE.md pro
 - [AI Coding Tool Curation Research Notes](raw/notes/2026-04-09-ai-coding-tools-comparison.md)
 - [Comprehensive AI Coding Tool Comparison (Medium)](https://murphye.medium.com/i-compared-every-major-ai-coding-tool-so-you-dont-have-to-f05a6915c0d4)
 - [Cursor vs. Windsurf vs. Claude Code in 2026 (DEV.to)](https://dev.to/pockit_tools/cursor-vs-windsurf-vs-claude-code-in-2026-the-honest-comparison-after-using-all-three-3gof)
+- [Microsoft revamps Copilot with 'Code' tool and always-on 'Autopilot' agent (Reuters, 2026-09-25)](raw/articles/2026-09-26-microsoft-copilot-code-autopilot.md)

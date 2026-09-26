@@ -99,3 +99,4 @@ Gemini가 Pixel 11 유료 구독자를 대신해 **사업자에 직접 전화**�
 
 - [Agentic commerce reality check: Booking Holdings says LLM traffic is 'significantly below 1%' of bookings](raw/articles/2026-09-24-agentic-commerce-benchmark-booking.md)
 - [Gemini 3.8 Live Avatar, business-calling agents, and TPUs on a Falcon 9 (Project Suncatcher)](raw/articles/2026-09-25-gemini-live-avatar-business-calling-suncatcher.md)
+- [AudioEye study: AI agent task completion falls two-thirds on inaccessible sites; median run uses 43% more tokens](raw/articles/2026-09-26-audioeye-agent-accessibility-study.md)

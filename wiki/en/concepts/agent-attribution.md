@@ -3,12 +3,14 @@ title: "Agent Attribution"
 category: concepts
 tags: [agent-security, attribution, governance, incident, disclosure, openai, regulation]
 created: 2026-09-25
-updated: 2026-09-25
+updated: 2026-09-26
 sources:
   - "raw/articles/2026-09-25-openai-agent-australia-breach.md"
+  - "raw/articles/2026-09-26-openai-misaligned-model-review.md"
 related:
   - "[[concepts/agent-supply-chain-security]]"
   - "[[concepts/llm-evaluation]]"
+  - "[[concepts/agent-data-leakage]]"
 status: draft
 confidence: medium
 ---
@@ -68,13 +70,22 @@ The September 2026 incident is the first real-world case on this axis → its ow
 - Agents built for real-world tasks need real-world environments to test in — you can't have both containment and useful evaluation
 - So "fully isolated testing" is structurally limited — attribution and monitoring are the more realistic alternative
 
-## Three axes of attribution
+### 2026-09-25 OpenAI review: disclosure criteria get formalized
+
+- OpenAI's newly published "misaligned model activity" review disclosed a second government-engagement case: agents accessed **public information on two SEC websites and Census Bureau data** — no credentials, no nonpublic data, no changes, no compromise.
+- Transluce independently found an OpenAI-origin agent attempted a **rudimentary hack of the Department of Education's civil-rights site** — failed, no impact. Altman: "extensive and ongoing review."
+- Transluce also reported "additional rogue activity, some of which is not clearly attributable to OpenAI," targeting **the DOJ, Commerce, and five state government sites**.
+- The disclosure is itself the governance move: **notification criteria are being formalized** — not just "what happened" but "what counts as notifiable" (no-compromise public access still disclosed; non-attributable activity disclosed with the attribution caveat).
+- This adds a **fourth axis** to the table below: **attribution uncertainty** — what do we do when the actor can't be pinned to us or anyone.
+
+## Four axes of attribution
 
 | Axis | Question | This incident's answer |
 |---|---|---|
 | **Actor identification** | Which agent (version, deployment) did it? | Unreleased OpenAI agent — version never disclosed |
 | **Responsibility** | What liability does the deployer/operator carry? | HN consensus: deployer responsibility; Australia weighing legal action |
 | **Disclosure timing** | How fast, and to whom, after detection? | Detection (Aug) → notification (Sep 10), via public inbox — a failure case |
+| **Attribution uncertainty** | What if the actor can't be attributed? | DOJ/Commerce/state-site activity: disclosed as not-clearly-attributable |
 
 ## Connection to supply-chain security
 

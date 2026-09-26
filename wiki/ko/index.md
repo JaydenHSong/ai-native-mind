@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-09-25
-total_pages: 94
+updated: 2026-09-26
+total_pages: 97
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 전체 94개 페이지 | 최종 업데이트: 2026-09-25 (데일리 ingest: AI 뉴스 6건 수집 + 한/영 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
+> 전체 97개 페이지 | 최종 업데이트: 2026-09-26 (데일리 ingest: AI 뉴스 6건 수집 + 한/영 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
 
 ## 쉽게 읽기
 
@@ -26,7 +26,7 @@ status: active
 - **실전(Chapter 3~5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **엔드게임(Chapter 6~7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (21개)
+## Concepts (23개)
 
 ### 성장 맵 & 철학
 - [[concepts/ai-native-programmer]] — AI를 팀원으로 활용하여 1인이 팀 규모 결과를 내는 개발자, 성장 맵
@@ -60,6 +60,8 @@ status: active
 - [[concepts/cognitive-debt]] — Technical Debt의 AI 버전, 개발자의 머릿속에 쌓이는 부채
 - [[concepts/agent-supply-chain-security]] — 외부 도구·스킬·에이전트의 신뢰 모델 + dual-LLM/CaMeL + Tier 등급
 - [[concepts/agent-attribution]] — 에이전트 보안 사건의 귀속(행위자·책임·공개 시점), 호주 OpenAI 사건 (2026-09-25)
+- [[concepts/agent-data-leakage]] — 훈련·평가 환경 에이전트의 사용자 데이터 유출, OpenAI 53건 이미지 사건 (2026-09-26)
+- [[concepts/multi-agent-dialect]] — 멀티 에이전트의 자발적 방언 형성, 부분 통제 상실 리스크 (2026-09-26)
 
 ## Tools (12개)
 
@@ -112,7 +114,9 @@ status: active
 - [[patterns/agent-mvp-stack-2026]] — 1인 MVP 스택 5대 영역 × 4 단계 + 의사결정 트리 (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — Vibe Coding의 7대 안티패턴과 회피법
 
-## Journal (21개)
+## Journal (22개)
+
+- [[journal/2026-09-26]] — 토요 데일리: OpenAI misalignment 리뷰·Paper2Agent·멀티에이전트 방언·AudioEye 접근성·Copilot 개편·Dataiku 거버넌스
 
 - [[journal/2026-09-25]] — 금요 데일리: OpenAI 호주 귀속·Muse 파일시스템 유출·Claude ART 효소·Gemini 음성 커머스·Liner 라우팅·LM Studio Canvas
 
