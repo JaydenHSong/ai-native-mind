@@ -1,12 +1,13 @@
 ---
 title: "Agentic Commerce"
 category: patterns
-tags: [agentic-commerce, shopping-agents, benchmarks, principal-agent, computer-use, steering, voice-agent, gemini]
+tags: [agentic-commerce, shopping-agents, benchmarks, principal-agent, computer-use, steering, voice-agent, gemini, accessibility]
 created: 2026-09-24
-updated: 2026-09-25
+updated: 2026-09-26
 sources:
   - "raw/articles/2026-09-24-agentic-commerce-benchmark-booking.md"
   - "raw/articles/2026-09-25-gemini-live-avatar-business-calling-suncatcher.md"
+  - "raw/articles/2026-09-26-audioeye-agent-accessibility-study.md"
 related:
   - "[[concepts/llm-evaluation]]"
   - "[[comparisons/agent-eval-frameworks]]"
@@ -74,6 +75,25 @@ Gemini가 Pixel 11 유료 구독자를 대신해 **사업자에 직접 전화**�
 ### 실무 적용
 
 음성 에이전트를 만들 때: (1) 통화 transcript를 principal 최적과 대조 로깅, (2) 예약·결제 전 **음성 확인 + 텍스트 요약** 이중 확인, (3) 대기·유도 패턴 탐지 시 사용자에게 에스컬레이션.
+
+## 2026-09-26 보강 — AudioEye: 접근성 백로그 = 에이전트 전환율 백로그
+
+"에이전트가 누구 편인가"(스티어링)에 더해 **"에이전트가 내 사이트에서 결제를 완료할 수 있는가"** 가 전환율의 새 병목.
+
+- **실험**: AudioEye(2026-09-24) — 6개 상용 모델 기반 에이전트 1,560개를 6개 사이트의 실세계 작업 13개에 투입, 10회 반복. 유일한 변수는 접근성 수정 패치 로드 여부.
+- **결과**: 최악 사이트에서 완료율 **96% → 31%**(약 2/3 하락, 전 모델 공통). 이미지에만 숫자가 있는 작업은 60회 시도 전부 실패.
+- **비용**: 접근성 수정 없으면 중앙값 기준 토큰 **43% 증가**(128k vs 90k), 최악 사이트 최대 6배 — 초과분은 에이전트 운영자 부담.
+- **메커니즘**: 에이전트는 **접근성 트리**(스크린 리더와 같은 구조화된 지도)로 페이지를 읽음. "스크린 리더가 의존하는 alt 텍스트·폼 라벨·버튼 이름 = 쇼핑 에이전트가 의존하는 것".
+- **수요 측**: NIQ Agentic Commerce Tracker(2026-09-24) — 미국 소비자 **51%**가 지난 한 달간 AI 도구로 쇼핑 지원. 단 월 ~500명 샘플(오차 ±4.4%p 수준).
+
+### 실무 적용
+
+쇼핑 에이전트를 만들 때 기존 체크리스트(스티어링 탐지·주인 명시·적대적 테스트)에 추가: (4) **에이전트 완료율 테스트** — 주요 여정 5개를 에이전트로 10회씩 돌려 완료율을 전환율 옆에 둔다. 접근성 수정은 "컴플라이언스 예산"이 아니라 **"전환율 예산"** 에서 집행.
+
+### 한계·모순 플래그
+
+- 벤더 생산 수치: AudioEye는 테스트한 수정 패치를 판매, NIQ는 트래커를 판매 — 사이트별 상세 결과는 최악 사이트 1곳만 공개.
+- "침투율 1% 미만"(Booking CEO, 9/24)과 "51% 사용"(NIQ)은 **서로 다른 지표** — 전자는 LLM 트래픽의 예약 점유율, 후자는 쇼핑 보조용 AI 도구 사용 경험. 모순 아님, 지표 정의 차이.
 
 ## 참고 소스
 

@@ -3,12 +3,14 @@ title: "Agent Scientific Discovery"
 category: patterns
 tags: [agentic-research, scientific-discovery, evaluation, anthropic, claude, claims]
 created: 2026-09-25
-updated: 2026-09-25
+updated: 2026-09-26
 sources:
   - "raw/articles/2026-09-25-anthropic-claude-crispr-art-enzyme.md"
+  - "raw/articles/2026-09-26-stanford-paper2agent.md"
 related:
   - "[[concepts/llm-evaluation]]"
   - "[[concepts/harness-engineering]]"
+  - "[[concepts/mcp]]"
 status: draft
 confidence: medium
 ---
@@ -79,6 +81,18 @@ confidence: medium
 | 950개 에이전트 병렬 탐색의 스케일 | 210M 토큰 — 비용이 만만치 않음 |
 | 발견 과정이 로그로 남아 감사 가능 | 재현성 약함 — 같은 탐색을 다시 돌리면 같은 결과가 나올지 미보장 |
 
+## 적용 사례 2 — Stanford Paper2Agent (2026-09-16): 논문 → MCP 에이전트
+
+Claude의 ART 발견이 "에이전트가 발견을 수행"하는 사례라면, Paper2Agent는 **"논문 자체를 에이전트로"** 만드는 사례 — 발견 파이프라인의 입력(문헌)을 실행 가능한 형태로 바꾸는 접근.
+
+- **방식**: 논문의 원고·코드·데이터·워크플로우를 **MCP 서버**로 감싸 Claude Code 같은 채팅 에이전트가 호출. 논문 1편당 약 45분, 비용 약 $14.
+- **규모**: 계산생물학 논문 100편 중 **74편** 에이전트화 성공, **593개 검증 툴** 생성. AlphaGenome 케이스에서 튜토리얼 기반 쿼리 **98.7%**(저장소 직접 접근 82.7% 대비), 전체 벤치마크 평균 **91.2%**.
+- **개념**: "virtual corresponding author(가상 교신저자)" — 논문에 질문하고, 방법론을 새 데이터에 적용하고, 다른 논문의 에이전트와 협업.
+- **부수 효과**: 실패 26건(코드 불완전·문서 누락·의존성 비호환)은 사실상 논문 **재현성의 자동 감사**.
+- **한계**: 성공률·정확도는 연구팀 자체 측정(독립 검증 필요). 원저자 동의 여부·생물학 밖 적용성은 미해결.
+
+→ "문헌 접지" 단계가 **정적 읽기에서 실행 가능한 도구 호출**로 바뀐다는 점에서 위 "해결 방법" 3단계 템플릿의 입력층을 업그레이드하는 사례. [[concepts/mcp]]의 실전 패턴이기도 함.
+
 ## 관련 패턴
 
 - [[concepts/llm-evaluation|LLM Evaluation]] — "AI discovers X" 주장에 대한 평가 프레임 (주장 강도 단계별 검증)
@@ -87,3 +101,4 @@ confidence: medium
 ## 참고 소스
 
 - [Claude agents identify a CRISPR-like enzyme system (ART) — 950 agents, 21 hours, 210M tokens](raw/articles/2026-09-25-anthropic-claude-crispr-art-enzyme.md)
+- [Stanford Paper2Agent: research papers become MCP-based AI agents (~45 min, ~$14)](raw/articles/2026-09-26-stanford-paper2agent.md)

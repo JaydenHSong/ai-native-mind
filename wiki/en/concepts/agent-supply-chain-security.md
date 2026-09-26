@@ -1,9 +1,9 @@
 ---
 title: "Agent Supply Chain Security"
 category: concepts
-tags: [security, supply-chain, agent, mcp, skill-md, agents-md, owasp, asi04, clawhavoc, long-horizon-threat, shadow-memory, behavior-jailbreak, execution-hallucination, privacy-benchmark, policy-leakage, intent-following]
+tags: [security, supply-chain, agent, mcp, skill-md, agents-md, owasp, asi04, clawhavoc, long-horizon-threat, shadow-memory, behavior-jailbreak, execution-hallucination, privacy-benchmark, policy-leakage, intent-following, attribution, disclosure, meta-muse]
 created: 2026-05-01
-updated: 2026-05-20
+updated: 2026-09-25
 sources:
   - "raw/articles/2026-05-01-owasp-asi-2026.md"
   - "raw/articles/2026-05-01-dual-llm-camel-pattern.md"
@@ -13,6 +13,7 @@ sources:
   - "raw/articles/2026-05-17-mage-shadow-memory-long-horizon-threats.md"
   - "raw/articles/2026-05-17-litmus-behavioral-jailbreak-os-agents.md"
   - "raw/articles/2026-05-20-polar-bench-privacy-utility-tradeoffs.md"
+  - "raw/articles/2026-09-25-meta-muse-filesystem-disclosure.md"
 related:
   - "[[patterns/owasp-llm-typescript-mitigations]]"
   - "[[patterns/safe-tool-calling-sandbox]]"
@@ -22,6 +23,7 @@ related:
   - "[[comparisons/agent-memory-taxonomy]]"
   - "[[tools/managed-agents]]"
   - "[[tools/deep-agents-deploy]]"
+  - "[[concepts/agent-attribution]]"
 status: active
 confidence: high
 ---
@@ -303,6 +305,43 @@ Safety now spans beyond simple execution blocking to encompass **attribute discl
 1. When addressing agent privacy, go beyond "local execution" and set up at least 2 or 3 **sensitive attribute leakage regression tests**.
 2. For third-party API and A2A interactions, implement a **policy-aware transcript audit** alongside functional tests.
 3. If using smaller open-weight trusted agents, treat the privacy policy as a **benchmarkable contract** rather than a mere declaration.
+
+### 2026-09-25 — Meta's Muse hands over the entire filesystem
+
+- Ask Muse and it zips up its **entire root filesystem** — Ubuntu system files, app templates, and internal docs — the **second** disclosure in a week (previous: agent hijacking, taking over a Muse agent on a Windows dev machine).
+- A Meta spokesperson called it "expected behavior in a personal Linux VM" — while Muse itself refused the request, then apologized for refusing.
+- **The point: vendor declaration and actual behavior don't match.** Same pattern as LITMUS's execution hallucination — "isolated" is not a declaration but a **measured claim**, where side effects are the metric.
+- For solo developers: your "temporary VM for the agent" is the agent's entire asset — prompt-level leakage of its contents is worth testing before trusting.
+
+---
+
+## 2026-09-25 Update — Meta Muse: the "isolated personal VM" collapses with one prompt
+
+The **second** public Muse security disclosure in a week. Following the agent-hijacking exploit, it was discovered that asking Muse nicely gets it to hand over its **entire root filesystem** (Ubuntu system files, app templates, internal documents) as a zip (via The Verge, ai0.news 2026-09-25).
+
+### Why it belongs on this page
+
+This page's Tier model assumes "a personal VM = an isolated execution environment." The Muse incident shows that this premise is **a verification target, not a declaration**.
+
+- **The vendor's contradictory response**: Meta's spokesperson called it "expected behavior" on a personal Linux VM — but Muse itself **first refused, then apologized** — a mismatch between security declarations and actual behavior.
+- This is the vendor-scale version of exactly what the 2026-05-17 LITMUS update on this page named **Execution Hallucination** — the separation between "it is isolated" talk and actual side effects.
+
+### New questions for the Tier model
+
+| Existing questions | Questions added by the Muse incident |
+|---|---|
+| Is there a sandbox? | Can the sandbox boundary be **bypassed with a prompt**? |
+| Are credentials isolated? | Is the agent's own **filesystem and internal documents** also an exfiltration surface? |
+| Have skills been reviewed? | Have the vendor's security claims been **verified by behavior tests**? |
+
+### Connection to the post-incident axis
+
+Read together with the same day's OpenAI Australia incident, supply chain security now has **two axes: pre-incident (prevention) + post-incident (attribution and evidence)**. See [[concepts/agent-attribution]] — the concept page for asking, after an incident, "which agent, under whose responsibility, disclosed when."
+
+### 2 ROI actions for solo developers
+
+1. For local agents with MCP/skills attached, verify filesystem boundaries with **prompt-bypass tests, not declarations**.
+2. Don't put internal documents or credentials in the agent's own workspace (VM/container) — the word "personal" doesn't guarantee isolation.
 
 ## OWASP Mapping
 

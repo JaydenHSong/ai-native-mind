@@ -1,9 +1,9 @@
 ---
 title: "AI Cost Management"
 category: patterns
-tags: [cost, pricing, optimization, anthropic, claude, openai]
+tags: [cost, pricing, optimization, anthropic, claude, openai, model-routing, liner]
 created: 2026-04-09
-updated: 2026-05-01
+updated: 2026-09-25
 sources:
   - "raw/notes/2026-04-09-ai-cost-management.md"
   - "raw/articles/2026-05-01-anthropic-managed-agents-launch.md"
@@ -11,6 +11,7 @@ sources:
   - "raw/articles/2026-05-01-solo-founder-ai-stack-2026.md"
   - "raw/articles/2026-05-01-1-person-saas-cost-deep.md"
   - "raw/articles/2026-05-01-managed-vs-selfhost-breakeven.md"
+  - "raw/articles/2026-09-25-liner-model-api-routing.md"
 related:
   - "[[patterns/prompt-caching]]"
   - "[[patterns/subagents-delegation]]"
@@ -201,6 +202,14 @@ Anthropic's **Advisor Strategy** pattern maps execution to a fast, low-cost mode
 
 ---
 
+### 2026-09-25 — Liner Model API: routing becomes the product
+
+- Liner's Model API **routes each request to the right model automatically** — claims internal token spend down **50%+** vs. H1 2026 (their own numbers, unverified).
+- Pricing: $1/1M input, $6/1M output, $0.10/1M cached input — benchmarked against Claude Sonnet 5 and GPT-5.6-Terra.
+- "Which model to use" moves from developer handwork to the **infrastructure layer** — the premise of this page's Advisor Strategy changes: routing rules are no longer yours to write, but a vendor's to sell.
+
+---
+
 ## High-Risk Mistakes to Avoid
 
 - Routing generic, everyday inquiries to Opus.
@@ -223,3 +232,4 @@ Anthropic's **Advisor Strategy** pattern maps execution to a fast, low-cost mode
 - [Claude API Pricing Sheets (Anthropic)](https://platform.claude.com/docs/en/about-claude/pricing)
 - [Manage Costs Effectively (Claude Code Docs)](https://code.claude.com/docs/en/costs)
 - [The Real Cost of AI Coding 2026 (Morph)](https://www.morphllm.com/ai-coding-costs)
+- [Liner Model API: routing as a product (2026-09-24 launch)](raw/articles/2026-09-25-liner-model-api-routing.md)

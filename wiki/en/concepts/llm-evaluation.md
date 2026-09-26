@@ -1,9 +1,9 @@
 ---
 title: "LLM Evaluation (Evals)"
 category: concepts
-tags: [evaluation, testing, llm, quality, evals, judge-reliability, long-horizon, native-runtime, benchmark, coding-benchmark, behavioral-safety, version-upgrade, trajectory-audit, harness-safety, artifact-aware-review, delegation-benchmark, privacy-benchmark, reward-hacking, process-evaluation, reproducibility, disclosure-audit, terminal-benchmark, benchmark-provenance, workflow-evaluation, artifact-quality]
+tags: [evaluation, testing, llm, quality, evals, judge-reliability, long-horizon, native-runtime, benchmark, coding-benchmark, behavioral-safety, version-upgrade, trajectory-audit, harness-safety, artifact-aware-review, delegation-benchmark, privacy-benchmark, reward-hacking, process-evaluation, reproducibility, disclosure-audit, terminal-benchmark, benchmark-provenance, workflow-evaluation, artifact-quality, claim-scrutiny, agent-scientific-discovery]
 created: 2026-04-09
-updated: 2026-09-24
+updated: 2026-09-25
 sources:
   - "raw/notes/2026-04-09-llm-evaluation.md"
   - "raw/articles/2026-05-12-judge-reliability-harness-rand.md"
@@ -20,6 +20,7 @@ sources:
   - "raw/articles/2026-05-23-terminalworld-real-world-terminal-benchmark.md"
   - "raw/articles/2026-05-24-workstreambench-finance-spreadsheet-agents.md"
   - "raw/articles/2026-09-24-agentic-commerce-benchmark-booking.md"
+  - "raw/articles/2026-09-25-anthropic-claude-crispr-art-enzyme.md"
 related:
   - "[[concepts/harness-engineering]]"
   - "[[concepts/context-rot-hallucination]]"
@@ -481,6 +482,18 @@ Not agent performance but **"whose side is the agent on"** — the production ve
 Meanwhile Amazon opened the seller console to Claude and launched its own seller agent "workflows" — the agentification of commerce is proceeding platform-led. Eval designers may need to treat **"which platform's agent"** as a variable, not just "agent vs environment."
 
 > Details: [[patterns/agentic-commerce|Agentic Commerce]]
+
+## 2026-09-25 Addendum — "AI discovers X": grade the claim by stage
+
+Anthropic's ART enzyme discovery (950 agents, 21h, 210M tokens) lands at this page's center: the announcement's claim strength was graded as **hypothesis → in-silico support → lab confirmation → peer passage**, and Anthropic itself called the announcement "admittedly premature."
+
+HN's counterarguments are the eval checklist: (1) was it actually new? (literature grounding), (2) reproducibility of the LLM-driven search, (3) separating the discovering agent from the validating party.
+
+"Discovery" is not one inference — it's the output of a **measure → compare → literature-check → report** pipeline. Evals of discovery claims should score the pipeline's auditability, not the headline.
+
+> Details: [[patterns/agent-scientific-discovery|Agent Scientific Discovery]]
+
+---
 
 ## Guidelines for Solo Developers
 

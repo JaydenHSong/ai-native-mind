@@ -3,7 +3,7 @@ title: "Campaign Map"
 category: meta
 tags: [map, campaign, navigation]
 created: 2026-04-12
-updated: 2026-09-24
+updated: 2026-09-25
 sources:
   - "wiki/overview.md"
   - "wiki/index.md"
@@ -110,3 +110,4 @@ This is not a document you read from top to bottom. Pick one chapter that matche
 - 2026-07-18: Checked during weekly English batch sync; no campaign-route drift from the Korean source-of-truth map was found, and English meta pages now mirror maintenance through 2026-07-18.
 - 2026-09-24: Checked during weekly English batch sync; no campaign-route drift from the Korean source-of-truth map was found, and English meta pages now mirror Korean maintenance through 2026-09-24.
 - 2026-09-24: Daily ingest added six tool/pattern/comparison pages (ko + en mirrors); chapter route unchanged — new pages sit outside the chapter line, and `index`, `overview`, and `log` now carry the 84→90 page state.
+- 2026-09-25: Daily ingest added four new pages (agent-attribution, agent-scientific-discovery, shared-agent-canvas, journal/2026-09-25 — ko + en mirrors); chapter route unchanged, and `index`, `overview`, and `log` now carry the 90→94 page state.

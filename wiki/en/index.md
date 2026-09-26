@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-09-24
-total_pages: 90
+updated: 2026-09-25
+total_pages: 94
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 90 managed pages total | Last updated: 2026-09-24 (daily ingest: 6 AI news sources collected + ko/en wiki refinement) — most pages include a **Start here** block.
+> 94 managed pages total | Last updated: 2026-09-25 (daily ingest: 6 AI news sources collected + ko/en wiki refinement) — most pages include a **Start here** block.
 
 ## Start here
 
@@ -26,7 +26,7 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - **Practice (Chapters 3–5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **Endgame (Chapters 6–7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (20)
+## Concepts (21)
 
 ### Growth map & philosophy
 - [[concepts/ai-native-programmer]] — a developer who uses AI as teammates to achieve team-scale outcomes solo; growth map
@@ -59,6 +59,7 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[concepts/context-rot-hallucination]] — five major failure patterns including context rot, hallucination, and error accumulation
 - [[concepts/cognitive-debt]] — the AI-native version of technical debt: debt that piles up in the developer’s head
 - [[concepts/agent-supply-chain-security]] — trust models for external tools, skills, and agents + dual-LLM/CaMeL + tier grading
+- [[concepts/agent-attribution]] — attribution of agent security incidents: actor, responsibility, disclosure timing (2026-09-25)
 
 ## Tools (12)
 
@@ -75,7 +76,7 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[tools/claude-marketplace]] — Claude connector/plugin marketplace with 2,000+ listings (2026-09-24)
 - [[tools/codex-security]] — OpenAI security agent bundling detect→patch→fix into one loop (research preview, 2026-09-24)
 
-## Patterns (24)
+## Patterns (26)
 
 ### Curriculum & practice (recommended order 2→6)
 - [[patterns/preventing-context-rot]] — context rot and three-layer memory (curriculum 2)
@@ -102,14 +103,18 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[patterns/git-ai-workflow]] — commit/PR/branch automation through Claude Code’s Git integration
 - [[patterns/ai-cost-management]] — reducing costs up to 95% through model routing, caching, and batching
 - [[patterns/agentic-coding]] — agents writing code end to end; reliability as a workflow property (2026-09-24)
-- [[patterns/agentic-commerce]] — agents picking and paying for products; "whose side is the agent on" (2026-09-24)
+- [[patterns/agentic-commerce]] — agents picking and paying for products; "whose side is the agent on" + voice channel (2026-09-24/25)
+- [[patterns/agent-scientific-discovery]] — the research-grade discovery pipeline: literature grounding → in-silico hypothesis → wet-lab validation (2026-09-25)
+- [[patterns/shared-agent-canvas]] — a shared human-agent canvas for co-edited collaboration (LM Studio, 2026-09-25)
 
 ### Product strategy & anti-patterns
 - [[patterns/solo-product-strategy]] — product strategy for solo developers; planning and launching micro SaaS
 - [[patterns/agent-mvp-stack-2026]] — solo MVP stack: 5 areas × 4 stages + decision tree (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — seven major anti-patterns in vibe coding and how to avoid them
 
-## Journal (20)
+## Journal (21)
+
+- [[journal/2026-09-25]] — Friday daily: OpenAI Australia attribution · Muse filesystem leak · Claude ART enzyme · Gemini voice commerce · Liner routing · LM Studio Canvas
 
 - [[journal/2026-05-25]] — weekday watch kick-off: Cline / browser-use / LangGraph / Langfuse reaffirm integration surface · operator control · trace artifact priorities
 - [[journal/2026-05-24]] — Sunday daily: MOSS (source-level harness evolution) + WorkstreamBench (spreadsheet workflow eval) + ActiveGraph (log-first runtime)

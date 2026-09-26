@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-09-24
+updated: 2026-09-25
 sources: []
 status: active
 ---
@@ -19,6 +19,39 @@ This page records only **what changed** by date. For concept explanations, see t
 - World-map hub: [[campaign-map|Campaign Map]]
 - Navigation guide: [[overview|Overview]]
 - Full catalog: [[index|Index]]
+
+## [2026-09-25] ingest | Daily AI news scrape — 6 raw sources + ko/en wiki refinement
+
+- **Raw collected** (raw/articles/, 6):
+  - `2026-09-25-openai-agent-australia-breach.md` — OpenAI agent's breach of an Australian government portal + Transluce pattern (back to Nov 2025)
+  - `2026-09-25-meta-muse-filesystem-disclosure.md` — Muse hands over its root filesystem (2nd disclosure in a week)
+  - `2026-09-25-anthropic-claude-crispr-art-enzyme.md` — Claude's ART enzyme discovery (HN 566 pts)
+  - `2026-09-25-gemini-live-avatar-business-calling-suncatcher.md` — Gemini business-calling + Live Avatar + Project Suncatcher orbital TPUs
+  - `2026-09-25-liner-model-api-routing.md` — Liner Model API, per-request routing, 50%+ token-cost cut claim
+  - `2026-09-25-lm-studio-agent-canvas.md` — LM Studio Agent Canvas (Gmail newsletter, shared human-agent canvas)
+- **Pages created** (wiki/ko — status: draft):
+  - `concepts/agent-attribution.md` (confidence: medium) — attribution of agent incidents (actor, responsibility, disclosure timing)
+  - `patterns/agent-scientific-discovery.md` (confidence: medium) — literature grounding → in-silico hypothesis → wet-lab validation
+  - `patterns/shared-agent-canvas.md` (confidence: low) — shared human-agent co-editing canvas
+  - `journal/2026-09-25.md` (status: active, confidence: medium) — Friday daily journal
+- **Pages updated**:
+  - `concepts/agent-supply-chain-security.md` — Meta Muse 2026-09-25 reinforcement (the "personal VM" boundary collapses at the prompt layer)
+  - `patterns/agentic-commerce.md` — Gemini voice-commerce reinforcement (voice channel of the steering axis)
+  - `patterns/ai-cost-management.md` — Liner Model API reinforcement (routing as a product)
+  - `concepts/llm-evaluation.md` — "AI discovers X" claim-scrutiny reinforcement
+  - `index.md` — 90→94 pages, 4 new entries registered (attribution, scientific-discovery, shared-agent-canvas, journal/2026-09-25)
+  - `overview.md` — page/category counts updated, new recent-work item.
+  - `log.md` — this entry added.
+- **Excluded (watch-only)**: AudioEye agent-accessibility study (eval reinforcement candidate), Conference Board five-stage framework (enterprise HR focus), Zoho Zia (overlaps yesterday's topics), MaaseAI (press-release spam), Hostinger .si domain (no AI substance).
+- **English sync**: wiki/en mirrors of the 4 new pages + 4 updated pages under the same slugs, en/index.md, en/log.md, en/overview.md, en/campaign-map.md tidied.
+- **Verification**:
+  - All 6 new raw sources are referenced from wiki/ko pages.
+  - No overlap with yesterday's topics (agentic-coding/fuzz, agentic-commerce benchmark, DeepSeek revenue, Codex security agent, Claude marketplace, Alibaba AgentCore).
+  - No contradictory existing content. Meta's "expected behavior" claim was treated as a reconfirmation of the LITMUS execution-hallucination case: declaration ≠ verification.
+- **Notes**:
+  - User feedback step skipped; new pages created with status: draft — need later review and promotion.
+  - No git commit (no git execution on the Mac).
+  - Raw frontmatter keyset kept identical to the 2026-09-24 files (title/source_url/source_type/authors/published/fetched/tags/status).
 
 ## [2026-09-24] ingest | Daily AI news scrape pipeline test — 6 raw sources + ko/en wiki refinement
 
