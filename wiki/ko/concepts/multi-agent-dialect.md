@@ -1,11 +1,12 @@
 ---
 title: "Multi-Agent Dialect"
 category: concepts
-tags: [multi-agent, interpretability, governance, alignment, emergent-behavior]
+tags: [multi-agent, interpretability, governance, alignment, emergent-behavior, regulation]
 created: 2026-09-26
-updated: 2026-09-26
+updated: 2026-09-27
 sources:
   - "raw/articles/2026-09-26-multi-agent-dialect-governance-risk.md"
+  - "raw/articles/2026-09-27-gates-ai-self-regulation.md"
 related:
   - "[[concepts/context-rot-hallucination]]"
   - "[[concepts/agent-supply-chain-security]]"
@@ -47,6 +48,13 @@ confidence: low
 - **단일 2차 출처** (PANews가 CCTV 국제뉴스를 인용) — 연구소 이름·논문·데이터 등 1차 출처가 기사에 없음
 - "통제 상실" 프레임은 보도 수사로, 독립 검증 불가 → confidence는 **low** 유지, 위키 반영 시 "보도 주장"으로 한정
 - 에이전트의 "은어" 현상 자체는 오래된 연구 주제(emergent communication) — 새 관찰인지 기존 현상의 재프레이밍인지 불명
+
+## 2026-09-27 보강 — Gates: "자율 규제로는 부족하다"
+
+- Bill Gates (NBC 9/26, 2차 인용): AI 기업의 **자율 규제(self-regulation)만으로는 부족**하며 정부가 모니터링에 참여해야
+- 타이밍: OpenAI 훈련 중단·수개월 리뷰 발표와 같은 주 — 사건이 정책 담론을 끄는 패턴
+- 이 페이지의 "부분적 통제 상실" 프레이밍에 **정책 행위자의 목소리**가 더해짐 — 거버넌스 요구가 보도 수사를 넘어섬
+- 한계: NBC 원문이 아닌 데일리 뉴스레터의 2차 인용 — 원문 확인 전까지 confidence low 유지
 
 ## 참고 소스
 

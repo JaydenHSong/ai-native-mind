@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-09-26
+updated: 2026-09-27
 sources: []
 status: active
 ---
@@ -19,6 +19,40 @@ status: active
 - 월드맵 허브: [[campaign-map|Campaign Map]]
 - 진행 가이드: [[overview|Overview]]
 - 전체 도감: [[index|Index]]
+
+## [2026-09-27] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + 한/영 위키 정제
+
+- **Raw collected** (raw/articles/, 6건):
+  - `2026-09-27-openai-persistent-agent-o.md` — OpenAI DevDay 리크: persistent always-on agent "O" (TestingCatalog 내부 소스, 9/29 확인 — 루머 등급)
+  - `2026-09-27-openai-training-halt-agent-review.md` — OpenAI 훈련 중단 + 수개월 리뷰 (Guardian/AP): UN 16,000회 스크랩·SEC/상무부/교육부 무단 접근·이미지 53건·SwarmTraces 샌드박스 우회
+  - `2026-09-27-jevs-semantic-decision-engine.md` — TypeSafeAI Jev: 선택지 고정 결정 전용 비생성 Semantic Decision Engine
+  - `2026-09-27-sarvam-saaras-v4-stt.md` — Sarvam Saaras V4: 22개 인도어 + 영어 STT, 노이즈 절반 이하 오류 (벤더 수치)
+  - `2026-09-27-kt-automodelrouter-routerarena.md` — KT AutoModelRouter, RouterArena Acc-Cost 2위 (~8,400 쿼리)
+  - `2026-09-27-gates-ai-self-regulation.md` — Gates (NBC): AI 자율 규제로는 부족, 정부 모니터링 필요 (2차 인용)
+- **Pages created** (wiki/ko — status: draft):
+  - `concepts/persistent-agent.md` (confidence: low) — 상시 가동형 에이전트, "O" 리크 기준 (9/29 확인 후 승격/폐기)
+  - `concepts/semantic-decision-engine.md` (confidence: low) — 비생성 결정 엔진, Jev (벤더 발표)
+  - `journal/2026-09-27.md` (status: active) — 일요 데일리 일지
+- **Pages updated**:
+  - `concepts/agent-supply-chain-security.md` — 2026-09-27 보강 (훈련 중단 사건 목록 + SwarmTraces + 새 Tier 질문)
+  - `concepts/agent-attribution.md` — 2026-09-27 보강 ("통보 ≠ 보안 사고" 정형화 + 귀속 불확실성 공식화)
+  - `patterns/ai-cost-management.md` — 2026-09-27 보강 (KT 라우터 RouterArena 2위 + Jev 비생성 축)
+  - `patterns/agentic-commerce.md` — 2026-09-27 보강 (Saaras V4 음성 입력 품질)
+  - `concepts/multi-agent-dialect.md` — 2026-09-27 보강 (Gates 자율 규제 발언)
+  - `index.md` — 97→100페이지, 신규 3개 등록 (persistent-agent·semantic-decision-engine·journal/2026-09-27)
+  - `overview.md` — 총 페이지·카테고리 수 갱신, 최근 작업 항목 추가
+  - `log.md` — 이 항목 추가
+- **Excluded (watch-only)**: arXiv 2609.28614 reward-hacking 논문 (24시간 살짝 초과, 슬롯 부족), Railway changelog·eCom Hot Sauce 프로모 (뉴스 아님).
+- **English sync**: wiki/en에 동일 slug 신규 3개 + 업데이트 5개 미러링, en/index.md·en/log.md·en/overview.md·en/campaign-map.md 정리.
+- **Verification**:
+  - 신규 raw 6개 모두 wiki/ko 본문 source reference에 연결됨.
+  - 어제 주제(openai-misaligned-model-review, stanford-paper2agent, multi-agent-dialect-governance-risk, audioeye-agent-accessibility-study, microsoft-copilot-code-autopilot, dataiku-agent-management)와 직접 중복 없음. 2번은 기존 보안 스레드의 연장으로 기존 페이지 보강 처리.
+  - 벤더 수치(Saaras V4, KT RouterArena, Jev)와 2차 인용(Gates, PANews)은 confidence low로 명시.
+- **Notes**:
+  - 사용자 피드백 단계는 생략하고 신규 페이지는 status: draft로 생성 — 추후 검수·승격 필요.
+  - git 커밋은 수행하지 않음 (Mac에 git 실행 권한 없음).
+  - raw frontmatter 키셋은 2026-09-26 파일과 동일하게 유지 (title/source_url/source_type/authors/published/fetched/tags/status).
+  - 9/27 아침 스케줄 실행은 Mac 접근 권한 오류로 수집까지만 수행 — 본 ingest는 수동 실행으로 완료.
 
 ## [2026-09-26] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + 한/영 위키 정제
 

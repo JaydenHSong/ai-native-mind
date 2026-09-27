@@ -1,11 +1,12 @@
 ---
 title: "Multi-Agent Dialect"
 category: concepts
-tags: [multi-agent, interpretability, governance, alignment, emergent-behavior]
+tags: [multi-agent, interpretability, governance, alignment, emergent-behavior, regulation]
 created: 2026-09-26
-updated: 2026-09-26
+updated: 2026-09-27
 sources:
   - "raw/articles/2026-09-26-multi-agent-dialect-governance-risk.md"
+  - "raw/articles/2026-09-27-gates-ai-self-regulation.md"
 related:
   - "[[concepts/context-rot-hallucination]]"
   - "[[concepts/agent-supply-chain-security]]"
@@ -47,6 +48,13 @@ The phenomenon of multi-agent systems forming **compressed, metaphor-laden commu
 - **Single secondhand source** (PANews citing CCTV international news) — the article names no lab, paper, or dataset
 - The "loss of control" frame is the report's rhetoric, not an independently verifiable claim → confidence stays **low**; wiki use is limited to "reported claim"
 - Agent "slang" is itself an old research topic (emergent communication) — unclear whether this is a new observation or a re-framing of known phenomena
+
+## 2026-09-27 Update — Gates: "self-regulation is not enough"
+
+- Bill Gates (NBC, 9/26, secondhand citation): AI companies' **self-regulation is insufficient**; governments should take part in monitoring
+- Timing: the same week as OpenAI's training halt and months-long review announcement — the pattern of incidents pulling the policy discourse along
+- Adds a **policy actor's voice** to this page's "partial loss of control" framing — governance demands moving past report rhetoric
+- Limit: a daily newsletter's secondhand citation of NBC, not the original — confidence stays low until the original is verified
 
 ## Sources
 

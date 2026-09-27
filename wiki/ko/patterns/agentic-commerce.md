@@ -1,13 +1,14 @@
 ---
 title: "Agentic Commerce"
 category: patterns
-tags: [agentic-commerce, shopping-agents, benchmarks, principal-agent, computer-use, steering, voice-agent, gemini, accessibility]
+tags: [agentic-commerce, shopping-agents, benchmarks, principal-agent, computer-use, steering, voice-agent, gemini, accessibility, stt]
 created: 2026-09-24
-updated: 2026-09-26
+updated: 2026-09-27
 sources:
   - "raw/articles/2026-09-24-agentic-commerce-benchmark-booking.md"
   - "raw/articles/2026-09-25-gemini-live-avatar-business-calling-suncatcher.md"
   - "raw/articles/2026-09-26-audioeye-agent-accessibility-study.md"
+  - "raw/articles/2026-09-27-sarvam-saaras-v4-stt.md"
 related:
   - "[[concepts/llm-evaluation]]"
   - "[[comparisons/agent-eval-frameworks]]"
@@ -94,6 +95,15 @@ Gemini가 Pixel 11 유료 구독자를 대신해 **사업자에 직접 전화**�
 
 - 벤더 생산 수치: AudioEye는 테스트한 수정 패치를 판매, NIQ는 트래커를 판매 — 사이트별 상세 결과는 최악 사이트 1곳만 공개.
 - "침투율 1% 미만"(Booking CEO, 9/24)과 "51% 사용"(NIQ)은 **서로 다른 지표** — 전자는 LLM 트래픽의 예약 점유율, 후자는 쇼핑 보조용 AI 도구 사용 경험. 모순 아님, 지표 정의 차이.
+
+## 2026-09-27 보강 — Saaras V4: 음성 입력 품질이 전환율의 입력
+
+9/25 Gemini 음성 커머스(사업자에 직접 전화)에 **입력 채널 품질** 축이 추가된다.
+
+- **Sarvam Saaras V4** (9/26): 22개 인도 공용어 + 글로벌 영어 STT. 벤더 수치 — 7개 영어 데이터셋 평균 최저 WER, Kathbath Noisy에서 Deepgram Nova-3·GPT-4o Transcribe 대비 절반 이하 오류, 언어 식별 오류 2.9%/5.22%. 단일 모델 5개 모드: transcribe/verbatim/**codemix**/translit/translate.
+- 음성 에이전트(전화 예약·주문)의 성패는 **STT가 아니라 "무슨 말인지"** — 코드믹싱(codemix) 지원은 다언어 시장의 실전 조건.
+- 9/26 AudioEye(접근성 트리가 에이전트의 눈)와 짝: 텍스트 채널의 접근성 트리 ↔ 음성 채널의 STT — **"에이전트가 세상을 읽는 인터페이스 품질"** 이 전환율의 입력.
+- 한계: 전부 벤더 발표 수치, 독립 재현 없음 — confidence low. 음성 스티어링(9/25 섹션) eval에 "STT 오류율" 변수를 추가하는 방향으로 메모.
 
 ## 참고 소스
 

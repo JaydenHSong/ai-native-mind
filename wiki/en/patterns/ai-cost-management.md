@@ -1,9 +1,9 @@
 ---
 title: "AI Cost Management"
 category: patterns
-tags: [cost, pricing, optimization, anthropic, claude, openai, model-routing, liner]
+tags: [cost, pricing, optimization, anthropic, claude, openai, model-routing, liner, routerarena, jev]
 created: 2026-04-09
-updated: 2026-09-26
+updated: 2026-09-27
 sources:
   - "raw/notes/2026-04-09-ai-cost-management.md"
   - "raw/articles/2026-05-01-anthropic-managed-agents-launch.md"
@@ -14,6 +14,8 @@ sources:
   - "raw/articles/2026-09-25-liner-model-api-routing.md"
   - "raw/articles/2026-09-26-microsoft-copilot-code-autopilot.md"
   - "raw/articles/2026-09-26-audioeye-agent-accessibility-study.md"
+  - "raw/articles/2026-09-27-kt-automodelrouter-routerarena.md"
+  - "raw/articles/2026-09-27-jevs-semantic-decision-engine.md"
 related:
   - "[[patterns/prompt-caching]]"
   - "[[patterns/subagents-delegation]]"
@@ -215,6 +217,32 @@ Anthropic's **Advisor Strategy** pattern maps execution to a fast, low-cost mode
 - Microsoft's Copilot revamp (Reuters, 2026-09-25): the new "Code" tool and always-on "Autopilot" agent come with **user-facing cost visibility inside Office** — "who pays how much" becomes a product surface, not a dashboard afterthought.
 - The AudioEye study adds the **environmental** cost axis: on the least-accessible site, agents burned **43% more tokens per run** (128k vs. 90k; up to 6x on the worst runs).
 - The page's new working equation: **cost = tokens × infrastructure quality** — the routing/caching levers above (supply side) now meet demand-side cost visibility and site-quality token taxes.
+
+### 2026-09-27 — the router becomes the product: KT AutoModelRouter + Jev
+
+Continuing the 9/25 Liner Model API (routing as a product) thread: routing is becoming **a Korean vendor's benchmark edge** and **a product category of its own**.
+
+**KT AutoModelRouter — #2 on RouterArena (Acc-Cost)**
+
+- **#2 overall** on Rice University's RouterArena (~8,400 queries across accuracy/cost/robustness) (Aju Press, 2026-09-27)
+- Simple tasks (translation, verification) to cheap models, complex reasoning to frontier models — the basis of KT's "Token Factory" routing feature
+- Kim Jun-seok, KT Agentic AI Lab: "orchestration, not best single model, is the edge."
+- Solo-dev view: once router benchmarks standardize, **choosing the router itself becomes step zero of cost optimization**
+
+**Jev — the "non-generating" Semantic Decision Engine (TypeSafeAI)**
+
+- A narrow engine for fixed-option triage/classification/routing. "Language generation is the wrong interface when code already knows the possible answers."
+- A different axis from this page's routing strategy: not "route to a cheaper model" but **"don't generate at all"** — structurally eliminating the invented-option failure mode
+- Caveat: TypeSafeAI's own announcement — no independent verification, confidence low
+
+**The shifting axis**
+
+| Period | Cost-optimization axis |
+|---|---|
+| ~2026-05 | Model choice, caching, batch (supply side) |
+| 2026-09-25 | Routing as a product (Liner) |
+| 2026-09-26 | Demand-side visibility (Copilot) + accessibility token tax |
+| 2026-09-27 | **The router itself as the competitive layer** (KT) + **non-generative decision engines** (Jev) |
 
 ---
 

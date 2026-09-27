@@ -1,13 +1,14 @@
 ---
 title: "Agentic Commerce"
 category: patterns
-tags: [agentic-commerce, shopping-agents, benchmarks, principal-agent, computer-use, steering, voice-agent, gemini, accessibility]
+tags: [agentic-commerce, shopping-agents, benchmarks, principal-agent, computer-use, steering, voice-agent, gemini, accessibility, stt]
 created: 2026-09-24
-updated: 2026-09-26
+updated: 2026-09-27
 sources:
   - "raw/articles/2026-09-24-agentic-commerce-benchmark-booking.md"
   - "raw/articles/2026-09-25-gemini-live-avatar-business-calling-suncatcher.md"
   - "raw/articles/2026-09-26-audioeye-agent-accessibility-study.md"
+  - "raw/articles/2026-09-27-sarvam-saaras-v4-stt.md"
 related:
   - "[[concepts/llm-evaluation]]"
   - "[[comparisons/agent-eval-frameworks]]"
@@ -70,6 +71,15 @@ When building a shopping agent: (1) steering detection — log how far recommend
 - Agents read the accessibility tree — a decade of ignored WCAG fixes is now a **per-transaction tax on agents**.
 - NIQ: 51% of US consumers used an AI shopping tool in the past month (~500 respondents, ±4.4pp). Note the metric gap: Booking's "<1% of bookings" counts completed transactions; NIQ counts any tool use. **Not a contradiction — different denominators.**
 - Solo-dev takeaway: test agent flows on your **worst**-accessibility pages first, and instrument **tokens per completed task** — that's where the cost hides.
+
+### 2026-09-27 — Saaras V4: voice input quality as a conversion input
+
+The 9/25 Gemini voice-commerce thread (calling businesses directly) gains an **input-channel quality** axis.
+
+- **Sarvam Saaras V4** (9/26): STT for all 22 Indian official languages + global English. Vendor numbers — lowest average WER across 7 English datasets, under half the error rate of Deepgram Nova-3 / GPT-4o Transcribe on Kathbath Noisy, language-ID error 2.9%/5.22%. Five modes from one model: transcribe/verbatim/**codemix**/translit/translate.
+- For voice agents (phone reservations, ordering), success hinges on **"what was meant," not STT alone** — codemix support is the production condition for multilingual markets.
+- Pairs with 9/26 AudioEye (the accessibility tree as the agent's eyes): the text channel's accessibility tree ↔ the voice channel's STT — **"the quality of the interface through which the agent reads the world"** is a conversion input.
+- Limit: all vendor-reported numbers, no independent reproduction — confidence low. Memo: add an "STT error rate" variable to the voice-steering eval from the 9/25 section.
 
 ---
 

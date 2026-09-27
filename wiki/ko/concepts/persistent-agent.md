@@ -1,0 +1,59 @@
+---
+title: "Persistent Agent"
+category: concepts
+tags: [persistent-agent, always-on-agent, openai, devday, rumor]
+created: 2026-09-27
+updated: 2026-09-27
+sources:
+  - "raw/articles/2026-09-27-openai-persistent-agent-o.md"
+related:
+  - "[[concepts/agent-attribution]]"
+  - "[[patterns/ai-cost-management]]"
+  - "[[concepts/agent-supply-chain-security]]"
+status: draft
+confidence: low
+---
+
+# Persistent Agent
+
+## 쉽게 읽기
+
+**비유**: 지금까지 AI는 "부를 때만 오는" 심부름꾼이었다. Persistent agent는 **"상주하는" 비서** — 계속 켜져 있고, 스스로 스케줄을 돌리고, 이메일 주소까지 갖는다. OpenAI DevDay(9/29) 리크에 따르면 코드명 "O"가 그 첫 사례일 수 있다.
+
+| 용어 | 풀이 |
+|------|------|
+| **Persistent / Always-on** | 호출될 때만 실행되는 게 아니라 **지속적으로 존재하며** 상태를 유지하는 에이전트 |
+| **Agent identity** | 에이전트에게 부여된 **고유 식별자**(이메일 주소 등) — "누가 보냈는가"의 프로토콜 레벨 정의 |
+
+## 한줄 정의
+
+호출-응답 사이클을 넘어 **지속적으로 가동되며 자체 스케줄·메모리·아이덴티티를 갖는** AI 에이전트 — 2026-09-27 현재는 루머 단계(OpenAI "O").
+
+## 핵심 내용 (2026-09-27 리크 기준)
+
+- **DevDay 9/29** (SF, Altman 키노트 10am PT) 핵심 발표라는 내부 소스발 리크 (TestingCatalog)
+- **단서**: ChatGPT 설정에 "O" 표시명 + "-o" 이메일 접미사, ChatGPT Pro($100/월) 업그레이드 페이지에 잠깐 노출
+- **Aeon 연결**: 내부 프로젝트 "Aeon"(ChatGPT Workspace용 커스텀 에이전트)의 소비자 버전 가능성
+- **미확인**: 권한 범위·스케줄링·메모리 구조·가격 — 전부 미확인
+- **Tibo 힌트**: Codex + ChatGPT Work 사용량 제한 리셋 — 과금/쿼터 모델 개편의 전조일 수 있음
+
+## 왜 중요한가 (1인 개발자 관점)
+
+1. **과금 모델의 변화**: 호출당 과금 → 상주 시간당 과금으로 바뀌면 1인 SaaS의 비용 구조가 달라짐 ([[patterns/ai-cost-management]]의 "시간을 사는 비용" 축과 연결)
+2. **귀속의 새 층**: 에이전트에게 이메일 아이덴티티가 생기면 [[concepts/agent-attribution]]의 "행위자 특정"이 프로토콜 레벨에서 정의되기 시작
+3. **경쟁 축**: 9/26 Microsoft Copilot "Autopilot"(상시 에이전트)와 같은 주 — always-on이 플랫폼 경쟁의 축으로 부상
+
+## 한계 (명시)
+
+- **루머 등급**: 단일 내부 소스, 9/29 발표 전까지 미확인 — confidence **low** 유지
+- 발표 후 사실 확인되면 본 페이지 승격, 루머면 archived
+
+## 관련 개념
+
+- [[concepts/agent-attribution]] — 에이전트 아이덴티티와 귀속의 연결
+- [[patterns/ai-cost-management]] — 상주 시간당 과금 모델의 비용 함의
+- [[concepts/agent-supply-chain-security]] — 상시 가동 에이전트의 신뢰 등급 문제
+
+## 참고 소스
+
+- [OpenAI DevDay leak: persistent always-on agent codenamed O](raw/articles/2026-09-27-openai-persistent-agent-o.md)

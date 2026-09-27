@@ -3,7 +3,7 @@ title: "Campaign Map"
 category: meta
 tags: [map, campaign, navigation]
 created: 2026-04-12
-updated: 2026-09-26
+updated: 2026-09-27
 sources:
   - "wiki/overview.md"
   - "wiki/index.md"
@@ -112,3 +112,4 @@ This is not a document you read from top to bottom. Pick one chapter that matche
 - 2026-09-24: Daily ingest added six tool/pattern/comparison pages (ko + en mirrors); chapter route unchanged — new pages sit outside the chapter line, and `index`, `overview`, and `log` now carry the 84→90 page state.
 - 2026-09-25: Daily ingest added four new pages (agent-attribution, agent-scientific-discovery, shared-agent-canvas, journal/2026-09-25 — ko + en mirrors); chapter route unchanged, and `index`, `overview`, and `log` now carry the 90→94 page state.
 - 2026-09-26: Daily ingest added three new pages (agent-data-leakage, multi-agent-dialect, journal/2026-09-26 — ko + en mirrors) and reinforced six pages; chapter route unchanged, and `index`, `overview`, and `log` now carry the 94→97 page state.
+- 2026-09-27: Daily ingest added three new pages (persistent-agent, semantic-decision-engine, journal/2026-09-27 — ko + en mirrors) and reinforced five pages; chapter route unchanged, and `index`, `overview`, and `log` now carry the 97→100 page state.

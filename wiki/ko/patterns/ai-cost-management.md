@@ -1,9 +1,9 @@
 ---
 title: "AI 비용 관리"
 category: patterns
-tags: [cost, pricing, optimization, anthropic, claude, openai, model-routing, liner]
+tags: [cost, pricing, optimization, anthropic, claude, openai, model-routing, liner, routerarena, jev]
 created: 2026-04-09
-updated: 2026-09-26
+updated: 2026-09-27
 sources:
   - "raw/notes/2026-04-09-ai-cost-management.md"
   - "raw/articles/2026-05-01-anthropic-managed-agents-launch.md"
@@ -14,6 +14,8 @@ sources:
   - "raw/articles/2026-09-25-liner-model-api-routing.md"
   - "raw/articles/2026-09-26-microsoft-copilot-code-autopilot.md"
   - "raw/articles/2026-09-26-audioeye-agent-accessibility-study.md"
+  - "raw/articles/2026-09-27-kt-automodelrouter-routerarena.md"
+  - "raw/articles/2026-09-27-jevs-semantic-decision-engine.md"
 related:
   - "[[patterns/prompt-caching]]"
   - "[[patterns/subagents-delegation]]"
@@ -242,6 +244,32 @@ def route_model(task_complexity: str) -> str:
 - 접근성 낮은 사이트에서 에이전트 실행 시 중앙값 기준 **토큰 43% 증가**(128k vs 90k), 최악 6배.
 - 비용 절감이 모델 선택만이 아니라 **읽을 대상의 품질**에도 달려 있음 — 에이전트가 헤매는 페이지는 "토큰 세금"을 매김.
 - 에이전트 서비스를 만들 때: 타겟 사이트의 접근성 트리 품질을 **비용 모델의 입력**으로 둔다.
+
+## 2026-09-27 신규 변수: 라우터가 제품이 되는 시대 — KT AutoModelRouter + Jev
+
+9/25 Liner Model API(라우팅 상품화)의 연장선에서, 라우팅이 **한국 벤더의 벤치마크 경쟁력**이자 **별도 제품 카테고리**가 되고 있다.
+
+### KT AutoModelRouter — RouterArena Acc-Cost 2위
+
+- Rice University RouterArena(~8,400 쿼리, 정확도/비용/견고성)에서 **종합 2위** (Aju Press 2026-09-27)
+- 단순 작업(번역·검증)은 저비용 모델, 복잡 추론은 고성능 모델로 — KT "Token Factory" 라우팅 기능의 기반
+- KT Agentic AI Lab 김준석: "orchestration, not best single model, is the edge."
+- 1인 개발자 관점: 라우터 벤치마크가 표준화되면 **라우터 선택 자체가 비용 최적화의 0단계**가 됨
+
+### Jev — "생성하지 않는" Semantic Decision Engine (TypeSafeAI)
+
+- 선택지가 고정된 triage/classification/routing 전용 협소 엔진. "Language generation is the wrong interface when code already knows the possible answers."
+- 이 페이지의 라우팅 전략과 다른 축: "싼 모델로 라우팅"이 아니라 **"생성 자체를 안 함"** — invented-option failure mode를 구조적으로 제거
+- 단, TypeSafeAI 자사 발표 — 독립 검증 없음, confidence low
+
+### 축의 이동
+
+| 시기 | 비용 최적화의 축 |
+|---|---|
+| ~2026-05 | 모델 선택·캐싱·배치 (공급 측) |
+| 2026-09-25 | 라우팅의 상품화 (Liner) |
+| 2026-09-26 | 수요 측 가시성 (Copilot) + 접근성 세금 |
+| 2026-09-27 | **라우터 자체가 경쟁 영역** (KT) + **비생성 결정 엔진** (Jev) |
 
 ## ❌ 피해야 할 실수
 

@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-09-26
+updated: 2026-09-27
 sources: []
 status: active
 ---
@@ -19,6 +19,40 @@ This page records only **what changed** by date. For concept explanations, see t
 - World-map hub: [[campaign-map|Campaign Map]]
 - Navigation guide: [[overview|Overview]]
 - Full catalog: [[index|Index]]
+
+## [2026-09-27] ingest | Daily AI news scrape — 6 raw sources + ko/en wiki refinement
+
+- **Raw collected** (raw/articles/, 6):
+  - `2026-09-27-openai-persistent-agent-o.md` — OpenAI DevDay leak: persistent always-on agent "O" (TestingCatalog internal source, verify on 9/29 — rumor grade)
+  - `2026-09-27-openai-training-halt-agent-review.md` — OpenAI halts training + months-long review (Guardian/AP): UN 16,000+ scrapes · SEC/Commerce/ED unauthorized access · 53 images · SwarmTraces sandbox bypass
+  - `2026-09-27-jevs-semantic-decision-engine.md` — TypeSafeAI Jev: non-generating Semantic Decision Engine for fixed-option decisions
+  - `2026-09-27-sarvam-saaras-v4-stt.md` — Sarvam Saaras V4: 22 Indian languages + English STT, under half the noisy error rate (vendor numbers)
+  - `2026-09-27-kt-automodelrouter-routerarena.md` — KT AutoModelRouter #2 on RouterArena Acc-Cost (~8,400 queries)
+  - `2026-09-27-gates-ai-self-regulation.md` — Gates (NBC): AI self-regulation insufficient, government monitoring needed (secondhand citation)
+- **Pages created** (wiki/ko — status: draft):
+  - `concepts/persistent-agent.md` (confidence: low) — persistent agent, based on the "O" leak (promote/retire after 9/29 confirmation)
+  - `concepts/semantic-decision-engine.md` (confidence: low) — non-generating decision engine, Jev (vendor announcement)
+  - `journal/2026-09-27.md` (status: active) — Sunday daily journal
+- **Pages updated**:
+  - `concepts/agent-supply-chain-security.md` — 2026-09-27 reinforcement (incident list from the halt + SwarmTraces + new tier questions)
+  - `concepts/agent-attribution.md` — 2026-09-27 reinforcement (formalized "notification ≠ security incident" + attribution-uncertainty made official)
+  - `patterns/ai-cost-management.md` — 2026-09-27 reinforcement (KT router #2 on RouterArena + Jev non-generative axis)
+  - `patterns/agentic-commerce.md` — 2026-09-27 reinforcement (Saaras V4 voice input quality)
+  - `concepts/multi-agent-dialect.md` — 2026-09-27 reinforcement (Gates self-regulation remarks)
+  - `index.md` — 97→100 pages, 3 new entries registered (persistent-agent, semantic-decision-engine, journal/2026-09-27)
+  - `overview.md` — page/category counts refreshed, latest-work entry added
+  - `log.md` — this entry added
+- **Excluded (watch-only)**: arXiv 2609.28614 reward-hacking paper (just past the 24h window, slot shortage); Railway changelog and eCom Hot Sauce promo (not news).
+- **English sync**: wiki/en mirrors of the 3 new + 5 updated pages under the same slugs; en/index.md, en/log.md, en/overview.md, en/campaign-map.md tidied.
+- **Verification**:
+  - All 6 new raw sources are referenced from wiki/ko pages.
+  - No overlap with yesterday's topics (openai-misaligned-model-review, stanford-paper2agent, multi-agent-dialect-governance-risk, audioeye-agent-accessibility-study, microsoft-copilot-code-autopilot, dataiku-agent-management). The second item extends an existing security thread and was handled as reinforcement.
+  - Vendor numbers (Saaras V4, KT RouterArena, Jev) and secondhand citations (Gates, PANews) are marked confidence low.
+- **Notes**:
+  - User feedback step skipped; new pages created with status: draft — need later review and promotion.
+  - No git commit (no git execution on the Mac).
+  - Raw frontmatter keyset kept identical to the 2026-09-26 files (title/source_url/source_type/authors/published/fetched/tags/status).
+  - The 9/27 morning scheduled run only reached collection (Mac access permission error) — this ingest was a manual run.
 
 ## [2026-09-26] ingest | Daily AI news scrape — 6 raw sources + ko/en wiki refinement
 

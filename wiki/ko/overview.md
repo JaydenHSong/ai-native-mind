@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-09-26
+updated: 2026-09-27
 sources: []
 status: active
 ---
@@ -29,10 +29,16 @@ status: active
 
 ## 현재 상태
 
-- **총 페이지**: 97개
-- **카테고리**: concepts(23), tools(12), patterns(26), journal(22), comparisons(10), meta(4)
+- **총 페이지**: 100개
+- **카테고리**: concepts(25), tools(12), patterns(26), journal(23), comparisons(10), meta(4)
 - **시작일**: 2026-04-06
-- **최근 작업 (2026-09-26 데일리 ingest — 거버넌스·준비도의 날)**:
+- **최근 작업 (2026-09-27 데일리 ingest — 에이전트 행위자화의 날)**:
+  - AI 뉴스 6건을 `raw/articles/`에 수집 (어제 주제와 중복 없음; 9/27 아침 스케줄은 Mac 권한 오류로 수집까지만 — ingest는 수동 실행)
+  - wiki/ko에 신규 페이지 3개 생성 (concepts/persistent-agent, concepts/semantic-decision-engine — status: draft, confidence: low, journal/2026-09-27)
+  - wiki/ko 기존 페이지 5개 보강 (agent-supply-chain-security, agent-attribution, ai-cost-management, agentic-commerce, multi-agent-dialect)
+  - wiki/en에 동일 slug 신규 3개 + 업데이트 5개 미러링, index·log·overview·campaign-map 정리
+  - 총 페이지 97→100개
+- **직전 작업 (2026-09-26 데일리 ingest — 거버넌스·준비도의 날)**:
   - AI 뉴스 6건을 `raw/articles/`에 수집 (어제 주제와 중복 없음, Gmail AI 뉴스레터는 수신 없음)
   - wiki/ko에 신규 페이지 3개 생성 (concepts/agent-data-leakage, concepts/multi-agent-dialect — status: draft, journal/2026-09-26)
   - wiki/ko 기존 페이지 6개 보강 (agent-attribution, agent-scientific-discovery, agentic-commerce, ai-cost-management, ai-coding-tools, gen-ai-observability)

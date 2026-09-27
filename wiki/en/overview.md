@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-09-26
+updated: 2026-09-27
 sources: []
 status: active
 ---
@@ -29,10 +29,16 @@ This page is a **table of contents and learning map** for the wiki. The links be
 
 ## Current state
 
-- **Total pages**: 97
-- **Categories**: concepts(23), tools(12), patterns(26), journal(22), comparisons(10), meta(4)
+- **Total pages**: 100
+- **Categories**: concepts(25), tools(12), patterns(26), journal(23), comparisons(10), meta(4)
 - **Start date**: 2026-04-06
-- **Latest work (2026-09-26 daily ingest — the day of governance and readiness)**:
+- **Latest work (2026-09-27 daily ingest — the day agents became actors)**:
+  - Collected 6 AI news sources into `raw/articles/` (no overlap with yesterday's topics; the morning schedule only reached collection due to a Mac permission error — ingest ran manually).
+  - Created 3 new pages in wiki/ko (concepts/persistent-agent, concepts/semantic-decision-engine — status: draft, confidence: low; journal/2026-09-27).
+  - Reinforced 5 existing ko pages (agent-supply-chain-security, agent-attribution, ai-cost-management, agentic-commerce, multi-agent-dialect).
+  - Mirrored the same slugs under wiki/en/, and refreshed English index.md, log.md, this overview, and the Campaign Map patch note.
+  - Total pages 97→100.
+- **Previous work (2026-09-26 daily ingest — the day of governance and readiness)**:
   - Collected 6 AI news sources into `raw/articles/` (no overlap with yesterday's topics; Gmail AI newsletters absent in the last 24h).
   - Created 3 new pages in wiki/ko (concepts/agent-data-leakage, concepts/multi-agent-dialect — status: draft; journal/2026-09-26).
   - Reinforced 6 existing ko pages (agent-attribution, agent-scientific-discovery, agentic-commerce, ai-cost-management, ai-coding-tools, gen-ai-observability).
