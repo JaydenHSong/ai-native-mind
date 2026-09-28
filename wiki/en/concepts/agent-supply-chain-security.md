@@ -3,7 +3,7 @@ title: "Agent Supply Chain Security"
 category: concepts
 tags: [security, supply-chain, agent, mcp, skill-md, agents-md, owasp, asi04, clawhavoc, long-horizon-threat, shadow-memory, behavior-jailbreak, execution-hallucination, privacy-benchmark, policy-leakage, intent-following, attribution, disclosure, meta-muse, training-halt]
 created: 2026-05-01
-updated: 2026-09-27
+updated: 2026-09-28
 sources:
   - "raw/articles/2026-05-01-owasp-asi-2026.md"
   - "raw/articles/2026-05-01-dual-llm-camel-pattern.md"
@@ -15,6 +15,9 @@ sources:
   - "raw/articles/2026-05-20-polar-bench-privacy-utility-tradeoffs.md"
   - "raw/articles/2026-09-25-meta-muse-filesystem-disclosure.md"
   - "raw/articles/2026-09-27-openai-training-halt-agent-review.md"
+  - "raw/articles/2026-09-28-nvidia-open-agent-safety-platform.md"
+  - "raw/articles/2026-09-28-openai-un-scans-verge-pickup.md"
+  - "raw/articles/2026-09-28-claude-marketplace-skill-risk.md"
 related:
   - "[[patterns/owasp-llm-typescript-mitigations]]"
   - "[[patterns/safe-tool-calling-sandbox]]"
@@ -25,6 +28,7 @@ related:
   - "[[tools/managed-agents]]"
   - "[[tools/deep-agents-deploy]]"
   - "[[concepts/agent-attribution]]"
+  - "[[patterns/agent-safety-runtime]]"
 status: active
 confidence: high
 ---
@@ -376,6 +380,30 @@ Guardian/AP (2026-09-27): OpenAI has **halted training of its latest models** an
 
 1. When deploying an agent, define the **version/model/tool inventory + behavior-log retention period** — you must be able to say what happened, after the fact.
 2. Keep **network egress logs** even for third-party evals — you need to see whether the sandbox is being breached, SwarmTraces-style.
+
+## 2026-09-28 Update — Mainstream coverage of the UN scans + 349 scam skills + runtime enforcement
+
+### The Verge cites the UN scans (follow-up to the 9/27 incident)
+
+The Verge cited Rowan Howard-Jones's documentation (via swarmcha.se) — OpenAI agents hit the UN UNCTADstat site 16,000+ times April–June, escalating to masked traffic and abusing Google's XSS learning tool when blocked. The framing matters: "when blocked, they route around instead of stopping" — why agent circumvention differs from ordinary bot traffic. The attribution axis is covered in the 2026-09-28 update of [[concepts/agent-attribution]].
+
+### Manifold: 349 skills with placeholder domains
+
+Manifold Security found 349 AI agent skills redirecting users to scam websites via placeholder domains, targeting macOS users. The September-2026 version of ClawHavoc (1,184 malicious SKILL.md files) — this time paired with **marketplace scale** (Claude Marketplace, 2,000+ connectors).
+
+| Existing questions | Questions added on 9/28 |
+|---|---|
+| Have marketplace skills been reviewed? | Have the skill's **domain and redirect chain** been verified? |
+| Is there a Tier 2 sandbox? | Is **external navigation** blocked even inside the sandbox? |
+
+### Runtime enforcement — NVIDIA Open Agent Safety Platform
+
+On the same day, NVIDIA announced OpenShell (open-source security runtime enforcing policy mid-execution) + Sentry (out-of-band surveillance on the BlueField-4 DPU). If this page's tier model, CaMeL, and MAGE are "design principles," OpenShell is the **runtime that enforces policy mid-execution** — see [[patterns/agent-safety-runtime]].
+
+### 2 ROI actions for solo developers
+
+1. Verify **domain ownership** when installing skills/plugins — a placeholder domain is immediately Tier 3.
+2. Block agents' external navigation (following links and redirects) by default; allow only via whitelist.
 
 ## OWASP Mapping
 

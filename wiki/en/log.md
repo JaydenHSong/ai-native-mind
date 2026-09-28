@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-09-27
+updated: 2026-09-28
 sources: []
 status: active
 ---
@@ -19,6 +19,39 @@ This page records only **what changed** by date. For concept explanations, see t
 - World-map hub: [[campaign-map|Campaign Map]]
 - Navigation guide: [[overview|Overview]]
 - Full catalog: [[index|Index]]
+
+## [2026-09-28] ingest | Daily AI news scrape — 6 raw sources + ko/en wiki refinement
+
+- **Raw collected** (raw/articles/, 6):
+  - `2026-09-28-nvidia-open-agent-safety-platform.md` — NVIDIA Open Agent Safety Platform: OpenShell (mid-execution policy enforcement) + Sentry (out-of-band surveillance on BlueField-4 DPU). 100+ companies, Open Secure AI Alliance 120+ organizations (Linux Foundation)
+  - `2026-09-28-openai-devday-o-leak-update.md` — DevDay-eve leak: "o, your always-on assistant" briefly shown on the Pro upgrade page 9/26, then removed. 12+ products expected. Rumor-grade details (63 languages, Cerebras fast mode) excluded
+  - `2026-09-28-openai-un-scans-verge-pickup.md` — The Verge cites Rowan Howard-Jones's documentation: 16,000+ UN UNCTADstat accesses (Apr–Jun), masked-traffic escalation, abuse of Google's XSS learning tool
+  - `2026-09-28-agoda-ai-developer-report.md` — Agoda 2026 AI Developer Report (Macramé, 7 countries): 55% of AI-using developers save 7+ hours/week (vs 18% in 2025). 53% run agents in real workflows, 38% say ready. Top blocker: cost 28%
+  - `2026-09-28-frontier-ai-governance-cluster.md` — Amodei–Trump White House dinner (TechCrunch), big-3 self-run Frontier AI standards body, Apollo bank-run warning, UNGA CEO risk warnings
+  - `2026-09-28-claude-marketplace-skill-risk.md` — Manifold Security: 349 agent skills redirecting to scams via placeholder domains (targeting macOS)
+- **Pages created** (wiki/ko — status: draft):
+  - `patterns/agent-safety-runtime.md` (confidence: medium) — agent safety runtime, NVIDIA OpenShell/Sentry (official announcement + secondhand coverage)
+  - `journal/2026-09-28.md` (status: active) — Monday daily journal
+- **Pages updated**:
+  - `concepts/persistent-agent.md` — 2026-09-28 reinforcement (DevDay-eve leaks; promote/retire after 9/29 confirmation)
+  - `concepts/agent-supply-chain-security.md` — 2026-09-28 reinforcement (UN scan mainstreaming · Manifold 349 skills · runtime enforcement, new Tier questions, agent-safety-runtime link)
+  - `concepts/agent-attribution.md` — 2026-09-28 reinforcement (UN scan evidence problem · governance cluster)
+  - `patterns/ai-cost-management.md` — 2026-09-28 reinforcement (Agoda survey, quantified adoption-readiness gap, axis table extended)
+  - `concepts/multi-agent-dialect.md` — 2026-09-28 reinforcement (governance cluster: Amodei dinner · standards body · market reactions)
+  - `index.md` — 100→102 pages, 2 new entries registered (agent-safety-runtime, journal/2026-09-28)
+  - `overview.md` — page/category counts refreshed, latest-work entry added
+  - `log.md` — this entry added
+- **Excluded (watch-only)**: Nvidia–Hugging Face $12.93B investment rumor (unconfirmed); Palo Alto Unit 42 (no new signal); arXiv 2609.28247 COMPASS (outside the 24h window); Qwen3.8-Omni-Flash (9/22 announcement, stale).
+- **English sync**: wiki/en mirrors of the 2 new + 5 updated pages under the same slugs; en/index.md, en/log.md, en/overview.md, en/campaign-map.md tidied.
+- **Verification**:
+  - All 6 new raw sources are referenced from wiki/ko pages.
+  - No overlap with yesterday's topics (openai-persistent-agent-o, openai-training-halt-agent-review, jevs-semantic-decision-engine, sarvam-saaras-v4-stt, kt-automodelrouter-routerarena, gates-ai-self-regulation). Items 2, 3, 5, and 6 extend existing threads and were handled as reinforcement.
+  - Rumor-grade details (DevDay 63 languages, Cerebras fast mode; digest-level governance numbers) excluded or flagged as limits.
+- **Notes**:
+  - User feedback step skipped; new pages created with status: draft — need later review and promotion.
+  - No git commit (no git execution on the Mac).
+  - Raw frontmatter keyset kept identical to the 2026-09-27 files (title/source_url/source_type/authors/published/fetched/tags/status).
+  - The 9/28 morning scheduled run only reached collection (Mac access permission error) — this ingest was a manual run.
 
 ## [2026-09-27] ingest | Daily AI news scrape — 6 raw sources + ko/en wiki refinement
 

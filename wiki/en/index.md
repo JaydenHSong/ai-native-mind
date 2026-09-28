@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-09-27
-total_pages: 100
+updated: 2026-09-28
+total_pages: 102
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 100 managed pages total | Last updated: 2026-09-27 (daily ingest: 6 AI news sources collected + ko/en wiki refinement) — most pages include a **Start here** block.
+> 102 managed pages total | Last updated: 2026-09-28 (daily ingest: 6 AI news sources collected + ko/en wiki refinement) — most pages include a **Start here** block.
 
 ## Start here
 
@@ -80,7 +80,7 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[tools/claude-marketplace]] — Claude connector/plugin marketplace with 2,000+ listings (2026-09-24)
 - [[tools/codex-security]] — OpenAI security agent bundling detect→patch→fix into one loop (research preview, 2026-09-24)
 
-## Patterns (26)
+## Patterns (27)
 
 ### Curriculum & practice (recommended order 2→6)
 - [[patterns/preventing-context-rot]] — context rot and three-layer memory (curriculum 2)
@@ -106,6 +106,7 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[patterns/ai-code-review]] — AI-assisted code review workflow for solo developers
 - [[patterns/git-ai-workflow]] — commit/PR/branch automation through Claude Code’s Git integration
 - [[patterns/ai-cost-management]] — reducing costs up to 95% through model routing, caching, and batching (+ 2026-09-26: demand-side cost visibility & the accessibility token tax)
+- [[patterns/agent-safety-runtime]] — agent safety runtime: NVIDIA OpenShell/Sentry enforcement (2026-09-28)
 - [[patterns/agentic-coding]] — agents writing code end to end; reliability as a workflow property (2026-09-24)
 - [[patterns/agentic-commerce]] — agents picking and paying for products; "whose side is the agent on" + voice channel + accessibility backlog (2026-09-24/25/26)
 - [[patterns/agent-scientific-discovery]] — the research-grade discovery pipeline: literature grounding → in-silico hypothesis → wet-lab validation + Paper2Agent's 45-min/$14 agentification (2026-09-25/26)
@@ -116,7 +117,9 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[patterns/agent-mvp-stack-2026]] — solo MVP stack: 5 areas × 4 stages + decision tree (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — seven major anti-patterns in vibe coding and how to avoid them
 
-## Journal (23)
+## Journal (24)
+
+- [[journal/2026-09-28]] — Monday daily: NVIDIA safety runtime · DevDay-eve "O" leak · UN scans via The Verge · Agoda developer report · governance cluster · Manifold skill scams
 
 - [[journal/2026-09-27]] — Sunday daily: OpenAI "O" persistent-agent leak · training halt · Jev · Saaras V4 · KT AutoModelRouter · Gates remarks
 

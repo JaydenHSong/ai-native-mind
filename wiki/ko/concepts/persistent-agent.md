@@ -3,9 +3,10 @@ title: "Persistent Agent"
 category: concepts
 tags: [persistent-agent, always-on-agent, openai, devday, rumor]
 created: 2026-09-27
-updated: 2026-09-27
+updated: 2026-09-28
 sources:
   - "raw/articles/2026-09-27-openai-persistent-agent-o.md"
+  - "raw/articles/2026-09-28-openai-devday-o-leak-update.md"
 related:
   - "[[concepts/agent-attribution]]"
   - "[[patterns/ai-cost-management]]"
@@ -47,6 +48,16 @@ confidence: low
 
 - **루머 등급**: 단일 내부 소스, 9/29 발표 전까지 미확인 — confidence **low** 유지
 - 발표 후 사실 확인되면 본 페이지 승격, 루머면 archived
+
+## 2026-09-28 보강 — DevDay 전야: "o, your always-on assistant" 목격
+
+DevDay(9/29) 하루 전 추가 리크 — 실루엣은 선명해졌지만 가격은 여전히 미확인.
+
+- **신규 단서**: 9/26 ChatGPT Pro 업그레이드 페이지에 "o, your always-on assistant" 문구 노출 후 수시간 내 삭제. 설정 파일의 표시명 "O" + 이메일 접미사 "-o"는 유지.
+- **예상 라인업**: 12+ 제품 — "O", GPT-6 Cyber(앱 전용 Daybreak Red 티어), 장기 작업용 Managed Agents.
+- **경쟁 구도**: Anthropic Conway / Claude Managed Agents, Meta Muse, xAI Grok Bot(9/5), Google Gemini Spark — 상시 에이전트가 플랫폼 경쟁축.
+- **제외**: aggregator발 루머 등급 세부사항(63개 언어, Cerebras fast mode)은 1차 소스 없음 — 수집 제외.
+- **내일(9/29) 키노트에서 확인되면** 본 페이지 confidence 승격, 루머면 archived. confidence **low** 유지.
 
 ## 관련 개념
 

@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-09-27
-total_pages: 100
+updated: 2026-09-28
+total_pages: 102
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 전체 100개 페이지 | 최종 업데이트: 2026-09-27 (데일리 ingest: AI 뉴스 6건 수집 + 한/영 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
+> 전체 102개 페이지 | 최종 업데이트: 2026-09-28 (데일리 ingest: AI 뉴스 6건 수집 + 한/영 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
 
 ## 쉽게 읽기
 
@@ -80,7 +80,7 @@ status: active
 - [[tools/claude-marketplace]] — Claude용 커넥터·플러그인 마켓플레이스 2,000+ (2026-09-24)
 - [[tools/codex-security]] — 취약점 탐지→패치→수정을 한 루프로 묶은 OpenAI 보안 에이전트 (리서치 프리뷰, 2026-09-24)
 
-## Patterns (26개)
+## Patterns (27개)
 
 ### 커리큘럼·실습 (읽기 순서 2→6)
 - [[patterns/preventing-context-rot]] — Context Rot·3계층 메모리 (커리큘럼 2)
@@ -110,14 +110,16 @@ status: active
 - [[patterns/agentic-commerce]] — 에이전트가 상품을 고르고 결제하는 패러다임, "에이전트가 누구 편인가" + 음성 채널 (2026-09-24/25)
 - [[patterns/agent-scientific-discovery]] — 연구급 에이전트의 발견 파이프라인: 문헌 접지→in-silico 가설→wet-lab 검증 (2026-09-25)
 - [[patterns/shared-agent-canvas]] — 인간-에이전트 공유 캔버스 공동 편집 협업 (LM Studio, 2026-09-25)
+- [[patterns/agent-safety-runtime]] — 실행시점 에이전트 보안 런타임, NVIDIA OpenShell/Sentry (2026-09-28)
 
 ### 제품 전략 & 안티패턴
 - [[patterns/solo-product-strategy]] — 1인 개발자 제품 전략, 마이크로 SaaS 기획·출시
 - [[patterns/agent-mvp-stack-2026]] — 1인 MVP 스택 5대 영역 × 4 단계 + 의사결정 트리 (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — Vibe Coding의 7대 안티패턴과 회피법
 
-## Journal (23개)
+## Journal (24개)
 
+- [[journal/2026-09-28]] — 월요 데일리: NVIDIA Open Agent Safety Platform·DevDay "O" 전야·UN 스캔 주류화·Agoda 리포트·거버넌스 클러스터·Manifold 349 스킬
 - [[journal/2026-09-27]] — 일요 데일리: OpenAI "O" persistent agent 리크·훈련 중단·Jev·Saaras V4·KT AutoModelRouter·Gates 발언
 - [[journal/2026-09-26]] — 토요 데일리: OpenAI misalignment 리뷰·Paper2Agent·멀티에이전트 방언·AudioEye 접근성·Copilot 개편·Dataiku 거버넌스
 

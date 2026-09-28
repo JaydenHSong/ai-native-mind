@@ -3,7 +3,7 @@ title: "AI 비용 관리"
 category: patterns
 tags: [cost, pricing, optimization, anthropic, claude, openai, model-routing, liner, routerarena, jev]
 created: 2026-04-09
-updated: 2026-09-27
+updated: 2026-09-28
 sources:
   - "raw/notes/2026-04-09-ai-cost-management.md"
   - "raw/articles/2026-05-01-anthropic-managed-agents-launch.md"
@@ -16,6 +16,7 @@ sources:
   - "raw/articles/2026-09-26-audioeye-agent-accessibility-study.md"
   - "raw/articles/2026-09-27-kt-automodelrouter-routerarena.md"
   - "raw/articles/2026-09-27-jevs-semantic-decision-engine.md"
+  - "raw/articles/2026-09-28-agoda-ai-developer-report.md"
 related:
   - "[[patterns/prompt-caching]]"
   - "[[patterns/subagents-delegation]]"
@@ -270,6 +271,33 @@ def route_model(task_complexity: str) -> str:
 | 2026-09-25 | 라우팅의 상품화 (Liner) |
 | 2026-09-26 | 수요 측 가시성 (Copilot) + 접근성 세금 |
 | 2026-09-27 | **라우터 자체가 경쟁 영역** (KT) + **비생성 결정 엔진** (Jev) |
+
+## 2026-09-28 신규 변수: 도입은 빠른데 거버넌스는 느리다 — Agoda 서베이
+
+9/26 수요 측(비용 가시성·접근성 세금)에 이어, 9/28 Agoda 서베이가 **도입 속도 vs 준비도의 간극**을 정량화한다.
+
+### Agoda 2026 AI Developer Report (Macramé Consulting, 7개국)
+
+- AI 사용 개발자의 **55%가 주 7시간+ 절약** (2025년 18% 대비 급증)
+- 62%는 AI 생성 코드를 거의 수정 없이 사용, 86%는 여전히 리뷰
+- **53%가 실제 워크플로우에 에이전트 사용** — 반면 완전 자율 에이전트에 코드베이스가 준비됐다는 응답은 **38%**
+- 블로커: 비용 **28%**, 통합 복잡도 24%, 거버넌스 부족 19%
+- 5명 중 4명이 토큰/쿼터/예산 제한 하에 작업
+
+### 축의 이동 (표 확장)
+
+| 시기 | 비용 최적화의 축 |
+|---|---|
+| ~2026-05 | 모델 선택·캐싱·배치 (공급 측) |
+| 2026-09-25 | 라우팅의 상품화 (Liner) |
+| 2026-09-26 | 수요 측 가시성 (Copilot) + 접근성 세금 |
+| 2026-09-27 | 라우터 자체가 경쟁 영역 (KT) + 비생성 결정 엔진 (Jev) |
+| 2026-09-28 | **도입-준비도 간극의 정량화** — 비용 28%가 1위 블로커 |
+
+### 1인 개발자 함의
+
+1. "시간은 벌었는데 거버넌스는 못 샀다" — 1인 팀도 **예산 상한 + 에이전트 권한 목록**을 먼저 정한다.
+2. 80%가 예산 제한 하에 있다는 건 라우터·캐싱이 선택이 아니라 디폴트라는 뜻.
 
 ## ❌ 피해야 할 실수
 

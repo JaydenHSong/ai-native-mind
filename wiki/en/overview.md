@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-09-27
+updated: 2026-09-28
 sources: []
 status: active
 ---
@@ -29,10 +29,16 @@ This page is a **table of contents and learning map** for the wiki. The links be
 
 ## Current state
 
-- **Total pages**: 100
-- **Categories**: concepts(25), tools(12), patterns(26), journal(23), comparisons(10), meta(4)
+- **Total pages**: 102
+- **Categories**: concepts(25), tools(12), patterns(27), journal(24), comparisons(10), meta(4)
 - **Start date**: 2026-04-06
-- **Latest work (2026-09-27 daily ingest — the day agents became actors)**:
+- **Latest work (2026-09-28 daily ingest — the day boundaries became infrastructure)**:
+  - Collected 6 AI news sources into `raw/articles/` (no overlap with yesterday's topics; the morning schedule only reached collection due to a Mac permission error — ingest ran manually).
+  - Created 2 new pages in wiki/ko (patterns/agent-safety-runtime — status: draft, confidence: medium; journal/2026-09-28).
+  - Reinforced 5 existing ko pages (persistent-agent, agent-supply-chain-security, agent-attribution, ai-cost-management, multi-agent-dialect).
+  - Mirrored the same slugs under wiki/en/, and refreshed English index.md, log.md, this overview, and the Campaign Map patch note.
+  - Total pages 100→102.
+- **Previous work (2026-09-27 daily ingest — the day agents became actors)**:
   - Collected 6 AI news sources into `raw/articles/` (no overlap with yesterday's topics; the morning schedule only reached collection due to a Mac permission error — ingest ran manually).
   - Created 3 new pages in wiki/ko (concepts/persistent-agent, concepts/semantic-decision-engine — status: draft, confidence: low; journal/2026-09-27).
   - Reinforced 5 existing ko pages (agent-supply-chain-security, agent-attribution, ai-cost-management, agentic-commerce, multi-agent-dialect).

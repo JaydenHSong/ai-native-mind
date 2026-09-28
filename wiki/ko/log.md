@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-09-27
+updated: 2026-09-28
 sources: []
 status: active
 ---
@@ -19,6 +19,39 @@ status: active
 - 월드맵 허브: [[campaign-map|Campaign Map]]
 - 진행 가이드: [[overview|Overview]]
 - 전체 도감: [[index|Index]]
+
+## [2026-09-28] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + 한/영 위키 정제
+
+- **Raw collected** (raw/articles/, 6건):
+  - `2026-09-28-nvidia-open-agent-safety-platform.md` — NVIDIA Open Agent Safety Platform 발표: OpenShell(실행시점 정책 강제) + Sentry(BlueField-4 DPU 대역외 감시). 100+ 기업, Open Secure AI Alliance 120+ 조직(Linux Foundation)
+  - `2026-09-28-openai-devday-o-leak-update.md` — DevDay 9/29 전야: Pro 업그레이드 페이지에 "o, your always-on assistant" 9/26 노출 후 삭제. 예상 12+ 제품. 루머 등급 상세(63개 언어·Cerebras 고속 모드)는 제외
+  - `2026-09-28-openai-un-scans-verge-pickup.md` — The Verge 인용: Rowan Howard-Jones 문서화 — UN UNCTADstat 16,000회+ 접근(4~6월), 마스킹 트래픽 격상, Google XSS 학습 도구 악용
+  - `2026-09-28-agoda-ai-developer-report.md` — Agoda 2026 AI Developer Report (Macramé, 7개국): AI 사용 개발자 55% 주 7시간+ 절약(2025년 18% 대비). 53% 에이전트 실사용, 준비됐다는 응답은 38%. 블로커 1위 비용 28%
+  - `2026-09-28-frontier-ai-governance-cluster.md` — Amodei–트럼프 백악관 만찬(TechCrunch), 빅3 자체 Frontier AI 표준 기구 움직임, Apollo의 에이전트발 뱅크런 경고, UNGA CEO 리스크 경고
+  - `2026-09-28-claude-marketplace-skill-risk.md` — Manifold Security: 플레이스홀더 도메인으로 스캠 리다이렉트하는 에이전트 스킬 349건 발견 (macOS 표적)
+- **Pages created** (wiki/ko — status: draft):
+  - `patterns/agent-safety-runtime.md` (confidence: medium) — 에이전트 안전 런타임, NVIDIA OpenShell/Sentry (공식 발표+2차 보도)
+  - `journal/2026-09-28.md` (status: active) — 월요 데일리 일지
+- **Pages updated**:
+  - `concepts/persistent-agent.md` — 2026-09-28 보강 (DevDay 전야 추가 리크, 9/29 확인 후 승격/폐기)
+  - `concepts/agent-supply-chain-security.md` — 2026-09-28 보강 (UN 스캔 주류화·Manifold 349 스킬·실행시점 강제, 새 Tier 질문, agent-safety-runtime 링크)
+  - `concepts/agent-attribution.md` — 2026-09-28 보강 (UN 스캔 증거 문제·거버넌스 클러스터)
+  - `patterns/ai-cost-management.md` — 2026-09-28 보강 (Agoda 서베이, 도입-준비도 간극 정량화, 축 테이블 확장)
+  - `concepts/multi-agent-dialect.md` — 2026-09-28 보강 (거버넌스 클러스터: Amodei 만찬·표준 기구·시장 반응)
+  - `index.md` — 100→102페이지, 신규 2개 등록 (agent-safety-runtime·journal/2026-09-28)
+  - `overview.md` — 총 페이지·카테고리 수 갱신, 최근 작업 항목 추가
+  - `log.md` — 이 항목 추가
+- **Excluded (watch-only)**: Nvidia–Hugging Face 12.93억 달러 투자 루머 (미확인 딜 루머), Palo Alto Unit 42 (신규 신호 없음), arXiv 2609.28247 COMPASS (24시간 윈도우 초과), Qwen3.8-Omni-Flash (9/22 발표, 구 소식).
+- **English sync**: wiki/en에 동일 slug 신규 2개 + 업데이트 5개 미러링, en/index.md·en/log.md·en/overview.md·en/campaign-map.md 정리.
+- **Verification**:
+  - 신규 raw 6개 모두 wiki/ko 본문 source reference에 연결됨.
+  - 어제 주제(openai-persistent-agent-o, openai-training-halt-agent-review, jevs-semantic-decision-engine, sarvam-saaras-v4-stt, kt-automodelrouter-routerarena, gates-ai-self-regulation)와 직접 중복 없음. 2·3·5·6번은 기존 스레드의 연장으로 기존 페이지 보강 처리.
+  - 루머 등급 상세(DevDay 63개 언어·Cerebras 고속 모드, 거버넌스 다이제스트 수치)는 제외 또는 한계 명시.
+- **Notes**:
+  - 사용자 피드백 단계는 생략하고 신규 페이지는 status: draft로 생성 — 추후 검수·승격 필요.
+  - git 커밋은 수행하지 않음 (Mac에 git 실행 권한 없음).
+  - raw frontmatter 키셋은 2026-09-27 파일과 동일하게 유지 (title/source_url/source_type/authors/published/fetched/tags/status).
+  - 9/28 아침 스케줄 실행은 Mac 접근 권한 오류로 수집까지만 수행 — 본 ingest는 수동 실행으로 완료.
 
 ## [2026-09-27] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + 한/영 위키 정제
 

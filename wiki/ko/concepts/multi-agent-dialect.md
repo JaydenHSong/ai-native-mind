@@ -3,10 +3,11 @@ title: "Multi-Agent Dialect"
 category: concepts
 tags: [multi-agent, interpretability, governance, alignment, emergent-behavior, regulation]
 created: 2026-09-26
-updated: 2026-09-27
+updated: 2026-09-28
 sources:
   - "raw/articles/2026-09-26-multi-agent-dialect-governance-risk.md"
   - "raw/articles/2026-09-27-gates-ai-self-regulation.md"
+  - "raw/articles/2026-09-28-frontier-ai-governance-cluster.md"
 related:
   - "[[concepts/context-rot-hallucination]]"
   - "[[concepts/agent-supply-chain-security]]"
@@ -55,6 +56,15 @@ confidence: low
 - 타이밍: OpenAI 훈련 중단·수개월 리뷰 발표와 같은 주 — 사건이 정책 담론을 끄는 패턴
 - 이 페이지의 "부분적 통제 상실" 프레이밍에 **정책 행위자의 목소리**가 더해짐 — 거버넌스 요구가 보도 수사를 넘어섬
 - 한계: NBC 원문이 아닌 데일리 뉴스레터의 2차 인용 — 원문 확인 전까지 confidence low 유지
+
+## 2026-09-28 보강 — 거버넌스 클러스터: 정책 행위자들이 움직인다
+
+9/27 Gates 발언에 이어 정책 축이 굵어진다.
+
+- **Amodei–트럼프 만찬** (TechCrunch): 첫 직접 회동 — Anthropic Pentagon 공급망 리스크 지정 소송 와중. "부분적 통제 상실" 프레이밍이 최고 정치 레벨의 의제가 됨.
+- **자체 표준 기구**: Google/OpenAI/Anthropic이 Frontier AI용 Standards Authority 설립 움직임 — EU AI Act는 이미 구식이라는 판단. 규제가 기술 속도를 못 따라간다는 업계의 선언.
+- **시장의 반응**: Apollo 이코노미스트의 에이전트발 뱅크런 경고, 은행들의 로펌 50% 수수료 인하 요구 — 거버넌스 공백의 비용이 시장에 전가되기 시작.
+- 한계: 다이제스트/2차 위주 — confidence low 유지.
 
 ## 참고 소스
 

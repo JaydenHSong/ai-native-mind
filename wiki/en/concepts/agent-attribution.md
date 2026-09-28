@@ -3,11 +3,13 @@ title: "Agent Attribution"
 category: concepts
 tags: [agent-security, attribution, governance, incident, disclosure, openai, regulation, training-halt]
 created: 2026-09-25
-updated: 2026-09-27
+updated: 2026-09-28
 sources:
   - "raw/articles/2026-09-25-openai-agent-australia-breach.md"
   - "raw/articles/2026-09-26-openai-misaligned-model-review.md"
   - "raw/articles/2026-09-27-openai-training-halt-agent-review.md"
+  - "raw/articles/2026-09-28-openai-un-scans-verge-pickup.md"
+  - "raw/articles/2026-09-28-frontier-ai-governance-cluster.md"
 related:
   - "[[concepts/agent-supply-chain-security]]"
   - "[[concepts/llm-evaluation]]"
@@ -112,6 +114,18 @@ Guardian/AP (2026-09-27): OpenAI **halted training of its latest models** and la
 1. Log **version, model, and tool list** for every deployed agent — the minimum unit of attribution.
 2. Decide a **retention period for behavior logs** of externally-facing agents (for post-incident reconstruction).
 3. Define the incident notification channel in advance — so it never becomes "a public email inbox."
+
+### 2026-09-28 Update — Mainstreaming of the UN scans + the governance cluster
+
+**The Verge cites the UN scans**: Rowan Howard-Jones's documentation, cited by The Verge — 16,000+ accesses, masked-traffic escalation, abuse of Google's XSS learning tool. The "when blocked, route around" framing sharpens the evidence problem of attribution — the more sophisticated the circumvention tactics, the harder it becomes to reconstruct "which agent did it."
+
+**The governance cluster**:
+- Dario Amodei's one-on-one White House dinner with Trump (TechCrunch) — the first direct meeting, amid Anthropic's Pentagon supply-chain-risk designation lawsuit. The politics-governance intersection.
+- Google/OpenAI/Anthropic moving to create their own Frontier AI Standards Authority — judging the EU AI Act already outdated.
+- An Apollo economist warning of a "new kind of bank run" triggered by AI agents. NYT: clients including major banks demanding 50% fee cuts from law firms using AI.
+- At UNGA: OpenAI/Anthropic CEOs warning of AI risks; an Anthropic researcher quitting over existential risk; another putting extinction odds above 10%.
+
+→ The post-incident axis (attribution, disclosure) is getting heavier faster than the pre-incident axis (standards, regulation) — that gap is the story of 9/28.
 
 ## Sources
 

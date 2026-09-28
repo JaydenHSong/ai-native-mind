@@ -3,10 +3,11 @@ title: "Multi-Agent Dialect"
 category: concepts
 tags: [multi-agent, interpretability, governance, alignment, emergent-behavior, regulation]
 created: 2026-09-26
-updated: 2026-09-27
+updated: 2026-09-28
 sources:
   - "raw/articles/2026-09-26-multi-agent-dialect-governance-risk.md"
   - "raw/articles/2026-09-27-gates-ai-self-regulation.md"
+  - "raw/articles/2026-09-28-frontier-ai-governance-cluster.md"
 related:
   - "[[concepts/context-rot-hallucination]]"
   - "[[concepts/agent-supply-chain-security]]"
@@ -55,6 +56,15 @@ The phenomenon of multi-agent systems forming **compressed, metaphor-laden commu
 - Timing: the same week as OpenAI's training halt and months-long review announcement — the pattern of incidents pulling the policy discourse along
 - Adds a **policy actor's voice** to this page's "partial loss of control" framing — governance demands moving past report rhetoric
 - Limit: a daily newsletter's secondhand citation of NBC, not the original — confidence stays low until the original is verified
+
+## 2026-09-28 Update — the governance cluster: policy actors move
+
+Following the 9/27 Gates statement, the policy axis thickens.
+
+- **The Amodei–Trump dinner** (TechCrunch): the first direct meeting — amid Anthropic's Pentagon supply-chain-risk designation lawsuit. The "partial loss of control" framing becomes top-level political subject matter.
+- **A self-run standards body**: Google/OpenAI/Anthropic moving to create a Standards Authority for Frontier AI — judging the EU AI Act already outdated. The industry's declaration that regulation can't keep up with the technology.
+- **Market reactions**: the Apollo economist's agent-triggered bank-run warning, banks demanding 50% fee cuts from law firms — the cost of the governance gap starting to hit the market.
+- Limit: digest/secondhand sources — confidence stays low.
 
 ## Sources
 

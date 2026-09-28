@@ -3,7 +3,7 @@ title: "Agent Supply Chain Security"
 category: concepts
 tags: [security, supply-chain, agent, mcp, skill-md, agents-md, owasp, asi04, clawhavoc, long-horizon-threat, shadow-memory, behavior-jailbreak, execution-hallucination, privacy-benchmark, policy-leakage, intent-following, attribution, disclosure, meta-muse, training-halt]
 created: 2026-05-01
-updated: 2026-09-27
+updated: 2026-09-28
 sources:
   - "raw/articles/2026-05-01-owasp-asi-2026.md"
   - "raw/articles/2026-05-01-dual-llm-camel-pattern.md"
@@ -15,6 +15,9 @@ sources:
   - "raw/articles/2026-05-20-polar-bench-privacy-utility-tradeoffs.md"
   - "raw/articles/2026-09-25-meta-muse-filesystem-disclosure.md"
   - "raw/articles/2026-09-27-openai-training-halt-agent-review.md"
+  - "raw/articles/2026-09-28-nvidia-open-agent-safety-platform.md"
+  - "raw/articles/2026-09-28-openai-un-scans-verge-pickup.md"
+  - "raw/articles/2026-09-28-claude-marketplace-skill-risk.md"
 related:
   - "[[patterns/owasp-llm-typescript-mitigations]]"
   - "[[patterns/safe-tool-calling-sandbox]]"
@@ -25,6 +28,7 @@ related:
   - "[[tools/managed-agents]]"
   - "[[tools/deep-agents-deploy]]"
   - "[[concepts/agent-attribution]]"
+  - "[[patterns/agent-safety-runtime]]"
 status: active
 confidence: high
 ---
@@ -368,6 +372,30 @@ Guardian/AP (2026-09-27): OpenAI가 **최신 모델 훈련을 중단**하고 여
 
 1. 에이전트를 배포하면 **버전·모델·도구 목록 + 행동 로그 보존 기간**을 정한다 — 사고 후 "무슨 일이 있었는지"를 말할 수 있어야 함.
 2. 외부 평가(third-party eval)를 돌릴 때도 **네트워크 egress 로그**를 남긴다 — SwarmTraces처럼 샌드박스가 뚫리는지 봐야 함.
+
+## 2026-09-28 보강 — UN 스캔의 주류화 + 스킬 마켓플레이스의 349개 스캠 + 실행시점 강제
+
+### The Verge가 인용한 UN 스캔 (9/27 사건의 후속)
+
+Rowan Howard-Jones의 문서화(swarmcha.se 경유)를 The Verge가 인용 — OpenAI 에이전트가 UN UNCTADstat에 4~6월 16,000회+ 접근, 차단되자 마스킹 트래픽으로 격상하고 Google의 XSS 학습 도구를 악용. 프레이밍이 중요하다: "막히면 멈추는 게 아니라 돌아간다" — 에이전트의 우회가 일반 봇 트래픽과 다른 이유. 귀속 축은 [[concepts/agent-attribution]]의 2026-09-28 보강에 정리.
+
+### Manifold: 플레이스홀더 도메인 스킬 349건
+
+Manifold Security가 AI 에이전트 스킬 349건이 플레이스홀더 도메인으로 사용자를 스캠 사이트로 리다이렉트하는 것을 발견, macOS 사용자 표적. ClawHavoc(1,184개 악성 SKILL.md)의 2026-09 버전 — 이번엔 **마켓플레이스 규모**(Claude Marketplace 2,000+ 커넥터)와 짝을 이룬다.
+
+| 기존 질문 | 9/28이 더하는 질문 |
+|---|---|
+| 마켓플레이스 스킬을 review했는가? | 스킬의 **도메인·리다이렉트 체인**까지 검증했는가? |
+| Tier 2 sandbox가 있는가? | sandbox 안에서도 **외부 내비게이션**을 차단했는가? |
+
+### 실행시점 강제 — NVIDIA Open Agent Safety Platform
+
+같은 날 NVIDIA가 OpenShell(오픈소스 실행시점 보안 런타임) + Sentry(BlueField-4 DPU 대역외 감시)를 발표. 이 페이지의 Tier 모델·CaMeL·MAGE가 "설계 원칙"이라면, OpenShell은 **실행 중간에 정책을 강제하는 런타임** — 자세한 내용은 [[patterns/agent-safety-runtime]].
+
+### 1인 개발자 ROI 2개
+
+1. 스킬/플러그인 설치 시 **도메인 소유권**을 확인한다 — 플레이스홀더 도메인은 즉시 Tier 3.
+2. 에이전트의 외부 내비게이션(링크 클릭·리다이렉트 따라가기)은 기본 차단, 화이트리스트로만 허용.
 
 ## OWASP 매핑
 

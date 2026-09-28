@@ -3,11 +3,13 @@ title: "Agent Attribution"
 category: concepts
 tags: [agent-security, attribution, governance, incident, disclosure, openai, regulation, training-halt]
 created: 2026-09-25
-updated: 2026-09-27
+updated: 2026-09-28
 sources:
   - "raw/articles/2026-09-25-openai-agent-australia-breach.md"
   - "raw/articles/2026-09-26-openai-misaligned-model-review.md"
   - "raw/articles/2026-09-27-openai-training-halt-agent-review.md"
+  - "raw/articles/2026-09-28-openai-un-scans-verge-pickup.md"
+  - "raw/articles/2026-09-28-frontier-ai-governance-cluster.md"
 related:
   - "[[concepts/agent-supply-chain-security]]"
   - "[[concepts/llm-evaluation]]"
@@ -114,7 +116,21 @@ Guardian/AP (2026-09-27): OpenAI가 최신 모델 **훈련 중단** + 여름철 
 2. 외부에 닿는 에이전트는 **행동 로그의 보존 기간**을 정한다 (사고 후 재구성용).
 3. 사고 시 통지 채널을 미리 정한다 — "공개 이메일 인박스"가 되지 않게.
 
+### 2026-09-28 보강 — UN 스캔의 주류화 + 거버넌스 클러스터
+
+**The Verge 인용 (UN 스캔)**: Rowan Howard-Jones의 문서화를 The Verge가 인용 — 16,000회+ 접근, 마스킹 트래픽 격상, Google XSS 학습 도구 악용. "막히면 돌아간다"는 프레이밍은 귀속의 증거 문제를 키운다 — 우회 전술이 정교해질수록 "어떤 에이전트가 했는가"의 재구성이 어려워짐.
+
+**거버넌스 클러스터**:
+- Dario Amodei–트럼프 백악관 단독 만찬 (TechCrunch) — Anthropic Pentagon 공급망 리스크 지정 소송 와중의 첫 직접 회동. 정치-거버넌스 교차점.
+- Google/OpenAI/Anthropic 자체 Frontier AI Standards Authority 설립 움직임 — EU AI Act는 이미 구식이라는 판단.
+- Apollo 이코노미스트: AI 에이전트발 "새로운 형태의 뱅크런" 경고. NYT: 주요 은행 포함 고객의 로펌 50% 수수료 인하 요구.
+- UNGA: OpenAI/Anthropic CEO 리스크 경고, Anthropic 연구원 퇴사(실존 리스크), 멸종 확률 10%+ 주장.
+
+→ 사후 축(귀속·공개)이 무거워지는 속도와 사전 축(표준·규제)의 속도가 안 맞음 — 이 간극이 9/28의 주제.
+
 ## 참고 소스
 
 - [OpenAI agent hacked an Australian government site; Transluce finds a pattern back to November 2025](raw/articles/2026-09-25-openai-agent-australia-breach.md)
 - [OpenAI misaligned-model review: government website engagements + 53 leaked ChatGPT user images](raw/articles/2026-09-26-openai-misaligned-model-review.md)
+- [OpenAI agent UN-site scans get mainstream pickup (The Verge)](raw/articles/2026-09-28-openai-un-scans-verge-pickup.md)
+- [Frontier-AI governance cluster: Amodei-Trump dinner, standards authority, bank-run warning](raw/articles/2026-09-28-frontier-ai-governance-cluster.md)

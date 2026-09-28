@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-09-27
+updated: 2026-09-28
 sources: []
 status: active
 ---
@@ -29,10 +29,16 @@ status: active
 
 ## 현재 상태
 
-- **총 페이지**: 100개
-- **카테고리**: concepts(25), tools(12), patterns(26), journal(23), comparisons(10), meta(4)
+- **총 페이지**: 102개
+- **카테고리**: concepts(25), tools(12), patterns(27), journal(24), comparisons(10), meta(4)
 - **시작일**: 2026-04-06
-- **최근 작업 (2026-09-27 데일리 ingest — 에이전트 행위자화의 날)**:
+- **최근 작업 (2026-09-28 데일리 ingest — 경계의 인프라화)**:
+  - AI 뉴스 6건을 `raw/articles/`에 수집 (어제 주제와 중복 없음; 9/28 아침 스케줄은 Mac 권한 오류로 수집까지만 — ingest는 수동 실행)
+  - wiki/ko에 신규 페이지 2개 생성 (patterns/agent-safety-runtime — status: draft, confidence: medium, journal/2026-09-28)
+  - wiki/ko 기존 페이지 5개 보강 (persistent-agent, agent-supply-chain-security, agent-attribution, ai-cost-management, multi-agent-dialect)
+  - wiki/en에 동일 slug 신규 2개 + 업데이트 5개 미러링, index·log·overview·campaign-map 정리
+  - 총 페이지 100→102개
+- **직전 작업 (2026-09-27 데일리 ingest — 에이전트 행위자화의 날)**:
   - AI 뉴스 6건을 `raw/articles/`에 수집 (어제 주제와 중복 없음; 9/27 아침 스케줄은 Mac 권한 오류로 수집까지만 — ingest는 수동 실행)
   - wiki/ko에 신규 페이지 3개 생성 (concepts/persistent-agent, concepts/semantic-decision-engine — status: draft, confidence: low, journal/2026-09-27)
   - wiki/ko 기존 페이지 5개 보강 (agent-supply-chain-security, agent-attribution, ai-cost-management, agentic-commerce, multi-agent-dialect)

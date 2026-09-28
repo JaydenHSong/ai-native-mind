@@ -3,9 +3,10 @@ title: "Persistent Agent"
 category: concepts
 tags: [agent, persistent-agent, openai, devday, proactive-agent]
 created: 2026-09-27
-updated: 2026-09-27
+updated: 2026-09-28
 sources:
   - "raw/articles/2026-09-27-openai-persistent-agent-o.md"
+  - "raw/articles/2026-09-28-openai-devday-o-leak-update.md"
 related:
   - "[[concepts/agent-supply-chain-security]]"
   - "[[concepts/agent-attribution]]"
@@ -46,6 +47,16 @@ A persistent agent is an **"assistant you live with"** that keeps its own schedu
 - **Single internal-source leak** — an unreleased-product rumor, not a confirmed announcement
 - The "digital identity" framing is the article's rhetoric, not a verified product design
 - **Verification point: DevDay 2026 (9/29)** — if "O" is announced, promote this page from rumor to product page; if not, delete or refile as "unconfirmed"
+
+## 2026-09-28 Update — DevDay eve: "o, your always-on assistant" spotted
+
+One day before DevDay (9/29), more leaks — the silhouette is sharper, but pricing is still unconfirmed.
+
+- **New clue**: on 9/26 the ChatGPT Pro upgrade page briefly showed "o, your always-on assistant" before being removed within hours. The config still carries the display name "O" + email suffix "-o".
+- **Expected lineup**: 12+ products — "O", GPT-6 Cyber (app-only Daybreak Red tier), Managed Agents for long-running tasks.
+- **Competition**: Anthropic Conway / Claude Managed Agents, Meta Muse, xAI Grok Bot (9/5), Google Gemini Spark — always-on agents becoming the platform battleground.
+- **Excluded**: rumor-grade aggregator details (63 languages, Cerebras fast mode) with no primary source.
+- **If confirmed at tomorrow's (9/29) keynote**, promote this page; if not, archive. Confidence stays **low**.
 
 ## Sources
 
