@@ -3,11 +3,12 @@ title: "Multi-Agent Dialect"
 category: concepts
 tags: [multi-agent, interpretability, governance, alignment, emergent-behavior, regulation]
 created: 2026-09-26
-updated: 2026-09-28
+updated: 2026-09-29
 sources:
   - "raw/articles/2026-09-26-multi-agent-dialect-governance-risk.md"
   - "raw/articles/2026-09-27-gates-ai-self-regulation.md"
   - "raw/articles/2026-09-28-frontier-ai-governance-cluster.md"
+  - "raw/articles/2026-09-29-white-house-ai-meeting.md"
 related:
   - "[[concepts/context-rot-hallucination]]"
   - "[[concepts/agent-supply-chain-security]]"
@@ -65,6 +66,13 @@ confidence: low
 - **자체 표준 기구**: Google/OpenAI/Anthropic이 Frontier AI용 Standards Authority 설립 움직임 — EU AI Act는 이미 구식이라는 판단. 규제가 기술 속도를 못 따라간다는 업계의 선언.
 - **시장의 반응**: Apollo 이코노미스트의 에이전트발 뱅크런 경고, 은행들의 로펌 50% 수수료 인하 요구 — 거버넌스 공백의 비용이 시장에 전가되기 시작.
 - 한계: 다이제스트/2차 위주 — confidence low 유지.
+
+## 2026-09-29 보강 — 백악관 회동: 가속과 제동의 동시 상영
+
+- 트럼프·존슨 × 빅테크 CEO 백악관 AI 전략 회의 (오늘 9/29) — 의제: AI 안전, 규제 가드레일, 중국 기술 패권 경쟁.
+- DevDay 신제품 러시(가속)와 백악관 안전 회의(제동)가 같은 날 — 9/28 Amodei 만찬에 이은 정치 축의 연속선.
+- 이 페이지의 "부분적 통제 상실" 프레이밍이 최고 정치 레벨의 정식 의제가 된 지 사흘째 — 거버넌스 요구가 보도 수사를 넘어 제도 논의로 이동 중.
+- 한계: 2차 인용 위주 — confidence low 유지.
 
 ## 참고 소스
 

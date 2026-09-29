@@ -1,12 +1,13 @@
 ---
 title: "Persistent Agent"
 category: concepts
-tags: [agent, persistent-agent, openai, devday, proactive-agent]
+tags: [agent, persistent-agent, openai, devday, proactive-agent, spaces, workspace]
 created: 2026-09-27
-updated: 2026-09-28
+updated: 2026-09-29
 sources:
   - "raw/articles/2026-09-27-openai-persistent-agent-o.md"
   - "raw/articles/2026-09-28-openai-devday-o-leak-update.md"
+  - "raw/articles/2026-09-29-openai-spaces-workspace-rumor.md"
 related:
   - "[[concepts/agent-supply-chain-security]]"
   - "[[concepts/agent-attribution]]"
@@ -57,6 +58,13 @@ One day before DevDay (9/29), more leaks — the silhouette is sharper, but pric
 - **Competition**: Anthropic Conway / Claude Managed Agents, Meta Muse, xAI Grok Bot (9/5), Google Gemini Spark — always-on agents becoming the platform battleground.
 - **Excluded**: rumor-grade aggregator details (63 languages, Cerebras fast mode) with no primary source.
 - **If confirmed at tomorrow's (9/29) keynote**, promote this page; if not, archive. Confidence stays **low**.
+
+## 2026-09-29 Update — "Spaces": where the resident agent lives
+
+- **The "Spaces" rumor** (tokenpost, 9/28): a collaborative workspace where people and AI agents co-create and co-edit documents and artifacts in one shared environment — observed as a merge of Canvas co-editing + shared projects (task context) + workspace agents (long-running work).
+- Product name, timeline, and pricing all unconfirmed — rumor grade; confidence stays **low**.
+- "O" (the resident agent) and "Spaces" (the resident agent's home) are the same thread: the **identity (O)** and the **workspace (Spaces)** of the agent that left the chat window are arriving as a pair.
+- **If confirmed at today's (9/29) 10am PT DevDay keynote**, promote this page — check "O" confirmation/denial, Spaces disclosure, and any Astra-replacement announcement together.
 
 ## Sources
 

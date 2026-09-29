@@ -1,12 +1,13 @@
 ---
 title: "Persistent Agent"
 category: concepts
-tags: [persistent-agent, always-on-agent, openai, devday, rumor]
+tags: [persistent-agent, always-on-agent, openai, devday, rumor, spaces, workspace]
 created: 2026-09-27
-updated: 2026-09-28
+updated: 2026-09-29
 sources:
   - "raw/articles/2026-09-27-openai-persistent-agent-o.md"
   - "raw/articles/2026-09-28-openai-devday-o-leak-update.md"
+  - "raw/articles/2026-09-29-openai-spaces-workspace-rumor.md"
 related:
   - "[[concepts/agent-attribution]]"
   - "[[patterns/ai-cost-management]]"
@@ -58,6 +59,13 @@ DevDay(9/29) 하루 전 추가 리크 — 실루엣은 선명해졌지만 가격
 - **경쟁 구도**: Anthropic Conway / Claude Managed Agents, Meta Muse, xAI Grok Bot(9/5), Google Gemini Spark — 상시 에이전트가 플랫폼 경쟁축.
 - **제외**: aggregator발 루머 등급 세부사항(63개 언어, Cerebras fast mode)은 1차 소스 없음 — 수집 제외.
 - **내일(9/29) 키노트에서 확인되면** 본 페이지 confidence 승격, 루머면 archived. confidence **low** 유지.
+
+## 2026-09-29 보강 — "Spaces": 상주 에이전트의 거처
+
+- **'Spaces' 루머** (tokenpost 9/28): 사람+AI 에이전트가 하나의 공유 환경에서 문서·결과물을 함께 생성·수정하는 협업 워크스페이스 준비 중. Canvas 공동편집 + 공유 프로젝트(작업 맥락) + 워크스페이스 에이전트(장기 업무 실행) 흐름의 통합으로 관측.
+- 제품명·일정·가격 미확인 — 루머 등급, confidence **low** 유지.
+- "O"(상주 에이전트)와 "Spaces"(상주 에이전트의 거처)는 같은 스레드: 채팅창을 벗어난 에이전트의 **정체성(O)** 과 **작업 공간(Spaces)** 이 쌍으로 등장.
+- **오늘(9/29) 10am PT DevDay 키노트에서 확인되면** 본 페이지 승격 — "O" 확인/부인, Spaces 공개 여부, Astra 대체 모델 발표를 함께 체크.
 
 ## 관련 개념
 

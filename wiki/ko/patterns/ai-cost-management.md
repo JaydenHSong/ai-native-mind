@@ -1,9 +1,9 @@
 ---
 title: "AI 비용 관리"
 category: patterns
-tags: [cost, pricing, optimization, anthropic, claude, openai, model-routing, liner, routerarena, jev]
+tags: [cost, pricing, optimization, anthropic, claude, openai, model-routing, liner, routerarena, jev, mid-tier, subscription]
 created: 2026-04-09
-updated: 2026-09-28
+updated: 2026-09-29
 sources:
   - "raw/notes/2026-04-09-ai-cost-management.md"
   - "raw/articles/2026-05-01-anthropic-managed-agents-launch.md"
@@ -17,6 +17,8 @@ sources:
   - "raw/articles/2026-09-27-kt-automodelrouter-routerarena.md"
   - "raw/articles/2026-09-27-jevs-semantic-decision-engine.md"
   - "raw/articles/2026-09-28-agoda-ai-developer-report.md"
+  - "raw/articles/2026-09-29-anthropic-claude-sonnet-55-launch.md"
+  - "raw/articles/2026-09-29-openai-chatgpt-pro-200-reopen.md"
 related:
   - "[[patterns/prompt-caching]]"
   - "[[patterns/subagents-delegation]]"
@@ -293,11 +295,27 @@ def route_model(task_complexity: str) -> str:
 | 2026-09-26 | 수요 측 가시성 (Copilot) + 접근성 세금 |
 | 2026-09-27 | 라우터 자체가 경쟁 영역 (KT) + 비생성 결정 엔진 (Jev) |
 | 2026-09-28 | **도입-준비도 간극의 정량화** — 비용 28%가 1위 블로커 |
+| 2026-09-29 | **중급 역전 + 구독의 API 달러화** — Sonnet 5.5가 Opus 5.5 상회, Pro $200은 API 달러 기준 |
 
 ### 1인 개발자 함의
 
 1. "시간은 벌었는데 거버넌스는 못 샀다" — 1인 팀도 **예산 상한 + 에이전트 권한 목록**을 먼저 정한다.
 2. 80%가 예산 제한 하에 있다는 건 라우터·캐싱이 선택이 아니라 디폴트라는 뜻.
+
+## 2026-09-29 보강 — 중급 역전과 구독의 API 달러화
+
+### Claude Sonnet 5.5 (9/28, Reuters)
+
+- Terminal-Bench 4.0 **70.6%** — Sonnet 5(10.3%)는 물론 Opus 5.5(66.4%)까지 상회. Sonnet 5 대비 30%+ 빠르고 작업당 비용 최대 30% 절감, API 가격은 동일($2/$10).
+- 첫 Sonnet급 Opus급 cyber safeguards + reasoning-extraction(증류 공격) 차단 분류기.
+- GitHub Copilot 당일 GA, claude.ai 무료 티어도 교체 — "ChatGPT Luna 무료 티어보다 유능"(Simon Willison).
+- 패턴: [[patterns/mid-tier-performance-inversion]] — "더 싸지만 충분한가"가 아니라 "더 싸고 더 강한가".
+
+### ChatGPT Pro $200 재오픈 (9/29)
+
+- DevDay 맞춰 신규 가입 재개 (9/10 동결 이후). 새 산정식 = 구 플랜 대비 **API 달러 기준 절반** 포함. 5시간 윈도우 부활 없음.
+- Sol/Luna 50% 인하가 구독에 그대로 통과 — 구독제의 과금 단위가 **시트→API 달러**로 이동 중.
+- 1인 개발자 관점: "Pro 한 자리"의 실질 용량이 API 가격과 연동되면, 모델 가격 인하 = 구독 가치 상승. 반대로 API 가격 인상의 리스크도 구독으로 전가됨.
 
 ## ❌ 피해야 할 실수
 

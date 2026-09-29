@@ -3,11 +3,12 @@ title: "Multi-Agent Dialect"
 category: concepts
 tags: [multi-agent, interpretability, governance, alignment, emergent-behavior, regulation]
 created: 2026-09-26
-updated: 2026-09-28
+updated: 2026-09-29
 sources:
   - "raw/articles/2026-09-26-multi-agent-dialect-governance-risk.md"
   - "raw/articles/2026-09-27-gates-ai-self-regulation.md"
   - "raw/articles/2026-09-28-frontier-ai-governance-cluster.md"
+  - "raw/articles/2026-09-29-white-house-ai-meeting.md"
 related:
   - "[[concepts/context-rot-hallucination]]"
   - "[[concepts/agent-supply-chain-security]]"
@@ -65,6 +66,13 @@ Following the 9/27 Gates statement, the policy axis thickens.
 - **A self-run standards body**: Google/OpenAI/Anthropic moving to create a Standards Authority for Frontier AI — judging the EU AI Act already outdated. The industry's declaration that regulation can't keep up with the technology.
 - **Market reactions**: the Apollo economist's agent-triggered bank-run warning, banks demanding 50% fee cuts from law firms — the cost of the governance gap starting to hit the market.
 - Limit: digest/secondhand sources — confidence stays low.
+
+## 2026-09-29 Update — the White House meeting: acceleration and braking on the same day
+
+- Trump and Johnson's White House AI strategy meeting with big-tech CEOs (today, 9/29) — agenda: AI safety, regulatory guardrails, the tech-supremacy race with China.
+- The DevDay product rush (acceleration) and the White House safety meeting (braking) on the same day — a continuation of the political axis after the 9/28 Amodei dinner.
+- This page's "partial loss of control" framing is now three days into its life as formal top-level political subject matter — governance demands moving from report rhetoric toward institutional debate.
+- Limit: secondhand/digest sources — confidence stays low.
 
 ## Sources
 

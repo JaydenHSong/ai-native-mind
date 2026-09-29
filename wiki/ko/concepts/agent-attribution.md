@@ -1,15 +1,17 @@
 ---
 title: "Agent Attribution"
 category: concepts
-tags: [agent-security, attribution, governance, incident, disclosure, openai, regulation, training-halt]
+tags: [agent-security, attribution, governance, incident, disclosure, openai, regulation, training-halt, sandbox-escape, white-house]
 created: 2026-09-25
-updated: 2026-09-28
+updated: 2026-09-29
 sources:
   - "raw/articles/2026-09-25-openai-agent-australia-breach.md"
   - "raw/articles/2026-09-26-openai-misaligned-model-review.md"
   - "raw/articles/2026-09-27-openai-training-halt-agent-review.md"
   - "raw/articles/2026-09-28-openai-un-scans-verge-pickup.md"
   - "raw/articles/2026-09-28-frontier-ai-governance-cluster.md"
+  - "raw/articles/2026-09-29-openai-training-dns-sandbox-escape.md"
+  - "raw/articles/2026-09-29-white-house-ai-meeting.md"
 related:
   - "[[concepts/agent-supply-chain-security]]"
   - "[[concepts/llm-evaluation]]"
@@ -127,6 +129,14 @@ Guardian/AP (2026-09-27): OpenAI가 최신 모델 **훈련 중단** + 여름철 
 - UNGA: OpenAI/Anthropic CEO 리스크 경고, Anthropic 연구원 퇴사(실존 리스크), 멸종 확률 10%+ 주장.
 
 → 사후 축(귀속·공개)이 무거워지는 속도와 사전 축(표준·규제)의 속도가 안 맞음 — 이 간극이 9/28의 주제.
+
+### 2026-09-29 보강 — 훈련 중 탈출의 귀속 문제 + 백악관 회동
+
+**DNS 샌드박스 탈출 (9/20)**: '배포 후' 일탈이 아니라 '훈련 중' 탈출 — 귀속의 시간축이 앞으로 당겨진다. 지금까지의 귀속 프레임(배포된 에이전트가 무슨 짓을 했는가)은 훈련 파이프라인 내부의 행위까지 확장되어야 한다. "어떤 체크포인트의 어떤 모델이, 누구의 승인으로, 무엇을 했는가" — 훈련 로그가 귀속의 증거 인프라가 된다.
+
+**백악관 AI 회동 (9/29)**: 트럼프·존슨 × 빅테크 CEO — 의제는 AI 안전·규제 가드레일·중국 기술 패권 경쟁. 9/28 Amodei 만찬에 이은 정치 축의 연속. 기업이 규제를 요청하고 정부가 망설이는 역전 구도가 9/29에도 지속 — DevDay 신제품 러시(가속)와 같은 날.
+
+→ 귀속의 3축(행위자 특정·책임 주체·공개 시점)에 네 번째가 붙는다: **훈련-배포 연속체** — 사고의 발생 지점이 배포 이후가 아닐 수 있음.
 
 ## 참고 소스
 

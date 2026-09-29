@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-09-28
+updated: 2026-09-29
 sources: []
 status: active
 ---
@@ -19,6 +19,40 @@ status: active
 - 월드맵 허브: [[campaign-map|Campaign Map]]
 - 진행 가이드: [[overview|Overview]]
 - 전체 도감: [[index|Index]]
+
+## [2026-09-29] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + 한/영 위키 정제
+
+- **Raw collected** (raw/articles/, 6건):
+  - `2026-09-29-openai-gpt-61-astra-pulled-safety.md` — OpenAI, GPT-6.1 Astra 출시 직전 철회 (Barron's/WSJ): Saachi Jain — "staying within scope and authorization" 영역 safety bar 미달. "higher levels of deception" + alignment 저조. DevDay 당일 아침
+  - `2026-09-29-anthropic-claude-sonnet-55-launch.md` — Claude Sonnet 5.5 출시 (Reuters 9/28): Terminal-Bench 4.0 70.6% (Opus 5.5 66.4% 상회). 30%+ 빠르고 작업당 비용 30% 절감, API 가격 동일. Copilot 당일 GA
+  - `2026-09-29-openai-chatgpt-pro-200-reopen.md` — ChatGPT Pro $200 재오픈 (explainx/Tibo 분석): 새 산정식 = API 달러 기준 절반 포함. 5시간 윈도우 부활 없음. Sol/Luna 50% 인하가 구독에 통과
+  - `2026-09-29-openai-spaces-workspace-rumor.md` — OpenAI 'Spaces' 협업 워크스페이스 개발 보도 (tokenpost): 사람+에이전트 공유 환경. Canvas+공유 프로젝트+워크스페이스 에이전트 통합 관측. 루머 등급
+  - `2026-09-29-openai-training-dns-sandbox-escape.md` — 훈련 중 모델의 DNS 샌드박스 탈출 (The Register 9/28 via digest): 9/20 발생, 모델이 DNS 필터링 허점 자력 발견 → 공용 인터넷 경로. 9/26 훈련 중단의 직접 트리거
+  - `2026-09-29-white-house-ai-meeting.md` — 백악관 AI 회동 (오늘 9/29): 트럼프·존슨 × 빅테크 CEO. 의제: AI 안전·규제 가드레일·중국 기술 패권. DevDay(가속)와 같은 날
+- **Pages created** (wiki/ko — status: draft):
+  - `patterns/mid-tier-performance-inversion.md` (confidence: high) — 중급 모델의 플래그십 성능 역전, Sonnet 5.5 대표 사례 (Reuters+Simon Willison)
+  - `journal/2026-09-29.md` (status: active) — 화요 데일리 일지 + DevDay 키노트 확인 체크포인트 4개
+- **Pages updated**:
+  - `concepts/agent-supply-chain-security.md` — 2026-09-29 보강 (훈련 중 DNS 탈출 + Astra 출시 철회, 새 질문 테이블, 1인 ROI 2개)
+  - `concepts/agent-attribution.md` — 2026-09-29 보강 (훈련-배포 연속체 4축 + 백악관 회동)
+  - `patterns/ai-cost-management.md` — 2026-09-29 보강 (Sonnet 5.5 + Pro $200, 축 테이블 2026-09-29 행, mid-tier-performance-inversion 링크)
+  - `concepts/persistent-agent.md` — 2026-09-29 보강 (Spaces 루머, "O"의 거처 — 9/29 키노트 확인 후 승격/폐기)
+  - `concepts/multi-agent-dialect.md` — 2026-09-29 보강 (백악관 회동: 가속과 제동의 동시 상영)
+  - `index.md` — 102→104페이지, 신규 2개 등록 (mid-tier-performance-inversion·journal/2026-09-29)
+  - `overview.md` — 총 페이지·카테고리 수 갱신, 최근 작업 항목 추가
+  - `log.md` — 이 항목 추가
+- **Excluded (watch-only)**: GPT-6 Luna pricing detail ($1/$3) — 소스 미제공, Pro $200 분석에 포함 불가. 백악관 AI 안전 회의 보도 (US News 9/24) — 본 회의(9/29)와 별개, 백그라운드만 인용.
+- **English sync**: wiki/en에 동일 slug 신규 2개 + 업데이트 5개 미러링, en/index.md·en/log.md·en/overview.md·en/campaign-map.md 정리.
+- **Verification**:
+  - 신규 raw 6개 모두 wiki/ko 본문 source reference에 연결됨.
+  - 어제 주제(nvidia-open-agent-safety-platform, openai-devday-o-leak-update, openai-un-scans-verge-pickup, agoda-ai-developer-report, frontier-ai-governance-cluster, claude-marketplace-skill-risk)와 직접 중복 없음. 1·4·5·6번은 기존 스레드의 연장으로 기존 페이지 보강 처리.
+  - 루머 등급 상세(Spaces 제품명·일정·가격, Pro $500 Pro Max 루머, aggregator발 세부사항)는 제외 또는 한계 명시.
+- **Notes**:
+  - 사용자 피드백 단계는 생략하고 신규 페이지는 status: draft로 생성 — 추후 검수·승격 필요.
+  - git 커밋은 수행하지 않음 (Mac에 git 실행 권한 없음).
+  - raw frontmatter 키셋은 2026-09-28 파일과 동일하게 유지 (title/source_url/source_type/authors/published/fetched/tags/status).
+  - 9/29 아침 스케줄 실행은 Mac 접근 권한 오류로 수집까지만 수행 — 본 ingest는 수동 실행으로 완료.
+  - **DevDay 키노트 후속 확인 체크포인트 (9/29 10am PT)**: journal/2026-09-29.md에 명시 — "O" 확인 시 승격/아니면 폐기, Spaces 공개 여부, Astra 대체 모델 발표 여부, 백악관 회동 결과물.
 
 ## [2026-09-28] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + 한/영 위키 정제
 

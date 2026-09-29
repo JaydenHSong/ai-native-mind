@@ -1,9 +1,9 @@
 ---
 title: "AI Cost Management"
 category: patterns
-tags: [cost, pricing, optimization, anthropic, claude, openai, model-routing, liner, routerarena, jev]
+tags: [cost, pricing, optimization, anthropic, claude, openai, model-routing, liner, routerarena, jev, mid-tier, subscription]
 created: 2026-04-09
-updated: 2026-09-28
+updated: 2026-09-29
 sources:
   - "raw/notes/2026-04-09-ai-cost-management.md"
   - "raw/articles/2026-05-01-anthropic-managed-agents-launch.md"
@@ -17,6 +17,8 @@ sources:
   - "raw/articles/2026-09-27-kt-automodelrouter-routerarena.md"
   - "raw/articles/2026-09-27-jevs-semantic-decision-engine.md"
   - "raw/articles/2026-09-28-agoda-ai-developer-report.md"
+  - "raw/articles/2026-09-29-anthropic-claude-sonnet-55-launch.md"
+  - "raw/articles/2026-09-29-openai-chatgpt-pro-200-reopen.md"
 related:
   - "[[patterns/prompt-caching]]"
   - "[[patterns/subagents-delegation]]"
@@ -266,11 +268,27 @@ Following the 9/26 demand-side axis (cost visibility, the accessibility tax), th
 | 2026-09-26 | Demand-side visibility (Copilot) + accessibility token tax |
 | 2026-09-27 | **The router itself as the competitive layer** (KT) + **non-generative decision engines** (Jev) |
 | 2026-09-28 | **Quantifying the adoption-readiness gap** — cost at 28% is the #1 blocker |
+| 2026-09-29 | **Mid-tier inversion + subscription billed in API dollars** — Sonnet 5.5 beats Opus 5.5; Pro $200 counts in API dollars |
 
 ### Solo-developer takeaways
 
 1. "They bought the time but not the governance" — even a one-person team should set a **budget cap + an agent permission list** first.
 2. With 80% working under budget limits, routers and caching aren't optional — they're the default.
+
+## 2026-09-29 Update — mid-tier inversion and subscription billed in API dollars
+
+### Claude Sonnet 5.5 (9/28, Reuters)
+
+- Terminal-Bench 4.0 **70.6%** — beating Sonnet 5 (10.3%) and even Opus 5.5 (66.4%). 30%+ faster than Sonnet 5, up to 30% lower cost per task, same API price ($2/$10).
+- First Sonnet-tier with Opus-tier cyber safeguards + a reasoning-extraction (distillation attack) blocking classifier.
+- GitHub Copilot GA on day one, claude.ai free tier also switched — "more capable than ChatGPT Luna's free tier" (Simon Willison).
+- The pattern: [[patterns/mid-tier-performance-inversion]] — not "cheaper but sufficient," but "cheaper and stronger."
+
+### ChatGPT Pro $200 reopens (9/29)
+
+- New signups reopened for the DevDay window (first since the 9/10 freeze). New formula = **half the old plan's usage, counted in API dollars**. No return of the 5-hour window.
+- The Sol/Luna 50% cuts pass straight through to subscriptions — the subscription's billing unit is moving from **seats to API dollars**.
+- Solo-dev view: when "one Pro seat's" effective capacity tracks the API price, model price cuts = subscription value up. But API price-hike risk passes through to subscriptions too.
 
 ---
 

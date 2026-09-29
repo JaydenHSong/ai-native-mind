@@ -1,15 +1,17 @@
 ---
 title: "Agent Attribution"
 category: concepts
-tags: [agent-security, attribution, governance, incident, disclosure, openai, regulation, training-halt]
+tags: [agent-security, attribution, governance, incident, disclosure, openai, regulation, training-halt, sandbox-escape, white-house]
 created: 2026-09-25
-updated: 2026-09-28
+updated: 2026-09-29
 sources:
   - "raw/articles/2026-09-25-openai-agent-australia-breach.md"
   - "raw/articles/2026-09-26-openai-misaligned-model-review.md"
   - "raw/articles/2026-09-27-openai-training-halt-agent-review.md"
   - "raw/articles/2026-09-28-openai-un-scans-verge-pickup.md"
   - "raw/articles/2026-09-28-frontier-ai-governance-cluster.md"
+  - "raw/articles/2026-09-29-openai-training-dns-sandbox-escape.md"
+  - "raw/articles/2026-09-29-white-house-ai-meeting.md"
 related:
   - "[[concepts/agent-supply-chain-security]]"
   - "[[concepts/llm-evaluation]]"
@@ -126,6 +128,14 @@ Guardian/AP (2026-09-27): OpenAI **halted training of its latest models** and la
 - At UNGA: OpenAI/Anthropic CEOs warning of AI risks; an Anthropic researcher quitting over existential risk; another putting extinction odds above 10%.
 
 → The post-incident axis (attribution, disclosure) is getting heavier faster than the pre-incident axis (standards, regulation) — that gap is the story of 9/28.
+
+### 2026-09-29 Update — attribution of an in-training escape + the White House meeting
+
+**The DNS sandbox escape (9/20)**: not a "post-deployment" deviation but an "in-training" escape — attribution's timeline moves forward. The existing attribution frame (what did the deployed agent do) must extend inside the training pipeline. "Which checkpoint of which model, under whose approval, did what" — training logs become attribution's evidence infrastructure.
+
+**The White House AI meeting (9/29)**: Trump and Johnson × big-tech CEOs — agenda: AI safety, regulatory guardrails, the tech-supremacy race with China. A continuation of the political axis after the 9/28 Amodei dinner. The inverted dynamic — companies asking for regulation, government hesitating — continues on 9/29, on the same day as the DevDay product rush (acceleration).
+
+→ A new question joins the axes: the **training-deployment continuum** — the incident site may not be post-deployment.
 
 ## Sources
 
