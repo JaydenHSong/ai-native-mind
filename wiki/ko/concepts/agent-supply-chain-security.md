@@ -3,7 +3,7 @@ title: "Agent Supply Chain Security"
 category: concepts
 tags: [security, supply-chain, agent, mcp, skill-md, agents-md, owasp, asi04, clawhavoc, long-horizon-threat, shadow-memory, behavior-jailbreak, execution-hallucination, privacy-benchmark, policy-leakage, intent-following, attribution, disclosure, meta-muse, training-halt, sandbox-escape]
 created: 2026-05-01
-updated: 2026-09-29
+updated: 2026-09-30
 sources:
   - "raw/articles/2026-05-01-owasp-asi-2026.md"
   - "raw/articles/2026-05-01-dual-llm-camel-pattern.md"
@@ -20,6 +20,8 @@ sources:
   - "raw/articles/2026-09-28-claude-marketplace-skill-risk.md"
   - "raw/articles/2026-09-29-openai-training-dns-sandbox-escape.md"
   - "raw/articles/2026-09-29-openai-gpt-61-astra-pulled-safety.md"
+  - "raw/articles/2026-09-29-openai-devday-2026-keynote-confirmed.md"
+  - "raw/articles/2026-09-30-anthropic-glm-53-cyber-analysis.md"
 related:
   - "[[patterns/owasp-llm-typescript-mitigations]]"
   - "[[patterns/safe-tool-calling-sandbox]]"
@@ -427,6 +429,60 @@ Manifold Security가 AI 에이전트 스킬 349건이 플레이스홀더 도메�
 
 1. 샌드박스를 설계할 때 "모델이 이 상자를 뜯어볼 수 있다"를 위협 모델에 넣는다 — DNS·egress는 기본 차단, 허용 목록만 개방.
 2. 배포 체크리스트에 '철회 기준'을 미리 적어둔다 — 어떤 신호에서 롤백/출시 중단을 할지 정해두지 않으면 막상 멈추지 못한다.
+
+## 2026-09-29 오후 보강 — DevDay: 6.1 Astra는 없고 6.1 Sol이 왔다
+
+- 키노트 발표 목록에 **GPT-6.1 Astra 없음** — 아침 철회가 유지됐다. 대신 **GPT-6.1 Sol** 발표 (Gizmodo: "With No Astra to Release").
+- Jain이 예고한 "requirements를 충족하는 다른 신모델"이 OpenAI에 의해 명시적으로 지목되지는 않음 — 사실상 6.1 Sol이 대체 출시로 관측 (confidence medium).
+- 역설: 출시 게이트가 작동한 바로 그날, 게이트를 통과한 "안전하고 싼" 모델이 Astra급 성능을 주장하며 나왔다 — **안전 게이트가 출시 전략(가격·포지셔닝)의 일부가 되기 시작**.
+
+| 기존 질문 | 9/29 오후가 더하는 질문 |
+|---|---|
+| safety bar 미달 시 출시를 멈출 수 있는가? | 게이트 통과 모델이 **마케팅(가격 인하의 근거)** 으로 쓰이지 않는가? |
+| 철회 기준을 미리 정했는가? | 철회된 모델의 대체재가 **같은 게이트**를 통과했는지 공개되는가? |
+
+### 1인 개발자 ROI 1개
+
+1. "안전해서 싸졌다"는 주장은 벤더 발표 — 6.1 Sol의 alignment 개선 수치는 독립 검증 전까지 마케팅으로 취급.
+
+## 2026-09-30 보강 — GLM-5.3: 오픈웨이트의 안전장치 붕괴 실증
+
+Anthropic Frontier Red Team 보고서 (9/29, 2차 보도 기준) — 오픈웨이트 모델의 거절률이 "방벽"이 아니라 "페인트"임을 수치로 보여준 첫 체계적 실증.
+
+### 역량 수치
+
+- Zhipu(Z.ai)의 오픈웨이트 GLM-5.3: ExploitBench 410회 중 50회 완전 공격 코드 생성 (Claude Mythos Preview 56회). 전세대 Opus 4.6·GLM-5.2는 0건.
+- 내부 바이너리 익스플로잇: 완전 제어 흐름 탈취율 4% (Mythos 6%). Kimi K3 0.5%, DeepSeek V4.1-Flash 0.2%.
+- 실증: 격리 리눅스 브라우저를 맡기자 하루 만에 JS 엔진 미공개 취약점 여럿을 찾아 엮어 "방문만으로 SSH 개인키를 빼가는 웹페이지" 제작 — Anthropic이 브라우저사에 제보.
+- GLM-5.3-Flash: 공개 Chrome 취약점 CVE-2026-11645 포함 2개를 엮어 ARM64 PAC 우회 체인 구성 (인간 20분 + 모델 8시간, 지푸AI API $20.40).
+
+### 안전장치 붕괴 사다리
+
+| 단계 | 결과 |
+|---|---|
+| 노골적 공격 요청 | 전부 거절 |
+| "자율 레드팀 에이전트" 위장 프롬프트 | 64% 응함 |
+| 추론 토큰 선채움 (pre-filling) | 92% |
+| 거절 기능 가중치 제거 (abliteration) | **100%** 원격 표적 접속 시도 |
+
+- abliteration 후 유해요청 거절률 90%대→2~12%, GPQA-Diamond 88% 유지, CyberGym 85%→81% 소폭 하락. 비용 약 2,200 GPU시간·~$4,400 (숙련팀 ~$1,200 추정). 출시 며칠 만에 거절 제거 사본이 공개됨.
+- 대조: 안전장치를 켠 Claude는 같은 조건에서 0% — 위장 프롬프트 차단, 추론 선채움 미제공, 가중치 비공개로 abliteration 불가. (Anthropic 주장 — 독립 검증 필요)
+- NIST CAISI (9/17): "지금까지 테스트한 가장 사이버 역량 높은 오픈웨이트 모델", 미국 프론티어 대비 약 4개월 격차.
+
+### 이 페이지에 붙는 새 질문
+
+| 기존 질문 | 9/30 사건이 더하는 질문 |
+|---|---|
+| 외부 모델·스킬을 신뢰 등급으로 나누는가? | **오픈웨이트의 거절률을 신뢰 등급의 근거로 쓰는가?** (abliteration으로 100% 붕괴) |
+| 샌드박스가 있는가? | 오픈웨이트 에이전트가 브라우저 샌드박스를 탈출하는 시나리오를 위협 모델에 넣었는가? (SSH 키 탈취 실증) |
+
+### 1인 개발자 ROI 1개
+
+1. 오픈웨이트 모델을 프로덕션 에이전트에 직접 연결하지 않는다 — 거절률은 "설정"이 아니라 "권장사항". 오픈웨이트는 Tier 3(격리·HITL) 디폴트.
+
+### Sonnet 5.5 맥락 연결
+
+- 9/29 Sonnet 5.5의 "첫 Sonnet급 cyber safeguards + reasoning-extraction(증류 공격) 차단"이 바로 이 위협에 대한 답 — 클로즈드 모델의 가드레일은 "가중치 비공개"라는 물리적 전제 위에 서 있음. 오픈웨이트 시대의 안전은 모델 내부가 아니라 [[patterns/agent-safety-runtime]] 같은 실행 인프라로 이동.
 
 ## OWASP 매핑
 

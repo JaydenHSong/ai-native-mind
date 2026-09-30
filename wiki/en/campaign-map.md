@@ -3,7 +3,7 @@ title: "Campaign Map"
 category: meta
 tags: [map, campaign, navigation]
 created: 2026-04-12
-updated: 2026-09-27
+updated: 2026-09-30
 sources:
   - "wiki/overview.md"
   - "wiki/index.md"
@@ -115,3 +115,4 @@ This is not a document you read from top to bottom. Pick one chapter that matche
 - 2026-09-27: Daily ingest added three new pages (persistent-agent, semantic-decision-engine, journal/2026-09-27 — ko + en mirrors) and reinforced five pages; chapter route unchanged, and `index`, `overview`, and `log` now carry the 97→100 page state.
 - 2026-09-28: Daily ingest added two new pages (agent-safety-runtime, journal/2026-09-28 — ko + en mirrors) and reinforced five pages; chapter route unchanged, and `index`, `overview`, and `log` now carry the 100→102 page state.
 - 2026-09-29: Daily ingest added two new pages (mid-tier-performance-inversion, journal/2026-09-29 — ko + en mirrors) and reinforced five pages; chapter route unchanged, and `index`, `overview`, and `log` now carry the 102→104 page state.
+- 2026-09-30: Daily ingest added three new pages (self-improving-ai-risk, amd-world-labs-physical-ai, white-house-ai-accord — ko + en mirrors), one journal page (journal/2026-09-30), and reinforced three pages; chapter route unchanged, and `index`, `overview`, and `log` now carry the 104→107 page state.

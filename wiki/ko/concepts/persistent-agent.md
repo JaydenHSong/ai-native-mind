@@ -1,19 +1,20 @@
 ---
 title: "Persistent Agent"
 category: concepts
-tags: [persistent-agent, always-on-agent, openai, devday, rumor, spaces, workspace]
+tags: [persistent-agent, always-on-agent, openai, devday, dots, chatgpt-space, workspace]
 created: 2026-09-27
 updated: 2026-09-29
 sources:
   - "raw/articles/2026-09-27-openai-persistent-agent-o.md"
   - "raw/articles/2026-09-28-openai-devday-o-leak-update.md"
   - "raw/articles/2026-09-29-openai-spaces-workspace-rumor.md"
+  - "raw/articles/2026-09-29-openai-devday-2026-keynote-confirmed.md"
 related:
   - "[[concepts/agent-attribution]]"
   - "[[patterns/ai-cost-management]]"
   - "[[concepts/agent-supply-chain-security]]"
 status: draft
-confidence: low
+confidence: medium
 ---
 
 # Persistent Agent
@@ -29,7 +30,7 @@ confidence: low
 
 ## 한줄 정의
 
-호출-응답 사이클을 넘어 **지속적으로 가동되며 자체 스케줄·메모리·아이덴티티를 갖는** AI 에이전트 — 2026-09-27 현재는 루머 단계(OpenAI "O").
+호출-응답 사이클을 넘어 **지속적으로 가동되며 자체 스케줄·메모리·아이덴티티를 갖는** AI 에이전트 — 2026-09-29 DevDay에서 OpenAI "Dots"로 공식 출시 (이전 코드명 "O").
 
 ## 핵심 내용 (2026-09-27 리크 기준)
 
@@ -66,6 +67,16 @@ DevDay(9/29) 하루 전 추가 리크 — 실루엣은 선명해졌지만 가격
 - 제품명·일정·가격 미확인 — 루머 등급, confidence **low** 유지.
 - "O"(상주 에이전트)와 "Spaces"(상주 에이전트의 거처)는 같은 스레드: 채팅창을 벗어난 에이전트의 **정체성(O)** 과 **작업 공간(Spaces)** 이 쌍으로 등장.
 - **오늘(9/29) 10am PT DevDay 키노트에서 확인되면** 본 페이지 승격 — "O" 확인/부인, Spaces 공개 여부, Astra 대체 모델 발표를 함께 체크.
+
+## 2026-09-29 오후 보강 — DevDay 키노트: "O"는 Dots로 확정
+
+"O" 루머가 키노트에서 **"Dots"** 로 확정 발표됐다 (Fort Mason, 9/29 10am PT). promote-or-retire 결정은 **승격**.
+
+- **사양**: 각 Dot이 자체 클라우드 컴퓨터·브라우저를 갖고 목표를 향해 백그라운드 작업 후 체크인. 4,000+ 앱 연결, 피드백으로 학습. ChatGPT·Slack·Teams에서 메시지 (텍스트ing 예정). 파워 모델: GPT-6 Astra.
+- **가용**: 초기에는 ChatGPT Pro·Business Premium·Enterprise 구독자 — Meta Muse(무료)와 가격 정책이 갈림.
+- **'Spaces' 루머도 확정** — 실제 이름은 **"ChatGPT Space"**: 팀원과 Dot 에이전트가 함께 일하는 공유 워크스페이스. **"Pages"** (인간+에이전트 공동 생성 문서 — 이미지·글·차트·시각화) 동시 발표. "O"(정체성) + "Spaces"(거처)의 쌍이 그대로 실현됐다.
+- **경쟁 구도 확정**: OpenAI Dots vs Meta Muse vs Anthropic Conway / Claude Managed Agents vs xAI Grok Bot vs Google Gemini Spark — 상시 에이전트가 플랫폼 경쟁의 핵심 축.
+- confidence **low → medium** (복수 현장 리포트 인용; 공식 리캡은 3자 인용 경유 — 1차 확인 시 high로 상향 가능).
 
 ## 관련 개념
 

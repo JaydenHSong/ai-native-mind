@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-09-29
+updated: 2026-09-30
 sources: []
 status: active
 ---
@@ -19,6 +19,29 @@ status: active
 - 월드맵 허브: [[campaign-map|Campaign Map]]
 - 진행 가이드: [[overview|Overview]]
 - 전체 도감: [[index|Index]]
+
+## [2026-09-30] ingest | 데일리 AI 뉴스 스크랩 — raw 3건 + 한/영 위키 정제
+
+- **Raw collected** (raw/articles/, 3건):
+  - `2026-09-30-palisade-frominside-self-improving-ai-warning.md` — Palisade Research 'frominside.ai' (Reuters 9/29 단독): OpenAI·DeepMind 현직/전직 연구자들의 자기개선 AI 경고. Irving·Nanda(멸망 확률 10%). 관련 스레드 검증: 'intelligence explosion' 백서(9/28, Hinton·Bengio·Pachocki·Horvitz·Jack Clark) ✅ 포함, 'Pacing the Frontier' 서한(7/28, 1,134~1,310명) ✅ 배경으로 포함, AI Evaluator Forum 요구 ❌ 제외 (cryptelio 단일 2차 출처)
+  - `2026-09-30-amd-world-labs-acquisition.md` — AMD, World Labs $8.2B 인수 (9/28 발표, 전액 주식, 연말 클로징): Fei-Fei Li가 EVP+chief scientist로 합류. physical AI 베팅, AMD 역대 2위 딜
+  - `2026-09-30-anthropic-glm-53-cyber-analysis.md` — Anthropic Frontier Red Team GLM-5.3 분석 (9/29 보고서): ExploitBench 50/410 (Mythos 56/410), 위장 64%→선채움 92%→abliteration 100% 붕괴 사다리. NIST CAISI: "가장 사이버 역량 높은 오픈웨이트"
+- **신규 3개** (status: draft): `concepts/self-improving-ai-risk.md` (frominside.ai + intelligence explosion 백서, confidence medium-high), `concepts/amd-world-labs-physical-ai.md` (AMD $8.2B 인수, confidence high), `concepts/white-house-ai-accord.md` (정식 명칭 + 9/30 후속 상세 — 10인 위원회·AI czar·외부 감사 합의, confidence medium-high)
+- **보강 3개**: `concepts/agent-supply-chain-security.md` (GLM-5.3 오픈웨이트 붕괴 사다리 + Sonnet 5.5 맥락 연결), `patterns/ai-cost-management.md` (Sol vs Sonnet 5.5 가격전 — Vellum 데이터, 작업당 $1.30 vs $9.30), `patterns/agent-safety-runtime.md` (파트너 100+ 상세 — OpenAI·Google·Amazon 불참)
+- `journal/2026-09-30.md` 신규. index 104→107, log·overview 갱신.
+- 영어 동기화: 신규 3개 + 업데이트 3개 en 미러 (새 섹션 + updated 필드 직접 읽기로 전수 검증), en/index·log·overview·campaign-map 갱신. 번역 공백 없음.
+
+## [2026-09-29] DevDay 키노트 후속 패스 | 4개 체크포인트 해소 + ko/en 동기화
+
+- DevDay 2026 키노트(Fort Mason, 10am PT, 20+ 발표) 리서치 후 아침의 4개 체크포인트 해소:
+  - (a) "O" 상시 에이전트 → **"Dots"** 로 확정 발표 (자체 클라우드 컴퓨터+브라우저, 4,000+ 앱 연결, ChatGPT/Slack/Teams 메시징, Pro·Business Premium·Enterprise 우선, 파워 모델 GPT-6 Astra). `concepts/persistent-agent.md` 승격: confidence low → medium.
+  - (b) "Spaces" 루머 → **"ChatGPT Space"** 로 확정 (팀원+Dot 협업 워크스페이스) + **"Pages"** (인간+에이전트 공동 문서) — 루머 등급→발표 등급.
+  - (c) Astra 대체 → 키노트에 6.1 Astra 없음 (철회 유지). **GPT-6.1 Sol** 발표 (Astra의 1/5: $2/$10, 캐시 $0.10, DeepSWE 1.1에서 Astra와 동점). Jain 예고 "requirements 충족 신모델"의 공식 지목은 없음 — 사실상 대체재로 관측 (confidence medium). `concepts/agent-supply-chain-security.md`에 타임라인 추가.
+  - (d) 백악관 회동 결과 → **"White House Accord on Superintelligence"** 서명 (자발적·"morally binding" 4대 약속: 내부 통제·전담팀·외부 독립 평가·이사회 독립 위원회). 서명 확인: 트럼프, Pichai·Amodei·Zuckerberg·Huang·Brockman·Musk. `journal/2026-09-29.md`에 섹션 추가.
+- 추가 확정: ChatGPT Pro Max $500/월 (Plus 대비 25배 + Ultrafast), **Ultrafast** 속도 티어 (Codex 8배·API 6배), Decisions API·Agents API 퍼블릭 베타·Codex Cloud·Codex Security Cloud — `patterns/ai-cost-management.md`에 2축(속도-비용) 라우팅으로 정리.
+- 미확인으로 남음: Aeon 연계설 (키노트 언급 없음), 'OpenAI 플랫폼' 단일 제품명.
+- 원본 2건 추가: `raw/articles/2026-09-29-openai-devday-2026-keynote-confirmed.md`, `raw/articles/2026-09-29-white-house-ai-accord-outcome.md`.
+- 영어 동기화: 변경된 4개 페이지 en 미러 (새 섹션 + updated 필드 직접 읽기로 전수 검증), en/index·log·overview 갱신.
 
 ## [2026-09-29] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + 한/영 위키 정제
 

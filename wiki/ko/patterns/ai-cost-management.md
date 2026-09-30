@@ -3,7 +3,7 @@ title: "AI 비용 관리"
 category: patterns
 tags: [cost, pricing, optimization, anthropic, claude, openai, model-routing, liner, routerarena, jev, mid-tier, subscription]
 created: 2026-04-09
-updated: 2026-09-29
+updated: 2026-09-30
 sources:
   - "raw/notes/2026-04-09-ai-cost-management.md"
   - "raw/articles/2026-05-01-anthropic-managed-agents-launch.md"
@@ -19,6 +19,7 @@ sources:
   - "raw/articles/2026-09-28-agoda-ai-developer-report.md"
   - "raw/articles/2026-09-29-anthropic-claude-sonnet-55-launch.md"
   - "raw/articles/2026-09-29-openai-chatgpt-pro-200-reopen.md"
+  - "raw/articles/2026-09-29-openai-devday-2026-keynote-confirmed.md"
 related:
   - "[[patterns/prompt-caching]]"
   - "[[patterns/subagents-delegation]]"
@@ -296,6 +297,8 @@ def route_model(task_complexity: str) -> str:
 | 2026-09-27 | 라우터 자체가 경쟁 영역 (KT) + 비생성 결정 엔진 (Jev) |
 | 2026-09-28 | **도입-준비도 간극의 정량화** — 비용 28%가 1위 블로커 |
 | 2026-09-29 | **중급 역전 + 구독의 API 달러화** — Sonnet 5.5가 Opus 5.5 상회, Pro $200은 API 달러 기준 |
+| 2026-09-29 오후 | **속도-비용 2축** — Ultrafast(속도의 상품화) + GPT-6.1 Sol(Astra급의 1/5) |
+| 2026-09-30 | **가격전의 공식화** — flagship급을 mid-tier 가격으로 (Sol vs Sonnet 5.5) |
 
 ### 1인 개발자 함의
 
@@ -316,6 +319,31 @@ def route_model(task_complexity: str) -> str:
 - DevDay 맞춰 신규 가입 재개 (9/10 동결 이후). 새 산정식 = 구 플랜 대비 **API 달러 기준 절반** 포함. 5시간 윈도우 부활 없음.
 - Sol/Luna 50% 인하가 구독에 그대로 통과 — 구독제의 과금 단위가 **시트→API 달러**로 이동 중.
 - 1인 개발자 관점: "Pro 한 자리"의 실질 용량이 API 가격과 연동되면, 모델 가격 인하 = 구독 가치 상승. 반대로 API 가격 인상의 리스크도 구독으로 전가됨.
+
+## 2026-09-29 오후 보강 — DevDay: 6.1 Sol + Pro Max $500 + Ultrafast
+
+### GPT-6.1 Sol (9/29 출시, 키노트)
+
+- GPT-6 Sol 출시 1주 만의 후속. Astra($10/$50) 대비 **1/5 가격: input $2/1M, output $10/1M, cached input $0.10/1M** (표준 대비 -95%, GPT-6 Sol 캐시 대비 -50%).
+- 벤치: DeepSWE 1.1에서 Astra와 **동점** (+6.4%p vs GPT-6 Sol), OSWorld 2.0 +7점 (Astra -2.1점, 비용은 1/7), GDP.pdf에서 Opus 5.5 상회 (작업당 절반 이하 비용), AutomationBench Opus 5.5 +2.2%p (비용 1/3). 저추론 factual error 11.4%→7.7%.
+- ChatGPT Work·Codex에서 전 플랜 즉시 이용 (Chat은 아직).
+- 패턴 [[patterns/mid-tier-performance-inversion]]의 정점: "더 싸지만 충분한가"가 아니라 "더 싸고 더 강한가"가 OpenAI의 공식 전략이 됐다.
+
+### Pro Max $500/월 + Ultrafast
+
+- 신규 Pro Max: **Plus 대비 25배 사용량**, Ultrafast 전체 접근. Pro $200(9/29 재오픈, API 달러 기준 절반)에 이은 상단 티어 — 구독이 **3층 구조**(Plus / Pro $200 / Pro Max $500)로.
+- Ultrafast: Codex 최대 8배, API 최대 6배 토큰 생성 속도.
+- 1인 개발자 관점: "속도"가 별도 상품이 됨 — 지연 민감 작업은 Ultrafast 프리미엄을, 배치성 작업은 6.1 Sol 저가를 쓰는 **속도-비용 2축 라우팅**이 새 디폴트.
+
+## 2026-09-30 보강 — 가격전의 공식화: Sol vs Sonnet 5.5
+
+Startup Fortune 분석 (9/30, Vellum AI 벤치마크 인용) — 양사가 동시에 flagship급을 중급 가격으로 내린 첫 사례.
+
+- **GPT-6.1 Sol**: 작업당 **$1.30** vs Astra $9.30. DeepSWE 1.1에서 Astra와 동점 (75% vs 74.8%), OSWorld 2.0은 2.1%p 차.
+- **Sonnet 5.5**: API 가격 동일($2/$10) 유지 + 30%+ 속도/비용 개선 (9/29) — Anthropic은 "가격 인하"가 아니라 "성능 역전"으로 같은 자리 차지.
+- 테제: "업계가 마침내 top-tier 가격의 지속 불가능성을 인정했다" — flagship 프라이싱의 붕괴가 양사 공식 전략이 됨.
+- [[patterns/mid-tier-performance-inversion]]의 완성형: 중급 역전이 일시적 이벤트가 아니라 **가격 구조의 새 평형**.
+- 1인 개발자 관점: "어떤 모델이 강한가"보다 "어떤 모델이 $1/태스크 이하로 강한가"가 라우팅의 1차 기준. 월 예산 상한을 정할 때 top-tier 가격표는 이제 참고용.
 
 ## ❌ 피해야 할 실수
 

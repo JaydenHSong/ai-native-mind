@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-09-29
+updated: 2026-09-30
 sources: []
 status: active
 ---
@@ -19,6 +19,29 @@ This page records only **what changed** by date. For concept explanations, see t
 - World-map hub: [[campaign-map|Campaign Map]]
 - Navigation guide: [[overview|Overview]]
 - Full catalog: [[index|Index]]
+
+## [2026-09-30] ingest | Daily AI news scrape — 3 raw sources + ko/en wiki refinement
+
+- **Raw collected** (raw/articles/, 3):
+  - `2026-09-30-palisade-frominside-self-improving-ai-warning.md` — Palisade Research 'frominside.ai' (Reuters exclusive 9/29): video testimonies from current/former OpenAI and DeepMind researchers warning about self-improving AI. Related threads verified: 'intelligence explosion' white paper (9/28, Hinton·Bengio·Pachocki·Horvitz·Jack Clark) ✅ included, 'Pacing the Frontier' letter (7/28, 1,134–1,310 signatories) ✅ as background, AI Evaluator Forum demand ❌ excluded (cryptelio second-hand single source)
+  - `2026-09-30-amd-world-labs-acquisition.md` — AMD acquires World Labs for $8.2B all-stock (announced 9/28, expected close end of year): Fei-Fei Li joins as EVP + chief scientist. Physical-AI bet, AMD's second-largest deal ever
+  - `2026-09-30-anthropic-glm-53-cyber-analysis.md` — Anthropic Frontier Red Team GLM-5.3 analysis (9/29 report): ExploitBench 50/410 (Mythos 56/410), cover-story 64% → pre-filling 92% → abliteration 100% collapse ladder. NIST CAISI: "most cyber-capable open-weight model to date"
+- **3 new pages** (status: draft): `concepts/self-improving-ai-risk.md` (frominside.ai + intelligence explosion paper, confidence medium-high), `concepts/amd-world-labs-physical-ai.md` (AMD $8.2B acquisition, confidence high), `concepts/white-house-ai-accord.md` (formal name + 9/30 follow-up — 10-person committee, AI czar, outside-audit pledge, confidence medium-high)
+- **3 reinforced**: `concepts/agent-supply-chain-security.md` (GLM-5.3 open-weight collapse ladder + Sonnet 5.5 context link), `patterns/ai-cost-management.md` (Sol vs Sonnet 5.5 price war — Vellum data, $1.30/task vs $9.30), `patterns/agent-safety-runtime.md` (100+ partner detail — OpenAI/Google/Amazon absent)
+- `journal/2026-09-30.md` added. Index 104→107, log/overview/campaign-map updated.
+- English sync: 3 new + 3 updated en mirrors (new sections + updated field verified by direct read), en/index·log·overview·campaign-map updated. No translation gaps.
+
+## [2026-09-29] DevDay keynote follow-up pass | 4 checkpoints resolved + ko/en wiki sync
+
+- **Researched** the OpenAI DevDay 2026 keynote (Fort Mason, 10am PT, 20+ announcements) and resolved the 4 morning checkpoints:
+  - (a) "O" persistent agent → confirmed as **"Dots"** (always-on agents: own cloud computer + browser, 4,000+ app connections, ChatGPT/Slack/Teams messaging; Pro/Business Premium/Enterprise at launch; powered by GPT-6 Astra). `concepts/persistent-agent.md` promoted: confidence low → medium.
+  - (b) "Spaces" rumor → confirmed as **"ChatGPT Space"** (shared workspace for teammates + Dot agents) with **"Pages"** (human+agent co-created documents) — rumor grade → announced.
+  - (c) Astra replacement → no GPT-6.1 Astra in the keynote lineup (pullback stands); **GPT-6.1 Sol** launched instead (one-fifth of Astra: $2/$10, $0.10 cached input; ties Astra on DeepSWE 1.1). Jain's promised "requirements-meeting new model" was never named — 6.1 Sol reads as the de-facto replacement (confidence medium). Timeline added to `concepts/agent-supply-chain-security.md`.
+  - (d) White House meeting outcome → **"White House Accord on Superintelligence"** signed: voluntary, "morally binding" 4-commitment pact (internal controls, dedicated monitoring team, independent external evaluation, independent board committee). Confirmed signatures: Trump, Pichai, Amodei, Zuckerberg, Huang, Brockman, Musk. Trump holds no-regulation self-policing; Amodei holds "very real risks." Recorded in `journal/2026-09-29.md`.
+- **Also confirmed**: ChatGPT Pro Max $500/mo (25× Plus allowance + full Ultrafast), **Ultrafast** speed tier (8× Codex, 6× API), Decisions API, Agents API public beta, Codex Cloud, Codex Security Cloud — recorded in `patterns/ai-cost-management.md` (two-axis speed-cost routing).
+- **Left unconfirmed**: Aeon linkage (no keynote mention); "OpenAI Platform" as a single product name.
+- **Raw added** (raw/articles/, 2): `2026-09-29-openai-devday-2026-keynote-confirmed.md`, `2026-09-29-white-house-ai-accord-outcome.md`.
+- **English sync**: wiki/en mirrors of the 4 touched pages under the same slugs (new sections translated, no new claims); en/index.md, en/log.md, this overview tidied. Each changed en page's new section + `updated` field verified by direct read.
 
 ## [2026-09-29] ingest | Daily AI news scrape — 6 raw sources + ko/en wiki refinement
 

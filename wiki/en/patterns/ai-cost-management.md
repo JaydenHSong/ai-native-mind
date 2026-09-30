@@ -3,7 +3,7 @@ title: "AI Cost Management"
 category: patterns
 tags: [cost, pricing, optimization, anthropic, claude, openai, model-routing, liner, routerarena, jev, mid-tier, subscription]
 created: 2026-04-09
-updated: 2026-09-29
+updated: 2026-09-30
 sources:
   - "raw/notes/2026-04-09-ai-cost-management.md"
   - "raw/articles/2026-05-01-anthropic-managed-agents-launch.md"
@@ -19,6 +19,7 @@ sources:
   - "raw/articles/2026-09-28-agoda-ai-developer-report.md"
   - "raw/articles/2026-09-29-anthropic-claude-sonnet-55-launch.md"
   - "raw/articles/2026-09-29-openai-chatgpt-pro-200-reopen.md"
+  - "raw/articles/2026-09-29-openai-devday-2026-keynote-confirmed.md"
 related:
   - "[[patterns/prompt-caching]]"
   - "[[patterns/subagents-delegation]]"
@@ -269,6 +270,7 @@ Following the 9/26 demand-side axis (cost visibility, the accessibility tax), th
 | 2026-09-27 | **The router itself as the competitive layer** (KT) + **non-generative decision engines** (Jev) |
 | 2026-09-28 | **Quantifying the adoption-readiness gap** — cost at 28% is the #1 blocker |
 | 2026-09-29 | **Mid-tier inversion + subscription billed in API dollars** — Sonnet 5.5 beats Opus 5.5; Pro $200 counts in API dollars |
+| 2026-09-29 afternoon | **Two-axis speed-cost** — Ultrafast (speed as a product) + GPT-6.1 Sol (Astra-class at one-fifth) |
 
 ### Solo-developer takeaways
 
@@ -289,6 +291,31 @@ Following the 9/26 demand-side axis (cost visibility, the accessibility tax), th
 - New signups reopened for the DevDay window (first since the 9/10 freeze). New formula = **half the old plan's usage, counted in API dollars**. No return of the 5-hour window.
 - The Sol/Luna 50% cuts pass straight through to subscriptions — the subscription's billing unit is moving from **seats to API dollars**.
 - Solo-dev view: when "one Pro seat's" effective capacity tracks the API price, model price cuts = subscription value up. But API price-hike risk passes through to subscriptions too.
+
+## 2026-09-29 Afternoon Update — DevDay: GPT-6.1 Sol + Pro Max $500 + Ultrafast
+
+### GPT-6.1 Sol (launched at the keynote)
+
+- One week after GPT-6 Sol. **One-fifth of Astra's price: $2/1M input, $10/1M output, $0.10/1M cached input** (−95% vs. standard, −50% vs. GPT-6 Sol's cached rate).
+- Benchmarks: **ties Astra on DeepSWE 1.1** (+6.4pp vs. GPT-6 Sol), +7 points on OSWorld 2.0 (2.1 behind Astra at one-seventh the cost), beats Opus 5.5 on GDP.pdf at less than half the task cost, +2.2pp over Opus 5.5 on AutomationBench at one-third the cost. Low-reasoning factual-error rate down from 11.4% to 7.7%.
+- Available immediately in ChatGPT Work and Codex on all plans (Chat not yet).
+- The peak of the [[patterns/mid-tier-performance-inversion]] pattern: "cheaper and stronger" is now OpenAI's stated strategy, not an anomaly.
+
+### Pro Max $500/mo + Ultrafast
+
+- New Pro Max tier: **25× the Plus allowance** with full Ultrafast access. Above the reopened Pro $200 (half-counted in API dollars) — subscriptions are now a **three-tier stack** (Plus / Pro $200 / Pro Max $500).
+- Ultrafast: up to 8× token generation in Codex, 6× via API.
+- Solo-dev view: **speed is now a separate product** — latency-sensitive work pays the Ultrafast premium, batchable work rides the cheap 6.1 Sol. Two-axis speed-cost routing becomes the new default.
+
+## 2026-09-30 Update — the price war formalized: Sol vs Sonnet 5.5
+
+Startup Fortune analysis (9/30, citing Vellum AI benchmarks) — the first case of both vendors pricing flagship-tier capability at mid-tier simultaneously.
+
+- **GPT-6.1 Sol**: **$1.30/task** vs Astra's $9.30. Ties Astra on DeepSWE 1.1 (75% vs 74.8%), trails by 2.1pp on OSWorld 2.0.
+- **Sonnet 5.5**: same API pricing ($2/$10) + 30%+ speed/cost improvement (9/29) — Anthropic occupies the same slot by "performance inversion" rather than a price cut.
+- The thesis: "the industry finally admits top-tier pricing is unsustainable" — the collapse of flagship pricing has become both vendors' stated strategy.
+- The completion of [[patterns/mid-tier-performance-inversion]]: mid-tier inversion is no longer a one-off event but the **new pricing equilibrium**.
+- Solo-dev view: routing's first criterion is now "which model is strong at $1/task or less," not "which model is strongest." Top-tier price sheets are reference material when setting a monthly budget cap.
 
 ---
 

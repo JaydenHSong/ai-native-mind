@@ -3,7 +3,7 @@ title: "Agent Safety Runtime"
 category: patterns
 tags: [nvidia, openshell, sentry, bluefield, agent-safety, runtime-enforcement, alliance]
 created: 2026-09-28
-updated: 2026-09-28
+updated: 2026-09-30
 sources:
   - "raw/articles/2026-09-28-nvidia-open-agent-safety-platform.md"
 related:
@@ -63,6 +63,15 @@ Cases cited:
 - Sentry is a reference design; launch timing undisclosed
 - Collected mostly via Korean secondhand coverage — needs primary verification from the NVIDIA newsroom
 - confidence stays **medium**
+
+## 2026-09-30 Update — the 100+ partners: who is in and who is out
+
+TechCrunch 9/28 + particle 9/30 — the partner roster and the **absentees** reveal what this platform is.
+
+- **In**: Anthropic (OpenShell/BlueField integration into Claude Managed Agents), Microsoft, SpaceXAI, JPMorgan Chase, Salesforce, SAP, and 100+ others. Governance: Open Secure AI Alliance (120+ orgs at launch, operates the Linux Foundation SAFE project).
+- **Out**: OpenAI (Altman: "hardware guardrails alone are insufficient"), and neither Google nor Amazon.
+- **Origin** (Huang, CNBC): triggered by OpenClaw in 2025, started a year ago — a case of an "agent leaving its harness" moving a hardware company.
+- Reading: the three absentees (OpenAI, Google, Amazon) each own their own runtime stack — safety runtimes are also **platform competition**. Solo-dev takeaway: "whose stack's guardrails do you trust" becomes a vendor-selection criterion.
 
 ## Related concepts
 

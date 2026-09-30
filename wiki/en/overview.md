@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-09-29
+updated: 2026-09-30
 sources: []
 status: active
 ---
@@ -29,10 +29,20 @@ This page is a **table of contents and learning map** for the wiki. The links be
 
 ## Current state
 
-- **Total pages**: 104
-- **Categories**: concepts(25), tools(12), patterns(28), journal(25), comparisons(10), meta(4)
+- **Total pages**: 107
+- **Categories**: concepts(28), tools(12), patterns(28), journal(26), comparisons(10), meta(4)
 - **Start date**: 2026-04-06
-- **Latest work (2026-09-29 daily ingest — the day boundaries moved)**:
+- **Latest work (2026-09-30 daily ingest — the institutionalization of warnings)**:
+  - Collected 3 AI news sources into `raw/articles/` (no overlap with yesterday's topics; the morning schedule only reached collection due to a Mac permission error — ingest ran manually, fifth consecutive day).
+  - Added 3 new wiki/ko pages (concepts/self-improving-ai-risk — frominside.ai + intelligence explosion paper; concepts/amd-world-labs-physical-ai — AMD's $8.2B acquisition; concepts/white-house-ai-accord — formal name + 9/30 follow-up details; all status: draft).
+  - Reinforced 3 wiki/ko pages (agent-supply-chain-security — GLM-5.3 open-weight collapse ladder; ai-cost-management — Sol vs Sonnet 5.5 price war; agent-safety-runtime — 100+ partner detail).
+  - Mirrored the same 3 new + 3 updated slugs under wiki/en/ with direct-read verification, and tidied up index/log/overview/campaign-map.
+  - Total pages 104→107.
+- **Previous work (2026-09-29 DevDay keynote follow-up — the four checkpoints resolved)**:
+  - Researched the DevDay 2026 keynote (Fort Mason, 10am PT, 20+ announcements): "O" → **"Dots"** confirmed (always-on agents, own cloud computer, Pro/Business/Enterprise at launch); "Spaces" → **"ChatGPT Space"** + **"Pages"** confirmed; no GPT-6.1 Astra in the lineup — **GPT-6.1 Sol** launched instead (one-fifth of Astra, $2/$10, $0.10 cached input); White House meeting → **"White House Accord on Superintelligence"** signed (voluntary, "morally binding", 4 commitments).
+  - Updated 4 ko pages (persistent-agent promoted low→medium, ai-cost-management +supply-chain-security + journal/2026-09-29) and mirrored them under wiki/en/ with direct-read verification.
+  - Total pages still 104 (no new pages in this pass).
+- **Previous work (2026-09-29 daily ingest — the day boundaries moved)**:
   - Collected 6 AI news sources into `raw/articles/` (no overlap with yesterday's topics; the morning schedule only reached collection due to a Mac permission error — ingest ran manually).
   - Created 2 new pages in wiki/ko (patterns/mid-tier-performance-inversion — status: draft, confidence: high; journal/2026-09-29).
   - Reinforced 5 existing ko pages (agent-supply-chain-security, agent-attribution, ai-cost-management, persistent-agent, multi-agent-dialect).

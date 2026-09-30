@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-09-29
+updated: 2026-09-30
 sources: []
 status: active
 ---
@@ -29,10 +29,21 @@ status: active
 
 ## 현재 상태
 
-- **총 페이지**: 104개
-- **카테고리**: concepts(25), tools(12), patterns(28), journal(25), comparisons(10), meta(4)
+- **총 페이지**: 107개
+- **카테고리**: concepts(28), tools(12), patterns(28), journal(26), comparisons(10), meta(4)
 - **시작일**: 2026-04-06
-- **최근 작업 (2026-09-29 데일리 ingest — 경계의 이동)**:
+- **최근 작업 (2026-09-30 데일리 ingest — 경고의 제도화)**:
+  - AI 뉴스 3건을 `raw/articles/`에 수집 (9/30 아침 스케줄은 Mac 권한 오류로 수집까지만 — 5일 연속, ingest는 수동 실행)
+  - wiki/ko에 신규 페이지 3개 생성 (concepts/self-improving-ai-risk — frominside.ai + intelligence explosion 백서, concepts/amd-world-labs-physical-ai — AMD $8.2B 인수, concepts/white-house-ai-accord — 정식 명칭 + 9/30 후속 상세; 모두 status: draft)
+  - wiki/ko 기존 페이지 3개 보강 (agent-supply-chain-security — GLM-5.3 오픈웨이트 붕괴 사다리, ai-cost-management — Sol vs Sonnet 5.5 가격전, agent-safety-runtime — 파트너 100+ 상세)
+  - wiki/en에 동일 slug 신규 3개 + 업데이트 3개 미러링, index·log·overview·campaign-map 정리
+  - 총 페이지 104→107개
+- **직전 작업 (2026-09-29 DevDay 키노트 후속 패스 — 4개 체크포인트 해소)**:
+  - DevDay 2026 키노트(Fort Mason, 10am PT, 20+ 발표) 리서치: "O" → **"Dots"** 확정 (자체 클라우드 컴퓨터+브라우저, 4,000+ 앱 연결, Pro·Business Premium·Enterprise 우선), "Spaces" → **"ChatGPT Space"** + **"Pages"** 확정, 6.1 Astra는 키노트 없음→**GPT-6.1 Sol** (Astra의 1/5, $2/$10), 백악관 회동 → **"White House Accord on Superintelligence"** 서명 (자발적·"morally binding", 서명: Pichai·Amodei·Zuckerberg·Huang·Brockman·Musk)
+  - `raw/articles/`에 원본 2건 추가, wiki/ko 기존 페이지 4개 보강 (persistent-agent low→medium 승격, ai-cost-management, agent-supply-chain-security, journal/2026-09-29)
+  - wiki/en에 동일 slug 4개 미러링 (새 섹션 + updated 필드 직접 읽기로 전수 검증), en/index·log·overview·ko log·overview 갱신
+  - 총 페이지 104개 유지 (이번 패스는 신규 페이지 없음)
+- **직전 작업 (2026-09-29 데일리 ingest — 경계의 이동)**:
   - AI 뉴스 6건을 `raw/articles/`에 수집 (어제 주제와 중복 없음; 9/29 아침 스케줄은 Mac 권한 오류로 수집까지만 — ingest는 수동 실행)
   - wiki/ko에 신규 페이지 2개 생성 (patterns/mid-tier-performance-inversion — status: draft, confidence: high, journal/2026-09-29)
   - wiki/ko 기존 페이지 5개 보강 (agent-supply-chain-security, agent-attribution, ai-cost-management, persistent-agent, multi-agent-dialect)

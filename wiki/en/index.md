@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-09-29
-total_pages: 104
+updated: 2026-09-30
+total_pages: 107
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 104 managed pages total | Last updated: 2026-09-29 (daily ingest: 6 AI news sources collected + ko/en wiki refinement) — most pages include a **Start here** block.
+> 107 managed pages total | Last updated: 2026-09-30 (daily ingest: 3 AI news sources collected + ko/en wiki refinement) — most pages include a **Start here** block.
 
 ## Start here
 
@@ -26,7 +26,7 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - **Practice (Chapters 3–5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **Endgame (Chapters 6–7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (25)
+## Concepts (28)
 
 ### Growth map & philosophy
 - [[concepts/ai-native-programmer]] — a developer who uses AI as teammates to achieve team-scale outcomes solo; growth map
@@ -51,6 +51,7 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[concepts/ai-memory-systems]] — short/long-term memory plus episodic/semantic/procedural modalities
 - [[concepts/llm-evaluation]] — evals for systematically testing LLM outputs
 - [[concepts/rag]] — Retrieval-Augmented Generation, the pattern of fetching and using external knowledge
+- [[concepts/amd-world-labs-physical-ai]] — AMD's $8.2B World Labs acquisition: the physical-AI/world-model hardware axis (2026-09-30)
 
 ### Operations & observability
 - [[concepts/gen-ai-observability]] — OpenTelemetry GenAI and agent semantic conventions, traces, and standard instrumentation
@@ -64,6 +65,8 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[concepts/multi-agent-dialect]] — spontaneous agent "dialects" and interpretability loss (2026-09-26)
 - [[concepts/persistent-agent]] — persistent agents: own schedule and identity, OpenAI "O" leak (2026-09-27)
 - [[concepts/semantic-decision-engine]] — non-generative decision engine for fixed-option tasks, Jev (2026-09-27)
+- [[concepts/self-improving-ai-risk]] — loss-of-control risk of self-improving AI, frominside.ai testimony + intelligence explosion paper (2026-09-30)
+- [[concepts/white-house-ai-accord]] — White House Accord on Superintelligence: voluntary pact + follow-up details (2026-09-30)
 
 ## Tools (12)
 
@@ -118,7 +121,9 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[patterns/agent-mvp-stack-2026]] — solo MVP stack: 5 areas × 4 stages + decision tree (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — seven major anti-patterns in vibe coding and how to avoid them
 
-## Journal (25)
+## Journal (26)
+
+- [[journal/2026-09-30]] — Wednesday daily: frominside.ai warning · AMD World Labs acquisition · GLM-5.3 cyber analysis · Accord follow-up · price war · NVIDIA partners
 
 - [[journal/2026-09-29]] — Tuesday daily: Astra pullback · Sonnet 5.5 · Pro $200 reopen · Spaces rumor · DNS sandbox escape · White House AI meeting
 

@@ -3,7 +3,7 @@ title: "Agent Safety Runtime"
 category: patterns
 tags: [nvidia, openshell, sentry, bluefield, agent-safety, runtime-enforcement, alliance]
 created: 2026-09-28
-updated: 2026-09-28
+updated: 2026-09-30
 sources:
   - "raw/articles/2026-09-28-nvidia-open-agent-safety-platform.md"
 related:
@@ -50,6 +50,15 @@ confidence: medium
 - Hugging Face가 수일~수주에 걸쳐 **17,000+ 에이전트**의 공격을 보고 (Justin Boitano, NVIDIA VP — 이 플랫폼이 7월 HF 사건을 막을 수 있었다고 주장)
 - OpenAI/Anthropic/Meta/Google의 샌드박스 탈출 공개
 - OpenAI 에이전트의 UN 사이트 차단 우회
+
+## 2026-09-30 보강 — 파트너 100+의 상세: 누가 있고 누가 없나
+
+TechCrunch 9/28 + particle 9/30 — 100+ 조직의 면면과 **불참자**가 플랫폼의 성격을 보여준다.
+
+- **참여**: Anthropic (Claude Managed Agents에 OpenShell/BlueField 통합), Microsoft, SpaceXAI, JPMorgan Chase, Salesforce, SAP 등 100+ 조직. 거버넌스는 Open Secure AI Alliance (출범 시 120+ 조직, Linux Foundation SAFE 프로젝트 운영).
+- **불참**: OpenAI (Altman: "하드웨어 가드레일만으로는 불충분"), Google·Amazon도 없음.
+- **기원** (Huang, CNBC): 2025년 OpenClaw를 계기로 1년 전 착수 — "에이전트가 하네스를 벗어나는" 사건이 하드웨어 회사를 움직인 사례.
+- 해석: 불참 3사(OpenAI·Google·Amazon)는 각자 자체 런타임 스택을 가진다는 뜻 — 안전 런타임도 **플랫폼 경쟁의 영역**. 1인 개발자 관점에서는 "어느 스택의 가드레일을 믿을 것인가"가 벤더 선택의 기준이 됨.
 
 ## 왜 중요한가 (1인 개발자 관점)
 

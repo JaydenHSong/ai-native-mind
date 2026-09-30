@@ -1,18 +1,19 @@
 ---
 title: "Persistent Agent"
 category: concepts
-tags: [agent, persistent-agent, openai, devday, proactive-agent, spaces, workspace]
+tags: [agent, persistent-agent, openai, devday, proactive-agent, dots, chatgpt-space, workspace]
 created: 2026-09-27
 updated: 2026-09-29
 sources:
   - "raw/articles/2026-09-27-openai-persistent-agent-o.md"
   - "raw/articles/2026-09-28-openai-devday-o-leak-update.md"
   - "raw/articles/2026-09-29-openai-spaces-workspace-rumor.md"
+  - "raw/articles/2026-09-29-openai-devday-2026-keynote-confirmed.md"
 related:
   - "[[concepts/agent-supply-chain-security]]"
   - "[[concepts/agent-attribution]]"
 status: draft
-confidence: low
+confidence: medium
 ---
 
 # Persistent Agent
@@ -65,6 +66,16 @@ One day before DevDay (9/29), more leaks — the silhouette is sharper, but pric
 - Product name, timeline, and pricing all unconfirmed — rumor grade; confidence stays **low**.
 - "O" (the resident agent) and "Spaces" (the resident agent's home) are the same thread: the **identity (O)** and the **workspace (Spaces)** of the agent that left the chat window are arriving as a pair.
 - **If confirmed at today's (9/29) 10am PT DevDay keynote**, promote this page — check "O" confirmation/denial, Spaces disclosure, and any Astra-replacement announcement together.
+
+## 2026-09-29 Update — DevDay keynote: "O" confirmed as Dots
+
+The "O" rumor was confirmed at the keynote as **"Dots"** (Fort Mason, 9/29 10am PT). The promote-or-retire decision is **promote**.
+
+- **Spec**: each Dot gets its own cloud computer and browser, works toward a goal in the background, then checks back in. 4,000+ app connections, learns from feedback. Users message their Dots inside ChatGPT, Slack, and Teams (texting coming soon). Powered by GPT-6 Astra.
+- **Availability**: at launch, ChatGPT Pro, Business Premium, and Enterprise — price segmentation against Meta's free Muse.
+- **The "Spaces" rumor is also confirmed** — the real name is **"ChatGPT Space"**: a shared workspace where teammates and Dot agents work together. **"Pages"** (co-created human+agent documents — images, writing, charts, visualizations) launched alongside. The identity (O) + workspace (Spaces) pair materialized exactly as paired.
+- **Competition settled into a bracket**: OpenAI Dots vs Meta Muse vs Anthropic Conway / Claude Managed Agents vs xAI Grok Bot vs Google Gemini Spark — always-on agents as the platform battleground.
+- Confidence **low → medium** (multiple on-site reports; the official recap cited via third parties — upgrade to high once the primary recap is confirmed).
 
 ## Sources
 
