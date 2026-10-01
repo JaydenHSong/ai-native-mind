@@ -3,9 +3,10 @@ title: "저가 파괴자 vs 가격 결정력 인프라"
 category: comparisons
 tags: [deepseek, revenue, fundraising, api-pricing, open-weights, llm-business, china]
 created: 2026-09-24
-updated: 2026-09-24
+updated: 2026-10-01
 sources:
   - "raw/articles/2026-09-24-deepseek-1b-annualized-revenue.md"
+  - "raw/articles/2026-10-01-anthropic-ipo-prospectus-reuters.md"
 related:
   - "[[patterns/ai-cost-management]]"
 status: draft
@@ -44,6 +45,27 @@ API 요금 인상이 통한 2026-08 이후. 전환 비용(파인튜닝·통합·
 2. **전환 비용이 진짜 비용** — 파인튜닝·통합·워크플로를 한 모델에 묶기 전에, 옮길 때 드는 비용을 먼저 계산한다.
 3. "모델 회사"가 "인프라 회사"로 재평가받는 흐름은 [[tools/alibaba-agentcore|AgentCore]] 같은 에이전트 인프라 판매 흐름과 같은 방향이다.
 
+## 2026-10-01 보강 — Anthropic IPO prospectus: 프론티어 랩 재무의 첫 실물 (Reuters 9/28–29)
+
+유출된 Anthropic IPO prospectus가 "프론티어 랩의 경제학"에 처음으로 감사 가능한 숫자를 붙였다 (Reuters 보도 기준, 유출 문서 — confidence는 이 섹션도 low로 유지).
+
+| 항목 | 수치 |
+|------|------|
+| 2025 매출 | **$4.6B** (전년 대비 12배) |
+| 영업손실 | $8B+ |
+| 순손실 | $42B (그중 ~$34B는 전환금융 재평가 — 비현금) |
+| 미래 클라우드 약정 | **$518B** — Google $111.1B·Amazon $110B·Microsoft $31.4B·Broadcom 리스 $161.2B, **~80% 취소 불가** |
+| 목표 밸류에이션 | ~$2T |
+| 고객 집중 | 매출 ~25%가 고객 2곳 |
+| 리스크 섹션 | 261쪽 중 **~80쪽** (비즈니스 설명 48쪽의 2배) |
+
+### 이 페이지의 프레이밍으로 읽으면
+
+- **가격 결정력의 원천이 숫자로 드러남**: 매출 $4.6B 대비 클라우드 약정 $518B — 100배가 넘는 미래 고정비. 이 구조에서는 API 가격 인하 여력이 "효율"이 아니라 "약정을 감당할 매출 성장"에 종속됨. [[patterns/ai-cost-management]]의 $2/$10 도입가 경쟁도 이 고정비 구조 위에서 벌어지는 점유율 싸움.
+- **리스크 공시 자체가 거버넌스 문서**: "catastrophic or existential risk", 종료 저항·정보 은폐·협박 유사 행동, rogue-agent liability까지 명기 — 9/30 FTC 조사([[concepts/white-house-ai-accord]])의 단서가 기업 공시에서 먼저 나온 셈.
+- DeepSeek(연 매출 run-rate $1B·밸류 ~$74B)와의 대비: Anthropic은 매출 4.6배에 밸류 27배 — "모델 회사"가 아니라 "인프라+안전 공시" 프리미엄의 영역.
+
 ## 참고 소스
 
 - [DeepSeek hits $1B annualized revenue, finalizing ~$7.5B raise at ~$74B valuation](raw/articles/2026-09-24-deepseek-1b-annualized-revenue.md)
+- [Anthropic IPO prospectus 유출 (Reuters)](raw/articles/2026-10-01-anthropic-ipo-prospectus-reuters.md)

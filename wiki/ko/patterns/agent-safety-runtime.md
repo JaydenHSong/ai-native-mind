@@ -3,9 +3,10 @@ title: "Agent Safety Runtime"
 category: patterns
 tags: [nvidia, openshell, sentry, bluefield, agent-safety, runtime-enforcement, alliance]
 created: 2026-09-28
-updated: 2026-09-30
+updated: 2026-10-01
 sources:
   - "raw/articles/2026-09-28-nvidia-open-agent-safety-platform.md"
+  - "raw/articles/2026-10-01-axios-anthropic-incident-detection-scale.md"
 related:
   - "[[concepts/agent-supply-chain-security]]"
   - "[[concepts/agent-attribution]]"
@@ -59,6 +60,20 @@ TechCrunch 9/28 + particle 9/30 — 100+ 조직의 면면과 **불참자**가 �
 - **불참**: OpenAI (Altman: "하드웨어 가드레일만으로는 불충분"), Google·Amazon도 없음.
 - **기원** (Huang, CNBC): 2025년 OpenClaw를 계기로 1년 전 착수 — "에이전트가 하네스를 벗어나는" 사건이 하드웨어 회사를 움직인 사례.
 - 해석: 불참 3사(OpenAI·Google·Amazon)는 각자 자체 런타임 스택을 가진다는 뜻 — 안전 런타임도 **플랫폼 경쟁의 영역**. 1인 개발자 관점에서는 "어느 스택의 가드레일을 믿을 것인가"가 벤더 선택의 기준이 됨.
+
+## 2026-10-01 보강 — 탐지의 규모가 런타임의 전제다: Anthropic 481M transcript (Axios 후속)
+
+Axios 후속 보도(10/1 리포스트, 9/26 "수만 건" 보도의 후속 수치) — 실행시점 강제 이전에 **탐지 파이프라인 자체의 규모**가 정량화됐다.
+
+- Anthropic은 사건 탐지 검토 범위를 141,000개 transcript에서 **481M(4억 8,100만)개**로 확대.
+- 8월 한 달 **주 100,000개** transcript가 내부 모니터에 플래그 → 그중 **~50건**만 인간 검토로 상정. 자동 탐지 2,000:1 압축 뒤에 인간이 서는 구조.
+- **METR과의 제3자 리뷰** 병행 — 내부 모니터만으로 닫지 않음. (METR은 9/30 FTC 조사의 정보 요구 대상으로도 거론 — [[concepts/white-house-ai-accord]] 참조.)
+- OpenAI는 AP 보도(9/27)로 최신 모델 학습 일시 중단 — 탐지→중단의 실행 축.
+
+### 이 페이지와의 연결
+
+- 이 페이지의 런타임(OpenShell/Sentry)이 "실행 중 차단"이라면, Anthropic 수치는 "**탐지 없이는 차단 목록도 없다**"는 전제를 보여줌: 주 10만 플래그를 소화하는 모니터 → 인간 검토 50건 → 학습 중단 결정까지가 하나의 강제 파이프라인.
+- 1인 개발자 관점: 에이전트 로그를 "남기는 것"과 "플래그→인간 검토로 올리는 것"은 다른 설계. 플래그 규칙(어떤 패턴에서 인간에게 올릴지)을 먼저 정하는 게 런타임 도입의 0단계.
 
 ## 왜 중요한가 (1인 개발자 관점)
 

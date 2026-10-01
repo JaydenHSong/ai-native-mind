@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-09-30
+updated: 2026-10-01
 sources: []
 status: active
 ---
@@ -19,6 +19,20 @@ This page records only **what changed** by date. For concept explanations, see t
 - World-map hub: [[campaign-map|Campaign Map]]
 - Navigation guide: [[overview|Overview]]
 - Full catalog: [[index|Index]]
+
+## [2026-10-01] ingest | Daily AI news scrape — 6 raw sources (4 new + 2 reinforcements) + ko/en wiki refinement
+
+- **Raw collected** (raw/articles/, 6):
+  - `2026-10-01-google-gemini-4-argon-launch.md` — Google Gemini 4 Argon announced (9/30, Reuters/VentureBeat): self-reported DeepSWE 77.9% vs AA index 53, 15% hallucination rate, 1M output, intro $2/$10 → $4/$20 planned, Fairwind gated release
+  - `2026-10-01-ftc-probe-openai-anthropic.md` — FTC opens probe into OpenAI, Anthropic, and other AI labs (spokesperson confirmed 9/30): FTC Act Section 5; CIDs and testimony at the "planned" stage; METR also an information-demand target
+  - `2026-10-01-transluce-agent-gov-site-probing.md` — Transluce disclosure (9/30): 10,000+ dsqa_250 requests to the US Dept. of Education, 13 attack payloads against Canada's LAC. Attribution to OpenAI unconfirmed
+  - `2026-10-01-robinhood-agents-launch.md` — Robinhood Agents officially launched (9/29 Summit): dedicated accounts + trade approval ON by default. Adoption figures conflict: PYMNTS 15,000+ vs savingtoinvest 150,000+
+  - `2026-10-01-anthropic-ipo-prospectus-reuters.md` (reserve R1): Anthropic IPO prospectus (Reuters 9/28–29) — $4.6B revenue, $518B cloud commitments, ~80 pages of risks. Confirmed absent from the 9/29–30 ingests, then reinforced
+  - `2026-10-01-axios-anthropic-incident-detection-scale.md` (reserve R2): Axios follow-up — detection scope 481M transcripts, 100k flags/week → ~50 human reviews, METR third-party review. Confirmed absent, then reinforced
+- **2 new pages** (status: draft): `concepts/gemini-4-argon.md` (frontier release + gated access, self-vs-independent gap explicit, confidence high), `patterns/agentic-finance.md` (Robinhood Agents in production, safety design + conflicting figures kept side by side, confidence high)
+- **5 reinforced**: `concepts/white-house-ai-accord.md` (FTC section — Accord voluntary vs FTC compulsory contrast table, CIDs marked as planned, agent-safety-runtime cross-reference), `concepts/agent-supply-chain-security.md` (Transluce timeline, attribution unconfirmed), `patterns/ai-cost-management.md` (Argon $2/$10 intro pricing — 10/1 row added to the axis table), `patterns/agent-safety-runtime.md` (R2 detection scale), `comparisons/frontier-lab-economics.md` (R1 Anthropic IPO figures)
+- `journal/2026-10-01.md` added. Index 107→109, log/overview updated.
+- English sync: 2 new + 5 updated en mirrors (new sections + updated field verified by direct read), en/index·log·overview·campaign-map updated. No translation gaps.
 
 ## [2026-09-30] ingest | Daily AI news scrape — 3 raw sources + ko/en wiki refinement
 

@@ -3,7 +3,7 @@ title: "AI 비용 관리"
 category: patterns
 tags: [cost, pricing, optimization, anthropic, claude, openai, model-routing, liner, routerarena, jev, mid-tier, subscription]
 created: 2026-04-09
-updated: 2026-09-30
+updated: 2026-10-01
 sources:
   - "raw/notes/2026-04-09-ai-cost-management.md"
   - "raw/articles/2026-05-01-anthropic-managed-agents-launch.md"
@@ -20,6 +20,7 @@ sources:
   - "raw/articles/2026-09-29-anthropic-claude-sonnet-55-launch.md"
   - "raw/articles/2026-09-29-openai-chatgpt-pro-200-reopen.md"
   - "raw/articles/2026-09-29-openai-devday-2026-keynote-confirmed.md"
+  - "raw/articles/2026-10-01-google-gemini-4-argon-launch.md"
 related:
   - "[[patterns/prompt-caching]]"
   - "[[patterns/subagents-delegation]]"
@@ -299,6 +300,7 @@ def route_model(task_complexity: str) -> str:
 | 2026-09-29 | **중급 역전 + 구독의 API 달러화** — Sonnet 5.5가 Opus 5.5 상회, Pro $200은 API 달러 기준 |
 | 2026-09-29 오후 | **속도-비용 2축** — Ultrafast(속도의 상품화) + GPT-6.1 Sol(Astra급의 1/5) |
 | 2026-09-30 | **가격전의 공식화** — flagship급을 mid-tier 가격으로 (Sol vs Sonnet 5.5) |
+| 2026-10-01 | **$2/$10 도입가의 표준화** — Gemini 4 Argon까지 같은 입문 가격 (단, $4/$20 인상 예고) |
 
 ### 1인 개발자 함의
 
@@ -344,6 +346,14 @@ Startup Fortune 분석 (9/30, Vellum AI 벤치마크 인용) — 양사가 동�
 - 테제: "업계가 마침내 top-tier 가격의 지속 불가능성을 인정했다" — flagship 프라이싱의 붕괴가 양사 공식 전략이 됨.
 - [[patterns/mid-tier-performance-inversion]]의 완성형: 중급 역전이 일시적 이벤트가 아니라 **가격 구조의 새 평형**.
 - 1인 개발자 관점: "어떤 모델이 강한가"보다 "어떤 모델이 $1/태스크 이하로 강한가"가 라우팅의 1차 기준. 월 예산 상한을 정할 때 top-tier 가격표는 이제 참고용.
+
+## 2026-10-01 보강 — $2/$10이 "도입가"로 굳어진다: Gemini 4 Argon
+
+Google의 Gemini 4 Argon(9/30)이 **$2/$10 per 1M** 도입가로 합류 — GPT-6.1 Sol·Sonnet 5.5에 이어 세 번째. 세 랩 모두 같은 입문 가격표를 쓰기 시작했다.
+
+- **단, Argon은 인상 예고형**: 도입 기간 후 **$4/$20** (Opus 5.5와 동률)으로 인상 예정, 기간은 미공개. cached input 95% 할인.
+- 패턴의 변형: Sol/Sonnet이 "가격 인하/동결"이었다면 Argon은 "**미끼 가격 후 정상가 복귀**" — 도입가는 이제 영구 가격이 아니라 **프로모션 가격**으로 읽어야 함.
+- 1인 개발자 관점: 라우팅 규칙과 예산 상한을 도입가 기준으로 고정하지 말 것. 인상 후 가격($4/$20) 기준으로도 감당 가능한 구조인지 먼저 검증. 상세는 [[concepts/gemini-4-argon]].
 
 ## ❌ 피해야 할 실수
 

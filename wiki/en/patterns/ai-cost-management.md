@@ -3,7 +3,7 @@ title: "AI Cost Management"
 category: patterns
 tags: [cost, pricing, optimization, anthropic, claude, openai, model-routing, liner, routerarena, jev, mid-tier, subscription]
 created: 2026-04-09
-updated: 2026-09-30
+updated: 2026-10-01
 sources:
   - "raw/notes/2026-04-09-ai-cost-management.md"
   - "raw/articles/2026-05-01-anthropic-managed-agents-launch.md"
@@ -20,6 +20,7 @@ sources:
   - "raw/articles/2026-09-29-anthropic-claude-sonnet-55-launch.md"
   - "raw/articles/2026-09-29-openai-chatgpt-pro-200-reopen.md"
   - "raw/articles/2026-09-29-openai-devday-2026-keynote-confirmed.md"
+  - "raw/articles/2026-10-01-google-gemini-4-argon-launch.md"
 related:
   - "[[patterns/prompt-caching]]"
   - "[[patterns/subagents-delegation]]"
@@ -271,6 +272,8 @@ Following the 9/26 demand-side axis (cost visibility, the accessibility tax), th
 | 2026-09-28 | **Quantifying the adoption-readiness gap** — cost at 28% is the #1 blocker |
 | 2026-09-29 | **Mid-tier inversion + subscription billed in API dollars** — Sonnet 5.5 beats Opus 5.5; Pro $200 counts in API dollars |
 | 2026-09-29 afternoon | **Two-axis speed-cost** — Ultrafast (speed as a product) + GPT-6.1 Sol (Astra-class at one-fifth) |
+| 2026-09-30 | **The price war formalized** — flagship-tier at mid-tier prices (Sol vs Sonnet 5.5) |
+| 2026-10-01 | **The $2/$10 intro price standardized** — Gemini 4 Argon joins at the same entry price (with a $4/$20 hike announced) |
 
 ### Solo-developer takeaways
 
@@ -316,6 +319,14 @@ Startup Fortune analysis (9/30, citing Vellum AI benchmarks) — the first case 
 - The thesis: "the industry finally admits top-tier pricing is unsustainable" — the collapse of flagship pricing has become both vendors' stated strategy.
 - The completion of [[patterns/mid-tier-performance-inversion]]: mid-tier inversion is no longer a one-off event but the **new pricing equilibrium**.
 - Solo-dev view: routing's first criterion is now "which model is strong at $1/task or less," not "which model is strongest." Top-tier price sheets are reference material when setting a monthly budget cap.
+
+## 2026-10-01 Update — $2/$10 hardens into "the intro price": Gemini 4 Argon
+
+Google's Gemini 4 Argon (9/30) joins at an intro price of **$2/$10 per 1M** — the third after GPT-6.1 Sol and Sonnet 5.5. All three labs now open with the same entry price sheet.
+
+- **But Argon is the hike-announced variant**: after the intro window it rises to **$4/$20** (level with Opus 5.5); the window is undisclosed. Cached input is 95% off.
+- The pattern mutates: where Sol/Sonnet were "price cuts / holds," Argon is "**teaser price, then back to list**" — intro prices must now be read as **promotional prices**, not permanent ones.
+- Solo-dev view: never hard-code routing rules or budget caps to an intro price. First verify the structure still works at the post-hike price ($4/$20). Details in [[concepts/gemini-4-argon]].
 
 ---
 

@@ -3,9 +3,10 @@ title: "Agent Safety Runtime"
 category: patterns
 tags: [nvidia, openshell, sentry, bluefield, agent-safety, runtime-enforcement, alliance]
 created: 2026-09-28
-updated: 2026-09-30
+updated: 2026-10-01
 sources:
   - "raw/articles/2026-09-28-nvidia-open-agent-safety-platform.md"
+  - "raw/articles/2026-10-01-axios-anthropic-incident-detection-scale.md"
 related:
   - "[[concepts/agent-supply-chain-security]]"
   - "[[concepts/agent-attribution]]"
@@ -73,6 +74,20 @@ TechCrunch 9/28 + particle 9/30 — the partner roster and the **absentees** rev
 - **Origin** (Huang, CNBC): triggered by OpenClaw in 2025, started a year ago — a case of an "agent leaving its harness" moving a hardware company.
 - Reading: the three absentees (OpenAI, Google, Amazon) each own their own runtime stack — safety runtimes are also **platform competition**. Solo-dev takeaway: "whose stack's guardrails do you trust" becomes a vendor-selection criterion.
 
+## 2026-10-01 Update — detection scale is the runtime's precondition: Anthropic's 481M transcripts (Axios follow-up)
+
+An Axios follow-up (reposted 10/1, following its 9/26 "tens of thousands" story) quantifies **the detection pipeline itself**, upstream of any runtime enforcement.
+
+- Anthropic expanded its incident-detection review scope from 141,000 transcripts to **481 million**.
+- In August, **100,000 transcripts per week** were flagged by internal monitors → only **~50** escalated to human review. A 2,000:1 automated compression with a human standing behind it.
+- A **third-party review with METR** runs alongside — not closed within the internal monitor. (METR is also named as an information-demand target in the FTC's 9/30 probe — see [[concepts/white-house-ai-accord]].)
+- OpenAI paused training of its latest model (AP, 9/27) — the detection→halt execution axis.
+
+### Connection to this page
+
+- If this page's runtime (OpenShell/Sentry) is "mid-execution blocking," Anthropic's figures show the precondition: **without detection there is no block list** — a monitor absorbing 100k flags a week → ~50 human reviews → a training-halt decision forms a single enforcement pipeline.
+- Solo-dev takeaway: "logging agent activity" and "escalating flags to a human" are different designs. Defining the flag rules (which patterns reach a human) is step zero of adopting a runtime.
+
 ## Related concepts
 
 - [[concepts/agent-supply-chain-security]] — the trust-tier model; this page's runtime is its enforcement means
@@ -83,3 +98,4 @@ TechCrunch 9/28 + particle 9/30 — the partner roster and the **absentees** rev
 ## Sources
 
 - [NVIDIA Open Agent Safety Platform: OpenShell + Sentry on BlueField-4](raw/articles/2026-09-28-nvidia-open-agent-safety-platform.md)
+- [Anthropic incident-detection scale (Axios follow-up)](raw/articles/2026-10-01-axios-anthropic-incident-detection-scale.md)

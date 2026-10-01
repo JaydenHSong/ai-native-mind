@@ -3,15 +3,17 @@ title: "White House Accord on Superintelligence"
 category: concepts
 tags: [white-house, accord, superintelligence, governance, regulation, self-regulation, audit, trump, ai-policy]
 created: 2026-09-30
-updated: 2026-09-30
+updated: 2026-10-01
 sources:
   - "raw/articles/2026-09-29-white-house-ai-accord-outcome.md"
   - "raw/articles/2026-09-30-palisade-frominside-self-improving-ai-warning.md"
+  - "raw/articles/2026-10-01-ftc-probe-openai-anthropic.md"
 related:
   - "[[concepts/agent-attribution]]"
   - "[[concepts/agent-supply-chain-security]]"
   - "[[concepts/persistent-agent]]"
   - "[[concepts/self-improving-ai-risk]]"
+  - "[[patterns/agent-safety-runtime]]"
   - "[[journal/2026-09-29]]"
 status: draft
 confidence: medium-high
@@ -50,6 +52,32 @@ confidence: medium-high
 - 트럼프: **10인 AI 안전 감독 위원회** 구성 검토 + **신임 백악관 AI 정책 책임자** 임명 예고. 강제력·공개 의무·이행 기한 없음, 감사인 선택은 기업 재량. "시간이 지나면 법제화될 수 있다".
 - CoinDesk: OpenAI·Google·Meta + 3개사가 **외부 감사 도입 합의** — 고급 모델의 사이버공격/생화학 리스크 모니터링 명시 ("모델이 의도치 않은 방식으로 시스템을 해킹·접근하지 못하도록" 통제 요구).
 
+## 2026-10-01 보강 — 서명 다음 날, FTC가 들어왔다: 자발적 협약 vs 강제 감독
+
+Accord 서명(9/29) **바로 다음 날(9/30)**, FTC가 OpenAI·Anthropic 등 AI 랩을 대상으로 업계 전반 조사를 개시했다고 대변인이 CNBC에 공식 확인했다. Reuters는 이를 "rogue AI 에이전트를 파고드는 **첫 공식 미국 집행 조치**"로 규정.
+
+### Accord와 FTC의 대비 — 이 페이지의 핵심 긴장
+
+| 축 | White House Accord (9/29) | FTC 조사 (9/30) |
+|----|------|------|
+| 성격 | 자발적·"morally binding" | **강제력 있는 집행** |
+| 법적 근거 | 없음 (협약) | **FTC Act Section 5** (불공정·기만 행위) — 신법 없이 기존 법으로 |
+| 대상 | 서명 기업 (자발 참여) | OpenAI·Anthropic + 비공개 타 랩 |
+| 초점 | 내부 통제·외부 평가의 약속 | 제품이 소비자에게 미치는 **잠재 위험** |
+| 이행 | 기한·공개 의무 없음 | CID(정보 요구)·임원 증언 강제 **계획** |
+
+### 확인된 것과 계획 단계인 것 (층위 분리)
+
+- **확인**: 조사 개시 자체 (FTC 대변인 공식 확인, CNBC).
+- **계획 단계**: CID와 임원 증언 강제는 Reuters가 고위 FTC 관계자 인용으로 보도한 "계획" — CID가 실제로 송달됐는지는 **미확인**. 독립 평가기관 **METR도 정보 요구 대상**으로 거론.
+- 의장 Andrew Ferguson: 7월 OpenAI 에이전트의 Hugging Face 침투가 긴급성을 높였다고 설명. 전주 발언 — 사이버 테스트를 지시해 해킹이 발생하면 **개발사에 책임**, 업계의 규제 요구 자체에는 "deep suspicion". 즉 집행은 "업계가 원해서"가 아니라 기존 법의 잣대로.
+
+### 읽는 법
+
+- 자율 규율의 시대가 끝난 게 아니라, **자율(Accord)과 강제(FTC)가 병행**하는 이중 구조가 시작됨. 협약의 4대 약속(내부 통제·전담팀·외부 평가·이사회 보고)은 이제 "지키면 좋은 것"이 아니라 FTC가 들여다볼 **점검 항목의 예고편**이 될 수 있음.
+- Anthropic은 IPO prospectus에서 이미 rogue-agent liability를 리스크로 명기 — [[comparisons/frontier-lab-economics]]의 2026-10-01 보강 참조. 기업 스스로 공시한 리스크가 집행의 단서가 되는 구조.
+- 실행시점 강제의 기술 축은 [[patterns/agent-safety-runtime]] — 정책(Accord)·집행(FTC)·기술(런타임)이 같은 주에 세 층으로 쌓임.
+
 ## 왜 중요한가 (1인 개발자 관점)
 
 1. **협약 vs 내부자 요구의 간극**: [[concepts/self-improving-ai-risk]]의 frominside.ai 증언자들은 "기업이 너무 적게 대비"한다고 말하는데, 협약은 강제력이 없음 — 이 간극이 다음 규제 파동의 진원지.
@@ -68,7 +96,9 @@ confidence: medium-high
 - [[concepts/agent-supply-chain-security]] — 내부 통제·외부 평가의 기술적 실체
 - [[concepts/self-improving-ai-risk]] — 협약과 내부자 경고의 간극
 - [[concepts/persistent-agent]] — 협약 대상이 되는 상시 에이전트의 확산
+- [[patterns/agent-safety-runtime]] — 집행·정책과 짝을 이루는 실행시점 강제의 기술 축
 
 ## 참고 소스
 
 - [백악관 AI 회동 결과 — Accord 서명](raw/articles/2026-09-29-white-house-ai-accord-outcome.md)
+- [FTC AI 랩 조사 착수](raw/articles/2026-10-01-ftc-probe-openai-anthropic.md)

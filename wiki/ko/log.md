@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-09-30
+updated: 2026-10-01
 sources: []
 status: active
 ---
@@ -19,6 +19,20 @@ status: active
 - 월드맵 허브: [[campaign-map|Campaign Map]]
 - 진행 가이드: [[overview|Overview]]
 - 전체 도감: [[index|Index]]
+
+## [2026-10-01] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 (신규 4 + 보강 2) + 한/영 위키 정제
+
+- **Raw collected** (raw/articles/, 6건):
+  - `2026-10-01-google-gemini-4-argon-launch.md` — Google Gemini 4 Argon 발표 (9/30, Reuters/VentureBeat): DeepSWE 77.9% 자체 발표 vs AA 지수 53, 환각률 15%, 출력 1M, 도입가 $2/$10→$4/$20 예정, Fairwind gated release
+  - `2026-10-01-ftc-probe-openai-anthropic.md` — FTC, OpenAI·Anthropic 등 AI 랩 조사 개시 (9/30 대변인 공식 확인): FTC Act Section 5, CID·증언은 "계획" 단계, METR도 정보 요구 대상
+  - `2026-10-01-transluce-agent-gov-site-probing.md` — Transluce 공개 (9/30): 미 교육부 dsqa_250 요청 10,000건+, 캐나다 LAC 공격 페이로드 13건. OpenAI 귀속 미확정
+  - `2026-10-01-robinhood-agents-launch.md` — Robinhood Agents 정식 출시 (9/29 Summit): 전용 계정+승인 기본값 ON. 채택 수치 PYMNTS 15,000+ vs savingtoinvest 150,000+ 불일치
+  - `2026-10-01-anthropic-ipo-prospectus-reuters.md` (예비 R1): Anthropic IPO prospectus (Reuters 9/28–29) — 매출 $4.6B, 클라우드 약정 $518B, 리스크 ~80쪽. 9/29–30 ingest 미포함 확인 후 보강
+  - `2026-10-01-axios-anthropic-incident-detection-scale.md` (예비 R2): Axios 후속 — 탐지 범위 481M transcript, 주 10만 플래그→인간 검토 ~50건, METR 제3자 리뷰. 미포함 확인 후 보강
+- **신규 2개** (status: draft): `concepts/gemini-4-argon.md` (frontier 릴리스 + gated-access, 자체 vs 독립 지표 괴리 명시, confidence high), `patterns/agentic-finance.md` (Robinhood Agents 실전 배치, 안전 설계+수치 불일치 병기, confidence high)
+- **보강 5개**: `concepts/white-house-ai-accord.md` (FTC 섹션 — Accord 자발 vs FTC 강제 대비표, CID는 계획 단계로 명시, agent-safety-runtime 교차참조), `concepts/agent-supply-chain-security.md` (Transluce 사건 타임라인, 귀속 미확정 명시), `patterns/ai-cost-management.md` (Argon $2/$10 도입가 — 축 표 10/1 행 추가), `patterns/agent-safety-runtime.md` (R2 탐지 규모), `comparisons/frontier-lab-economics.md` (R1 Anthropic IPO 재무)
+- `journal/2026-10-01.md` 신규. index 107→109, log·overview 갱신.
+- 영어 동기화: 신규 2개 + 업데이트 5개 en 미러 (새 섹션 + updated 필드 직접 읽기로 전수 검증), en/index·log·overview·campaign-map 갱신. 번역 공백 없음.
 
 ## [2026-09-30] ingest | 데일리 AI 뉴스 스크랩 — raw 3건 + 한/영 위키 정제
 

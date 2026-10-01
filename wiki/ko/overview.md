@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-09-30
+updated: 2026-10-01
 sources: []
 status: active
 ---
@@ -29,10 +29,17 @@ status: active
 
 ## 현재 상태
 
-- **총 페이지**: 107개
-- **카테고리**: concepts(28), tools(12), patterns(28), journal(26), comparisons(10), meta(4)
+- **총 페이지**: 109개
+- **카테고리**: concepts(29), tools(12), patterns(29), journal(27), comparisons(10), meta(4)
 - **시작일**: 2026-04-06
-- **최근 작업 (2026-09-30 데일리 ingest — 경고의 제도화)**:
+- **최근 작업 (2026-10-01 데일리 ingest — 강제의 진입)**:
+  - AI 뉴스 4건 + 보강 2건을 `raw/articles/`에 수집 (10/1 아침 스케줄은 Mac 권한 오류로 수집까지만 — 6일 연속, ingest는 수동 실행)
+  - wiki/ko에 신규 페이지 2개 생성 (concepts/gemini-4-argon — 자체 벤치 vs 독립 지수 괴리 + gated release, patterns/agentic-finance — Robinhood Agents 실전 배치; 모두 status: draft)
+  - wiki/ko 기존 페이지 5개 보강 (white-house-ai-accord — FTC 조사·자발 vs 강제 대비, agent-supply-chain-security — Transluce 타임라인, ai-cost-management — Argon $2/$10 도입가, agent-safety-runtime — Axios 탐지 규모 481M, frontier-lab-economics — Anthropic IPO prospectus)
+  - 예비 R1(Anthropic IPO)·R2(Axios 후속 수치)가 9/29–30 ingest에 미포함임을 확인하고 오늘 보강 1순위로 처리
+  - wiki/en에 동일 slug 신규 2개 + 업데이트 5개 미러링, index·log·overview·campaign-map 정리
+  - 총 페이지 107→109개
+- **직전 작업 (2026-09-30 데일리 ingest — 경고의 제도화)**:
   - AI 뉴스 3건을 `raw/articles/`에 수집 (9/30 아침 스케줄은 Mac 권한 오류로 수집까지만 — 5일 연속, ingest는 수동 실행)
   - wiki/ko에 신규 페이지 3개 생성 (concepts/self-improving-ai-risk — frominside.ai + intelligence explosion 백서, concepts/amd-world-labs-physical-ai — AMD $8.2B 인수, concepts/white-house-ai-accord — 정식 명칭 + 9/30 후속 상세; 모두 status: draft)
   - wiki/ko 기존 페이지 3개 보강 (agent-supply-chain-security — GLM-5.3 오픈웨이트 붕괴 사다리, ai-cost-management — Sol vs Sonnet 5.5 가격전, agent-safety-runtime — 파트너 100+ 상세)

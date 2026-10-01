@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-09-30
+updated: 2026-10-01
 sources: []
 status: active
 ---
@@ -29,10 +29,17 @@ This page is a **table of contents and learning map** for the wiki. The links be
 
 ## Current state
 
-- **Total pages**: 107
-- **Categories**: concepts(28), tools(12), patterns(28), journal(26), comparisons(10), meta(4)
+- **Total pages**: 109
+- **Categories**: concepts(29), tools(12), patterns(29), journal(27), comparisons(10), meta(4)
 - **Start date**: 2026-04-06
-- **Latest work (2026-09-30 daily ingest — the institutionalization of warnings)**:
+- **Latest work (2026-10-01 daily ingest — the arrival of compulsion)**:
+  - Collected 4 AI news sources + 2 reinforcements into `raw/articles/` (the morning schedule only reached collection due to a Mac permission error — sixth consecutive day; ingest ran manually).
+  - Added 2 new wiki/ko pages (concepts/gemini-4-argon — self-reported vs independent benchmark gap + gated release; patterns/agentic-finance — Robinhood Agents in production; both status: draft).
+  - Reinforced 5 wiki/ko pages (white-house-ai-accord — FTC probe, voluntary vs compulsory; agent-supply-chain-security — Transluce timeline; ai-cost-management — Argon $2/$10 intro pricing; agent-safety-runtime — Axios detection scale 481M; frontier-lab-economics — Anthropic IPO prospectus).
+  - Confirmed reserves R1 (Anthropic IPO) and R2 (Axios follow-up figures) were absent from the 9/29–30 ingests and processed them as today's top-priority reinforcements.
+  - Mirrored the same 2 new + 5 updated slugs under wiki/en/ and tidied up index/log/overview/campaign-map.
+  - Total pages 107→109.
+- **Previous work (2026-09-30 daily ingest — the institutionalization of warnings)**:
   - Collected 3 AI news sources into `raw/articles/` (no overlap with yesterday's topics; the morning schedule only reached collection due to a Mac permission error — ingest ran manually, fifth consecutive day).
   - Added 3 new wiki/ko pages (concepts/self-improving-ai-risk — frominside.ai + intelligence explosion paper; concepts/amd-world-labs-physical-ai — AMD's $8.2B acquisition; concepts/white-house-ai-accord — formal name + 9/30 follow-up details; all status: draft).
   - Reinforced 3 wiki/ko pages (agent-supply-chain-security — GLM-5.3 open-weight collapse ladder; ai-cost-management — Sol vs Sonnet 5.5 price war; agent-safety-runtime — 100+ partner detail).
