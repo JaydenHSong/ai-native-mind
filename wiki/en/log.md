@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-10-01
+updated: 2026-10-02
 sources: []
 status: active
 ---
@@ -19,6 +19,21 @@ This page records only **what changed** by date. For concept explanations, see t
 - World-map hub: [[campaign-map|Campaign Map]]
 - Navigation guide: [[overview|Overview]]
 - Full catalog: [[index|Index]]
+
+## [2026-10-02] ingest | Daily AI news scrape — 6 raw sources + ko/en wiki refinement (first automated run after the 10/1 permission fix)
+
+- **Raw collected** (raw/articles/, 6):
+  - `2026-10-02-openai-dots-always-on-agents.md` — OpenAI Dots official launch (DevDay 9/29, reported 10/2): first dot free with Pro/Business Premium, Pro 500 ($500/mo, Ultrafast), GPT-6.1 Sol co-launch (1/5 of Astra's token price)
+  - `2026-10-02-divd-autonomous-agent-zammad-zero-days.md` — DIVD breach by an autonomous AI agent (occurred 9/21, reported 10/2): two chained Zammad zero-days (CVE-2026-102489 RCE + CVE-2026-102490 root), full takeover in seconds
+  - `2026-10-02-openai-moonshot-reasoning-extraction.md` — OpenAI blocked a reasoning-extraction attempt linked to Moonshot AI (LinkedIn brief, 10/2)
+  - `2026-10-02-decision-models-clef-decider-2b.md` — Cloudflare Clef/Clef-flash open-sourced + Strands Decider 2B (the decision-model wave)
+  - `2026-10-02-deepseek-huawei-ascend-partnership.md` — DeepSeek × Huawei Ascend-optimized open-source infra (LinkedIn brief, 10/2)
+  - `2026-10-02-github-copilot-computer-use-preview.md` — Copilot computer use public preview (vibecamp, 10/2): screen manipulation, user approval before app control
+- **1 new page** (status: draft): `concepts/reasoning-extraction-attack.md` (Moonshot reasoning-extraction block — "thought" as IP, confidence medium)
+- **6 reinforced**: `concepts/persistent-agent.md` (Dots official launch — pricing, Pro 500, Sol co-launch), `concepts/agent-supply-chain-security.md` (DIVD autonomous breach + Transluce 200K requests/day reinforcement), `concepts/semantic-decision-engine.md` (Clef/Decider 2B decision-model wave, low → medium), `comparisons/frontier-lab-economics.md` (DeepSeek × Huawei Ascend — stage 3 hardware vertical integration), `comparisons/ai-coding-tools.md` (Copilot computer use), `patterns/ai-cost-management.md` (Dots pricing + Pro 500 — subscriptions go two-axis)
+- `journal/2026-10-02.md` added. Index 109→110, log/overview updated.
+- English sync: 1 new + 6 updated en mirrors (new sections + updated field verified by direct read), en/index·log·overview·campaign-map updated. No translation gaps.
+- Sonnet 5.5's Terminal-Bench 70.6 was already recorded on 9/29 — no additional reinforcement. LiteLLM Lens and ZoomInfo Agent Teams held back for lack of sources.
 
 ## [2026-10-01] ingest | Daily AI news scrape — 6 raw sources (4 new + 2 reinforcements) + ko/en wiki refinement
 

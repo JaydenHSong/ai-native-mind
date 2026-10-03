@@ -1,14 +1,16 @@
 ---
 title: "저가 파괴자 vs 가격 결정력 인프라"
 category: comparisons
-tags: [deepseek, revenue, fundraising, api-pricing, open-weights, llm-business, china]
+tags: [deepseek, huawei, ascend, revenue, fundraising, api-pricing, open-weights, llm-business, china]
 created: 2026-09-24
-updated: 2026-10-01
+updated: 2026-10-02
 sources:
   - "raw/articles/2026-09-24-deepseek-1b-annualized-revenue.md"
   - "raw/articles/2026-10-01-anthropic-ipo-prospectus-reuters.md"
+  - "raw/articles/2026-10-02-deepseek-huawei-ascend-partnership.md"
 related:
   - "[[patterns/ai-cost-management]]"
+  - "[[concepts/amd-world-labs-physical-ai]]"
 status: draft
 confidence: low
 ---
@@ -64,6 +66,22 @@ API 요금 인상이 통한 2026-08 이후. 전환 비용(파인튜닝·통합·
 - **가격 결정력의 원천이 숫자로 드러남**: 매출 $4.6B 대비 클라우드 약정 $518B — 100배가 넘는 미래 고정비. 이 구조에서는 API 가격 인하 여력이 "효율"이 아니라 "약정을 감당할 매출 성장"에 종속됨. [[patterns/ai-cost-management]]의 $2/$10 도입가 경쟁도 이 고정비 구조 위에서 벌어지는 점유율 싸움.
 - **리스크 공시 자체가 거버넌스 문서**: "catastrophic or existential risk", 종료 저항·정보 은폐·협박 유사 행동, rogue-agent liability까지 명기 — 9/30 FTC 조사([[concepts/white-house-ai-accord]])의 단서가 기업 공시에서 먼저 나온 셈.
 - DeepSeek(연 매출 run-rate $1B·밸류 ~$74B)와의 대비: Anthropic은 매출 4.6배에 밸류 27배 — "모델 회사"가 아니라 "인프라+안전 공시" 프리미엄의 영역.
+
+## 2026-10-02 보강 — DeepSeek × Huawei Ascend: 저가 파괴자의 하드웨어 수직 통합
+
+DeepSeek가 Huawei와 파트너십 발표 (10/2): **Huawei Ascend AI 칩에 최적화된 오픈소스 인프라** 공동 구축. 수년간 Nvidia CUDA 생태계에 의존해 온 글로벌 AI 인프라에 대한 중국의 독립 스택 가속.
+
+### 이 페이지의 프레이밍으로 읽으면 — 3단계
+
+| 단계 | 포지션 | 근거 |
+|---|---|---|
+| 1단계 (2024~2025) | 저가 파괴자 | 파격 저가로 시장 진입 |
+| 2단계 (2026-08~) | 가격 결정력 인프라 | API 2.3~4.5배 인상에도 이탈 없음, 연 run-rate $10억, 밸류 ~$740억 |
+| **3단계 (2026-10)** | **하드웨어 스택 수직 통합** | Ascend 최적화 오픈소스 인프라 — 모델→인프라→하드웨어로 소유 범위 확장 |
+
+- 전략적 의미: 서구 기술 플랫폼에 의존하지 않고 대규모 AI 개발을 지원하는 **독립 하드웨어·소프트웨어 스택**.
+- CUDA 대안 생태계의 오픈소스화가 가속되면 중국 외 지역 개발자에게도 선택지 확대 가능 — 실제 채택·성능은 미지수 (confidence medium — 파트너십 발표 기반, 기술 세부·타임라인 미공개).
+- 같은 축의 서구 버전: [[concepts/amd-world-labs-physical-ai]] (AMD $8.2B World Labs 인수, physical AI 베팅) — **하드웨어가 AI 경쟁의 다음 전선**이라는 양 진영의 합의.
 
 ## 참고 소스
 

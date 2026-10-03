@@ -3,7 +3,7 @@ title: "AI Cost Management"
 category: patterns
 tags: [cost, pricing, optimization, anthropic, claude, openai, model-routing, liner, routerarena, jev, mid-tier, subscription]
 created: 2026-04-09
-updated: 2026-10-01
+updated: 2026-10-02
 sources:
   - "raw/notes/2026-04-09-ai-cost-management.md"
   - "raw/articles/2026-05-01-anthropic-managed-agents-launch.md"
@@ -21,6 +21,8 @@ sources:
   - "raw/articles/2026-09-29-openai-chatgpt-pro-200-reopen.md"
   - "raw/articles/2026-09-29-openai-devday-2026-keynote-confirmed.md"
   - "raw/articles/2026-10-01-google-gemini-4-argon-launch.md"
+  - "raw/articles/2026-10-02-openai-dots-always-on-agents.md"
+  - "raw/articles/2026-10-02-decision-models-clef-decider-2b.md"
 related:
   - "[[patterns/prompt-caching]]"
   - "[[patterns/subagents-delegation]]"
@@ -327,6 +329,28 @@ Google's Gemini 4 Argon (9/30) joins at an intro price of **$2/$10 per 1M** — 
 - **But Argon is the hike-announced variant**: after the intro window it rises to **$4/$20** (level with Opus 5.5); the window is undisclosed. Cached input is 95% off.
 - The pattern mutates: where Sol/Sonnet were "price cuts / holds," Argon is "**teaser price, then back to list**" — intro prices must now be read as **promotional prices**, not permanent ones.
 - Solo-dev view: never hard-code routing rules or budget caps to an intro price. First verify the structure still works at the post-hike price ($4/$20). Details in [[concepts/gemini-4-argon]].
+
+## 2026-10-02 Update — Dots pricing + Pro 500: subscriptions go two-axis
+
+With the official Dots launch (10/2) on [[concepts/persistent-agent]], the subscription's billing axis is now **two-dimensional**.
+
+### Dots billing
+
+- The first dot is included at no extra cost with ChatGPT Pro and Business Premium.
+- **Conversations with a dot are outside the usage allowance** — work a dot starts and manages counts against it ("allowance for deeper work," more generous in the first month).
+- Future paid tiers for additional dots, speed, and monthly work volume are planned (prices undisclosed) — **residency time itself becomes the billing unit**.
+
+### Pro 500 + Ultrafast
+
+- New **Pro 500 ($500/mo)**: 25× the Plus allowance with full Ultrafast access. Subscriptions are now a **three-tier stack** (Plus / Pro $200 / Pro Max $500).
+- Ultrafast: up to 8× token generation in Codex, 6× via API — the price tag on the 9/29 DevDay "speed as a product" preview.
+- New Pro 200 sign-ups get a lower allowance than before (existing subscribers keep theirs until 10/29) — check subscription terms for time dependence before writing routing rules.
+
+### Solo-dev view — two-axis routing is the default
+
+- Latency-sensitive work → the Ultrafast premium; batchable work → cheap GPT-6.1 Sol ($2/$10). The question is no longer "which model" but "**which billing axis**."
+- When adopting Dots: conversations are free, work is metered — **measure the token volume of what you hand to a dot first**, and design a split that keeps expensive work in batch jobs.
+- The [[concepts/semantic-decision-engine]] decision-model wave (Clef, Decider 2B): peeling repeated routing/guardrail decisions off LLM calls is itself a cost axis — "don't generate at all" in production form.
 
 ---
 

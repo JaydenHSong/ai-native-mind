@@ -3,12 +3,13 @@ title: "Persistent Agent"
 category: concepts
 tags: [agent, persistent-agent, openai, devday, proactive-agent, dots, chatgpt-space, workspace]
 created: 2026-09-27
-updated: 2026-09-29
+updated: 2026-10-02
 sources:
   - "raw/articles/2026-09-27-openai-persistent-agent-o.md"
   - "raw/articles/2026-09-28-openai-devday-o-leak-update.md"
   - "raw/articles/2026-09-29-openai-spaces-workspace-rumor.md"
   - "raw/articles/2026-09-29-openai-devday-2026-keynote-confirmed.md"
+  - "raw/articles/2026-10-02-openai-dots-always-on-agents.md"
 related:
   - "[[concepts/agent-supply-chain-security]]"
   - "[[concepts/agent-attribution]]"
@@ -76,6 +77,39 @@ The "O" rumor was confirmed at the keynote as **"Dots"** (Fort Mason, 9/29 10am 
 - **The "Spaces" rumor is also confirmed** — the real name is **"ChatGPT Space"**: a shared workspace where teammates and Dot agents work together. **"Pages"** (co-created human+agent documents — images, writing, charts, visualizations) launched alongside. The identity (O) + workspace (Spaces) pair materialized exactly as paired.
 - **Competition settled into a bracket**: OpenAI Dots vs Meta Muse vs Anthropic Conway / Claude Managed Agents vs xAI Grok Bot vs Google Gemini Spark — always-on agents as the platform battleground.
 - Confidence **low → medium** (multiple on-site reports; the official recap cited via third parties — upgrade to high once the primary recap is confirmed).
+
+## 2026-10-02 Update — Dots official launch specs + pricing (post-DevDay reporting)
+
+The "O" → "Dots" confirmation at DevDay (9/29) is now a launched product with published pricing (memeburn, 10/2). A "remarkably capable, always-on" agent that proactively works on the user's behalf.
+
+### Pricing (first disclosure)
+
+- The first dot is included at **no extra cost with ChatGPT Pro and Business Premium**.
+- Conversations with a dot don't count against the usage allowance — but work a dot starts and manages (inside Codex and ChatGPT Work) does. OpenAI calls the allowance "for deeper work," more generous in the first month.
+- Paid tiers for additional dots, speed, and monthly work volume are planned — prices not disclosed.
+- Plan reshuffle alongside: new **Pro 500 ($500/mo)** — includes the Ultrafast speed mode, 25× the Plus allowance. New Pro 200 sign-ups get a lower usage allowance than before (existing subscribers keep theirs until 10/29) — subscription terms with a **time dependency**.
+
+### Co-launch — GPT-6.1 Sol
+
+- GPT-6.1 Sol: "near-Astra intelligence at 1/5 of Astra's standard token price" ($2/$10 per 1M). For an always-on agent, cost per hour matters as much as raw capability — whether Dots runs on Sol is undisclosed (memeburn's reading).
+- Dots was announced on GPT-6 Astra at the keynote, but Astra was pulled the same morning → Sol is effectively the substitute. See [[patterns/ai-cost-management]]'s 2026-10-02 update.
+
+### Parallel context
+
+- **"Sign in with ChatGPT"** — token-based login, leveraging 1.2B weekly users as an ecosystem entry point.
+- **MCP Apps** — ThursdAI calls it the fourth "App Store" attempt, this time on MCP Apps.
+- Fortune: collaboration features are the foundation of a Google Workspace challenge — dots are "the first tenants of a building" open to 1.2B users.
+
+### Competition (AP)
+
+- Head-on competition with Meta's personal agent **Muse** (surging after last week's Meta conference).
+- Altman dodged on-stage questions about the pulled Astra model — "AI is not a cog in a giant machine but gives people more power" (the Renaissance analogy).
+
+### In this page's context
+
+- Leak (9/27) → confirmation (9/29) → launch + pricing (10/2): rumor-to-product-to-billing in five days.
+- The billing axis for resident agents moves from "per call" to "residency + work volume" — the same current as [[patterns/ai-cost-management]]'s two-axis subscription.
+- Confidence stays **medium** (multiple on-site reports; official recap via third parties).
 
 ## Sources
 

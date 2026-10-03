@@ -3,14 +3,16 @@ title: "Semantic Decision Engine"
 category: concepts
 tags: [semantic-decision-engine, jev, typesafeai, non-generative, routing, classification]
 created: 2026-09-27
-updated: 2026-09-27
+updated: 2026-10-02
 sources:
   - "raw/articles/2026-09-27-jevs-semantic-decision-engine.md"
+  - "raw/articles/2026-10-02-decision-models-clef-decider-2b.md"
 related:
   - "[[patterns/ai-cost-management]]"
   - "[[concepts/agent-supply-chain-security]]"
+  - "[[patterns/agent-safety-runtime]]"
 status: draft
-confidence: low
+confidence: medium
 ---
 
 # Semantic Decision Engine
@@ -46,6 +48,32 @@ A narrow, **non-generative** decision engine for triage, classification, and rou
 - **Single vendor announcement** — TypeSafeAI's own claims, no independent verification
 - No public benchmark, no pricing, no API detail in the announcement
 - The "anti-hallucination" claim is structural (plausible by design) but unverified in deployment
+
+## 2026-10-02 Update — the decision-model wave: Clef + Strands Decider 2B
+
+Five days after Jev's claim, the "no-generation decision engine" is a product wave. Models that return **probabilities over fixed choices** — not free text — keep arriving as open source.
+
+### Cloudflare — Clef + Clef-flash
+
+- Two open-source models optimized for "decisions." They return probabilities over pre-set answers instead of sentences.
+- An **RL fine-tuning service on Workers AI** added on top — bundled infrastructure to tune the decision model to your workload.
+- Uses: agent routing, guardrails, tool selection — lower latency and cost than a full LLM call.
+- Weights under Apache 2.0 (press reports: 27B/9B-parameter-class pair — company test figures).
+
+### Strands (AWS) Labs — Decider 2B
+
+- A 2B-parameter open decision model. Weights and training scripts published, **runnable locally**.
+- Returns a confidence-scored choice in tens to hundreds of milliseconds.
+- Suggested pattern: **gate with a local decider before the LLM acts** ("is this tool call grounded?") — cost savings + tool-call safety.
+
+### Meaning
+
+- The hybrid agent architecture — peeling always-on classification/routing/approve-reject decisions off expensive LLM calls — is moving into standard practice. This page's "why it matters" #3 (generation LLM + decision engine) is now a product.
+- On the guardrail axis, it pairs with [[patterns/agent-safety-runtime]]'s runtime enforcement: the runtime blocks, the decision model chooses.
+
+### Limits (stated explicitly)
+
+- Performance and latency figures are each vendor's **own test results** — independent verification pending. Confidence **low → medium** (two vendors shipping the same direction — the concept's reality is confirmed, the numbers are pending).
 
 ## Sources
 

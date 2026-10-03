@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-10-01
-total_pages: 109
+updated: 2026-10-02
+total_pages: 110
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 109 managed pages total | Last updated: 2026-10-01 (daily ingest: 4 AI news sources + 2 reinforcements collected + ko/en wiki refinement) — most pages include a **Start here** block.
+> 110 managed pages total | Last updated: 2026-10-02 (daily ingest: 6 AI news sources collected + ko/en wiki refinement — first automated run after the 10/1 permission fix) — most pages include a **Start here** block.
 
 ## Start here
 
@@ -26,7 +26,7 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - **Practice (Chapters 3–5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **Endgame (Chapters 6–7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (29)
+## Concepts (30)
 
 ### Growth map & philosophy
 - [[concepts/ai-native-programmer]] — a developer who uses AI as teammates to achieve team-scale outcomes solo; growth map
@@ -68,6 +68,7 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[concepts/semantic-decision-engine]] — non-generative decision engine for fixed-option tasks, Jev (2026-09-27)
 - [[concepts/self-improving-ai-risk]] — loss-of-control risk of self-improving AI, frominside.ai testimony + intelligence explosion paper (2026-09-30)
 - [[concepts/white-house-ai-accord]] — White House Accord on Superintelligence: voluntary pact + follow-up details (2026-09-30)
+- [[concepts/reasoning-extraction-attack]] — extraction attacks on models' hidden reasoning processes, Moonshot-AI-linked blocking (2026-10-02)
 
 ## Tools (12)
 
@@ -123,7 +124,9 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[patterns/agent-mvp-stack-2026]] — solo MVP stack: 5 areas × 4 stages + decision tree (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — seven major anti-patterns in vibe coding and how to avoid them
 
-## Journal (27)
+## Journal (28)
+
+- [[journal/2026-10-02]] — Friday daily: Dots official launch · DIVD autonomous breach · Moonshot reasoning-extraction block · decision-model wave · DeepSeek × Huawei · Copilot computer use
 
 - [[journal/2026-10-01]] — Thursday daily: Gemini 4 Argon · FTC probe · Transluce disclosure · Robinhood Agents · Anthropic IPO prospectus · Axios detection scale
 
@@ -164,14 +167,14 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 
 - [[comparisons/rag-vs-llm-wiki]] — comparing RAG and LLM-Wiki: rediscovery vs accumulation
 - [[comparisons/claude-code-plugins]] — four Claude Code plugins + combination strategy
-- [[comparisons/ai-coding-tools]] — AI coding tools: Claude Code vs Cursor vs Copilot vs Windsurf (+ Copilot "Code"/Autopilot update, 2026-09-26)
+- [[comparisons/ai-coding-tools]] — AI coding tools: Claude Code vs Cursor vs Copilot vs Windsurf (+ Copilot "Code"/Autopilot, 2026-09-26 · computer use preview, 2026-10-02)
 - [[comparisons/agent-frameworks]] — AI agent frameworks: LangGraph vs CrewAI vs OpenAI SDK (+ two managed platforms)
 - [[comparisons/fine-tuning-vs-prompting]] — fine-tuning vs prompting decision guide and hybrid patterns
 - [[comparisons/managed-vs-deep-agents]] — Claude Managed Agents vs LangChain Deep Agents Deploy: lock-in vs freedom
 - [[comparisons/agent-eval-frameworks]] — DeepEval/LangSmith/Braintrust/Langfuse/Inspect AI/RAGAS comparison
 - [[comparisons/agent-platforms-for-solo-dev]] — four-way comparison from a solo-developer perspective
 - [[comparisons/agent-memory-taxonomy]] — task/productivity vs belief vs lifecycle vs safety memory + scale/runtime/safety overlay
-- [[comparisons/frontier-lab-economics]] — low-cost disruptor vs pricing-power infrastructure, the DeepSeek case (2026-09-24)
+- [[comparisons/frontier-lab-economics]] — low-cost disruptor vs pricing-power infrastructure, the DeepSeek case (2026-09-24 · DeepSeek × Huawei Ascend, 2026-10-02)
 
 ## Meta
 

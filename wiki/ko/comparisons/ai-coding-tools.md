@@ -1,16 +1,18 @@
 ---
 title: "AI 코딩 도구 비교 (2026)"
 category: comparisons
-tags: [claude-code, cursor, copilot, windsurf, ai-tools]
+tags: [claude-code, cursor, copilot, windsurf, ai-tools, computer-use]
 created: 2026-04-09
-updated: 2026-09-26
+updated: 2026-10-02
 sources:
   - "raw/notes/2026-04-09-ai-coding-tools-comparison.md"
   - "raw/articles/2026-09-26-microsoft-copilot-code-autopilot.md"
+  - "raw/articles/2026-10-02-github-copilot-computer-use-preview.md"
 related:
   - "[[tools/claude-code]]"
   - "[[concepts/ai-orchestration]]"
   - "[[concepts/harness-engineering]]"
+  - "[[concepts/persistent-agent]]"
 status: active
 confidence: high
 ---
@@ -92,6 +94,23 @@ Claude Code → 전부 (CLAUDE.md로 컨텍스트 관리)
 - **"Autopilot"** 에이전트: 6월 "Scout"의 개편판, 이달 말 프라이빗 프리뷰. 회사 디렉토리 내 **자체 정체성** + 사용자가 제어하는 **특정 권한** — 엔터프라이즈 에이전트의 신뢰 인프라 방향.
 - 비교표 관점: Copilot 열의 "인라인 완성 전문가" 정체에 **"앱 빌더 + Office 내장 + 엔터프라이즈 권한 모델"** 행 추가. Claude Code(터미널 아키텍트)·Cursor(IDE 코더)와의 차별점은 **비개발자 사무직까지의 도달**과 Office 스위트 내장.
 - [[patterns/ai-cost-management]]의 2026-09-26 보강(사용자 직접 비용 가시성)과 함께 보면: Copilot은 "만들기"와 "쓰는 만큼 알기"를 한 앱에 묶는 중.
+
+## 2026-10-02 업데이트 — GitHub Copilot computer use 퍼블릭 프리뷰
+
+Copilot CLI와 Copilot 앱(macOS·Windows)에 **computer use** 기능 퍼블릭 프리뷰 오픈 (10/2, vibecamp).
+
+- Copilot이 **화면 내용을 읽고 클릭·입력·스크롤·드래그**로 여러 앱을 오가며 작업 대행.
+- API·CLI·MCP 연동이 없는 **레거시·GUI 전용 소프트웨어까지 자동화 범위 확대** — "API 없는 사내 도구까지 에이전트 자동화 범위에".
+- 앱을 제어하기 전에는 **사용자 승인을 요청** (CLI에서는 `/computer on`으로 켜기).
+
+### 비교표 관점
+
+Copilot 열의 "인라인 완성 전문가" 정체에 **"GUI 직접 조작 (computer use)"** 행 추가 — 인라인 완성에서 "화면을 쓰는 주체"로 정체 확장. 9/26 "Code"(자연어 앱 빌드) + Autopilot(상시 에이전트)에 이은 세 번째 정체 레이어.
+
+### 방향성
+
+- [[concepts/persistent-agent]]의 Dots와 같은 방향: 에이전트가 "컴퓨터를 쓰는" 주체로.
+- 실무 과제: 어떤 앱 제어를 허용할지 **승인·권한 설계가 다음 관문** — 에이전트 보안 클러스터([[concepts/agent-supply-chain-security]])와 연결.
 
 ## 참고 소스
 

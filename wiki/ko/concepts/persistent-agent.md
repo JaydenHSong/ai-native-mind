@@ -3,12 +3,13 @@ title: "Persistent Agent"
 category: concepts
 tags: [persistent-agent, always-on-agent, openai, devday, dots, chatgpt-space, workspace]
 created: 2026-09-27
-updated: 2026-09-29
+updated: 2026-10-02
 sources:
   - "raw/articles/2026-09-27-openai-persistent-agent-o.md"
   - "raw/articles/2026-09-28-openai-devday-o-leak-update.md"
   - "raw/articles/2026-09-29-openai-spaces-workspace-rumor.md"
   - "raw/articles/2026-09-29-openai-devday-2026-keynote-confirmed.md"
+  - "raw/articles/2026-10-02-openai-dots-always-on-agents.md"
 related:
   - "[[concepts/agent-attribution]]"
   - "[[patterns/ai-cost-management]]"
@@ -77,6 +78,39 @@ DevDay(9/29) 하루 전 추가 리크 — 실루엣은 선명해졌지만 가격
 - **'Spaces' 루머도 확정** — 실제 이름은 **"ChatGPT Space"**: 팀원과 Dot 에이전트가 함께 일하는 공유 워크스페이스. **"Pages"** (인간+에이전트 공동 생성 문서 — 이미지·글·차트·시각화) 동시 발표. "O"(정체성) + "Spaces"(거처)의 쌍이 그대로 실현됐다.
 - **경쟁 구도 확정**: OpenAI Dots vs Meta Muse vs Anthropic Conway / Claude Managed Agents vs xAI Grok Bot vs Google Gemini Spark — 상시 에이전트가 플랫폼 경쟁의 핵심 축.
 - confidence **low → medium** (복수 현장 리포트 인용; 공식 리캡은 3자 인용 경유 — 1차 확인 시 high로 상향 가능).
+
+## 2026-10-02 보강 — Dots 정식 출시 스펙 + 가격 구조 (DevDay 발표 후 보도 정리)
+
+9/29 DevDay에서 "O" → **"Dots"** 로 확정됐고, 10/2 보도로 정식 출시의 실체가 나왔다 (memeburn 10/2). "remarkably capable, always-on" 에이전트 — 사용자를 대신해 선제적으로 지속 작업을 수행.
+
+### 가격 구조 (첫 공개)
+
+- 첫 번째 dot은 **ChatGPT Pro·Business Premium에 추가 비용 없이 포함**.
+- dot과의 대화는 사용량 한도에 미포함 — dot이 시작·관리하는 작업(Codex·ChatGPT Work 내)은 한도에 포함. OpenAI는 포함량을 "deeper work를 위한 allowance"라 표현, 첫 달은 더 넉넉.
+- 향후 dot 추가·속도/월간 작업량 증량은 유료 예정 — 가격 미공개.
+- 플랜 개편 병행: 신규 **Pro 500 ($500/월)** — Ultrafast 속도 모드 포함, Plus 대비 25배 사용량. 신규 Pro 200 가입자는 기존보다 낮은 사용량 allowance 적용 (기존 가입자는 10/29까지 유지) — 구독 약관의 **시간 의존성**.
+
+### 동반 출시 — GPT-6.1 Sol
+
+- GPT-6.1 Sol: "Astra에 근접한 지능을 Astra 표준 토큰가의 1/5에" ($2/$10 per 1M). 상시 가동 에이전트에는 시간당 비용이 원시 성능만큼 중요 — Dots가 Sol 위에서 도는지는 미공개 (memeburn 해석).
+- 9/29 발표 당시 Dots의 파워 모델은 GPT-6 Astra였으나, 당일 아침 Astra 철회 → 사실상 Sol이 대체재. [[patterns/ai-cost-management]]의 2026-10-02 보강 참조.
+
+### 병행 맥락
+
+- **"Sign in with ChatGPT"** — 토큰 기반 로그인, 12억 주간 사용자를 지렛대로 하는 생태계 진입 경로.
+- **MCP Apps** — ThursdAI: 네 번째 "App Store" 시도, 이번엔 MCP Apps 기반.
+- Fortune: 협업 기능은 Google Workspace 도전의 토대 — dot은 12억 사용자에게 열린 "건물의 첫 입주자".
+
+### 경쟁 구도 (AP 보도)
+
+- Meta의 개인 에이전트 **Muse**(지난주 Meta 컨퍼런스 이후 인기 급상승)와 정면 경쟁.
+- Altman은 무대에서 전날 철회된 Astra 모델에 대한 언급 회피 — "AI는 거대한 기계의 톱니바퀴가 아니라 사람에게 더 많은 힘을" (르네상스 비유).
+
+### 이 페이지의 맥락
+
+- "O" 리크(9/27) → Dots 확정(9/29) → 정식 출시·가격 공개(10/2): 루머→제품→과금 구조의 3단계가 5일 만에 닫힘.
+- 상주 에이전트의 과금 축이 "호출당"에서 "상주+작업량"으로 이동 중 — [[patterns/ai-cost-management]]의 구독 2축화와 같은 흐름.
+- confidence **medium 유지** (복수 현장 리포트 인용; 공식 리캡은 3자 인용 경유).
 
 ## 관련 개념
 

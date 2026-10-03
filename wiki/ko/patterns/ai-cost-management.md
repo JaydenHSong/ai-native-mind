@@ -3,7 +3,7 @@ title: "AI 비용 관리"
 category: patterns
 tags: [cost, pricing, optimization, anthropic, claude, openai, model-routing, liner, routerarena, jev, mid-tier, subscription]
 created: 2026-04-09
-updated: 2026-10-01
+updated: 2026-10-02
 sources:
   - "raw/notes/2026-04-09-ai-cost-management.md"
   - "raw/articles/2026-05-01-anthropic-managed-agents-launch.md"
@@ -21,6 +21,8 @@ sources:
   - "raw/articles/2026-09-29-openai-chatgpt-pro-200-reopen.md"
   - "raw/articles/2026-09-29-openai-devday-2026-keynote-confirmed.md"
   - "raw/articles/2026-10-01-google-gemini-4-argon-launch.md"
+  - "raw/articles/2026-10-02-openai-dots-always-on-agents.md"
+  - "raw/articles/2026-10-02-decision-models-clef-decider-2b.md"
 related:
   - "[[patterns/prompt-caching]]"
   - "[[patterns/subagents-delegation]]"
@@ -301,6 +303,7 @@ def route_model(task_complexity: str) -> str:
 | 2026-09-29 오후 | **속도-비용 2축** — Ultrafast(속도의 상품화) + GPT-6.1 Sol(Astra급의 1/5) |
 | 2026-09-30 | **가격전의 공식화** — flagship급을 mid-tier 가격으로 (Sol vs Sonnet 5.5) |
 | 2026-10-01 | **$2/$10 도입가의 표준화** — Gemini 4 Argon까지 같은 입문 가격 (단, $4/$20 인상 예고) |
+| 2026-10-02 | **구독의 2축화** — Dots(상주)·Pro 500/Ultrafast(속도)가 각각 상품 + decision model(생성 회피) |
 
 ### 1인 개발자 함의
 
@@ -354,6 +357,28 @@ Google의 Gemini 4 Argon(9/30)이 **$2/$10 per 1M** 도입가로 합류 — GPT-
 - **단, Argon은 인상 예고형**: 도입 기간 후 **$4/$20** (Opus 5.5와 동률)으로 인상 예정, 기간은 미공개. cached input 95% 할인.
 - 패턴의 변형: Sol/Sonnet이 "가격 인하/동결"이었다면 Argon은 "**미끼 가격 후 정상가 복귀**" — 도입가는 이제 영구 가격이 아니라 **프로모션 가격**으로 읽어야 함.
 - 1인 개발자 관점: 라우팅 규칙과 예산 상한을 도입가 기준으로 고정하지 말 것. 인상 후 가격($4/$20) 기준으로도 감당 가능한 구조인지 먼저 검증. 상세는 [[concepts/gemini-4-argon]].
+
+## 2026-10-02 보강 — Dots 가격 구조 + Pro 500: 구독의 속도-비용 2축
+
+[[concepts/persistent-agent]]의 Dots 정식 출시(10/2)와 함께 구독제의 과금 축이 **2차원**으로 확정됐다.
+
+### Dots 과금 구조
+
+- 첫 번째 dot은 ChatGPT Pro·Business Premium에 추가 비용 없이 포함.
+- dot과의 **대화는 사용량 한도에 미포함** — dot이 시작·관리하는 작업(Codex·ChatGPT Work 내)은 한도에 포함 ("deeper work를 위한 allowance", 첫 달 더 넉넉).
+- 향후 dot 추가·속도/월간 작업량 증량은 유료 예정 (가격 미공개) — **상주 시간 자체가 과금 단위**가 되는 방향.
+
+### Pro 500 + Ultrafast
+
+- 신규 **Pro 500 ($500/월)**: Plus 대비 25배 사용량, Ultrafast 전체 접근. 구독이 **3층 구조**(Plus / Pro $200 / Pro Max $500)로.
+- Ultrafast: Codex 최대 8배, API 최대 6배 토큰 생성 속도 — 9/29 DevDay에서 "속도의 상품화"로 예견된 것의 가격표 확정.
+- 신규 Pro 200 가입자는 기존보다 낮은 사용량 allowance (기존 가입자는 10/29까지 유지) — 구독 약관의 시간 의존성, 라우팅 규칙보다 먼저 확인.
+
+### 1인 개발자 관점 — 2축 라우팅이 디폴트
+
+- 지연 민감 작업 → Ultrafast 프리미엄, 배치성 작업 → GPT-6.1 Sol 저가 ($2/$10). "어떤 모델"이 아니라 "**어떤 과금 축**"을 고르는 문제.
+- Dots(상주) 도입 시: 대화는 무료, 작업은 유료 — **dot에게 시키는 일의 토큰량을 먼저 측정**하고, 비싼 작업을 dot이 아닌 배치로 돌리는 분리 설계.
+- [[concepts/semantic-decision-engine]]의 decision model 웨이브 (Clef·Decider 2B): 반복 라우팅·가드레일 결정을 LLM 호출에서 떼어내는 것 자체가 비용 축 — "생성 자체를 안 함"의 실무화.
 
 ## ❌ 피해야 할 실수
 

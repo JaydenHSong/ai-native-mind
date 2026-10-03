@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-10-01
-total_pages: 109
+updated: 2026-10-02
+total_pages: 110
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 전체 109개 페이지 | 최종 업데이트: 2026-10-01 (데일리 ingest: AI 뉴스 4건 + 보강 2건 수집 + 한/영 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
+> 전체 110개 페이지 | 최종 업데이트: 2026-10-02 (데일리 ingest: AI 뉴스 6건 수집 + 한/영 위키 정제 — 10/1 권한 복구 후 첫 자동 실행) — 대부분 페이지에 **쉽게 읽기** 블록 있음
 
 ## 쉽게 읽기
 
@@ -26,7 +26,7 @@ status: active
 - **실전(Chapter 3~5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **엔드게임(Chapter 6~7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (29개)
+## Concepts (30개)
 
 ### 성장 맵 & 철학
 - [[concepts/ai-native-programmer]] — AI를 팀원으로 활용하여 1인이 팀 규모 결과를 내는 개발자, 성장 맵
@@ -68,6 +68,7 @@ status: active
 - [[concepts/multi-agent-dialect]] — 멀티 에이전트의 자발적 방언 형성, 부분 통제 상실 리스크 (2026-09-26)
 - [[concepts/self-improving-ai-risk]] — 자기개선 AI의 통제 상실 리스크, frominside.ai 증언 + intelligence explosion 백서 (2026-09-30)
 - [[concepts/white-house-ai-accord]] — White House Accord on Superintelligence, 자발적 협약 + 후속 상세 (2026-09-30)
+- [[concepts/reasoning-extraction-attack]] — 모델 숨겨진 추론 과정 추출 공격, Moonshot AI 연관 차단 (2026-10-02)
 
 ## Tools (12개)
 
@@ -123,7 +124,9 @@ status: active
 - [[patterns/agent-mvp-stack-2026]] — 1인 MVP 스택 5대 영역 × 4 단계 + 의사결정 트리 (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — Vibe Coding의 7대 안티패턴과 회피법
 
-## Journal (27개)
+## Journal (28개)
+
+- [[journal/2026-10-02]] — 금요 데일리: Dots 정식 출시·DIVD 자율 침해·Moonshot 추론 추출 차단·decision model 웨이브·DeepSeek×Huawei·Copilot computer use
 
 - [[journal/2026-10-01]] — 목요 데일리: Gemini 4 Argon·FTC 조사·Transluce 공개·Robinhood Agents·Anthropic IPO·Axios 탐지 규모
 

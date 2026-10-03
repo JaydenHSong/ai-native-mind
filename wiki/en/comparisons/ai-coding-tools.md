@@ -1,16 +1,18 @@
 ---
 title: "AI Coding Tools Comparison (2026)"
 category: comparisons
-tags: [claude-code, cursor, copilot, windsurf, ai-tools]
+tags: [claude-code, cursor, copilot, windsurf, ai-tools, computer-use]
 created: 2026-04-09
-updated: 2026-09-26
+updated: 2026-10-02
 sources:
   - "raw/notes/2026-04-09-ai-coding-tools-comparison.md"
   - "raw/articles/2026-09-26-microsoft-copilot-code-autopilot.md"
+  - "raw/articles/2026-10-02-github-copilot-computer-use-preview.md"
 related:
   - "[[tools/claude-code]]"
   - "[[concepts/ai-orchestration]]"
   - "[[concepts/harness-engineering]]"
+  - "[[concepts/persistent-agent]]"
 status: active
 confidence: high
 ---
@@ -107,6 +109,22 @@ Run your entire workspace setup straight from a single terminal:
 ```
 Claude Code  ──→ Complete codebase editing, guided by strict CLAUDE.md project sheets
 ```
+
+### GitHub Copilot (October 2026 update — computer use public preview)
+
+- **Computer use** went into public preview in Copilot CLI and the Copilot app (macOS, Windows) on 10/2 (vibecamp).
+- Copilot **reads the screen and clicks, types, scrolls, and drags** across multiple apps to get work done.
+- Automation scope now reaches **legacy and GUI-only software** with no API, CLI, or MCP integration — "agent automation for internal tools that never had APIs."
+- **User approval is requested before controlling an app** (enable with `/computer on` in the CLI).
+
+### Matrix view
+
+Copilot's column gains a **"direct GUI manipulation (computer use)"** row alongside "inline autocomplete specialist" — the identity expands from completing lines to **operating the screen**. After 9/26's "Code" (natural-language app building) and Autopilot (always-on agent), this is the third identity layer.
+
+### Direction
+
+- Same direction as [[concepts/persistent-agent]]'s Dots: the agent becomes a subject that **"uses the computer."**
+- The practical hurdle: **approval and permission design** for which app controls to allow — connects to the agent-security cluster ([[concepts/agent-supply-chain-security]]).
 
 ## References
 

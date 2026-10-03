@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-10-01
+updated: 2026-10-02
 sources: []
 status: active
 ---
@@ -19,6 +19,21 @@ status: active
 - 월드맵 허브: [[campaign-map|Campaign Map]]
 - 진행 가이드: [[overview|Overview]]
 - 전체 도감: [[index|Index]]
+
+## [2026-10-02] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + 한/영 위키 정제 (10/1 권한 복구 후 첫 자동 실행)
+
+- **Raw collected** (raw/articles/, 6건):
+  - `2026-10-02-openai-dots-always-on-agents.md` — OpenAI Dots 정식 출시 (DevDay 9/29, 10/2 보도): 첫 dot Pro/Business Premium 무료, Pro 500 ($500/월, Ultrafast), GPT-6.1 Sol 동반 (Astra의 1/5 토큰가)
+  - `2026-10-02-divd-autonomous-agent-zammad-zero-days.md` — DIVD 자율 에이전트 침해 (9/21 발생, 10/2 보도): Zammad 제로데이 2개 체인 (CVE-2026-102489 RCE + CVE-2026-102490 root), 수 초 만에 완전 장악
+  - `2026-10-02-openai-moonshot-reasoning-extraction.md` — OpenAI, Moonshot AI 연관 세력의 hidden reasoning 추출 시도 차단 (LinkedIn brief 10/2)
+  - `2026-10-02-decision-models-clef-decider-2b.md` — Cloudflare Clef/Clef-flash 오픈소스 + Strands Decider 2B (decision model 웨이브)
+  - `2026-10-02-deepseek-huawei-ascend-partnership.md` — DeepSeek × Huawei Ascend 최적화 오픈소스 인프라 (LinkedIn brief 10/2)
+  - `2026-10-02-github-copilot-computer-use-preview.md` — Copilot computer use 퍼블릭 프리뷰 (vibecamp 10/2): 화면 조작, 앱 제어 전 사용자 승인
+- **신규 1개** (status: draft): `concepts/reasoning-extraction-attack.md` (Moonshot reasoning 추출 차단 — "생각"의 IP화, confidence medium)
+- **보강 6개**: `concepts/persistent-agent.md` (Dots 정식 출시 — 가격 구조·Pro 500·Sol 동반), `concepts/agent-supply-chain-security.md` (DIVD 자율 침해 + Transluce 20만 요청/일 보강), `concepts/semantic-decision-engine.md` (Clef·Decider 2B decision model 웨이브, low→medium), `comparisons/frontier-lab-economics.md` (DeepSeek×Huawei Ascend — 하드웨어 수직 통합 3단계), `comparisons/ai-coding-tools.md` (Copilot computer use), `patterns/ai-cost-management.md` (Dots 가격 구조·Pro 500 — 축 표 10/2 행)
+- `journal/2026-10-02.md` 신규. index 109→110, log·overview 갱신.
+- 영어 동기화: 신규 1개 + 업데이트 6개 en 미러 (새 섹션 + updated 필드 직접 읽기로 전수 검증), en/index·log·overview·campaign-map 갱신. 번역 공백 없음.
+- Sonnet 5.5 Terminal-Bench 70.6은 9/29에 이미 반영 — 추가 보강 없음. LiteLLM Lens·ZoomInfo Agent Teams는 소스 부족으로 보류.
 
 ## [2026-10-01] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 (신규 4 + 보강 2) + 한/영 위키 정제
 

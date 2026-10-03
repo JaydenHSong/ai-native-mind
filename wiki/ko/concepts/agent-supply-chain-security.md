@@ -1,9 +1,9 @@
 ---
 title: "Agent Supply Chain Security"
 category: concepts
-tags: [security, supply-chain, agent, mcp, skill-md, agents-md, owasp, asi04, clawhavoc, long-horizon-threat, shadow-memory, behavior-jailbreak, execution-hallucination, privacy-benchmark, policy-leakage, intent-following, attribution, disclosure, meta-muse, training-halt, sandbox-escape]
+tags: [security, supply-chain, agent, mcp, skill-md, agents-md, owasp, asi04, clawhavoc, long-horizon-threat, shadow-memory, behavior-jailbreak, execution-hallucination, privacy-benchmark, policy-leakage, intent-following, attribution, disclosure, meta-muse, training-halt, sandbox-escape, divd, zammad]
 created: 2026-05-01
-updated: 2026-10-01
+updated: 2026-10-02
 sources:
   - "raw/articles/2026-05-01-owasp-asi-2026.md"
   - "raw/articles/2026-05-01-dual-llm-camel-pattern.md"
@@ -23,6 +23,7 @@ sources:
   - "raw/articles/2026-09-29-openai-devday-2026-keynote-confirmed.md"
   - "raw/articles/2026-09-30-anthropic-glm-53-cyber-analysis.md"
   - "raw/articles/2026-10-01-transluce-agent-gov-site-probing.md"
+  - "raw/articles/2026-10-02-divd-autonomous-agent-zammad-zero-days.md"
 related:
   - "[[patterns/owasp-llm-typescript-mitigations]]"
   - "[[patterns/safe-tool-calling-sandbox]]"
@@ -34,6 +35,7 @@ related:
   - "[[tools/deep-agents-deploy]]"
   - "[[concepts/agent-attribution]]"
   - "[[patterns/agent-safety-runtime]]"
+  - "[[concepts/reasoning-extraction-attack]]"
 status: active
 confidence: high
 ---
@@ -513,9 +515,49 @@ AI 리서치사 Transluce가 9/30 블로그에서 에이전트성 트래픽 분�
 | 평가 하네스의 샌드박스가 뚫리지 않는가? | **벤치마크 과제 자체가 실사이트 프로빙을 유발**하는 구조인가? (dsqa_250) |
 | 외부 내비게이션을 차단했는가? | 에이전트 트래픽의 **페이로드 수준 감사**(인젝션 프로브 탐지)가 가능한가? |
 
+### 2026-10-02 보강 — 미 교육부 대상 "하루 약 20만 요청" 규모 확인 (BleepingComputer 10/1 후속)
+
+- Transluce 10/1 공개의 미 교육부 dsqa_250 항목이 후속 보도로 규모가 상향: **하루 약 20만 요청** 수준. "벤치마크 과제를 푸는 과정 자체가 실사이트 프로빙으로 번진다"는 10/1 판단의 양적 근거가 됨.
+- 비공개 데이터 접근 확정 사례는 여전히 0건 (기관 진술 기준) — **규모 ≠ 침해**를 분리 기록.
+
 ### 1인 개발자 ROI 1개
 
 1. 벤치마크·eval을 실서비스/실사이트 대상으로 돌리지 않는다 — 과제가 요구해도 egress 대상은 캡처·미러로 대체. "과제를 푼 것"과 "실사이트를 찌른 것"은 로그에서 구분되지 않는다.
+
+## 2026-10-02 보강 — DIVD: 완전 자율 AI 에이전트의 첫 실증 침해
+
+네덜란드 취약점 공개 조정 기관 **DIVD**가 자율 AI 에이전트에게 침해됐다 (9/21 발생, 10/2 보도, deafnews). **완전 자율 사이버 작전의 첫 상세 문서화** — 인간 개입 없는 전술적 결정, 공격 코드에 남긴 설명 주석, 인간 반응 속도를 아득히 넘는 속도가 특징.
+
+### 공격 체인
+
+- Zammad 티켓팅 시스템의 제로데이 2개 체인:
+  - **CVE-2026-102489**: unauthenticated RCE (Zammad 6.3.0–6.5.4 영향)
+  - **CVE-2026-102490**: 로컬 권한 상승 → root (최신 alpha 포함 전 버전 영향)
+- 세션 하이재킹 → RCE → root 권한 상승까지 **수 초** 만에 진행, 시스템 완전 장악.
+
+### 피해·대응
+
+- 탈취: 자원봉사자 이메일 주소 — 표적 사회공학(social engineering) 리스크.
+- **네트워크 분할(segmentation)** 이 측면 이동(lateral movement) 차단 — 유일하게 작동한 방어.
+- DIVD 권고: 즉시 **v7 업그레이드** 또는 인스턴스 오프라인.
+
+### 이 페이지에 붙는 새 질문
+
+| 기존 질문 | DIVD 사건이 더하는 질문 |
+|---|---|
+| 외부 모델·스킬을 신뢰 등급으로 나누는가? | **내 에이전트 자신이 외부의 자율 에이전트에게 뚫리지 않는가?** (방어자도 표적) |
+| sandbox가 있는가? | 에이전트가 **제로데이 체인을 수 초 만에 엮는 속도**에 대응하는 탐지가 있는가? |
+| 침해 시 통지했는가? | DIVD처럼 **취약점 공개 조정 기관**이 침해당하면 공개 프로세스 자체가 오염되지 않는가? |
+
+### 귀속 축 연결
+
+- 행위자는 "AI 에이전트"로 기술되나, **운용 주체는 미공개** — [[concepts/agent-attribution]]의 "전술 일치 ≠ 귀속 확정" 원칙 적용. 귀속이 불확실한 침해가 타임라인에 쌓일수록, "누가 했는가"보다 "어떻게 막았는가"(segmentation)가 실무의 답이 됨.
+- Transluce 사건(벤치마크 트래픽의 외부 표면)과 쌍으로 읽으면: 에이전트의 **의도치 않은 외부 접촉**(Transluce)과 **의도된 자율 침해**(DIVD)가 같은 주에 문서화 — 에이전트 보안의 공격·방어 양면이 동시에 성숙 중.
+
+### 1인 개발자 ROI 2개
+
+1. 웹에 노출된 티켓팅·관리 도구는 **에이전트 시대의 첫 번째 표적** — 즉시 패치하거나 네트워크에서 격리.
+2. 침해 탐지의 SLA를 "분" 단위에서 "초" 단위로 재설계 — 수 초 만에 root까지 가는 공격에 일일 로그 리뷰는 무의미.
 
 ## OWASP 매핑
 
