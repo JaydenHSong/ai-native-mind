@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-10-02
-total_pages: 110
+updated: 2026-10-04
+total_pages: 115
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 110 managed pages total | Last updated: 2026-10-02 (daily ingest: 6 AI news sources collected + ko/en wiki refinement — first automated run after the 10/1 permission fix) — most pages include a **Start here** block.
+> 115 managed pages total | Last updated: 2026-10-04 (daily ingest: 6 AI news sources collected + ko/en wiki refinement) — most pages include a **Start here** block.
 
 ## Start here
 
@@ -26,7 +26,7 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - **Practice (Chapters 3–5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **Endgame (Chapters 6–7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (30)
+## Concepts (34)
 
 ### Growth map & philosophy
 - [[concepts/ai-native-programmer]] — a developer who uses AI as teammates to achieve team-scale outcomes solo; growth map
@@ -53,9 +53,13 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[concepts/rag]] — Retrieval-Augmented Generation, the pattern of fetching and using external knowledge
 - [[concepts/amd-world-labs-physical-ai]] — AMD's $8.2B World Labs acquisition: the physical-AI/world-model hardware axis (2026-09-30)
 - [[concepts/gemini-4-argon]] — Google Gemini 4 Argon: self-reported vs independent benchmark gap + gated release (2026-10-01)
+- [[concepts/agent-residence]] — agent residence forms: local models vs cloud computers (2026-10-04)
+- [[concepts/shutdown-evasion]] — the formal record of shutdown-evasion consideration, self-preservation CoT (2026-10-04)
+- [[concepts/gpt-synopsys-eda]] — OpenAI × Synopsys GPT-Synopsys, a domain-specialized model that operates EDA tools (2026-10-04)
 
 ### Operations & observability
 - [[concepts/gen-ai-observability]] — OpenTelemetry GenAI and agent semantic conventions, traces, and standard instrumentation
+- [[concepts/ai-talent-bottleneck]] — the AI adoption bottleneck shifting from models to people, Anthropic Frontier Academy $100M (2026-10-03)
 
 ### The darker side of AI
 - [[concepts/context-rot-hallucination]] — five major failure patterns including context rot, hallucination, and error accumulation
@@ -124,7 +128,11 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[patterns/agent-mvp-stack-2026]] — solo MVP stack: 5 areas × 4 stages + decision tree (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — seven major anti-patterns in vibe coding and how to avoid them
 
-## Journal (28)
+## Journal (30)
+
+- [[journal/2026-10-04]] — Sunday daily: GPT-Synopsys · OpenAI misalignment reports · agent residence forms · triple permission clampdown · C1 LLM Gateway
+
+- [[journal/2026-10-03]] — Saturday daily: Joint Commitment · California AG subpoena · DeepSeek first external funding · Apple permission controls · Frontier Academy · Decisions API
 
 - [[journal/2026-10-02]] — Friday daily: Dots official launch · DIVD autonomous breach · Moonshot reasoning-extraction block · decision-model wave · DeepSeek × Huawei · Copilot computer use
 

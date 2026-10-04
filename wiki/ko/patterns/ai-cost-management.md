@@ -1,9 +1,9 @@
 ---
 title: "AI 비용 관리"
 category: patterns
-tags: [cost, pricing, optimization, anthropic, claude, openai, model-routing, liner, routerarena, jev, mid-tier, subscription]
+tags: [cost, pricing, optimization, anthropic, claude, openai, model-routing, liner, routerarena, jev, mid-tier, subscription, c1-ai, governance]
 created: 2026-04-09
-updated: 2026-10-02
+updated: 2026-10-04
 sources:
   - "raw/notes/2026-04-09-ai-cost-management.md"
   - "raw/articles/2026-05-01-anthropic-managed-agents-launch.md"
@@ -304,6 +304,7 @@ def route_model(task_complexity: str) -> str:
 | 2026-09-30 | **가격전의 공식화** — flagship급을 mid-tier 가격으로 (Sol vs Sonnet 5.5) |
 | 2026-10-01 | **$2/$10 도입가의 표준화** — Gemini 4 Argon까지 같은 입문 가격 (단, $4/$20 인상 예고) |
 | 2026-10-02 | **구독의 2축화** — Dots(상주)·Pro 500/Ultrafast(속도)가 각각 상품 + decision model(생성 회피) |
+| 2026-10-04 | **거버넌스의 상품화** — C1 LLM Gateway (민감도·비용 라우팅, 호출 귀속, 초과 전 알림, 즉시 철회) |
 
 ### 1인 개발자 함의
 
@@ -379,6 +380,22 @@ Google의 Gemini 4 Argon(9/30)이 **$2/$10 per 1M** 도입가로 합류 — GPT-
 - 지연 민감 작업 → Ultrafast 프리미엄, 배치성 작업 → GPT-6.1 Sol 저가 ($2/$10). "어떤 모델"이 아니라 "**어떤 과금 축**"을 고르는 문제.
 - Dots(상주) 도입 시: 대화는 무료, 작업은 유료 — **dot에게 시키는 일의 토큰량을 먼저 측정**하고, 비싼 작업을 dot이 아닌 배치로 돌리는 분리 설계.
 - [[concepts/semantic-decision-engine]]의 decision model 웨이브 (Clef·Decider 2B): 반복 라우팅·가드레일 결정을 LLM 호출에서 떼어내는 것 자체가 비용 축 — "생성 자체를 안 함"의 실무화.
+
+## 2026-10-04 보강 — 라우팅의 거버넌스화: C1 LLM Gateway
+
+9/25 Liner(라우팅 상품화)에서 한 걸음 더: C1.ai의 LLM Gateway(10/1 출시)는 라우팅을 **비용 절감이 아니라 기업 거버넌스**로 판다.
+
+### C1.ai LLM Gateway — "모든 프롬프트는 회사가 어떻게 돌아가는지 설명한다"
+
+- 모델 트래픽 게이트웨이: 민감도·비용 기준 스마트 라우팅, 미터링된 추론으로 **비용 가시화**. 사용자·에이전트·애플리케이션의 호출이 호출자·응답 모델·비용에 귀속 — 단일 벤더 청구서에 사라지지 않음.
+- 거버넌스: 예산 초과 **전** 알림, 모델 예산을 접근 권한처럼 관리 (증액 요청→앱 소유자 승인, 시간 제한·철회 가능). 접근 철회는 즉시 효력.
+- 특정 데이터가 특정 프로바이더에 도달하지 못하도록 **차단 가능** — 데이터 주권/기밀성.
+- C1 Run(secure agents용 런타임 레이어)의 일부, C1 MCP Gateway와 함께 모델·도구 호출에 identity와 policy 부여. 10/6 샌프란시스코 C1 Transform에서 공개 예정.
+
+### 1인 개발자 함의
+
+1. 이 페이지의 축이 "비용"에서 "**권한·감사·귀속**"으로 확장됐다: 9/28 Agoda(거버넌스 블로커 19%) → 10/4 C1(거버넌스 상품). [[concepts/agent-attribution]]과 연결 — "누가, 어떤 모델에, 얼마를 썼는가"가 에이전트 시대의 기본 원장.
+2. 에이전트가 실제 돈을 쓰는 시대([[patterns/agentic-finance]])에, 라우팅·차단·철회가 인프라로 상품화되는 지점 — 1인 팀도 라우터 대신 **게이트웨이** 개념으로 설계.
 
 ## ❌ 피해야 할 실수
 

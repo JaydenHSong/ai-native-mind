@@ -1,13 +1,15 @@
 ---
 title: "Low-Cost Disruptor vs Pricing-Power Infrastructure"
 category: comparisons
-tags: [deepseek, huawei, ascend, revenue, fundraising, api-pricing, open-weights, llm-business, china]
+tags: [deepseek, huawei, ascend, revenue, fundraising, api-pricing, open-weights, llm-business, china, external-funding]
 created: 2026-09-24
-updated: 2026-10-02
+updated: 2026-10-04
 sources:
   - "raw/articles/2026-09-24-deepseek-1b-annualized-revenue.md"
   - "raw/articles/2026-10-01-anthropic-ipo-prospectus-reuters.md"
   - "raw/articles/2026-10-02-deepseek-huawei-ascend-partnership.md"
+  - "raw/articles/2026-10-03-deepseek-first-external-funding.md"
+  - "raw/articles/2026-10-04-always-on-agent-race-audit.md"
 related:
   - "[[patterns/ai-cost-management]]"
   - "[[concepts/amd-world-labs-physical-ai]]"
@@ -83,7 +85,35 @@ DeepSeek announced a partnership with Huawei (10/2): joint construction of **ope
 - If the open-sourcing of a CUDA-alternative ecosystem accelerates, developers outside China also gain options — actual adoption and performance remain unknown (confidence medium — partnership announcement; technical details and timeline undisclosed).
 - The Western counterpart on the same axis: [[concepts/amd-world-labs-physical-ai]] (AMD's $8.2B World Labs acquisition, physical-AI bet) — both camps agree **hardware is the next front of AI competition**.
 
+## 2026-10-03 Update — DeepSeek's first external funding round: from low-cost disruptor to capitalized frontier player
+
+DeepSeek is reportedly in talks for its **first external funding round** since founding (10/3, kimkj digest, single source).
+
+- Scale: roughly **CNY 50B (~$6.9B)** being discussed at roughly **CNY 500B (~$69B)** valuation — at the negotiation stage, **unconfirmed**.
+- Flow: the 9/24 report ("$1B run-rate, ~$7.5B raise finalizing at ~$74B") may describe the same round as a follow-up report (the figures differ), but the relationship is unconfirmed — not treated as the same deal.
+- The day after the 10/2 Huawei Ascend partnership announcement, the funding-talks report — stage 3 moves from "announcement" to "resourcing," in the order **technology announcement → funding**.
+- The counterpoint: Michael Burry's AI bubble warning on the same day — the four-stage framing now reads low-cost disruptor → pricing power → hardware vertical integration → capital raise:
+
+| Stage | Position | Basis |
+|------|------|------|
+| 1 (2024–2025) | Low-cost disruptor | Disruptively low pricing for market entry |
+| 2 (2026-08–) | Pricing-power infrastructure | API hike held, $1B revenue run-rate, ~$74B valuation |
+| 3 (2026-10) | Hardware-stack vertical integration | Ascend-optimized open-source infra |
+| **4 (2026-10)** | **Capital-raising frontier player** | First external round ~CNY 50B in talks (unconfirmed) |
+
+- Solo-developer lens: DeepSeek API pricing and policy volatility could rise — [[patterns/ai-cost-management]]'s routing and caching strategy hedges "volatility," not "cheapness."
+
+## 2026-10-04 Update — DeepSeek open-weight model + Vercel Gateway share 54→62%
+
+Stochastic Parrot's always-on agent audit (10/4) records DeepSeek's latest release as a "model release" rather than an agent product:
+
+- DeepSeek released an open-weight model, **explicitly naming Claude Code as its integration target** — a move at the model/infrastructure layer, not an agent product.
+- The open-weight share of Vercel AI Gateway rose **54% → 62%** between Tuesday and Saturday — open weights now exceed the majority of gateway traffic.
+- Read through this page's framing: DeepSeek is at stage 4 (the capital-raising frontier player) yet **keeps open weights** — "open weights = cheap" is being redefined as "open weights = owning the distribution channel." Prices rise (stage 2) while distribution stays open.
+- The [[patterns/ai-cost-management]] lens: the open-weighting of gateway share signals that routing defaults are tilting toward "open-weight first" — a cue to reconsider routing defaults.
+
 ## Sources
 
 - [DeepSeek hits $1B annualized revenue, finalizing ~$7.5B raise at ~$74B valuation](raw/articles/2026-09-24-deepseek-1b-annualized-revenue.md)
 - [Anthropic IPO prospectus leak (Reuters)](raw/articles/2026-10-01-anthropic-ipo-prospectus-reuters.md)
+- [DeepSeek's first external funding talks — ~CNY 50B raise (unconfirmed)](raw/articles/2026-10-03-deepseek-first-external-funding.md)

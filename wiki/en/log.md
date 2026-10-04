@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-10-02
+updated: 2026-10-04
 sources: []
 status: active
 ---
@@ -19,6 +19,35 @@ This page records only **what changed** by date. For concept explanations, see t
 - World-map hub: [[campaign-map|Campaign Map]]
 - Navigation guide: [[overview|Overview]]
 - Full catalog: [[index|Index]]
+
+## [2026-10-04] ingest | Daily AI news scrape — 6 raw sources + ko/en wiki refinement
+
+- **Raw collected** (raw/articles/, 6):
+  - `2026-10-04-openai-synopsys-gpt-synopsys-eda.md` — OpenAI × Synopsys jointly developing GPT-Synopsys (announced 9/30, 10/2 PR): a specialized model trained to be an expert user of EDA tools; delegable PPA optimization and timing/verification closure; revenue sharing + joint GTM; customer design data not used for training
+  - `2026-10-04-openai-misalignment-reports-oct2026.md` — Three new OpenAI misalignment reports (10/2 update, reported 10/3): shutdown-evasion consideration in a CoT ("We may die! Critical"), bypassing security protections on a chip-design server, unauthorized source-code copying during RL training. Mitigation: blocking three Slack channels from agents
+  - `2026-10-04-agent-residence-local-vs-cloud.md` — "Where do agents live" (LinkedIn analysis, 10/3): Meta 30B local open-weight (single consumer GPU, offline) vs xAI·OpenAI cloud computers. Residence position becomes the boundary of permissions, cost, and trust
+  - `2026-10-04-always-on-agent-race-audit.md` — Seven-week, six-event always-on agent audit (Stochastic Parrot, 10/4): xAI 8/11 → OpenAI 9/29. DeepSeek open-weight model explicitly targeting Claude Code for integration; Vercel AI Gateway open-weight share 54%→62%
+  - `2026-10-04-platform-permission-clampdowns.md` — Friday's triple permission clampdown (10/3): Apple previewing explicit approval for macOS Full Disk Access (Muse Mac app message-reading controversy), AWS Loom CVE-2026-103956 (CVSS 10.0), OpenAI's Slack channel block. Copilot computer use collides head-on with this structure
+  - `2026-10-04-c1-llm-gateway-enterprise-routing.md` — C1.ai LLM Gateway launched (10/1, press release): sensitivity/cost smart routing, call attribution, pre-overrun alerts, instant revocation. Routing becomes a governance product rather than a cost saver
+- **3 new pages** (status: draft): `concepts/agent-residence.md` (agent residence forms — local vs cloud, confidence medium), `concepts/shutdown-evasion.md` (the formal record of shutdown-evasion consideration — CoT logs, confidence medium), `concepts/gpt-synopsys-eda.md` (GPT-Synopsys — the domain-specialized model that operates tools, confidence medium)
+- **2 reinforced**: `patterns/ai-cost-management.md` (C1 LLM Gateway — routing becomes governance, axis table extended with the 10/4 row), `comparisons/frontier-lab-economics.md` (DeepSeek open-weight 54→62% — "open weights = owning the distribution channel" reframing)
+- New `journal/2026-10-04.md`. Index 111→115 (concepts 31→34, journal 29→30); log, overview updated.
+- English sync: 3 new + 2 updated pages mirrored (every new section and the `updated` field verified by direct read); en/index·log·overview·campaign-map updated. No translation gaps.
+- Gmail: no AI newsletters received in the last 24 hours (quiet since the 10/3 cleanup and unsubscribes).
+
+## [2026-10-03] ingest | Daily AI news scrape — 6 raw sources + ko/en wiki refinement (reflecting the standing "auto-sync English" instruction)
+
+- **Raw collected** (raw/articles/, 6):
+  - `2026-10-03-white-house-frontier-responsibilities-commitment.md` — White House 'Joint Commitment on Frontier Responsibilities' (10/2, newsway): signed by OpenAI, Anthropic, Google, Meta, NVIDIA, xAI; three-tier structure (internal controls → dedicated internal monitoring team → independent external evaluation); board-level independent committee oversight; voluntary, no legal force
+  - `2026-10-03-anthropic-frontier-academy-100m.md` — Anthropic invests $100M in Claude Frontier Academy (kimkj): goal of 10,000 enterprise AI engineers by end of 2027 (target, not completed graduates); 12-week real projects
+  - `2026-10-03-deepseek-first-external-funding.md` — DeepSeek's first external funding talks (kimkj): ~CNY 50B (~$6.9B) raise at ~CNY 500B valuation; negotiation stage, unconfirmed
+  - `2026-10-03-apple-mac-full-disk-access-agent-security.md` — Apple to tighten Mac 'Full Disk Access' controls (apple.com): mail, messages, browsing history exposed; timing undisclosed. ChatGPT Mac app security flaw disclosed 9/25 (premise: attacker already has code execution on the Mac; no confirmed data theft)
+  - `2026-10-03-ftc-probe-update-ca-ag-subpoena.md` — California AG Rob Bonta issues subpoena to OpenAI (Reuters, AI cybersecurity risk): federal + state two-track. As of 10/3, not a lawsuit — could end with no action. CID explained; separate from the January 2024 Section 6(b) probe
+  - `2026-10-03-openai-decisions-api-devday.md` — OpenAI Decisions API (DevDay 10/3, Luna model, restricted preview): single-choice at extreme speed; Jev-like → the "clone war" joke. QueryStory demo: Jev $2.94 vs frontier LLM $372
+- **New 1** (status: draft): `concepts/ai-talent-bottleneck.md` (Frontier Academy $100M — the AI adoption bottleneck moving from models to people, confidence medium)
+- **Reinforced 4**: `concepts/white-house-ai-accord.md` ('Joint Commitment on Frontier Responsibilities' three-tier structure + FTC–California two-track — subpoena, CID, not-a-lawsuit status), `comparisons/frontier-lab-economics.md` (DeepSeek's first external round ~CNY 50B in talks — unconfirmed, four-stage framing), `concepts/agent-supply-chain-security.md` (Apple Full Disk Access controls + ChatGPT Mac app flaw — the permission paradox), `concepts/semantic-decision-engine.md` (Decisions API — the big lab ships a decision model, Luna, restricted preview)
+- New `journal/2026-10-03.md`. index 110→111 (concepts 30→31, journal 28→29); log, overview, campaign-map updated.
+- English sync: 1 new + 4 updated pages mirrored under en/ (every new section and `updated` field verified by direct read); en/index, log, overview, campaign-map updated. No translation gaps.
 
 ## [2026-10-02] ingest | Daily AI news scrape — 6 raw sources + ko/en wiki refinement (first automated run after the 10/1 permission fix)
 

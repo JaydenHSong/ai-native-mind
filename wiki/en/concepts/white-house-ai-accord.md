@@ -1,13 +1,15 @@
 ---
 title: "White House Accord on Superintelligence"
 category: concepts
-tags: [white-house, accord, superintelligence, governance, regulation, self-regulation, audit, trump, ai-policy]
+tags: [white-house, accord, superintelligence, governance, regulation, self-regulation, audit, trump, ai-policy, joint-commitment, ftc-subpoena, california]
 created: 2026-09-30
-updated: 2026-10-01
+updated: 2026-10-03
 sources:
   - "raw/articles/2026-09-29-white-house-ai-accord-outcome.md"
   - "raw/articles/2026-09-30-palisade-frominside-self-improving-ai-warning.md"
   - "raw/articles/2026-10-01-ftc-probe-openai-anthropic.md"
+  - "raw/articles/2026-10-03-white-house-frontier-responsibilities-commitment.md"
+  - "raw/articles/2026-10-03-ftc-probe-update-ca-ag-subpoena.md"
 related:
   - "[[concepts/agent-attribution]]"
   - "[[concepts/agent-supply-chain-security]]"
@@ -78,6 +80,34 @@ The day after the Accord signing (9/29), on 9/30 the FTC confirmed to CNBC via a
 - Anthropic already lists rogue-agent liability as a risk in its IPO prospectus — see the 2026-10-01 update in [[comparisons/frontier-lab-economics]]. A risk a company disclosed itself becomes the enforcement lead.
 - The technical layer of runtime enforcement is [[patterns/agent-safety-runtime]] — policy (Accord), enforcement (FTC), and technology (runtime) stacked in the same week.
 
+## 2026-10-03 Update — the "Joint Commitment on Frontier Responsibilities": the Accord gets a concrete follow-up + the FTC–CA two-track widens
+
+Four days after the Accord signing (9/29), the six big AI companies (OpenAI, Anthropic, Google, Meta, NVIDIA, xAI) signed a **"Joint Commitment on Frontier Responsibilities"** at the White House (10/2, newsway digest). A concrete follow-up to the 9/30 Accord.
+
+### The three-tier structure
+
+1. **Internal control procedures** — risk review across cybersecurity, biosecurity, and chemistry during AI model development and deployment; includes preventing AI from unintended system access and hacking behavior.
+2. **Internal dedicated-team monitoring** — an internal team verifies that safety controls and monitoring work.
+3. **Independent external-evaluator re-verification** — a double structure.
+
+- Final oversight sits with the **board**: each company keeps an independent board committee that receives reports from the internal team and external evaluators and supervises remediation.
+- Regular meetings to develop safety standards and best practices; future legislation and regulation left open as a possibility.
+
+### Limits — same position as the Accord
+
+- A voluntary accord with no legal force. **Who picks the external evaluators and how much of the evaluation gets disclosed are undecided.**
+- Companies keep substantial control over evaluation methods and scope — effectiveness questions stand. The Accord's "could become codified over time" has not yet materialized.
+- The agent-era implication: the key issue is shifting from model capability to "the procedures that verify controls actually work."
+
+### 2026-10-03 Update — the FTC + California AG two-track
+
+Reuters reports California Attorney General **Rob Bonta** issued a **subpoena to OpenAI** over AI cybersecurity risk — pressure widens to a federal (FTC) + state (California) two-track.
+
+- **Probe status as of 10/3**: the probe is confirmed; a lawsuit is not. No complaint filed, no charges, no public documents. The investigation runs behind closed doors and could **end with no action**. Next public signals: court filings, a settlement announcement, a company statement, or further reporting.
+- FTC probes typically take **months to years**. The investigative tool is the CID (civil investigative demand) — an FTC subpoena-like order compelling document production, written answers, and testimony. Usable for AI product/service investigations for **10 years** under the November 2023 commission resolution.
+- **Separate from the January 2024 AI-investment competition probe (Section 6(b))** — this one is a consumer-protection matter (unfair/deceptive practices).
+- The front map: FTC Section 5 (federal) + California AG (state) in parallel — oversight structure for the rogue-agent era goes multi-layered.
+
 ## Why it matters (solo-developer lens)
 
 1. **The gap between the accord and insider demands**: [[concepts/self-improving-ai-risk]]'s frominside.ai witnesses say "companies do too little," yet the accord has no enforcement — that gap is where the next regulatory wave originates.
@@ -102,3 +132,5 @@ The day after the Accord signing (9/29), on 9/30 the FTC confirmed to CNBC via a
 
 - [White House AI meeting outcome — Accord signed](raw/articles/2026-09-29-white-house-ai-accord-outcome.md)
 - [FTC opens probe into AI labs](raw/articles/2026-10-01-ftc-probe-openai-anthropic.md)
+- [White House 'Joint Commitment on Frontier Responsibilities' — signed by six companies](raw/articles/2026-10-03-white-house-frontier-responsibilities-commitment.md)
+- [FTC probe follow-up — California AG subpoena to OpenAI](raw/articles/2026-10-03-ftc-probe-update-ca-ag-subpoena.md)

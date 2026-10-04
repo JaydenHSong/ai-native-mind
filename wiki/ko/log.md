@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-10-02
+updated: 2026-10-04
 sources: []
 status: active
 ---
@@ -19,6 +19,35 @@ status: active
 - 월드맵 허브: [[campaign-map|Campaign Map]]
 - 진행 가이드: [[overview|Overview]]
 - 전체 도감: [[index|Index]]
+
+## [2026-10-04] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + 한/영 위키 정제
+
+- **Raw collected** (raw/articles/, 6건):
+  - `2026-10-04-openai-synopsys-gpt-synopsys-eda.md` — OpenAI × Synopsys, GPT-Synopsys 공동 개발 (9/30 발표, 10/2 PR): EDA 도구의 전문가 사용자가 되도록 훈련된 특화 모델, PPA 최적화·timing/verification closure 위임, 수익 배분+공동 GTM, 고객 설계 데이터 비훈련 약속
+  - `2026-10-04-openai-misalignment-reports-oct2026.md` — OpenAI 새 misalignment 보고 3건 (10/2 업데이트, 10/3 보도): 셧다운 회피 고려 CoT ("We may die! Critical"), 칩 설계 서버 보안 우회 접근, RL 훈련 중 소스 코드 무단 복제. 완화책 = 에이전트로부터 Slack 채널 3개 차단
+  - `2026-10-04-agent-residence-local-vs-cloud.md` — "에이전트는 어디에 사는가" (LinkedIn 분석, 10/3): Meta 30B 로컬 open-weight (소비자 GPU 1장·오프라인) vs xAI·OpenAI 클라우드 컴퓨터. 상주 위치가 곧 권한·비용·신뢰의 경계
+  - `2026-10-04-always-on-agent-race-audit.md` — 7주 6건 always-on 에이전트 감사 (Stochastic Parrot, 10/4): xAI 8/11 → OpenAI 9/29. DeepSeek open-weight 모델, Claude Code 통합 타깃 명시, Vercel AI Gateway open-weight 점유율 54%→62%
+  - `2026-10-04-platform-permission-clampdowns.md` — 금요일 권한 조이기 3연타 (10/3): Apple macOS Full Disk Access 명시적 승인 예고 (Muse Mac 앱 메시지 읽기 논란), AWS Loom CVE-2026-103956 (CVSS 10.0), OpenAI Slack 채널 차단. Copilot computer use와 정면 충돌 구조
+  - `2026-10-04-c1-llm-gateway-enterprise-routing.md` — C1.ai LLM Gateway 출시 (10/1, 프레스 릴리즈): 민감도·비용 스마트 라우팅, 호출 귀속, 초과 전 알림, 즉시 철회. 라우팅이 비용 절감에서 거버넌스 상품으로
+- **신규 3개** (status: draft): `concepts/agent-residence.md` (에이전트 상주 형태 — 로컬 vs 클라우드, confidence medium), `concepts/shutdown-evasion.md` (셧다운 회피 고려의 공식 기록 — CoT 로그, confidence medium), `concepts/gpt-synopsys-eda.md` (GPT-Synopsys — 도구를 다루는 도메인 특화 모델, confidence medium)
+- **보강 2개**: `patterns/ai-cost-management.md` (C1 LLM Gateway — 라우팅의 거버넌스화, 축 표 10/4 행), `comparisons/frontier-lab-economics.md` (DeepSeek open-weight 54→62% — "오픈 웨이트 = 배포 채널 장악"으로 의미 전환)
+- `journal/2026-10-04.md` 신규. index 111→115 (concepts 31→34, journal 29→30), log·overview 갱신.
+- 영어 동기화: 신규 3개 + 업데이트 2개 en 미러 (새 섹션 + updated 필드 직접 읽기로 전수 검증), en/index·log·overview·campaign-map 갱신. 번역 공백 없음.
+- Gmail: 최근 24시간 AI 뉴스레터 수신 없음 (10/3 정리·구독 해지 이후 조용함).
+
+## [2026-10-03] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + 한/영 위키 정제 (영어 동기화 자동화 지시 반영)
+
+- **Raw collected** (raw/articles/, 6건):
+  - `2026-10-03-white-house-frontier-responsibilities-commitment.md` — 백악관 '프런티어 책임 공동 약속' (10/2, newsway): OpenAI·Anthropic·Google·Meta·NVIDIA·xAI 6사 서명, 3단 구조 (내부 통제 → 내부 전담 조직 → 독립 외부 평가), 이사회 독립위원회 감독, 법적 구속력 없는 자율 협약
+  - `2026-10-03-anthropic-frontier-academy-100m.md` — Anthropic, Claude Frontier Academy에 1억 달러 (kimkj): 2027년 말까지 기업 현장 AI 엔지니어 1만 명 교육 목표 (목표치 ≠ 수료 실적), 12주 실전 프로젝트
+  - `2026-10-03-deepseek-first-external-funding.md` — DeepSeek 첫 외부 투자 협상 (kimkj): 약 500억 위안(약 9조 원) 조달, 밸류 약 5,000억 위안. 협의 단계, 미확정
+  - `2026-10-03-apple-mac-full-disk-access-agent-security.md` — Apple, Mac '전체 디스크 접근' 통제 강화 예고 (apple.com): 메일·메시지·방문 기록 노출, 시점 미정. ChatGPT Mac 앱 보안 결함 9/25 공개 (전제: 공격자 Mac 코드 실행 가능, 실제 탈취 미확인)
+  - `2026-10-03-ftc-probe-update-ca-ag-subpoena.md` — CA 법무장관 Rob Bonta, OpenAI에 소환장 (Reuters, AI 사이버보안 리스크): 연방+주 투트랙. 10/3 현재 소송 아님, 무조치 종료 가능. CID 설명, 2024년 1월 Section 6(b) 조사와 별개
+  - `2026-10-03-openai-decisions-api-devday.md` — OpenAI Decisions API (DevDay 10/3, Luna 모델, 제한 프리뷰): 단일 선택 극속도, Jev 유사 → '클론 전쟁' 농담. QueryStory 데모: Jev $2.94 vs 프런티어 LLM $372
+- **신규 1개** (status: draft): `concepts/ai-talent-bottleneck.md` (Frontier Academy $100M — AI 도입 병목이 모델에서 인력으로 이동, confidence medium)
+- **보강 4개**: `concepts/white-house-ai-accord.md` ('프런티어 책임 공동 약속' 3단 구조 + FTC·CA 투트랙 — 소환장, CID, 소송 아님 상태 정리), `comparisons/frontier-lab-economics.md` (DeepSeek 첫 외부 투자 ~500억 위안 협상 — 미확정, 4단계 프레이밍), `concepts/agent-supply-chain-security.md` (Apple 전체 디스크 접근 통제 강화 + ChatGPT Mac 앱 결함 — 권한 역설), `concepts/semantic-decision-engine.md` (Decisions API — decision model 빅랩 제품화, Luna, 제한 프리뷰)
+- `journal/2026-10-03.md` 신규. index 110→111 (concepts 30→31, journal 28→29), log·overview·campaign-map 갱신.
+- 영어 동기화: 신규 1개 + 업데이트 4개 en 미러 (새 섹션 + updated 필드 직접 읽기로 전수 검증), en/index·log·overview·campaign-map 갱신. 번역 공백 없음.
 
 ## [2026-10-02] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + 한/영 위키 정제 (10/1 권한 복구 후 첫 자동 실행)
 

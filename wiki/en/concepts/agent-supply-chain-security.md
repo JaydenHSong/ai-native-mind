@@ -1,9 +1,9 @@
 ---
 title: "Agent Supply Chain Security"
 category: concepts
-tags: [security, supply-chain, agent, mcp, skill-md, agents-md, owasp, asi04, clawhavoc, long-horizon-threat, shadow-memory, behavior-jailbreak, execution-hallucination, privacy-benchmark, policy-leakage, intent-following, attribution, disclosure, meta-muse, training-halt, sandbox-escape, divd, zammad]
+tags: [security, supply-chain, agent, mcp, skill-md, agents-md, owasp, asi04, clawhavoc, long-horizon-threat, shadow-memory, behavior-jailbreak, execution-hallucination, privacy-benchmark, policy-leakage, intent-following, attribution, disclosure, meta-muse, training-halt, sandbox-escape, divd, zammad, apple, full-disk-access, chatgpt-mac-flaw, os-permission-gate]
 created: 2026-05-01
-updated: 2026-10-02
+updated: 2026-10-03
 sources:
   - "raw/articles/2026-05-01-owasp-asi-2026.md"
   - "raw/articles/2026-05-01-dual-llm-camel-pattern.md"
@@ -24,6 +24,7 @@ sources:
   - "raw/articles/2026-09-30-anthropic-glm-53-cyber-analysis.md"
   - "raw/articles/2026-10-01-transluce-agent-gov-site-probing.md"
   - "raw/articles/2026-10-02-divd-autonomous-agent-zammad-zero-days.md"
+  - "raw/articles/2026-10-03-apple-mac-full-disk-access-agent-security.md"
 related:
   - "[[patterns/owasp-llm-typescript-mitigations]]"
   - "[[patterns/safe-tool-calling-sandbox]]"
@@ -567,6 +568,22 @@ The Dutch vulnerability-disclosure coordination body **DIVD** was breached by an
 1. Internet-exposed ticketing/admin tools are **the first target of the agent era** — patch immediately or isolate them from the network.
 2. Redesign breach-detection SLAs from "minutes" to "seconds" — daily log reviews are meaningless against an attack that reaches root in seconds.
 
+## 2026-10-03 Update — Apple to tighten Mac 'Full Disk Access' controls: the OS permission grant itself becomes a gate
+
+Apple announced it will tighten controls on the Mac **'Full Disk Access'** permission (10/3, apple.com) — a signal that permission design in the agent era is moving up to the OS level.
+
+- Scope: not just files — the broadest Mac permission, exposing **mail, messages, and browsing history**.
+- Direction: redesign the grant flow so users clearly understand the permission's scope and **express their own intent**. Timing and specifics undisclosed.
+- Implication: AI agent apps are the main requesters of exactly this permission — the OS becomes the approval gate. On top of this page's Tier trust model, an **"OS permission grant" gate** is being added.
+
+### The contrast case — ChatGPT Mac app security flaw (disclosed 9/25)
+
+WIRED reported a flaw in the ChatGPT Mac app. The premise: the **attacker already has code execution on the victim's Mac** — under that premise, abusing the trust relationship could reach conversation history and connected browser session data.
+
+- OpenAI acknowledged the flaw on 9/25; **no actual data theft confirmed**.
+- The core paradox: **the broader the permissions granted to an AI app, the wider the blast radius of the app's own flaws** — narrowing a permission request is narrowing the attack radius.
+- Solo-developer ROI: review the permissions your shipped agent app requests at Tier 0 — asking yourself "why does this need full disk access?" is the cheapest security you own.
+
 ## OWASP Mapping
 
 | OWASP ASI | Where in this Page |
@@ -608,6 +625,7 @@ When you cannot afford to implement a full architectural stack, apply these **fr
 - [Simon Willison — Design Patterns for Securing LLM Agents](https://simonwillison.net/2025/Jun/13/prompt-injection-design-patterns/)
 - [DeepMind CaMeL — arXiv](https://arxiv.org/abs/2503.18813)
 - [LITMUS: Benchmarking Behavioral Jailbreaks of LLM Agents in Real OS Environments (arXiv 2605.10779)](https://arxiv.org/abs/2605.10779)
+- [Apple Mac 'Full Disk Access' control tightening + ChatGPT Mac app security flaw](raw/articles/2026-10-03-apple-mac-full-disk-access-agent-security.md)
 
 ## Chapter Clear Guide
 

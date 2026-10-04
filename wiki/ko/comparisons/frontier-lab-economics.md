@@ -1,13 +1,15 @@
 ---
 title: "저가 파괴자 vs 가격 결정력 인프라"
 category: comparisons
-tags: [deepseek, huawei, ascend, revenue, fundraising, api-pricing, open-weights, llm-business, china]
+tags: [deepseek, huawei, ascend, revenue, fundraising, api-pricing, open-weights, llm-business, china, external-funding]
 created: 2026-09-24
-updated: 2026-10-02
+updated: 2026-10-04
 sources:
   - "raw/articles/2026-09-24-deepseek-1b-annualized-revenue.md"
   - "raw/articles/2026-10-01-anthropic-ipo-prospectus-reuters.md"
   - "raw/articles/2026-10-02-deepseek-huawei-ascend-partnership.md"
+  - "raw/articles/2026-10-03-deepseek-first-external-funding.md"
+  - "raw/articles/2026-10-04-always-on-agent-race-audit.md"
 related:
   - "[[patterns/ai-cost-management]]"
   - "[[concepts/amd-world-labs-physical-ai]]"
@@ -83,7 +85,35 @@ DeepSeek가 Huawei와 파트너십 발표 (10/2): **Huawei Ascend AI 칩에 최�
 - CUDA 대안 생태계의 오픈소스화가 가속되면 중국 외 지역 개발자에게도 선택지 확대 가능 — 실제 채택·성능은 미지수 (confidence medium — 파트너십 발표 기반, 기술 세부·타임라인 미공개).
 - 같은 축의 서구 버전: [[concepts/amd-world-labs-physical-ai]] (AMD $8.2B World Labs 인수, physical AI 베팅) — **하드웨어가 AI 경쟁의 다음 전선**이라는 양 진영의 합의.
 
+## 2026-10-03 보강 — DeepSeek 첫 외부 투자: 저가 파괴자에서 자본 갖춘 프런티어 플레이어로
+
+DeepSeek이 창사 이래 **첫 외부 투자 유치 협상** 중이라는 보도 (10/3, kimkj digest, 단일 소스).
+
+- 규모: 약 **500억 위안(약 9조 원)** 조달 협의, 밸류에이션 약 **5,000억 위안(약 95조 원)** — 협의 단계, **미확정**.
+- 흐름: 9/24 "연매출 $10억·~$7.5B 조달 마무리 중·밸류 ~$74B" 보도와 같은 라운드의 후속 보도일 가능성이 있으나(수치 차이 존재), 관계는 미확인 — 둘을 같은 건으로 단정하지 않음.
+- 전날(10/2) Huawei Ascend 협력 발표의 연장선: 하드웨어 수직 통합 선언 다음 날 외부 자본 협상 보도 — **기술 선언 → 재원 확보**의 순서로 3단계가 "선언"에서 "실행"으로.
+- 대조축: 같은 날 Michael Burry의 AI 버블 경고 — 저가 파괴자가 가격 결정력을 확보하고, 하드웨어 수직 통합에 이어 자본 조달까지 겹치는 4단계 프레이밍으로 확장:
+
+| 단계 | 위치 | 근거 |
+|------|------|------|
+| 1 (2024–2025) | 저가 파괴자 | 시장 진입 파괴적 저가 |
+| 2 (2026-08–) | 가격 결정력 인프라 | API 인상 유지, 매출 $10억 run-rate, 밸류 ~$74B |
+| 3 (2026-10) | 하드웨어 수직 통합 | Ascend 최적화 오픈소스 인프라 |
+| **4 (2026-10)** | **자본 조달 프런티어 플레이어** | 첫 외부 투자 ~500억 위안 협상 (미확정) |
+
+- 1인 개발자 관점: DeepSeek API 가격·정책의 변동성이 커질 수 있음 — [[patterns/ai-cost-management]]의 라우팅·캐싱 전략은 "저가"가 아니라 "변동성"에 대비하는 것.
+
+## 2026-10-04 보강 — DeepSeek open-weight 모델 + Vercel Gateway 점유율 54→62%
+
+Stochastic Parrot의 always-on 에이전트 감사(10/4)가 DeepSeek의 최신 릴리즈를 "모델 릴리즈"로 구분해 기록:
+
+- DeepSeek이 open-weight 모델 출시, **Claude Code를 통합 타깃으로 명시** — 에이전트 제품이 아니라 모델·인프라 레이어에서의 행보.
+- Vercel AI Gateway의 open-weight 점유율이 화~토 사이 **54% → 62%** 상승 — open-weight가 게이트웨이 트래픽의 과반을 넘어섬.
+- 이 페이지의 프레이밍으로 읽으면: DeepSeek은 4단계(자본 조달 프런티어 플레이어)인데도 **open-weight를 유지** — "오픈 웨이트 = 저가"가 아니라 "오픈 웨이트 = 배포 채널 장악"으로 의미 전환. 가격은 인상(2단계)하면서 유통은 개방.
+- [[patterns/ai-cost-management]] 관점: 게이트웨이 점유율의 open-weight화는 라우팅의 기본값이 "open-weight 우선"으로 기울고 있음을 시사 — 라우팅 규칙의 디폴트를 재검토할 신호.
+
 ## 참고 소스
 
 - [DeepSeek hits $1B annualized revenue, finalizing ~$7.5B raise at ~$74B valuation](raw/articles/2026-09-24-deepseek-1b-annualized-revenue.md)
 - [Anthropic IPO prospectus 유출 (Reuters)](raw/articles/2026-10-01-anthropic-ipo-prospectus-reuters.md)
+- [DeepSeek 첫 외부 투자 협상 — ~500억 위안 조달 (미확정)](raw/articles/2026-10-03-deepseek-first-external-funding.md)

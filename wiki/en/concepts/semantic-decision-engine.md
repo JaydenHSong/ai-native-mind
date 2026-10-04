@@ -1,12 +1,13 @@
 ---
 title: "Semantic Decision Engine"
 category: concepts
-tags: [semantic-decision-engine, jev, typesafeai, non-generative, routing, classification]
+tags: [semantic-decision-engine, jev, typesafeai, non-generative, routing, classification, decisions-api, openai]
 created: 2026-09-27
-updated: 2026-10-02
+updated: 2026-10-03
 sources:
   - "raw/articles/2026-09-27-jevs-semantic-decision-engine.md"
   - "raw/articles/2026-10-02-decision-models-clef-decider-2b.md"
+  - "raw/articles/2026-10-03-openai-decisions-api-devday.md"
 related:
   - "[[patterns/ai-cost-management]]"
   - "[[concepts/agent-supply-chain-security]]"
@@ -75,6 +76,17 @@ Five days after Jev's claim, the "no-generation decision engine" is a product wa
 
 - Performance and latency figures are each vendor's **own test results** — independent verification pending. Confidence **low → medium** (two vendors shipping the same direction — the concept's reality is confirmed, the numbers are pending).
 
+## 2026-10-03 Update — OpenAI Decisions API: the big lab ships a decision model
+
+At DevDay (10/3), OpenAI announced the **Decisions API** — Luna-model based, restricted preview.
+
+- Characteristics: fast decision-making, image understanding, multilingual, safety — tuned for **single-choice at extreme speed**, effectively the same concept as this page's Jev.
+- The resemblance is so close that TypeSafeAI CEO Diogo Almeida joked about a "clone war" — the textbook pattern of open-source/small vendors leading and big labs following.
+- QueryStory demo figures: Jev **$2.94** vs frontier LLM **$372** for the same monitoring task — quantifying the decision model's economics in an era where every action needs watching.
+- Meaning: a big-lab (OpenAI) product answers the 10/2 open-source wave (Clef, Decider 2B) — the **decision model hardening into a standard layer**. This page's "Limits" note that "the concept's reality is confirmed" gets one step stronger.
+- Also from DevDay: shopping tool expansion, and three security researchers leaving over information-sharing allegations — context only, not this page's direct topic.
+
 ## Sources
 
 - [TypeSafeAI launches Jev, a "Semantic Decision Engine" that understands language but never generates](raw/articles/2026-09-27-jevs-semantic-decision-engine.md)
+- [OpenAI Decisions API at DevDay (Luna, restricted preview)](raw/articles/2026-10-03-openai-decisions-api-devday.md)

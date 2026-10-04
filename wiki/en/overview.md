@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-10-02
+updated: 2026-10-04
 sources: []
 status: active
 ---
@@ -29,10 +29,22 @@ This page is a **table of contents and learning map** for the wiki. The links be
 
 ## Current state
 
-- **Total pages**: 110
-- **Categories**: concepts(30), tools(12), patterns(29), journal(28), comparisons(10), meta(4)
+- **Total pages**: 115
+- **Categories**: concepts(34), tools(12), patterns(29), journal(30), comparisons(10), meta(4)
 - **Start date**: 2026-04-06
-- **Latest work (2026-10-02 daily ingest — the agent's body)**:
+- **Latest work (2026-10-04 daily ingest — the era when consideration becomes the log)**:
+  - Collected 6 AI news sources into `raw/articles/` (no AI newsletters in Gmail in the last 24 hours — quiet since the 10/3 cleanup and unsubscribes).
+  - Added 3 new wiki/ko pages (concepts/agent-residence — agent residence forms, local vs cloud; concepts/shutdown-evasion — the formal record of shutdown-evasion consideration; concepts/gpt-synopsys-eda — the GPT-Synopsys domain-specialized agent model; all status: draft).
+  - Reinforced 2 wiki/ko pages (ai-cost-management — C1 LLM Gateway, routing becomes governance; frontier-lab-economics — DeepSeek open-weight share 54→62% on Vercel Gateway).
+  - Mirrored the same 3 new + 2 updated slugs under wiki/en/ (every new section and `updated` field verified by direct read) and tidied up index/log/overview/campaign-map.
+  - Total pages 111→115.
+- **Previous work (2026-10-03 daily ingest — controls and accountability)**:
+  - Collected 6 AI news sources into `raw/articles/` (7am automated run — collection only; refinement ran in this task; reflecting the standing "auto-sync English" instruction).
+  - Added 1 new wiki/ko page (concepts/ai-talent-bottleneck — Frontier Academy $100M, the talent bottleneck; status: draft).
+  - Reinforced 4 wiki/ko pages (white-house-ai-accord — 'Joint Commitment on Frontier Responsibilities' three-tier structure + FTC–California two-track; frontier-lab-economics — DeepSeek's first external funding talks ~CNY 50B, unconfirmed; agent-supply-chain-security — Apple Full Disk Access controls + ChatGPT Mac app flaw; semantic-decision-engine — OpenAI Decisions API, Luna, restricted preview).
+  - Mirrored the same 1 new + 4 updated slugs under wiki/en/ (every new section and `updated` field verified by direct read) and tidied up index/log/overview/campaign-map.
+  - Total pages 110→111.
+- **Previous work (2026-10-02 daily ingest — the agent's body)**:
   - Collected 6 AI news sources into `raw/articles/` (first automated run after the 10/1 permission fix — device access normal).
   - Added 1 new wiki/ko page (concepts/reasoning-extraction-attack — Moonshot reasoning-extraction block; status: draft).
   - Reinforced 6 wiki/ko pages (persistent-agent — Dots official launch, pricing, Pro 500; agent-supply-chain-security — DIVD autonomous breach + Transluce 200K requests/day; semantic-decision-engine — Clef/Decider 2B wave; frontier-lab-economics — DeepSeek × Huawei Ascend; ai-coding-tools — Copilot computer use; ai-cost-management — Dots pricing + Pro 500 two-axis routing).

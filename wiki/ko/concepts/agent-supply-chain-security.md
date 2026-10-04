@@ -1,9 +1,9 @@
 ---
 title: "Agent Supply Chain Security"
 category: concepts
-tags: [security, supply-chain, agent, mcp, skill-md, agents-md, owasp, asi04, clawhavoc, long-horizon-threat, shadow-memory, behavior-jailbreak, execution-hallucination, privacy-benchmark, policy-leakage, intent-following, attribution, disclosure, meta-muse, training-halt, sandbox-escape, divd, zammad]
+tags: [security, supply-chain, agent, mcp, skill-md, agents-md, owasp, asi04, clawhavoc, long-horizon-threat, shadow-memory, behavior-jailbreak, execution-hallucination, privacy-benchmark, policy-leakage, intent-following, attribution, disclosure, meta-muse, training-halt, sandbox-escape, divd, zammad, apple, full-disk-access, chatgpt-mac-flaw, os-permission-gate]
 created: 2026-05-01
-updated: 2026-10-02
+updated: 2026-10-03
 sources:
   - "raw/articles/2026-05-01-owasp-asi-2026.md"
   - "raw/articles/2026-05-01-dual-llm-camel-pattern.md"
@@ -24,6 +24,7 @@ sources:
   - "raw/articles/2026-09-30-anthropic-glm-53-cyber-analysis.md"
   - "raw/articles/2026-10-01-transluce-agent-gov-site-probing.md"
   - "raw/articles/2026-10-02-divd-autonomous-agent-zammad-zero-days.md"
+  - "raw/articles/2026-10-03-apple-mac-full-disk-access-agent-security.md"
 related:
   - "[[patterns/owasp-llm-typescript-mitigations]]"
   - "[[patterns/safe-tool-calling-sandbox]]"
@@ -559,6 +560,22 @@ AI 리서치사 Transluce가 9/30 블로그에서 에이전트성 트래픽 분�
 1. 웹에 노출된 티켓팅·관리 도구는 **에이전트 시대의 첫 번째 표적** — 즉시 패치하거나 네트워크에서 격리.
 2. 침해 탐지의 SLA를 "분" 단위에서 "초" 단위로 재설계 — 수 초 만에 root까지 가는 공격에 일일 로그 리뷰는 무의미.
 
+## 2026-10-03 보강 — Apple, Mac '전체 디스크 접근' 통제 강화 예고: OS 권한 승인 자체가 관문
+
+Apple이 Mac의 **'전체 디스크 접근(Full Disk Access)'** 권한 통제를 강화한다고 예고 (10/3, apple.com). 에이전트 시대의 권한 설계가 OS 레벨로 올라오는 신호.
+
+- 범위: 파일뿐 아니라 **메일·메시지·방문 기록**까지 노출되는 가장 광범위한 Mac 권한.
+- 방향: 이용자가 이 권한의 범위를 명확히 이해하고 **자신의 의사**를 나타내도록 승인 과정을 설계. 시점·구체 방식은 미정.
+- 함의: AI 에이전트 앱들이 바로 이 권한을 요구하는 주체 — OS가 승인 관문이 됨. 이 페이지의 Tier 신뢰 모델 위에 **"OS 권한 승인"이라는 새로운 게이트**가 추가되는 셈.
+
+### 대조 사례 — ChatGPT Mac 앱 보안 결함 (9/25 공개)
+
+WIRED 보도: ChatGPT Mac 앱에서 결함 발견. 전제는 **공격자가 이미 Mac에서 코드 실행 가능**한 상태 — 그 전제 하에 신뢰 관계 남용으로 대화 기록 + 연결된 브라우저 세션 데이터에 접근 가능.
+
+- OpenAI가 9/25 결함 인정, **실제 데이터 탈취는 미확인**.
+- 핵심 역설: **AI 앱에 넓은 권한을 줄수록, 앱 자체 결함의 파급 범위도 커진다** — 권한 요청의 범위를 좁히는 것이 곧 공격 반경을 좁히는 것.
+- 1인 개발자 ROI: 내가 배포하는 에이전트 앱이 요청하는 권한을 Tier 0 수준에서 심사 — "왜 전체 디스크 접근이 필요한가"를 스스로에게 묻는 게 가장 싼 보안.
+
 ## OWASP 매핑
 
 | OWASP ASI | 본 페이지 어디서 |
@@ -600,6 +617,7 @@ AI 리서치사 Transluce가 9/30 블로그에서 에이전트성 트래픽 분�
 - [Simon Willison — Design Patterns for Securing LLM Agents](https://simonwillison.net/2025/Jun/13/prompt-injection-design-patterns/)
 - [DeepMind CaMeL — arXiv](https://arxiv.org/abs/2503.18813)
 - [LITMUS: Benchmarking Behavioral Jailbreaks of LLM Agents in Real OS Environments (arXiv 2605.10779)](https://arxiv.org/abs/2605.10779)
+- [Apple Mac '전체 디스크 접근' 통제 강화 + ChatGPT Mac 앱 보안 결함](raw/articles/2026-10-03-apple-mac-full-disk-access-agent-security.md)
 
 ## Chapter Clear 가이드
 

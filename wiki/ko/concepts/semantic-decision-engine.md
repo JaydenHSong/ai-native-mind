@@ -1,12 +1,13 @@
 ---
 title: "Semantic Decision Engine"
 category: concepts
-tags: [semantic-decision-engine, non-generative, model-routing, cost-optimization, llm-evaluation]
+tags: [semantic-decision-engine, non-generative, model-routing, cost-optimization, llm-evaluation, decisions-api, openai]
 created: 2026-09-27
-updated: 2026-10-02
+updated: 2026-10-03
 sources:
   - "raw/articles/2026-09-27-jevs-semantic-decision-engine.md"
   - "raw/articles/2026-10-02-decision-models-clef-decider-2b.md"
+  - "raw/articles/2026-10-03-openai-decisions-api-devday.md"
 related:
   - "[[patterns/ai-cost-management]]"
   - "[[concepts/llm-evaluation]]"
@@ -70,6 +71,16 @@ Jev(9/27)가 주장했던 "생성하지 않는 결정 엔진"이 5일 만에 **�
 ### 한계 (명시)
 
 - 성능·지연 수치는 각 회사 **자체 시험 결과** — 독립 검증 필요. confidence **low → medium** (두 벤더가 같은 방향으로 제품화 — 개념의 실재성은 확인, 수치는 대기).
+
+## 2026-10-03 보강 — OpenAI Decisions API: decision model의 빅랩 제품화
+
+DevDay(10/3)에서 OpenAI가 **Decisions API**를 발표 — Luna 모델 기반, 제한 프리뷰.
+
+- 특징: 빠른 의사결정·이미지 이해·다국어·안전성, **단일 선택(single choice) 극속도** 특화 — 이 페이지의 Jev와 사실상 같은 개념.
+- Jev와의 유사성이 너무 뚜렷해 TypeSafeAI CEO Diogo Almeida가 "클론 전쟁"이라 농담 — 오픈소스/소규모 벤더 선행 → 빅랩 후행 진입의 전형.
+- QueryStory 데모 수치: 동일한 감시 태스크에 Jev **$2.94** vs 프런티어 LLM **$372** — 매 액션을 감시해야 하는 시대에 decision model의 경제성을 정량화.
+- 의미: 10/2의 오픈소스 웨이브(Clef·Decider 2B)에 빅랩(OpenAI) 제품이 대응 — **decision model이 표준 레이어**로 굳어지는 단계. 이 페이지 "한계"의 "개념의 실재성은 확인"이 한 단계 더 강해짐.
+- 함께 나온 DevDay 소식: 쇼핑 도구 확장, 정보 공유 의혹으로 보안 연구원 3인 퇴사 — 맥락 참고용 (본 페이지의 직접 주제는 아님).
 
 ## 관련 개념
 

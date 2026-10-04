@@ -1,9 +1,9 @@
 ---
 title: "AI Cost Management"
 category: patterns
-tags: [cost, pricing, optimization, anthropic, claude, openai, model-routing, liner, routerarena, jev, mid-tier, subscription]
+tags: [cost, pricing, optimization, anthropic, claude, openai, model-routing, liner, routerarena, jev, mid-tier, subscription, c1-ai, governance]
 created: 2026-04-09
-updated: 2026-10-02
+updated: 2026-10-04
 sources:
   - "raw/notes/2026-04-09-ai-cost-management.md"
   - "raw/articles/2026-05-01-anthropic-managed-agents-launch.md"
@@ -23,6 +23,7 @@ sources:
   - "raw/articles/2026-10-01-google-gemini-4-argon-launch.md"
   - "raw/articles/2026-10-02-openai-dots-always-on-agents.md"
   - "raw/articles/2026-10-02-decision-models-clef-decider-2b.md"
+  - "raw/articles/2026-10-04-c1-llm-gateway-enterprise-routing.md"
 related:
   - "[[patterns/prompt-caching]]"
   - "[[patterns/subagents-delegation]]"
@@ -276,6 +277,8 @@ Following the 9/26 demand-side axis (cost visibility, the accessibility tax), th
 | 2026-09-29 afternoon | **Two-axis speed-cost** — Ultrafast (speed as a product) + GPT-6.1 Sol (Astra-class at one-fifth) |
 | 2026-09-30 | **The price war formalized** — flagship-tier at mid-tier prices (Sol vs Sonnet 5.5) |
 | 2026-10-01 | **The $2/$10 intro price standardized** — Gemini 4 Argon joins at the same entry price (with a $4/$20 hike announced) |
+| 2026-10-02 | **Two-axis subscription** — Dots (residency) and Pro 500/Ultrafast (speed) each a product + decision models (skipping generation) |
+| 2026-10-04 | **Routing becomes governance** — C1 LLM Gateway: routing as an enterprise-governance product, model budgets managed like access permissions |
 
 ### Solo-developer takeaways
 
@@ -351,6 +354,22 @@ With the official Dots launch (10/2) on [[concepts/persistent-agent]], the subsc
 - Latency-sensitive work → the Ultrafast premium; batchable work → cheap GPT-6.1 Sol ($2/$10). The question is no longer "which model" but "**which billing axis**."
 - When adopting Dots: conversations are free, work is metered — **measure the token volume of what you hand to a dot first**, and design a split that keeps expensive work in batch jobs.
 - The [[concepts/semantic-decision-engine]] decision-model wave (Clef, Decider 2B): peeling repeated routing/guardrail decisions off LLM calls is itself a cost axis — "don't generate at all" in production form.
+
+## 2026-10-04 Update — routing becomes governance: the C1 LLM Gateway
+
+One step beyond the 9/25 Liner (routing as a product): C1.ai's LLM Gateway (launched 10/1) sells routing not as **cost savings** but as **enterprise governance**.
+
+### C1.ai LLM Gateway — "Every prompt explains how the company runs"
+
+- A model-traffic gateway: smart routing by sensitivity and cost, metered inference for **cost visibility**. Calls by users, agents, and applications are attributed to caller, responding model, and cost — not lost in a single vendor invoice.
+- Governance: alerts **before** budget overruns; model budgets managed like access permissions (increase requests → app-owner approval; time limits and revocation possible). Access revocation takes effect immediately.
+- Specific data can be **blocked** from reaching specific providers — data sovereignty / confidentiality.
+- Part of C1 Run (the runtime layer for secure agents), alongside the C1 MCP Gateway, giving identity and policy to model and tool calls. Public debut at C1 Transform in San Francisco on 10/6.
+
+### Solo-developer takeaways
+
+1. This page's axis has expanded from "cost" to "**permissions, audit, attribution**": 9/28 Agoda (governance as a 19% blocker) → 10/4 C1 (governance as a product). Connected with [[concepts/agent-attribution]] — "who, with which model, spent how much" is the basic ledger of the agent era.
+2. In the era when agents spend real money ([[patterns/agentic-finance]]), routing, blocking, and revocation are becoming infrastructure-as-a-product — even a one-person team should design with a **gateway**, not a router.
 
 ---
 

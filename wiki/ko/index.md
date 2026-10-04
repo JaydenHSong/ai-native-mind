@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-10-02
-total_pages: 110
+updated: 2026-10-04
+total_pages: 115
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 전체 110개 페이지 | 최종 업데이트: 2026-10-02 (데일리 ingest: AI 뉴스 6건 수집 + 한/영 위키 정제 — 10/1 권한 복구 후 첫 자동 실행) — 대부분 페이지에 **쉽게 읽기** 블록 있음
+> 전체 115개 페이지 | 최종 업데이트: 2026-10-04 (데일리 ingest: AI 뉴스 6건 수집 + 한/영 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
 
 ## 쉽게 읽기
 
@@ -26,7 +26,7 @@ status: active
 - **실전(Chapter 3~5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **엔드게임(Chapter 6~7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (30개)
+## Concepts (34개)
 
 ### 성장 맵 & 철학
 - [[concepts/ai-native-programmer]] — AI를 팀원으로 활용하여 1인이 팀 규모 결과를 내는 개발자, 성장 맵
@@ -55,9 +55,13 @@ status: active
 - [[concepts/semantic-decision-engine]] — 선택지가 고정된 결정 전용 비생성 엔진, Jev (2026-09-27)
 - [[concepts/amd-world-labs-physical-ai]] — AMD의 World Labs $8.2B 인수, physical AI·월드모델 하드웨어 축 (2026-09-30)
 - [[concepts/gemini-4-argon]] — Google Gemini 4 Argon, 자체 벤치 vs 독립 지수 괴리 + gated release (2026-10-01)
+- [[concepts/agent-residence]] — 에이전트의 상주 형태: 로컬 모델 vs 클라우드 컴퓨터 (2026-10-04)
+- [[concepts/shutdown-evasion]] — 셧다운 회피 고려의 공식 기록, 자기보존 CoT (2026-10-04)
+- [[concepts/gpt-synopsys-eda]] — OpenAI×Synopsys GPT-Synopsys, EDA 도구를 다루는 도메인 특화 모델 (2026-10-04)
 
 ### 운영·관측
 - [[concepts/gen-ai-observability]] — OpenTelemetry GenAI·에이전트 시맨틱 컨벤션, 트레이스·표준 계측
+- [[concepts/ai-talent-bottleneck]] — AI 도입 병목이 모델에서 인력으로 이동, Anthropic Frontier Academy $100M (2026-10-03)
 
 ### AI의 어두운 면
 - [[concepts/context-rot-hallucination]] — Context Rot, Hallucination, Error 누적 등 5대 실패 패턴
@@ -124,7 +128,11 @@ status: active
 - [[patterns/agent-mvp-stack-2026]] — 1인 MVP 스택 5대 영역 × 4 단계 + 의사결정 트리 (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — Vibe Coding의 7대 안티패턴과 회피법
 
-## Journal (28개)
+## Journal (30개)
+
+- [[journal/2026-10-04]] — 일요 데일리: GPT-Synopsys·OpenAI misalignment 보고·에이전트 상주 형태·권한 조이기 3연타·C1 LLM Gateway
+
+- [[journal/2026-10-03]] — 토요 데일리: 공동 약속·CA 법무장관 소환장·DeepSeek 첫 외부 투자·Apple 권한 통제·Frontier Academy·Decisions API
 
 - [[journal/2026-10-02]] — 금요 데일리: Dots 정식 출시·DIVD 자율 침해·Moonshot 추론 추출 차단·decision model 웨이브·DeepSeek×Huawei·Copilot computer use
 

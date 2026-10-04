@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-10-02
+updated: 2026-10-04
 sources: []
 status: active
 ---
@@ -29,10 +29,22 @@ status: active
 
 ## 현재 상태
 
-- **총 페이지**: 110개
-- **카테고리**: concepts(30), tools(12), patterns(29), journal(28), comparisons(10), meta(4)
+- **총 페이지**: 115개
+- **카테고리**: concepts(34), tools(12), patterns(29), journal(30), comparisons(10), meta(4)
 - **시작일**: 2026-04-06
-- **최근 작업 (2026-10-02 데일리 ingest — 에이전트의 몸)**:
+- **최근 작업 (2026-10-04 데일리 ingest — 고려가 로그가 되는 시대)**:
+  - AI 뉴스 6건을 `raw/articles/`에 수집 (Gmail AI 뉴스레터는 최근 24시간 수신 없음 — 10/3 정리·구독 해지 이후 조용함)
+  - wiki/ko에 신규 페이지 3개 생성 (concepts/agent-residence — 에이전트 상주 형태 로컬 vs 클라우드, concepts/shutdown-evasion — 셧다운 회피 고려의 공식 기록, concepts/gpt-synopsys-eda — GPT-Synopsys 도메인 특화 에이전트 모델; 모두 status: draft)
+  - wiki/ko 기존 페이지 2개 보강 (ai-cost-management — C1 LLM Gateway·라우팅의 거버넌스화, frontier-lab-economics — DeepSeek open-weight Vercel Gateway 점유율 54→62%)
+  - wiki/en에 동일 slug 신규 3개 + 업데이트 2개 미러링, index·log·overview·campaign-map 정리
+  - 총 페이지 111→115개
+- **직전 작업 (2026-10-03 데일리 ingest — 통제와 책임)**:
+  - AI 뉴스 6건을 `raw/articles/`에 수집 (7시 자동 실행 — 수집만, 정제는 본 작업에서 실행; 영어 동기화 자동화 지시 반영)
+  - wiki/ko에 신규 페이지 1개 생성 (concepts/ai-talent-bottleneck — Frontier Academy $100M·인력 병목, status: draft)
+  - wiki/ko 기존 페이지 4개 보강 (white-house-ai-accord — '프런티어 책임 공동 약속' 3단 구조 + FTC·CA 투트랙, frontier-lab-economics — DeepSeek 첫 외부 투자 ~500억 위안 협상·미확정, agent-supply-chain-security — Apple 전체 디스크 접근 통제 + ChatGPT Mac 앱 결함, semantic-decision-engine — OpenAI Decisions API·Luna·제한 프리뷰)
+  - wiki/en에 동일 slug 신규 1개 + 업데이트 4개 미러링, index·log·overview·campaign-map 정리
+  - 총 페이지 110→111개
+- **직전 작업 (2026-10-02 데일리 ingest — 에이전트의 몸)**:
   - AI 뉴스 6건을 `raw/articles/`에 수집 (10/1 권한 복구 후 첫 자동 실행 — device 접근 정상)
   - wiki/ko에 신규 페이지 1개 생성 (concepts/reasoning-extraction-attack — Moonshot reasoning 추출 차단, status: draft)
   - wiki/ko 기존 페이지 6개 보강 (persistent-agent — Dots 정식 출시·가격 구조·Pro 500, agent-supply-chain-security — DIVD 자율 침해 + Transluce 20만 요청/일, semantic-decision-engine — Clef·Decider 2B 웨이브, frontier-lab-economics — DeepSeek×Huawei Ascend, ai-coding-tools — Copilot computer use, ai-cost-management — Dots 가격·Pro 500 2축 라우팅)
