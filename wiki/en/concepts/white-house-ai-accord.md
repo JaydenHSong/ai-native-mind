@@ -3,7 +3,7 @@ title: "White House Accord on Superintelligence"
 category: concepts
 tags: [white-house, accord, superintelligence, governance, regulation, self-regulation, audit, trump, ai-policy, joint-commitment, ftc-subpoena, california]
 created: 2026-09-30
-updated: 2026-10-03
+updated: 2026-10-05
 sources:
   - "raw/articles/2026-09-29-white-house-ai-accord-outcome.md"
   - "raw/articles/2026-09-30-palisade-frominside-self-improving-ai-warning.md"
@@ -17,6 +17,7 @@ related:
   - "[[concepts/self-improving-ai-risk]]"
   - "[[patterns/agent-safety-runtime]]"
   - "[[journal/2026-09-29]]"
+  - "[[concepts/super-intelligence-force]]"
 status: draft
 confidence: medium-high
 ---
@@ -108,6 +109,10 @@ Reuters reports California Attorney General **Rob Bonta** issued a **subpoena to
 - **Separate from the January 2024 AI-investment competition probe (Section 6(b))** — this one is a consumer-protection matter (unfair/deceptive practices).
 - The front map: FTC Section 5 (federal) + California AG (state) in parallel — oversight structure for the rogue-agent era goes multi-layered.
 
+## 2026-10-05 Update — voluntary pact → Super Intelligence Force
+
+2026-10-05 follow-up: the voluntary pact graduated into a dedicated federal coordination body. Trump appointed Jay Clayton (DNI) as AI czar and chairman of the new "Super Intelligence Force," launching a 120-day AI review — the "coordinate but don't regulate" federal line — [[concepts/super-intelligence-force]].
+
 ## Why it matters (solo-developer lens)
 
 1. **The gap between the accord and insider demands**: [[concepts/self-improving-ai-risk]]'s frominside.ai witnesses say "companies do too little," yet the accord has no enforcement — that gap is where the next regulatory wave originates.
@@ -127,6 +132,7 @@ Reuters reports California Attorney General **Rob Bonta** issued a **subpoena to
 - [[concepts/self-improving-ai-risk]] — the gap between the accord and insider warnings
 - [[concepts/persistent-agent]] — the spread of always-on agents the accord covers
 - [[patterns/agent-safety-runtime]] — the technical layer of runtime enforcement paired with policy and enforcement
+- [[concepts/super-intelligence-force]] — voluntary pact → federal coordination body (2026-10-05 follow-up)
 
 ## References
 

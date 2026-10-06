@@ -3,7 +3,7 @@ title: "Agent Safety Runtime"
 category: patterns
 tags: [nvidia, openshell, sentry, bluefield, agent-safety, runtime-enforcement, alliance]
 created: 2026-09-28
-updated: 2026-10-01
+updated: 2026-10-05
 sources:
   - "raw/articles/2026-09-28-nvidia-open-agent-safety-platform.md"
   - "raw/articles/2026-10-01-axios-anthropic-incident-detection-scale.md"
@@ -11,6 +11,7 @@ related:
   - "[[concepts/agent-supply-chain-security]]"
   - "[[concepts/agent-attribution]]"
   - "[[concepts/gen-ai-observability]]"
+  - "[[patterns/agent-authority-model]]"
 status: draft
 confidence: medium
 ---
@@ -94,6 +95,7 @@ Axios 후속 보도(10/1 리포스트, 9/26 "수만 건" 보도의 후속 수치
 - [[concepts/agent-attribution]] — 대역외 감시가 제공하는 귀속 증거
 - [[concepts/gen-ai-observability]] — 트레이스 표준과 감시 인프라의 연결
 - [[patterns/safe-tool-calling-sandbox]] — 단일 도구 호출 안전성의 인프라 확장
+- [[patterns/agent-authority-model]] — 설계 시점 권한 등급 ↔ 실행 시점 차단의 2중 잠금
 
 ## 참고 소스
 

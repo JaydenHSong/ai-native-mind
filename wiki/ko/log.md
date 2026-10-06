@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-10-04
+updated: 2026-10-06
 sources: []
 status: active
 ---
@@ -19,6 +19,37 @@ status: active
 - 월드맵 허브: [[campaign-map|Campaign Map]]
 - 진행 가이드: [[overview|Overview]]
 - 전체 도감: [[index|Index]]
+
+## [2026-10-06] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + 한/영 위키 정제
+
+- **Raw collected** (raw/articles/, 6건):
+  - `2026-10-06-reflection-ai-beam-launch.md` — Reflection AI 'Beam' 실제 출시 (10/5, TechCrunch): 텍스트 전용 MoE 501B/23B 활성, 23.8T 토큰, 1M 컨텍스트. GLM-5.2 동급 주장, 3~4배 적은 추론 컴퓨트. Apache 2.0 10월 중 공개. ~$4.7B 조달·~$25B pre-money·SpaceX $6.3B+Nebius $1B 컴퓨트
+  - `2026-10-06-mistral-large-4-le-chonk.md` — Mistral Large 4 'Le Chonk' 발표 (10/6, Reuters): 중국 오픈 모델 대비 사이버 포함 특정 영역 우위 주장 (미검증). 유럽 자체 DC + Grace Blackwell ~4,000장. 10/27 오픈 웨이트 공개
+  - `2026-10-06-openai-textgrain-watermarking.md` — OpenAI textGrain 공개 (10/5, 9to5Mac): EU AI Act 대응. API 옵트인(기본 off), EU ChatGPT/Codex 수주 내. 디텍터 승인 연구자 개방. 10% 편집 시 탐지율 92%→66%, 25% 시 17%
+  - `2026-10-06-mcp-protocol-pivoting-vulnerability.md` — MCP 'protocol pivoting' 구조적 결함 (Ars, 10/5): Syed Anas Mohiuddin, 5개월간 6개 조직 에이전트 테스트. 특수 에이전트 인젝션→신뢰 위임→프로토콜 경계에서 인가 소실. CVE-2026-97228 (2.7/10), Google toolbox SSRF (8)
+  - `2026-10-06-tiktok-agentic-commerce.md` — TikTok 에이전틱 커머스 (10/5, PYMNTS): Buy Direct 원클릭 인앱 결제 + AI Shopping Assistant. Salesforce·Shopify·Shoplazza·Stripe
+  - `2026-10-06-a16z-top100-genai-consumer-apps.md` — a16z 7th Top 100 (10/6): ChatGPT 웹·모바일 1위 (MAU 10억+), Claude 웹 3위 (~10억 방문). 미국 유료 구독 4.5%, 상위 10%가 지출 절반
+- **신규 4개** (status: draft): `concepts/mistral-large-4.md` (Mistral Large 4, confidence low), `concepts/ai-text-watermarking.md` (textGrain 워터마킹, confidence medium), `comparisons/consumer-ai-adoption.md` (a16z 소비자 데이터, confidence medium)
+- **보강 3개**: `concepts/reflection-open-weight.md` (Beam 출시 확정 정보로 갱신, confidence low→medium), `patterns/agentic-commerce.md` (TikTok 에이전틱 커머스), `concepts/mcp.md` (protocol pivoting 보안 섹션 + Zoho 채택 사례)
+- `journal/2026-10-06.md` 신규. index 121→125 (concepts 37→39, comparisons 10→11, journal 31→32), log 갱신.
+- 영어 동기화: 신규 4개 + 보강 3개 en 미러 + en/index·log 갱신. 번역 공백 없음.
+- Gmail: 최근 24시간 AI 뉴스레터 수신 없음 (Flipboard 화요 테크 브리핑에서 리드 6건 확보).
+- 운영 메모: 10/5 스테이징분(신규 17개 파일 + index/log 편집)을 Mac mini 온라인 복구 후 전량 적용 완료. Mac files.write 정상 동작 확인.
+
+## [2026-10-05] ingest | 데일리 AI 뉴스 스크랩 — raw 5건 + 한/영 위키 정제 (Mac 쓰기 승인 대기로 스테이징 후 적용)
+
+- **Raw collected** (raw/articles/, 5건):
+  - `2026-10-05-trump-jay-clayton-ai-czar-super-intelligence-force.md` — 트럼프, Jay Clayton을 AI 차르 겸 Super Intelligence Force 의장으로 임명 (10/5, WSJ): 120일 AI 리스크·현행법 검토, AI 사이버공격 대응 권고. 개발 일시중지 반대·기존법 대응론
+  - `2026-10-05-nyc-council-ai-hearing-testimony.md` — 뉴욕시 의회 AI 청문회 (10/5): OpenAI·Google·Anthropic·Meta 첫 선서 증언. Coxon(전 Anthropic)·Turner(전 DeepMind)·Kokotajlo(전 OpenAI) 내부고발자 출석, 킬 스위치·내부고발자 보상 법안 논의. SpaceXAI는 실제 소환
+  - `2026-10-05-zoho-zia-llm-agents.md` — Zoho, 자체 LLM 'Zia LLM' 출시 (10/4): 1.3B/2.6B/7B, 인도·Nvidia 훈련. 40개 Zia Agents + 노코드 빌더 + MCP 서버 + 영·힌디어 ASR 2종. 소비자 데이터 비훈련 프라이버시 전략
+  - `2026-10-05-reflection-ai-open-weight-imminent.md` — Reflection AI 오픈 웨이트 출시 임박 (Axios 단독, 10/4): Nvidia 지원, 전 DeepMind 2인. $7B+ 컴퓨트. 미국의 DeepSeek·Qwen 대항마 — 단 미출시·미확정, '임박 보도' 단계로 표기
+  - `2026-10-05-lea-ai-agent-authority-model.md` — Logistics Reply LEA AI Agent Authority Model (10/5): 성숙도 4단계 × 권한 5단계(Inform→Recommend→Act→Coordinate→Governed Autonomy). 창고 실운영 거버넌스
+- **신규 6개** (status: draft): `concepts/super-intelligence-force.md` (연방 AI 조정 기구, confidence low), `concepts/nyc-ai-hearing.md` (뉴욕시 청문회, confidence medium), `tools/zoho-zia.md` (Zoho 자체 LLM+에이전트, confidence low), `concepts/reflection-open-weight.md` (Reflection 오픈 웨이트 임박, confidence low), `patterns/agent-authority-model.md` (에이전트 권한 5단계, confidence low)
+- `journal/2026-10-05.md` 신규. index 115→121 (concepts 34→37, tools 12→13, patterns 29→30, journal 30→31), log 갱신.
+- 영어 동기화: 신규 6개 en 미러 + en/index·log 갱신 (en/overview·campaign-map은 날짜 표기만 확인). 번역 공백 없음.
+- FTC 후속 (Aju Press 10/5: 수주 내 정식 문서 요청·경영진 CID·15개주 연합): 10/1·10/3 raw 연장선이라 별도 raw 없이 브리핑에만 반영.
+- Gmail: 최근 24시간 AI 뉴스레터 수신 없음.
+- 운영 메모: 07:00 실행 시 Mac files.write 승인이 사용자 미응답으로 2회 실패 → 전량 `~/workspace/goals/ai-ai-native-mind-raw-articles/hidden_files/staged-2026-10-05/`에 스테이징 후 사용자 승인 하에 적용. 다음 실행 전 승인 카드 처리 상태 확인 필요.
 
 ## [2026-10-04] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + 한/영 위키 정제
 

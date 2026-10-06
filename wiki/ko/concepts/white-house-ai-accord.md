@@ -3,7 +3,7 @@ title: "White House Accord on Superintelligence"
 category: concepts
 tags: [white-house, accord, superintelligence, governance, regulation, self-regulation, audit, trump, ai-policy, joint-commitment, ftc-subpoena, california]
 created: 2026-09-30
-updated: 2026-10-03
+updated: 2026-10-05
 sources:
   - "raw/articles/2026-09-29-white-house-ai-accord-outcome.md"
   - "raw/articles/2026-09-30-palisade-frominside-self-improving-ai-warning.md"
@@ -17,6 +17,7 @@ related:
   - "[[concepts/self-improving-ai-risk]]"
   - "[[patterns/agent-safety-runtime]]"
   - "[[journal/2026-09-29]]"
+  - "[[concepts/super-intelligence-force]]"
 status: draft
 confidence: medium-high
 ---
@@ -108,6 +109,10 @@ Reuters 보도: 캘리포니아 법무장관 **Rob Bonta**가 AI 사이버보안
 - **2024년 1월 AI 투자 경쟁 조사(Section 6(b))와는 별개** — 이번 건은 소비자 보호(불공정·기만 행위) 사안.
 - 전선 정리: FTC Section 5(연방) + CA 법무장관(주) 병행 — rogue agent 시대의 감독 구조가 다층화.
 
+## 2026-10-05 후속 — 자발적 협약 → Super Intelligence Force 출범
+
+2026-10-05 후속: 자발적 협약 → Super Intelligence Force 출범으로 연방 조정 기구화. 트럼프가 Jay Clayton(DNI)을 AI 차르 겸 의장으로 임명, 120일 AI 리뷰 착수 — "조정하되 규제하지 않는다"는 연방 노선 — [[concepts/super-intelligence-force]].
+
 ## 왜 중요한가 (1인 개발자 관점)
 
 1. **협약 vs 내부자 요구의 간극**: [[concepts/self-improving-ai-risk]]의 frominside.ai 증언자들은 "기업이 너무 적게 대비"한다고 말하는데, 협약은 강제력이 없음 — 이 간극이 다음 규제 파동의 진원지.
@@ -127,6 +132,7 @@ Reuters 보도: 캘리포니아 법무장관 **Rob Bonta**가 AI 사이버보안
 - [[concepts/self-improving-ai-risk]] — 협약과 내부자 경고의 간극
 - [[concepts/persistent-agent]] — 협약 대상이 되는 상시 에이전트의 확산
 - [[patterns/agent-safety-runtime]] — 집행·정책과 짝을 이루는 실행시점 강제의 기술 축
+- [[concepts/super-intelligence-force]] — 자발적 협약 → 연방 조정 기구화 (2026-10-05 후속)
 
 ## 참고 소스
 

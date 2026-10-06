@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-10-04
+updated: 2026-10-06
 sources: []
 status: active
 ---
@@ -19,6 +19,37 @@ This page records only **what changed** by date. For concept explanations, see t
 - World-map hub: [[campaign-map|Campaign Map]]
 - Navigation guide: [[overview|Overview]]
 - Full catalog: [[index|Index]]
+
+## [2026-10-06] ingest | Daily AI news scrape — 6 raw sources + ko/en wiki refinement
+
+- **Raw collected** (raw/articles/, 6):
+  - `2026-10-06-reflection-ai-beam-launch.md` — Reflection AI 'Beam' actually launched (10/5, TechCrunch): text-only MoE 501B/23B active, 23.8T tokens, 1M context. Claimed on par with GLM-5.2, 3–4x less inference compute. Apache 2.0 weights later in October. ~$4.7B raised, ~$25B pre-money, $6.3B SpaceX + $1B Nebius compute
+  - `2026-10-06-mistral-large-4-le-chonk.md` — Mistral Large 4 'Le Chonk' announced (10/6, Reuters): claimed edge over Chinese open models "on certain aspects, including cyber" (unverified). Own European DCs + ~4,000 Grace Blackwell GPUs. Full open-weight release Oct 27
+  - `2026-10-06-openai-textgrain-watermarking.md` — OpenAI textGrain unveiled (10/5, 9to5Mac): EU AI Act compliance. API opt-in (off by default), EU ChatGPT/Codex rollout in weeks. Detector open to approved researchers. 10% edits cut detection 92%→66%, 25% → 17%
+  - `2026-10-06-mcp-protocol-pivoting-vulnerability.md` — MCP 'protocol pivoting' structural flaw (Ars, 10/5): Syed Anas Mohiuddin tested agents at 6 organizations over five months. Injection at special-purpose agents propagates via trusted delegation; authorization lost at protocol boundaries. CVE-2026-97228 (2.7/10), Google toolbox SSRF (8)
+  - `2026-10-06-tiktok-agentic-commerce.md` — TikTok agentic commerce (10/5, PYMNTS): Buy Direct one-click in-app checkout + AI Shopping Assistant. Salesforce, Shopify, Shoplazza, Stripe
+  - `2026-10-06-a16z-top100-genai-consumer-apps.md` — a16z 7th Top 100 (10/6): ChatGPT #1 on web and mobile (1B+ MAU), Claude #3 on web (~1B visits). 4.5% U.S. paid penetration; top 10% carry half the spend
+- **4 new pages** (status: draft): `concepts/mistral-large-4.md` (Mistral Large 4, confidence low), `concepts/ai-text-watermarking.md` (textGrain watermarking, confidence medium), `comparisons/consumer-ai-adoption.md` (a16z consumer data, confidence medium)
+- **3 reinforced**: `concepts/reflection-open-weight.md` (updated with confirmed Beam launch details, confidence low→medium), `patterns/agentic-commerce.md` (TikTok agentic commerce), `concepts/mcp.md` (protocol-pivoting security section + Zoho adoption case)
+- New `journal/2026-10-06.md`. Index 121→125 (concepts 37→39, comparisons 10→11, journal 31→32); log updated.
+- English sync: 4 new + 3 reinforced pages mirrored to en + en/index·log updated. No translation gaps.
+- Gmail: no AI newsletters received in the last 24 hours (6 leads picked up from the Flipboard Tuesday tech briefing).
+- Operations note: the staged 10/5 batch (17 new files + index/log edits) was fully applied after the Mac mini came back online. Mac files.write confirmed working.
+
+## [2026-10-05] ingest | Daily AI news scrape — 5 raw sources + ko/en wiki refinement (staged while the Mac write approval stalled, applied later)
+
+- **Raw collected** (raw/articles/, 5):
+  - `2026-10-05-trump-jay-clayton-ai-czar-super-intelligence-force.md` — Trump names Jay Clayton AI czar and chairman of the "Super Intelligence Force" (10/5, WSJ): 120-day review of AI risks and existing laws, recommendations on threats like AI-enabled cyberattacks. Clayton opposes development pauses, favors existing-law remedies
+  - `2026-10-05-nyc-council-ai-hearing-testimony.md` — NYC Council AI hearing (10/5): first sworn testimony from OpenAI, Google, Anthropic, Meta. Whistleblowers Coxon (ex-Anthropic), Turner (ex-DeepMind), Kokotajlo (ex-OpenAI) in attendance; kill-switch and whistleblower-reward bills discussed. SpaceXAI received an actual subpoena
+  - `2026-10-05-zoho-zia-llm-agents.md` — Zoho launches its in-house LLM "Zia LLM" (10/4): 1.3B/2.6B/7B, trained in India on Nvidia's platform. 40 Zia Agents + no-code builder + MCP server + English/Hindi ASR models. Privacy strategy: no consumer-data training
+  - `2026-10-05-reflection-ai-open-weight-imminent.md` — Reflection AI open-weight release imminent (Axios scoop, 10/4): Nvidia-backed, founded by two ex-DeepMind researchers. $7B+ compute. The U.S. answer to DeepSeek/Qwen — but unreleased and unconfirmed, marked as an "imminence report"
+  - `2026-10-05-lea-ai-agent-authority-model.md` — Logistics Reply LEA AI Agent Authority Model (10/5): 4 maturity stages × 5 authority levels (Inform→Recommend→Act→Coordinate→Governed Autonomy). Warehouse operations governance
+- **6 new pages** (status: draft): `concepts/super-intelligence-force.md` (federal AI coordination body, confidence low), `concepts/nyc-ai-hearing.md` (the NYC hearing, confidence medium), `tools/zoho-zia.md` (Zoho's in-house LLM + agents, confidence low), `concepts/reflection-open-weight.md` (Reflection open weights imminent, confidence low), `patterns/agent-authority-model.md` (five-level agent authority, confidence low)
+- New `journal/2026-10-05.md`. Index 115→121 (concepts 34→37, tools 12→13, patterns 29→30, journal 30→31); log updated.
+- English sync: 6 new pages mirrored to en + en/index·log updated (en/overview·campaign-map date labels only). No translation gaps.
+- FTC follow-up (Aju Press 10/5: formal document requests within weeks, executive CID, 15-state coalition): a continuation of the 10/1 and 10/3 raws, reflected only in the briefing.
+- Gmail: no AI newsletters received in the last 24 hours.
+- Operations note: the 07:00 run's Mac files.write stalled on the user approval card (2 attempts) → everything staged under `~/workspace/goals/ai-ai-native-mind-raw-articles/hidden_files/staged-2026-10-05/` and applied once approved. Approval-card state to be rechecked before the next run.
 
 ## [2026-10-04] ingest | Daily AI news scrape — 6 raw sources + ko/en wiki refinement
 

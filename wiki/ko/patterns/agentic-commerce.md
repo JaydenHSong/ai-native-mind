@@ -3,12 +3,13 @@ title: "Agentic Commerce"
 category: patterns
 tags: [agentic-commerce, shopping-agents, benchmarks, principal-agent, computer-use, steering, voice-agent, gemini, accessibility, stt]
 created: 2026-09-24
-updated: 2026-09-27
+updated: 2026-10-06
 sources:
   - "raw/articles/2026-09-24-agentic-commerce-benchmark-booking.md"
   - "raw/articles/2026-09-25-gemini-live-avatar-business-calling-suncatcher.md"
   - "raw/articles/2026-09-26-audioeye-agent-accessibility-study.md"
   - "raw/articles/2026-09-27-sarvam-saaras-v4-stt.md"
+  - "raw/articles/2026-10-06-tiktok-agentic-commerce.md"
 related:
   - "[[concepts/llm-evaluation]]"
   - "[[comparisons/agent-eval-frameworks]]"
@@ -105,8 +106,16 @@ Gemini가 Pixel 11 유료 구독자를 대신해 **사업자에 직접 전화**�
 - 9/26 AudioEye(접근성 트리가 에이전트의 눈)와 짝: 텍스트 채널의 접근성 트리 ↔ 음성 채널의 STT — **"에이전트가 세상을 읽는 인터페이스 품질"** 이 전환율의 입력.
 - 한계: 전부 벤더 발표 수치, 독립 재현 없음 — confidence low. 음성 스티어링(9/25 섹션) eval에 "STT 오류율" 변수를 추가하는 방향으로 메모.
 
+## 2026-10-06 보강 — TikTok 에이전틱 커머스: 소셜 피드가 결제 채널이 된다
+
+TikTok이 **Buy Direct**(For You 피드에서 브랜드 이탈 없는 원클릭 인앱 결제)와 **AI Shopping Assistant**(상품 탐색·배송·사이즈·재고·구매를 하나의 대화에서)를 개시 (10/5, PYMNTS). Salesforce·Shopify·Shoplazza·Stripe와 구축, 광고주 자격 기반 테스트 중. Advertising Week New York 2026 타이밍 — TikTok이 계획 중인 여러 에이전틱 커머스 경험 중 첫 번째.
+
+- "에이전트가 누구 편인가"가 소셜 맥락에서 재등장: 피드 추천(발견) → 인앱 결제(전환)가 한 화면에서 일어나면 스티어링의 경계가 더 흐려짐. 9/24 스티어링 벤치마크(충성도 78.6%→17.3%)의 "적대적 환경" eval에 **피드-결제 일체형** 시나리오 추가.
+- 같은 날 Constructor의 Stripe 기반 Agentic Checkout(온사이트 쇼핑 에이전트 내 결제) — 플랫폼 내장형(TikTok) vs 온사이트 임베디드(Constructor)의 두 경로가 같은 날 등장.
+
 ## 참고 소스
 
 - [Agentic commerce reality check: Booking Holdings says LLM traffic is 'significantly below 1%' of bookings](raw/articles/2026-09-24-agentic-commerce-benchmark-booking.md)
 - [Gemini 3.8 Live Avatar, business-calling agents, and TPUs on a Falcon 9 (Project Suncatcher)](raw/articles/2026-09-25-gemini-live-avatar-business-calling-suncatcher.md)
 - [AudioEye study: AI agent task completion falls two-thirds on inaccessible sites; median run uses 43% more tokens](raw/articles/2026-09-26-audioeye-agent-accessibility-study.md)
+- [TikTok kicks off agentic commerce push: Buy Direct checkout + AI Shopping Assistant](raw/articles/2026-10-06-tiktok-agentic-commerce.md)

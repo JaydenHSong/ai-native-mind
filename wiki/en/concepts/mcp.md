@@ -3,10 +3,11 @@ title: "MCP (Model Context Protocol)"
 category: concepts
 tags: [mcp, anthropic, protocol, tools, integration]
 created: 2026-04-09
-updated: 2026-09-24
+updated: 2026-10-06
 sources:
   - "raw/notes/2026-04-09-mcp-research.md"
   - "raw/articles/2026-05-01-a2a-protocol-spec.md"
+  - "raw/articles/2026-10-06-mcp-protocol-pivoting-vulnerability.md"
 related:
   - "[[concepts/context-engineering]]"
   - "[[concepts/harness-engineering]]"
@@ -15,6 +16,7 @@ related:
   - "[[patterns/owasp-llm-typescript-mitigations]]"
   - "[[concepts/a2a-protocol]]"
   - "[[tools/claude-marketplace]]"
+  - "[[tools/zoho-zia]]"
 status: active
 confidence: high
 ---
@@ -66,6 +68,8 @@ MCP Client (AI App)  ←→  MCP Server (Tools/Data)
 | **Design** | Figma, Notion |
 | **Data** | Supabase, various SQL/NoSQL databases |
 
+- 2026-10-05 adoption case: [[tools/zoho-zia]] — Zoho ships an MCP server by default alongside Zia LLM + 40 agents for third-party agent connectivity.
+
 ### Historical Timeline
 
 - **November 2024**: Anthropic introduces the Model Context Protocol.
@@ -114,6 +118,16 @@ For solo developers, searching the marketplace for ready-made connectors is the 
 
 > Details: [[tools/claude-marketplace|Claude Marketplace]]
 
+## 2026-10-05 Security — Protocol Pivoting: the structural flaw in agent-to-agent trust
+
+Ars Technica (Dan Goodin, 10/5) — independent researcher Syed Anas Mohiuddin spent five months testing agents at Google, JP Morgan Chase, Weaviate, Rapid7, France's interministerial digital directorate, and the US federal government.
+
+- **Protocol pivoting**: a prompt-injection variant aimed at special-purpose agents (translation, data analysis) with lax guardrails. MCP servers store per-agent credentials and agents are built to trust every other internal agent, so injected instructions get forwarded as normal delegated tasks and executed downstream. Crossing protocols (MCP → A2A/ANP) loses trust and authorization "in translation." Organizations abandoned zero trust in the race to build agentic architectures.
+- **Confirmed flaws**: CVE-2026-97228 (Rapid7, severity 2.7/10, fixed last month). Google's googleapis/mcp-toolbox SSRF (severity 8) — its HTTP client initialized with no CheckRedirect policy and no target-IP validation. Fixed via IP allow-lists/block lists and rejecting unsafe base URLs at startup.
+- **Responses**: Rapid7's Douglas McKee — treat LLM-to-tool input "like input from a stranger on the Internet." X41 D-Sec's Markus Vervier counters that it is a subclass of indirect prompt injection.
+- **Exploit scenario**: attacker plants malicious text in content → a special-purpose agent reads it and delegates it as a normal task → the next agent executes it on trust. Consequences: database exfiltration, sensitive-data theft, SSRF (crafted path parameter redirecting the toolbox to internal endpoints).
+- Pairs with [[concepts/agent-supply-chain-security]] — the dark side of the MCP "USB-C" analogy: the standard port is also an attack surface.
+
 ## References
 
 - [MCP Research Notes](raw/notes/2026-04-09-mcp-research.md)
@@ -121,3 +135,4 @@ For solo developers, searching the marketplace for ready-made connectors is the 
 - [Introducing MCP (Anthropic)](https://www.anthropic.com/news/model-context-protocol)
 - [MCP Specification](https://modelcontextprotocol.io/specification/2025-11-25)
 - [Code Execution with MCP (Anthropic)](https://www.anthropic.com/engineering/code-execution-with-mcp)
+- [MCP for agent-to-agent comms may be the riskiest protocol you've never heard of (Ars Technica)](raw/articles/2026-10-06-mcp-protocol-pivoting-vulnerability.md)

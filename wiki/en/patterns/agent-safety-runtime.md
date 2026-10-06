@@ -3,7 +3,7 @@ title: "Agent Safety Runtime"
 category: patterns
 tags: [nvidia, openshell, sentry, bluefield, agent-safety, runtime-enforcement, alliance]
 created: 2026-09-28
-updated: 2026-10-01
+updated: 2026-10-05
 sources:
   - "raw/articles/2026-09-28-nvidia-open-agent-safety-platform.md"
   - "raw/articles/2026-10-01-axios-anthropic-incident-detection-scale.md"
@@ -11,6 +11,7 @@ related:
   - "[[concepts/agent-supply-chain-security]]"
   - "[[concepts/agent-attribution]]"
   - "[[concepts/gen-ai-observability]]"
+  - "[[patterns/agent-authority-model]]"
 status: draft
 confidence: medium
 ---
@@ -94,6 +95,7 @@ An Axios follow-up (reposted 10/1, following its 9/26 "tens of thousands" story)
 - [[concepts/agent-attribution]] — the attribution evidence that out-of-band surveillance provides
 - [[concepts/gen-ai-observability]] — connecting trace standards with surveillance infrastructure
 - [[patterns/safe-tool-calling-sandbox]] — the infrastructure extension of single-tool-call safety
+- [[patterns/agent-authority-model]] — design-time authority grading + execution-time blocking as a double lock
 
 ## Sources
 

@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-10-04
-total_pages: 115
+updated: 2026-10-06
+total_pages: 125
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 전체 115개 페이지 | 최종 업데이트: 2026-10-04 (데일리 ingest: AI 뉴스 6건 수집 + 한/영 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
+> 전체 125개 페이지 | 최종 업데이트: 2026-10-06 (데일리 ingest: AI 뉴스 6건 수집 + 한/영 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
 
 ## 쉽게 읽기
 
@@ -26,7 +26,7 @@ status: active
 - **실전(Chapter 3~5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **엔드게임(Chapter 6~7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (34개)
+## Concepts (39개)
 
 ### 성장 맵 & 철학
 - [[concepts/ai-native-programmer]] — AI를 팀원으로 활용하여 1인이 팀 규모 결과를 내는 개발자, 성장 맵
@@ -58,6 +58,9 @@ status: active
 - [[concepts/agent-residence]] — 에이전트의 상주 형태: 로컬 모델 vs 클라우드 컴퓨터 (2026-10-04)
 - [[concepts/shutdown-evasion]] — 셧다운 회피 고려의 공식 기록, 자기보존 CoT (2026-10-04)
 - [[concepts/gpt-synopsys-eda]] — OpenAI×Synopsys GPT-Synopsys, EDA 도구를 다루는 도메인 특화 모델 (2026-10-04)
+- [[concepts/reflection-open-weight]] — Nvidia 지원 Reflection AI 오픈 웨이트 모델, DeepSeek·Qwen의 미국 대항마 (출시 임박, 2026-10-05)
+- [[concepts/mistral-large-4]] — Mistral Large 4 (Le Chonk), 중국 오픈 모델 대비 사이버 우위 주장, 10/27 오픈 웨이트 공개 (2026-10-06)
+- [[concepts/ai-text-watermarking]] — OpenAI textGrain, EU AI Act 대응 텍스트 워터마킹 (2026-10-06)
 
 ### 운영·관측
 - [[concepts/gen-ai-observability]] — OpenTelemetry GenAI·에이전트 시맨틱 컨벤션, 트레이스·표준 계측
@@ -73,8 +76,10 @@ status: active
 - [[concepts/self-improving-ai-risk]] — 자기개선 AI의 통제 상실 리스크, frominside.ai 증언 + intelligence explosion 백서 (2026-09-30)
 - [[concepts/white-house-ai-accord]] — White House Accord on Superintelligence, 자발적 협약 + 후속 상세 (2026-09-30)
 - [[concepts/reasoning-extraction-attack]] — 모델 숨겨진 추론 과정 추출 공격, Moonshot AI 연관 차단 (2026-10-02)
+- [[concepts/nyc-ai-hearing]] — 뉴욕시 의회 AI 청문회, 주요 AI사 첫 선서 증언 + 킬 스위치 법안 (2026-10-05)
+- [[concepts/super-intelligence-force]] — 트럼프 행정부 Super Intelligence Force, AI 차르 체제의 연방 조정 (2026-10-05)
 
-## Tools (12개)
+## Tools (13개)
 
 - [[tools/claude-code]] — Anthropic의 CLI 기반 AI 코딩 도구, 위키 유지보수 LLM
 - [[tools/obsidian]] — 로컬 마크다운 기반 노트 앱, 위키 브라우저/IDE
@@ -88,8 +93,9 @@ status: active
 - [[tools/alibaba-agentcore]] — 알리바바의 기업용 에이전트 플랫폼 + agentic cloud 로드맵 (2026-09-24)
 - [[tools/claude-marketplace]] — Claude용 커넥터·플러그인 마켓플레이스 2,000+ (2026-09-24)
 - [[tools/codex-security]] — 취약점 탐지→패치→수정을 한 루프로 묶은 OpenAI 보안 에이전트 (리서치 프리뷰, 2026-09-24)
+- [[tools/zoho-zia]] — Zoho 자체 LLM + 40개 에이전트 + MCP 서버, 인도산 right-sized 모델 (2026-10-05)
 
-## Patterns (29개)
+## Patterns (30개)
 
 ### 커리큘럼·실습 (읽기 순서 2→6)
 - [[patterns/preventing-context-rot]] — Context Rot·3계층 메모리 (커리큘럼 2)
@@ -122,13 +128,18 @@ status: active
 - [[patterns/agent-safety-runtime]] — 실행시점 에이전트 보안 런타임, NVIDIA OpenShell/Sentry (2026-09-28)
 - [[patterns/mid-tier-performance-inversion]] — 중급 모델의 플래그십 성능 역전, Sonnet 5.5 사례 (2026-09-29)
 - [[patterns/agentic-finance]] — 에이전트에게 실제 돈을 맡기는 상품화, Robinhood Agents 실전 배치 (2026-10-01)
+- [[patterns/agent-authority-model]] — 업무별 에이전트 권한 5단계 프레임워크, LEA AI Agent Authority Model (2026-10-05)
 
 ### 제품 전략 & 안티패턴
 - [[patterns/solo-product-strategy]] — 1인 개발자 제품 전략, 마이크로 SaaS 기획·출시
 - [[patterns/agent-mvp-stack-2026]] — 1인 MVP 스택 5대 영역 × 4 단계 + 의사결정 트리 (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — Vibe Coding의 7대 안티패턴과 회피법
 
-## Journal (30개)
+## Journal (32개)
+
+- [[journal/2026-10-06]] — 화요 데일리: Reflection Beam·Mistral Large 4·textGrain 워터마킹·MCP protocol pivoting·TikTok 커머스·a16z Top 100
+
+- [[journal/2026-10-05]] — 월요 데일리: AI 차르·Super Intelligence Force·뉴욕시 청문회·Zoho Zia LLM·Reflection 오픈 웨이트·LEA 권한 모델
 
 - [[journal/2026-10-04]] — 일요 데일리: GPT-Synopsys·OpenAI misalignment 보고·에이전트 상주 형태·권한 조이기 3연타·C1 LLM Gateway
 
@@ -170,7 +181,7 @@ status: active
 - [[journal/2026-05-17]] — 일요 데일리: Agentic AI Survey(symbolic vs neural) + BeliefMem(probabilistic memory) + MAGE(shadow memory guardrail) + 늦은 추가 3편(Human-Inspired Memory · FeatureBench · LITMUS)
 - [[journal/2026-05-15]] — 금요 데일리+주간 리뷰: ACDL(context 표기) + Constraint Decay(백엔드 −30점) + GroupMemBench(memory 46%) — 4일 *layer 사다리* 합치기
 
-## Comparisons (10개)
+## Comparisons (11개)
 
 - [[comparisons/rag-vs-llm-wiki]] — RAG와 LLM-Wiki 방식 비교: 재발견 vs 축적
 - [[comparisons/claude-code-plugins]] — Claude Code 플러그인 4종 비교 + 조합 전략
@@ -182,6 +193,7 @@ status: active
 - [[comparisons/agent-platforms-for-solo-dev]] — 1인 개발자 관점 4종 비교 (Managed/Deep Agents/Agents SDK/LangGraph 직접)
 - [[comparisons/agent-memory-taxonomy]] — task/productivity vs belief vs lifecycle vs safety memory 분류 + scale boundary / runtime enforcement overlay
 - [[comparisons/frontier-lab-economics]] — 저가 파괴자 vs 가격 결정력 인프라, DeepSeek 사례 (2026-09-24)
+- [[comparisons/consumer-ai-adoption]] — a16z Top 100 소비자 AI 앱, ChatGPT 선두·Claude 웹 3위 (2026-10-06)
 
 ## Meta
 

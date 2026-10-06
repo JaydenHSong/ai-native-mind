@@ -3,12 +3,13 @@ title: "Agentic Commerce"
 category: patterns
 tags: [agentic-commerce, shopping-agents, benchmarks, principal-agent, computer-use, steering, voice-agent, gemini, accessibility, stt]
 created: 2026-09-24
-updated: 2026-09-27
+updated: 2026-10-06
 sources:
   - "raw/articles/2026-09-24-agentic-commerce-benchmark-booking.md"
   - "raw/articles/2026-09-25-gemini-live-avatar-business-calling-suncatcher.md"
   - "raw/articles/2026-09-26-audioeye-agent-accessibility-study.md"
   - "raw/articles/2026-09-27-sarvam-saaras-v4-stt.md"
+  - "raw/articles/2026-10-06-tiktok-agentic-commerce.md"
 related:
   - "[[concepts/llm-evaluation]]"
   - "[[comparisons/agent-eval-frameworks]]"
@@ -81,6 +82,13 @@ The 9/25 Gemini voice-commerce thread (calling businesses directly) gains an **i
 - Pairs with 9/26 AudioEye (the accessibility tree as the agent's eyes): the text channel's accessibility tree ↔ the voice channel's STT — **"the quality of the interface through which the agent reads the world"** is a conversion input.
 - Limit: all vendor-reported numbers, no independent reproduction — confidence low. Memo: add an "STT error rate" variable to the voice-steering eval from the 9/25 section.
 
+### 2026-10-06 — TikTok's agentic commerce: the social feed becomes the checkout
+
+TikTok launched **Buy Direct** (one-click in-app checkout without leaving the brand, starting from the For You feed) and an **AI Shopping Assistant** (product discovery, shipping, sizing, availability, purchase in one conversation) — 10/5, PYMNTS. Built with Salesforce, Shopify, Shoplazza, and Stripe; currently advertiser-eligibility-based testing. Timed to Advertising Week New York 2026 — the first of several planned agentic-commerce experiences.
+
+- "Whose side is the agent on" resurfaces in a social context: when feed recommendation (discovery) and in-app checkout (conversion) share one screen, the steering boundary blurs further. Add **feed-checkout-integrated** scenarios to the "adversarial environment" eval from the 9/24 steering benchmark.
+- Same day, Constructor's Stripe-powered Agentic Checkout (checkout inside an onsite shopping agent) — platform-embedded (TikTok) vs onsite-embedded (Constructor) paths emerging on the same day.
+
 ---
 
 ## Sources
@@ -88,3 +96,4 @@ The 9/25 Gemini voice-commerce thread (calling businesses directly) gains an **i
 - [Agentic commerce reality check: Booking Holdings says LLM traffic is 'significantly below 1%' of bookings](raw/articles/2026-09-24-agentic-commerce-benchmark-booking.md)
 - [Gemini 3.8 Live Avatar, business-calling agents, and TPUs on a Falcon 9 (Project Suncatcher)](raw/articles/2026-09-25-gemini-live-avatar-business-calling-suncatcher.md)
 - [AudioEye: agent completion collapses on inaccessible sites (2026-09-24 study)](raw/articles/2026-09-26-audioeye-agent-accessibility-study.md)
+- [TikTok kicks off agentic commerce push: Buy Direct checkout + AI Shopping Assistant](raw/articles/2026-10-06-tiktok-agentic-commerce.md)

@@ -3,10 +3,11 @@ title: "MCP (Model Context Protocol)"
 category: concepts
 tags: [mcp, anthropic, protocol, tools, integration]
 created: 2026-04-09
-updated: 2026-09-24
+updated: 2026-10-06
 sources:
   - "raw/notes/2026-04-09-mcp-research.md"
   - "raw/articles/2026-05-01-a2a-protocol-spec.md"
+  - "raw/articles/2026-10-06-mcp-protocol-pivoting-vulnerability.md"
 related:
   - "[[concepts/context-engineering]]"
   - "[[concepts/harness-engineering]]"
@@ -15,6 +16,7 @@ related:
   - "[[patterns/owasp-llm-typescript-mitigations]]"
   - "[[concepts/a2a-protocol]]"
   - "[[tools/claude-marketplace]]"
+  - "[[tools/zoho-zia]]"
 status: active
 confidence: high
 ---
@@ -66,6 +68,8 @@ MCP Client (AI 앱)  ←→  MCP Server (도구/데이터)
 | **디자인** | Figma, Notion |
 | **데이터** | Supabase, 다양한 DB |
 
+- 2026-10-05 채택 사례: [[tools/zoho-zia]] — Zoho가 Zia LLM + 40개 에이전트와 함께 서드파티 에이전트 연결용 MCP 서버를 기본 탑재.
+
 ### 역사
 
 - **2024년 11월**: Anthropic이 MCP 발표
@@ -114,6 +118,16 @@ MCP는 Harness의 핵심 인프라. 에이전트가 외부 세계와 상호작�
 
 > 자세히: [[tools/claude-marketplace|Claude Marketplace]]
 
+## 2026-10-05 보안 — Protocol Pivoting: 에이전트 간 신뢰의 구조적 결함
+
+Ars Technica (Dan Goodin, 10/5) — 독립 연구원 Syed Anas Mohiuddin이 5개월간 Google·JP Morgan Chase·Weaviate·Rapid7·프랑스 정부 디지털국·미국 연방정부의 에이전트를 테스트.
+
+- **Protocol Pivoting**: 특수 목적 에이전트(번역·데이터 분석 등, 가드레일이 느슨)를 노리는 프롬프트 인젝션의 변형. MCP 서버가 에이전트별 자격증명을 저장하고, 에이전트들은 서로를 무조건 신뢰하므로, 주입된 지시가 정상 위임 태스크로 다음 에이전트에 전달·실행됨. 프로토콜을 넘나들 때(MCP→A2A/ANP) 신뢰·인가 정보가 "번역 중 소실". 에이전틱 아키텍처 구축 경쟁에서 조직들이 제로 트러스트를 버린 결과.
+- **확인된 취약점**: CVE-2026-97228 (Rapid7, 심각도 2.7/10, 지난달 수정). Google googleapis/mcp-toolbox SSRF (심각도 8) — HTTP 클라이언트가 CheckRedirect 정책·대상 IP 검증 없이 초기화. 수정: IP allow-list/block list + 시작 시 unsafe base URL 거부.
+- **대응**: Rapid7 Douglas McKee — "LLM→도구 입력을 인터넷의 낯선 사람 입력처럼 취급하라". X41 D-Sec Markus Vervier — 간접 프롬프트 인젝션의 하위 분류라는 반론.
+- **공격 시나리오**: 공격자가 콘텐츠에 악성 텍스트 심음 → 특수 에이전트가 읽고 다른 에이전트에 정상 태스크로 위임 → 신뢰 때문에 실행. DB 내용·민감 정보 탈취, SSRF (조작된 경로 파라미터로 내부 엔드포인트로 리다이렉트).
+- [[concepts/agent-supply-chain-security]]와 직결 — MCP "USB-C" 비유의 어두운 면: 표준 포트가 곧 공격 표면.
+
 ## 참고 소스
 
 - [MCP 리서치](raw/notes/2026-04-09-mcp-research.md)
@@ -121,3 +135,4 @@ MCP는 Harness의 핵심 인프라. 에이전트가 외부 세계와 상호작�
 - [Introducing MCP (Anthropic)](https://www.anthropic.com/news/model-context-protocol)
 - [MCP Specification](https://modelcontextprotocol.io/specification/2025-11-25)
 - [Code Execution with MCP (Anthropic)](https://www.anthropic.com/engineering/code-execution-with-mcp)
+- [MCP for agent-to-agent comms may be the riskiest protocol you've never heard of (Ars Technica)](raw/articles/2026-10-06-mcp-protocol-pivoting-vulnerability.md)
