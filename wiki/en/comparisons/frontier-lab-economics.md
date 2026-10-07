@@ -3,16 +3,18 @@ title: "Low-Cost Disruptor vs Pricing-Power Infrastructure"
 category: comparisons
 tags: [deepseek, huawei, ascend, revenue, fundraising, api-pricing, open-weights, llm-business, china, external-funding]
 created: 2026-09-24
-updated: 2026-10-04
+updated: 2026-10-07
 sources:
   - "raw/articles/2026-09-24-deepseek-1b-annualized-revenue.md"
   - "raw/articles/2026-10-01-anthropic-ipo-prospectus-reuters.md"
   - "raw/articles/2026-10-02-deepseek-huawei-ascend-partnership.md"
   - "raw/articles/2026-10-03-deepseek-first-external-funding.md"
   - "raw/articles/2026-10-04-always-on-agent-race-audit.md"
+  - "raw/articles/2026-10-07-ai-doom-loops-nyt-lawsuit.md"
 related:
   - "[[patterns/ai-cost-management]]"
   - "[[concepts/amd-world-labs-physical-ai]]"
+  - "[[concepts/ai-doom-loop]]"
 status: draft
 confidence: low
 ---
@@ -112,8 +114,17 @@ Stochastic Parrot's always-on agent audit (10/4) records DeepSeek's latest relea
 - Read through this page's framing: DeepSeek is at stage 4 (the capital-raising frontier player) yet **keeps open weights** — "open weights = cheap" is being redefined as "open weights = owning the distribution channel." Prices rise (stage 2) while distribution stays open.
 - The [[patterns/ai-cost-management]] lens: the open-weighting of gateway share signals that routing defaults are tilting toward "open-weight first" — a cue to reconsider routing defaults.
 
+## 2026-10-07 Update — AI doom loop: the industry's self-contradiction of destroying its own supply chain
+
+The NYT vs Microsoft/OpenAI lawsuit's unsealed documents (unsealed ~9/18, re-examined by futurism on 10/4) attach a "self-destruction" consequence to this page's economics — see [[concepts/ai-doom-loop]].
+
+- Microsoft's internal document (Brent Hecht): its own AI content strategy started a doom loop that "will hurt the performance of our models and the entire web at the same time" — conceding it is "highly unusual that an end-product threatens the economic foundations of its essential suppliers."
+- Nadella testified chatbots "substituted" journalism; ChatGPT head Nick Turley said publishers face an "existential threat" and chatbots are "largely substitutive" — the defense's own executives conceding "substitutability" in the fair-use fight.
+- Read through this page's framing: if DeepSeek's "pricing-power infrastructure" (stage 2) rests on inelastic demand, the doom loop warns about **supply sustainability** — if the fresh-content production base collapses, the foundation of pricing power (the content supply chain) shakes with it. A fifth risk axis, "supply-chain self-destruction," is now stacked on top of the four stages: low-cost → infrastructure → hardware → capital.
+
 ## Sources
 
 - [DeepSeek hits $1B annualized revenue, finalizing ~$7.5B raise at ~$74B valuation](raw/articles/2026-09-24-deepseek-1b-annualized-revenue.md)
 - [Anthropic IPO prospectus leak (Reuters)](raw/articles/2026-10-01-anthropic-ipo-prospectus-reuters.md)
 - [DeepSeek's first external funding talks — ~CNY 50B raise (unconfirmed)](raw/articles/2026-10-03-deepseek-first-external-funding.md)
+- [AI 'doom loop' — NYT lawsuit unsealed documents (futurism, 10/4)](raw/articles/2026-10-07-ai-doom-loops-nyt-lawsuit.md)

@@ -1,12 +1,13 @@
 ---
 title: "Agent Scientific Discovery"
 category: patterns
-tags: [agentic-research, scientific-discovery, evaluation, anthropic, claude, claims]
+tags: [agentic-research, scientific-discovery, evaluation, anthropic, claude, claims, openai, math-discovery, agmai]
 created: 2026-09-25
-updated: 2026-09-26
+updated: 2026-10-07
 sources:
   - "raw/articles/2026-09-25-anthropic-claude-crispr-art-enzyme.md"
   - "raw/articles/2026-09-26-stanford-paper2agent.md"
+  - "raw/articles/2026-10-07-openai-377-math-results-github.md"
 related:
   - "[[concepts/llm-evaluation]]"
   - "[[concepts/harness-engineering]]"
@@ -92,6 +93,18 @@ Claude의 ART 발견이 "에이전트가 발견을 수행"하는 사례라면, P
 - **한계**: 성공률·정확도는 연구팀 자체 측정(독립 검증 필요). 원저자 동의 여부·생물학 밖 적용성은 미해결.
 
 → "문헌 접지" 단계가 **정적 읽기에서 실행 가능한 도구 호출**로 바뀐다는 점에서 위 "해결 방법" 3단계 템플릿의 입력층을 업그레이드하는 사례. [[concepts/mcp]]의 실전 패턴이기도 함.
+
+## 적용 사례 3 — OpenAI 377개 수학 결과 GitHub 공개 (2026-10-06): 비공개 모델의 발견 딜레마
+
+Claude의 ART 발견이 "에이전트가 wet-lab과 협업해 발견"하는 사례라면, OpenAI의 수학 결과 공개는 **"프론티어 랩이 비공개 모델로 발견을 독점"**하는 사례 — 발견 파이프라인의 입력(모델) 자체가 닫혀 있는 경우.
+
+- **규모**: 377개 신규 수학 결과를 GitHub info-dump로 공개. 샘플 하나는 "the full Birch–Swinnerton-Dyer leading term formula" 증명 주장 (Q 위 타원곡선 중 일부로 한정).
+- **모델**: 결과를 만든 건 미공개 내부 모델 — 약 한 달 전 Navier-Stokes 방정식 반례를 찾아낸 바로 그 모델. OpenAI는 "working to responsibly release" 중이라고만 밝힘.
+- **윤리 논쟁**: IAS 산하 AGMAI(Advisory Group on Mathematics and Artificial Intelligence)는 9/29 "frontier AI labs가 대중이 접근 불가능한 proprietary model로 고급 수학 문제를 테스트하는 관행을 지지하지 않으며 중단하라"고 공개 요구. 이번 공개는 권고를 받아들이지 않은 셈.
+- **전례**: Navier-Stokes 반례 당시, OpenAI가 AI를 쓰던 다른 수학자 팀의 작업을 "swooped in and finished"했다는 NYT 보도 — 발견 경쟁의 학계 윤리 문제와 맞물림.
+- **이 페이지의 템플릿으로 읽으면**: "문헌 접지→in-silico 가설→검증" 파이프라인은 돌아가지만, **검증 주체(수학 커뮤니티)가 모델에 접근할 수 없어** 3단계 중 "검증 분리" 원칙이 무너짐. 결과물은 열려 있고 과정(모델)은 닫힌 비대칭.
+
+→ "발견의 주체"를 넘어 **"발견 도구의 공개성"** 이 새로운 논점. AGMAI의 요구는 사실상 "검증 가능성을 위한 모델 공개" 요구다.
 
 ## 관련 패턴
 

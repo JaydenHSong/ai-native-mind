@@ -3,16 +3,18 @@ title: "저가 파괴자 vs 가격 결정력 인프라"
 category: comparisons
 tags: [deepseek, huawei, ascend, revenue, fundraising, api-pricing, open-weights, llm-business, china, external-funding]
 created: 2026-09-24
-updated: 2026-10-04
+updated: 2026-10-07
 sources:
   - "raw/articles/2026-09-24-deepseek-1b-annualized-revenue.md"
   - "raw/articles/2026-10-01-anthropic-ipo-prospectus-reuters.md"
   - "raw/articles/2026-10-02-deepseek-huawei-ascend-partnership.md"
   - "raw/articles/2026-10-03-deepseek-first-external-funding.md"
   - "raw/articles/2026-10-04-always-on-agent-race-audit.md"
+  - "raw/articles/2026-10-07-ai-doom-loops-nyt-lawsuit.md"
 related:
   - "[[patterns/ai-cost-management]]"
   - "[[concepts/amd-world-labs-physical-ai]]"
+  - "[[concepts/ai-doom-loop]]"
 status: draft
 confidence: low
 ---
@@ -112,8 +114,17 @@ Stochastic Parrot의 always-on 에이전트 감사(10/4)가 DeepSeek의 최신 �
 - 이 페이지의 프레이밍으로 읽으면: DeepSeek은 4단계(자본 조달 프런티어 플레이어)인데도 **open-weight를 유지** — "오픈 웨이트 = 저가"가 아니라 "오픈 웨이트 = 배포 채널 장악"으로 의미 전환. 가격은 인상(2단계)하면서 유통은 개방.
 - [[patterns/ai-cost-management]] 관점: 게이트웨이 점유율의 open-weight화는 라우팅의 기본값이 "open-weight 우선"으로 기울고 있음을 시사 — 라우팅 규칙의 디폴트를 재검토할 신호.
 
+## 2026-10-07 보강 — AI 둠 루프: 자기 공급망을 파괴하는 산업의 자기모순
+
+NYT vs Microsoft·OpenAI 소송의 비공개 해제 문서(9/18 해제, futurism 10/4 재조명)가 이 페이지의 경제학에 "자기파괴"라는 귀결을 붙였다 — 상세는 [[concepts/ai-doom-loop]].
+
+- Microsoft 내부 문서(Brent Hecht): 자사 AI 콘텐츠 전략이 "모델 성능과 웹 전체를 동시에 해칠" doom loop를 시작했다고 자인 — "최종 제품이 핵심 공급자의 경제적 기반을 위협하는 건 극히 이례적".
+- Nadella는 챗봇이 저널리즘을 "substituted", ChatGPT 총괄 Nick Turley는 퍼블리셔가 "existential threat"에 직면했고 챗봇은 "largely substitutive"라고 증언 — fair use 공방에서 피고 측 임원이 "대체성"을 인정한 셈.
+- 이 페이지의 프레이밍으로 읽으면: DeepSeek의 "가격 결정력 인프라"(2단계)가 수요의 가격 비탄력성에 기댄다면, 둠 루프는 **공급의 지속가능성**에 대한 경고 — 모델이 의존하는 신선 콘텐츠의 생산 기반이 무너지면 가격 결정력의 토대(콘텐츠 공급망)도 함께 흔들림. "저가→인프라→하드웨어→자본" 4단계 위에 "공급망 자기파괴"라는 5번째 리스크 축이 얹힌 셈.
+
 ## 참고 소스
 
 - [DeepSeek hits $1B annualized revenue, finalizing ~$7.5B raise at ~$74B valuation](raw/articles/2026-09-24-deepseek-1b-annualized-revenue.md)
 - [Anthropic IPO prospectus 유출 (Reuters)](raw/articles/2026-10-01-anthropic-ipo-prospectus-reuters.md)
 - [DeepSeek 첫 외부 투자 협상 — ~500억 위안 조달 (미확정)](raw/articles/2026-10-03-deepseek-first-external-funding.md)
+- [AI '둠 루프' — NYT 소송 비공개 해제 문서 (futurism, 10/4)](raw/articles/2026-10-07-ai-doom-loops-nyt-lawsuit.md)
