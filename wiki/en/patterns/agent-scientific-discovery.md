@@ -1,13 +1,14 @@
 ---
 title: "Agent Scientific Discovery"
 category: patterns
-tags: [agentic-research, scientific-discovery, evaluation, anthropic, claude, claims, openai, math-discovery, agmai]
+tags: [agentic-research, scientific-discovery, evaluation, anthropic, claude, claims, openai, math-discovery, agmai, verification-asymmetry]
 created: 2026-09-25
-updated: 2026-10-07
+updated: 2026-10-08
 sources:
   - "raw/articles/2026-09-25-anthropic-claude-crispr-art-enzyme.md"
   - "raw/articles/2026-09-26-stanford-paper2agent.md"
   - "raw/articles/2026-10-07-openai-377-math-results-github.md"
+  - "raw/articles/2026-10-08-openai-722-math-manuscripts.md"
 related:
   - "[[concepts/llm-evaluation]]"
   - "[[concepts/harness-engineering]]"
@@ -73,15 +74,16 @@ What the agent then did:
 - The 26 failures double as a **reproducibility audit** — papers that couldn't become agents often couldn't be reproduced at all.
 - Open questions: author consent for agentification, and generalization beyond computational biology.
 
-### 2026-10-06 — OpenAI's 377 math results on GitHub: the closed-model discovery dilemma
+### 2026-10-06/07 — OpenAI's 722 math manuscripts on GitHub: peak verification asymmetry
 
-Where Claude's ART case is "agents discovering with wet-lab collaboration," OpenAI's math dump is **"a frontier lab monopolizing discovery with a closed model"** — the discovery pipeline's input (the model) is itself closed.
+Where Claude's ART case is "agents discovering with wet-lab collaboration," OpenAI's math dump is **"a frontier lab monopolizing discovery with a closed model"** — the discovery pipeline's input (the model) is itself closed. (Correction: yesterday's "377 results" was the early count; the full release is 722 manuscripts / 372 result families.)
 
-- **Scale**: 377 new math results released as a GitHub info-dump. One sampled paper claims a proof of "the full Birch–Swinnerton-Dyer leading term formula" (restricted to certain elliptic curves over Q).
-- **Model**: the results came from an unreleased internal model — the same one that found the Navier-Stokes exception about a month earlier. OpenAI says it is "working to responsibly release" it.
-- **Ethics dispute**: AGMAI (Advisory Group on Mathematics and Artificial Intelligence, at IAS) publicly asked on 9/29 that frontier labs stop "testing advanced mathematical problems on proprietary models that remain inaccessible to the broader scientific community." This release effectively declined that request.
+- **Scale**: 722 manuscripts = 372 result families released on GitHub on the night of 10/6 — selected from ~4,000 problems posed to the unreleased internal model. Apache-2.0 license. GitHub Issues disabled on the repository.
+- **Claims**: a spokesperson says "almost every one of the results" came from handing a single prompt to a single AI agent, averaging ~3 hours of ChatGPT Pro thinking per result. Samples: the quasi-Riemann hypothesis (a weaker form of the Riemann hypothesis), the four-dimensional Kakeya conjecture, the irrationality of Catalan's constant.
+- **Verification status**: only 162 manuscripts (~22%) have Lean-formalized main results. Abridged reasoning summaries released for just 10 results. OpenAI warns some unformalized results "could have issues." An arXiv audit of the 8/1 results found no confirmed substantive error (October batch not covered).
+- **Mathematicians: "show us the receipts"**: IAS's AGMAI (9/29) recommended disclosing model names, prompts, reasoning summaries, and compute costs. OpenAI released only average compute times and some statistics — no prompts. Spokesperson: OpenAI is "not bound" by the recommendations. MIT's Andrew Sutherland: the single-agent claims stay unverified "until and unless they release the model and people can replicate their results." Terence Tao: problems are being harvested faster than the field can absorb them.
 - **Precedent**: at the Navier-Stokes announcement, the NYT reported OpenAI had "swooped in and finished" work another mathematicians' team was doing with AI — the discovery race's academic-ethics problem.
-- **Read through this page's template**: the "literature grounding → in-silico hypothesis → validation" pipeline runs, but the **verification-separation principle breaks** because the math community cannot access the model. Results are open; the process (model) is closed — an asymmetry.
+- **Read through this page's template**: the "literature grounding → in-silico hypothesis → validation" pipeline runs, but the **verification-separation principle breaks** because the math community cannot access the model. Results are open (Apache-2.0); the process (model, prompts, Issues) is closed — and with mathematicians now answering through reproducibility norms, **verification asymmetry** has hardened into this pattern's canonical case.
 
 → Beyond "who discovers," **"how open the discovery tool is"** becomes the new question. AGMAI's demand is effectively a demand for model release in the name of verifiability.
 

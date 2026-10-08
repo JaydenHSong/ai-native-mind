@@ -1,13 +1,14 @@
 ---
 title: "Agent Scientific Discovery"
 category: patterns
-tags: [agentic-research, scientific-discovery, evaluation, anthropic, claude, claims, openai, math-discovery, agmai]
+tags: [agentic-research, scientific-discovery, evaluation, anthropic, claude, claims, openai, math-discovery, agmai, verification-asymmetry]
 created: 2026-09-25
-updated: 2026-10-07
+updated: 2026-10-08
 sources:
   - "raw/articles/2026-09-25-anthropic-claude-crispr-art-enzyme.md"
   - "raw/articles/2026-09-26-stanford-paper2agent.md"
   - "raw/articles/2026-10-07-openai-377-math-results-github.md"
+  - "raw/articles/2026-10-08-openai-722-math-manuscripts.md"
 related:
   - "[[concepts/llm-evaluation]]"
   - "[[concepts/harness-engineering]]"
@@ -94,15 +95,16 @@ Claude의 ART 발견이 "에이전트가 발견을 수행"하는 사례라면, P
 
 → "문헌 접지" 단계가 **정적 읽기에서 실행 가능한 도구 호출**로 바뀐다는 점에서 위 "해결 방법" 3단계 템플릿의 입력층을 업그레이드하는 사례. [[concepts/mcp]]의 실전 패턴이기도 함.
 
-## 적용 사례 3 — OpenAI 377개 수학 결과 GitHub 공개 (2026-10-06): 비공개 모델의 발견 딜레마
+## 적용 사례 3 — OpenAI 722개 수학 원고 GitHub 공개 (2026-10-06/07): 검증 비대칭의 정점
 
-Claude의 ART 발견이 "에이전트가 wet-lab과 협업해 발견"하는 사례라면, OpenAI의 수학 결과 공개는 **"프론티어 랩이 비공개 모델로 발견을 독점"**하는 사례 — 발견 파이프라인의 입력(모델) 자체가 닫혀 있는 경우.
+Claude의 ART 발견이 "에이전트가 wet-lab과 협업해 발견"하는 사례라면, OpenAI의 수학 결과 공개는 **"프론티어 랩이 비공개 모델로 발견을 독점"**하는 사례 — 발견 파이프라인의 입력(모델) 자체가 닫혀 있는 경우. (정정: 어제 기록의 "377개 결과"는 722개 원고 / 372개 결과 패밀리의 초기 수치였음.)
 
-- **규모**: 377개 신규 수학 결과를 GitHub info-dump로 공개. 샘플 하나는 "the full Birch–Swinnerton-Dyer leading term formula" 증명 주장 (Q 위 타원곡선 중 일부로 한정).
-- **모델**: 결과를 만든 건 미공개 내부 모델 — 약 한 달 전 Navier-Stokes 방정식 반례를 찾아낸 바로 그 모델. OpenAI는 "working to responsibly release" 중이라고만 밝힘.
-- **윤리 논쟁**: IAS 산하 AGMAI(Advisory Group on Mathematics and Artificial Intelligence)는 9/29 "frontier AI labs가 대중이 접근 불가능한 proprietary model로 고급 수학 문제를 테스트하는 관행을 지지하지 않으며 중단하라"고 공개 요구. 이번 공개는 권고를 받아들이지 않은 셈.
+- **규모**: 10/6 밤 GitHub에 722개 원고 = 372개 결과 패밀리 공개. 약 4,000개 문제를 미공개 내부 모델에 던져 유의미하다고 판단한 것만 선별. Apache-2.0 라이선스. 레포의 GitHub Issues는 비활성화.
+- **주장**: 대변인은 "단일 프롬프트를 단일 AI 에이전트에 건네 거의 모든 결과를 얻었다"고 주장. 결과당 평균 약 3시간의 ChatGPT Pro 사고 연산. 샘플: quasi-Riemann hypothesis(리만 가설의 약한 버전), 4차원 Kakeya 추측, Catalan 상수의 무리수성.
+- **검증 상태**: Lean 형식화 메인 결과는 162건(~22%). 10건에 대한 축약 추론 요약만 공개. OpenAI는 "형식화되지 않은 결과 중 일부에 문제가 있을 수 있다"고 경고. 8/1 발표 10건에 대한 arXiv 감사는 실질 오류 미확인 (10월분은 미포함).
+- **수학계의 "영수증을 달라"**: IAS 산하 AGMAI(9/29)는 모델명·프롬프트·추론 요약·연산 비용 공개를 권고. OpenAI는 평균 연산 시간과 일부 통계만 공개하고 프롬프트는 미공개. 대변인: "권고에 구속되지 않는다(not bound)." MIT Andrew Sutherland: "모델이 공개돼 재현 가능해지기 전까지 single-agent 주장은 unverified." Terence Tao: "문제가 분야가 흡수하는 속도보다 빨리 수확되고 있다."
 - **전례**: Navier-Stokes 반례 당시, OpenAI가 AI를 쓰던 다른 수학자 팀의 작업을 "swooped in and finished"했다는 NYT 보도 — 발견 경쟁의 학계 윤리 문제와 맞물림.
-- **이 페이지의 템플릿으로 읽으면**: "문헌 접지→in-silico 가설→검증" 파이프라인은 돌아가지만, **검증 주체(수학 커뮤니티)가 모델에 접근할 수 없어** 3단계 중 "검증 분리" 원칙이 무너짐. 결과물은 열려 있고 과정(모델)은 닫힌 비대칭.
+- **이 페이지의 템플릿으로 읽으면**: "문헌 접지→in-silico 가설→검증" 파이프라인은 돌아가지만, **검증 주체(수학 커뮤니티)가 모델에 접근할 수 없어** 3단계 중 "검증 분리" 원칙이 무너짐. 결과물은 열려 있고(Apache-2.0) 과정(모델·프롬프트·Issues)은 닫힌 비대칭 — 여기에 수학계가 재현 규범으로 맞서는 구도까지 더해져 **검증 비대칭(verification asymmetry)**이 이 패턴의 핵심 사례로 굳어짐.
 
 → "발견의 주체"를 넘어 **"발견 도구의 공개성"** 이 새로운 논점. AGMAI의 요구는 사실상 "검증 가능성을 위한 모델 공개" 요구다.
 
@@ -115,3 +117,4 @@ Claude의 ART 발견이 "에이전트가 wet-lab과 협업해 발견"하는 사�
 
 - [Claude agents identify a CRISPR-like enzyme system (ART) — 950 agents, 21 hours, 210M tokens](raw/articles/2026-09-25-anthropic-claude-crispr-art-enzyme.md)
 - [Stanford Paper2Agent: research papers become MCP-based AI agents (~45 min, ~$14)](raw/articles/2026-09-26-stanford-paper2agent.md)
+- [OpenAI, 미공개 모델의 수학 논문 722건 GitHub 공개 — '영수증을 달라'는 수학계 반발 (Decrypt, 10/7)](raw/articles/2026-10-08-openai-722-math-manuscripts.md)

@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-10-06
-total_pages: 125
+updated: 2026-10-08
+total_pages: 131
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 125 managed pages total | Last updated: 2026-10-06 (daily ingest: 6 AI news sources collected + ko/en wiki refinement) — most pages include a **Start here** block.
+> 131 managed pages total | Last updated: 2026-10-08 (daily ingest: 6 AI news sources collected + ko/en wiki refinement) — most pages include a **Start here** block.
 
 ## Start here
 
@@ -26,7 +26,7 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - **Practice (Chapters 3–5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **Endgame (Chapters 6–7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (39)
+## Concepts (42)
 
 ### Growth map & philosophy
 - [[concepts/ai-native-programmer]] — a developer who uses AI as teammates to achieve team-scale outcomes solo; growth map
@@ -59,6 +59,7 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[concepts/reflection-open-weight]] — Nvidia-backed Reflection AI open-weight model, the U.S. answer to DeepSeek/Qwen (imminent, 2026-10-05)
 - [[concepts/mistral-large-4]] — Mistral Large 4 (Le Chonk), claimed cyber edge over Chinese open models, open-weight release Oct 27 (2026-10-06)
 - [[concepts/ai-text-watermarking]] — OpenAI textGrain, EU AI Act-driven text watermarking (2026-10-06)
+- [[concepts/claude-haiku-5-5]] — Claude Haiku 5.5: the lightest, cheapest 5.5-series model, up to 90% API price cut + effort setting (2026-10-08)
 
 ### Operations & observability
 - [[concepts/gen-ai-observability]] — OpenTelemetry GenAI and agent semantic conventions, traces, and standard instrumentation
@@ -77,9 +78,11 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[concepts/white-house-ai-accord]] — White House Accord on Superintelligence: voluntary pact + follow-up details (2026-09-30)
 - [[concepts/reasoning-extraction-attack]] — extraction attacks on models' hidden reasoning processes, Moonshot-AI-linked blocking (2026-10-02)
 - [[concepts/nyc-ai-hearing]] — NYC Council AI hearing, first sworn testimony from major AI companies + kill-switch bills (2026-10-05)
-- [[concepts/super-intelligence-force]] — Trump administration's Super Intelligence Force, federal coordination under the AI czar (2026-10-05)
+- [[concepts/super-intelligence-force]] — Trump administration's Super Intelligence Force, federal coordination under the AI czar + DOJ 'super intelligence' terminology memo (2026-10-05/07)
+- [[concepts/ai-doom-loop]] — the AI doom loop: self-destructive feedback in the content supply chain, NYT lawsuit unsealed docs (2026-10-07)
+- [[concepts/ai-teen-safety-evaluation]] — ChatGPT for Teens rated 'Unacceptable Risk', 4,000+ prompt independent evaluation (2026-10-07)
 
-## Tools (13)
+## Tools (14)
 
 - [[tools/claude-code]] — Anthropic’s CLI-based AI coding tool; the wiki maintenance LLM
 - [[tools/obsidian]] — local markdown note app; wiki browser and IDE
@@ -94,6 +97,7 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[tools/claude-marketplace]] — Claude connector/plugin marketplace with 2,000+ listings (2026-09-24)
 - [[tools/codex-security]] — OpenAI security agent bundling detect→patch→fix into one loop (research preview, 2026-09-24)
 - [[tools/zoho-zia]] — Zoho's in-house LLM + 40 agents + MCP server, India-built right-sized models (2026-10-05)
+- [[tools/claude-google-workspace]] — Claude for Google Workspace public beta, direct Docs/Sheets/Slides editing (2026-10-07)
 
 ## Patterns (30)
 
@@ -135,7 +139,11 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[patterns/agent-mvp-stack-2026]] — solo MVP stack: 5 areas × 4 stages + decision tree (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — seven major anti-patterns in vibe coding and how to avoid them
 
-## Journal (32)
+## Journal (34)
+
+- [[journal/2026-10-08]] — Thursday daily: Haiku 5.5 · Surface Ultra · OpenAI's 722 math manuscripts · DeepSeek $12B · Nous $1.5B · PolicyLM-1.7B
+
+- [[journal/2026-10-07]] — Wednesday daily: OpenAI's 377 math results · Claude Workspace · AI doom loop · Underdog · ChatGPT for Teens · DOJ terminology memo
 
 - [[journal/2026-10-06]] — Tuesday daily: Reflection Beam · Mistral Large 4 · textGrain watermarking · MCP protocol pivoting · TikTok commerce · a16z Top 100
 

@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-10-06
+updated: 2026-10-08
 sources: []
 status: active
 ---
@@ -19,6 +19,38 @@ This page records only **what changed** by date. For concept explanations, see t
 - World-map hub: [[campaign-map|Campaign Map]]
 - Navigation guide: [[overview|Overview]]
 - Full catalog: [[index|Index]]
+
+## [2026-10-08] ingest | Daily AI news scrape — 6 raw sources + ko/en wiki refinement
+
+- **Raw collected** (raw/articles/, 6):
+  - `2026-10-08-anthropic-claude-haiku-5-5.md` — Claude Haiku 5.5 launch (10/7, Reuters): all three 5.5-series models completed within a month. $0.10/$0.50 per 1M tokens (under 100k), ~75% cheaper than Haiku 4.5. First Haiku with adjustable effort + built-in safeguards for high-risk cybersecurity requests. VentureBeat: "up to 90% cut targeting repetitive work, matching GPT-6 Luna"
+  - `2026-10-08-microsoft-surface-ultra-agentic-windows.md` — Surface Laptop Ultra + Agentic Windows (10/7, Reuters et al.): Nvidia RTX Spark, 128GB unified memory, 1 petaflop, 120B+ models locally. From $2,599, shipping 10/16. Copilot hybrid intelligence + Execution Containers GA. Agent security triad (Containment, Identity, Manageability)
+  - `2026-10-08-openai-722-math-manuscripts.md` — OpenAI's 722 math manuscripts (10/7, Decrypt et al.): 722 manuscripts = 372 families (correcting yesterday's "377"). "Single prompt to a single agent" claim, ~3h per result. Only 162 Lean-formalized (~22%). AGMAI's recommendation effectively rejected ("not bound"). MIT's Sutherland: "unverified until reproducible"
+  - `2026-10-08-deepseek-12b-raise.md` — DeepSeek nearing $12B+ raise (10/6, Bloomberg): led by Tencent and CATL, at least $12B (up to $15B), ~$74B valuation, domestic IPO in early 2027. V4-Flash cost-performance as trigger. $1B annualized revenue run rate
+  - `2026-10-08-nous-research-hermes-enterprise.md` — Nous Research at $1.5B valuation (10/7, TechCrunch): $90M Series B (Robot Ventures leading; Nvidia, Samsung, USV, Menlo, 1789 Capital). Hermes Agent cloned 24M+ times, ~2.5% of global AI token usage (company estimate). 'Hermes for Businesses' launch
+  - `2026-10-08-musubi-policylm-decision-model.md` — Musubi PolicyLM-1.7B (10/6, TechCrunch exclusive): 1.7B open-weight decision model, plain-English policies applied in under 50ms, no retraining on policy change. Fourth commercial decision model in 11 days after Jev, Clef/Decider 2B, and the Decisions API
+- **New: 2** (status: draft): `concepts/claude-haiku-5-5.md` (confidence medium), `journal/2026-10-08.md`
+- **Updated: 4**: `concepts/agent-residence.md` (third axis: OS-embedded), `patterns/agent-scientific-discovery.md` (case 3 corrected 377→722 + verification asymmetry), `comparisons/frontier-lab-economics.md` (DeepSeek $12B + Nous enterprise), `concepts/semantic-decision-engine.md` (PolicyLM-1.7B)
+- index 129→131 (concepts 41→42, journal 33→34), log updated.
+- EN sync: mirrored the 2 new + 4 updated pages from ko; en/index, log, overview, campaign-map updated. No translation gaps.
+- Gmail: AI newsletters in the last 24h — leads from the Flipboard Thursday tech briefing (05:05 PDT today). Google Alerts had no core AI news. No label changes, deletions, or archives.
+- Web scout extras (not collected): Lambda's $4B pre-IPO round (WSJ), Moonshot's $50B Hong Kong IPO (Q1 2027), Waterloo study on LLM status-quo bias in climate advice, Plymouth Union poll (62% existential risk), Anthropic's Riemann-zeta bound claim (single aggregator, unverified).
+
+## [2026-10-07] ingest | Daily AI news scrape — 6 raw sources + ko/en wiki refinement
+
+- **Raw collected** (raw/articles/, 6):
+  - `2026-10-07-openai-377-math-results-github.md` — OpenAI's 377 math results on GitHub (10/6, Gizmodo): outputs of an unreleased internal model (same one behind the Navier-Stokes exception). AGMAI's "stop testing on proprietary models" request effectively declined. Results open, model closed — an asymmetry
+  - `2026-10-07-claude-google-workspace-beta.md` — Claude for Google Workspace public beta (10/6, VentureBeat et al., multi-source): all paid plans. Claude sidebar inside Docs/Sheets/Slides + Google connectors inside Claude chat. "Ask before edits" approval mode. Head-on entry into Gemini's home turf
+  - `2026-10-07-ai-doom-loops-nyt-lawsuit.md` — AI 'doom loop' (futurism 10/4, NYT lawsuit unsealed docs): Microsoft's internal document concedes its own AI strategy started a doom loop hurting "our models and the entire web." Nadella: "substituted"; Turley: "largely substitutive." BLS: 200,000+ creative jobs lost in four years (second-hand figure)
+  - `2026-10-07-underdog-ondevice-ai-assistant.md` — Sigil Wen's Underdog beta (10/6, TechCrunch): fully on-device, 27B reasoning model fine-tuned from Qwen3.8-27B + Husky inference engine. Mac/Windows (Linux/iPhone/Android planned). The privacy alternative to Instinct and Muse
+  - `2026-10-07-chatgpt-teens-unacceptable-risk.md` — ChatGPT for Teens rated 'Unacceptable Risk' (10/7, unite.ai / Axios): Common Sense Media's Youth AI Safety Institute, 4,000+ prompts before/after. Zero parental notifications in 60-minute crisis conversations, hotline mentions 63%→3% (depression), age estimation never triggered. Urges teen-access block; OpenAI disputes methodology
+  - `2026-10-07-doj-super-intelligence-memo.md` — DOJ 'super intelligence' terminology memo (10/6, Reuters): all staff to use "super intelligence"/"SI" instead of "AI," including court filings when appropriate. Follows Trump's EO 14434; formal definition due within 60 days
+- **4 new pages** (status: draft): `tools/claude-google-workspace.md` (Workspace integration, confidence medium), `concepts/ai-doom-loop.md` (doom loop, confidence medium), `concepts/ai-teen-safety-evaluation.md` (teen safety evaluation, confidence medium), `journal/2026-10-07.md`
+- **4 reinforced**: `concepts/agent-residence.md` (Underdog/Workspace polarization), `patterns/agent-scientific-discovery.md` (OpenAI math case), `comparisons/frontier-lab-economics.md` (doom loop), `concepts/super-intelligence-force.md` (DOJ memo, confidence low→medium)
+- Index 125→129 (concepts 39→41, tools 13→14, journal 32→33); log updated.
+- English sync: 4 new + 4 reinforced pages mirrored to en + en/index·log·journal updated. No translation gaps.
+- Gmail: no AI newsletters in the last 24h (leads from Flipboard's Wednesday tech briefing). Axios original was unreachable behind a Cloudflare CAPTCHA → cross-verified via the full unite.ai article.
+- Web-scout extras (not saved as raw): SpaceX's $40B Nvidia-chip raise (FT), Nvidia nearing $6T market cap (Bloomberg), UK adopting all 44 healthcare-AI recommendations (GOV.UK), Meta/Microsoft cutting internal Claude spend (The Information, unconfirmed), 4 AWS Loom/SageMaker CVEs patched, Anthropic's Claude Startups expansion.
 
 ## [2026-10-06] ingest | Daily AI news scrape — 6 raw sources + ko/en wiki refinement
 

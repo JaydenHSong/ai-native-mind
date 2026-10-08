@@ -1,18 +1,20 @@
 ---
 title: "Semantic Decision Engine"
 category: concepts
-tags: [semantic-decision-engine, non-generative, model-routing, cost-optimization, llm-evaluation, decisions-api, openai]
+tags: [semantic-decision-engine, non-generative, model-routing, cost-optimization, llm-evaluation, decisions-api, openai, musubi, policylm]
 created: 2026-09-27
-updated: 2026-10-03
+updated: 2026-10-08
 sources:
   - "raw/articles/2026-09-27-jevs-semantic-decision-engine.md"
   - "raw/articles/2026-10-02-decision-models-clef-decider-2b.md"
   - "raw/articles/2026-10-03-openai-decisions-api-devday.md"
+  - "raw/articles/2026-10-08-musubi-policylm-decision-model.md"
 related:
   - "[[patterns/ai-cost-management]]"
   - "[[concepts/llm-evaluation]]"
   - "[[concepts/structured-output]]"
   - "[[patterns/agent-safety-runtime]]"
+  - "[[patterns/agent-authority-model]]"
 status: draft
 confidence: medium
 ---
@@ -82,6 +84,16 @@ DevDay(10/3)에서 OpenAI가 **Decisions API**를 발표 — Luna 모델 기반,
 - 의미: 10/2의 오픈소스 웨이브(Clef·Decider 2B)에 빅랩(OpenAI) 제품이 대응 — **decision model이 표준 레이어**로 굳어지는 단계. 이 페이지 "한계"의 "개념의 실재성은 확인"이 한 단계 더 강해짐.
 - 함께 나온 DevDay 소식: 쇼핑 도구 확장, 정보 공유 의혹으로 보안 연구원 3인 퇴사 — 맥락 참고용 (본 페이지의 직접 주제는 아님).
 
+## 2026-10-08 보강 — Musubi PolicyLM-1.7B: 결정 모델의 실시간 가드레일화
+
+10/6 TechCrunch 단독 — Musubi가 **1.7B 파라미터 오픈 웨이트 결정 모델 PolicyLM-1.7B** 공개:
+
+- 평이한 영어 문장의 콘텐츠 정책을 메시지에 **50ms 미만**으로 적용. 정책 변경 시 재학습 불필요 (프롬프트 수준에서 정책 교체).
+- 전통 분류기와 동등한 비용·속도 + LLM 유연성 유지. 초기 활용처로 '말썽 피우는 AI 에이전트 통제' 언급.
+- 계보: TypeSafeAI Jev(9/27) → Clef·Decider 2B(10/2) → OpenAI Decisions API(10/3) → **PolicyLM-1.7B(10/6)**. 11일 만에 4번째 상용 결정 모델 — 오픈소스/소규모 벤더가 선도하고 빅랩이 후행하는 패턴의 반복.
+- [[patterns/agent-safety-runtime]]과 직결: 50ms 실시간 판정은 실행시점 보안 런타임의 "판정 레이어" 후보. [[patterns/agent-authority-model]] 관점에서는 자연어로 표현된 권한 경계를 기계적으로 강제하는 메커니즘.
+- 출처 한계: TechCrunch 단독 — 50ms 등 수치는 회사 주장, 독립 검증 없음. 이 페이지 confidence는 medium 유지.
+
 ## 관련 개념
 
 - [[patterns/ai-cost-management]] — 비생성 결정이 여는 새 비용 최적화 축
@@ -91,3 +103,4 @@ DevDay(10/3)에서 OpenAI가 **Decisions API**를 발표 — Luna 모델 기반,
 ## 참고 소스
 
 - [Jev: the Semantic Decision Engine that refuses to generate](raw/articles/2026-09-27-jevs-semantic-decision-engine.md)
+- [Musubi, PolicyLM-1.7B 공개 — 50ms 미만 실시간 결정 모델 (TechCrunch, 10/6)](raw/articles/2026-10-08-musubi-policylm-decision-model.md)

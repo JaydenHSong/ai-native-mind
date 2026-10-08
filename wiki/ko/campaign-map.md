@@ -3,7 +3,7 @@ title: "Campaign Map"
 category: meta
 tags: [map, campaign, navigation]
 created: 2026-04-12
-updated: 2026-10-05
+updated: 2026-10-08
 sources:
  - "wiki/overview.md"
  - "wiki/index.md"
@@ -99,4 +99,5 @@ confidence: high
 - 2026-04-12: Chapter 0~2 핵심 문서에 공통 `Chapter Clear 가이드` 섹션을 추가해, 문서 단위에서도 퀘스트 흐름이 끊기지 않도록 보강.
 - 2026-04-12: Chapter 3~7 핵심 문서까지 `Chapter Clear 가이드`를 확장해 전체 챕터 라인이 문서 단위로 연속되도록 연결.
 - 2026-04-13: [[patterns/harness-engineering-casebook]] 추가 — 하네스 도메인 케이스 30 + Anthropic Academy 스터디 맵, 서브 퀘스트에 연결.
+- 2026-10-08: 데일리 ingest — [[concepts/claude-haiku-5-5]] 신규, [[concepts/agent-residence]]·[[patterns/agent-scientific-discovery]]·[[comparisons/frontier-lab-economics]]·[[concepts/semantic-decision-engine]] 보강, 총 131페이지.
 

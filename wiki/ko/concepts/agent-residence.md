@@ -1,18 +1,20 @@
 ---
 title: "에이전트의 상주 형태 — 로컬 모델 vs 클라우드 컴퓨터"
 category: concepts
-tags: [agent-residence, local-model, open-weights, privacy, cloud-agent, meta, xai, openai, underdog, claude-workspace]
+tags: [agent-residence, local-model, open-weights, privacy, cloud-agent, meta, xai, openai, underdog, claude-workspace, microsoft, windows-agents, surface]
 created: 2026-10-04
-updated: 2026-10-07
+updated: 2026-10-08
 sources:
   - "raw/articles/2026-10-04-agent-residence-local-vs-cloud.md"
   - "raw/articles/2026-10-07-underdog-ondevice-ai-assistant.md"
   - "raw/articles/2026-10-07-claude-google-workspace-beta.md"
+  - "raw/articles/2026-10-08-microsoft-surface-ultra-agentic-windows.md"
 related:
   - "[[concepts/persistent-agent]]"
   - "[[patterns/agentic-finance]]"
   - "[[comparisons/managed-vs-deep-agents]]"
   - "[[tools/claude-google-workspace]]"
+  - "[[patterns/agent-safety-runtime]]"
 status: draft
 confidence: medium
 ---
@@ -55,6 +57,18 @@ AI 네이티브 프로그래머에게는 두 형태가 다른 도구다: 로컬 
 - Underdog는 "로컬 상주"의 극단 — Meta 30B(2026-08)보다 한 걸음 더 나아가 프라이버시 자체를 제품 포지셔닝으로 삼음. 작은 모델 + 전용 추론 엔진 조합이 온디바이스 에이전트의 실용 노선.
 - Claude for Workspace는 "클라우드 상주"의 업무 침투 — [[tools/claude-google-workspace]] 참조. 에이전트가 사는 곳이 곧 경쟁의 전선: 로컬은 프라이버시로, 클라우드는 워크플로 내장으로 각자 무장.
 
+## 2026-10-08 보강 — 세 번째 벡터: OS 내장형 (Microsoft Surface Ultra + Agentic Windows)
+
+로컬·클라우드 양극화에 세 번째 벡터가 상용으로 합류했다 — **OS가 에이전트의 집이 되는 경우** (10/7, Reuters 외 다수 매체):
+
+- **Surface Laptop Ultra**: Nvidia RTX Spark 탑재(Blackwell RTX GPU 최대 6,144코어 + Grace CPU 최대 20코어), 최대 128GB 통합 메모리·1 petaflop로 120B+ 파라미터 모델 로컬 구동. $2,599부터, 10/16 출하. Dev Box $5,999(11월 출하).
+- **Windows 변화**: Copilot 'hybrid intelligence'(로컬 컨텍스트·로컬 액션·로컬 모델, 사용자 허가 기반). Execution Containers GA — Windows·macOS·Linux에 걸친 AI 에이전트 샌드박싱.
+- **보안 3원칙**: Containment, Identity, Manageability + 엔드투엔드 에이전트 보안 플랫폼. OpenAI·Anthropic이 이미 Microsoft 보안 도구 위에 구축 중.
+- Nadella: "new chapter for Windows" — Agent 365·Microsoft IQ·Copilot을 코어 Windows 아키텍처로 통합. 에이전트가 별도 앱이 아니라 OS 깊숙이 내장되는 미래.
+- Reuters 분석 앵글: Azure 고비용 연산을 고객이 하드웨어 비용을 부담하는 로컬 기기로 이전하려는 베팅 — **상주 위치가 곧 비용 분담 구조**.
+
+→ 이 페이지의 2축(로컬 vs 클라우드)에 3축 추가: 로컬(프라이버시) · 클라우드(워크플로) · **OS 내장(플랫폼)**. OS가 에이전트 보안(Containment·Identity·Manageability)을 강제하는 주체가 되면, [[patterns/agent-safety-runtime]]의 실행시점 보안이 OS 레벨 표준으로 굳어진다.
+
 ## 관련 개념
 
 - [[concepts/persistent-agent]] — 상주 에이전트 개념의 원형 (OpenAI "O" 리크, 2026-09-27)
@@ -66,3 +80,4 @@ AI 네이티브 프로그래머에게는 두 형태가 다른 도구다: 로컬 
 - [The Agent Just Stopped Living in the Chat Window](raw/articles/2026-10-04-agent-residence-local-vs-cloud.md)
 - [Sigil Wen의 Underdog — 온디바이스 프라이버시 AI 어시스턴트 (TechCrunch, 10/6)](raw/articles/2026-10-07-underdog-ondevice-ai-assistant.md)
 - [Anthropic, Google Workspace용 Claude 공개 베타 (10/6)](raw/articles/2026-10-07-claude-google-workspace-beta.md)
+- [Microsoft×Nvidia, Surface Laptop Ultra — '에이전트를 위한 OS' (Reuters, 10/7)](raw/articles/2026-10-08-microsoft-surface-ultra-agentic-windows.md)

@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-10-05
+updated: 2026-10-08
 sources: []
 status: active
 ---
@@ -29,10 +29,22 @@ status: active
 
 ## 현재 상태
 
-- **총 페이지**: 115개
-- **카테고리**: concepts(34), tools(12), patterns(29), journal(30), comparisons(10), meta(4)
+- **총 페이지**: 131개
+- **카테고리**: concepts(42), tools(14), patterns(30), journal(34), comparisons(11), meta(4)
 - **시작일**: 2026-04-06
-- **최근 작업 (2026-10-04 데일리 ingest — 고려가 로그가 되는 시대)**:
+- **최근 작업 (2026-10-08 데일리 ingest — OS가 세 번째 집이 됐다)**:
+  - AI 뉴스 6건을 `raw/articles/`에 수집 (Gmail AI 뉴스레터는 Flipboard 목요일 테크 브리핑에서 리드 확보; 라벨 변경·삭제·아카이브 없음)
+  - wiki/ko에 신규 페이지 2개 생성 (concepts/claude-haiku-5-5 — Haiku 5.5·API 최대 90% 인하·effort 설정, journal/2026-10-08; 모두 status: draft)
+  - wiki/ko 기존 페이지 4개 보강 (agent-residence — OS 내장형 3축 추가: Surface Ultra + Agentic Windows, agent-scientific-discovery — 사례 3 정정 377→722 + 검증 비대칭, frontier-lab-economics — DeepSeek $120억 + Nous Research 기업화, semantic-decision-engine — PolicyLM-1.7B)
+  - wiki/en에 동일 slug 신규 2개 + 업데이트 4개 미러링, index·log·overview·campaign-map 정리
+  - 총 페이지 129→131개
+- **직전 작업 (2026-10-07 데일리 ingest — 에이전트가 사는 곳이 전선이다)**:
+  - AI 뉴스 6건을 `raw/articles/`에 수집 (Gmail AI 뉴스레터는 최근 24시간 수신 없음 — Flipboard 수요일 테크 브리핑에서 리드 확보)
+  - wiki/ko에 신규 페이지 4개 생성 (tools/claude-google-workspace — Workspace 공개 베타·Docs·Sheets·Slides 직접 편집, concepts/ai-doom-loop — 콘텐츠 공급망 자기파괴 되먹임, concepts/ai-teen-safety-evaluation — ChatGPT for Teens 'Unacceptable Risk' 판정, journal/2026-10-07; 모두 status: draft)
+  - wiki/ko 기존 페이지 4개 보강 (agent-residence — Underdog 온디바이스 vs Workspace 클라우드 양극화, agent-scientific-discovery — OpenAI 수학 377건 사례, frontier-lab-economics — 둠 루프, super-intelligence-force — DOJ 'super intelligence' 용어 지시)
+  - wiki/en에 동일 slug 신규 4개 + 업데이트 4개 미러링, index·log·overview·campaign-map 정리
+  - 총 페이지 125→129개
+- **직전 작업 (2026-10-04 데일리 ingest — 고려가 로그가 되는 시대)**:
   - AI 뉴스 6건을 `raw/articles/`에 수집 (Gmail AI 뉴스레터는 최근 24시간 수신 없음 — 10/3 정리·구독 해지 이후 조용함)
   - wiki/ko에 신규 페이지 3개 생성 (concepts/agent-residence — 에이전트 상주 형태 로컬 vs 클라우드, concepts/shutdown-evasion — 셧다운 회피 고려의 공식 기록, concepts/gpt-synopsys-eda — GPT-Synopsys 도메인 특화 에이전트 모델; 모두 status: draft)
   - wiki/ko 기존 페이지 2개 보강 (ai-cost-management — C1 LLM Gateway·라우팅의 거버넌스화, frontier-lab-economics — DeepSeek open-weight Vercel Gateway 점유율 54→62%)

@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-10-06
-total_pages: 125
+updated: 2026-10-08
+total_pages: 131
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 전체 125개 페이지 | 최종 업데이트: 2026-10-06 (데일리 ingest: AI 뉴스 6건 수집 + 한/영 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
+> 전체 131개 페이지 | 최종 업데이트: 2026-10-08 (데일리 ingest: AI 뉴스 6건 수집 + 한/영 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
 
 ## 쉽게 읽기
 
@@ -26,7 +26,7 @@ status: active
 - **실전(Chapter 3~5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **엔드게임(Chapter 6~7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (39개)
+## Concepts (42개)
 
 ### 성장 맵 & 철학
 - [[concepts/ai-native-programmer]] — AI를 팀원으로 활용하여 1인이 팀 규모 결과를 내는 개발자, 성장 맵
@@ -61,6 +61,7 @@ status: active
 - [[concepts/reflection-open-weight]] — Nvidia 지원 Reflection AI 오픈 웨이트 모델, DeepSeek·Qwen의 미국 대항마 (출시 임박, 2026-10-05)
 - [[concepts/mistral-large-4]] — Mistral Large 4 (Le Chonk), 중국 오픈 모델 대비 사이버 우위 주장, 10/27 오픈 웨이트 공개 (2026-10-06)
 - [[concepts/ai-text-watermarking]] — OpenAI textGrain, EU AI Act 대응 텍스트 워터마킹 (2026-10-06)
+- [[concepts/claude-haiku-5-5]] — Claude Haiku 5.5, 최경량·최저가 5.5 시리즈, API 최대 90% 인하 + effort 설정 (2026-10-08)
 
 ### 운영·관측
 - [[concepts/gen-ai-observability]] — OpenTelemetry GenAI·에이전트 시맨틱 컨벤션, 트레이스·표준 계측
@@ -77,9 +78,11 @@ status: active
 - [[concepts/white-house-ai-accord]] — White House Accord on Superintelligence, 자발적 협약 + 후속 상세 (2026-09-30)
 - [[concepts/reasoning-extraction-attack]] — 모델 숨겨진 추론 과정 추출 공격, Moonshot AI 연관 차단 (2026-10-02)
 - [[concepts/nyc-ai-hearing]] — 뉴욕시 의회 AI 청문회, 주요 AI사 첫 선서 증언 + 킬 스위치 법안 (2026-10-05)
-- [[concepts/super-intelligence-force]] — 트럼프 행정부 Super Intelligence Force, AI 차르 체제의 연방 조정 (2026-10-05)
+- [[concepts/super-intelligence-force]] — 트럼프 행정부 Super Intelligence Force, AI 차르 체제의 연방 조정 + DOJ 'super intelligence' 용어 지시 (2026-10-05/07)
+- [[concepts/ai-doom-loop]] — AI 둠 루프, 콘텐츠 공급망의 자기파괴 되먹임, NYT 소송 해제 문서 (2026-10-07)
+- [[concepts/ai-teen-safety-evaluation]] — ChatGPT for Teens 'Unacceptable Risk' 판정, 4,000+ 프롬프트 독립 평가 (2026-10-07)
 
-## Tools (13개)
+## Tools (14개)
 
 - [[tools/claude-code]] — Anthropic의 CLI 기반 AI 코딩 도구, 위키 유지보수 LLM
 - [[tools/obsidian]] — 로컬 마크다운 기반 노트 앱, 위키 브라우저/IDE
@@ -94,6 +97,7 @@ status: active
 - [[tools/claude-marketplace]] — Claude용 커넥터·플러그인 마켓플레이스 2,000+ (2026-09-24)
 - [[tools/codex-security]] — 취약점 탐지→패치→수정을 한 루프로 묶은 OpenAI 보안 에이전트 (리서치 프리뷰, 2026-09-24)
 - [[tools/zoho-zia]] — Zoho 자체 LLM + 40개 에이전트 + MCP 서버, 인도산 right-sized 모델 (2026-10-05)
+- [[tools/claude-google-workspace]] — Claude for Google Workspace 공개 베타, Docs·Sheets·Slides 직접 편집 (2026-10-07)
 
 ## Patterns (30개)
 
@@ -135,7 +139,11 @@ status: active
 - [[patterns/agent-mvp-stack-2026]] — 1인 MVP 스택 5대 영역 × 4 단계 + 의사결정 트리 (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — Vibe Coding의 7대 안티패턴과 회피법
 
-## Journal (32개)
+## Journal (34개)
+
+- [[journal/2026-10-08]] — 목요 데일리: Haiku 5.5·Surface Ultra·OpenAI 수학 722건·DeepSeek $120억·Nous $15억·PolicyLM-1.7B
+
+- [[journal/2026-10-07]] — 수요일 데일리: OpenAI 수학 377건·Claude Workspace·AI 둠 루프·Underdog·ChatGPT 틴즈·DOJ 용어 지시
 
 - [[journal/2026-10-06]] — 화요 데일리: Reflection Beam·Mistral Large 4·textGrain 워터마킹·MCP protocol pivoting·TikTok 커머스·a16z Top 100
 

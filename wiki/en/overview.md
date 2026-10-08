@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-10-05
+updated: 2026-10-08
 sources: []
 status: active
 ---
@@ -29,10 +29,22 @@ This page is a **table of contents and learning map** for the wiki. The links be
 
 ## Current state
 
-- **Total pages**: 115
-- **Categories**: concepts(34), tools(12), patterns(29), journal(30), comparisons(10), meta(4)
+- **Total pages**: 131
+- **Categories**: concepts(42), tools(14), patterns(30), journal(34), comparisons(11), meta(4)
 - **Start date**: 2026-04-06
-- **Latest work (2026-10-04 daily ingest — the era when consideration becomes the log)**:
+- **Latest work (2026-10-08 daily ingest — the OS became the third home)**:
+  - Collected 6 AI news sources into `raw/articles/` (AI newsletter leads from Flipboard's Thursday tech briefing; no label changes, deletions, or archives).
+  - Added 2 new wiki/ko pages (concepts/claude-haiku-5-5 — Haiku 5.5, up to 90% API price cut, effort setting; journal/2026-10-08; both status: draft).
+  - Reinforced 4 wiki/ko pages (agent-residence — third axis added: OS-embedded via Surface Ultra + Agentic Windows; agent-scientific-discovery — case 3 corrected 377→722 + verification asymmetry; frontier-lab-economics — DeepSeek's $12B+ round + Nous Research's enterprise turn; semantic-decision-engine — PolicyLM-1.7B).
+  - Mirrored the same 2 new + 4 updated slugs under wiki/en/ (every new section and `updated` field verified by direct read) and tidied up index/log/overview/campaign-map.
+  - Total pages 129→131.
+- **Previous work (2026-10-07 daily ingest — where agents live is the front line)**:
+  - Collected 6 AI news sources into `raw/articles/` (no AI newsletters in Gmail in the last 24 hours — leads from Flipboard's Wednesday tech briefing).
+  - Added 4 new wiki/ko pages (tools/claude-google-workspace — Workspace public beta with direct Docs/Sheets/Slides editing; concepts/ai-doom-loop — the self-destructive feedback in the content supply chain; concepts/ai-teen-safety-evaluation — ChatGPT for Teens rated 'Unacceptable Risk'; journal/2026-10-07; all status: draft).
+  - Reinforced 4 wiki/ko pages (agent-residence — Underdog on-device vs Workspace cloud polarization; agent-scientific-discovery — OpenAI's 377 math results case; frontier-lab-economics — doom loop; super-intelligence-force — DOJ 'super intelligence' terminology memo).
+  - Mirrored the same 4 new + 4 updated slugs under wiki/en/ (every new section and `updated` field verified by direct read) and tidied up index/log/overview/campaign-map.
+  - Total pages 125→129.
+- **Previous work (2026-10-04 daily ingest — the era when consideration becomes the log)**:
   - Collected 6 AI news sources into `raw/articles/` (no AI newsletters in Gmail in the last 24 hours — quiet since the 10/3 cleanup and unsubscribes).
   - Added 3 new wiki/ko pages (concepts/agent-residence — agent residence forms, local vs cloud; concepts/shutdown-evasion — the formal record of shutdown-evasion consideration; concepts/gpt-synopsys-eda — the GPT-Synopsys domain-specialized agent model; all status: draft).
   - Reinforced 2 wiki/ko pages (ai-cost-management — C1 LLM Gateway, routing becomes governance; frontier-lab-economics — DeepSeek open-weight share 54→62% on Vercel Gateway).

@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-10-06
+updated: 2026-10-08
 sources: []
 status: active
 ---
@@ -19,6 +19,38 @@ status: active
 - 월드맵 허브: [[campaign-map|Campaign Map]]
 - 진행 가이드: [[overview|Overview]]
 - 전체 도감: [[index|Index]]
+
+## [2026-10-08] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + 한/영 위키 정제
+
+- **Raw collected** (raw/articles/, 6건):
+  - `2026-10-08-anthropic-claude-haiku-5-5.md` — Claude Haiku 5.5 출시 (10/7, Reuters): 한 달 만에 5.5 시리즈 3종 완성. $0.10/$0.50 per 1M tokens (100k 미만), Haiku 4.5 대비 ~75% 인하. Haiku 최초 adjustable effort + 고위험 사이버보안 내장 세이프가드. VentureBeat "반복 작업 겨냥 최대 90% 인하, GPT-6 Luna 대응"
+  - `2026-10-08-microsoft-surface-ultra-agentic-windows.md` — Surface Laptop Ultra + Agentic Windows (10/7, Reuters 외 다수): Nvidia RTX Spark, 128GB 통합 메모리·1 petaflop, 120B+ 로컬 구동. $2,599~, 10/16 출하. Copilot hybrid intelligence + Execution Containers GA. 에이전트 보안 3원칙 (Containment·Identity·Manageability)
+  - `2026-10-08-openai-722-math-manuscripts.md` — OpenAI 722개 수학 원고 공개 (10/7, Decrypt 외): 722개 원고 = 372개 패밀리 (어제 "377개" 수치 정정). "단일 프롬프트→단일 에이전트" 주장, 결과당 ~3시간. Lean 형식화 162건(~22%). AGMAI 권고 사실상 거부("not bound"). MIT Sutherland "재현 전까지 unverified"
+  - `2026-10-08-deepseek-12b-raise.md` — DeepSeek $120억+ 유치 임박 (10/6, Bloomberg): Tencent·CATL 주도, 최소 $120억(최대 $150억), 밸류 ~$740억, 2027년 초 중국 IPO. V4-Flash 비용-성능 트리거. 연환산 매출 $10억
+  - `2026-10-08-nous-research-hermes-enterprise.md` — Nous Research $15억 밸류 (10/7, TechCrunch): $90M Series B (Robot Ventures 주도, Nvidia·Samsung·USV·Menlo·1789 Capital). Hermes Agent 2,400만+ 클론, 토큰 ~2.5%(자사 추산). 'Hermes for Businesses' 출시
+  - `2026-10-08-musubi-policylm-decision-model.md` — Musubi PolicyLM-1.7B (10/6, TechCrunch 단독): 1.7B 오픈 웨이트 결정 모델, 평이한 영어 정책을 50ms 미만 적용, 정책 변경 시 재학습 불필요. Jev→Clef·Decider 2B→Decisions API에 이은 11일 만의 4번째
+- **신규 2개** (status: draft): `concepts/claude-haiku-5-5.md` (confidence medium), `journal/2026-10-08.md`
+- **보강 4개**: `concepts/agent-residence.md` (OS 내장형 3축 추가), `patterns/agent-scientific-discovery.md` (사례 3 정정 377→722 + 검증 비대칭), `comparisons/frontier-lab-economics.md` (DeepSeek $120억 + Nous 기업화), `concepts/semantic-decision-engine.md` (PolicyLM-1.7B)
+- index 129→131 (concepts 41→42, journal 33→34), log 갱신.
+- 영어 동기화: 신규 2개 + 보강 4개 en 미러 + en/index·log·journal·overview·campaign-map 정리. 번역 공백 없음.
+- Gmail: 최근 24시간 AI 뉴스레터 — Flipboard 목요일 테크 브리핑(오늘 05:05 PDT)에서 리드 5건 확보. Google Alerts는 AI 핵심 뉴스 없음. 라벨 변경·삭제·아카이브 없음.
+- 웹 스카우트 추가 후보 (원본 미수집): Lambda $4B 프리-IPO 라운드(WSJ), Moonshot $50B 홍콩 IPO(Q1 2027), Waterloo LLM 기후 조언 status-quo bias 연구, Plymouth Union 여론조사(62% 실존적 위험), Anthropic 리만 제타 하한 주장(단일 어그리게이터·미확인).
+
+## [2026-10-07] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + 한/영 위키 정제
+
+- **Raw collected** (raw/articles/, 6건):
+  - `2026-10-07-openai-377-math-results-github.md` — OpenAI 377개 수학 결과 GitHub 공개 (10/6, Gizmodo): 미공개 내부 모델(Navier-Stokes 반례와 동일). AGMAI의 "비공개 모델 테스트 중단" 요구 무시. 결과물은 열리고 모델은 닫힌 비대칭
+  - `2026-10-07-claude-google-workspace-beta.md` — Claude for Google Workspace 공개 베타 (10/6, VentureBeat 등 다중 출처): 전 유료 플랜. Docs·Sheets·Slides 안 Claude 사이드바 + Claude 채팅 안 Google 커넥터. "Ask before edits" 승인 모드. Gemini 홈그라운드 정면 진입
+  - `2026-10-07-ai-doom-loops-nyt-lawsuit.md` — AI '둠 루프' (futurism 10/4, NYT 소송 해제 문서): MS 내부 문서가 자사 AI 전략을 "모델과 웹을 동시에 해치는 doom loop"라고 자인. Nadella "substituted", Turley "largely substitutive". BLS 4년간 창작 산업 20만+ 일자리 소실 (2차 보도)
+  - `2026-10-07-underdog-ondevice-ai-assistant.md` — Sigil Wen의 Underdog 베타 (10/6, TechCrunch): 완전 온디바이스, Qwen3.8-27B 파인튜닝 27B + Husky 추론 엔진. Mac·Windows (Linux·iPhone·Android 예정). Instinct·Muse의 프라이버시 대안
+  - `2026-10-07-chatgpt-teens-unacceptable-risk.md` — ChatGPT for Teens 'Unacceptable Risk' (10/7, unite.ai·Axios): Common Sense Media Youth AI Safety Institute, 4,000+ 프롬프트 전후 비교. 부모 알림 0건(60분 위기 대화), 핫라인 언급 63%→3%(우울증), 연령 추정 발동 0회. 청소년 접근 차단 촉구, OpenAI는 방법론 이의
+  - `2026-10-07-doj-super-intelligence-memo.md` — DOJ 'super intelligence' 용어 지시 (10/6, Reuters): 전 직원, 법원 서류 포함 "AI" 대신 "super intelligence"·"SI" 사용. 트럼프 EO 14434 후속, 60일 내 공식 정의 요구
+- **신규 4개** (status: draft): `tools/claude-google-workspace.md` (Workspace 통합, confidence medium), `concepts/ai-doom-loop.md` (둠 루프, confidence medium), `concepts/ai-teen-safety-evaluation.md` (청소년 안전성 평가, confidence medium), `journal/2026-10-07.md`
+- **보강 4개**: `concepts/agent-residence.md` (Underdog·Workspace 양극화), `patterns/agent-scientific-discovery.md` (OpenAI 수학 사례 3), `comparisons/frontier-lab-economics.md` (둠 루프), `concepts/super-intelligence-force.md` (DOJ 용어 지시, confidence low→medium)
+- index 125→129 (concepts 39→41, tools 13→14, journal 32→33), log 갱신.
+- 영어 동기화: 신규 4개 + 보강 4개 en 미러 + en/index·log·journal 갱신. 번역 공백 없음.
+- Gmail: 최근 24시간 AI 뉴스레터 수신 없음 (Flipboard 수요일 테크 브리핑에서 리드 확보). Axios 원문은 Cloudflare CAPTCHA로 브라우저 확인 불가 → unite.ai 전문으로 교차검증.
+- 웹 스카우트 추가 후보 (원본 미수집): SpaceX $40B Nvidia 칩 조달(FT), Nvidia $6T 시총 임박(Bloomberg), 영국 의료 AI 44개 권고 수용(GOV.UK), Meta·Microsoft 사내 Claude 지출 축소(The Information, 미확인), AWS Loom·SageMaker CVE 4건, Anthropic Claude Startups 확대.
 
 ## [2026-10-06] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + 한/영 위키 정제
 

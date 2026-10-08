@@ -1,17 +1,19 @@
 ---
 title: "Semantic Decision Engine"
 category: concepts
-tags: [semantic-decision-engine, jev, typesafeai, non-generative, routing, classification, decisions-api, openai]
+tags: [semantic-decision-engine, jev, typesafeai, non-generative, routing, classification, decisions-api, openai, musubi, policylm]
 created: 2026-09-27
-updated: 2026-10-03
+updated: 2026-10-08
 sources:
   - "raw/articles/2026-09-27-jevs-semantic-decision-engine.md"
   - "raw/articles/2026-10-02-decision-models-clef-decider-2b.md"
   - "raw/articles/2026-10-03-openai-decisions-api-devday.md"
+  - "raw/articles/2026-10-08-musubi-policylm-decision-model.md"
 related:
   - "[[patterns/ai-cost-management]]"
   - "[[concepts/agent-supply-chain-security]]"
   - "[[patterns/agent-safety-runtime]]"
+  - "[[patterns/agent-authority-model]]"
 status: draft
 confidence: medium
 ---
@@ -86,7 +88,18 @@ At DevDay (10/3), OpenAI announced the **Decisions API** — Luna-model based, r
 - Meaning: a big-lab (OpenAI) product answers the 10/2 open-source wave (Clef, Decider 2B) — the **decision model hardening into a standard layer**. This page's "Limits" note that "the concept's reality is confirmed" gets one step stronger.
 - Also from DevDay: shopping tool expansion, and three security researchers leaving over information-sharing allegations — context only, not this page's direct topic.
 
+## 2026-10-08 update — Musubi PolicyLM-1.7B: decision models become real-time guardrails
+
+TechCrunch exclusive (10/6) — Musubi released **PolicyLM-1.7B, a 1.7B-parameter open-weight decision model**:
+
+- Applies a plain-English content policy to messages in **under 50ms**. No retraining when the policy changes (policy swapped at the prompt level).
+- Cost/speed on par with traditional classifiers while keeping LLM flexibility. 'Reining in misbehaving AI agents' cited as an early use case.
+- Lineage: TypeSafeAI Jev (9/27) → Clef/Decider 2B (10/2) → OpenAI Decisions API (10/3) → **PolicyLM-1.7B (10/6)**. The fourth commercial decision model in 11 days — the open-source/small-vendor-leads, big-labs-follow pattern repeating.
+- Connects directly to [[patterns/agent-safety-runtime]]: sub-50ms real-time judgment is a candidate "judgment layer" for runtime security. Through the [[patterns/agent-authority-model]] lens, it's a mechanism for mechanically enforcing authority boundaries expressed in natural language.
+- Source limitation: TechCrunch exclusive — the 50ms figure and similar numbers are vendor claims, no independent verification. This page's confidence stays at medium.
+
 ## Sources
 
 - [TypeSafeAI launches Jev, a "Semantic Decision Engine" that understands language but never generates](raw/articles/2026-09-27-jevs-semantic-decision-engine.md)
 - [OpenAI Decisions API at DevDay (Luna, restricted preview)](raw/articles/2026-10-03-openai-decisions-api-devday.md)
+- [Musubi releases PolicyLM-1.7B — sub-50ms real-time decision model (TechCrunch, 10/6)](raw/articles/2026-10-08-musubi-policylm-decision-model.md)

@@ -1,9 +1,9 @@
 ---
 title: "저가 파괴자 vs 가격 결정력 인프라"
 category: comparisons
-tags: [deepseek, huawei, ascend, revenue, fundraising, api-pricing, open-weights, llm-business, china, external-funding]
+tags: [deepseek, huawei, ascend, revenue, fundraising, api-pricing, open-weights, llm-business, china, external-funding, nous-research]
 created: 2026-09-24
-updated: 2026-10-07
+updated: 2026-10-08
 sources:
   - "raw/articles/2026-09-24-deepseek-1b-annualized-revenue.md"
   - "raw/articles/2026-10-01-anthropic-ipo-prospectus-reuters.md"
@@ -11,10 +11,13 @@ sources:
   - "raw/articles/2026-10-03-deepseek-first-external-funding.md"
   - "raw/articles/2026-10-04-always-on-agent-race-audit.md"
   - "raw/articles/2026-10-07-ai-doom-loops-nyt-lawsuit.md"
+  - "raw/articles/2026-10-08-deepseek-12b-raise.md"
+  - "raw/articles/2026-10-08-nous-research-hermes-enterprise.md"
 related:
   - "[[patterns/ai-cost-management]]"
   - "[[concepts/amd-world-labs-physical-ai]]"
   - "[[concepts/ai-doom-loop]]"
+  - "[[concepts/claude-haiku-5-5]]"
 status: draft
 confidence: low
 ---
@@ -122,9 +125,28 @@ NYT vs Microsoft·OpenAI 소송의 비공개 해제 문서(9/18 해제, futurism
 - Nadella는 챗봇이 저널리즘을 "substituted", ChatGPT 총괄 Nick Turley는 퍼블리셔가 "existential threat"에 직면했고 챗봇은 "largely substitutive"라고 증언 — fair use 공방에서 피고 측 임원이 "대체성"을 인정한 셈.
 - 이 페이지의 프레이밍으로 읽으면: DeepSeek의 "가격 결정력 인프라"(2단계)가 수요의 가격 비탄력성에 기댄다면, 둠 루프는 **공급의 지속가능성**에 대한 경고 — 모델이 의존하는 신선 콘텐츠의 생산 기반이 무너지면 가격 결정력의 토대(콘텐츠 공급망)도 함께 흔들림. "저가→인프라→하드웨어→자본" 4단계 위에 "공급망 자기파괴"라는 5번째 리스크 축이 얹힌 셈.
 
+## 2026-10-08 보강 — DeepSeek $120억+ 라운드: "프론티어 랩의 호가가 큰 소리로 나왔다"
+
+Bloomberg 보도(10/6, the-decoder·techstartups 등 다수 매체 인용): DeepSeek이 **최소 $120억(약 800억 위안)** 규모의 신규 라운드 마감 임박. 원래 목표 500억 위안(~$75억)의 2배 가까이 수요가 몰려 최종 $150억 가능. Tencent·CATL이 최대 출자. 밸류 약 5,000억 위안(~$740억). 10월 중 마감 후 2027년 초 중국 내 IPO 목표.
+
+- 트리거: V4-Flash의 비용-성능 벤치마크 (OpenAI·Anthropic 대비). 2주 전 연환산 매출 $10억 도달 — 몇 달 전 페이스의 2배.
+- 인프라: 내몽골 신 데이터센터에 Huawei 칩 16만 개 + 자체 추론 칩 개발. 3단계(하드웨어 수직 통합)의 실행 단계.
+- 이 페이지의 프레이밍으로 읽으면: 4단계(자본 조달 프런티어 플레이어)가 "협상 중(미확정)"에서 "수요 초과·마감 임박"으로 확정 수순. 저가 파괴자의 역설적 귀결 — **단위 경제 우위가 자본을 끌어당긴다**.
+- 동반: Moonshot AI $500억 밸류 최종 민간 라운드, 2027년 1분기 홍콩 IPO 목표.
+
+## 2026-10-08 보강 — Nous Research $15억: 오픈 웨이트 에이전트 랩의 기업화
+
+TechCrunch(10/7): Nous Research가 **$90M Series B로 $15억 밸류 확정** (Robot Ventures 주도, Nvidia·Samsung·USV·Menlo·1789 Capital 참여, 누적 $158M). 오픈소스 Hermes Agent 2,400만+ 클론, 글로벌 AI 토큰 사용량의 ~2.5%(자사 추산). 9월 중순 연환산 매출 ~$36M → 2026년 말 $100M 돌파 전망. **'Hermes for Businesses'**로 기업 사내 데이터 기반 커스텀 에이전트 제공.
+
+- 이 페이지의 프레이밍으로 읽으면: Mistral·DeepSeek에 이은 **개방형 랩의 기업화 3번째 사례** — 오픈 웨이트가 배포 채널이 되고, 수익은 엔터프라이즈 에이전트에서. "오픈 웨이트 = 저가"에서 "오픈 웨이트 = 유통 장악"으로 (10/4 보강의 연장).
+- [[patterns/agentic-commerce]]와 연결: 에이전트가 토큰 사용량의 2.5%를 차지한다는 주장(자사 추산, 독립 검증 필요)은 에이전트 경제의 규모감을 보여주는 첫 수치.
+- 같은 주 [[concepts/claude-haiku-5-5]]의 90% 가격 인하 — 경량 모델 가격 전쟁이 에이전트 워크호스 경제를 바꾸는 중.
+
 ## 참고 소스
 
 - [DeepSeek hits $1B annualized revenue, finalizing ~$7.5B raise at ~$74B valuation](raw/articles/2026-09-24-deepseek-1b-annualized-revenue.md)
 - [Anthropic IPO prospectus 유출 (Reuters)](raw/articles/2026-10-01-anthropic-ipo-prospectus-reuters.md)
 - [DeepSeek 첫 외부 투자 협상 — ~500억 위안 조달 (미확정)](raw/articles/2026-10-03-deepseek-first-external-funding.md)
 - [AI '둠 루프' — NYT 소송 비공개 해제 문서 (futurism, 10/4)](raw/articles/2026-10-07-ai-doom-loops-nyt-lawsuit.md)
+- [DeepSeek, $120억+ 유치 임박 — Tencent·CATL 주도 (Bloomberg, 10/6)](raw/articles/2026-10-08-deepseek-12b-raise.md)
+- [Nous Research, $15억 밸류 — Hermes for Businesses (TechCrunch, 10/7)](raw/articles/2026-10-08-nous-research-hermes-enterprise.md)
