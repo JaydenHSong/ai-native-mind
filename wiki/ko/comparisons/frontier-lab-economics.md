@@ -1,9 +1,9 @@
 ---
 title: "저가 파괴자 vs 가격 결정력 인프라"
 category: comparisons
-tags: [deepseek, huawei, ascend, revenue, fundraising, api-pricing, open-weights, llm-business, china, external-funding, nous-research]
+tags: [deepseek, huawei, ascend, revenue, fundraising, api-pricing, open-weights, llm-business, china, external-funding, nous-research, manus]
 created: 2026-09-24
-updated: 2026-10-08
+updated: 2026-10-09
 sources:
   - "raw/articles/2026-09-24-deepseek-1b-annualized-revenue.md"
   - "raw/articles/2026-10-01-anthropic-ipo-prospectus-reuters.md"
@@ -18,6 +18,8 @@ related:
   - "[[concepts/amd-world-labs-physical-ai]]"
   - "[[concepts/ai-doom-loop]]"
   - "[[concepts/claude-haiku-5-5]]"
+  - "[[concepts/gpt-6-intelligent-ui]]"
+  - "[[tools/gemini-agent-work]]"
 status: draft
 confidence: low
 ---
@@ -142,6 +144,14 @@ TechCrunch(10/7): Nous Research가 **$90M Series B로 $15억 밸류 확정** (Ro
 - [[patterns/agentic-commerce]]와 연결: 에이전트가 토큰 사용량의 2.5%를 차지한다는 주장(자사 추산, 독립 검증 필요)은 에이전트 경제의 규모감을 보여주는 첫 수치.
 - 같은 주 [[concepts/claude-haiku-5-5]]의 90% 가격 인하 — 경량 모델 가격 전쟁이 에이전트 워크호스 경제를 바꾸는 중.
 
+## 2026-10-09 보강 — Manus $5억+ 조달: 지정학이 밸류를 올리는 역설
+
+Reuters(10/8): Manus의 모회사 Butterfly Effect가 **$500M+ 라운드 완료** (Boyu Capital·IDG Capital 리드, Tencent·HSG·ZhenFund 참여, 밸류 비공개). 2025년 12월 Meta의 ~$20억 인수 합의 → 2026년 4월 중국 NDRC가 외국인의 중국 AI 스타트업 투자를 제한하며 **인수 무산 명령** → 8월 독립 운영 재개 후 2개월 만의 대규모 조달.
+
+- 밸류 맥락: Bloomberg 9월 보도는 $4B 밸류 예상 — **Meta 인수 제시액의 2배**. ARR run-rate는 인수 당시 $1억에서 $5억으로 급증 (The Information 6월).
+- 이 페이지의 프레이밍으로 읽으면: **지정학적 제약이 오히려 밸류 상승으로 전환**된 역설. Nous($15억 밸류, 10/8 보강)에 이은 에이전트 전문 랩 자본 집중 2연타 — "에이전트가 토큰 사용량의 2.5%"(Nous 주장)와 "ARR $5억 run-rate"(Manus)가 에이전트 경제의 수요 측 증거로 겹침.
+- DeepSeek($120억 라운드)와의 대조: 중국 프론티어 랩들이 "외부 자본 차단" 환경에서도 국내 자본으로 대규모 조달 — 자본의 국지화(localization of capital).
+
 ## 참고 소스
 
 - [DeepSeek hits $1B annualized revenue, finalizing ~$7.5B raise at ~$74B valuation](raw/articles/2026-09-24-deepseek-1b-annualized-revenue.md)
@@ -150,3 +160,4 @@ TechCrunch(10/7): Nous Research가 **$90M Series B로 $15억 밸류 확정** (Ro
 - [AI '둠 루프' — NYT 소송 비공개 해제 문서 (futurism, 10/4)](raw/articles/2026-10-07-ai-doom-loops-nyt-lawsuit.md)
 - [DeepSeek, $120억+ 유치 임박 — Tencent·CATL 주도 (Bloomberg, 10/6)](raw/articles/2026-10-08-deepseek-12b-raise.md)
 - [Nous Research, $15억 밸류 — Hermes for Businesses (TechCrunch, 10/7)](raw/articles/2026-10-08-nous-research-hermes-enterprise.md)
+- [Manus, Meta 인수 무산 후 $5억+ 조달 (Reuters, 10/8)](raw/articles/2026-10-09-manus-500m-funding-meta-exit.md)

@@ -1,11 +1,12 @@
 ---
 title: "AI Doom Loop — the Self-Destruction of the Content Supply Chain"
 category: concepts
-tags: [doom-loop, copyright, nyt-lawsuit, microsoft, openai, content-economics, fair-use]
+tags: [doom-loop, copyright, nyt-lawsuit, usa-today-lawsuit, microsoft, openai, content-economics, fair-use]
 created: 2026-10-07
-updated: 2026-10-07
+updated: 2026-10-09
 sources:
   - "raw/articles/2026-10-07-ai-doom-loops-nyt-lawsuit.md"
+  - "raw/articles/2026-10-09-usa-today-sues-openai-copyright.md"
 related:
   - "[[comparisons/frontier-lab-economics]]"
   - "[[concepts/white-house-ai-accord]]"
@@ -48,6 +49,17 @@ The term comes from internal documents and depositions unsealed in the NYT vs Mi
 - [[concepts/white-house-ai-accord]] — voluntary pacts vs the internal awareness revealed in court
 - [[concepts/agent-attribution]] — the same "who is responsible" axis as AI-harm attribution debates
 
+### 2026-10-09 update — the copyright front widens: USA TODAY Co.'s $250M suit
+
+Reuters (10/8): USA TODAY Co. and 19 affiliated publications (USA TODAY, The Tennessean, Detroit Free Press, Arizona Republic, and others) filed a copyright-infringement suit against OpenAI in the **Southern District of New York (docket 1:26-cv-08892)**.
+
+- Scale of the claim: ~83,266 items from usatoday.com, **160,000+ items** identified in the WebText/C4 datasets. The complaint alleges "hundreds of thousands" of articles were used for AI training without authorization.
+- Demands: **over $250M in damages** plus an injunction against future unauthorized use.
+- Evidence strategy: submits GPT-5.6 outputs reproducing or closely tracking source articles, plus a DMCA claim over copyright-management-information (CMI) removal — the same "prove substitutability via output reproduction" argument structure as the NYT suit.
+- Litigation structure: to be **consolidated with the MDL** alongside the NYT and authors' suits in SDNY — the publisher-vs-AI-lab front widens from the NYT alone to a Gannett-group coalition, becoming a single front.
+- Read through this page's framing: the doom loop's "stage 1 (traffic substitution)" is being institutionalized into courtroom disputes. Source traceability of training datasets (WebText, C4) is becoming the key evidentiary axis — "we didn't know the source" is getting harder as a defense.
+
 ## Sources
 
 - [AI 'doom loop' — NYT lawsuit unsealed documents (futurism, 10/4)](raw/articles/2026-10-07-ai-doom-loops-nyt-lawsuit.md)
+- [USA TODAY Co. files $250M copyright suit against OpenAI (Reuters, 10/8)](raw/articles/2026-10-09-usa-today-sues-openai-copyright.md)

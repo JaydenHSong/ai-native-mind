@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-10-08
+updated: 2026-10-09
 sources: []
 status: active
 ---
@@ -19,6 +19,23 @@ This page records only **what changed** by date. For concept explanations, see t
 - World-map hub: [[campaign-map|Campaign Map]]
 - Navigation guide: [[overview|Overview]]
 - Full catalog: [[index|Index]]
+
+## [2026-10-09] ingest | Daily AI news scrape — 6 raw sources + ko/en wiki refinement
+
+- **Raw collected** (raw/articles/, 6):
+  - `2026-10-09-openai-fired-safety-researchers.md` — OpenAI safety researcher firing dispute (10/8–9, Reuters/CNN/Forbes/CNBC): Wang, Korbak, Balesni. OpenAI: "clear policy violations on handling sensitive information" + "significant breach of trust beyond the letter they published." Researchers deny being the source of The Information's Astra security story, warn of a chilling effect. Third-party safety assessor contracts being finalized
+  - `2026-10-09-gpt-6-intelligent-ui-free-tier.md` — GPT-6 + Intelligent UI rolling out to all tiers (10/7–8, unite.ai/ghacks/PYMNTS): Plus/Pro/Business/Enterprise from 10/7, Free/Go from 10/8. Paid Sol / free Luna. Answers become charts, forms, and buttons. GPT-6 Instant starts answering web-search questions 44% sooner than GPT-5.6 Instant (company claim)
+  - `2026-10-09-manus-500m-funding-meta-exit.md` — Manus raises $500M+ (10/8, Reuters): led by Boyu and IDG, with Tencent, HSG, ZhenFund. Meta's ~$2B acquisition killed by the NDRC (April); two months after resuming independent operations in August. Bloomberg in September expected a $4B valuation. ARR run rate $100M → $500M
+  - `2026-10-09-google-cloud-gemini-agent-work.md` — Google Cloud's 'Gemini agent for Work' (10/8, 9to5google/PYMNTS/unite.ai): enterprise general-purpose agent. MCP, Salesforce, ServiceNow, Snowflake connections. Auto-selects the best model per task — including Anthropic's Claude. Smart Routing, real-time spend caps. Two days after the Claude for Workspace beta
+  - `2026-10-09-usa-today-sues-openai-copyright.md` — USA TODAY Co. files $250M copyright suit against OpenAI (10/8, Reuters): SDNY 1:26-cv-08892. 19 publications; 83,266 items from usatoday.com, 160,000+ items identified in WebText/C4. Seeks $250M+ damages plus an injunction. GPT-5.6's article reproductions as evidence; DMCA claim over CMI removal. To consolidate with the MDL alongside the NYT and authors' suits
+  - `2026-10-09-meta-robojepa-8b-scaling-laws.md` — Meta FAIR's RoboJEPA 8B (10/8, aiweekly.co): 12 embodiments, 23 datasets, 15,022 hours of video. Imagination error follows a second-order power law L(C) = E + A·C^(α − γ ln C); curves fitted on 22M–2B parameters extrapolate to 4B/8B. Capability thresholds: 3D reaching ~1e20, obstacle avoidance ~1e21, fine manipulation ~1e22 FLOPs. Full 8B checkpoints + code open-sourced
+- **New: 5** (status: draft): `concepts/openai-safety-researcher-firings.md` (confidence medium), `concepts/gpt-6-intelligent-ui.md` (confidence medium), `tools/gemini-agent-work.md` (confidence medium), `concepts/robojepa-robot-scaling-laws.md` (confidence medium), `journal/2026-10-09.md`
+- **Updated: 2**: `comparisons/frontier-lab-economics.md` (Manus $500M+ raise — geopolitics raising valuations), `concepts/ai-doom-loop.md` (USA TODAY's $250M suit — the copyright front widens)
+- Cross-references: self-improving-ai-risk ↔ openai-safety-researcher-firings, amd-world-labs-physical-ai ↔ robojepa-robot-scaling-laws, claude-google-workspace ↔ gemini-agent-work, frontier-lab-economics ↔ gpt-6-intelligent-ui and gemini-agent-work
+- index 131→136 (concepts 42→44, tools 14→15, journal 34→35), log updated.
+- EN sync: mirrored the 5 new + 2 updated pages from ko; en/index, log, journal, overview, campaign-map updated. No translation gaps.
+- Gmail: AI newsletters in the last 24h — the OpenAI-firings lead from the Flipboard Friday tech briefing (05:53 PDT today). No AI newsletters to hoon.iccorp. Google Alerts had no core AI news. No label changes, deletions, or archives.
+- Web scout extras (not collected): Whitfield Research Partners' 'shadow AI agents' survey (82% of orgs found one in the past year — single syndicated source, PR-heavy, excluded), Anthropic's startup program (1 year of Claude Team free + $1,000 credits — Haiku 5.5 bundle news, held).
 
 ## [2026-10-08] ingest | Daily AI news scrape — 6 raw sources + ko/en wiki refinement
 

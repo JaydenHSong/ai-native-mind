@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-10-08
+updated: 2026-10-09
 sources: []
 status: active
 ---
@@ -19,6 +19,23 @@ status: active
 - 월드맵 허브: [[campaign-map|Campaign Map]]
 - 진행 가이드: [[overview|Overview]]
 - 전체 도감: [[index|Index]]
+
+## [2026-10-09] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + 한/영 위키 정제
+
+- **Raw collected** (raw/articles/, 6건):
+  - `2026-10-09-openai-fired-safety-researchers.md` — OpenAI 안전 연구원 3명 해고 분쟁 (10/8–9, Reuters/CNN/Forbes/CNBC): Wang·Korbak·Balesni. OpenAI "민감 정보 취급 정책 위반" + "서한을 넘어서는 중대한 신뢰 위반". 연구원들은 Astra 보안 보도 출처 아님 주장, 안전 문화 위축 우려. 제3자 안전 평가자 계약 마무리 중
+  - `2026-10-09-gpt-6-intelligent-ui-free-tier.md` — GPT-6 + Intelligent UI 전 티어 롤아웃 (10/7–8, unite.ai/ghacks/PYMNTS): Plus·Pro·Business·Enterprise 10/7, Free·Go 10/8. 유료 Sol / 무료 Luna. 답변이 차트·폼·버튼 인터페이스로. GPT-6 Instant는 웹 서치에서 5.6 Instant보다 44% 빨리 답변 시작(회사 주장)
+  - `2026-10-09-manus-500m-funding-meta-exit.md` — Manus $5억+ 조달 (10/8, Reuters): Boyu·IDG 리드, Tencent·HSG·ZhenFund. Meta ~$20억 인수 무산(NDRC, 4월) 후 8월 독립 재개 2개월 만. Bloomberg 9월은 $4B 밸류 예상. ARR run-rate $1억→$5억
+  - `2026-10-09-google-cloud-gemini-agent-work.md` — Google Cloud 'Gemini agent for Work' (10/8, 9to5google/PYMNTS/unite.ai): 기업용 범용 에이전트. MCP·Salesforce·ServiceNow·Snowflake 연결. 작업별 최적 모델 자동 선택(Anthropic Claude 포함). Smart Routing·실시간 지출 상한. Claude for Workspace 베타 이틀 만의 맞불
+  - `2026-10-09-usa-today-sues-openai-copyright.md` — USA TODAY Co., OpenAI 상대 $2.5억 저작권 소송 (10/8, Reuters): SDNY 1:26-cv-08892. 19개 출판물, usatoday.com 83,266건·WebText/C4 160,000건+ 특정. GPT-5.6 원문 재현 증거, CMI 삭제 DMCA 주장. NYT·작가 소송 MDL 병합 예정
+  - `2026-10-09-meta-robojepa-8b-scaling-laws.md` — Meta FAIR RoboJEPA 8B (10/8, aiweekly.co): 12개 실시체·23개 데이터셋·15,022시간 비디오. imagination error 2차 멱법칙 L(C) = E + A·C^(α − γ ln C), 22M~2B 피팅이 4B·8B에 외삽. 능력 임계값 3D 리칭 ~10^20·장애물 회피 ~10^21·미세 조작 ~10^22 FLOPs. 8B 체크포인트+코드 오픈소스
+- **신규 5개** (status: draft): `concepts/openai-safety-researcher-firings.md` (confidence medium), `concepts/gpt-6-intelligent-ui.md` (confidence medium), `tools/gemini-agent-work.md` (confidence medium), `concepts/robojepa-robot-scaling-laws.md` (confidence medium), `journal/2026-10-09.md`
+- **보강 2개**: `comparisons/frontier-lab-economics.md` (Manus $5억+ 조달 — 지정학이 밸류를 올리는 역설), `concepts/ai-doom-loop.md` (USA TODAY $2.5억 소송 — 저작권 전선 확대)
+- 교차참조: self-improving-ai-risk ↔ openai-safety-researcher-firings, amd-world-labs-physical-ai ↔ robojepa-robot-scaling-laws, claude-google-workspace ↔ gemini-agent-work, frontier-lab-economics ↔ gpt-6-intelligent-ui·gemini-agent-work
+- index 131→136 (concepts 42→44, tools 14→15, journal 34→35), log 갱신.
+- 영어 동기화: 신규 5개 + 보강 2개 en 미러 + en/index·log·journal·overview·campaign-map 정리. 번역 공백 없음.
+- Gmail: 최근 24시간 AI 뉴스레터 — Flipboard 금요일 테크 브리핑(오늘 05:53 PDT)에서 OpenAI 해고 리드 확보. hoon.iccorp는 AI 뉴스레터 수신 없음. Google Alerts는 AI 핵심 뉴스 없음. 라벨 변경·삭제·아카이브 없음.
+- 웹 스카우트 추가 후보 (원본 미수집): Whitfield Research Partners '섀도우 AI 에이전트' 조사(82% 기업이 지난 1년간 발견 — 단일 출처 신디케이트, PR 성격 강해 제외), Anthropic 스타트업 프로그램(Claude Team 1년 무료 + $1,000 크레딧, Haiku 5.5 번들 뉴스로 보류).
 
 ## [2026-10-08] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + 한/영 위키 정제
 

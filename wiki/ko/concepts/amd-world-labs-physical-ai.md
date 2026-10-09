@@ -10,6 +10,7 @@ related:
   - "[[patterns/agent-safety-runtime]]"
   - "[[concepts/harness-engineering]]"
   - "[[patterns/ai-cost-management]]"
+  - "[[concepts/robojepa-robot-scaling-laws]]"
 status: draft
 confidence: high
 ---

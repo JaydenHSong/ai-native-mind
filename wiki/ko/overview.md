@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-10-08
+updated: 2026-10-09
 sources: []
 status: active
 ---
@@ -29,10 +29,16 @@ status: active
 
 ## 현재 상태
 
-- **총 페이지**: 131개
-- **카테고리**: concepts(42), tools(14), patterns(30), journal(34), comparisons(11), meta(4)
+- **총 페이지**: 136개
+- **카테고리**: concepts(44), tools(15), patterns(30), journal(35), comparisons(11), meta(4)
 - **시작일**: 2026-04-06
-- **최근 작업 (2026-10-08 데일리 ingest — OS가 세 번째 집이 됐다)**:
+- **최근 작업 (2026-10-09 데일리 ingest — 답변이 앱이 되는 주)**:
+  - AI 뉴스 6건을 `raw/articles/`에 수집 (Gmail AI 뉴스레터는 Flipboard 금요일 테크 브리핑에서 OpenAI 해고 리드 확보; 라벨 변경·삭제·아카이브 없음)
+  - wiki/ko에 신규 페이지 5개 생성 (concepts/openai-safety-researcher-firings — 안전 연구원 3명 해고 분쟁·신뢰 위반 vs 안전 문화, concepts/gpt-6-intelligent-ui — 적응형 응답 UI·Free/Go 확대, tools/gemini-agent-work — 기업용 범용 에이전트·멀티모델 라우팅, concepts/robojepa-robot-scaling-laws — 로봇 월드모델 스케일링 법칙, journal/2026-10-09; 모두 status: draft)
+  - wiki/ko 기존 페이지 2개 보강 (frontier-lab-economics — Manus $5억+ 조달·지정학이 밸류를 올리는 역설, ai-doom-loop — USA TODAY $2.5억 저작권 소송·전선 확대)
+  - wiki/en에 동일 slug 신규 5개 + 업데이트 2개 미러링, index·log·overview·campaign-map 정리
+  - 총 페이지 131→136개
+- **직전 작업 (2026-10-08 데일리 ingest — OS가 세 번째 집이 됐다)**:
   - AI 뉴스 6건을 `raw/articles/`에 수집 (Gmail AI 뉴스레터는 Flipboard 목요일 테크 브리핑에서 리드 확보; 라벨 변경·삭제·아카이브 없음)
   - wiki/ko에 신규 페이지 2개 생성 (concepts/claude-haiku-5-5 — Haiku 5.5·API 최대 90% 인하·effort 설정, journal/2026-10-08; 모두 status: draft)
   - wiki/ko 기존 페이지 4개 보강 (agent-residence — OS 내장형 3축 추가: Surface Ultra + Agentic Windows, agent-scientific-discovery — 사례 3 정정 377→722 + 검증 비대칭, frontier-lab-economics — DeepSeek $120억 + Nous Research 기업화, semantic-decision-engine — PolicyLM-1.7B)

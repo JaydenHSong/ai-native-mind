@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-10-08
+updated: 2026-10-09
 sources: []
 status: active
 ---
@@ -29,10 +29,16 @@ This page is a **table of contents and learning map** for the wiki. The links be
 
 ## Current state
 
-- **Total pages**: 131
-- **Categories**: concepts(42), tools(14), patterns(30), journal(34), comparisons(11), meta(4)
+- **Total pages**: 136
+- **Categories**: concepts(44), tools(15), patterns(30), journal(35), comparisons(11), meta(4)
 - **Start date**: 2026-04-06
-- **Latest work (2026-10-08 daily ingest — the OS became the third home)**:
+- **Latest work (2026-10-09 daily ingest — the week answers became apps)**:
+  - Collected 6 AI news sources into `raw/articles/` (AI newsletter lead: the OpenAI-firings story from Flipboard's Friday tech briefing; no label changes, deletions, or archives).
+  - Added 5 new wiki/ko pages (concepts/openai-safety-researcher-firings — three researchers fired, trust breach vs safety culture; concepts/gpt-6-intelligent-ui — adaptive response UI, Free/Go expansion; tools/gemini-agent-work — enterprise general agent, multi-model routing; concepts/robojepa-robot-scaling-laws — scaling laws for robot world models; journal/2026-10-09; all status: draft).
+  - Reinforced 2 wiki/ko pages (frontier-lab-economics — Manus's $500M+ raise, geopolitics raising valuations; ai-doom-loop — USA TODAY's $250M copyright suit, the copyright front widens).
+  - Mirrored the same 5 new + 2 updated slugs under wiki/en/ (every new section and `updated` field verified by direct read) and tidied up index/log/journal/overview/campaign-map.
+  - Total pages 131→136.
+- **Previous work (2026-10-08 daily ingest — the OS became the third home)**:
   - Collected 6 AI news sources into `raw/articles/` (AI newsletter leads from Flipboard's Thursday tech briefing; no label changes, deletions, or archives).
   - Added 2 new wiki/ko pages (concepts/claude-haiku-5-5 — Haiku 5.5, up to 90% API price cut, effort setting; journal/2026-10-08; both status: draft).
   - Reinforced 4 wiki/ko pages (agent-residence — third axis added: OS-embedded via Surface Ultra + Agentic Windows; agent-scientific-discovery — case 3 corrected 377→722 + verification asymmetry; frontier-lab-economics — DeepSeek's $12B+ round + Nous Research's enterprise turn; semantic-decision-engine — PolicyLM-1.7B).

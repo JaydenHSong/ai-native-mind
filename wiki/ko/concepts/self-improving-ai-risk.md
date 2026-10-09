@@ -11,6 +11,7 @@ related:
   - "[[concepts/agent-supply-chain-security]]"
   - "[[concepts/persistent-agent]]"
   - "[[concepts/white-house-ai-accord]]"
+  - "[[concepts/openai-safety-researcher-firings]]"
 status: draft
 confidence: medium-high
 ---

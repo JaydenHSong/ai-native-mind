@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-10-08
-total_pages: 131
+updated: 2026-10-09
+total_pages: 136
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 전체 131개 페이지 | 최종 업데이트: 2026-10-08 (데일리 ingest: AI 뉴스 6건 수집 + 한/영 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
+> 전체 136개 페이지 | 최종 업데이트: 2026-10-09 (데일리 ingest: AI 뉴스 6건 수집 + 한/영 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
 
 ## 쉽게 읽기
 
@@ -26,7 +26,7 @@ status: active
 - **실전(Chapter 3~5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **엔드게임(Chapter 6~7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (42개)
+## Concepts (44개)
 
 ### 성장 맵 & 철학
 - [[concepts/ai-native-programmer]] — AI를 팀원으로 활용하여 1인이 팀 규모 결과를 내는 개발자, 성장 맵
@@ -62,6 +62,8 @@ status: active
 - [[concepts/mistral-large-4]] — Mistral Large 4 (Le Chonk), 중국 오픈 모델 대비 사이버 우위 주장, 10/27 오픈 웨이트 공개 (2026-10-06)
 - [[concepts/ai-text-watermarking]] — OpenAI textGrain, EU AI Act 대응 텍스트 워터마킹 (2026-10-06)
 - [[concepts/claude-haiku-5-5]] — Claude Haiku 5.5, 최경량·최저가 5.5 시리즈, API 최대 90% 인하 + effort 설정 (2026-10-08)
+- [[concepts/gpt-6-intelligent-ui]] — GPT-6 Intelligent UI, 답변이 차트·폼·버튼 인터페이스가 되는 적응형 UI, Free/Go 확대 (2026-10-09)
+- [[concepts/robojepa-robot-scaling-laws]] — Meta RoboJEPA 8B, 로봇 월드모델 스케일링 법칙 + 능력 임계값 지도 (2026-10-09)
 
 ### 운영·관측
 - [[concepts/gen-ai-observability]] — OpenTelemetry GenAI·에이전트 시맨틱 컨벤션, 트레이스·표준 계측
@@ -81,8 +83,9 @@ status: active
 - [[concepts/super-intelligence-force]] — 트럼프 행정부 Super Intelligence Force, AI 차르 체제의 연방 조정 + DOJ 'super intelligence' 용어 지시 (2026-10-05/07)
 - [[concepts/ai-doom-loop]] — AI 둠 루프, 콘텐츠 공급망의 자기파괴 되먹임, NYT 소송 해제 문서 (2026-10-07)
 - [[concepts/ai-teen-safety-evaluation]] — ChatGPT for Teens 'Unacceptable Risk' 판정, 4,000+ 프롬프트 독립 평가 (2026-10-07)
+- [[concepts/openai-safety-researcher-firings]] — OpenAI 안전 연구원 3명 해고 분쟁, 신뢰 위반 vs 안전 문화 (2026-10-09)
 
-## Tools (14개)
+## Tools (15개)
 
 - [[tools/claude-code]] — Anthropic의 CLI 기반 AI 코딩 도구, 위키 유지보수 LLM
 - [[tools/obsidian]] — 로컬 마크다운 기반 노트 앱, 위키 브라우저/IDE
@@ -98,6 +101,7 @@ status: active
 - [[tools/codex-security]] — 취약점 탐지→패치→수정을 한 루프로 묶은 OpenAI 보안 에이전트 (리서치 프리뷰, 2026-09-24)
 - [[tools/zoho-zia]] — Zoho 자체 LLM + 40개 에이전트 + MCP 서버, 인도산 right-sized 모델 (2026-10-05)
 - [[tools/claude-google-workspace]] — Claude for Google Workspace 공개 베타, Docs·Sheets·Slides 직접 편집 (2026-10-07)
+- [[tools/gemini-agent-work]] — Google Cloud 기업용 범용 에이전트 'Gemini agent', 멀티모델 라우팅 + 지출 상한 (2026-10-09)
 
 ## Patterns (30개)
 
@@ -139,7 +143,9 @@ status: active
 - [[patterns/agent-mvp-stack-2026]] — 1인 MVP 스택 5대 영역 × 4 단계 + 의사결정 트리 (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — Vibe Coding의 7대 안티패턴과 회피법
 
-## Journal (34개)
+## Journal (35개)
+
+- [[journal/2026-10-09]] — 금요 데일리: OpenAI 연구원 해고·GPT-6 Intelligent UI·Manus $5억·Gemini agent·USA TODAY 소송·RoboJEPA
 
 - [[journal/2026-10-08]] — 목요 데일리: Haiku 5.5·Surface Ultra·OpenAI 수학 722건·DeepSeek $120억·Nous $15억·PolicyLM-1.7B
 

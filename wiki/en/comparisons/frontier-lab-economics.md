@@ -1,9 +1,9 @@
 ---
 title: "Low-Cost Disruptor vs Pricing-Power Infrastructure"
 category: comparisons
-tags: [deepseek, huawei, ascend, revenue, fundraising, api-pricing, open-weights, llm-business, china, external-funding, nous-research]
+tags: [deepseek, huawei, ascend, revenue, fundraising, api-pricing, open-weights, llm-business, china, external-funding, nous-research, manus]
 created: 2026-09-24
-updated: 2026-10-08
+updated: 2026-10-09
 sources:
   - "raw/articles/2026-09-24-deepseek-1b-annualized-revenue.md"
   - "raw/articles/2026-10-01-anthropic-ipo-prospectus-reuters.md"
@@ -13,11 +13,14 @@ sources:
   - "raw/articles/2026-10-07-ai-doom-loops-nyt-lawsuit.md"
   - "raw/articles/2026-10-08-deepseek-12b-raise.md"
   - "raw/articles/2026-10-08-nous-research-hermes-enterprise.md"
+  - "raw/articles/2026-10-09-manus-500m-funding-meta-exit.md"
 related:
   - "[[patterns/ai-cost-management]]"
   - "[[concepts/amd-world-labs-physical-ai]]"
   - "[[concepts/ai-doom-loop]]"
   - "[[concepts/claude-haiku-5-5]]"
+  - "[[concepts/gpt-6-intelligent-ui]]"
+  - "[[tools/gemini-agent-work]]"
 status: draft
 confidence: low
 ---
@@ -142,6 +145,14 @@ TechCrunch (10/7): Nous Research **confirmed a $1.5B valuation with a $90M Serie
 - Connects to [[patterns/agentic-commerce]]: the claim that agents drive 2.5% of token usage (company estimate, needs independent verification) is the first figure showing the agent economy's scale.
 - Same week, [[concepts/claude-haiku-5-5]]'s 90% price cut — the small-model price war is reshaping the agent-workhorse economy.
 
+## 2026-10-09 update — Manus raises $500M+: geopolitics raising valuations
+
+Reuters (10/8): Manus parent Butterfly Effect **completed a $500M+ round** (led by Boyu Capital and IDG Capital; Tencent, HSG, ZhenFund participating; valuation undisclosed). Timeline: Meta's ~$2B acquisition agreement (Dec 2025) → China's NDRC **ordered the deal killed** in April 2026, restricting foreign investment in Chinese AI startups → independent operations resumed in August → large raise two months later.
+
+- Valuation context: Bloomberg reported a $4B valuation expectation in September — **double Meta's offer price**. ARR run rate jumped from $100M at acquisition time to $500M (The Information, June).
+- Read through this page's framing: the paradox of **geopolitical constraints converting into higher valuations**. The second capital-concentration hit on agent-specialized labs after Nous ($1.5B, 10/8 update) — Nous's "agents drive 2.5% of token usage" and Manus's "$500M ARR run rate" overlap as demand-side evidence for the agent economy.
+- Contrast with DeepSeek's $12B round: Chinese frontier labs are raising at scale from domestic capital despite "blocked foreign capital" — the localization of capital.
+
 ## Sources
 
 - [DeepSeek hits $1B annualized revenue, finalizing ~$7.5B raise at ~$74B valuation](raw/articles/2026-09-24-deepseek-1b-annualized-revenue.md)
@@ -150,3 +161,4 @@ TechCrunch (10/7): Nous Research **confirmed a $1.5B valuation with a $90M Serie
 - [AI 'doom loop' — NYT lawsuit unsealed documents (futurism, 10/4)](raw/articles/2026-10-07-ai-doom-loops-nyt-lawsuit.md)
 - [DeepSeek nearing $12B+ raise, led by Tencent and CATL (Bloomberg, 10/6)](raw/articles/2026-10-08-deepseek-12b-raise.md)
 - [Nous Research at $1.5B valuation — Hermes for Businesses (TechCrunch, 10/7)](raw/articles/2026-10-08-nous-research-hermes-enterprise.md)
+- [Manus raises $500M+ after Meta exit (Reuters, 10/8)](raw/articles/2026-10-09-manus-500m-funding-meta-exit.md)

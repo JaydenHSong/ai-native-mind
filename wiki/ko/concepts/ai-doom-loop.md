@@ -1,11 +1,12 @@
 ---
 title: "AI 둠 루프 — 콘텐츠 공급망의 자기파괴 되먹임"
 category: concepts
-tags: [doom-loop, copyright, nyt-lawsuit, microsoft, openai, content-economics, fair-use]
+tags: [doom-loop, copyright, nyt-lawsuit, usa-today-lawsuit, microsoft, openai, content-economics, fair-use]
 created: 2026-10-07
-updated: 2026-10-07
+updated: 2026-10-09
 sources:
   - "raw/articles/2026-10-07-ai-doom-loops-nyt-lawsuit.md"
+  - "raw/articles/2026-10-09-usa-today-sues-openai-copyright.md"
 related:
   - "[[comparisons/frontier-lab-economics]]"
   - "[[concepts/white-house-ai-accord]]"
@@ -52,6 +53,17 @@ NYT vs Microsoft·OpenAI 저작권 소송에서 비공개 해제된 내부 문�
 - [[concepts/white-house-ai-accord]] — 자발적 협약 vs 법정에서 드러난 내부 인식
 - [[concepts/agent-attribution]] — AI 피해의 귀속 논쟁과 같은 "누가 책임지는가" 축
 
+### 2026-10-09 보강 — 저작권 전선의 확대: USA TODAY Co. $2.5억 소송
+
+Reuters(10/8): USA TODAY Co. + 산하 지방지 19개 출판물(USA TODAY, The Tennessean, Detroit Free Press, Arizona Republic 등)이 **맨해튼 연방지방법원(SDNY, docket 1:26-cv-08892)** 에 OpenAI를 상대로 저작권 침해 소송 제기.
+
+- 주장 규모: usatoday.com에서 약 83,266건 등, WebText·C4 데이터셋에서 원고 관련 항목 **160,000건 이상** 특정. "수십만 건"의 기사를 무단으로 AI 학습에 사용했다고 주장.
+- 요구: 손해배상 **$2.5억 초과** + 향후 무단 사용 금지 명령(injunction).
+- 증거 전략: GPT-5.6 출력이 원문 기사를 재현·근접 추적하는 사례를 증거로 제출 + 저작권 관리정보(CMI) 삭제로 DMCA 위반 주장 — "학습"이 아니라 "출력 재현"으로 대체성을 입증하려는 NYT 소송의 논증 구조와 동일.
+- 소송 구조: SDNY에 집중된 기존 저작권 소송 MDL(뉴욕타임스·작가 소송 등)과 **병합 진행 예정** — 언론사 vs AI 랩의 저작권 전선이 NYT 단독에서 Gannett 계열 연합으로 확대, 단일 전선화.
+- 이 페이지의 프레이밍으로 읽으면: 둠 루프의 "되먹임 1단계(트래픽 대체)"가 법정 분쟁으로 제도화되는 과정. 학습 데이터셋(WebText·C4)의 출처 추적 가능성이 소송 증거의 핵심 축이 되면서, "데이터의 출처를 모른다"는 방어가 점점 어려워짐.
+
 ## 참고 소스
 
 - [AI '둠 루프' — NYT 소송 비공개 해제 문서 (futurism, 10/4)](raw/articles/2026-10-07-ai-doom-loops-nyt-lawsuit.md)
+- [USA TODAY Co., OpenAI 상대 $2.5억 저작권 소송 (Reuters, 10/8)](raw/articles/2026-10-09-usa-today-sues-openai-copyright.md)

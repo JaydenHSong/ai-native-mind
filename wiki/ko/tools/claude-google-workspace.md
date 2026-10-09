@@ -10,6 +10,7 @@ related:
   - "[[tools/claude-code]]"
   - "[[patterns/agent-authority-model]]"
   - "[[concepts/agent-residence]]"
+  - "[[tools/gemini-agent-work]]"
 status: draft
 confidence: medium
 ---

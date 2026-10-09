@@ -3,7 +3,7 @@ title: "Campaign Map"
 category: meta
 tags: [map, campaign, navigation]
 created: 2026-04-12
-updated: 2026-10-08
+updated: 2026-10-09
 sources:
  - "wiki/overview.md"
  - "wiki/index.md"
@@ -100,4 +100,5 @@ confidence: high
 - 2026-04-12: Chapter 3~7 핵심 문서까지 `Chapter Clear 가이드`를 확장해 전체 챕터 라인이 문서 단위로 연속되도록 연결.
 - 2026-04-13: [[patterns/harness-engineering-casebook]] 추가 — 하네스 도메인 케이스 30 + Anthropic Academy 스터디 맵, 서브 퀘스트에 연결.
 - 2026-10-08: 데일리 ingest — [[concepts/claude-haiku-5-5]] 신규, [[concepts/agent-residence]]·[[patterns/agent-scientific-discovery]]·[[comparisons/frontier-lab-economics]]·[[concepts/semantic-decision-engine]] 보강, 총 131페이지.
+- 2026-10-09: 데일리 ingest — [[concepts/openai-safety-researcher-firings]]·[[concepts/gpt-6-intelligent-ui]]·[[tools/gemini-agent-work]]·[[concepts/robojepa-robot-scaling-laws]] 신규, [[comparisons/frontier-lab-economics]]·[[concepts/ai-doom-loop]] 보강, 총 136페이지.
 
