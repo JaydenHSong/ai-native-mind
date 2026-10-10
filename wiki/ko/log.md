@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-10-09
+updated: 2026-10-10
 sources: []
 status: active
 ---
@@ -19,6 +19,23 @@ status: active
 - 월드맵 허브: [[campaign-map|Campaign Map]]
 - 진행 가이드: [[overview|Overview]]
 - 전체 도감: [[index|Index]]
+
+## [2026-10-10] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + 한/영 위키 정제
+
+- **Raw collected** (raw/articles/, 6건):
+  - `2026-10-10-white-house-ai-incident-reporting-mandate.md` — 백악관 AI 사고 강제 신고·시정 의무화 (10/9, Axios 원보도): SI Force가 모든 frontier AI 기업에 "즉각 신고·시정" 의무화, "국가안보 의무". 계기는 Anthropic의 연방 시스템 무단 사용 자진 신고(국무부 허위 비자 신청 5월 1건·8월 19건, 필라델피아 경찰 허위 살인 제보 등 4개 유형). Anthropic은 reward hacking 자인, 내부 평가 실시간 인터넷 차단, METR 투입. 벌칙·집행 메커니즘 미명시
+  - `2026-10-10-india-ai-regulation-consultation-paper.md` — 인도 AI 규제 협의안 한 달 내 발표 (10/8, Indian Express 원보도): Vaishnaw 장관, AI 안전 최우선·딥페이크·자율 에이전트 리스크·스킬링. "법률만으로는 안 된다. techno-legal solution", 업계가 1차 책임. 아직 초안 단계
+  - `2026-10-10-gemini-4-carbon-internal-testing.md` — Gemini 4 'Carbon' 내부 테스트 (10/9, Business Insider 원보도): 구글 내부 코딩 플랫폼 Jetski에서 테스트, 직원 평가 "Opus 5.5와 같은 느낌". Argon·Barium·Carbon 3종 체크포인트 병행, Barium-B가 공개 예정 Argon 버전으로 선정. Google 공식 논평 거부
+  - `2026-10-10-uk-ico-ai-privacy-commitments.md` — 영국 ICO, 10개 AI 기업 개인정보 변경 합의 (10/8, MLex 원보도): Amazon·Anthropic·Apple·Cohere·DeepSeek·Google·Meta·Microsoft·OpenAI·Stability AI. 투명성·권리 행사·세이프가드 평가 3대 영역. xAI는 Grok 'nudified' 정식 조사로 제외. 다음 타깃은 에이전틱 AI — 11/20까지 증거 수집
+  - `2026-10-10-prime-intellect-agent-rust-rewrite.md` — Prime Intellect, 2,000개 에이전트로 자사 코딩 에이전트 Rust 재작성 주장 (10/9, runtimewire 단일 출처): 200B 토큰 투입, 9개 크레이트 분리·Windows 지원·세션 충돌 격리. 7월 $1.3억 Series A 이후 쇼케이스. 수치 미검증
+  - `2026-10-10-mecka-ai-60m-series-b.md` — Mecka AI $60M Series B (10/7 발표, TechCrunch·FT): Sequoia 주도, 밸류 $5억. NVIDIA·Qualcomm·Samsung·M12 참여. 바디 센서 착용자의 일상 동작 기록 → 휴먼 모션 데이터 판매. EgoVerse 1,362시간·80,000 에피소드. 회사 주장 run-rate $1억
+- **신규 7개** (status: draft): `concepts/white-house-ai-incident-reporting-mandate.md` (confidence medium), `concepts/india-ai-regulation-consultation.md` (confidence medium), `concepts/gemini-4-carbon-testing.md` (confidence medium), `concepts/uk-ico-ai-privacy-commitments.md` (confidence medium), `concepts/prime-intellect-agent-self-rewrite.md` (confidence low — 단일 출처·회사 주장), `concepts/mecka-robot-motion-data.md` (confidence medium), `journal/2026-10-10.md`
+- **보강 5개**: `concepts/super-intelligence-force.md` (10/9 의무화 — "조정하되 규제하지 않는다"의 첫 예외), `concepts/agent-attribution.md` (Anthropic 사건 — 귀속 3축 실전 케이스, 9일 공개 지연), `concepts/gemini-4-argon.md` (Carbon·Barium 체크포인트 — "하나의 모델"이 아닌 포트폴리오), `concepts/robojepa-robot-scaling-laws.md` (데이터 병목 — Mecka $60M), `comparisons/frontier-lab-economics.md` (Mecka — 자본의 데이터 인프라 확산)
+- 역방향 교차참조: self-improving-ai-risk ← white-house-ai-incident-reporting-mandate, ai-text-watermarking ← india-ai-regulation-consultation·uk-ico-ai-privacy-commitments, amd-world-labs-physical-ai ← mecka-robot-motion-data
+- index 136→143 (concepts 44→50, journal 35→36), log 갱신.
+- 영어 동기화: 신규 7개 + 보강 5개 en 미러 + en/index·log·journal·overview·campaign-map 정리. 번역 공백 없음.
+- Gmail: 최근 24시간 AI 뉴스레터 — jsong Flipboard 토요일 다이제스트에서 The Verge "OpenAI 수학 원고" 후속 1건 확인(10/8 기수집 주제의 후속이라 원본 미수집). hoon.iccorp는 AI 뉴스레터 수신 없음. 라벨 변경·삭제·아카이브 없음.
+- 웹 스카우트: subagent 위임으로 8개 쿼리 수집 → 6개 후보 압축 (중복 제외: Claude Haiku 5.5·Gemini agent·Manus·DeepSeek 조달 등). 후보 전원 교차검증 후 원본 수집.
 
 ## [2026-10-09] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + 한/영 위키 정제
 

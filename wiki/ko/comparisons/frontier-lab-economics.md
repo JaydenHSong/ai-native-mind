@@ -1,9 +1,9 @@
 ---
 title: "저가 파괴자 vs 가격 결정력 인프라"
 category: comparisons
-tags: [deepseek, huawei, ascend, revenue, fundraising, api-pricing, open-weights, llm-business, china, external-funding, nous-research, manus]
+tags: [deepseek, huawei, ascend, revenue, fundraising, api-pricing, open-weights, llm-business, china, external-funding, nous-research, manus, mecka-ai, robot-data]
 created: 2026-09-24
-updated: 2026-10-09
+updated: 2026-10-10
 sources:
   - "raw/articles/2026-09-24-deepseek-1b-annualized-revenue.md"
   - "raw/articles/2026-10-01-anthropic-ipo-prospectus-reuters.md"
@@ -13,6 +13,8 @@ sources:
   - "raw/articles/2026-10-07-ai-doom-loops-nyt-lawsuit.md"
   - "raw/articles/2026-10-08-deepseek-12b-raise.md"
   - "raw/articles/2026-10-08-nous-research-hermes-enterprise.md"
+  - "raw/articles/2026-10-09-manus-500m-funding-meta-exit.md"
+  - "raw/articles/2026-10-10-mecka-ai-60m-series-b.md"
 related:
   - "[[patterns/ai-cost-management]]"
   - "[[concepts/amd-world-labs-physical-ai]]"
@@ -20,6 +22,8 @@ related:
   - "[[concepts/claude-haiku-5-5]]"
   - "[[concepts/gpt-6-intelligent-ui]]"
   - "[[tools/gemini-agent-work]]"
+  - "[[concepts/mecka-robot-motion-data]]"
+  - "[[concepts/robojepa-robot-scaling-laws]]"
 status: draft
 confidence: low
 ---
@@ -152,6 +156,15 @@ Reuters(10/8): Manus의 모회사 Butterfly Effect가 **$500M+ 라운드 완료*
 - 이 페이지의 프레이밍으로 읽으면: **지정학적 제약이 오히려 밸류 상승으로 전환**된 역설. Nous($15억 밸류, 10/8 보강)에 이은 에이전트 전문 랩 자본 집중 2연타 — "에이전트가 토큰 사용량의 2.5%"(Nous 주장)와 "ARR $5억 run-rate"(Manus)가 에이전트 경제의 수요 측 증거로 겹침.
 - DeepSeek($120억 라운드)와의 대조: 중국 프론티어 랩들이 "외부 자본 차단" 환경에서도 국내 자본으로 대규모 조달 — 자본의 국지화(localization of capital).
 
+## 2026-10-10 보강 — Mecka $60M: 자본이 "모델"에서 "데이터 인프라"로 번진다
+
+TechCrunch(10/7)·FT(10/10): 토론토 로봇 데이터 스타트업 Mecka AI가 Sequoia 주도 **$60M Series B** (밸류 $5억). NVIDIA·Qualcomm Ventures·Samsung·M12 참여. 바디 센서 착용자의 일상 동작을 기록해 휴먼 모션 데이터를 판매 — "로봇의 Scale AI".
+
+- 이 페이지의 프레이밍으로 읽으면: Manus(에이전트 랩)·Nous(오픈 웨이트 에이전트)에 이은 **자본 집중의 세 번째 축 — 데이터 인프라**. XDOF(Series B $12억 밸류 협상 중), Micro1($5억), Scale AI·Surge·Mercor의 로봇 확장까지 — 로봇 훈련 데이터가 AI 인프라 최고 성장 세그먼트 중 하나.
+- [[concepts/robojepa-robot-scaling-laws]]의 경제적 귀결: 스케일링 법칙이 성립하면 병목은 연산→데이터. "Motion, contact, force and geometry aren't on the internet" — 웹 스크래핑 불가 데이터의 산업화.
+- 회사 주장 연환산 매출 $1억 돌파(6월), 연말 $3억 목표 — 미검증. 60명 미만 조직의 단위 경제는 데이터 인프라의 마진 구조를 시사.
+- 상세: [[concepts/mecka-robot-motion-data]]
+
 ## 참고 소스
 
 - [DeepSeek hits $1B annualized revenue, finalizing ~$7.5B raise at ~$74B valuation](raw/articles/2026-09-24-deepseek-1b-annualized-revenue.md)
@@ -161,3 +174,4 @@ Reuters(10/8): Manus의 모회사 Butterfly Effect가 **$500M+ 라운드 완료*
 - [DeepSeek, $120억+ 유치 임박 — Tencent·CATL 주도 (Bloomberg, 10/6)](raw/articles/2026-10-08-deepseek-12b-raise.md)
 - [Nous Research, $15억 밸류 — Hermes for Businesses (TechCrunch, 10/7)](raw/articles/2026-10-08-nous-research-hermes-enterprise.md)
 - [Manus, Meta 인수 무산 후 $5억+ 조달 (Reuters, 10/8)](raw/articles/2026-10-09-manus-500m-funding-meta-exit.md)
+- [Mecka AI, Sequoia 주도 $60M 시리즈B — 로봇 훈련용 휴먼 모션 데이터 (TechCrunch 10/7·FT 10/10)](raw/articles/2026-10-10-mecka-ai-60m-series-b.md)

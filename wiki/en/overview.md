@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-10-09
+updated: 2026-10-10
 sources: []
 status: active
 ---
@@ -29,10 +29,16 @@ This page is a **table of contents and learning map** for the wiki. The links be
 
 ## Current state
 
-- **Total pages**: 136
-- **Categories**: concepts(44), tools(15), patterns(30), journal(35), comparisons(11), meta(4)
+- **Total pages**: 143
+- **Categories**: concepts(50), tools(15), patterns(30), journal(36), comparisons(11), meta(4)
 - **Start date**: 2026-04-06
-- **Latest work (2026-10-09 daily ingest — the week answers became apps)**:
+- **Latest work (2026-10-10 daily ingest — voluntary lived one week)**:
+  - Collected 6 AI news sources into `raw/articles/` (AI newsletter lead: one follow-up from Flipboard's Saturday digest — The Verge on OpenAI's math manuscripts, a follow-up to the 10/8 collected topic, not collected; no label changes, deletions, or archives).
+  - Added 7 new wiki/ko pages (concepts/white-house-ai-incident-reporting-mandate — White House mandatory reporting and remediation, Anthropic's reward-hacking admission; concepts/india-ai-regulation-consultation — India's consultation paper within a month, techno-legal; concepts/gemini-4-carbon-testing — Carbon internal testing, Opus 5.5-level assessment; concepts/uk-ico-ai-privacy-commitments — UK ICO agreement with 10 AI firms, agentic AI next; concepts/prime-intellect-agent-self-rewrite — 2,000-agent Rust rewrite claim, confidence low; concepts/mecka-robot-motion-data — Mecka's $60M, 'Scale AI for robotics'; journal/2026-10-10; all status: draft).
+  - Reinforced 5 wiki/ko pages (super-intelligence-force — the 10/9 mandate, the first exception to "coordinate, don't regulate"; agent-attribution — the Anthropic case, a live case for the three axes; gemini-4-argon — Carbon/Barium checkpoint portfolio; robojepa-robot-scaling-laws — the data bottleneck, Mecka $60M; frontier-lab-economics — capital spreading to data infrastructure).
+  - Mirrored the same 7 new + 5 updated slugs under wiki/en/ (every new section and `updated` field verified by direct read) and tidied up index/log/journal/overview/campaign-map.
+  - Total pages 136→143.
+- **Previous work (2026-10-09 daily ingest — the week answers became apps)**:
   - Collected 6 AI news sources into `raw/articles/` (AI newsletter lead: the OpenAI-firings story from Flipboard's Friday tech briefing; no label changes, deletions, or archives).
   - Added 5 new wiki/ko pages (concepts/openai-safety-researcher-firings — three researchers fired, trust breach vs safety culture; concepts/gpt-6-intelligent-ui — adaptive response UI, Free/Go expansion; tools/gemini-agent-work — enterprise general agent, multi-model routing; concepts/robojepa-robot-scaling-laws — scaling laws for robot world models; journal/2026-10-09; all status: draft).
   - Reinforced 2 wiki/ko pages (frontier-lab-economics — Manus's $500M+ raise, geopolitics raising valuations; ai-doom-loop — USA TODAY's $250M copyright suit, the copyright front widens).

@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-10-09
+updated: 2026-10-10
 sources: []
 status: active
 ---
@@ -29,10 +29,16 @@ status: active
 
 ## 현재 상태
 
-- **총 페이지**: 136개
-- **카테고리**: concepts(44), tools(15), patterns(30), journal(35), comparisons(11), meta(4)
+- **총 페이지**: 143개
+- **카테고리**: concepts(50), tools(15), patterns(30), journal(36), comparisons(11), meta(4)
 - **시작일**: 2026-04-06
-- **최근 작업 (2026-10-09 데일리 ingest — 답변이 앱이 되는 주)**:
+- **최근 작업 (2026-10-10 데일리 ingest — 자발의 수명은 한 주)**:
+  - AI 뉴스 6건을 `raw/articles/`에 수집 (Gmail AI 뉴스레터는 Flipboard 토요일 다이제스트에서 The Verge OpenAI 수학 원고 후속 1건 확인 — 10/8 기수집 주제의 후속이라 원본 미수집; 라벨 변경·삭제·아카이브 없음)
+  - wiki/ko에 신규 페이지 7개 생성 (concepts/white-house-ai-incident-reporting-mandate — 백악관 강제 신고·시정 의무화·Anthropic reward hacking 자인, concepts/india-ai-regulation-consultation — 인도 협의안 한 달 내 발표·techno-legal, concepts/gemini-4-carbon-testing — Carbon 내부 테스트·Opus 5.5급 평가, concepts/uk-ico-ai-privacy-commitments — 영국 ICO 10개사 합의·에이전틱 AI가 다음 타깃, concepts/prime-intellect-agent-self-rewrite — 2,000개 에이전트 Rust 재작성 주장·confidence low, concepts/mecka-robot-motion-data — Mecka $60M·'로봇의 Scale AI', journal/2026-10-10; 모두 status: draft)
+  - wiki/ko 기존 페이지 5개 보강 (super-intelligence-force — 10/9 의무화·"조정하되 규제하지 않는다"의 첫 예외, agent-attribution — Anthropic 사건 귀속 3축 실전 케이스, gemini-4-argon — Carbon·Barium 체크포인트 포트폴리오, robojepa-robot-scaling-laws — 데이터 병목·Mecka $60M, frontier-lab-economics — 자본의 데이터 인프라 확산)
+  - wiki/en에 동일 slug 신규 7개 + 업데이트 5개 미러링, index·log·overview·campaign-map 정리
+  - 총 페이지 136→143개
+- **직전 작업 (2026-10-09 데일리 ingest — 답변이 앱이 되는 주)**:
   - AI 뉴스 6건을 `raw/articles/`에 수집 (Gmail AI 뉴스레터는 Flipboard 금요일 테크 브리핑에서 OpenAI 해고 리드 확보; 라벨 변경·삭제·아카이브 없음)
   - wiki/ko에 신규 페이지 5개 생성 (concepts/openai-safety-researcher-firings — 안전 연구원 3명 해고 분쟁·신뢰 위반 vs 안전 문화, concepts/gpt-6-intelligent-ui — 적응형 응답 UI·Free/Go 확대, tools/gemini-agent-work — 기업용 범용 에이전트·멀티모델 라우팅, concepts/robojepa-robot-scaling-laws — 로봇 월드모델 스케일링 법칙, journal/2026-10-09; 모두 status: draft)
   - wiki/ko 기존 페이지 2개 보강 (frontier-lab-economics — Manus $5억+ 조달·지정학이 밸류를 올리는 역설, ai-doom-loop — USA TODAY $2.5억 저작권 소송·전선 확대)

@@ -1,15 +1,17 @@
 ---
 title: "Gemini 4 Argon"
 category: concepts
-tags: [google, gemini-4, argon, frontier-model, gated-release, benchmark, hallucination, pricing]
+tags: [google, gemini-4, argon, frontier-model, gated-release, benchmark, hallucination, pricing, carbon, checkpoint]
 created: 2026-10-01
-updated: 2026-10-01
+updated: 2026-10-10
 sources:
   - "raw/articles/2026-10-01-google-gemini-4-argon-launch.md"
+  - "raw/articles/2026-10-10-gemini-4-carbon-internal-testing.md"
 related:
   - "[[patterns/ai-cost-management]]"
   - "[[patterns/mid-tier-performance-inversion]]"
   - "[[concepts/agent-supply-chain-security]]"
+  - "[[concepts/gemini-4-carbon-testing]]"
 status: draft
 confidence: high
 ---
@@ -79,12 +81,23 @@ Google's top Gemini 4 model, announced 2026-09-30 — shipped after months of de
 - The internal-staff critique (Bloomberg) is denied by Google — both sides recorded.
 - confidence **high** (Reuters, VentureBeat, and Google's official announcement cross-checked; the benchmark read keeps the gap explicit).
 
+## 2026-10-09 update — Carbon and Barium checkpoints: Gemini 4 is not "one model"
+
+Business Insider (10/9): Google is testing an internal Gemini 4-family variant **'Carbon'** on its internal coding platform Jetski. Employee assessment: coding performance "feels like Opus 5.5" — internal acknowledgment of Opus 5.5-level coding.
+
+- Internal documents show **Argon, Barium, and Carbon in parallel testing**. Barium-B is reportedly selected as the upcoming public Argon release.
+- Whether Carbon is a separate model or an Argon update is unconfirmed. Google declined to comment.
+- Connects to this page's "benchmark gap" reading: beyond Argon's self-reported lead vs AA 53, Carbon's "Opus 5.5-level" is also an employee-felt assessment — a claim until independently verified. Frontier-release performance claims must now be read per checkpoint, as a portfolio.
+- Details: [[concepts/gemini-4-carbon-testing]]
+
 ## Related concepts
 
 - [[patterns/ai-cost-management]] — the $2/$10 intro-price pattern and where the price war stands
 - [[patterns/mid-tier-performance-inversion]] — Argon (flagship) vs Sonnet 5.5 (mid-tier) inverted on the independent index
 - [[concepts/agent-supply-chain-security]] — unguarded access and trust tiers
+- [[concepts/gemini-4-carbon-testing]] — details of the Carbon internal testing
 
 ## References
 
 - [Google Gemini 4 Argon launch](raw/articles/2026-10-01-google-gemini-4-argon-launch.md)
+- [Google testing Gemini 4 'Carbon' on internal coding platform — Opus 5.5-level assessment (Business Insider original, 10/9)](raw/articles/2026-10-10-gemini-4-carbon-internal-testing.md)

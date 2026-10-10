@@ -11,6 +11,7 @@ related:
   - "[[concepts/harness-engineering]]"
   - "[[patterns/ai-cost-management]]"
   - "[[concepts/robojepa-robot-scaling-laws]]"
+  - "[[concepts/mecka-robot-motion-data]]"
 status: draft
 confidence: high
 ---

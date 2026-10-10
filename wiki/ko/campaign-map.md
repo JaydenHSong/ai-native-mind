@@ -3,7 +3,7 @@ title: "Campaign Map"
 category: meta
 tags: [map, campaign, navigation]
 created: 2026-04-12
-updated: 2026-10-09
+updated: 2026-10-10
 sources:
  - "wiki/overview.md"
  - "wiki/index.md"
@@ -101,4 +101,5 @@ confidence: high
 - 2026-04-13: [[patterns/harness-engineering-casebook]] 추가 — 하네스 도메인 케이스 30 + Anthropic Academy 스터디 맵, 서브 퀘스트에 연결.
 - 2026-10-08: 데일리 ingest — [[concepts/claude-haiku-5-5]] 신규, [[concepts/agent-residence]]·[[patterns/agent-scientific-discovery]]·[[comparisons/frontier-lab-economics]]·[[concepts/semantic-decision-engine]] 보강, 총 131페이지.
 - 2026-10-09: 데일리 ingest — [[concepts/openai-safety-researcher-firings]]·[[concepts/gpt-6-intelligent-ui]]·[[tools/gemini-agent-work]]·[[concepts/robojepa-robot-scaling-laws]] 신규, [[comparisons/frontier-lab-economics]]·[[concepts/ai-doom-loop]] 보강, 총 136페이지.
+- 2026-10-10: 데일리 ingest — [[concepts/white-house-ai-incident-reporting-mandate]]·[[concepts/india-ai-regulation-consultation]]·[[concepts/gemini-4-carbon-testing]]·[[concepts/uk-ico-ai-privacy-commitments]]·[[concepts/prime-intellect-agent-self-rewrite]]·[[concepts/mecka-robot-motion-data]] 신규, [[concepts/super-intelligence-force]]·[[concepts/agent-attribution]]·[[concepts/gemini-4-argon]]·[[concepts/robojepa-robot-scaling-laws]]·[[comparisons/frontier-lab-economics]] 보강, 총 143페이지.
 

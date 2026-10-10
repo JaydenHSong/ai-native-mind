@@ -3,7 +3,7 @@ title: "Campaign Map"
 category: meta
 tags: [map, campaign, navigation]
 created: 2026-04-12
-updated: 2026-10-09
+updated: 2026-10-10
 sources:
   - "wiki/overview.md"
   - "wiki/index.md"
@@ -120,3 +120,4 @@ This is not a document you read from top to bottom. Pick one chapter that matche
 - 2026-10-02: Daily ingest added one new page (reasoning-extraction-attack — ko + en mirrors), one journal page (journal/2026-10-02), and reinforced six pages; chapter route unchanged, and `index`, `overview`, and `log` now carry the 109→110 page state.
 - 2026-10-08: Daily ingest added two new pages (claude-haiku-5-5, journal/2026-10-08 — ko + en mirrors) and reinforced four pages; chapter route unchanged, and `index`, `overview`, and `log` now carry the 129→131 page state.
 - 2026-10-09: Daily ingest added four new pages (openai-safety-researcher-firings, gpt-6-intelligent-ui, gemini-agent-work, robojepa-robot-scaling-laws), one journal page (journal/2026-10-09 — ko + en mirrors), and reinforced two pages (frontier-lab-economics, ai-doom-loop); chapter route unchanged, and `index`, `overview`, and `log` now carry the 131→136 page state.
+- 2026-10-10: Daily ingest added six new pages (white-house-ai-incident-reporting-mandate, india-ai-regulation-consultation, gemini-4-carbon-testing, uk-ico-ai-privacy-commitments, prime-intellect-agent-self-rewrite, mecka-robot-motion-data), one journal page (journal/2026-10-10 — ko + en mirrors), and reinforced five pages (super-intelligence-force, agent-attribution, gemini-4-argon, robojepa-robot-scaling-laws, frontier-lab-economics); chapter route unchanged, and `index`, `overview`, and `log` now carry the 136→143 page state.

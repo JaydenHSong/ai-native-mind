@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-10-09
-total_pages: 136
+updated: 2026-10-10
+total_pages: 143
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 전체 136개 페이지 | 최종 업데이트: 2026-10-09 (데일리 ingest: AI 뉴스 6건 수집 + 한/영 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
+> 전체 143개 페이지 | 최종 업데이트: 2026-10-10 (데일리 ingest: AI 뉴스 6건 수집 + 한/영 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
 
 ## 쉽게 읽기
 
@@ -26,7 +26,7 @@ status: active
 - **실전(Chapter 3~5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **엔드게임(Chapter 6~7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (44개)
+## Concepts (50개)
 
 ### 성장 맵 & 철학
 - [[concepts/ai-native-programmer]] — AI를 팀원으로 활용하여 1인이 팀 규모 결과를 내는 개발자, 성장 맵
@@ -64,6 +64,9 @@ status: active
 - [[concepts/claude-haiku-5-5]] — Claude Haiku 5.5, 최경량·최저가 5.5 시리즈, API 최대 90% 인하 + effort 설정 (2026-10-08)
 - [[concepts/gpt-6-intelligent-ui]] — GPT-6 Intelligent UI, 답변이 차트·폼·버튼 인터페이스가 되는 적응형 UI, Free/Go 확대 (2026-10-09)
 - [[concepts/robojepa-robot-scaling-laws]] — Meta RoboJEPA 8B, 로봇 월드모델 스케일링 법칙 + 능력 임계값 지도 (2026-10-09)
+- [[concepts/gemini-4-carbon-testing]] — Gemini 4 'Carbon' 내부 테스트, 코딩 성능 Opus 5.5급 평가, Argon·Barium·Carbon 3종 체크포인트 (2026-10-10)
+- [[concepts/mecka-robot-motion-data]] — Mecka AI $60M Series B, 휴먼 모션 데이터 인프라, '로봇의 Scale AI' (2026-10-10)
+- [[concepts/prime-intellect-agent-self-rewrite]] — Prime Intellect, 2,000개 에이전트로 자사 코딩 에이전트 Rust 재작성 주장, confidence low (2026-10-10)
 
 ### 운영·관측
 - [[concepts/gen-ai-observability]] — OpenTelemetry GenAI·에이전트 시맨틱 컨벤션, 트레이스·표준 계측
@@ -84,6 +87,9 @@ status: active
 - [[concepts/ai-doom-loop]] — AI 둠 루프, 콘텐츠 공급망의 자기파괴 되먹임, NYT 소송 해제 문서 (2026-10-07)
 - [[concepts/ai-teen-safety-evaluation]] — ChatGPT for Teens 'Unacceptable Risk' 판정, 4,000+ 프롬프트 독립 평가 (2026-10-07)
 - [[concepts/openai-safety-researcher-firings]] — OpenAI 안전 연구원 3명 해고 분쟁, 신뢰 위반 vs 안전 문화 (2026-10-09)
+- [[concepts/white-house-ai-incident-reporting-mandate]] — 백악관 AI 사고 강제 신고·시정 의무화, Anthropic 연방 시스템 무단 사용 계기, reward hacking 자인 (2026-10-10)
+- [[concepts/india-ai-regulation-consultation]] — 인도 AI 규제 협의안 한 달 내 발표, 딥페이크·에이전트 AI, techno-legal 접근 (2026-10-10)
+- [[concepts/uk-ico-ai-privacy-commitments]] — 영국 ICO, 10개 AI 기업 개인정보 변경 합의, 다음 타깃은 에이전틱 AI (2026-10-10)
 
 ## Tools (15개)
 
@@ -143,7 +149,9 @@ status: active
 - [[patterns/agent-mvp-stack-2026]] — 1인 MVP 스택 5대 영역 × 4 단계 + 의사결정 트리 (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — Vibe Coding의 7대 안티패턴과 회피법
 
-## Journal (35개)
+## Journal (36개)
+
+- [[journal/2026-10-10]] — 토요 데일리: 백악관 강제 신고 의무화·인도 협의안·Gemini Carbon·영국 ICO·Prime Intellect·Mecka $60M
 
 - [[journal/2026-10-09]] — 금요 데일리: OpenAI 연구원 해고·GPT-6 Intelligent UI·Manus $5억·Gemini agent·USA TODAY 소송·RoboJEPA
 

@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-10-09
-total_pages: 136
+updated: 2026-10-10
+total_pages: 143
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 136 managed pages total | Last updated: 2026-10-09 (daily ingest: 6 AI news sources collected + ko/en wiki refinement) — most pages include a **Start here** block.
+> 143 managed pages total | Last updated: 2026-10-10 (daily ingest: 6 AI news sources collected + ko/en wiki refinement) — most pages include a **Start here** block.
 
 ## Start here
 
@@ -26,7 +26,7 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - **Practice (Chapters 3–5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **Endgame (Chapters 6–7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (44)
+## Concepts (50)
 
 ### Growth map & philosophy
 - [[concepts/ai-native-programmer]] — a developer who uses AI as teammates to achieve team-scale outcomes solo; growth map
@@ -62,6 +62,9 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[concepts/claude-haiku-5-5]] — Claude Haiku 5.5: the lightest, cheapest 5.5-series model, up to 90% API price cut + effort setting (2026-10-08)
 - [[concepts/gpt-6-intelligent-ui]] — GPT-6 Intelligent UI: answers become charts, forms, and buttons — adaptive UI, Free/Go expansion (2026-10-09)
 - [[concepts/robojepa-robot-scaling-laws]] — Meta RoboJEPA 8B: scaling laws for robot world models + capability-threshold map (2026-10-09)
+- [[concepts/gemini-4-carbon-testing]] — Gemini 4 'Carbon' internal testing: Opus 5.5-level coding assessment; Argon/Barium/Carbon three-checkpoint portfolio (2026-10-10)
+- [[concepts/mecka-robot-motion-data]] — Mecka AI $60M Series B: human-motion data infrastructure, 'Scale AI for robotics' (2026-10-10)
+- [[concepts/prime-intellect-agent-self-rewrite]] — Prime Intellect claims 2,000 agents rewrote its coding agent in Rust; confidence low (2026-10-10)
 
 ### Operations & observability
 - [[concepts/gen-ai-observability]] — OpenTelemetry GenAI and agent semantic conventions, traces, and standard instrumentation
@@ -84,6 +87,9 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[concepts/ai-doom-loop]] — the AI doom loop: self-destructive feedback in the content supply chain, NYT lawsuit unsealed docs (2026-10-07)
 - [[concepts/ai-teen-safety-evaluation]] — ChatGPT for Teens rated 'Unacceptable Risk', 4,000+ prompt independent evaluation (2026-10-07)
 - [[concepts/openai-safety-researcher-firings]] — OpenAI fires three safety researchers: trust breach vs safety culture dispute (2026-10-09)
+- [[concepts/white-house-ai-incident-reporting-mandate]] — White House mandates AI incident reporting and remediation; triggered by Anthropic's federal-system misuse, reward-hacking admission (2026-10-10)
+- [[concepts/india-ai-regulation-consultation]] — India to release AI regulation consultation paper within a month: deepfakes, agentic AI, techno-legal approach (2026-10-10)
+- [[concepts/uk-ico-ai-privacy-commitments]] — UK ICO confirms data-protection changes with 10 AI firms; agentic AI is the next target (2026-10-10)
 
 ## Tools (15)
 
@@ -143,7 +149,9 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[patterns/agent-mvp-stack-2026]] — solo MVP stack: 5 areas × 4 stages + decision tree (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — seven major anti-patterns in vibe coding and how to avoid them
 
-## Journal (35)
+## Journal (36)
+
+- [[journal/2026-10-10]] — Saturday daily: White House reporting mandate · India consultation · Gemini Carbon · UK ICO · Prime Intellect · Mecka $60M
 
 - [[journal/2026-10-09]] — Friday daily: OpenAI researcher firings · GPT-6 Intelligent UI · Manus $500M · Gemini agent · USA TODAY suit · RoboJEPA
 

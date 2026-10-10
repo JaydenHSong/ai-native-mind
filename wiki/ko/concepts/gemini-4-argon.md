@@ -1,15 +1,17 @@
 ---
 title: "Gemini 4 Argon"
 category: concepts
-tags: [google, gemini-4, argon, frontier-model, gated-release, benchmark, hallucination, pricing]
+tags: [google, gemini-4, argon, frontier-model, gated-release, benchmark, hallucination, pricing, carbon, checkpoint]
 created: 2026-10-01
-updated: 2026-10-01
+updated: 2026-10-10
 sources:
   - "raw/articles/2026-10-01-google-gemini-4-argon-launch.md"
+  - "raw/articles/2026-10-10-gemini-4-carbon-internal-testing.md"
 related:
   - "[[patterns/ai-cost-management]]"
   - "[[patterns/mid-tier-performance-inversion]]"
   - "[[concepts/agent-supply-chain-security]]"
+  - "[[concepts/gemini-4-carbon-testing]]"
 status: draft
 confidence: high
 ---
@@ -79,12 +81,23 @@ Google이 2026-09-30 발표한 Gemini 4 세대 최상위 모델 — 수개월 �
 - 내부 직원 평가(Bloomberg)는 Google이 부인 — 양쪽 병기.
 - confidence **high** (Reuters·VentureBeat·Google 공식 발표 교차; 벤치마크 해석은 괴리를 명시한 기준).
 
+## 2026-10-09 보강 — Carbon·Barium 체크포인트: Gemini 4는 "하나의 모델"이 아니다
+
+Business Insider(10/9): 구글 내부 코딩 플랫폼 Jetski에서 Gemini 4 계열 내부 변형 **'Carbon'** 테스트 중. 직원 평가는 코딩 성능이 Anthropic Opus 5.5와 "같은 느낌" — 내부에서 Opus 5.5급을 인정한 셈.
+
+- 내부 문서상 **Argon·Barium·Carbon 3종 체크포인트 병행 테스트**. Barium-B가 공개 예정인 Argon 버전으로 선정.
+- Carbon이 별도 모델인지 Argon 업데이트인지는 미확정. Google 공식 논평 거부.
+- 이 페이지의 "벤치마크 괴리" 읽는 법과 연결: Argon의 자체 벤치 선두 주장 vs AA 53 괴리에 이어, Carbon의 "Opus 5.5급"도 직원 체감 평가 — 외부 독립 검증 전까지는 주장 단계. 프론티어 릴리스의 성능 주장은 이제 "체크포인트 포트폴리오" 단위로 읽어야 한다.
+- 상세: [[concepts/gemini-4-carbon-testing]]
+
 ## 관련 개념
 
 - [[patterns/ai-cost-management]] — $2/$10 도입가 패턴, 가격전의 현재 위치
 - [[patterns/mid-tier-performance-inversion]] — Argon(플래그십) vs Sonnet 5.5(중급)의 독립 지수 역전
 - [[concepts/agent-supply-chain-security]] — 가드레일을 푼 접근과 신뢰 등급
+- [[concepts/gemini-4-carbon-testing]] — Carbon 내부 테스트의 상세
 
 ## 참고 소스
 
 - [Google Gemini 4 Argon 발표](raw/articles/2026-10-01-google-gemini-4-argon-launch.md)
+- [구글, 내부 코딩 플랫폼에 Gemini 4 'Carbon' 테스트 — Opus 5.5급 평가 (Business Insider 원보도, 10/9)](raw/articles/2026-10-10-gemini-4-carbon-internal-testing.md)

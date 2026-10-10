@@ -12,6 +12,7 @@ related:
   - "[[concepts/persistent-agent]]"
   - "[[concepts/white-house-ai-accord]]"
   - "[[concepts/openai-safety-researcher-firings]]"
+  - "[[concepts/white-house-ai-incident-reporting-mandate]]"
 status: draft
 confidence: medium-high
 ---

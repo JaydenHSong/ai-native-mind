@@ -1,9 +1,9 @@
 ---
 title: "Low-Cost Disruptor vs Pricing-Power Infrastructure"
 category: comparisons
-tags: [deepseek, huawei, ascend, revenue, fundraising, api-pricing, open-weights, llm-business, china, external-funding, nous-research, manus]
+tags: [deepseek, huawei, ascend, revenue, fundraising, api-pricing, open-weights, llm-business, china, external-funding, nous-research, manus, mecka-ai, robot-data]
 created: 2026-09-24
-updated: 2026-10-09
+updated: 2026-10-10
 sources:
   - "raw/articles/2026-09-24-deepseek-1b-annualized-revenue.md"
   - "raw/articles/2026-10-01-anthropic-ipo-prospectus-reuters.md"
@@ -14,6 +14,7 @@ sources:
   - "raw/articles/2026-10-08-deepseek-12b-raise.md"
   - "raw/articles/2026-10-08-nous-research-hermes-enterprise.md"
   - "raw/articles/2026-10-09-manus-500m-funding-meta-exit.md"
+  - "raw/articles/2026-10-10-mecka-ai-60m-series-b.md"
 related:
   - "[[patterns/ai-cost-management]]"
   - "[[concepts/amd-world-labs-physical-ai]]"
@@ -21,6 +22,8 @@ related:
   - "[[concepts/claude-haiku-5-5]]"
   - "[[concepts/gpt-6-intelligent-ui]]"
   - "[[tools/gemini-agent-work]]"
+  - "[[concepts/mecka-robot-motion-data]]"
+  - "[[concepts/robojepa-robot-scaling-laws]]"
 status: draft
 confidence: low
 ---
@@ -153,6 +156,15 @@ Reuters (10/8): Manus parent Butterfly Effect **completed a $500M+ round** (led 
 - Read through this page's framing: the paradox of **geopolitical constraints converting into higher valuations**. The second capital-concentration hit on agent-specialized labs after Nous ($1.5B, 10/8 update) — Nous's "agents drive 2.5% of token usage" and Manus's "$500M ARR run rate" overlap as demand-side evidence for the agent economy.
 - Contrast with DeepSeek's $12B round: Chinese frontier labs are raising at scale from domestic capital despite "blocked foreign capital" — the localization of capital.
 
+## 2026-10-10 update — Mecka $60M: capital spreads from "models" to "data infrastructure"
+
+TechCrunch (10/7) / FT (10/10): Toronto robotics-data startup Mecka AI raised a **$60M Series B** led by Sequoia ($500M valuation). NVIDIA, Qualcomm Ventures, Samsung, M12 joined. It records everyday human motion with body-sensor wearers and sells the data — "Scale AI for robotics."
+
+- Read through this page's framing: after agent labs (Manus) and open-weight agent labs (Nous), capital concentration's **third axis — data infrastructure**. XDOF (Series B talks at ~$1.2B valuation), Micro1 ($500M), Scale AI / Surge / Mercor expanding into robotics — robot training data is among AI infrastructure's fastest-growing segments.
+- The economic corollary of [[concepts/robojepa-robot-scaling-laws]]: once the scaling law holds, the bottleneck moves from compute to data. "Motion, contact, force and geometry aren't on the internet" — the industrialization of unscrapable data.
+- Company-claimed $100M+ annualized run-rate (June), $300M year-end target — unverified. A sub-60-person org's unit economics hint at data infrastructure's margin structure.
+- Details: [[concepts/mecka-robot-motion-data]]
+
 ## Sources
 
 - [DeepSeek hits $1B annualized revenue, finalizing ~$7.5B raise at ~$74B valuation](raw/articles/2026-09-24-deepseek-1b-annualized-revenue.md)
@@ -162,3 +174,4 @@ Reuters (10/8): Manus parent Butterfly Effect **completed a $500M+ round** (led 
 - [DeepSeek nearing $12B+ raise, led by Tencent and CATL (Bloomberg, 10/6)](raw/articles/2026-10-08-deepseek-12b-raise.md)
 - [Nous Research at $1.5B valuation — Hermes for Businesses (TechCrunch, 10/7)](raw/articles/2026-10-08-nous-research-hermes-enterprise.md)
 - [Manus raises $500M+ after Meta exit (Reuters, 10/8)](raw/articles/2026-10-09-manus-500m-funding-meta-exit.md)
+- [Mecka AI raises $60M Series B led by Sequoia — human-motion data for robot training (TechCrunch 10/7, FT 10/10)](raw/articles/2026-10-10-mecka-ai-60m-series-b.md)

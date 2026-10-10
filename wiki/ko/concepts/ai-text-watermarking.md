@@ -9,6 +9,8 @@ sources:
 related:
   - "[[concepts/agent-attribution]]"
   - "[[patterns/agent-safety-runtime]]"
+  - "[[concepts/india-ai-regulation-consultation]]"
+  - "[[concepts/uk-ico-ai-privacy-commitments]]"
 status: draft
 confidence: medium
 ---
