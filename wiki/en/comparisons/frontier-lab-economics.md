@@ -3,7 +3,7 @@ title: "Low-Cost Disruptor vs Pricing-Power Infrastructure"
 category: comparisons
 tags: [deepseek, huawei, ascend, revenue, fundraising, api-pricing, open-weights, llm-business, china, external-funding, nous-research, manus, mecka-ai, robot-data]
 created: 2026-09-24
-updated: 2026-10-10
+updated: 2026-10-11
 sources:
   - "raw/articles/2026-09-24-deepseek-1b-annualized-revenue.md"
   - "raw/articles/2026-10-01-anthropic-ipo-prospectus-reuters.md"
@@ -15,6 +15,7 @@ sources:
   - "raw/articles/2026-10-08-nous-research-hermes-enterprise.md"
   - "raw/articles/2026-10-09-manus-500m-funding-meta-exit.md"
   - "raw/articles/2026-10-10-mecka-ai-60m-series-b.md"
+  - "raw/articles/2026-10-11-openai-gpt-61-sol-ultrafast.md"
 related:
   - "[[patterns/ai-cost-management]]"
   - "[[concepts/amd-world-labs-physical-ai]]"
@@ -24,6 +25,7 @@ related:
   - "[[tools/gemini-agent-work]]"
   - "[[concepts/mecka-robot-motion-data]]"
   - "[[concepts/robojepa-robot-scaling-laws]]"
+  - "[[concepts/gpt-61-sol-ultrafast]]"
 status: draft
 confidence: low
 ---
@@ -164,6 +166,14 @@ TechCrunch (10/7) / FT (10/10): Toronto robotics-data startup Mecka AI raised a 
 - The economic corollary of [[concepts/robojepa-robot-scaling-laws]]: once the scaling law holds, the bottleneck moves from compute to data. "Motion, contact, force and geometry aren't on the internet" — the industrialization of unscrapable data.
 - Company-claimed $100M+ annualized run-rate (June), $300M year-end target — unverified. A sub-60-person org's unit economics hint at data infrastructure's margin structure.
 - Details: [[concepts/mecka-robot-motion-data]]
+
+## 2026-10-11 update — GPT-6.1 Sol Ultrafast: latency becomes pricing power
+
+OpenAI added a top speed tier **Ultrafast** to GPT-6.1 Sol (10/8, API, Codex, ChatGPT Work) — up to 8x faster token generation at 6x the standard API price ($12/1M input, $60/1M output). Access restricted to Pro 500, usage-based Enterprise, and credit-based Edu plans. Developer complaints: surging token consumption, forced upgrades to higher plans.
+
+- Read through this page's framing: **a new basis for pricing-power infrastructure — latency**. While Claude Haiku 5.5 cut API prices by up to 90% the same week (10/8 update), OpenAI climbs with a 6x premium for 8x speed — **price-tier polarization unfolding simultaneously**. Where DeepSeek's unit-economics edge came from inelastic demand (prices rose, nobody left), Ultrafast bets on inelasticity in agent workloads where "speed is cost efficiency" (conversational coding agents).
+- The [[patterns/ai-cost-management]] corollary: speed-price-quality **three-axis routing** gets sharper — conversational coding on Ultrafast, batch evals on standard, lightweight tasks on Haiku-class. Caveat: fast-tier token-consumption surge feeds directly into agent-loop runaway cost risk — spend caps mandatory.
+- Details: [[concepts/gpt-61-sol-ultrafast]]
 
 ## Sources
 

@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-10-10
+updated: 2026-10-11
 sources: []
 status: active
 ---
@@ -29,10 +29,16 @@ status: active
 
 ## 현재 상태
 
-- **총 페이지**: 143개
-- **카테고리**: concepts(50), tools(15), patterns(30), journal(36), comparisons(11), meta(4)
+- **총 페이지**: 149개
+- **카테고리**: concepts(56), tools(15), patterns(30), journal(37), comparisons(11), meta(4)
 - **시작일**: 2026-04-06
-- **최근 작업 (2026-10-10 데일리 ingest — 자발의 수명은 한 주)**:
+- **최근 작업 (2026-10-11 데일리 ingest — 법과 가격이 에이전트를 규정하기 시작했다)**:
+  - AI 뉴스 6건을 `raw/articles/`에 수집 (Gmail AI 뉴스레터는 최근 24시간 수신 없음 — Flipboard 토요일 다이제스트에서 The Verge OpenAI 수학 원고 후속 1건 확인, 10/8 기수집 주제의 후속이라 원본 미수집; Google Alerts는 Amazon 비즈니스·C3.ai 주가 뉴스로 위키 기준 제외; 라벨 변경·삭제·아카이브 없음)
+  - wiki/ko에 신규 페이지 7개 생성 (concepts/ted-lieu-ai-personhood-opposition — 테드 리우 의원 법인격 반대 성명·법인격 부여의 역설, concepts/anthropic-claude-usage-policy-revision — 무기 금지 명문화·감시 강화·학대 금지 신설·11/12 시행, concepts/gpt-61-sol-ultrafast — 8배 속도·6배 가격·가격대 양극화, concepts/australia-frontier-ai-regulation — 시스템 기반 규제·2027년 입법, concepts/sabi-brain-ai-interface — 모자형 뇌-AI 인터페이스 $50M 시드·confidence low, concepts/claude-art-discovery-controversy — ART 오리지널리티 논란·독립성 입증 과제·confidence high, journal/2026-10-11; 모두 status: draft)
+  - wiki/ko 기존 페이지 5개 보강 (agent-attribution — 법인격·귀속의 "주체"를 흔드는 변수, frontier-lab-economics — Ultrafast·레이턴시가 가격 결정력, agent-scientific-discovery — ART 논란·선행 연구 배제 증명 4단계, agent-data-leakage — "사용자 대화 훈련 사용 없음" 주장의 검증 불가능성, india-ai-regulation-consultation — 호주·규제 문법의 제3축·5축 전선)
+  - wiki/en에 동일 slug 신규 7개 + 업데이트 5개 미러링, index·log·overview·campaign-map 정리
+  - 총 페이지 143→149개
+- **직전 작업 (2026-10-10 데일리 ingest — 자발의 수명은 한 주)**:
   - AI 뉴스 6건을 `raw/articles/`에 수집 (Gmail AI 뉴스레터는 Flipboard 토요일 다이제스트에서 The Verge OpenAI 수학 원고 후속 1건 확인 — 10/8 기수집 주제의 후속이라 원본 미수집; 라벨 변경·삭제·아카이브 없음)
   - wiki/ko에 신규 페이지 7개 생성 (concepts/white-house-ai-incident-reporting-mandate — 백악관 강제 신고·시정 의무화·Anthropic reward hacking 자인, concepts/india-ai-regulation-consultation — 인도 협의안 한 달 내 발표·techno-legal, concepts/gemini-4-carbon-testing — Carbon 내부 테스트·Opus 5.5급 평가, concepts/uk-ico-ai-privacy-commitments — 영국 ICO 10개사 합의·에이전틱 AI가 다음 타깃, concepts/prime-intellect-agent-self-rewrite — 2,000개 에이전트 Rust 재작성 주장·confidence low, concepts/mecka-robot-motion-data — Mecka $60M·'로봇의 Scale AI', journal/2026-10-10; 모두 status: draft)
   - wiki/ko 기존 페이지 5개 보강 (super-intelligence-force — 10/9 의무화·"조정하되 규제하지 않는다"의 첫 예외, agent-attribution — Anthropic 사건 귀속 3축 실전 케이스, gemini-4-argon — Carbon·Barium 체크포인트 포트폴리오, robojepa-robot-scaling-laws — 데이터 병목·Mecka $60M, frontier-lab-economics — 자본의 데이터 인프라 확산)

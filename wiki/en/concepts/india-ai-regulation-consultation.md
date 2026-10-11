@@ -3,13 +3,15 @@ title: "India's AI Regulation Consultation Paper — Deepfakes, Agentic AI, and 
 category: concepts
 tags: [india, regulation, consultation-paper, deepfake, ai-safety, agentic-ai, techno-legal, vaishnaw]
 created: 2026-10-10
-updated: 2026-10-10
+updated: 2026-10-11
 sources:
   - "raw/articles/2026-10-10-india-ai-regulation-consultation-paper.md"
+  - "raw/articles/2026-10-11-australia-frontier-ai-regulation.md"
 related:
   - "[[concepts/ai-text-watermarking]]"
   - "[[concepts/super-intelligence-force]]"
   - "[[concepts/uk-ico-ai-privacy-commitments]]"
+  - "[[concepts/australia-frontier-ai-regulation]]"
 status: draft
 confidence: medium
 ---
@@ -37,7 +39,15 @@ On 2026-10-08 India's electronics and IT minister Ashwini Vaishnaw announced a c
 - **Techno-legal differentiation**: unlike the EU's law-first approach, India names "technology + law" explicitly — technical measures like watermarking and detection become part of regulation. Demand-side grounding for [[concepts/ai-text-watermarking]].
 - **Data sovereignty, stated plainly**: "foreign models learning from Indian data" as a minister-level concern — data offshoring is becoming a procurement criterion in model selection.
 
+## 2026-10-08 update — Australia's 'systems-based' regulation: the third regulatory grammar
+
+On the same day (10/8), Assistant Minister Andrew Charlton announced Australia's 'systems-based' frontier AI approach — evaluating whether "rigorous processes" for finding, testing, reporting, and managing risk actually work. Voluntary codes are set aside for the most severe frontier risks; detailed prescriptive rules are rejected as too slow for the technology's pace. National AI standard this year, legislation in 2027, with the ISO/IEC 42001 evidence structure.
+
+→ Three regulatory grammars are now complete: (1) EU-style law and prescriptive rules, (2) India's techno-legal mix, (3) Australia's **evaluation of process operation**. The "four-axis regulatory front" is now five axes (EU, UK, U.S., India, Australia). The moment you stand on the frontier-model-building side, "model evaluation records, risk-test logs, reporting processes" — **evidence-generation** infrastructure — becomes the core of regulatory response. Details: [[concepts/australia-frontier-ai-regulation]].
+
 ## Related
+
+- [[concepts/australia-frontier-ai-regulation]] — Australia's systems-based regulatory stance, announced the same day (10/8). The third grammar of regulation.
 
 - [[concepts/ai-text-watermarking]] — the EU AI Act response. EU-style law vs India's techno-legal as a comparison axis.
 - [[concepts/uk-ico-ai-privacy-commitments]] — the UK ICO's supervisory agreement on the same day (10/8). The UK axis of the four-axis front.

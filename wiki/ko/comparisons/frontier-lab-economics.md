@@ -3,7 +3,7 @@ title: "저가 파괴자 vs 가격 결정력 인프라"
 category: comparisons
 tags: [deepseek, huawei, ascend, revenue, fundraising, api-pricing, open-weights, llm-business, china, external-funding, nous-research, manus, mecka-ai, robot-data]
 created: 2026-09-24
-updated: 2026-10-10
+updated: 2026-10-11
 sources:
   - "raw/articles/2026-09-24-deepseek-1b-annualized-revenue.md"
   - "raw/articles/2026-10-01-anthropic-ipo-prospectus-reuters.md"
@@ -15,6 +15,7 @@ sources:
   - "raw/articles/2026-10-08-nous-research-hermes-enterprise.md"
   - "raw/articles/2026-10-09-manus-500m-funding-meta-exit.md"
   - "raw/articles/2026-10-10-mecka-ai-60m-series-b.md"
+  - "raw/articles/2026-10-11-openai-gpt-61-sol-ultrafast.md"
 related:
   - "[[patterns/ai-cost-management]]"
   - "[[concepts/amd-world-labs-physical-ai]]"
@@ -24,6 +25,7 @@ related:
   - "[[tools/gemini-agent-work]]"
   - "[[concepts/mecka-robot-motion-data]]"
   - "[[concepts/robojepa-robot-scaling-laws]]"
+  - "[[concepts/gpt-61-sol-ultrafast]]"
 status: draft
 confidence: low
 ---
@@ -164,6 +166,14 @@ TechCrunch(10/7)·FT(10/10): 토론토 로봇 데이터 스타트업 Mecka AI가
 - [[concepts/robojepa-robot-scaling-laws]]의 경제적 귀결: 스케일링 법칙이 성립하면 병목은 연산→데이터. "Motion, contact, force and geometry aren't on the internet" — 웹 스크래핑 불가 데이터의 산업화.
 - 회사 주장 연환산 매출 $1억 돌파(6월), 연말 $3억 목표 — 미검증. 60명 미만 조직의 단위 경제는 데이터 인프라의 마진 구조를 시사.
 - 상세: [[concepts/mecka-robot-motion-data]]
+
+## 2026-10-11 보강 — GPT-6.1 Sol Ultrafast: 레이턴시가 가격 결정력이 되다
+
+OpenAI가 GPT-6.1 Sol에 최고속 티어 **Ultrafast** 추가 (10/8, API·Codex·ChatGPT Work) — 표준 대비 최대 8배 빠른 토큰 생성, API 가격은 표준의 6배($12/1M 입력, $60/1M 출력). 접근은 Pro 500·사용량 기반 Enterprise·크레딧 기반 Edu로 제한. 개발자 불만: 토큰 소비 급증 우려, 상위 플랜 업그레이드 강제.
+
+- 이 페이지의 프레이밍으로 읽으면: **가격 결정력 인프라의 새로운 근거 — 레이턴시**. 같은 주 Claude Haiku 5.5가 API 최대 90% 인하로 내려가는 동안(10/8 보강), OpenAI는 8배 속도에 6배 가격을 붙이며 올라간다 — **가격대 양극화의 동시 전개**. DeepSeek식 단위 경제 우위(인상 후에도 이탈 없음)가 수요의 가격 비탄력성에서 나왔다면, Ultrafast는 "속도가 곧 비용 효율"인 에이전트 워크로드(대화형 코딩 에이전트)에서 비탄력성을 노린다.
+- [[patterns/ai-cost-management]]의 귀결: 속도·가격·품질의 **3축 라우팅**이 정교해진다 — 대화형 코딩은 Ultrafast, 배치 평가는 표준, 경량 작업은 Haiku급. 단, 고속 티어의 토큰 소비 급증은 에이전트 루프 runaway 비용 리스크와 직결 — 지출 상한 가드레일 필수.
+- 상세: [[concepts/gpt-61-sol-ultrafast]]
 
 ## 참고 소스
 

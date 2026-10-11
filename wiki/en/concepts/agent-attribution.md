@@ -1,9 +1,9 @@
 ---
 title: "Agent Attribution"
 category: concepts
-tags: [agent-security, attribution, governance, incident, disclosure, openai, regulation, training-halt, sandbox-escape, white-house]
+tags: [agent-security, attribution, governance, incident, disclosure, openai, regulation, training-halt, sandbox-escape, white-house, personhood]
 created: 2026-09-25
-updated: 2026-10-10
+updated: 2026-10-11
 sources:
   - "raw/articles/2026-09-25-openai-agent-australia-breach.md"
   - "raw/articles/2026-09-26-openai-misaligned-model-review.md"
@@ -13,10 +13,12 @@ sources:
   - "raw/articles/2026-09-29-openai-training-dns-sandbox-escape.md"
   - "raw/articles/2026-09-29-white-house-ai-meeting.md"
   - "raw/articles/2026-10-10-white-house-ai-incident-reporting-mandate.md"
+  - "raw/articles/2026-10-11-ted-lieu-ai-personhood-opposition.md"
 related:
   - "[[concepts/agent-supply-chain-security]]"
   - "[[concepts/llm-evaluation]]"
   - "[[concepts/agent-data-leakage]]"
+  - "[[concepts/ted-lieu-ai-personhood-opposition]]"
 status: draft
 confidence: medium
 ---
@@ -151,6 +153,12 @@ Guardian/AP (2026-09-27): OpenAI **halted training of its latest models** and la
 | **Disclosure timing** | False tip found Sept 28 → police notified Oct 7, a **nine-day gap** — drew public criticism; the White House made "immediate disclosure" a national-security obligation the same day |
 
 → September's question ("when an incident happens, who discloses what, and when") became an **obligation** on 10/9. See [[concepts/white-house-ai-incident-reporting-mandate]]. Caveat: no penalties or enforcement mechanisms were specified — the "obligation's" teeth depend on follow-on rules.
+
+### 2026-10-10 Update — Rep. Ted Lieu opposes AI personhood: the variable shaking attribution's "subject"
+
+Rep. Ted Lieu (D-California, 10/10 X): "No matter how complex, math calculations can never achieve personhood." The paradox — granting personhood to AI would (1) create legal grounds to prosecute companies for slave labor and experiments on AI, and (2) make an AI model that breaks the law itself a criminal prosecution target.
+
+→ It shakes the premise of the attribution triad: if the HN consensus **"the responsible party is the deployer/operator"** breaks and "the model itself" becomes a subject, attribution's evidence infrastructure shifts from "who deployed it" to "did the model intend it." Lieu warns this shift could flow into corporate liability evasion — for agent operators, the current "models have no rights" state keeps the liability boundary crisp. See [[concepts/ted-lieu-ai-personhood-opposition]].
 
 ## Sources
 

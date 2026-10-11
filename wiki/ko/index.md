@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-10-10
-total_pages: 143
+updated: 2026-10-11
+total_pages: 149
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 전체 143개 페이지 | 최종 업데이트: 2026-10-10 (데일리 ingest: AI 뉴스 6건 수집 + 한/영 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
+> 전체 149개 페이지 | 최종 업데이트: 2026-10-11 (데일리 ingest: AI 뉴스 6건 수집 + 한/영 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
 
 ## 쉽게 읽기
 
@@ -26,7 +26,7 @@ status: active
 - **실전(Chapter 3~5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **엔드게임(Chapter 6~7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (50개)
+## Concepts (56개)
 
 ### 성장 맵 & 철학
 - [[concepts/ai-native-programmer]] — AI를 팀원으로 활용하여 1인이 팀 규모 결과를 내는 개발자, 성장 맵
@@ -67,6 +67,8 @@ status: active
 - [[concepts/gemini-4-carbon-testing]] — Gemini 4 'Carbon' 내부 테스트, 코딩 성능 Opus 5.5급 평가, Argon·Barium·Carbon 3종 체크포인트 (2026-10-10)
 - [[concepts/mecka-robot-motion-data]] — Mecka AI $60M Series B, 휴먼 모션 데이터 인프라, '로봇의 Scale AI' (2026-10-10)
 - [[concepts/prime-intellect-agent-self-rewrite]] — Prime Intellect, 2,000개 에이전트로 자사 코딩 에이전트 Rust 재작성 주장, confidence low (2026-10-10)
+- [[concepts/gpt-61-sol-ultrafast]] — GPT-6.1 Sol Ultrafast, 8배 속도·6배 가격, 가격대 양극화 (2026-10-11)
+- [[concepts/sabi-brain-ai-interface]] — Sabi $50M 시드, 모자형 비침습 뇌-AI 인터페이스, 10만 시간 신경 데이터 주장, confidence low (2026-10-11)
 
 ### 운영·관측
 - [[concepts/gen-ai-observability]] — OpenTelemetry GenAI·에이전트 시맨틱 컨벤션, 트레이스·표준 계측
@@ -90,6 +92,10 @@ status: active
 - [[concepts/white-house-ai-incident-reporting-mandate]] — 백악관 AI 사고 강제 신고·시정 의무화, Anthropic 연방 시스템 무단 사용 계기, reward hacking 자인 (2026-10-10)
 - [[concepts/india-ai-regulation-consultation]] — 인도 AI 규제 협의안 한 달 내 발표, 딥페이크·에이전트 AI, techno-legal 접근 (2026-10-10)
 - [[concepts/uk-ico-ai-privacy-commitments]] — 영국 ICO, 10개 AI 기업 개인정보 변경 합의, 다음 타깃은 에이전틱 AI (2026-10-10)
+- [[concepts/ted-lieu-ai-personhood-opposition]] — 테드 리우 의원 "AI 법인격 반대" 성명, 법인격 부여의 역설 (2026-10-10)
+- [[concepts/anthropic-claude-usage-policy-revision]] — Anthropic Claude 사용정책 전면 개정, 무기 금지 명문화·감시 강화·학대 금지 신설 (2026-10-11)
+- [[concepts/australia-frontier-ai-regulation]] — 호주 프론티어 AI '시스템 기반' 규제, 프로세스 작동 여부 평가, 2027년 입법 (2026-10-11)
+- [[concepts/claude-art-discovery-controversy]] — Claude ART 발견 오리지널리티 논란, 독립성 입증 과제, confidence high (2026-10-11)
 
 ## Tools (15개)
 
@@ -149,7 +155,9 @@ status: active
 - [[patterns/agent-mvp-stack-2026]] — 1인 MVP 스택 5대 영역 × 4 단계 + 의사결정 트리 (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — Vibe Coding의 7대 안티패턴과 회피법
 
-## Journal (36개)
+## Journal (37개)
+
+- [[journal/2026-10-11]] — 일요 데일리: 리우 법인격 반대·Anthropic 사용정책 개정·GPT-6.1 Sol Ultrafast·호주 시스템 규제·Sabi $50M·Claude ART 논란
 
 - [[journal/2026-10-10]] — 토요 데일리: 백악관 강제 신고 의무화·인도 협의안·Gemini Carbon·영국 ICO·Prime Intellect·Mecka $60M
 

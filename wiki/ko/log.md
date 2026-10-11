@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-10-10
+updated: 2026-10-11
 sources: []
 status: active
 ---
@@ -19,6 +19,23 @@ status: active
 - 월드맵 허브: [[campaign-map|Campaign Map]]
 - 진행 가이드: [[overview|Overview]]
 - 전체 도감: [[index|Index]]
+
+## [2026-10-11] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + 한/영 위키 정제
+
+- **Raw collected** (raw/articles/, 6건):
+  - `2026-10-11-ted-lieu-ai-personhood-opposition.md` — 테드 리우 의원 "AI 법인격 반대" 성명 (10/10, 본인 X 포스트 원보도): "수학 계산은 결코 법인격에 도달할 수 없다". 법인격 부여가 오히려 기업 책임 회피로 흐를 수 있다는 역설 — AI를 노예노동·실험한 기업 기소 근거가 생기고 모델 '본인'도 기소 대상이 됨
+  - `2026-10-11-anthropic-claude-usage-policy-revision.md` — Anthropic Claude 사용정책 1년 만 전면 개정 (10/8 발표, 11/12 시행): 무기 작동 소프트웨어 금지 최초 명문화(드론·자율주행차 무장 포함), 수사·체포·기소 대상 결정/권고 금지, 자율 물리 하드웨어 qualified operator 의무, 모델 "지속적·불필요한 학대" 금지 신설, 선거 조항 "Do Not Undermine Democratic Processes" 재명명(포괄적 유권자 타겟팅 금지 삭제)
+  - `2026-10-11-openai-gpt-61-sol-ultrafast.md` — GPT-6.1 Sol Ultrafast (10/8, OpenAI Devs X + runtimewire·Particle): 표준 대비 8배 토큰 속도, API 가격 6배($12/1M 입력, $60/1M 출력). Pro 500·사용량 기반 Enterprise·크레딧 기반 Edu로 Work/Codex 접근 제한. 개발자 불만: 토큰 소비 급증, 상위 플랜 업그레이드 강제
+  - `2026-10-11-australia-frontier-ai-regulation.md` — 호주 프론티어 AI '시스템 기반' 규제 방침 (10/8 찰턴 차관보 연설): 위험 발견·테스트·보고·관리 프로세스의 작동 여부 평가. 자발적 코드·처방적 규칙 둘 다 배제. 국가 AI 표준 연내, 2027년 입법. ISO/IEC 42001 증거 구조
+  - `2026-10-11-sabi-50m-seed-brain-ai-interface.md` — Sabi $50M 시드 (10/9, GlobeNewswire 단일 출처): Khosla 주도, 모자형 비침습 EEG 뇌-AI 인터페이스. 10만 시간 신경 기록 데이터셋(최대 규모 주장), TI ADS1299 대비 50배 전력 효율(내부 벤치). CES 2027 프로토타입
+  - `2026-10-11-claude-art-discovery-controversy.md` — Claude ART 발견 오리지널리티 논란 (10/8, CNN 원보도): 9/23 ART 발표에 코펜하겐대 Mestre 박사과정이 미발표 연구('jumbotrons') 연관 가능성 제기. Anthropic은 "사용자 대화 훈련 사용 없음" 부인. CNN: "고의 탈취 주장 아니며 입증 가능한 독립 증거도 없음". Feng Zhang: "genuinely intriguing"
+- **신규 6개** (status: draft): `concepts/ted-lieu-ai-personhood-opposition.md` (confidence medium), `concepts/anthropic-claude-usage-policy-revision.md` (confidence medium), `concepts/gpt-61-sol-ultrafast.md` (confidence medium), `concepts/australia-frontier-ai-regulation.md` (confidence medium), `concepts/sabi-brain-ai-interface.md` (confidence low — 단일 출처·회사 주장), `concepts/claude-art-discovery-controversy.md` (confidence high — CNN 원보도 + 2매체 교차), `journal/2026-10-11.md`
+- **보강 5개**: `concepts/agent-attribution.md` (리우 법인격 — 귀속의 "주체"를 흔드는 변수), `comparisons/frontier-lab-economics.md` (Ultrafast — 레이턴시가 가격 결정력), `patterns/agent-scientific-discovery.md` (ART 논란 — 선행 연구 배제 증명(provenance) 4단계), `concepts/agent-data-leakage.md` ("사용자 대화 훈련 사용 없음" 주장의 검증 불가능성), `concepts/india-ai-regulation-consultation.md` (호주 — 규제 문법의 제3축, 4축→5축 전선)
+- 역방향 교차참조: ted-lieu-ai-personhood-opposition → agent-attribution·nyc-ai-hearing·super-intelligence-force, anthropic-claude-usage-policy-revision → agent-authority-model·agent-attribution, gpt-61-sol-ultrafast → claude-haiku-5-5·frontier-lab-economics, australia-frontier-ai-regulation → india-ai-regulation-consultation·white-house-ai-incident-reporting-mandate, sabi-brain-ai-interface → amd-world-labs-physical-ai·agent-residence·mecka-robot-motion-data, claude-art-discovery-controversy → agent-scientific-discovery·agent-data-leakage
+- index 143→149 (concepts 50→56, journal 36→37), log 갱신.
+- 영어 동기화: 신규 7개 + 보강 5개 en 미러 + en/index·log·journal·overview·campaign-map 정리.
+- Gmail: 최근 24시간 AI 뉴스레터 — hoon.iccorp는 AI 뉴스레터 수신 없음(GitHub 알림·SpaceXAI 로그인 보안 알림만). jsong Flipboard 토요일 다이제스트에서 The Verge "OpenAI 수학 원고" 후속 1건 확인(10/8 기수집 주제의 후속이라 원본 미수집), Google Alerts는 Amazon 비즈니스·C3.ai 주가 뉴스로 위키 기준 제외. 라벨 변경·삭제·아카이브 없음.
+- 웹 스카우트: subagent 위임으로 6개 쿼리 수집 → 6개 후보 압축 (중복 제외: Claude Haiku 5.5·Gemini agent·Manus·DeepSeek·DOJ 용어 지시·USA Today 소송 등 재등장 없음). 후보 전원 교차검증 후 원본 수집.
 
 ## [2026-10-10] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + 한/영 위키 정제
 

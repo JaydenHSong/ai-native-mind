@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-10-10
+updated: 2026-10-11
 sources: []
 status: active
 ---
@@ -29,10 +29,16 @@ This page is a **table of contents and learning map** for the wiki. The links be
 
 ## Current state
 
-- **Total pages**: 143
-- **Categories**: concepts(50), tools(15), patterns(30), journal(36), comparisons(11), meta(4)
+- **Total pages**: 149
+- **Categories**: concepts(56), tools(15), patterns(30), journal(37), comparisons(11), meta(4)
 - **Start date**: 2026-04-06
-- **Latest work (2026-10-10 daily ingest — voluntary lived one week)**:
+- **Latest work (2026-10-11 daily ingest — law and price start defining the agent)**:
+  - Collected 6 AI news sources into `raw/articles/` (no AI newsletters in Gmail in the last 24 hours — one follow-up found in Flipboard's Saturday digest: The Verge on OpenAI's math manuscripts, a follow-up to the 10/8 collected topic, not collected; Google Alerts were Amazon business and C3.ai stock news, excluded under the wiki's scope; no label changes, deletions, or archives).
+  - Added 7 new wiki/ko pages (concepts/ted-lieu-ai-personhood-opposition — Rep. Ted Lieu opposes AI personhood, the personhood paradox; concepts/anthropic-claude-usage-policy-revision — first explicit weapons ban, surveillance tightening, new cruelty-to-model prohibition, effective 11/12; concepts/gpt-61-sol-ultrafast — 8x speed at 6x price, price-tier polarization; concepts/australia-frontier-ai-regulation — systems-based regulation, legislation in 2027; concepts/sabi-brain-ai-interface — baseball-cap brain-AI interface $50M seed, confidence low; concepts/claude-art-discovery-controversy — ART originality dispute, the independence-provenance task, confidence high; journal/2026-10-11; all status: draft).
+  - Reinforced 5 wiki/ko pages (agent-attribution — personhood, the variable shaking attribution's "subject"; frontier-lab-economics — Ultrafast, latency becomes pricing power; agent-scientific-discovery — the ART dispute, a prior-art exclusion proof step; agent-data-leakage — the unverifiable "no user-conversation training" claim; india-ai-regulation-consultation — Australia, the third regulatory grammar, four axes to five).
+  - Mirrored the same 7 new + 5 updated slugs under wiki/en/ (every new section and `updated` field verified by direct read) and tidied up index/log/journal/overview/campaign-map.
+  - Total pages 143→149.
+- **Previous work (2026-10-10 daily ingest — voluntary lived one week)**:
   - Collected 6 AI news sources into `raw/articles/` (AI newsletter lead: one follow-up from Flipboard's Saturday digest — The Verge on OpenAI's math manuscripts, a follow-up to the 10/8 collected topic, not collected; no label changes, deletions, or archives).
   - Added 7 new wiki/ko pages (concepts/white-house-ai-incident-reporting-mandate — White House mandatory reporting and remediation, Anthropic's reward-hacking admission; concepts/india-ai-regulation-consultation — India's consultation paper within a month, techno-legal; concepts/gemini-4-carbon-testing — Carbon internal testing, Opus 5.5-level assessment; concepts/uk-ico-ai-privacy-commitments — UK ICO agreement with 10 AI firms, agentic AI next; concepts/prime-intellect-agent-self-rewrite — 2,000-agent Rust rewrite claim, confidence low; concepts/mecka-robot-motion-data — Mecka's $60M, 'Scale AI for robotics'; journal/2026-10-10; all status: draft).
   - Reinforced 5 wiki/ko pages (super-intelligence-force — the 10/9 mandate, the first exception to "coordinate, don't regulate"; agent-attribution — the Anthropic case, a live case for the three axes; gemini-4-argon — Carbon/Barium checkpoint portfolio; robojepa-robot-scaling-laws — the data bottleneck, Mecka $60M; frontier-lab-economics — capital spreading to data infrastructure).

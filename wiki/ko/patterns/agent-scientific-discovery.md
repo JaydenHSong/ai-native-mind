@@ -3,16 +3,18 @@ title: "Agent Scientific Discovery"
 category: patterns
 tags: [agentic-research, scientific-discovery, evaluation, anthropic, claude, claims, openai, math-discovery, agmai, verification-asymmetry]
 created: 2026-09-25
-updated: 2026-10-08
+updated: 2026-10-11
 sources:
   - "raw/articles/2026-09-25-anthropic-claude-crispr-art-enzyme.md"
   - "raw/articles/2026-09-26-stanford-paper2agent.md"
   - "raw/articles/2026-10-07-openai-377-math-results-github.md"
   - "raw/articles/2026-10-08-openai-722-math-manuscripts.md"
+  - "raw/articles/2026-10-11-claude-art-discovery-controversy.md"
 related:
   - "[[concepts/llm-evaluation]]"
   - "[[concepts/harness-engineering]]"
   - "[[concepts/mcp]]"
+  - "[[concepts/claude-art-discovery-controversy]]"
 status: draft
 confidence: medium
 ---
@@ -107,6 +109,14 @@ Claude의 ART 발견이 "에이전트가 wet-lab과 협업해 발견"하는 사�
 - **이 페이지의 템플릿으로 읽으면**: "문헌 접지→in-silico 가설→검증" 파이프라인은 돌아가지만, **검증 주체(수학 커뮤니티)가 모델에 접근할 수 없어** 3단계 중 "검증 분리" 원칙이 무너짐. 결과물은 열려 있고(Apache-2.0) 과정(모델·프롬프트·Issues)은 닫힌 비대칭 — 여기에 수학계가 재현 규범으로 맞서는 구도까지 더해져 **검증 비대칭(verification asymmetry)**이 이 패턴의 핵심 사례로 굳어짐.
 
 → "발견의 주체"를 넘어 **"발견 도구의 공개성"** 이 새로운 논점. AGMAI의 요구는 사실상 "검증 가능성을 위한 모델 공개" 요구다.
+
+## 적용 사례 4 — Claude ART 오리지널리티 논란 (CNN 2026-10-08): 독립성 입증이라는 새 검증 과제
+
+9/25 ART 발견 발표(적용 사례 1)의 후속 전개 — 코펜하겐대 박사과정 Mario Rodríguez Mestre가 자신의 미발표 연구(2022년부터, 'jumbotrons')를 Claude에 공유한 적 있어 독립 발견인지 의문 제기 (The Scientist 보도 연계). Anthropic은 "사용자 대화가 훈련에 사용된 적 없고, 생물학 팀이 접근한 적도 없다"고 부인. CNN: "고의 탈취 주장은 아니며, 입증 가능한 독립 증거도 없음." 한편 Feng Zhang(MIT/Broad)은 프리프린트 리뷰에서 "genuinely intriguing, merits further investigation"라고 긍정 평가.
+
+- **이 페이지의 템플릿으로 읽으면**: "문헌 접지→in-silico 가설→wet-lab 검증" 3단계가 다 돌아가도, **"선행 연구 배제 증명(provenance)"** 단계가 없었다. 발견 파이프라인에 네 번째 단계가 필요하다: (a) 발표 전 선행 연구 충돌 스캔, (b) 에이전트 입력 데이터의 출처 감사 궤적.
+- "발견 과정이 로그로 남아 감사 가능"(장단점 표의 장점)이지만, **입력 데이터의 출처**까지 로그에 남지 않으면 독립성 입증은 여전히 불가능 — 감사 가능성의 범위가 출력이 아니라 **입출력 전체**로 확장되어야 함.
+- 상세: [[concepts/claude-art-discovery-controversy]]
 
 ## 관련 패턴
 

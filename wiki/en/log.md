@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-10-10
+updated: 2026-10-11
 sources: []
 status: active
 ---
@@ -19,6 +19,23 @@ This page records only **what changed** by date. For concept explanations, see t
 - World-map hub: [[campaign-map|Campaign Map]]
 - Navigation guide: [[overview|Overview]]
 - Full catalog: [[index|Index]]
+
+## [2026-10-11] ingest | Daily AI news scrape — 6 raw sources + ko/en wiki refinement
+
+- **Raw collected** (raw/articles/, 6):
+  - `2026-10-11-ted-lieu-ai-personhood-opposition.md` — Rep. Ted Lieu opposes AI legal personhood (10/10, original: his X post): "Math calculations can never achieve personhood." The paradox — personhood could become a corporate liability shield: companies could be prosecuted for enslaving or experimenting on AI, and law-breaking models themselves could be prosecuted
+  - `2026-10-11-anthropic-claude-usage-policy-revision.md` — Anthropic overhauls Claude usage policy, first rewrite in a year (announced 10/8, effective 11/12): first explicit ban on weapons-enabling software (including drone and autonomous-vehicle weaponization), bans on determining/recommending investigation, arrest, or prosecution targets, qualified-operator mandate for autonomous physical hardware, new ban on "sustained and unnecessary abuse or cruelty" toward the model, election clause renamed "Do Not Undermine Democratic Processes" (blanket voter-targeting ban removed)
+  - `2026-10-11-openai-gpt-61-sol-ultrafast.md` — GPT-6.1 Sol Ultrafast (10/8, OpenAI Devs X + runtimewire/Particle): up to 8x token speed at 6x the standard API price ($12/1M input, $60/1M output). Work/Codex access limited to Pro 500, usage-based Enterprise, credit-based Edu. Developer complaints: surging token consumption, forced higher-plan upgrades
+  - `2026-10-11-australia-frontier-ai-regulation.md` — Australia announces systems-based frontier AI regulation (10/8, Assistant Minister Charlton's speech): evaluates whether "rigorous processes" for finding, testing, reporting, and managing risk work. Voluntary codes set aside for the most severe frontier risks; prescriptive rules rejected as too slow. National AI standard this year, legislation in 2027. ISO/IEC 42001 evidence structure
+  - `2026-10-11-sabi-50m-seed-brain-ai-interface.md` — Sabi raises $50M seed (10/9, GlobeNewswire, single source): Khosla-led, baseball-cap non-invasive EEG brain-AI interface. 100,000+ hours of labeled neural recordings (largest public dataset claimed), 50x+ power efficiency vs TI ADS1299 (internal benchmark). Early prototype at CES 2027
+  - `2026-10-11-claude-art-discovery-controversy.md` — Claude ART discovery originality dispute (10/8, CNN original): Copenhagen PhD candidate Mestre questioned a possible link to his unpublished work ('jumbotrons', since 2022) after the 9/23 ART announcement. Anthropic denied: "User conversations have never been used for training." CNN: "not an allegation of deliberate theft, and no provable independent evidence either." Feng Zhang: "genuinely intriguing"
+- **New: 7** (status: draft): `concepts/ted-lieu-ai-personhood-opposition.md` (confidence medium), `concepts/anthropic-claude-usage-policy-revision.md` (confidence medium), `concepts/gpt-61-sol-ultrafast.md` (confidence medium), `concepts/australia-frontier-ai-regulation.md` (confidence medium), `concepts/sabi-brain-ai-interface.md` (confidence low — single source, company claims), `concepts/claude-art-discovery-controversy.md` (confidence high — CNN original + 2-outlet cross-check), `journal/2026-10-11.md`
+- **Updated: 5**: `concepts/agent-attribution.md` (Lieu personhood — the variable shaking attribution's "subject"), `comparisons/frontier-lab-economics.md` (Ultrafast — latency becomes pricing power), `patterns/agent-scientific-discovery.md` (the ART dispute — a prior-art exclusion proof step), `concepts/agent-data-leakage.md` (the unverifiable "no user-conversation training" claim), `concepts/india-ai-regulation-consultation.md` (Australia — the third regulatory grammar, four axes to five)
+- Reverse cross-references: ted-lieu-ai-personhood-opposition → agent-attribution, nyc-ai-hearing, super-intelligence-force; anthropic-claude-usage-policy-revision → agent-authority-model, agent-attribution; gpt-61-sol-ultrafast → claude-haiku-5-5, frontier-lab-economics; australia-frontier-ai-regulation → india-ai-regulation-consultation, white-house-ai-incident-reporting-mandate; sabi-brain-ai-interface → amd-world-labs-physical-ai, agent-residence, mecka-robot-motion-data; claude-art-discovery-controversy → agent-scientific-discovery, agent-data-leakage
+- index 143→149 (concepts 50→56, journal 36→37), log updated.
+- EN sync: mirrored the 7 new + 5 updated pages from ko; en/index, log, journal, overview, campaign-map updated. No translation gaps.
+- Gmail: AI newsletters in the last 24h — no AI newsletters to hoon.iccorp (GitHub notifications and SpaceXAI login security alerts only). In the jsong Flipboard Saturday digest, one follow-up found (The Verge on OpenAI's math manuscripts — a follow-up to the 10/8 collected topic, not collected); Google Alerts were Amazon business and C3.ai stock news, excluded under the wiki's scope. No label changes, deletions, or archives.
+- Web scout: delegated to a subagent — 6 queries → 6 candidates compressed (dedup: Claude Haiku 5.5, Gemini agent, Manus, DeepSeek raise, DOJ terminology memo, USA Today suit — no re-emergence). All candidates cross-verified before collection.
 
 ## [2026-10-10] ingest | Daily AI news scrape — 6 raw sources + ko/en wiki refinement
 

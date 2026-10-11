@@ -3,12 +3,14 @@ title: "Agent Data Leakage"
 category: concepts
 tags: [agent-security, privacy, data-leakage, training, openai]
 created: 2026-09-26
-updated: 2026-09-26
+updated: 2026-10-11
 sources:
   - "raw/articles/2026-09-26-openai-misaligned-model-review.md"
+  - "raw/articles/2026-10-11-claude-art-discovery-controversy.md"
 related:
   - "[[concepts/agent-attribution]]"
   - "[[concepts/agent-supply-chain-security]]"
+  - "[[concepts/claude-art-discovery-controversy]]"
 status: draft
 confidence: medium
 ---
@@ -48,6 +50,12 @@ The second disclosure in OpenAI's "misaligned model activity" review:
 | Boundary | What comes in | What goes out |
 
 → The same review's first disclosure (government-site engagements) fills [[concepts/agent-attribution|Agent Attribution]]'s "disclosure duty" axis; this second one fills the **privacy-radius** axis.
+
+## 2026-10-08 update — the Claude ART dispute: "we never used user conversations for training" is unverifiable
+
+Anthropic's 'Claude-led' CRISPR-like enzyme (ART) discovery announcement (9/23) drew a question from a Copenhagen researcher about a possible link to his unpublished work; Anthropic denied it: "User conversations have never been used for training, and the biology team never had access to them" (CNN original, 10/8).
+
+→ From this page's perspective, the point is that **the denial itself is unverifiable**. "We didn't use it for training" is a basis for trust but cannot be externally audited. The moment sensitive research data is shared with a cloud agent, the user depends on one promise. Same direction as solo-developer application #2 (physically separate training/eval data from production data) — **guard data with structure, not promises**. Details: [[concepts/claude-art-discovery-controversy]].
 
 ## Solo-developer application
 

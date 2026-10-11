@@ -3,12 +3,14 @@ title: "Agent Data Leakage"
 category: concepts
 tags: [agent-security, privacy, data-leakage, training, openai]
 created: 2026-09-26
-updated: 2026-09-26
+updated: 2026-10-11
 sources:
   - "raw/articles/2026-09-26-openai-misaligned-model-review.md"
+  - "raw/articles/2026-10-11-claude-art-discovery-controversy.md"
 related:
   - "[[concepts/agent-attribution]]"
   - "[[concepts/agent-supply-chain-security]]"
+  - "[[concepts/claude-art-discovery-controversy]]"
 status: draft
 confidence: medium
 ---
@@ -48,6 +50,12 @@ OpenAI의 "misaligned model activity" 리뷰에서 확인된 두 번째 공개 �
 | 경계 | 들어오는 것 | 나가는 것 |
 
 → 같은 리뷰의 첫 번째 공개(정부 사이트 접근)는 [[concepts/agent-attribution|Agent Attribution]]의 "공개 의무" 축, 이 두 번째 공개는 **프라이버시 반경** 축을 채운다.
+
+## 2026-10-08 보강 — Claude ART 논란: "사용자 대화를 훈련에 쓴 적 없다"는 주장의 검증 불가능성
+
+Anthropic의 Claude 주도 CRISPR 유사 효소(ART) 발견 발표(9/23)에 코펜하겐대 연구자가 자신의 미발표 연구 연관 가능성을 제기하자, Anthropic은 "사용자 대화가 훈련에 사용된 적 없고, 생물학 팀이 접근한 적도 없다"고 부인 (CNN 10/8 원보도).
+
+→ 이 페이지의 관점에서 핵심은 **부인 자체가 검증 불가능하다는 점**이다. "훈련에 쓰지 않았다"는 주장은 신뢰의 기반이지만 외부에서 감사할 방법이 없다. 민감 연구 데이터를 클라우드 에이전트에 공유하는 순간, 사용자는 "쓰지 않는다"는 약속 하나에 의존하게 된다. 1인 개발자 적용 #2(훈련·평가 데이터와 운영 데이터의 물리적 분리)와 같은 방향 — **약속이 아니라 구조**로 데이터를 지킨다. 상세: [[concepts/claude-art-discovery-controversy]].
 
 ## 1인 개발자 적용
 

@@ -3,16 +3,18 @@ title: "Agent Scientific Discovery"
 category: patterns
 tags: [agentic-research, scientific-discovery, evaluation, anthropic, claude, claims, openai, math-discovery, agmai, verification-asymmetry]
 created: 2026-09-25
-updated: 2026-10-08
+updated: 2026-10-11
 sources:
   - "raw/articles/2026-09-25-anthropic-claude-crispr-art-enzyme.md"
   - "raw/articles/2026-09-26-stanford-paper2agent.md"
   - "raw/articles/2026-10-07-openai-377-math-results-github.md"
   - "raw/articles/2026-10-08-openai-722-math-manuscripts.md"
+  - "raw/articles/2026-10-11-claude-art-discovery-controversy.md"
 related:
   - "[[concepts/llm-evaluation]]"
   - "[[concepts/harness-engineering]]"
   - "[[concepts/mcp]]"
+  - "[[concepts/claude-art-discovery-controversy]]"
 status: draft
 confidence: medium
 ---
@@ -86,6 +88,14 @@ Where Claude's ART case is "agents discovering with wet-lab collaboration," Open
 - **Read through this page's template**: the "literature grounding → in-silico hypothesis → validation" pipeline runs, but the **verification-separation principle breaks** because the math community cannot access the model. Results are open (Apache-2.0); the process (model, prompts, Issues) is closed — and with mathematicians now answering through reproducibility norms, **verification asymmetry** has hardened into this pattern's canonical case.
 
 → Beyond "who discovers," **"how open the discovery tool is"** becomes the new question. AGMAI's demand is effectively a demand for model release in the name of verifiability.
+
+## Case 4 — The Claude ART originality dispute (CNN 2026-10-08): independence provenance as the new verification task
+
+The follow-up to Case 1's 9/25 ART announcement — Copenhagen PhD candidate Mario Rodríguez Mestre raised the possibility that his own unpublished research (ongoing since 2022, 'jumbotrons') is linked to the discovery, having once shared it with Claude (linked to The Scientist's coverage). Anthropic denied it: "User conversations have never been used for training, and the biology team never had access to them." CNN's framing: "not an allegation of deliberate theft, and no provable independent evidence either." Positive assessment coexists: Feng Zhang (MIT/Broad) in a preprint review — "genuinely intriguing, merits further investigation."
+
+- **Read through this page's template**: even with all three stages (literature grounding → in-silico hypothesis → wet-lab validation) running, the pipeline lacked a **prior-art exclusion proof (provenance)** step. The pipeline needs a fourth stage: (a) pre-publication prior-work collision scans, (b) an input-data provenance audit trail for the agent.
+- "The discovery process is logged and auditable" (a strength in the trade-offs table) — but unless the **input data's provenance** is also logged, independence can never be proven. The auditable surface must extend from outputs to **inputs and outputs**.
+- Details: [[concepts/claude-art-discovery-controversy]]
 
 ## Example application
 
