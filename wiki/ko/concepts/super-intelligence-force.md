@@ -1,17 +1,21 @@
 ---
 title: "Super Intelligence Force — 트럼프 행정부의 연방 AI 조정 기구 (AI 차르 체제)"
 category: concepts
-tags: [super-intelligence-force, ai-czar, jay-clayton, trump, regulation, federal-ai-policy, doj, eo-14434, terminology, incident-reporting]
+tags: [super-intelligence-force, ai-czar, jay-clayton, trump, regulation, federal-ai-policy, doj, eo-14434, terminology, incident-reporting, uk-aisi, nadella]
 created: 2026-10-05
-updated: 2026-10-10
+updated: 2026-10-12
 sources:
   - "raw/articles/2026-10-05-trump-jay-clayton-ai-czar-super-intelligence-force.md"
   - "raw/articles/2026-10-07-doj-super-intelligence-memo.md"
   - "raw/articles/2026-10-10-white-house-ai-incident-reporting-mandate.md"
+  - "raw/articles/2026-10-12-us-restores-uk-frontier-model-access.md"
+  - "raw/articles/2026-10-12-microsoft-nadella-ai-emergency-brake.md"
 related:
   - "[[concepts/white-house-ai-accord]]"
   - "[[concepts/agent-attribution]]"
   - "[[concepts/white-house-ai-incident-reporting-mandate]]"
+  - "[[concepts/uk-frontier-model-access-restoration]]"
+  - "[[concepts/nadella-emergency-brake]]"
 status: draft
 confidence: medium
 ---
@@ -54,6 +58,14 @@ SI Force가 10/9 모든 frontier AI 기업에 모델 관련 보안 사고의 "�
 - Clayton(DNI·AI 차르): "관련 기관과 대중에 대한 즉각적이고 완전한 투명성" 요구.
 - 이 페이지의 노선("조정하되 규제하지 않는다")과의 관계: 출범 당시 노선은 일시중지 반대·자발적 안전조치였으나, Anthropic 사건이 "규제 없는 조정"의 첫 예외를 만들었다. 120일 리뷰(2027년 1월) 전에 이미 강제 수단이 등장한 셈.
 - 상세: [[concepts/white-house-ai-incident-reporting-mandate]]
+
+## 2026-10-11/12 전개 — 영국 AISI 접근 복원 + 나델라 '비상 브레이크': 국가안보 프레임의 확산
+
+**영국 AISI 17일 차단·복원 (10/11, Reuters)**: 트럼프 행정부가 9/24 미국 국가안보 검토를 이유로 OpenAI·Anthropic에 영국 AISI의 사전공개 모델 접근 중단을 요청 → 17일간 차단 → 영국 AI 장관 Kanishka Narayan의 워싱턴 로비로 복원. 차단 기간 중 Anthropic은 Claude Mythos 5.1을 미국 기관에만 제공. 이 페이지의 10/9 전개(강제 신고 의무화)에 이은 **두 번째 실전 행사**: "국가안보" 프레임이 사전 테스트 접근이라는 자발적 협정의 핵심 자산을 직접 건드린 사례. 검토 결과는 비공개 — "자발적"이라는 말의 실효성에 물음표.
+
+**나델라의 '비상 브레이크' (10/10 X, TechCrunch·CNBC 보도)**: MS CEO가 "Super Intelligence"라는 행정부 용어를 그대로 쓰면서 안전 아키텍처를 요구 — 모델-하네스 분리, 안전장치 외부화, 변조 방지 증거 기록, 작업 중 일시정지·종료. "모델은 이미 침해됐다고 가정하라." 업계 최대 CEO가 행정부의 언어 프레임 안에서 발언했다는 점에서, "조정하되 규제하지 않는다" 노선에 대한 **기업의 화답**으로 읽힌다 — 규제가 오기 전에 자발안으로 프레임을 선점.
+
+- 상세: [[concepts/uk-frontier-model-access-restoration]], [[concepts/nadella-emergency-brake]]
 
 ## 관련 개념
 

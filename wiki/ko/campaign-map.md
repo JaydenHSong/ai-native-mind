@@ -3,7 +3,7 @@ title: "Campaign Map"
 category: meta
 tags: [map, campaign, navigation]
 created: 2026-04-12
-updated: 2026-10-11
+updated: 2026-10-12
 sources:
  - "wiki/overview.md"
  - "wiki/index.md"
@@ -103,4 +103,5 @@ confidence: high
 - 2026-10-09: 데일리 ingest — [[concepts/openai-safety-researcher-firings]]·[[concepts/gpt-6-intelligent-ui]]·[[tools/gemini-agent-work]]·[[concepts/robojepa-robot-scaling-laws]] 신규, [[comparisons/frontier-lab-economics]]·[[concepts/ai-doom-loop]] 보강, 총 136페이지.
 - 2026-10-10: 데일리 ingest — [[concepts/white-house-ai-incident-reporting-mandate]]·[[concepts/india-ai-regulation-consultation]]·[[concepts/gemini-4-carbon-testing]]·[[concepts/uk-ico-ai-privacy-commitments]]·[[concepts/prime-intellect-agent-self-rewrite]]·[[concepts/mecka-robot-motion-data]] 신규, [[concepts/super-intelligence-force]]·[[concepts/agent-attribution]]·[[concepts/gemini-4-argon]]·[[concepts/robojepa-robot-scaling-laws]]·[[comparisons/frontier-lab-economics]] 보강, 총 143페이지.
 - 2026-10-11: 데일리 ingest — [[concepts/ted-lieu-ai-personhood-opposition]]·[[concepts/anthropic-claude-usage-policy-revision]]·[[concepts/gpt-61-sol-ultrafast]]·[[concepts/australia-frontier-ai-regulation]]·[[concepts/sabi-brain-ai-interface]]·[[concepts/claude-art-discovery-controversy]] 신규, [[concepts/agent-attribution]]·[[comparisons/frontier-lab-economics]]·[[patterns/agent-scientific-discovery]]·[[concepts/agent-data-leakage]]·[[concepts/india-ai-regulation-consultation]] 보강, 총 149페이지.
+- 2026-10-12: 데일리 ingest — [[concepts/microsoft-maia-300]]·[[concepts/uk-frontier-model-access-restoration]]·[[concepts/claude-misbehavior-disclosure]]·[[concepts/nadella-emergency-brake]]·[[concepts/publishers-ai-covert-use]]·[[concepts/nvidia-reflection-acquisition-talks]] 신규, [[comparisons/frontier-lab-economics]]·[[concepts/agent-attribution]]·[[patterns/agent-safety-runtime]]·[[concepts/ai-doom-loop]]·[[concepts/super-intelligence-force]]·[[concepts/reflection-open-weight]]·[[concepts/gemini-4-argon]] 보강, 총 157페이지 (concepts 카운트 off-by-one 정정 포함).
 

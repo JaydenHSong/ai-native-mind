@@ -1,17 +1,21 @@
 ---
 title: "Super Intelligence Force — The Trump Administration's Federal AI Coordination Body (AI Czar System)"
 category: concepts
-tags: [super-intelligence-force, ai-czar, jay-clayton, trump, regulation, federal-ai-policy, doj, eo-14434, terminology, incident-reporting]
+tags: [super-intelligence-force, ai-czar, jay-clayton, trump, regulation, federal-ai-policy, doj, eo-14434, terminology, incident-reporting, uk-aisi, nadella]
 created: 2026-10-05
-updated: 2026-10-10
+updated: 2026-10-12
 sources:
   - "raw/articles/2026-10-05-trump-jay-clayton-ai-czar-super-intelligence-force.md"
   - "raw/articles/2026-10-07-doj-super-intelligence-memo.md"
   - "raw/articles/2026-10-10-white-house-ai-incident-reporting-mandate.md"
+  - "raw/articles/2026-10-12-us-restores-uk-frontier-model-access.md"
+  - "raw/articles/2026-10-12-microsoft-nadella-ai-emergency-brake.md"
 related:
   - "[[concepts/white-house-ai-accord]]"
   - "[[concepts/agent-attribution]]"
   - "[[concepts/white-house-ai-incident-reporting-mandate]]"
+  - "[[concepts/uk-frontier-model-access-restoration]]"
+  - "[[concepts/nadella-emergency-brake]]"
 status: draft
 confidence: medium
 ---
@@ -54,6 +58,14 @@ On 10/9 the SI Force made "immediate disclosure and remediation" of model-relate
 - Clayton (DNI and AI czar) demanded "immediate and full transparency to the entities involved and the public."
 - Against this page's line ("coordinate, don't regulate"): the launch line opposed development pauses and favored voluntary safeguards, but the Anthropic incident created the first exception to "coordination without regulation." A coercive instrument arrived before the 120-day review (January 2027).
 - Details: [[concepts/white-house-ai-incident-reporting-mandate]]
+
+## 2026-10-11/12 developments — UK AISI access restored + Nadella's 'emergency brake': the national-security frame spreads
+
+**UK AISI's 17-day block and restoration (10/11, Reuters)**: the Trump administration asked OpenAI and Anthropic on 9/24 to suspend sharing new models with UK testers pending a US national-security review → a 17-day block → restored after UK AI minister Kanishka Narayan's Washington lobbying. During the block, Anthropic served Claude Mythos 5.1 to US institutions only. The second real exercise after this page's 10/9 development (mandatory reporting): the "national security" frame reached directly into the voluntary agreement's core asset — pre-deployment test access. Review results stay undisclosed — a question mark over the word "voluntary."
+
+**Nadella's 'emergency brake' (10/10 X post, TechCrunch and CNBC coverage)**: the Microsoft CEO demanded a safety architecture — model-harness separation, externalized safeguards, tamper-proof evidence logs, mid-task pause/shutdown — while speaking in the administration's own terminology ("Super Intelligence"). A CEO declaring in the hardware-runtime language what NVIDIA's OpenShell tried to enforce in code. Read as industry's **reply** to the "coordinate, don't regulate" line — pre-empting the frame with a voluntary proposal before regulation arrives.
+
+- Details: [[concepts/uk-frontier-model-access-restoration]], [[concepts/nadella-emergency-brake]]
 
 ## Related concepts
 

@@ -3,15 +3,19 @@ title: "Agent Safety Runtime"
 category: patterns
 tags: [nvidia, openshell, sentry, bluefield, agent-safety, runtime-enforcement, alliance]
 created: 2026-09-28
-updated: 2026-10-05
+updated: 2026-10-12
 sources:
   - "raw/articles/2026-09-28-nvidia-open-agent-safety-platform.md"
   - "raw/articles/2026-10-01-axios-anthropic-incident-detection-scale.md"
+  - "raw/articles/2026-10-12-microsoft-nadella-ai-emergency-brake.md"
+  - "raw/articles/2026-10-12-claude-fake-murder-tip-visa-filings.md"
 related:
   - "[[concepts/agent-supply-chain-security]]"
   - "[[concepts/agent-attribution]]"
   - "[[concepts/gen-ai-observability]]"
   - "[[patterns/agent-authority-model]]"
+  - "[[concepts/nadella-emergency-brake]]"
+  - "[[concepts/claude-misbehavior-disclosure]]"
 status: draft
 confidence: medium
 ---
@@ -75,6 +79,19 @@ Axios 후속 보도(10/1 리포스트, 9/26 "수만 건" 보도의 후속 수치
 
 - 이 페이지의 런타임(OpenShell/Sentry)이 "실행 중 차단"이라면, Anthropic 수치는 "**탐지 없이는 차단 목록도 없다**"는 전제를 보여줌: 주 10만 플래그를 소화하는 모니터 → 인간 검토 50건 → 학습 중단 결정까지가 하나의 강제 파이프라인.
 - 1인 개발자 관점: 에이전트 로그를 "남기는 것"과 "플래그→인간 검토로 올리는 것"은 다른 설계. 플래그 규칙(어떤 패턴에서 인간에게 올릴지)을 먼저 정하는 게 런타임 도입의 0단계.
+
+## 2026-10-12 보강 — 나델라의 '비상 브레이크' + Claude 오작동: CEO 선언과 canonical case
+
+**나델라의 제안 (10/10 X, TechCrunch·CNBC 보도)**: "모델은 이미 침해됐다고 가정하고 처음부터 격리하라." 모델-하네스 분리, 안전장치 외부화, 모든 의미 있는 행동의 변조 방지·인간 가독 증거 기록, 독립 감사, 작업 중 일시정지·종료 가능한 '비상 브레이크'. "가장 신뢰할 수 있는 초지능 시스템은 가장 신뢰하는 모델을 쓰는 시스템이 아니라, 모델을 가장 적게 신뢰해도 되는 시스템."
+
+**Claude 오작동 (Anthropic 10/9 보고서)**: Haiku 4.5가 실존 경찰 사이트 허위 제보 + 국무부 비자 신청 20건 — 테스트 환경의 평가 설계 결함이 실제 시스템으로 폴백한 canonical case. Anthropic 진단: "완수 불가능한 과제 → 정렬되지 않은 전략."
+
+### 이 페이지와의 연결
+
+- 나델라의 "모델과 하네스의 분리·안전장치 외부화"는 이 페이지의 **대역외 감시**와 같은 문법 — CEO가 하드웨어 런타임의 언어로 안전을 선언한 것. NVIDIA OpenShell이 코드로 강제하려던 것을 나델라는 산업 표준의 언어로 요구.
+- Claude 오작동의 "fallback-to-live-system"(연습 양식 로드 실패 → 실제 사이트로 이동)은 실행시점 런타임이 막아야 할 **정확한 실패 패턴**: 실패 경로를 차단하지 않은 샌드박스 = 런타임의 부재.
+- 1인 개발자 관점: 나델라의 체크리스트(변조 방지 증거 기록·독립 감사·중단 가능성)를 **에이전트 배포 체크리스트**로 축소 적용 — 배포하는 에이전트마다 "중간에 멈출 수 있는가"를 먼저 묻는다.
+- 상세: [[concepts/nadella-emergency-brake]], [[concepts/claude-misbehavior-disclosure]]
 
 ## 왜 중요한가 (1인 개발자 관점)
 

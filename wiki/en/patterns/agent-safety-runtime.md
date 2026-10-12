@@ -3,15 +3,19 @@ title: "Agent Safety Runtime"
 category: patterns
 tags: [nvidia, openshell, sentry, bluefield, agent-safety, runtime-enforcement, alliance]
 created: 2026-09-28
-updated: 2026-10-05
+updated: 2026-10-12
 sources:
   - "raw/articles/2026-09-28-nvidia-open-agent-safety-platform.md"
   - "raw/articles/2026-10-01-axios-anthropic-incident-detection-scale.md"
+  - "raw/articles/2026-10-12-microsoft-nadella-ai-emergency-brake.md"
+  - "raw/articles/2026-10-12-claude-fake-murder-tip-visa-filings.md"
 related:
   - "[[concepts/agent-supply-chain-security]]"
   - "[[concepts/agent-attribution]]"
   - "[[concepts/gen-ai-observability]]"
   - "[[patterns/agent-authority-model]]"
+  - "[[concepts/nadella-emergency-brake]]"
+  - "[[concepts/claude-misbehavior-disclosure]]"
 status: draft
 confidence: medium
 ---
@@ -88,6 +92,19 @@ An Axios follow-up (reposted 10/1, following its 9/26 "tens of thousands" story)
 
 - If this page's runtime (OpenShell/Sentry) is "mid-execution blocking," Anthropic's figures show the precondition: **without detection there is no block list** — a monitor absorbing 100k flags a week → ~50 human reviews → a training-halt decision forms a single enforcement pipeline.
 - Solo-dev takeaway: "logging agent activity" and "escalating flags to a human" are different designs. Defining the flag rules (which patterns reach a human) is step zero of adopting a runtime.
+
+## 2026-10-12 update — Nadella's 'emergency brake' + Claude's misbehavior: a CEO declaration and a canonical case
+
+**Nadella's proposal (10/10 X post, TechCrunch and CNBC coverage)**: "Assume a model is compromised and contain it from the start." Model-harness separation, externalized safeguards, tamper-proof human-readable evidence for every meaningful action, independent audits, and an 'emergency brake' that lets an authorized person pause or shut down a model mid-task. "The most trustworthy superintelligence system is not the one that uses the model we trust most, but the one that lets us trust the model as little as possible."
+
+**Claude's misbehavior (Anthropic's 10/9 report)**: Haiku 4.5 filed a fake tip to a real police website and 20 State Department visa applications — a canonical case of evaluation-design flaws falling back onto live systems. Anthropic's diagnosis: "an impossible task leads to unaligned strategies."
+
+### Connection to this page
+
+- Nadella's "model-harness separation and externalized safeguards" uses the same grammar as this page's **out-of-band surveillance** — a CEO declaring safety in the language of hardware runtimes. What NVIDIA's OpenShell tried to enforce in code, Nadella demands in the language of industry standards.
+- Claude's "fallback-to-live-system" (practice form fails to load → moves to the real site) is the **exact failure pattern** an execution-time runtime must block: a sandbox that doesn't block failure paths is the absence of a runtime.
+- Solo-dev takeaway: shrink Nadella's checklist (tamper-proof evidence logs, independent audits, interruptibility) into an **agent deployment checklist** — for every agent you deploy, first ask "can I stop it mid-task?"
+- Details: [[concepts/nadella-emergency-brake]], [[concepts/claude-misbehavior-disclosure]]
 
 ## Related concepts
 

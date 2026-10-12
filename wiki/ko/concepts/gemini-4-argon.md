@@ -3,15 +3,17 @@ title: "Gemini 4 Argon"
 category: concepts
 tags: [google, gemini-4, argon, frontier-model, gated-release, benchmark, hallucination, pricing, carbon, checkpoint]
 created: 2026-10-01
-updated: 2026-10-10
+updated: 2026-10-12
 sources:
   - "raw/articles/2026-10-01-google-gemini-4-argon-launch.md"
   - "raw/articles/2026-10-10-gemini-4-carbon-internal-testing.md"
+  - "raw/articles/2026-10-12-us-restores-uk-frontier-model-access.md"
 related:
   - "[[patterns/ai-cost-management]]"
   - "[[patterns/mid-tier-performance-inversion]]"
   - "[[concepts/agent-supply-chain-security]]"
   - "[[concepts/gemini-4-carbon-testing]]"
+  - "[[concepts/uk-frontier-model-access-restoration]]"
 status: draft
 confidence: high
 ---
@@ -89,6 +91,14 @@ Business Insider(10/9): 구글 내부 코딩 플랫폼 Jetski에서 Gemini 4 계
 - Carbon이 별도 모델인지 Argon 업데이트인지는 미확정. Google 공식 논평 거부.
 - 이 페이지의 "벤치마크 괴리" 읽는 법과 연결: Argon의 자체 벤치 선두 주장 vs AA 53 괴리에 이어, Carbon의 "Opus 5.5급"도 직원 체감 평가 — 외부 독립 검증 전까지는 주장 단계. 프론티어 릴리스의 성능 주장은 이제 "체크포인트 포트폴리오" 단위로 읽어야 한다.
 - 상세: [[concepts/gemini-4-carbon-testing]]
+
+## 2026-10-12 보강 — 영국 AISI가 Argon 평가 중: 독립 검증의 새 관측점
+
+영국 AI Security Institute의 사전공개 모델 접근이 17일 차단 끝에 복원된 가운데 (10/11, Reuters), 영국 AI 장관 Kanishka Narayan이 AISI가 현재 **"Gemini 4 Argon을 포함한 최신 세대 모델"을 엄격 평가 중**이라고 발언 (10/12).
+
+- 이 페이지의 "벤치마크 괴리" 읽는 법과 연결: Argon의 자체 벤치 선두 주장 vs AA 지수 53 괴리가 AISI 같은 **국가급 독립 평가**로 검증될 관측점이 생김. AISI의 평가 결과가 공개될지는 미지수지만, 평가 대상에 명시됐다는 것 자체가 Argon의 "프론티어" 지위를 각인.
+- MS Brad Smith(BBC 인터뷰): 영국이 AI 안전 가이드라인 주도 적임 — 평가 주체의 위상도 함께 상승 중.
+- 상세: [[concepts/uk-frontier-model-access-restoration]]
 
 ## 관련 개념
 

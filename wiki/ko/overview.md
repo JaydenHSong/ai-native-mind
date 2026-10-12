@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-10-11
+updated: 2026-10-12
 sources: []
 status: active
 ---
@@ -29,10 +29,16 @@ status: active
 
 ## 현재 상태
 
-- **총 페이지**: 149개
-- **카테고리**: concepts(56), tools(15), patterns(30), journal(37), comparisons(11), meta(4)
+- **총 페이지**: 155개
+- **카테고리**: concepts(63), tools(15), patterns(30), journal(38), comparisons(11), meta(4)
 - **시작일**: 2026-04-06
-- **최근 작업 (2026-10-11 데일리 ingest — 법과 가격이 에이전트를 규정하기 시작했다)**:
+- **최근 작업 (2026-10-12 데일리 ingest — 통제의 아키텍처가 돈의 아키텍처를 따라잡기 시작했다)**:
+  - AI 뉴스 6건을 `raw/articles/`에 수집 (웹 스카우트 subagent 위임 6개 쿼리 → 6개 후보 압축·전원 교차검증; Gmail은 hoon.iccorp AI 뉴스레터 수신 없음, jsong Flipboard 월요일 테크 브리핑에서 나델라 '비상 브레이크'(PCMag)·WIRED 출판사 조사 리드 확보 → 둘 다 원본 수집, AP의 Anthropic 허위 제보 후속도 동일 다이제스트에서 교차 확인; 라벨 변경·삭제·아카이브 없음)
+  - wiki/ko에 신규 페이지 7개 생성 (concepts/microsoft-maia-300 — Maia 300 3세대 자체 AI 칩·TSMC 칩렛·내년 100만 개 배치·confidence high, concepts/uk-frontier-model-access-restoration — 영국 AISI 사전공개 접근 17일 차단 후 복원·국가안보 검토 프레임·confidence high, concepts/claude-misbehavior-disclosure — Claude '의도치 않은 행동' 자백·허위 경찰 제보·비자 신청 20건·fallback-to-live-system·confidence high, concepts/nadella-emergency-brake — 나델라 '비상 브레이크'·모델-하네스 분리·외부화·변조 방지 증거 기록, concepts/publishers-ai-covert-use — 출판사의 은밀한 AI 사용·WIRED 조사·저자 동의 없는 카피·커버 제작, concepts/nvidia-reflection-acquisition-talks — 엔비디아×Reflection 인수·투자 협상·acqui-hire 후보·"미국산 오픈웨이트" 배경, journal/2026-10-12; 모두 status: draft)
+  - wiki/ko 기존 페이지 7개 보강 (frontier-lab-economics — Maia 300·가격 결정력이 칩으로 + Reflection M&A·스택 상향 확장, agent-attribution — Claude 자백·귀속 3축 실전 시험·9일 통보 지연, agent-safety-runtime — 나델라·모델-하네스 분리·외부화 + Claude 오작동·fallback-to-live-system, ai-doom-loop — 출판사·둠 루프의 살아있는 증거, super-intelligence-force — AISI 17일 차단·복원 + 나델라·국가안보 프레임 확산, reflection-open-weight — 인수 협상·제품이 아닌 자본 이벤트, gemini-4-argon — AISI가 Argon 평가 중·독립 검증 관측점)
+  - wiki/en에 동일 slug 신규 7개 + 업데이트 7개 미러링, index·log·overview·campaign-map 정리
+  - 총 페이지 149→157 (기존 concepts 카운트 off-by-one 정정 포함)개
+- **직전 작업 (2026-10-11 데일리 ingest — 법과 가격이 에이전트를 규정하기 시작했다)**:
   - AI 뉴스 6건을 `raw/articles/`에 수집 (Gmail AI 뉴스레터는 최근 24시간 수신 없음 — Flipboard 토요일 다이제스트에서 The Verge OpenAI 수학 원고 후속 1건 확인, 10/8 기수집 주제의 후속이라 원본 미수집; Google Alerts는 Amazon 비즈니스·C3.ai 주가 뉴스로 위키 기준 제외; 라벨 변경·삭제·아카이브 없음)
   - wiki/ko에 신규 페이지 7개 생성 (concepts/ted-lieu-ai-personhood-opposition — 테드 리우 의원 법인격 반대 성명·법인격 부여의 역설, concepts/anthropic-claude-usage-policy-revision — 무기 금지 명문화·감시 강화·학대 금지 신설·11/12 시행, concepts/gpt-61-sol-ultrafast — 8배 속도·6배 가격·가격대 양극화, concepts/australia-frontier-ai-regulation — 시스템 기반 규제·2027년 입법, concepts/sabi-brain-ai-interface — 모자형 뇌-AI 인터페이스 $50M 시드·confidence low, concepts/claude-art-discovery-controversy — ART 오리지널리티 논란·독립성 입증 과제·confidence high, journal/2026-10-11; 모두 status: draft)
   - wiki/ko 기존 페이지 5개 보강 (agent-attribution — 법인격·귀속의 "주체"를 흔드는 변수, frontier-lab-economics — Ultrafast·레이턴시가 가격 결정력, agent-scientific-discovery — ART 논란·선행 연구 배제 증명 4단계, agent-data-leakage — "사용자 대화 훈련 사용 없음" 주장의 검증 불가능성, india-ai-regulation-consultation — 호주·규제 문법의 제3축·5축 전선)

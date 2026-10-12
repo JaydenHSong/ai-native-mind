@@ -3,7 +3,7 @@ title: "저가 파괴자 vs 가격 결정력 인프라"
 category: comparisons
 tags: [deepseek, huawei, ascend, revenue, fundraising, api-pricing, open-weights, llm-business, china, external-funding, nous-research, manus, mecka-ai, robot-data]
 created: 2026-09-24
-updated: 2026-10-11
+updated: 2026-10-12
 sources:
   - "raw/articles/2026-09-24-deepseek-1b-annualized-revenue.md"
   - "raw/articles/2026-10-01-anthropic-ipo-prospectus-reuters.md"
@@ -16,6 +16,8 @@ sources:
   - "raw/articles/2026-10-09-manus-500m-funding-meta-exit.md"
   - "raw/articles/2026-10-10-mecka-ai-60m-series-b.md"
   - "raw/articles/2026-10-11-openai-gpt-61-sol-ultrafast.md"
+  - "raw/articles/2026-10-12-microsoft-maia-300-ai-chip.md"
+  - "raw/articles/2026-10-12-nvidia-reflection-ai-acquisition-talks.md"
 related:
   - "[[patterns/ai-cost-management]]"
   - "[[concepts/amd-world-labs-physical-ai]]"
@@ -26,6 +28,8 @@ related:
   - "[[concepts/mecka-robot-motion-data]]"
   - "[[concepts/robojepa-robot-scaling-laws]]"
   - "[[concepts/gpt-61-sol-ultrafast]]"
+  - "[[concepts/microsoft-maia-300]]"
+  - "[[concepts/nvidia-reflection-acquisition-talks]]"
 status: draft
 confidence: low
 ---
@@ -174,6 +178,15 @@ OpenAI가 GPT-6.1 Sol에 최고속 티어 **Ultrafast** 추가 (10/8, API·Codex
 - 이 페이지의 프레이밍으로 읽으면: **가격 결정력 인프라의 새로운 근거 — 레이턴시**. 같은 주 Claude Haiku 5.5가 API 최대 90% 인하로 내려가는 동안(10/8 보강), OpenAI는 8배 속도에 6배 가격을 붙이며 올라간다 — **가격대 양극화의 동시 전개**. DeepSeek식 단위 경제 우위(인상 후에도 이탈 없음)가 수요의 가격 비탄력성에서 나왔다면, Ultrafast는 "속도가 곧 비용 효율"인 에이전트 워크로드(대화형 코딩 에이전트)에서 비탄력성을 노린다.
 - [[patterns/ai-cost-management]]의 귀결: 속도·가격·품질의 **3축 라우팅**이 정교해진다 — 대화형 코딩은 Ultrafast, 배치 평가는 표준, 경량 작업은 Haiku급. 단, 고속 티어의 토큰 소비 급증은 에이전트 루프 runaway 비용 리스크와 직결 — 지출 상한 가드레일 필수.
 - 상세: [[concepts/gpt-61-sol-ultrafast]]
+
+## 2026-10-12 보강 — Maia 300 + 엔비디아×Reflection: 가격 결정력이 칩과 자본으로 내려간다
+
+Microsoft가 3세대 자체 AI 칩 **Maia 300** 발표 (10/12, Reuters) — TSMC 2나노+3나노 칩렛 구조, 랙당 96칩·167kW, 내년 100만 개 이상 배치. "유수의 GPU 시스템 대비 메가와트당 40% 효율" 주장 (비교 대상 비공개).
+
+- 이 페이지의 프레이밍으로 읽으면: **가격 결정력 인프라의 근거가 '모델'에서 '칩'으로 내려감**. Ultrafast(10/11 보강)가 레이턴시 프리미엄으로 가격 결정력을 제품 단에서 만들었다면, Maia 300은 추론 단가를 칩 단에서 눌러 같은 프리미엄을 방어하는 쪽. DeepSeek의 3단계(하드웨어 수직 통합, Ascend)에 대응하는 **서구 버전의 수직 통합**.
+- 같은 날 FT 보도: **엔비디아 × Reflection AI 인수·투자 협상** (10/10) — 칩 회사가 오픈웨이트 랩을 확보하려는 스택 상향 확장. AMD World Labs $8.2B 인수의 연장선. 인수/acqui-hire/지분 확대/컴퓨트 공급 중 구조 미정, DOJ의 Groq 조사로 완전 인수는 심사 부담.
+- 두 사건을 겹치면: **하드웨어→모델로의 수직 통합이 양 진영(MS·엔비디아·AMD·DeepSeek)에서 동시 진행** — "가격 결정력 인프라"의 경쟁이 모델 API를 넘어 칩·자본·지배구조로 확장 중.
+- 상세: [[concepts/microsoft-maia-300]], [[concepts/nvidia-reflection-acquisition-talks]]
 
 ## 참고 소스
 

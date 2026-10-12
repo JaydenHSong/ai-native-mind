@@ -3,14 +3,16 @@ title: "AI Doom Loop — the Self-Destruction of the Content Supply Chain"
 category: concepts
 tags: [doom-loop, copyright, nyt-lawsuit, usa-today-lawsuit, microsoft, openai, content-economics, fair-use]
 created: 2026-10-07
-updated: 2026-10-09
+updated: 2026-10-12
 sources:
   - "raw/articles/2026-10-07-ai-doom-loops-nyt-lawsuit.md"
   - "raw/articles/2026-10-09-usa-today-sues-openai-copyright.md"
+  - "raw/articles/2026-10-12-wired-publishers-ai-staff-revolting.md"
 related:
   - "[[comparisons/frontier-lab-economics]]"
   - "[[concepts/white-house-ai-accord]]"
   - "[[concepts/agent-attribution]]"
+  - "[[concepts/publishers-ai-covert-use]]"
 status: draft
 confidence: medium
 ---
@@ -58,6 +60,14 @@ Reuters (10/8): USA TODAY Co. and 19 affiliated publications (USA TODAY, The Ten
 - Evidence strategy: submits GPT-5.6 outputs reproducing or closely tracking source articles, plus a DMCA claim over copyright-management-information (CMI) removal — the same "prove substitutability via output reproduction" argument structure as the NYT suit.
 - Litigation structure: to be **consolidated with the MDL** alongside the NYT and authors' suits in SDNY — the publisher-vs-AI-lab front widens from the NYT alone to a Gannett-group coalition, becoming a single front.
 - Read through this page's framing: the doom loop's "stage 1 (traffic substitution)" is being institutionalized into courtroom disputes. Source traceability of training datasets (WebText, C4) is becoming the key evidentiary axis — "we didn't know the source" is getting harder as a defense.
+
+### 2026-10-12 update — publishers' covert AI use: the doom loop's living evidence
+
+WIRED's investigation (10/9, Adam Morgan): three of the US Big Five publishers — HarperCollins, Simon & Schuster, and Hachette — have been producing publicity copy, back-cover text, agent emails, and even cover art with ChatGPT, Claude, and Jasper — without author consent or disclosure. Meanwhile, in public, they play the loudest opponents of generative AI (Google copyright suits, cancelled contracts for authors suspected of AI use, e.g. 'Shy Girl' and 'Call Me, I'll Hide the Body').
+
+- Read through this page's framing: the **feedback loop in the opposite direction**. Suing to block AI training data (defending the upstream supply chain) while stamping out AI-generated copy internally (polluting the downstream supply chain) — not a contradiction but a dual strategy: "AI for costs, lawsuits for rights." Hecht's admission ("hurting our models and the entire web at once") reproduces itself on the content producers' side.
+- The detection paradox: S&S agents spotted identical machine phrasing in rejection letters from the same editors — alongside technical approaches like [[concepts/ai-text-watermarking]], "the reader's eye" is also a detection channel.
+- Details: [[concepts/publishers-ai-covert-use]]
 
 ## Sources
 

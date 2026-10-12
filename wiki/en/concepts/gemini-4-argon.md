@@ -3,15 +3,17 @@ title: "Gemini 4 Argon"
 category: concepts
 tags: [google, gemini-4, argon, frontier-model, gated-release, benchmark, hallucination, pricing, carbon, checkpoint]
 created: 2026-10-01
-updated: 2026-10-10
+updated: 2026-10-12
 sources:
   - "raw/articles/2026-10-01-google-gemini-4-argon-launch.md"
   - "raw/articles/2026-10-10-gemini-4-carbon-internal-testing.md"
+  - "raw/articles/2026-10-12-us-restores-uk-frontier-model-access.md"
 related:
   - "[[patterns/ai-cost-management]]"
   - "[[patterns/mid-tier-performance-inversion]]"
   - "[[concepts/agent-supply-chain-security]]"
   - "[[concepts/gemini-4-carbon-testing]]"
+  - "[[concepts/uk-frontier-model-access-restoration]]"
 status: draft
 confidence: high
 ---
@@ -89,6 +91,14 @@ Business Insider (10/9): Google is testing an internal Gemini 4-family variant *
 - Whether Carbon is a separate model or an Argon update is unconfirmed. Google declined to comment.
 - Connects to this page's "benchmark gap" reading: beyond Argon's self-reported lead vs AA 53, Carbon's "Opus 5.5-level" is also an employee-felt assessment — a claim until independently verified. Frontier-release performance claims must now be read per checkpoint, as a portfolio.
 - Details: [[concepts/gemini-4-carbon-testing]]
+
+## 2026-10-12 update — UK AISI is evaluating Argon: a new observation point for independent verification
+
+As the UK AI Security Institute's pre-deployment model access was restored after a 17-day block (10/11, Reuters), UK AI minister Kanishka Narayan said AISI is currently **rigorously evaluating "the latest generation of models, including Gemini 4 Argon"** (10/12).
+
+- Connects to this page's "benchmark gap" reading: the gap between Argon's self-reported benchmark lead and AA index 53 gains a **state-level independent evaluation** as a verification point. Whether AISI's results go public is unknown, but being named as an evaluation target itself marks Argon's "frontier" status.
+- MS's Brad Smith (BBC interview): the UK is the right lead for AI safety guidelines — the evaluator's stature is rising alongside.
+- Details: [[concepts/uk-frontier-model-access-restoration]]
 
 ## Related concepts
 

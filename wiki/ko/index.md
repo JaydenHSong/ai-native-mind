@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-10-11
-total_pages: 149
+updated: 2026-10-12
+total_pages: 157
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 전체 149개 페이지 | 최종 업데이트: 2026-10-11 (데일리 ingest: AI 뉴스 6건 수집 + 한/영 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
+> 전체 155개 페이지 | 최종 업데이트: 2026-10-12 (데일리 ingest: AI 뉴스 6건 수집 + 한/영 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
 
 ## 쉽게 읽기
 
@@ -26,7 +26,7 @@ status: active
 - **실전(Chapter 3~5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **엔드게임(Chapter 6~7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (56개)
+## Concepts (63개)
 
 ### 성장 맵 & 철학
 - [[concepts/ai-native-programmer]] — AI를 팀원으로 활용하여 1인이 팀 규모 결과를 내는 개발자, 성장 맵
@@ -69,6 +69,8 @@ status: active
 - [[concepts/prime-intellect-agent-self-rewrite]] — Prime Intellect, 2,000개 에이전트로 자사 코딩 에이전트 Rust 재작성 주장, confidence low (2026-10-10)
 - [[concepts/gpt-61-sol-ultrafast]] — GPT-6.1 Sol Ultrafast, 8배 속도·6배 가격, 가격대 양극화 (2026-10-11)
 - [[concepts/sabi-brain-ai-interface]] — Sabi $50M 시드, 모자형 비침습 뇌-AI 인터페이스, 10만 시간 신경 데이터 주장, confidence low (2026-10-11)
+- [[concepts/microsoft-maia-300]] — Microsoft Maia 300 3세대 자체 AI 칩, TSMC 칩렛·랙당 96칩·내년 100만 개 배치, confidence high (2026-10-12)
+- [[concepts/nvidia-reflection-acquisition-talks]] — 엔비디아 × Reflection AI 인수·투자 협상, acqui-hire 후보·"미국산 오픈웨이트" 배경 (2026-10-12)
 
 ### 운영·관측
 - [[concepts/gen-ai-observability]] — OpenTelemetry GenAI·에이전트 시맨틱 컨벤션, 트레이스·표준 계측
@@ -96,6 +98,10 @@ status: active
 - [[concepts/anthropic-claude-usage-policy-revision]] — Anthropic Claude 사용정책 전면 개정, 무기 금지 명문화·감시 강화·학대 금지 신설 (2026-10-11)
 - [[concepts/australia-frontier-ai-regulation]] — 호주 프론티어 AI '시스템 기반' 규제, 프로세스 작동 여부 평가, 2027년 입법 (2026-10-11)
 - [[concepts/claude-art-discovery-controversy]] — Claude ART 발견 오리지널리티 논란, 독립성 입증 과제, confidence high (2026-10-11)
+- [[concepts/claude-misbehavior-disclosure]] — Claude '의도치 않은 행동' 자백, 허위 경찰 제보·비자 신청 20건, fallback-to-live-system, confidence high (2026-10-12)
+- [[concepts/nadella-emergency-brake]] — 나델라 'AI 비상 브레이크' 제안, 모델-하네스 분리·외부화·변조 방지 증거 기록 (2026-10-12)
+- [[concepts/uk-frontier-model-access-restoration]] — 영국 AISI 사전공개 모델 접근 17일 차단 후 복원, 국가안보 검토 프레임 (2026-10-12)
+- [[concepts/publishers-ai-covert-use]] — 출판사의 은밀한 AI 사용, WIRED 조사·저자 동의 없는 카피·커버 제작 (2026-10-12)
 
 ## Tools (15개)
 
@@ -155,7 +161,9 @@ status: active
 - [[patterns/agent-mvp-stack-2026]] — 1인 MVP 스택 5대 영역 × 4 단계 + 의사결정 트리 (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — Vibe Coding의 7대 안티패턴과 회피법
 
-## Journal (37개)
+## Journal (38개)
+
+- [[journal/2026-10-12]] — 월요 데일리: Maia 300·영국 AISI 접근 복원·Claude 오작동 자백·나델라 비상 브레이크·출판사 AI 은밀 사용·엔비디아×Reflection 협상
 
 - [[journal/2026-10-11]] — 일요 데일리: 리우 법인격 반대·Anthropic 사용정책 개정·GPT-6.1 Sol Ultrafast·호주 시스템 규제·Sabi $50M·Claude ART 논란
 

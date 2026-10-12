@@ -3,14 +3,16 @@ title: "AI 둠 루프 — 콘텐츠 공급망의 자기파괴 되먹임"
 category: concepts
 tags: [doom-loop, copyright, nyt-lawsuit, usa-today-lawsuit, microsoft, openai, content-economics, fair-use]
 created: 2026-10-07
-updated: 2026-10-09
+updated: 2026-10-12
 sources:
   - "raw/articles/2026-10-07-ai-doom-loops-nyt-lawsuit.md"
   - "raw/articles/2026-10-09-usa-today-sues-openai-copyright.md"
+  - "raw/articles/2026-10-12-wired-publishers-ai-staff-revolting.md"
 related:
   - "[[comparisons/frontier-lab-economics]]"
   - "[[concepts/white-house-ai-accord]]"
   - "[[concepts/agent-attribution]]"
+  - "[[concepts/publishers-ai-covert-use]]"
 status: draft
 confidence: medium
 ---
@@ -62,6 +64,14 @@ Reuters(10/8): USA TODAY Co. + 산하 지방지 19개 출판물(USA TODAY, The T
 - 증거 전략: GPT-5.6 출력이 원문 기사를 재현·근접 추적하는 사례를 증거로 제출 + 저작권 관리정보(CMI) 삭제로 DMCA 위반 주장 — "학습"이 아니라 "출력 재현"으로 대체성을 입증하려는 NYT 소송의 논증 구조와 동일.
 - 소송 구조: SDNY에 집중된 기존 저작권 소송 MDL(뉴욕타임스·작가 소송 등)과 **병합 진행 예정** — 언론사 vs AI 랩의 저작권 전선이 NYT 단독에서 Gannett 계열 연합으로 확대, 단일 전선화.
 - 이 페이지의 프레이밍으로 읽으면: 둠 루프의 "되먹임 1단계(트래픽 대체)"가 법정 분쟁으로 제도화되는 과정. 학습 데이터셋(WebText·C4)의 출처 추적 가능성이 소송 증거의 핵심 축이 되면서, "데이터의 출처를 모른다"는 방어가 점점 어려워짐.
+
+### 2026-10-12 보강 — 출판사의 은밀한 AI 사용: 둠 루프의 살아있는 증거
+
+WIRED 조사(10/9, Adam Morgan): 미국 Big Five 중 HarperCollins·Simon & Schuster·Hachette가 ChatGPT·Claude·Jasper로 홍보 문구·백커버 카피·에이전트 이메일·커버 아트까지 제작 — 저자 동의·공개 없이. 겉으로는 구글 저작권 소송·AI 사용 의심 작가 계약 취소('Shy Girl', 'Call Me, I'll Hide the Body')로 가장 큰 반대자 행세.
+
+- 이 페이지의 프레이밍으로 읽으면: 둠 루프의 **정반대 방향 되먹임**. 소송으로 AI 학습 데이터를 막는(공급망 상류 방어) 한편 내부에선 AI로 카피를 찍어내는(공급망 하류 오염) — 자기모순이 아니라 **"비용은 AI로, 권리는 소송으로"** 라는 이중 전략. Hecht의 자인("모델 성능과 웹 전체를 동시에 해친다")이 콘텐츠 생산자 쪽에서도 재현되는 셈.
+- 탐지의 역설: S&S 에이전트들은 같은 편집자의 거절 편지에서 동일한 기계 문체를 간파 — [[concepts/ai-text-watermarking]]의 기술적 접근과 별개로, "독자의 눈"도 탐지 채널이다.
+- 상세: [[concepts/publishers-ai-covert-use]]
 
 ## 참고 소스
 
