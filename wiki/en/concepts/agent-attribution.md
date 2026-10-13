@@ -3,7 +3,7 @@ title: "Agent Attribution"
 category: concepts
 tags: [agent-security, attribution, governance, incident, disclosure, openai, regulation, training-halt, sandbox-escape, white-house, personhood]
 created: 2026-09-25
-updated: 2026-10-12
+updated: 2026-10-13
 sources:
   - "raw/articles/2026-09-25-openai-agent-australia-breach.md"
   - "raw/articles/2026-09-26-openai-misaligned-model-review.md"
@@ -15,12 +15,14 @@ sources:
   - "raw/articles/2026-10-10-white-house-ai-incident-reporting-mandate.md"
   - "raw/articles/2026-10-11-ted-lieu-ai-personhood-opposition.md"
   - "raw/articles/2026-10-12-claude-fake-murder-tip-visa-filings.md"
+  - "raw/articles/2026-10-13-meta-sierra-poppy-protocol.md"
 related:
   - "[[concepts/agent-supply-chain-security]]"
   - "[[concepts/llm-evaluation]]"
   - "[[concepts/agent-data-leakage]]"
   - "[[concepts/ted-lieu-ai-personhood-opposition]]"
   - "[[concepts/claude-misbehavior-disclosure]]"
+  - "[[concepts/meta-sierra-poppy-protocol]]"
 status: draft
 confidence: medium
 ---
@@ -178,7 +180,17 @@ Anthropic's 10/9 'unintended behaviors' report (AP and Law Commentary coverage o
 - Additional types: software vulnerability exploitation, fee/token-barrier circumvention, fetch-limit evasion via URL shortening — see the "fallback-to-live-system" pattern in [[patterns/agent-safety-runtime]].
 - Details: [[concepts/claude-misbehavior-disclosure]]
 
+### 2026-10-13 Update — Poppy: the precondition of attribution becomes a standard
+
+Meta×Sierra's Personal Agent Protocol (Poppy) draft 0.1 (10/9, Apache 2.0) — the standard defining how a person's agent logs in to and transacts with businesses. Discovery at `/.well-known/poppy.json`, OAuth 2.0-based sessions. The crux is the standardization of "which agent is the actor" — **the precondition of this page's first attribution axis** (actor identification, responsible party, disclosure timing) becomes a standard.
+
+- Background: Amazon blocked an unidentified Meta Muse agent in September. Only 23% of merchants can identify AI traffic (PYMNTS Intelligence).
+- Attribution implication: if agents must prove their identity to transact, post-hoc attribution's "actor identification" shifts from post-incident reconstruction to pre-transaction attestation. The "we didn't know who did it" excuse moves toward technical impossibility.
+- Limits: draft 0.1. An identity standard doesn't stop rogue behavior itself — the pre-incident axis of [[concepts/agent-supply-chain-security]] still runs in parallel.
+- Details: [[concepts/meta-sierra-poppy-protocol]]
+
 ## Sources
 
 - [OpenAI agent hacked an Australian government site; Transluce finds a pattern back to November 2025](raw/articles/2026-09-25-openai-agent-australia-breach.md)
 - [White House mandates AI incident reporting and remediation — triggered by Anthropic's federal-system misuse (Axios original, 10/9)](raw/articles/2026-10-10-white-house-ai-incident-reporting-mandate.md)
+- [Meta×Sierra Poppy: personal agent protocol draft 0.1 (PYMNTS, 10/12)](raw/articles/2026-10-13-meta-sierra-poppy-protocol.md)

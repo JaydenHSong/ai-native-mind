@@ -3,7 +3,7 @@ title: "Low-Cost Disruptor vs Pricing-Power Infrastructure"
 category: comparisons
 tags: [deepseek, huawei, ascend, revenue, fundraising, api-pricing, open-weights, llm-business, china, external-funding, nous-research, manus, mecka-ai, robot-data]
 created: 2026-09-24
-updated: 2026-10-12
+updated: 2026-10-13
 sources:
   - "raw/articles/2026-09-24-deepseek-1b-annualized-revenue.md"
   - "raw/articles/2026-10-01-anthropic-ipo-prospectus-reuters.md"
@@ -18,6 +18,7 @@ sources:
   - "raw/articles/2026-10-11-openai-gpt-61-sol-ultrafast.md"
   - "raw/articles/2026-10-12-microsoft-maia-300-ai-chip.md"
   - "raw/articles/2026-10-12-nvidia-reflection-ai-acquisition-talks.md"
+  - "raw/articles/2026-10-13-meta-muse-wonder-models.md"
 related:
   - "[[patterns/ai-cost-management]]"
   - "[[concepts/amd-world-labs-physical-ai]]"
@@ -30,6 +31,7 @@ related:
   - "[[concepts/gpt-61-sol-ultrafast]]"
   - "[[concepts/microsoft-maia-300]]"
   - "[[concepts/nvidia-reflection-acquisition-talks]]"
+  - "[[concepts/meta-muse-wonder-models]]"
 status: draft
 confidence: low
 ---
@@ -188,6 +190,15 @@ Microsoft announced its third-generation in-house AI chip **Maia 300** (10/12, R
 - Overlaid: **hardware→model vertical integration is now underway on both sides (MS, Nvidia, AMD, DeepSeek)** — the "pricing-power infrastructure" contest expanding beyond model APIs into chips, capital, and governance.
 - Details: [[concepts/microsoft-maia-300]], [[concepts/nvidia-reflection-acquisition-talks]]
 
+## 2026-10-13 update — Muse Wonder + Maia multi-gigawatt: pricing power confirmed on both the "product" and "chip" fronts
+
+**Meta Muse Wonder·Wonder Full** (10/12, Meta Superintelligence Labs) — the first closed frontier since Llama 4. API at $4.00/$20 per 1M tokens = the same list price as Claude Opus 5.5. Meta, which grew the ecosystem with open Llama, now pivots at the frontier to **closed, paid agent infrastructure** — after the "open weights = cheap" equation broke, "open strategy = frontier strategy" breaks too. Independent index at 56 (Opus 5.5 at 58, GPT-6 Astra at 53) — the in-house SOTA claims vs. third-tier independent index repeats the Gemini 4 Argon pattern (10/1 update).
+
+**Microsoft's Maia multi-gigawatt declaration** (follow-up coverage 10/12–13) — deploying Maia at multi-gigawatt scale from 2027 as Microsoft's **primary inference system** for its products and services. Specs confirmed: TSMC N2P multi-chiplet, 8 HBM4 stacks, 288GB, 18TB/s, 950W TDP, superpods of 12,288 accelerators.
+
+- Read through this page's framing: the 10/11 update (Ultrafast — latency as pricing power) gains **two new pieces of evidence** — (1) Meta's closed pivot: the source of pricing power moves from "model performance" to "agent infrastructure (Active Memory, Active Focus)," (2) Maia's multi-GW: the defense of pricing power moves from "the chip" to "deployment scale." On top of the four stages (low-cost → infrastructure → hardware → capital), "distribution channel (open→closed pivot)" and "scale declaration" are now stacked.
+- Details: [[concepts/meta-muse-wonder-models]], [[concepts/microsoft-maia-300]]
+
 ## Sources
 
 - [DeepSeek hits $1B annualized revenue, finalizing ~$7.5B raise at ~$74B valuation](raw/articles/2026-09-24-deepseek-1b-annualized-revenue.md)
@@ -198,3 +209,4 @@ Microsoft announced its third-generation in-house AI chip **Maia 300** (10/12, R
 - [Nous Research at $1.5B valuation — Hermes for Businesses (TechCrunch, 10/7)](raw/articles/2026-10-08-nous-research-hermes-enterprise.md)
 - [Manus raises $500M+ after Meta exit (Reuters, 10/8)](raw/articles/2026-10-09-manus-500m-funding-meta-exit.md)
 - [Mecka AI raises $60M Series B led by Sequoia — human-motion data for robot training (TechCrunch 10/7, FT 10/10)](raw/articles/2026-10-10-mecka-ai-60m-series-b.md)
+- [Meta Muse Wonder·Wonder Full — the closed frontier agent models (10/12)](raw/articles/2026-10-13-meta-muse-wonder-models.md)

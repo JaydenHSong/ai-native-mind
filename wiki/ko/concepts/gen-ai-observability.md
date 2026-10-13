@@ -3,7 +3,7 @@ title: "GenAI·에이전트 관측 가능성 (OpenTelemetry)"
 category: concepts
 tags: [observability, opentelemetry, genai, agents, tracing, semconv, event-sourcing, runtime-audit]
 created: 2026-04-11
-updated: 2026-09-26
+updated: 2026-10-13
 sources:
   - "raw/notes/2026-04-11-vercel-workflow-otel-agents-research.md"
   - "raw/articles/2026-05-01-otel-ai-agent-observability.md"
@@ -11,6 +11,7 @@ sources:
   - "raw/articles/2026-05-06-agentic-harness-engineering-observability.md"
   - "raw/articles/2026-05-24-activegraph-log-is-the-agent.md"
   - "raw/articles/2026-09-26-dataiku-agent-management.md"
+  - "raw/articles/2026-10-13-digitalocean-agent-learning-data-services.md"
 related:
   - "[[concepts/llm-evaluation]]"
   - "[[patterns/agent-server-harness]]"
@@ -18,6 +19,7 @@ related:
   - "[[concepts/harness-engineering]]"
   - "[[concepts/ai-orchestration]]"
   - "[[concepts/mcp]]"
+  - "[[tools/digitalocean-agent-learning-services]]"
 status: active
 confidence: high
 ---
@@ -191,6 +193,17 @@ ActiveGraph의 핵심 직관은 event-sourced system과 닮아 있다.
 - **이 페이지와의 연결**: OTel GenAI semconv(표준 계측)가 있으면 커스텀 하네스도 상용 관리 도구와 연동 가능 — **표준 계측 = 관리 가능성**의 전제. [[concepts/agent-supply-chain-security]]의 "무엇이 돌아가고 있는지 아는 것"이 신뢰 모델의 출발점이라는 주장에 제품 카테고리 차원의 근거.
 - **한계**: 벤더가 자사 제품 문제를 크기 재기 위해 인용한 수치 — 모집단·정의가 달라 간극은 "시사적이지만 미증명".
 
+## 2026-10-13 보강 — DigitalOcean: 관측→탐지→테스트 루프의 상품화
+
+DigitalOcean이 10/12 Agent Learning Services + Agent Data Services 발표 — 에이전트의 "실행→학습→개선" 루프를 클라우드 상품으로 패키지화.
+
+- **3제품 루프**: Insights(에이전트 행동 기록) → Signals(부족 지점 플래그) → Evaluations & Simulations(고객 노출 전 변경 테스트). public preview.
+- **데이터 레이어**: Agent Data Services (에이전트 컨텍스트용 완전 관리형, private preview) + Inference Router 옵티마이저 (private preview).
+- 사례: Amplitude의 "에이전틱 제품 팀" Amplitude Wave가 DigitalOcean Managed Agents 위에서 동작.
+- 이 페이지와의 연결: OTel semconv(표준 계측) → Datadog(정량 운영) → AHE(디자인 관측) → ActiveGraph(런타임 감사)로 이어진 "관측 층" 위에, 이제 **클라우드가 루프 전체를 파는** 단계. 관측이 벤더 표준에서 범용 인프라로 — 1인 개발자는 "직접 붙이기 vs 상품 쓰기"의 선택지가 생김.
+- 한계: 회사 발표 기반. private preview 미검증, 가격 미공개.
+- 상세: [[tools/digitalocean-agent-learning-services]]
+
 ## 실무 체크리스트 (최소)
 
 - [ ] 모델 호출 스팬에 **요청 메타**(모델 id, 토큰 요약/카운트 정책) 일관 적용  
@@ -220,3 +233,4 @@ ActiveGraph의 핵심 직관은 event-sourced system과 닮아 있다.
 - [OpenTelemetry Blog — AI Agent Observability](https://opentelemetry.io/blog/2025/ai-agent-observability/)
 - [OpenTelemetry community — Gen AI project](https://github.com/open-telemetry/community/blob/main/projects/gen-ai.md)
 - [Dataiku launches Agent Management: cross-platform agent inventory, performance and risk flags](raw/articles/2026-09-26-dataiku-agent-management.md)
+- [DigitalOcean Agent Learning + Data Services (Business Wire, 10/12)](raw/articles/2026-10-13-digitalocean-agent-learning-data-services.md)

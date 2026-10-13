@@ -3,13 +3,15 @@ title: "Agent Authority Model — Grading Agent Permissions by Task (Logistics R
 category: patterns
 tags: [agent-authority, governance, guardrails, autonomy-levels, logistics-reply, lea, operations]
 created: 2026-10-05
-updated: 2026-10-05
+updated: 2026-10-13
 sources:
   - "raw/articles/2026-10-05-lea-ai-agent-authority-model.md"
+  - "raw/articles/2026-10-13-meta-sierra-poppy-protocol.md"
 related:
   - "[[patterns/agent-safety-runtime]]"
   - "[[concepts/ai-orchestration]]"
   - "[[concepts/agent-attribution]]"
+  - "[[concepts/meta-sierra-poppy-protocol]]"
 status: draft
 confidence: low
 ---
@@ -47,6 +49,16 @@ This is agent governance moving from "principle declarations" to a "graded produ
 - [[concepts/ai-orchestration]] — the six agent-coordination patterns, combined with authority grading
 - [[concepts/agent-attribution]] — authority grades become the baseline for post-incident responsibility attribution
 
+## 2026-10-13 Update — Poppy: view-only vs change becomes a real standard
+
+Meta×Sierra's Personal Agent Protocol (Poppy) draft 0.1 (10/9, Apache 2.0) is the first case of this page's five-level authority framework (Inform → Recommend → Act → Coordinate → Governed Autonomy) **being implemented as an actual protocol**.
+
+- Poppy's permission model: customers grant agents **view-only vs change** access; businesses set limits on what agents can do. The LEA model's "authority fit for the task" is translated into protocol-level "permission negotiation."
+- Practical mapping: when making an agent Poppy-compatible, compress-mapping the LEA five levels onto the two axes view-only (Inform, Recommend) / change (Act, Coordinate, Governed Autonomy) is the starting point — delegate the finer five levels to the business-side limit settings.
+- Limits: still draft 0.1, so the spec can change. Whether the "block vs. full delegation" third option is actually adopted by businesses depends on how fast the 35 design partners move.
+- Details: [[concepts/meta-sierra-poppy-protocol]]
+
 ## Sources
 
 - [Logistics Reply Introduces the LEA AI Agent Authority Model (Business Wire)](raw/articles/2026-10-05-lea-ai-agent-authority-model.md)
+- [Meta×Sierra Poppy: personal agent protocol draft 0.1 (PYMNTS, 10/12)](raw/articles/2026-10-13-meta-sierra-poppy-protocol.md)

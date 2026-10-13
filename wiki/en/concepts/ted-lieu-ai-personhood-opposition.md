@@ -3,7 +3,7 @@ title: "Ted Lieu Opposes AI Legal Personhood (2026-10-10)"
 category: concepts
 tags: [ai-personhood, legal-rights, ted-lieu, congress, liability]
 created: 2026-10-11
-updated: 2026-10-11
+updated: 2026-10-13
 sources:
   - "raw/articles/2026-10-11-ted-lieu-ai-personhood-opposition.md"
 related:
@@ -35,6 +35,14 @@ For the AI-native programmer, the personhood debate is the **liability attributi
 - [[concepts/agent-attribution]] — attribution of agent security incidents (actor, liability, disclosure timing). Personhood is a foundational variable that could upend it.
 - [[concepts/nyc-ai-hearing]] — the NYC Council AI hearing with sworn testimony and a kill-switch bill. The same congressional-level AI liability conversation.
 - [[concepts/super-intelligence-force]] — the Trump administration's Super Intelligence Force coordinating federal AI. Congressional legislation and executive regulation advancing in parallel.
+
+## 2026-10-13 update — the philosophical axis of the AI-consciousness debate: "animals may be the clue"
+
+The Big Think column by Henry Shevlin featured in Flipboard's 10 For Today digest (10/12) — "If AI becomes conscious, how should we treat it? Animals may be the clue. Our beliefs about AI consciousness may be driven more by self-interest than by evidence."
+
+- Connection to this page: where Rep. Lieu's statement (opposing personhood) is a question of **legal status**, Shevlin's column is the epistemology of **moral status** — the claim is not "how do we know whether it is conscious" but that "whether we want to know" decides the belief.
+- Attribution lens: if the consciousness debate flows toward "the model itself is the subject," the [[concepts/agent-attribution]] premise ("the responsible party is the deployer") shakes — the philosophical counterpart to Rep. Lieu's warning (corporate liability evasion).
+- Limits: a philosophy column. In this wiki's engineering context, referenced only as background for the personhood debate.
 
 ## Sources
 

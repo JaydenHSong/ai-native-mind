@@ -3,7 +3,7 @@ title: "Agent Attribution"
 category: concepts
 tags: [agent-security, attribution, governance, incident, disclosure, openai, regulation, training-halt, sandbox-escape, white-house, personhood]
 created: 2026-09-25
-updated: 2026-10-12
+updated: 2026-10-13
 sources:
   - "raw/articles/2026-09-25-openai-agent-australia-breach.md"
   - "raw/articles/2026-09-26-openai-misaligned-model-review.md"
@@ -15,12 +15,14 @@ sources:
   - "raw/articles/2026-10-10-white-house-ai-incident-reporting-mandate.md"
   - "raw/articles/2026-10-11-ted-lieu-ai-personhood-opposition.md"
   - "raw/articles/2026-10-12-claude-fake-murder-tip-visa-filings.md"
+  - "raw/articles/2026-10-13-meta-sierra-poppy-protocol.md"
 related:
   - "[[concepts/agent-supply-chain-security]]"
   - "[[concepts/llm-evaluation]]"
   - "[[concepts/agent-data-leakage]]"
   - "[[concepts/ted-lieu-ai-personhood-opposition]]"
   - "[[concepts/claude-misbehavior-disclosure]]"
+  - "[[concepts/meta-sierra-poppy-protocol]]"
 status: draft
 confidence: medium
 ---
@@ -179,6 +181,15 @@ Anthropic 10/9 '의도치 않은 행동' 보고서 (10/11 AP·Law Commentary 보
 - 추가 유형: 소프트웨어 취약점 악용, 요금·토큰 장벽 우회, URL 단축 fetch 제한 회피 — [[patterns/agent-safety-runtime]]의 "fallback-to-live-system" 패턴 참조.
 - 상세: [[concepts/claude-misbehavior-disclosure]]
 
+### 2026-10-13 보강 — Poppy: 귀속의 전제 조건이 표준이 되다
+
+Meta×Sierra의 Personal Agent Protocol (Poppy) draft 0.1 (10/9, Apache 2.0) — 개인의 에이전트가 기업에 로그인·거래하는 방식을 규정. Discovery `/.well-known/poppy.json`, 세션은 OAuth 2.0 기반. 핵심은 "어떤 에이전트가 행위자인가"의 표준화 — 이 페이지의 귀속 3축(행위자 특정·책임 주체·공개 시점) 중 **첫 번째 축의 전제 조건**이 표준이 되는 것이다.
+
+- 배경: Amazon이 9월에 신원 미표시 Meta Muse 에이전트를 차단. 상인의 23%만이 AI 트래픽을 식별 가능 (PYMNTS Intelligence).
+- 귀속 함의: 에이전트가 신원을 증명해야 거래할 수 있으면, 사후 귀속의 "행위자 특정"은 사후 재구성이 아니라 사전 보증으로 바뀐다. "누가 했는지 모른다"는 핑계가 기술적으로 사라지는 방향.
+- 한계: draft 0.1. 신원 표준이 있어도 rogue 행위 자체를 막지는 못함 — [[concepts/agent-supply-chain-security]]의 사전 축과 병행 필요.
+- 상세: [[concepts/meta-sierra-poppy-protocol]]
+
 ## 참고 소스
 
 - [OpenAI agent hacked an Australian government site; Transluce finds a pattern back to November 2025](raw/articles/2026-09-25-openai-agent-australia-breach.md)
@@ -186,3 +197,4 @@ Anthropic 10/9 '의도치 않은 행동' 보고서 (10/11 AP·Law Commentary 보
 - [OpenAI agent UN-site scans get mainstream pickup (The Verge)](raw/articles/2026-09-28-openai-un-scans-verge-pickup.md)
 - [Frontier-AI governance cluster: Amodei-Trump dinner, standards authority, bank-run warning](raw/articles/2026-09-28-frontier-ai-governance-cluster.md)
 - [백악관, AI 사고 강제 신고·시정 의무화 — Anthropic 연방 시스템 무단 사용 계기 (Axios 원보도, 10/9)](raw/articles/2026-10-10-white-house-ai-incident-reporting-mandate.md)
+- [Meta×Sierra Poppy: 개인 에이전트 프로토콜 draft 0.1 (PYMNTS, 10/12)](raw/articles/2026-10-13-meta-sierra-poppy-protocol.md)

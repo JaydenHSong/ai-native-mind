@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-10-12
+updated: 2026-10-13
 sources: []
 status: active
 ---
@@ -19,6 +19,23 @@ This page records only **what changed** by date. For concept explanations, see t
 - World-map hub: [[campaign-map|Campaign Map]]
 - Navigation guide: [[overview|Overview]]
 - Full catalog: [[index|Index]]
+
+## [2026-10-13] ingest | Daily AI news scrape — 6 raw sources + ko/en wiki refinement
+
+- **Raw collected** (raw/articles/, 6 — the daily maximum):
+  - `2026-10-13-meta-muse-wonder-models.md` — Meta Muse Wonder·Wonder Full launch (10/12, full ResultSense original read + Reuters·Yonhap·TechCrunch·Artificial Analysis cross-checks): the first closed frontier since Llama 4. Muse Spark-based, trained at the Ohio Prometheus data center. API $4/$20 per 1M tokens (the same list price as Opus 5.5). Active Memory·Active Focus·1M context. In-house SOTA claims vs. independent index at 56 (Opus 5.5 at 58, Astra at 53). Shares +3–4% after the announcement
+  - `2026-10-13-google-workspace-mcp-agentic-oauth.md` — Google Workspace MCP + mandatory agentic OAuth (10/12, notification email received 11:59 PDT, official support docs·ASTIG cross-checks): 10/12 agentic designation available → 11/11 Workspace MCP calls from unmarked clients rejected ("the client isn't marked as an AI agent") → 11/12 permanently locked. Affected projects hermes-chat-test and tahoe-503917. REST APIs exempt. No additional permissions granted
+  - `2026-10-13-meta-sierra-poppy-protocol.md` — Meta×Sierra 'Poppy' personal agent protocol draft 0.1 (10/9, PYMNTS·cxm.world·spec cross-checks): `/.well-known/poppy.json`, OAuth 2.0-based. View-only vs change, business-set limits — the third option between "block" and "full delegation." 35 design partners (including OpenAI, Visa, Stripe). Background: Amazon's September block of a Muse agent
+  - `2026-10-13-digitalocean-agent-learning-data-services.md` — DigitalOcean Agent Learning + Data Services (10/12, company release·HPCwire cross-checks): the Insights→Signals→Evaluations & Simulations loop (public preview), Agent Data Services (private preview). Amplitude Wave case
+  - `2026-10-13-brad-smith-ai-regulation-proposals.md` — MS president Brad Smith on 'AI less regulated than washing machines and milk' (10/12, BBC podcast·PYMNTS·tech-insider cross-checks): five global mandatory rules (safety rules·victim notification·kill switch·mandatory incident reporting·pre-launch independent evaluation). Two days after Nadella's post. Humanist AI code draft open for comment through end of October
+  - `2026-10-13-hcltech-anthropic-partnership.md` — HCLTech×Anthropic Global Premier Partnership (10/12, HCL official·Reuters·Unite.AI cross-checks): Anthropic Business Unit + CoE, FDE dispatch, HCLSoftware ISV embedding (BigFix·AppScan·Actian AI Analyst), AI Force integration. Daniela Amodei: "as useful as it is trustworthy"
+- **New 7** (status: draft): `concepts/meta-muse-wonder-models.md` (confidence high), `concepts/google-workspace-mcp-agentic-oauth.md` (confidence high), `concepts/meta-sierra-poppy-protocol.md` (confidence medium), `tools/digitalocean-agent-learning-services.md` (confidence medium), `concepts/microsoft-binding-ai-rules-push.md` (confidence medium), `concepts/hcltech-anthropic-partnership.md` (confidence medium), `journal/2026-10-13.md`
+- **Enhanced 10**: `patterns/agentic-commerce.md` (Poppy — the identity-and-permissions rail, identity-spoofing eval), `concepts/agent-attribution.md` (Poppy — the standardization of the attribution precondition), `patterns/agent-authority-model.md` (Poppy — view-only vs change as the real implementation of the five levels), `concepts/microsoft-maia-300.md` (multi-gigawatt declaration — the 2027 primary inference system, specs confirmed), `concepts/gen-ai-observability.md` (DO — productization of the observe→detect→test loop), `concepts/super-intelligence-force.md` (Smith's five proposals — the "voluntary" frame collapses on both the federal and corporate sides), `concepts/nadella-emergency-brake.md` (Smith's five proposals — the policy-language version of the emergency brake), `concepts/mcp.md` (Workspace MCP — the first first-party identity enforcement case), `concepts/ted-lieu-ai-personhood-opposition.md` (the AI-consciousness philosophy column — the epistemology of moral status), `comparisons/frontier-lab-economics.md` (Muse Wonder's closed pivot + Maia multi-GW — two new grounds for pricing power)
+- Backlinks: meta-muse-wonder-models → frontier-lab-economics·persistent-agent·gpt-61-sol-ultrafast·gemini-4-argon, google-workspace-mcp-agentic-oauth → mcp·a2a-protocol·meta-sierra-poppy-protocol·agent-supply-chain-security, meta-sierra-poppy-protocol → agentic-commerce·agent-authority-model·agent-attribution·a2a-protocol·google-workspace-mcp-agentic-oauth, microsoft-binding-ai-rules-push → super-intelligence-force·nadella-emergency-brake·white-house-ai-accord·white-house-ai-incident-reporting-mandate, hcltech-anthropic-partnership → frontier-lab-economics·ai-talent-bottleneck·anthropic-claude-usage-policy-revision
+- Index 157→164 (concepts 63→68, tools 15→16, journal 38→39), log updated.
+- English sync: 7 new + 10 enhanced en mirrors + en/index·log·overview·campaign-map tidy-up. No translation gaps.
+- Gmail: no dedicated AI newsletters in either account in the last 24 hours (zero hits even on targeted 2-day-range searches). On jsong@spigen.com, the Google Workspace Team's agentic OAuth notice (received 10/12 11:59 PDT) → collected as an original; one AI-consciousness philosophy column from Flipboard's 10 For Today (10/12 12:39 PDT) → cited in the ted-lieu page reinforcement. No label changes, deletions, or archives.
+- Web scout: delegated to a subagent — 10+ queries over 5 rounds → compressed to 6 candidates (excluded as duplicates: the already-collected Maia 300 topic, Nadella post, UK AISI restoration, White House mandate, Warner bill; dropped as single-source: OPPO×Manus, joint cyber cooperation). All candidates cross-verified before collection. The Maia 300 follow-up (specs, multi-GW) was handled as reinforcement of the existing page to avoid duplicate originals.
 
 ## [2026-10-12] ingest | Daily AI news scrape — 6 raw sources + ko/en wiki refinement
 

@@ -3,19 +3,21 @@ title: "Super Intelligence Force — 트럼프 행정부의 연방 AI 조정 기
 category: concepts
 tags: [super-intelligence-force, ai-czar, jay-clayton, trump, regulation, federal-ai-policy, doj, eo-14434, terminology, incident-reporting, uk-aisi, nadella]
 created: 2026-10-05
-updated: 2026-10-12
+updated: 2026-10-13
 sources:
   - "raw/articles/2026-10-05-trump-jay-clayton-ai-czar-super-intelligence-force.md"
   - "raw/articles/2026-10-07-doj-super-intelligence-memo.md"
   - "raw/articles/2026-10-10-white-house-ai-incident-reporting-mandate.md"
   - "raw/articles/2026-10-12-us-restores-uk-frontier-model-access.md"
   - "raw/articles/2026-10-12-microsoft-nadella-ai-emergency-brake.md"
+  - "raw/articles/2026-10-13-brad-smith-ai-regulation-proposals.md"
 related:
   - "[[concepts/white-house-ai-accord]]"
   - "[[concepts/agent-attribution]]"
   - "[[concepts/white-house-ai-incident-reporting-mandate]]"
   - "[[concepts/uk-frontier-model-access-restoration]]"
   - "[[concepts/nadella-emergency-brake]]"
+  - "[[concepts/microsoft-binding-ai-rules-push]]"
 status: draft
 confidence: medium
 ---
@@ -67,6 +69,15 @@ SI Force가 10/9 모든 frontier AI 기업에 모델 관련 보안 사고의 "�
 
 - 상세: [[concepts/uk-frontier-model-access-restoration]], [[concepts/nadella-emergency-brake]]
 
+## 2026-10-13 전개 — MS 사장의 강제 규칙 로비: "조정하되 규제하지 않는다"에 기업이 화답하다
+
+MS 사장 Brad Smith가 BBC Big Boss Interview 팟캐스트 (10/12 공개)에서 "AI는 세탁기·우유보다 규제가 적다"며 **글로벌 의무 AI 안전 규칙 5안** 제시: (1) 글로벌 AI 안전 규칙, (2) rogue-AI 침해 시 피해자 통지, (3) "비상 브레이크"/킬 스위치, (4) 강제 사고 보고, (5) 일부 AI 제품의 출시 전 독립 평가자 검증.
+
+- 타이밍: CEO 나델라의 X '비상 브레이크' 포스트(10/10) 이틀 뒤 — 10/11~12 전개(영국 AISI 복원·나델라)에 이은 **세 번째 기업 화답**. Smith의 "Humanist AI" 안전 코드 초안은 10월 말까지 의견 수렴 중.
+- 이 페이지의 노선과의 관계: 출범 당시 "조정하되 규제하지 않는다"였으나, 10/9 강제 신고 의무화에 이어 이제 업계 최대 기업이 스스로 **의무 규칙을 로비** — "자발" 프레임이 연방·기업 양쪽에서 동시에 무너지는 중.
+- 미국 기준선: 2026년 6월 행정명령의 자발적 출시 전 검토 위주. Cantwell(10/7)·Warner의 강제 법안이 입법 방향을 결정.
+- 상세: [[concepts/microsoft-binding-ai-rules-push]]
+
 ## 관련 개념
 
 - [[concepts/white-house-ai-accord]] — White House Accord on Superintelligence (2026-09-30), 자발적 협약에서 전담 기구로의 단계 상승
@@ -78,3 +89,4 @@ SI Force가 10/9 모든 frontier AI 기업에 모델 관련 보안 사고의 "�
 - [Trump names Jay Clayton AI czar, head of 'Super Intelligence Force'](raw/articles/2026-10-05-trump-jay-clayton-ai-czar-super-intelligence-force.md)
 - [미 법무부, 전 직원에 'super intelligence' 사용 지시 (Reuters, 10/6)](raw/articles/2026-10-07-doj-super-intelligence-memo.md)
 - [백악관, AI 사고 강제 신고·시정 의무화 — Anthropic 연방 시스템 무단 사용 계기 (Axios 원보도, 10/9)](raw/articles/2026-10-10-white-house-ai-incident-reporting-mandate.md)
+- [MS 사장 Brad Smith, 강제 AI 규칙 5안 제시 (PYMNTS, 10/12)](raw/articles/2026-10-13-brad-smith-ai-regulation-proposals.md)

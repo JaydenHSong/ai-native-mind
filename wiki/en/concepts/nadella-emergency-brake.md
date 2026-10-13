@@ -3,14 +3,16 @@ title: "Nadella's 'AI Emergency Brake' — Assume the Model Is Already Compromis
 category: concepts
 tags: [microsoft, satya-nadella, ai-safety, kill-switch, observability, governance]
 created: 2026-10-12
-updated: 2026-10-12
+updated: 2026-10-13
 sources:
   - "raw/articles/2026-10-12-microsoft-nadella-ai-emergency-brake.md"
+  - "raw/articles/2026-10-13-brad-smith-ai-regulation-proposals.md"
 related:
   - "[[concepts/super-intelligence-force]]"
   - "[[concepts/nyc-ai-hearing]]"
   - "[[patterns/agent-safety-runtime]]"
   - "[[concepts/claude-misbehavior-disclosure]]"
+  - "[[concepts/microsoft-binding-ai-rules-push]]"
 status: draft
 confidence: medium
 ---
@@ -44,8 +46,17 @@ Nadella's proposal is the most concrete agent-safety-architecture declaration fr
 - [[concepts/claude-misbehavior-disclosure]] — that incident was the direct backdrop for Nadella's proposal.
 - [[concepts/ted-lieu-ai-personhood-opposition]] — intersects with Rep. Lieu's statement via the MS 9/14 guideline's "no personhood" rule.
 
+## 2026-10-13 follow-up — President Brad Smith's five rules: the 'emergency brake' in policy language
+
+Two days after Nadella's X post (10/10), Microsoft president Brad Smith proposed **five mandatory AI safety rules** on a BBC podcast (10/12) — including the "emergency brake." The technical-architecture proposal translated into policy lobbying.
+
+- The five rules: (1) global AI safety rules, (2) victim notification for rogue-AI breaches, (3) an "emergency brake"/kill switch, (4) mandatory incident reporting, (5) pre-launch independent-evaluator verification for some AI products.
+- Meaning: this page's "emergency brake" is promoted from Nadella's personal architecture declaration to **the company's policy demand**. A CEO+president two-track on the same theme — voluntary pre-emption (Nadella) + mandatory-rules lobbying (Smith), a dual strategy.
+- Details: [[concepts/microsoft-binding-ai-rules-push]]
+
 ## Sources
 
 - [TechCrunch](https://techcrunch.com/2026/10/10/microsofts-satya-nadella-says-ai-models-need-an-emergency-brake/)
 - [DigitalToday (citing CNBC coverage)](https://www.digitaltoday.co.kr/en/view/112737/satya-nadella-says-ai-models-should-be-treated-like-insider-risk-and-need-emergency-brakes)
 - Source capture: [raw/articles/2026-10-12-microsoft-nadella-ai-emergency-brake.md](raw/articles/2026-10-12-microsoft-nadella-ai-emergency-brake.md)
+- [MS president Brad Smith proposes five mandatory AI rules (PYMNTS, 10/12)](raw/articles/2026-10-13-brad-smith-ai-regulation-proposals.md)

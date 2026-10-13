@@ -3,19 +3,21 @@ title: "Super Intelligence Force — The Trump Administration's Federal AI Coord
 category: concepts
 tags: [super-intelligence-force, ai-czar, jay-clayton, trump, regulation, federal-ai-policy, doj, eo-14434, terminology, incident-reporting, uk-aisi, nadella]
 created: 2026-10-05
-updated: 2026-10-12
+updated: 2026-10-13
 sources:
   - "raw/articles/2026-10-05-trump-jay-clayton-ai-czar-super-intelligence-force.md"
   - "raw/articles/2026-10-07-doj-super-intelligence-memo.md"
   - "raw/articles/2026-10-10-white-house-ai-incident-reporting-mandate.md"
   - "raw/articles/2026-10-12-us-restores-uk-frontier-model-access.md"
   - "raw/articles/2026-10-12-microsoft-nadella-ai-emergency-brake.md"
+  - "raw/articles/2026-10-13-brad-smith-ai-regulation-proposals.md"
 related:
   - "[[concepts/white-house-ai-accord]]"
   - "[[concepts/agent-attribution]]"
   - "[[concepts/white-house-ai-incident-reporting-mandate]]"
   - "[[concepts/uk-frontier-model-access-restoration]]"
   - "[[concepts/nadella-emergency-brake]]"
+  - "[[concepts/microsoft-binding-ai-rules-push]]"
 status: draft
 confidence: medium
 ---
@@ -67,6 +69,15 @@ On 10/9 the SI Force made "immediate disclosure and remediation" of model-relate
 
 - Details: [[concepts/uk-frontier-model-access-restoration]], [[concepts/nadella-emergency-brake]]
 
+## 2026-10-13 development — Microsoft's president lobbies for mandatory rules: industry answers "coordinate, don't regulate"
+
+Microsoft president Brad Smith proposed **five global mandatory AI safety rules** on the BBC Big Boss Interview podcast (released 10/12), arguing "AI is less regulated than washing machines and milk": (1) global AI safety rules, (2) victim notification when rogue AI breaches systems, (3) an "emergency brake"/kill switch, (4) mandatory incident reporting, (5) pre-launch independent-evaluator verification for some AI products.
+
+- Timing: two days after CEO Nadella's X 'emergency brake' post (10/10) — the **third corporate answer** after the 10/11–12 developments (UK AISI restoration, Nadella). Smith's "Humanist AI" safety code draft is open for comment through the end of October.
+- Against this page's line: the launch line was "coordinate, don't regulate," but after the 10/9 mandatory reporting order, the industry's largest company now **lobbies for mandatory rules itself** — the "voluntary" frame is collapsing simultaneously on both the federal and corporate sides.
+- US baseline: the June 2026 executive order centered on voluntary pre-release review. Cantwell's (10/7) and Warner's mandatory bills will decide the legislative direction.
+- Details: [[concepts/microsoft-binding-ai-rules-push]]
+
 ## Related concepts
 
 - [[concepts/white-house-ai-accord]] — White House Accord on Superintelligence (2026-09-30): the step from voluntary pact to a dedicated body
@@ -78,3 +89,4 @@ On 10/9 the SI Force made "immediate disclosure and remediation" of model-relate
 - [Trump names Jay Clayton AI czar, head of 'Super Intelligence Force'](raw/articles/2026-10-05-trump-jay-clayton-ai-czar-super-intelligence-force.md)
 - [US Justice Dept tells staff to use 'super intelligence' (Reuters, 10/6)](raw/articles/2026-10-07-doj-super-intelligence-memo.md)
 - [White House mandates AI incident reporting and remediation — triggered by Anthropic's federal-system misuse (Axios original, 10/9)](raw/articles/2026-10-10-white-house-ai-incident-reporting-mandate.md)
+- [MS president Brad Smith proposes five mandatory AI rules (PYMNTS, 10/12)](raw/articles/2026-10-13-brad-smith-ai-regulation-proposals.md)

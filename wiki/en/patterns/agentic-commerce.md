@@ -3,17 +3,19 @@ title: "Agentic Commerce"
 category: patterns
 tags: [agentic-commerce, shopping-agents, benchmarks, principal-agent, computer-use, steering, voice-agent, gemini, accessibility, stt]
 created: 2026-09-24
-updated: 2026-10-06
+updated: 2026-10-13
 sources:
   - "raw/articles/2026-09-24-agentic-commerce-benchmark-booking.md"
   - "raw/articles/2026-09-25-gemini-live-avatar-business-calling-suncatcher.md"
   - "raw/articles/2026-09-26-audioeye-agent-accessibility-study.md"
   - "raw/articles/2026-09-27-sarvam-saaras-v4-stt.md"
   - "raw/articles/2026-10-06-tiktok-agentic-commerce.md"
+  - "raw/articles/2026-10-13-meta-sierra-poppy-protocol.md"
 related:
   - "[[concepts/llm-evaluation]]"
   - "[[comparisons/agent-eval-frameworks]]"
   - "[[concepts/agent-supply-chain-security]]"
+  - "[[concepts/meta-sierra-poppy-protocol]]"
 status: draft
 confidence: low
 ---
@@ -91,9 +93,25 @@ TikTok launched **Buy Direct** (one-click in-app checkout without leaving the br
 
 ---
 
+## 2026-10-13 — Poppy: the identity-and-permissions rail for agent commerce
+
+Meta×Sierra's Personal Agent Protocol (PAP, aka Poppy) draft 0.1 (10/9, Apache 2.0) — the open standard defining how a person's AI agent logs in to and transacts with businesses. Discovery at `/.well-known/poppy.json`, OAuth 2.0-based sessions.
+
+- The third option between "block" and "full delegation": customers grant agents view-only vs change access; businesses set limits on what agents can do.
+- Launch partners: Genesys, Instinct, NiCE, Rocket, Shopify, Stripe, Walmart. 35 design partners including OpenAI, Visa, Mastercard, PayPal, Bank of America, Target, United Airlines.
+- Demo: a Meta Muse agent located Rocket's agent and issued a mortgage pre-approval letter for a Rocket executive "in moments."
+- Background: Amazon blocked an unidentified Meta Muse agent in September; only 23% of merchants can identify AI traffic (PYMNTS Intelligence).
+
+### Practical application
+
+"Whose side is the agent on" (steering) gains "can the agent prove who it is" (identity). When building an agent service that touches payments and accounts: (1) issue Poppy-compatible identities — view-only vs change as the permission-design default, (2) expose business-side limit settings in the UX, (3) default to blocking transactions from unidentified agents. Add **identity-spoofing** scenarios to the 9/24 steering benchmark's "adversarial environment" evals.
+
+- Details: [[concepts/meta-sierra-poppy-protocol]]
+
 ## Sources
 
 - [Agentic commerce reality check: Booking Holdings says LLM traffic is 'significantly below 1%' of bookings](raw/articles/2026-09-24-agentic-commerce-benchmark-booking.md)
 - [Gemini 3.8 Live Avatar, business-calling agents, and TPUs on a Falcon 9 (Project Suncatcher)](raw/articles/2026-09-25-gemini-live-avatar-business-calling-suncatcher.md)
 - [AudioEye: agent completion collapses on inaccessible sites (2026-09-24 study)](raw/articles/2026-09-26-audioeye-agent-accessibility-study.md)
 - [TikTok kicks off agentic commerce push: Buy Direct checkout + AI Shopping Assistant](raw/articles/2026-10-06-tiktok-agentic-commerce.md)
+- [Meta×Sierra Poppy: personal agent protocol draft 0.1 (PYMNTS, 10/12)](raw/articles/2026-10-13-meta-sierra-poppy-protocol.md)

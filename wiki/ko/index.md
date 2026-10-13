@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-10-12
-total_pages: 157
+updated: 2026-10-13
+total_pages: 164
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 전체 155개 페이지 | 최종 업데이트: 2026-10-12 (데일리 ingest: AI 뉴스 6건 수집 + 한/영 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
+> 전체 164개 페이지 | 최종 업데이트: 2026-10-13 (데일리 ingest: AI 뉴스 6건 수집 + 한/영 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
 
 ## 쉽게 읽기
 
@@ -26,7 +26,7 @@ status: active
 - **실전(Chapter 3~5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **엔드게임(Chapter 6~7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (63개)
+## Concepts (68개)
 
 ### 성장 맵 & 철학
 - [[concepts/ai-native-programmer]] — AI를 팀원으로 활용하여 1인이 팀 규모 결과를 내는 개발자, 성장 맵
@@ -71,6 +71,11 @@ status: active
 - [[concepts/sabi-brain-ai-interface]] — Sabi $50M 시드, 모자형 비침습 뇌-AI 인터페이스, 10만 시간 신경 데이터 주장, confidence low (2026-10-11)
 - [[concepts/microsoft-maia-300]] — Microsoft Maia 300 3세대 자체 AI 칩, TSMC 칩렛·랙당 96칩·내년 100만 개 배치, confidence high (2026-10-12)
 - [[concepts/nvidia-reflection-acquisition-talks]] — 엔비디아 × Reflection AI 인수·투자 협상, acqui-hire 후보·"미국산 오픈웨이트" 배경 (2026-10-12)
+- [[concepts/meta-muse-wonder-models]] — Meta Muse Wonder·Wonder Full, 클로즈드 프론티어 에이전트 모델·Active Memory·API $4/$20, confidence high (2026-10-13)
+- [[concepts/google-workspace-mcp-agentic-oauth]] — Google Workspace MCP + agentic OAuth, 11/11 시행·신원 분류 의무화, confidence high (2026-10-13)
+- [[concepts/meta-sierra-poppy-protocol]] — Meta×Sierra Poppy, 개인 에이전트 프로토콜 draft 0.1·35개 디자인 파트너 (2026-10-13)
+- [[concepts/microsoft-binding-ai-rules-push]] — MS Brad Smith '세탁기·우유보다 규제 적다', 강제 AI 규칙 5안 로비 (2026-10-13)
+- [[concepts/hcltech-anthropic-partnership]] — HCLTech×Anthropic Global Premier Partnership, 거버넌스 중심 기업 에이전틱 AI (2026-10-13)
 
 ### 운영·관측
 - [[concepts/gen-ai-observability]] — OpenTelemetry GenAI·에이전트 시맨틱 컨벤션, 트레이스·표준 계측
@@ -103,7 +108,7 @@ status: active
 - [[concepts/uk-frontier-model-access-restoration]] — 영국 AISI 사전공개 모델 접근 17일 차단 후 복원, 국가안보 검토 프레임 (2026-10-12)
 - [[concepts/publishers-ai-covert-use]] — 출판사의 은밀한 AI 사용, WIRED 조사·저자 동의 없는 카피·커버 제작 (2026-10-12)
 
-## Tools (15개)
+## Tools (16개)
 
 - [[tools/claude-code]] — Anthropic의 CLI 기반 AI 코딩 도구, 위키 유지보수 LLM
 - [[tools/obsidian]] — 로컬 마크다운 기반 노트 앱, 위키 브라우저/IDE
@@ -120,6 +125,7 @@ status: active
 - [[tools/zoho-zia]] — Zoho 자체 LLM + 40개 에이전트 + MCP 서버, 인도산 right-sized 모델 (2026-10-05)
 - [[tools/claude-google-workspace]] — Claude for Google Workspace 공개 베타, Docs·Sheets·Slides 직접 편집 (2026-10-07)
 - [[tools/gemini-agent-work]] — Google Cloud 기업용 범용 에이전트 'Gemini agent', 멀티모델 라우팅 + 지출 상한 (2026-10-09)
+- [[tools/digitalocean-agent-learning-services]] — DigitalOcean Agent Learning Services, 실행→학습→개선 루프 클라우드·Insights·Signals·Simulations (2026-10-13)
 
 ## Patterns (30개)
 
@@ -161,7 +167,9 @@ status: active
 - [[patterns/agent-mvp-stack-2026]] — 1인 MVP 스택 5대 영역 × 4 단계 + 의사결정 트리 (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — Vibe Coding의 7대 안티패턴과 회피법
 
-## Journal (38개)
+## Journal (39개)
+
+- [[journal/2026-10-13]] — 화요 데일리: Muse Wonder·Workspace MCP·Poppy·DO 러닝 서비스·Smith 5안·HCLTech×Anthropic
 
 - [[journal/2026-10-12]] — 월요 데일리: Maia 300·영국 AISI 접근 복원·Claude 오작동 자백·나델라 비상 브레이크·출판사 AI 은밀 사용·엔비디아×Reflection 협상
 

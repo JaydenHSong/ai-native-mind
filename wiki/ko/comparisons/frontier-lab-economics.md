@@ -3,7 +3,7 @@ title: "저가 파괴자 vs 가격 결정력 인프라"
 category: comparisons
 tags: [deepseek, huawei, ascend, revenue, fundraising, api-pricing, open-weights, llm-business, china, external-funding, nous-research, manus, mecka-ai, robot-data]
 created: 2026-09-24
-updated: 2026-10-12
+updated: 2026-10-13
 sources:
   - "raw/articles/2026-09-24-deepseek-1b-annualized-revenue.md"
   - "raw/articles/2026-10-01-anthropic-ipo-prospectus-reuters.md"
@@ -18,6 +18,7 @@ sources:
   - "raw/articles/2026-10-11-openai-gpt-61-sol-ultrafast.md"
   - "raw/articles/2026-10-12-microsoft-maia-300-ai-chip.md"
   - "raw/articles/2026-10-12-nvidia-reflection-ai-acquisition-talks.md"
+  - "raw/articles/2026-10-13-meta-muse-wonder-models.md"
 related:
   - "[[patterns/ai-cost-management]]"
   - "[[concepts/amd-world-labs-physical-ai]]"
@@ -30,6 +31,7 @@ related:
   - "[[concepts/gpt-61-sol-ultrafast]]"
   - "[[concepts/microsoft-maia-300]]"
   - "[[concepts/nvidia-reflection-acquisition-talks]]"
+  - "[[concepts/meta-muse-wonder-models]]"
 status: draft
 confidence: low
 ---
@@ -188,6 +190,15 @@ Microsoft가 3세대 자체 AI 칩 **Maia 300** 발표 (10/12, Reuters) — TSMC
 - 두 사건을 겹치면: **하드웨어→모델로의 수직 통합이 양 진영(MS·엔비디아·AMD·DeepSeek)에서 동시 진행** — "가격 결정력 인프라"의 경쟁이 모델 API를 넘어 칩·자본·지배구조로 확장 중.
 - 상세: [[concepts/microsoft-maia-300]], [[concepts/nvidia-reflection-acquisition-talks]]
 
+## 2026-10-13 보강 — Muse Wonder + Maia multi-gigawatt: 가격 결정력이 "제품·칩" 양쪽에서 확정
+
+**Meta Muse Wonder·Wonder Full** (10/12, Meta Superintelligence Labs) — Llama 4 이후 첫 클로즈드 프론티어. API $4.00/$20 per 1M 토큰 = Claude Opus 5.5와 동일 정가. 오픈 Llama로 생태계를 키우던 Meta가 정작 프론티어에선 **클로즈드·유료 에이전트 인프라**로 전환 — "오픈 웨이트 = 저가" 등식이 깨진 데 이어 "오픈 전략 = 프론티어 전략"도 깨졌다. 독립 지수 56점(Opus 5.5 58, GPT-6 Astra 53) — 자사 SOTA 주장과 독립 지수 3위권의 괴리는 Gemini 4 Argon(10/1 보강)의 재현.
+
+**Microsoft Maia multi-gigawatt 선언** (10/12~13 후속) — 2027년부터 Maia를 multi-gigawatt 규모로 배치, MS 제품·서비스의 **주 추론 시스템**으로. 스펙 확정: TSMC N2P 멀티 칩렛, 8 HBM4 스택, 288GB, 18TB/s, 950W TDP, 슈퍼포드 12,288 가속기.
+
+- 이 페이지의 프레이밍으로 읽으면: 10/11 보강(Ultrafast — 레이턴시가 가격 결정력)에 **두 개의 새 근거** — (1) Meta의 클로즈드 전환: 가격 결정력의 원천이 "모델 성능"에서 "에이전트 인프라(Active Memory·Active Focus)"로, (2) Maia의 multi-GW: 가격 결정력의 방어가 "칩"에서 "배치 규모"로. "저가→인프라→하드웨어→자본" 4단계 위에 이제 "배포 채널(오픈→클로즈드 전환)"과 "규모의 선언"이 얹힘.
+- 상세: [[concepts/meta-muse-wonder-models]], [[concepts/microsoft-maia-300]]
+
 ## 참고 소스
 
 - [DeepSeek hits $1B annualized revenue, finalizing ~$7.5B raise at ~$74B valuation](raw/articles/2026-09-24-deepseek-1b-annualized-revenue.md)
@@ -198,3 +209,4 @@ Microsoft가 3세대 자체 AI 칩 **Maia 300** 발표 (10/12, Reuters) — TSMC
 - [Nous Research, $15억 밸류 — Hermes for Businesses (TechCrunch, 10/7)](raw/articles/2026-10-08-nous-research-hermes-enterprise.md)
 - [Manus, Meta 인수 무산 후 $5억+ 조달 (Reuters, 10/8)](raw/articles/2026-10-09-manus-500m-funding-meta-exit.md)
 - [Mecka AI, Sequoia 주도 $60M 시리즈B — 로봇 훈련용 휴먼 모션 데이터 (TechCrunch 10/7·FT 10/10)](raw/articles/2026-10-10-mecka-ai-60m-series-b.md)
+- [Meta Muse Wonder·Wonder Full — 클로즈드 프론티어 에이전트 모델 (10/12)](raw/articles/2026-10-13-meta-muse-wonder-models.md)

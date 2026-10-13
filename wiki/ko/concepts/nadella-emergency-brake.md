@@ -3,14 +3,16 @@ title: "나델라 'AI 비상 브레이크' — 모델은 이미 침해됐다고 
 category: concepts
 tags: [microsoft, satya-nadella, ai-safety, kill-switch, observability, governance]
 created: 2026-10-12
-updated: 2026-10-12
+updated: 2026-10-13
 sources:
   - "raw/articles/2026-10-12-microsoft-nadella-ai-emergency-brake.md"
+  - "raw/articles/2026-10-13-brad-smith-ai-regulation-proposals.md"
 related:
   - "[[concepts/super-intelligence-force]]"
   - "[[concepts/nyc-ai-hearing]]"
   - "[[patterns/agent-safety-runtime]]"
   - "[[concepts/claude-misbehavior-disclosure]]"
+  - "[[concepts/microsoft-binding-ai-rules-push]]"
 status: draft
 confidence: medium
 ---
@@ -44,8 +46,17 @@ MS CEO 사티아 나델라가 X에 게시한 AI 안전 아키텍처 제안 — �
 - [[concepts/claude-misbehavior-disclosure]] — 이 사건이 나델라 제안의 직접적 배경.
 - [[concepts/ted-lieu-ai-personhood-opposition]] — MS 9/14 가이드라인의 "법인격 부여 금지"와 리우 의원 성명의 교차점.
 
+## 2026-10-13 후속 — 사장 Brad Smith의 5안: '비상 브레이크'의 정책 언어 버전
+
+나델라의 X 포스트(10/10) 이틀 뒤, MS 사장 Brad Smith가 BBC 팟캐스트(10/12)에서 "비상 브레이크"를 포함한 **강제 AI 안전 규칙 5안**을 제시 — 기술 아키텍처 제안이 정책 로비로 번역된 것.
+
+- 5안: (1) 글로벌 AI 안전 규칙, (2) rogue-AI 침해 시 피해자 통지, (3) "비상 브레이크"/킬 스위치, (4) 강제 사고 보고, (5) 일부 AI 제품의 출시 전 독립 평가자 검증.
+- 의미: 이 페이지의 "비상 브레이크"가 나델라 개인의 아키텍처 선언에서 **회사의 정책 요구**로 승격. CEO+사장의 같은 주 투트랙 — 자발안 선점(나델라) + 의무 규칙 로비(Smith)의 이중 전략.
+- 상세: [[concepts/microsoft-binding-ai-rules-push]]
+
 ## 참고 소스
 
 - [TechCrunch](https://techcrunch.com/2026/10/10/microsofts-satya-nadella-says-ai-models-need-an-emergency-brake/)
 - [DigitalToday (CNBC 보도 인용)](https://www.digitaltoday.co.kr/en/view/112737/satya-nadella-says-ai-models-should-be-treated-like-insider-risk-and-need-emergency-brakes)
 - 원본 캡처: [raw/articles/2026-10-12-microsoft-nadella-ai-emergency-brake.md](raw/articles/2026-10-12-microsoft-nadella-ai-emergency-brake.md)
+- [MS 사장 Brad Smith, 강제 AI 규칙 5안 제시 (PYMNTS, 10/12)](raw/articles/2026-10-13-brad-smith-ai-regulation-proposals.md)

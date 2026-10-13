@@ -3,7 +3,7 @@ title: "GenAI and Agent Observability (OpenTelemetry)"
 category: concepts
 tags: [observability, opentelemetry, genai, agents, tracing, semconv, event-sourcing, runtime-audit]
 created: 2026-04-11
-updated: 2026-09-26
+updated: 2026-10-13
 sources:
   - "raw/notes/2026-04-11-vercel-workflow-otel-agents-research.md"
   - "raw/articles/2026-05-01-otel-ai-agent-observability.md"
@@ -11,6 +11,7 @@ sources:
   - "raw/articles/2026-05-06-agentic-harness-engineering-observability.md"
   - "raw/articles/2026-05-24-activegraph-log-is-the-agent.md"
   - "raw/articles/2026-09-26-dataiku-agent-management.md"
+  - "raw/articles/2026-10-13-digitalocean-agent-learning-data-services.md"
 related:
   - "[[concepts/llm-evaluation]]"
   - "[[patterns/agent-server-harness]]"
@@ -18,6 +19,7 @@ related:
   - "[[concepts/harness-engineering]]"
   - "[[concepts/ai-orchestration]]"
   - "[[concepts/mcp]]"
+  - "[[tools/digitalocean-agent-learning-services]]"
 status: active
 confidence: high
 ---
@@ -174,6 +176,17 @@ That means observability is no longer just dashboards and postmortems. It become
 | **Inventory** | Which agents exist at all? | Dataiku Agent Management |
 | Telemetry standard | What do we record, and under what names? | OTel GenAI semantic conventions |
 
+## 2026-10-13 update — DigitalOcean: productization of the observe→detect→test loop
+
+DigitalOcean announced Agent Learning Services + Agent Data Services on 10/12 — packaging the agent "execute→learn→improve" loop as a cloud product.
+
+- **The three-product loop**: Insights (agent-behavior logging) → Signals (weak-spot flagging) → Evaluations & Simulations (pre-exposure change testing). Public preview.
+- **Data layer**: Agent Data Services (fully managed, private preview) + Inference Router optimizer (private preview).
+- Case in point: Amplitude's "agentic product team" Amplitude Wave runs on DigitalOcean Managed Agents.
+- Connection to this page: on top of the "observation layers" built so far — OTel semantic conventions (standard instrumentation) → Datadog (quantitative operations) → AHE (design observability) → ActiveGraph (runtime auditability) — now comes **a cloud selling the entire loop**. Observation moves from vendor standard to general-purpose infrastructure — solo developers gain the choice of "wire it yourself vs. buy the product."
+- Limits: company-announcement based. Private previews unverified, pricing undisclosed.
+- Details: [[tools/digitalocean-agent-learning-services]]
+
 ## Minimal implementation checklist
 
 - [ ] apply a consistent policy for model-call metadata on spans
@@ -187,3 +200,7 @@ That means observability is no longer just dashboards and postmortems. It become
 - [[patterns/agent-server-harness]] — backend placement and observability hooks
 - [[tools/vercel-workflow]] — platform-side workflow observability UI
 - [[concepts/mcp]] — tool-path observability should be designed together
+
+## Sources
+
+- [DigitalOcean Agent Learning + Data Services (Business Wire, 10/12)](raw/articles/2026-10-13-digitalocean-agent-learning-data-services.md)

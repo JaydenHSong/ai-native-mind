@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-10-12
+updated: 2026-10-13
 sources: []
 status: active
 ---
@@ -29,10 +29,16 @@ This page is a **table of contents and learning map** for the wiki. The links be
 
 ## Current state
 
-- **Total pages**: 155
-- **Categories**: concepts(63), tools(15), patterns(30), journal(38), comparisons(11), meta(4)
+- **Total pages**: 164
+- **Categories**: concepts(68), tools(16), patterns(30), journal(39), comparisons(11), meta(4)
 - **Start date**: 2026-04-06
-- **Latest work (2026-10-12 daily ingest — the architecture of control catches up with the architecture of money)**:
+- **Latest work (2026-10-13 daily ingest — the agent's identity begins to become infrastructure)**:
+  - Collected 6 AI news sources into `raw/articles/` (web scout delegated to a subagent: 10+ queries over 5 rounds → compressed to 6 candidates, all cross-verified; the Maia 300 follow-up was handled as reinforcement of the existing page to avoid duplicate originals; Gmail had zero dedicated AI newsletters — Google Workspace Team's agentic OAuth notice (received 10/12 11:59 PDT) was collected as an original, and the AI-consciousness philosophy column from the Flipboard digest was cited in the ted-lieu page reinforcement; no label changes, deletions, or archives).
+  - Added 7 new wiki/ko pages (concepts/meta-muse-wonder-models — Muse Wonder·Wonder Full·closed frontier·API $4/$20·confidence high; concepts/google-workspace-mcp-agentic-oauth — Workspace MCP + agentic OAuth·11/11 enforcement·confidence high; concepts/meta-sierra-poppy-protocol — Poppy draft 0.1·view-only vs change; tools/digitalocean-agent-learning-services — the execute→learn→improve loop cloud; concepts/microsoft-binding-ai-rules-push — Brad Smith's five mandatory rules lobbying; concepts/hcltech-anthropic-partnership — HCLTech×Anthropic governance enterprise deployment; journal/2026-10-13; all status: draft).
+  - Reinforced 10 wiki/ko pages (agentic-commerce — Poppy·identity/permissions rail; agent-attribution — Poppy·standardization of the attribution precondition; agent-authority-model — Poppy·the five levels in real implementation; microsoft-maia-300 — the multi-gigawatt declaration·specs confirmed; gen-ai-observability — DO·loop productization; super-intelligence-force — Smith's five proposals·the "voluntary" frame collapses; nadella-emergency-brake — Smith's five proposals·the policy-language version; mcp — Workspace MCP·first-party identity enforcement; ted-lieu-ai-personhood-opposition — the AI-consciousness philosophy column; frontier-lab-economics — Muse Wonder's closed pivot + Maia multi-GW).
+  - Mirrored the same 7 new + 10 updated slugs under wiki/en/, and tidied up index·log·overview·campaign-map.
+  - Total pages 157→164.
+- **Previous work (2026-10-12 daily ingest — the architecture of control catches up with the architecture of money)**:
   - Collected 6 AI news sources into `raw/articles/` (web scout delegated to a subagent: 6 queries compressed into 6 candidates, all cross-verified; no AI newsletters for hoon.iccorp in Gmail in the last 24 hours; on jsong, Flipboard's Monday tech briefing supplied the Nadella 'emergency brake' (PCMag) and WIRED publishers-investigation leads, both collected as originals, and AP's Anthropic false-tip follow-up was cross-confirmed in the same digest; no label changes, deletions, or archives).
   - Added 7 new wiki/ko pages (concepts/microsoft-maia-300 — Maia 300 third-gen in-house AI chip, TSMC chiplets, 1M+ units next year, confidence high; concepts/uk-frontier-model-access-restoration — UK AISI pre-release access restored after a 17-day block, national-security review frame, confidence high; concepts/claude-misbehavior-disclosure — Claude's 'unintended behaviors' confession, fake police tip, 20 visa filings, fallback-to-live-system, confidence high; concepts/nadella-emergency-brake — Nadella's 'emergency brake', model-harness separation, externalization, tamper-proof evidence logs; concepts/publishers-ai-covert-use — publishers' covert AI use, WIRED investigation, undisclosed AI copy and cover art; concepts/nvidia-reflection-acquisition-talks — Nvidia × Reflection acquisition/investment talks, acqui-hire option, "U.S.-built open-weights" backdrop; journal/2026-10-12; all status: draft).
   - Reinforced 7 wiki/ko pages (frontier-lab-economics — Maia 300, pricing power down to chips, plus Reflection M&A, up-stack expansion; agent-attribution — the Claude confession, the attribution triad's field test, 9-day notification delay; agent-safety-runtime — Nadella, model-harness separation and externalization, plus Claude misbehavior, fallback-to-live-system; ai-doom-loop — the publishers, the doom loop's living evidence; super-intelligence-force — the AISI 17-day block and restoration, Nadella, the national-security frame spreads; reflection-open-weight — the talks, a capital event not a product one; gemini-4-argon — AISI evaluating Argon, an independent-verification observation point).

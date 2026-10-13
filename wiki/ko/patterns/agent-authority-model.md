@@ -3,13 +3,15 @@ title: "Agent Authority Model — 업무별 에이전트 권한 등급화 (Logis
 category: patterns
 tags: [agent-authority, governance, guardrails, autonomy-levels, logistics-reply, lea, operations]
 created: 2026-10-05
-updated: 2026-10-05
+updated: 2026-10-13
 sources:
   - "raw/articles/2026-10-05-lea-ai-agent-authority-model.md"
+  - "raw/articles/2026-10-13-meta-sierra-poppy-protocol.md"
 related:
   - "[[patterns/agent-safety-runtime]]"
   - "[[concepts/ai-orchestration]]"
   - "[[concepts/agent-attribution]]"
+  - "[[concepts/meta-sierra-poppy-protocol]]"
 status: draft
 confidence: low
 ---
@@ -47,6 +49,16 @@ AI 에이전트에게 "최대 자율성"이 아니라 "업무에 맞는 권한"�
 - [[concepts/ai-orchestration]] — 에이전트 조율 6대 패턴, 권한 등급과 결합
 - [[concepts/agent-attribution]] — 권한 등급이 사고 시 책임 귀속의 기준이 됨
 
+## 2026-10-13 보강 — Poppy: view-only vs change가 실제 표준이 되다
+
+Meta×Sierra의 Personal Agent Protocol (Poppy) draft 0.1 (10/9, Apache 2.0)은 이 페이지의 5단계 권한 프레임워크(Inform→Recommend→Act→Coordinate→Governed Autonomy)가 **실제 프로토콜로 구현되는 첫 사례**다.
+
+- Poppy의 권한 모델: 고객이 에이전트에게 **view-only vs change** 접근 권한 부여, 기업은 에이전트가 할 수 있는 일에 한도 설정. LEA 모델의 "업무에 맞는 권한"이 프로토콜 레벨의 "권한 협상"으로 번역됨.
+- 실무 매핑: 에이전트를 Poppy 호환으로 만들 때 LEA 5단계를 view-only(Inform·Recommend) / change(Act·Coordinate·Governed Autonomy)의 2축으로 압축 매핑하는 것이 시작점 — 세밀한 5단계는 기업 측 한도(limit) 설정으로 위임.
+- 한계: draft 0.1이라 스펙 변동 가능. "차단 vs 전권"의 제3 옵션이 실제로 기업에 채택되는지는 35개 디자인 파트너의 이행 속도에 달림.
+- 상세: [[concepts/meta-sierra-poppy-protocol]]
+
 ## 참고 소스
 
 - [Logistics Reply Introduces the LEA AI Agent Authority Model (Business Wire)](raw/articles/2026-10-05-lea-ai-agent-authority-model.md)
+- [Meta×Sierra Poppy: 개인 에이전트 프로토콜 draft 0.1 (PYMNTS, 10/12)](raw/articles/2026-10-13-meta-sierra-poppy-protocol.md)

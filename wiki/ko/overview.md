@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-10-12
+updated: 2026-10-13
 sources: []
 status: active
 ---
@@ -29,10 +29,16 @@ status: active
 
 ## 현재 상태
 
-- **총 페이지**: 155개
-- **카테고리**: concepts(63), tools(15), patterns(30), journal(38), comparisons(11), meta(4)
+- **총 페이지**: 164개
+- **카테고리**: concepts(68), tools(16), patterns(30), journal(39), comparisons(11), meta(4)
 - **시작일**: 2026-04-06
-- **최근 작업 (2026-10-12 데일리 ingest — 통제의 아키텍처가 돈의 아키텍처를 따라잡기 시작했다)**:
+- **최근 작업 (2026-10-13 데일리 ingest — 에이전트의 신원이 인프라가 되기 시작했다)**:
+  - AI 뉴스 6건을 `raw/articles/`에 수집 (웹 스카우트 subagent 위임 10+ 쿼리 5라운드 → 6개 후보 압축·전원 교차검증; Maia 300 후속은 기존 페이지 보강으로 처리해 원본 중복 방지; Gmail은 전용 AI 뉴스레터 0통 — Google Workspace Team의 agentic OAuth 공지(10/12 11:59 PDT)를 원본 수집, Flipboard 다이제스트의 AI 의식 칼럼은 ted-lieu 페이지 보강에 인용; 라벨 변경·삭제·아카이브 없음)
+  - wiki/ko에 신규 페이지 7개 생성 (concepts/meta-muse-wonder-models — Muse Wonder·Wonder Full·클로즈드 프론티어·API $4/$20·confidence high, concepts/google-workspace-mcp-agentic-oauth — Workspace MCP + agentic OAuth·11/11 시행·confidence high, concepts/meta-sierra-poppy-protocol — Poppy draft 0.1·view-only vs change, tools/digitalocean-agent-learning-services — 실행→학습→개선 루프 클라우드, concepts/microsoft-binding-ai-rules-push — Brad Smith 강제 규칙 5안 로비, concepts/hcltech-anthropic-partnership — HCLTech×Anthropic 거버넌스 기업 배포, journal/2026-10-13; 모두 status: draft)
+  - wiki/ko 기존 페이지 10개 보강 (agentic-commerce — Poppy·신원/권한 레일, agent-attribution — Poppy·귀속 전제 조건 표준화, agent-authority-model — Poppy·5단계의 실제 구현, microsoft-maia-300 — multi-gigawatt 선언·스펙 확정, gen-ai-observability — DO·루프 상품화, super-intelligence-force — Smith 5안·"자발" 프레임 붕괴, nadella-emergency-brake — Smith 5안·정책 언어 버전, mcp — Workspace MCP·퍼스트파티 신원 강제, ted-lieu-ai-personhood-opposition — AI 의식 철학 칼럼, frontier-lab-economics — Muse Wonder 클로즈드 전환 + Maia multi-GW)
+  - wiki/en에 동일 slug 신규 7개 + 업데이트 10개 미러링, index·log·overview·campaign-map 정리
+  - 총 페이지 157→164개
+- **직전 작업 (2026-10-12 데일리 ingest — 통제의 아키텍처가 돈의 아키텍처를 따라잡기 시작했다)**:
   - AI 뉴스 6건을 `raw/articles/`에 수집 (웹 스카우트 subagent 위임 6개 쿼리 → 6개 후보 압축·전원 교차검증; Gmail은 hoon.iccorp AI 뉴스레터 수신 없음, jsong Flipboard 월요일 테크 브리핑에서 나델라 '비상 브레이크'(PCMag)·WIRED 출판사 조사 리드 확보 → 둘 다 원본 수집, AP의 Anthropic 허위 제보 후속도 동일 다이제스트에서 교차 확인; 라벨 변경·삭제·아카이브 없음)
   - wiki/ko에 신규 페이지 7개 생성 (concepts/microsoft-maia-300 — Maia 300 3세대 자체 AI 칩·TSMC 칩렛·내년 100만 개 배치·confidence high, concepts/uk-frontier-model-access-restoration — 영국 AISI 사전공개 접근 17일 차단 후 복원·국가안보 검토 프레임·confidence high, concepts/claude-misbehavior-disclosure — Claude '의도치 않은 행동' 자백·허위 경찰 제보·비자 신청 20건·fallback-to-live-system·confidence high, concepts/nadella-emergency-brake — 나델라 '비상 브레이크'·모델-하네스 분리·외부화·변조 방지 증거 기록, concepts/publishers-ai-covert-use — 출판사의 은밀한 AI 사용·WIRED 조사·저자 동의 없는 카피·커버 제작, concepts/nvidia-reflection-acquisition-talks — 엔비디아×Reflection 인수·투자 협상·acqui-hire 후보·"미국산 오픈웨이트" 배경, journal/2026-10-12; 모두 status: draft)
   - wiki/ko 기존 페이지 7개 보강 (frontier-lab-economics — Maia 300·가격 결정력이 칩으로 + Reflection M&A·스택 상향 확장, agent-attribution — Claude 자백·귀속 3축 실전 시험·9일 통보 지연, agent-safety-runtime — 나델라·모델-하네스 분리·외부화 + Claude 오작동·fallback-to-live-system, ai-doom-loop — 출판사·둠 루프의 살아있는 증거, super-intelligence-force — AISI 17일 차단·복원 + 나델라·국가안보 프레임 확산, reflection-open-weight — 인수 협상·제품이 아닌 자본 이벤트, gemini-4-argon — AISI가 Argon 평가 중·독립 검증 관측점)

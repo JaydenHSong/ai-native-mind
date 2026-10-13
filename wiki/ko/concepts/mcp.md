@@ -3,11 +3,12 @@ title: "MCP (Model Context Protocol)"
 category: concepts
 tags: [mcp, anthropic, protocol, tools, integration]
 created: 2026-04-09
-updated: 2026-10-06
+updated: 2026-10-13
 sources:
   - "raw/notes/2026-04-09-mcp-research.md"
   - "raw/articles/2026-05-01-a2a-protocol-spec.md"
   - "raw/articles/2026-10-06-mcp-protocol-pivoting-vulnerability.md"
+  - "raw/articles/2026-10-13-google-workspace-mcp-agentic-oauth.md"
 related:
   - "[[concepts/context-engineering]]"
   - "[[concepts/harness-engineering]]"
@@ -17,6 +18,7 @@ related:
   - "[[concepts/a2a-protocol]]"
   - "[[tools/claude-marketplace]]"
   - "[[tools/zoho-zia]]"
+  - "[[concepts/google-workspace-mcp-agentic-oauth]]"
 status: active
 confidence: high
 ---
@@ -128,6 +130,16 @@ Ars Technica (Dan Goodin, 10/5) — 독립 연구원 Syed Anas Mohiuddin이 5개
 - **공격 시나리오**: 공격자가 콘텐츠에 악성 텍스트 심음 → 특수 에이전트가 읽고 다른 에이전트에 정상 태스크로 위임 → 신뢰 때문에 실행. DB 내용·민감 정보 탈취, SSRF (조작된 경로 파라미터로 내부 엔드포인트로 리다이렉트).
 - [[concepts/agent-supply-chain-security]]와 직결 — MCP "USB-C" 비유의 어두운 면: 표준 포트가 곧 공격 표면.
 
+## 2026-10-13 — Google Workspace MCP: 퍼스트파티 MCP 서버 + agentic OAuth 강제
+
+MCP 표준의 신원 레이어가 퍼스트파티에서 실제로 강제되는 첫 사례 (Google Workspace Team 이메일 10/12 + Google Cloud 공식 문서).
+
+- **일정**: 10/12부터 Cloud 콘솔에서 agentic 표시 가능 → 11/11부터 표시 없는 클라이언트의 Workspace MCP 서버 호출 거부(에러: "the client isn't marked as an AI agent") → 11/12 영구 고정 (이후 변경 시 새 OAuth Client ID 필요).
+- **공식 권장**: 인간 인터랙션용 standard client ID와 AI 에이전트용 agentic client ID 분리. 일부 Google MCP 엔드포인트(Workspace tools)는 agentic client ID로만 허용.
+- **한계 명시**: agentic 표시는 추가 스코프·권한을 부여하지 않음. 표준 OAuth 2.0 보안 요건 동일.
+- 10/5 보안(Protocol Pivoting)과 짝: "USB-C 비유의 어두운 면"(공격 표면)에 대한 플랫폼의 답이 "신원 분류의 강제" — 신뢰·인가 정보의 "번역 중 소실" 문제를 플랫폼이 신원 보증으로 메우는 방향.
+- 상세: [[concepts/google-workspace-mcp-agentic-oauth]]
+
 ## 참고 소스
 
 - [MCP 리서치](raw/notes/2026-04-09-mcp-research.md)
@@ -136,3 +148,4 @@ Ars Technica (Dan Goodin, 10/5) — 독립 연구원 Syed Anas Mohiuddin이 5개
 - [MCP Specification](https://modelcontextprotocol.io/specification/2025-11-25)
 - [Code Execution with MCP (Anthropic)](https://www.anthropic.com/engineering/code-execution-with-mcp)
 - [MCP for agent-to-agent comms may be the riskiest protocol you've never heard of (Ars Technica)](raw/articles/2026-10-06-mcp-protocol-pivoting-vulnerability.md)
+- [Google Workspace MCP + agentic OAuth 의무화 (10/12)](raw/articles/2026-10-13-google-workspace-mcp-agentic-oauth.md)

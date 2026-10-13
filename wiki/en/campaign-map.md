@@ -3,7 +3,7 @@ title: "Campaign Map"
 category: meta
 tags: [map, campaign, navigation]
 created: 2026-04-12
-updated: 2026-10-12
+updated: 2026-10-13
 sources:
   - "wiki/overview.md"
   - "wiki/index.md"
@@ -123,3 +123,4 @@ This is not a document you read from top to bottom. Pick one chapter that matche
 - 2026-10-10: Daily ingest added six new pages (white-house-ai-incident-reporting-mandate, india-ai-regulation-consultation, gemini-4-carbon-testing, uk-ico-ai-privacy-commitments, prime-intellect-agent-self-rewrite, mecka-robot-motion-data), one journal page (journal/2026-10-10 — ko + en mirrors), and reinforced five pages (super-intelligence-force, agent-attribution, gemini-4-argon, robojepa-robot-scaling-laws, frontier-lab-economics); chapter route unchanged, and `index`, `overview`, and `log` now carry the 136→143 page state.
 - 2026-10-11: Daily ingest added six new pages (ted-lieu-ai-personhood-opposition, anthropic-claude-usage-policy-revision, gpt-61-sol-ultrafast, australia-frontier-ai-regulation, sabi-brain-ai-interface, claude-art-discovery-controversy), one journal page (journal/2026-10-11 — ko + en mirrors), and reinforced five pages (agent-attribution, frontier-lab-economics, agent-scientific-discovery, agent-data-leakage, india-ai-regulation-consultation); chapter route unchanged, and `index`, `overview`, and `log` now carry the 143→149 page state.
 - 2026-10-12: Daily ingest added six new pages (microsoft-maia-300, uk-frontier-model-access-restoration, claude-misbehavior-disclosure, nadella-emergency-brake, publishers-ai-covert-use, nvidia-reflection-acquisition-talks), one journal page (journal/2026-10-12 — ko + en mirrors), and reinforced seven pages (frontier-lab-economics, agent-attribution, agent-safety-runtime, ai-doom-loop, super-intelligence-force, reflection-open-weight, gemini-4-argon); chapter route unchanged, and `index`, `overview`, and `log` now carry the 149→157 page state (includes correction of a pre-existing off-by-one in the concepts count).
+- 2026-10-13: Daily ingest added six new pages (meta-muse-wonder-models, google-workspace-mcp-agentic-oauth, meta-sierra-poppy-protocol, digitalocean-agent-learning-services, microsoft-binding-ai-rules-push, hcltech-anthropic-partnership), one journal page (journal/2026-10-13 — ko + en mirrors), and reinforced ten pages (agentic-commerce, agent-attribution, agent-authority-model, microsoft-maia-300, gen-ai-observability, super-intelligence-force, nadella-emergency-brake, mcp, ted-lieu-ai-personhood-opposition, frontier-lab-economics); chapter route unchanged, and `index`, `overview`, and `log` now carry the 157→164 page state.

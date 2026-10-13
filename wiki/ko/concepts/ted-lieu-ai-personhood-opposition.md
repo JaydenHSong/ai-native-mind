@@ -3,7 +3,7 @@ title: "AI 법인격 반대 — 테드 리우 의원 성명 (2026-10-10)"
 category: concepts
 tags: [ai-personhood, legal-rights, ted-lieu, congress, liability]
 created: 2026-10-11
-updated: 2026-10-11
+updated: 2026-10-13
 sources:
   - "raw/articles/2026-10-11-ted-lieu-ai-personhood-opposition.md"
 related:
@@ -35,6 +35,14 @@ AI 네이티브 프로그래머에게 법인격 논쟁은 에이전트의 **법�
 - [[concepts/agent-attribution]] — 에이전트 보안 사건의 귀속(행위자·책임·공개 시점). 법인격 부여는 귀속 문제를 뒤흔드는 근본 변수.
 - [[concepts/nyc-ai-hearing]] — 뉴욕시 의회 AI 청문회, 선서 증언 + 킬 스위치 법안. 의회급 AI 법적 책임 논의의 연장선.
 - [[concepts/super-intelligence-force]] — 트럼프 행정부 Super Intelligence Force의 연방 AI 조정. 의회 입법 움직임과 행정부 규제 축이 동시 전개.
+
+## 2026-10-13 보강 — AI 의식 논쟁의 철학적 축: "동물이 단서가 될 수 있다"
+
+Flipboard 10 For Today 다이제스트(10/12)에 실린 Big Think 칼럼 (Henry Shevlin) — "AI가 의식을 갖게 된다면 어떻게 대할 것인가? 동물이 단서가 될 수 있다. AI 의식에 대한 우리의 믿음은 증거보다 자기이익에 더 좌우될 수 있다."
+
+- 이 페이지와의 연결: 리우 의원의 성명(법인격 반대)이 **법적 지위**의 문제라면, Shevlin의 칼럼은 **도덕적 지위**의 인식론 — "의식이 있는지를 어떻게 아는가"가 아니라 "알고 싶어 하는가"가 믿음을 결정한다는 주장.
+- 귀속 관점: 의식 논쟁이 "모델 본인이 주체인가"로 흐르면 [[concepts/agent-attribution]]의 "책임 주체 = 배포자" 전제가 흔들림 — 리우 의원의 경고(기업 책임 회피)와 같은 방향의 철학적 근거.
+- 한계: 철학 칼럼. 위키의 엔지니어링 맥락에서는 법인격 논쟁의 배경 지식으로만 참조.
 
 ## 참고 소스
 

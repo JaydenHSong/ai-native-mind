@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-10-12
+updated: 2026-10-13
 sources: []
 status: active
 ---
@@ -19,6 +19,23 @@ status: active
 - 월드맵 허브: [[campaign-map|Campaign Map]]
 - 진행 가이드: [[overview|Overview]]
 - 전체 도감: [[index|Index]]
+
+## [2026-10-13] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + 한/영 위키 정제
+
+- **Raw collected** (raw/articles/, 6건 — 일일 최대치):
+  - `2026-10-13-meta-muse-wonder-models.md` — Meta Muse Wonder·Wonder Full 출시 (10/12, ResultSense 원문 전문 열람 + Reuters·Yonhap·TechCrunch·Artificial Analysis 교차): Llama 4 이후 첫 클로즈드 프론티어. Muse Spark 기반·Ohio Prometheus DC 훈련. API $4/$20 per 1M (Opus 5.5와 동일 정가). Active Memory·Active Focus·1M 컨텍스트. 자사 SOTA 주장 vs 독립 지수 56점(Opus 5.5 58, Astra 53). 발표 후 주가 +3~4%
+  - `2026-10-13-google-workspace-mcp-agentic-oauth.md` — Google Workspace MCP + agentic OAuth 의무화 (10/12 이메일 수신 11:59 PDT, 공식 지원 문서·ASTIG 교차): 10/12 agentic 표시 가능 → 11/11 표시 없는 클라이언트 MCP 호출 거부("the client isn't marked as an AI agent") → 11/12 영구 고정. 영향 프로젝트 hermes-chat-test·tahoe-503917. REST API는 면제. 추가 권한 부여 아님
+  - `2026-10-13-meta-sierra-poppy-protocol.md` — Meta×Sierra 'Poppy' 개인 에이전트 프로토콜 draft 0.1 (10/9, PYMNTS·cxm.world·스펙 교차): `/.well-known/poppy.json`, OAuth 2.0 기반. view-only vs change, 기업의 한도 설정 — "차단 vs 전권"의 제3 옵션. 35개 디자인 파트너(OpenAI·Visa·Stripe 포함). 배경: 9월 Amazon의 Muse 에이전트 차단
+  - `2026-10-13-digitalocean-agent-learning-data-services.md` — DigitalOcean Agent Learning + Data Services (10/12, 회사 릴리스·HPCwire 교차): Insights→Signals→Evaluations & Simulations 루프 (public preview), Agent Data Services (private preview). Amplitude Wave 사례
+  - `2026-10-13-brad-smith-ai-regulation-proposals.md` — MS 사장 Brad Smith 'AI는 세탁기·우유보다 규제 적다' (10/12, BBC 팟캐스트·PYMNTS·tech-insider 교차): 글로벌 의무 규칙 5안(안전 규칙·피해자 통지·킬 스위치·강제 사고 보고·출시 전 독립 검증). 나델라 포스트 2일 뒤. Humanist AI 코드 초안 10월 말 의견 수렴
+  - `2026-10-13-hcltech-anthropic-partnership.md` — HCLTech×Anthropic Global Premier Partnership (10/12, HCL 공식·Reuters·Unite.AI 교차): Anthropic Business Unit + CoE, FDE 파견, HCLSoftware ISV 내장(BigFix·AppScan·Actian AI Analyst), AI Force 통합. Daniela Amodei "as useful as it is trustworthy"
+- **신규 7개** (status: draft): `concepts/meta-muse-wonder-models.md` (confidence high), `concepts/google-workspace-mcp-agentic-oauth.md` (confidence high), `concepts/meta-sierra-poppy-protocol.md` (confidence medium), `tools/digitalocean-agent-learning-services.md` (confidence medium), `concepts/microsoft-binding-ai-rules-push.md` (confidence medium), `concepts/hcltech-anthropic-partnership.md` (confidence medium), `journal/2026-10-13.md`
+- **보강 10개**: `patterns/agentic-commerce.md` (Poppy — 신원·권한 레일, 신원 위장 eval), `concepts/agent-attribution.md` (Poppy — 귀속 3축의 전제 조건 표준화), `patterns/agent-authority-model.md` (Poppy — view-only vs change가 5단계의 실제 구현), `concepts/microsoft-maia-300.md` (multi-gigawatt 선언 — 2027 주 추론 시스템, 스펙 확정), `concepts/gen-ai-observability.md` (DO — 관측→탐지→테스트 루프 상품화), `concepts/super-intelligence-force.md` (Smith 5안 — "자발" 프레임의 연방·기업 양쪽 붕괴), `concepts/nadella-emergency-brake.md` (Smith 5안 — 비상 브레이크의 정책 언어 버전), `concepts/mcp.md` (Workspace MCP — 퍼스트파티 신원 강제 첫 사례), `concepts/ted-lieu-ai-personhood-opposition.md` (AI 의식 철학 칼럼 — 도덕적 지위의 인식론), `comparisons/frontier-lab-economics.md` (Muse Wonder 클로즈드 전환 + Maia multi-GW — 가격 결정력의 새 근거 2개)
+- 역방향 교차참조: meta-muse-wonder-models → frontier-lab-economics·persistent-agent·gpt-61-sol-ultrafast·gemini-4-argon, google-workspace-mcp-agentic-oauth → mcp·a2a-protocol·meta-sierra-poppy-protocol·agent-supply-chain-security, meta-sierra-poppy-protocol → agentic-commerce·agent-authority-model·agent-attribution·a2a-protocol·google-workspace-mcp-agentic-oauth, microsoft-binding-ai-rules-push → super-intelligence-force·nadella-emergency-brake·white-house-ai-accord·white-house-ai-incident-reporting-mandate, hcltech-anthropic-partnership → frontier-lab-economics·ai-talent-bottleneck·anthropic-claude-usage-policy-revision
+- index 157→164 (concepts 63→68, tools 15→16, journal 38→39), log 갱신.
+- 영어 동기화: 신규 7개 + 보강 10개 en 미러 + en/index·log·journal·overview·campaign-map 정리. 번역 공백 없음.
+- Gmail: 최근 24시간 AI 뉴스레터 — 전용 AI 뉴스레터는 두 계정 모두 0통 (2일 범위 targeted 검색도 0건). jsong@spigen.com에서 Google Workspace Team의 agentic OAuth 공지(10/12 11:59 PDT 수신) → 원본 수집, Flipboard 10 For Today(10/12 12:39 PDT)의 AI 의식 철학 칼럼 1건 → ted-lieu 페이지 보강에 인용. 라벨 변경·삭제·아카이브 없음.
+- 웹 스카우트: subagent 위임으로 10+ 쿼리 5라운드 수집 → 6개 후보 압축 (중복 제외: Maia 300 기수집 주제·Nadella 포스트·UK AISI 복원·백악관 의무화·Warner 법안 등; 단일 출처로 탈락: OPPO×Manus·합동 사이버 공조 등). 후보 전원 교차검증 후 원본 수집. Maia 300 후속(스펙·multi-GW)은 기존 페이지 보강으로 처리해 원본 중복 방지.
 
 ## [2026-10-12] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + 한/영 위키 정제
 

@@ -3,11 +3,12 @@ title: "MCP (Model Context Protocol)"
 category: concepts
 tags: [mcp, anthropic, protocol, tools, integration]
 created: 2026-04-09
-updated: 2026-10-06
+updated: 2026-10-13
 sources:
   - "raw/notes/2026-04-09-mcp-research.md"
   - "raw/articles/2026-05-01-a2a-protocol-spec.md"
   - "raw/articles/2026-10-06-mcp-protocol-pivoting-vulnerability.md"
+  - "raw/articles/2026-10-13-google-workspace-mcp-agentic-oauth.md"
 related:
   - "[[concepts/context-engineering]]"
   - "[[concepts/harness-engineering]]"
@@ -17,6 +18,7 @@ related:
   - "[[concepts/a2a-protocol]]"
   - "[[tools/claude-marketplace]]"
   - "[[tools/zoho-zia]]"
+  - "[[concepts/google-workspace-mcp-agentic-oauth]]"
 status: active
 confidence: high
 ---
@@ -128,6 +130,16 @@ Ars Technica (Dan Goodin, 10/5) — independent researcher Syed Anas Mohiuddin s
 - **Exploit scenario**: attacker plants malicious text in content → a special-purpose agent reads it and delegates it as a normal task → the next agent executes it on trust. Consequences: database exfiltration, sensitive-data theft, SSRF (crafted path parameter redirecting the toolbox to internal endpoints).
 - Pairs with [[concepts/agent-supply-chain-security]] — the dark side of the MCP "USB-C" analogy: the standard port is also an attack surface.
 
+## 2026-10-13 — Google Workspace MCP: first-party MCP server + mandatory agentic OAuth
+
+The first case of the MCP standard's identity layer being actually enforced by a first party (Google Workspace Team email 10/12 + Google Cloud official docs).
+
+- **Timeline**: agentic designation available in the Cloud console from 10/12 → Workspace MCP server calls from unmarked clients rejected from 11/11 (error: "the client isn't marked as an AI agent") → permanently locked on 11/12 (a new OAuth Client ID required for any later change).
+- **Official guidance**: separate standard client IDs for human interaction and agentic client IDs for AI agents. Some Google MCP endpoints (Workspace tools) accept only agentic client IDs.
+- **Stated limits**: the agentic designation grants no additional scopes or permissions. Standard OAuth 2.0 security requirements are unchanged.
+- Pairs with the 10/5 security story (Protocol Pivoting): the platform's answer to the "dark side of the USB-C analogy" (attack surface) is "mandatory identity classification" — the platform closes the "lost in translation" trust/authorization gap with identity attestation.
+- Details: [[concepts/google-workspace-mcp-agentic-oauth]]
+
 ## References
 
 - [MCP Research Notes](raw/notes/2026-04-09-mcp-research.md)
@@ -136,3 +148,4 @@ Ars Technica (Dan Goodin, 10/5) — independent researcher Syed Anas Mohiuddin s
 - [MCP Specification](https://modelcontextprotocol.io/specification/2025-11-25)
 - [Code Execution with MCP (Anthropic)](https://www.anthropic.com/engineering/code-execution-with-mcp)
 - [MCP for agent-to-agent comms may be the riskiest protocol you've never heard of (Ars Technica)](raw/articles/2026-10-06-mcp-protocol-pivoting-vulnerability.md)
+- [Google Workspace MCP + mandatory agentic OAuth (10/12)](raw/articles/2026-10-13-google-workspace-mcp-agentic-oauth.md)

@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-10-12
-total_pages: 157
+updated: 2026-10-13
+total_pages: 164
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 155 managed pages total | Last updated: 2026-10-12 (daily ingest: 6 AI news sources collected + ko/en wiki refinement) — most pages include a **Start here** block.
+> 164 managed pages total | Last updated: 2026-10-13 (daily ingest: 6 AI news sources collected + ko/en wiki refinement) — most pages include a **Start here** block.
 
 ## Start here
 
@@ -26,7 +26,7 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - **Practice (Chapters 3–5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **Endgame (Chapters 6–7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (63)
+## Concepts (68)
 
 ### Growth map & philosophy
 - [[concepts/ai-native-programmer]] — a developer who uses AI as teammates to achieve team-scale outcomes solo; growth map
@@ -69,6 +69,11 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[concepts/sabi-brain-ai-interface]] — Sabi's $50M seed for a baseball-cap non-invasive brain-AI interface; claimed 100k-hour neural dataset, confidence low (2026-10-11)
 - [[concepts/microsoft-maia-300]] — Microsoft Maia 300 third-gen in-house AI chip: TSMC chiplets, 96 chips per rack, 1M+ units next year; confidence high (2026-10-12)
 - [[concepts/nvidia-reflection-acquisition-talks]] — Nvidia × Reflection AI acquisition/investment talks: acqui-hire option, "U.S.-built open-weights" backdrop (2026-10-12)
+- [[concepts/meta-muse-wonder-models]] — Meta Muse Wonder·Wonder Full: closed frontier agent models, Active Memory, API $4/$20; confidence high (2026-10-13)
+- [[concepts/google-workspace-mcp-agentic-oauth]] — Google Workspace MCP + agentic OAuth: mandatory agent-identity classification effective 11/11; confidence high (2026-10-13)
+- [[concepts/meta-sierra-poppy-protocol]] — Meta×Sierra Poppy: personal agent protocol draft 0.1, 35 design partners (2026-10-13)
+- [[concepts/microsoft-binding-ai-rules-push]] — Microsoft's Brad Smith on mandatory AI rules: 'less regulated than washing machines and milk,' five-rule lobbying push (2026-10-13)
+- [[concepts/hcltech-anthropic-partnership]] — HCLTech×Anthropic Global Premier Partnership: governance-first enterprise agentic AI (2026-10-13)
 
 ### Operations & observability
 - [[concepts/gen-ai-observability]] — OpenTelemetry GenAI and agent semantic conventions, traces, and standard instrumentation
@@ -103,7 +108,7 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[concepts/uk-frontier-model-access-restoration]] — UK AISI pre-release model access restored after a 17-day block; national-security review frame (2026-10-12)
 - [[concepts/publishers-ai-covert-use]] — publishers' covert AI use: WIRED investigation, undisclosed AI copy and cover art (2026-10-12)
 
-## Tools (15)
+## Tools (16)
 
 - [[tools/claude-code]] — Anthropic’s CLI-based AI coding tool; the wiki maintenance LLM
 - [[tools/obsidian]] — local markdown note app; wiki browser and IDE
@@ -120,6 +125,7 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[tools/zoho-zia]] — Zoho's in-house LLM + 40 agents + MCP server, India-built right-sized models (2026-10-05)
 - [[tools/claude-google-workspace]] — Claude for Google Workspace public beta, direct Docs/Sheets/Slides editing (2026-10-07)
 - [[tools/gemini-agent-work]] — Google Cloud's enterprise general agent 'Gemini agent': multi-model routing + spend caps (2026-10-09)
+- [[tools/digitalocean-agent-learning-services]] — DigitalOcean Agent Learning Services: execute→learn→improve loop cloud with Insights, Signals, Simulations (2026-10-13)
 
 ## Patterns (30)
 
@@ -161,7 +167,9 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[patterns/agent-mvp-stack-2026]] — solo MVP stack: 5 areas × 4 stages + decision tree (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — seven major anti-patterns in vibe coding and how to avoid them
 
-## Journal (38)
+## Journal (39)
+
+- [[journal/2026-10-13]] — Tuesday daily: Muse Wonder · Workspace MCP · Poppy · DO learning services · Smith's five rules · HCLTech×Anthropic
 
 - [[journal/2026-10-12]] — Monday daily: Maia 300 · UK AISI access restored · Claude misbehavior confession · Nadella emergency brake · publishers' covert AI use · Nvidia×Reflection talks
 

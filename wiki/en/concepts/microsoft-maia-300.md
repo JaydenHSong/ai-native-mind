@@ -3,7 +3,7 @@ title: "Microsoft Maia 300 — 3rd-Generation In-House AI Chip (2026-10-12)"
 category: concepts
 tags: [microsoft, maia-300, ai-chip, tsmc, nvidia, chiplet, azure, inference-cost]
 created: 2026-10-12
-updated: 2026-10-12
+updated: 2026-10-13
 sources:
   - "raw/articles/2026-10-12-microsoft-maia-300-ai-chip.md"
 related:
@@ -31,6 +31,15 @@ Microsoft's third-generation in-house AI inference chip — targeting 1M+ units 
 ## Why it matters
 
 For the AI-native programmer, Maia 300 signals that **control over inference cost is moving down into chip design**. While OpenAI attaches a 6x premium to latency via Ultrafast, Microsoft pushes inference unit cost down with in-house silicon — the top and bottom of the price spectrum moving simultaneously. From a harness-design view, "which chip fleet your workload runs on" becomes a new routing variable: the price/latency delta between Azure's Maia fleet and Nvidia GPU fleets changes agent-loop economics. Treat the "40% efficiency" claim as marketing until independent benchmarks arrive, since the comparison target is undisclosed.
+
+## 2026-10-13 follow-up — the multi-gigawatt inference declaration: Maia becomes Microsoft's primary inference system
+
+Follow-up coverage the day after the announcement (Neowin, webpronews 10/12; ANI 10/13) fleshed out Maia 300's detailed specs and the 2027 plan.
+
+- **Specs confirmed**: TSMC N2P multi-chiplet, 8 HBM4 stacks, 288GB capacity, 18TB/s peak bandwidth, 950W TDP. 96 accelerators per rack at 167kW (27.6TB HBM, 1.7PB/s aggregate bandwidth). Superpods of up to 128 racks / 12,288 accelerators.
+- **More benchmark claims**: up to ~40% more tokens per megawatt vs. "leading GPU-based systems" + up to 7x rack-scale token throughput vs. Maia 200 (vendor claims; GPU baseline undisclosed). Maia 200 already runs Copilot (US, Europe, Australia) with a claimed 1.7x tokens/watt over GPUs.
+- **2027 plan**: deploy Maia at multi-gigawatt scale as the **primary inference system** for Microsoft products and services (Copilot, GitHub Copilot, Foundry, OpenAI models). Reuters: 1M+ units possible in 2027.
+- Meaning: this page's signal — "control over inference cost is moving down into chip design" — is no longer a declaration but a **deployment plan**. The harness routing variable (Azure Maia fleet vs. Nvidia GPU fleet) becomes 2027's operational reality.
 
 ## Related
 
