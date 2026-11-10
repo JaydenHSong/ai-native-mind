@@ -3,7 +3,7 @@ title: "Super Intelligence Force — The Trump Administration's Federal AI Coord
 category: concepts
 tags: [super-intelligence-force, ai-czar, jay-clayton, trump, regulation, federal-ai-policy, doj, eo-14434, terminology, incident-reporting, uk-aisi, nadella]
 created: 2026-10-05
-updated: 2026-10-13
+updated: 2026-10-16
 sources:
   - "raw/articles/2026-10-05-trump-jay-clayton-ai-czar-super-intelligence-force.md"
   - "raw/articles/2026-10-07-doj-super-intelligence-memo.md"
@@ -11,6 +11,7 @@ sources:
   - "raw/articles/2026-10-12-us-restores-uk-frontier-model-access.md"
   - "raw/articles/2026-10-12-microsoft-nadella-ai-emergency-brake.md"
   - "raw/articles/2026-10-13-brad-smith-ai-regulation-proposals.md"
+  - "raw/articles/2026-10-16-us-super-intelligence-task-force.md"
 related:
   - "[[concepts/white-house-ai-accord]]"
   - "[[concepts/agent-attribution]]"
@@ -18,6 +19,7 @@ related:
   - "[[concepts/uk-frontier-model-access-restoration]]"
   - "[[concepts/nadella-emergency-brake]]"
   - "[[concepts/microsoft-binding-ai-rules-push]]"
+  - "[[concepts/us-super-intelligence-task-force]]"
 status: draft
 confidence: medium
 ---
@@ -78,11 +80,23 @@ Microsoft president Brad Smith proposed **five global mandatory AI safety rules*
 - US baseline: the June 2026 executive order centered on voluntary pre-release review. Cantwell's (10/7) and Warner's mandatory bills will decide the legislative direction.
 - Details: [[concepts/microsoft-binding-ai-rules-push]]
 
+## 2026-10-16 development — the Task Force's first meeting: charter adopted, 120-day review underway
+
+The White House Super Intelligence Task Force's first official meeting (10/15, reported 10/16 by Reuters and AI Affairs) — **charter adoption** puts the 120-day review on its formal track.
+
+- **Chair**: Jay Clayton (DNI and AI czar). **Members**: Scott Kupor (OPM), Andrew Ferguson (FTC), Emil Michael (Department of Defense).
+- **PCAST**: a report on three risks — cybersecurity, biosecurity, model control. **David Sacks**: leads the risk research.
+- **Emil Michael (DoD)**: tasked with building an **early-warning reporting protocol** for AI lab breaches, hacks, and jailbreaks — the institutionalized follow-up to the 10/9 Anthropic incident (unauthorized use of federal systems). From "report after the incident" to "early warning before the breach."
+- **Enforcement**: violation-enforcement channels through the FTC and DOJ made explicit.
+- Against this page's line: it launched as "coordinate, don't regulate," but after the 10/9 mandatory reporting order, the charter now **documents FTC and DOJ enforcement channels** — the weight shift from "coordination" to "enforcement" hardening as a fourth real exercise. The 120-day review (January 2027) is structured so it can end as enforcement groundwork, not just a risk study.
+- Details: [[concepts/us-super-intelligence-task-force]]
+
 ## Related concepts
 
 - [[concepts/white-house-ai-accord]] — White House Accord on Superintelligence (2026-09-30): the step from voluntary pact to a dedicated body
 - [[concepts/agent-attribution]] — the judicial channel of the attribution/liability debate (FTC, states, NYC), contrasted with this federal coordination channel
 - [[concepts/white-house-ai-incident-reporting-mandate]] — details of the 10/9 mandatory reporting and remediation
+- [[concepts/us-super-intelligence-task-force]] — the Task Force's first meeting: charter adopted, 120-day review underway
 
 ## Sources
 
@@ -90,3 +104,4 @@ Microsoft president Brad Smith proposed **five global mandatory AI safety rules*
 - [US Justice Dept tells staff to use 'super intelligence' (Reuters, 10/6)](raw/articles/2026-10-07-doj-super-intelligence-memo.md)
 - [White House mandates AI incident reporting and remediation — triggered by Anthropic's federal-system misuse (Axios original, 10/9)](raw/articles/2026-10-10-white-house-ai-incident-reporting-mandate.md)
 - [MS president Brad Smith proposes five mandatory AI rules (PYMNTS, 10/12)](raw/articles/2026-10-13-brad-smith-ai-regulation-proposals.md)
+- [White House Super Intelligence Task Force holds first meeting, adopts charter (Reuters, AI Affairs, 10/16)](raw/articles/2026-10-16-us-super-intelligence-task-force.md)

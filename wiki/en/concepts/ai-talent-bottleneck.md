@@ -1,16 +1,19 @@
 ---
 title: "AI Talent Bottleneck"
 category: concepts
-tags: [anthropic, frontier-academy, enterprise, talent, workforce, ai-adoption, bottleneck]
+tags: [anthropic, frontier-academy, enterprise, talent, workforce, ai-adoption, bottleneck, junior-hiring, attention-bottleneck]
 created: 2026-10-03
-updated: 2026-10-03
+updated: 2026-10-19
 sources:
   - "raw/articles/2026-10-03-anthropic-frontier-academy-100m.md"
+  - "raw/articles/2026-10-19-anthropic-workforce-report.md"
 related:
   - "[[tools/managed-agents]]"
   - "[[comparisons/frontier-lab-economics]]"
   - "[[patterns/agentic-coding]]"
   - "[[journal/2026-10-03]]"
+  - "[[concepts/anthropic-workforce-report]]"
+  - "[[concepts/imf-asia-ai-labor-outlook]]"
 status: draft
 confidence: medium
 ---
@@ -50,6 +53,18 @@ Anthropic announced a **$100M (~KRW 136B)** investment in Claude Frontier Academ
 - Single press-digest source (kimkj) — second-hand delivery of an Anthropic announcement.
 - 10,000 is a **target**, not achieved results. $100M disbursement timing and detailed curriculum undisclosed.
 - confidence **medium** (the announcement itself trends across multiple reporting paths, but the specifics rest on a single source).
+
+## 2026-10-19 update — Anthropic's internal measurement: the junior-hiring cliff at 27%→9%
+
+Anthropic Institute report "How employment is changing at Anthropic" (published 10/16; in-window ANI wire re-report 10/18) — the measured follow-up, 13 days later, to this page's 10/3 "bottleneck moves from models to people."
+
+- **The junior cliff**: junior share of technical hiring 27% → 9% (early 2025 → 2026); junior postings fell sharply after December 2025. The talent bottleneck now has numbers.
+- **6x agent hours**: by August, employee-directed agents logged ~6x their human handlers' hours; code commits per engineer ~5x.
+- **The new bottleneck is attention**: median meeting time +20%; meta-work 10% → 22% of interactive sessions; ~80% of interactive session time is agents waiting on humans.
+- Read against this page's framing: the 10/3 "second bottleneck" (people) is becoming a **third bottleneck** (attention). Frontier Academy ($100M) was "let's train people"; this report asks "where do we deploy the trained people" — supervision and judgment, not execution.
+- Pairs with the same week's IMF Asia report (10/18; 40M postings, −10%) — macro vs company-internal measurement. Read together, never merged.
+- Limitations: a self-study (the tool vendor measuring its own tools); original publication 10/16, collected on the 10/18 re-report.
+- Details: [[concepts/anthropic-workforce-report]]
 
 ## Related concepts
 

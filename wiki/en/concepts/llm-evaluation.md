@@ -1,9 +1,9 @@
 ---
 title: "LLM Evaluation (Evals)"
 category: concepts
-tags: [evaluation, testing, llm, quality, evals, judge-reliability, long-horizon, native-runtime, benchmark, coding-benchmark, behavioral-safety, version-upgrade, trajectory-audit, harness-safety, artifact-aware-review, delegation-benchmark, privacy-benchmark, reward-hacking, process-evaluation, reproducibility, disclosure-audit, terminal-benchmark, benchmark-provenance, workflow-evaluation, artifact-quality, claim-scrutiny, agent-scientific-discovery]
+tags: [evaluation, testing, llm, quality, evals, judge-reliability, long-horizon, native-runtime, benchmark, coding-benchmark, behavioral-safety, version-upgrade, trajectory-audit, harness-safety, artifact-aware-review, delegation-benchmark, privacy-benchmark, reward-hacking, process-evaluation, reproducibility, disclosure-audit, terminal-benchmark, benchmark-provenance, workflow-evaluation, artifact-quality, claim-scrutiny, agent-scientific-discovery, taste-bench, mid-task-judgment]
 created: 2026-04-09
-updated: 2026-09-25
+updated: 2026-10-19
 sources:
   - "raw/notes/2026-04-09-llm-evaluation.md"
   - "raw/articles/2026-05-12-judge-reliability-harness-rand.md"
@@ -21,6 +21,8 @@ sources:
   - "raw/articles/2026-05-24-workstreambench-finance-spreadsheet-agents.md"
   - "raw/articles/2026-09-24-agentic-commerce-benchmark-booking.md"
   - "raw/articles/2026-09-25-anthropic-claude-crispr-art-enzyme.md"
+  - "raw/articles/2026-10-14-openai-anthropic-evaluator-restrictions.md"
+  - "raw/articles/2026-10-19-taste-bench.md"
 related:
   - "[[concepts/harness-engineering]]"
   - "[[concepts/context-rot-hallucination]]"
@@ -29,6 +31,8 @@ related:
   - "[[comparisons/agent-eval-frameworks]]"
   - "[[journal/2026-05-17]]"
   - "[[patterns/agentic-commerce]]"
+  - "[[concepts/evaluator-independence-restrictions]]"
+  - "[[concepts/taste-bench]]"
 status: active
 confidence: high
 ---
@@ -492,6 +496,34 @@ HN's counterarguments are the eval checklist: (1) was it actually new? (literatu
 "Discovery" is not one inference — it's the output of a **measure → compare → literature-check → report** pipeline. Evals of discovery claims should score the pipeline's auditability, not the headline.
 
 > Details: [[patterns/agent-scientific-discovery|Agent Scientific Discovery]]
+
+## 2026-10-14 Addendum — evaluator independence: a new layer below the judge
+
+Reuters (10/13) reports OpenAI and Anthropic are negotiating **restrictions on the public disclosures of independent safety evaluators doing embedded evaluations**: lab editorial and approval control over reports, lab-staff observation of evaluators, and bans on working at multiple labs — the exact opposite of both companies' stance a month earlier that findings must publish "without editorial control" / "with editorial independence." (Anthropic reserves approval rights over new evaluation firms.) The stated justification: embedded evaluators could carry confidential information to competitors. Reuters is first to report the negotiation's details; nothing is confirmed as implemented.
+
+### A layer below the judge
+
+| Layer | Question | Reference |
+|---|---|---|
+| **Evaluator independence** | Who holds editorial control of the report? | Embedded evaluation (10/14) |
+| Judge reliability | Is the grader stable and free of bias? | RAND JRH (5/12) |
+| Disclosure audit | Are execution conditions disclosed? | Disclosure Audit (5/22) |
+
+The JRH layer asked "is the grader trustworthy," the Disclosure Audit layer asked "are execution conditions disclosed" — this layer asks **who controls the disclosure itself**. [[concepts/white-house-ai-accord]]'s promise #3 (partnerships with independent external evaluators) and the Joint Commitment's "independent external-evaluator re-verification" hollow out the moment the lab holds editorial control: independent evaluation becomes outsourced internal evaluation.
+
+- Solo-dev reading rule: treat "who held editorial control" as report metadata — a report the lab approved reads like marketing.
+- Details: [[concepts/evaluator-independence-restrictions]]
+
+## 2026-10-19 update — Taste-Bench: not "did it finish" but "how did it get there"
+
+Microsoft/CityU Hong Kong's "The Tasteful Agent" (September arXiv; 10/18 press) — measuring agents' **mid-task judgment (taste)** on long-horizon work: 502 binary decision forks.
+
+- **A new eval layer**: where SWE-bench asks "did it finish," Taste-Bench asks "the smart route or a lucky one" — below the 10-14 update's "judge independence" (is the grader independent?) sits a new **"judge the journey"** layer (was the process wise?).
+- **Numbers**: best GPT-5.6 Sol 59.7% (chance 25%). Detour forks consistently harder than parallel. Collapses to **21%** when evidence arrives late — near random.
+- **Design implication**: bigger reasoning budgets don't help. The fix is injecting better decision criteria (distillation, advice) — Qwen3.6-27B 30% → 47.9%; SWE-bench Pro 14.6% → 33.7%.
+- Candidate "process evaluation" category for this page's benchmark list. Long-running agents need two eval axes: success rate plus mid-task judgment.
+- Limitations: September preprint — the 10/18 press wave is the news hook. Per-model scores are press-sourced.
+- Details: [[concepts/taste-bench]]
 
 ---
 

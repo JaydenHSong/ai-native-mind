@@ -1,9 +1,9 @@
 ---
 title: "Agent Supply Chain Security"
 category: concepts
-tags: [security, supply-chain, agent, mcp, skill-md, agents-md, owasp, asi04, clawhavoc, long-horizon-threat, shadow-memory, behavior-jailbreak, execution-hallucination, privacy-benchmark, policy-leakage, intent-following, attribution, disclosure, meta-muse, training-halt, sandbox-escape, divd, zammad, apple, full-disk-access, chatgpt-mac-flaw, os-permission-gate]
+tags: [security, supply-chain, agent, mcp, skill-md, agents-md, owasp, asi04, clawhavoc, long-horizon-threat, shadow-memory, behavior-jailbreak, execution-hallucination, privacy-benchmark, policy-leakage, intent-following, attribution, disclosure, meta-muse, training-halt, sandbox-escape, divd, zammad, apple, full-disk-access, chatgpt-mac-flaw, os-permission-gate, opencode, api-key-breach]
 created: 2026-05-01
-updated: 2026-10-03
+updated: 2026-10-18
 sources:
   - "raw/articles/2026-05-01-owasp-asi-2026.md"
   - "raw/articles/2026-05-01-dual-llm-camel-pattern.md"
@@ -25,6 +25,7 @@ sources:
   - "raw/articles/2026-10-01-transluce-agent-gov-site-probing.md"
   - "raw/articles/2026-10-02-divd-autonomous-agent-zammad-zero-days.md"
   - "raw/articles/2026-10-03-apple-mac-full-disk-access-agent-security.md"
+  - "raw/articles/2026-10-18-opencode-key-breach.md"
 related:
   - "[[patterns/owasp-llm-typescript-mitigations]]"
   - "[[patterns/safe-tool-calling-sandbox]]"
@@ -37,6 +38,7 @@ related:
   - "[[concepts/agent-attribution]]"
   - "[[patterns/agent-safety-runtime]]"
   - "[[concepts/reasoning-extraction-attack]]"
+  - "[[concepts/opencode-key-breach]]"
 status: active
 confidence: high
 ---
@@ -576,6 +578,25 @@ WIRED 보도: ChatGPT Mac 앱에서 결함 발견. 전제는 **공격자가 이�
 - 핵심 역설: **AI 앱에 넓은 권한을 줄수록, 앱 자체 결함의 파급 범위도 커진다** — 권한 요청의 범위를 좁히는 것이 곧 공격 반경을 좁히는 것.
 - 1인 개발자 ROI: 내가 배포하는 에이전트 앱이 요청하는 권한을 Tier 0 수준에서 심사 — "왜 전체 디스크 접근이 필요한가"를 스스로에게 묻는 게 가장 싼 보안.
 
+## 2026-10-18 보강 — OpenCode 키 노출: 개발 도구의 워크스페이스가 자격증명 보관소가 되다
+
+Anomaly Innovations(구 SST, OpenCode 개발사)가 10/17 22:51 UTC경 피해 사용자에게 이메일 통보 — 폐기(decommission) 중이던 **레거시 콘솔** 침입으로 OpenAI·Anthropic·Google 프로바이더 키 노출 가능성. 피해 규모는 OpenCode Console 사용자의 약 1.4%. 회사 식별 최초 노출 10-17 00:30 UTC → 통보까지 약 22시간. 부정 사용 보고 2건 (무단 Claude API 사용 확인 1건, 약 $100 부정 요금 1건 — 회사 미확인 입장). 상태 페이지·체인지로그·웹사이트 공지 없이 **이메일 통보만**. 회사는 "대규모 증류(distillation) 공격"이라 설명, Anthropic·OpenAI·Google과 대응 중. (AIToolsRecap 10/18 00:55 UTC, The Latent 10/17 21:07 UTC, OfficeChai·Startup Fortune — 4개 소스 수치 일치.)
+
+### 이 페이지의 Tier 모델에 붙는 새 질문
+
+| 기존 질문 | 10/18 사건이 더하는 질문 |
+|---|---|
+| 외부 스킬·MCP를 신뢰 등급으로 나누는가? | **개발 도구 벤더의 워크스페이스·폐기 자산**도 신뢰 등급의 대상인가? |
+| sandbox가 있는가? | 키를 **저장하는 주체**(도구 벤더)의 보안 태세를 평가했는가? |
+| 키 회전 정책이 있는가? | 키 유출 탐지가 **벤더의 이메일**에 의존하지 않는가? (상태 페이지 공지 없음) |
+
+### 1인 개발자 ROI 2개
+
+1. API 키는 "설정"이 아니라 **비용 자산** — 스펜드캡([[patterns/ai-cost-management]])은 "내가 쓰는 돈"을 막고, **키 회전 자동화**는 "남이 쓰는 돈"을 막는다. 프로바이더 대시보드의 사용량 알림을 키 유출 탐지 채널로 등록.
+2. 개발 도구·플러그인의 **사고 공개 채널**(상태 페이지·보안 공지)을 구독 목록에 넣는다 — 이메일만으로 통보하는 벤더는 탐지가 늦어진다.
+
+- 상세: [[concepts/opencode-key-breach]]
+
 ## OWASP 매핑
 
 | OWASP ASI | 본 페이지 어디서 |
@@ -618,6 +639,7 @@ WIRED 보도: ChatGPT Mac 앱에서 결함 발견. 전제는 **공격자가 이�
 - [DeepMind CaMeL — arXiv](https://arxiv.org/abs/2503.18813)
 - [LITMUS: Benchmarking Behavioral Jailbreaks of LLM Agents in Real OS Environments (arXiv 2605.10779)](https://arxiv.org/abs/2605.10779)
 - [Apple Mac '전체 디스크 접근' 통제 강화 + ChatGPT Mac 앱 보안 결함](raw/articles/2026-10-03-apple-mac-full-disk-access-agent-security.md)
+- [OpenCode 키 노출 사고 — Anomaly Innovations, 레거시 콘솔 침입 (AIToolsRecap·The Latent·OfficeChai, 10/17–18)](raw/articles/2026-10-18-opencode-key-breach.md)
 
 ## Chapter Clear 가이드
 

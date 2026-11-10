@@ -3,18 +3,20 @@ title: "Agent Scientific Discovery"
 category: patterns
 tags: [agentic-research, scientific-discovery, evaluation, anthropic, claude, claims, openai, math-discovery, agmai, verification-asymmetry]
 created: 2026-09-25
-updated: 2026-10-11
+updated: 2026-10-17
 sources:
   - "raw/articles/2026-09-25-anthropic-claude-crispr-art-enzyme.md"
   - "raw/articles/2026-09-26-stanford-paper2agent.md"
   - "raw/articles/2026-10-07-openai-377-math-results-github.md"
   - "raw/articles/2026-10-08-openai-722-math-manuscripts.md"
   - "raw/articles/2026-10-11-claude-art-discovery-controversy.md"
+  - "raw/articles/2026-10-17-claude-mythos5-quantum-circuits.md"
 related:
   - "[[concepts/llm-evaluation]]"
   - "[[concepts/harness-engineering]]"
   - "[[concepts/mcp]]"
   - "[[concepts/claude-art-discovery-controversy]]"
+  - "[[concepts/claude-quantum-circuit-discovery]]"
 status: draft
 confidence: medium
 ---
@@ -118,6 +120,15 @@ Claude의 ART 발견이 "에이전트가 wet-lab과 협업해 발견"하는 사�
 - "발견 과정이 로그로 남아 감사 가능"(장단점 표의 장점)이지만, **입력 데이터의 출처**까지 로그에 남지 않으면 독립성 입증은 여전히 불가능 — 감사 가능성의 범위가 출력이 아니라 **입출력 전체**로 확장되어야 함.
 - 상세: [[concepts/claude-art-discovery-controversy]]
 
+## 적용 사례 5 — Claude Mythos 5 양자회로 (2026-10-16): 정량 지표로 측정된 발견
+
+ART 발견(적용 사례 1)이 "있었다/없었다"의 질적 발견이라면, Mythos 5의 양자회로 설계는 **17배·12배라는 정량**으로 측정된 발견 — 발견 파이프라인의 출력이 수치로 평가되는 evaluator-loop의 완성형 (Anthropic, 10/16 발표, 53시간 closed-loop, Andi Gu 리드, Harvard·QuEra 협력).
+
+- **결과**: 8개 primitive 중 7개에서 기존 최고(best published) 경신. 타원곡선 모듈러 인버전 — Toffoli 게이트 ~17배 감소(7000만 → 400만), 큐비트 +12% (838 → 935). Reed-Solomon 디코더 — Google 이전 기록 대비 ~12배 게이트 감소, 403M 샘플 디코딩.
+- **방법**: generator–judge 루프 + 자동 평가자 (점수 = Toffoli 수 × 피크 큐비트 수). 시뮬레이션 + Lean 형식 증명.
+- **이 페이지의 템플릿으로 읽으면**: (1) "평가자를 누가 설계하는가가 발견을 정한다" — 점수 함수가 탐색 방향의 헌법. ART 논란의 "선행 연구 배제 증명(provenance)" 단계(적용 사례 4)에 이은 **네 번째 단계의 정량 버전**: 평가 기준의 사전 공개. (2) 범위 명시의 모범 — "자원 추정치일 뿐, 실제 하드웨어 실행·암호 공격 아님"을 발표 자체에 명시. "주장의 강도를 단계별로 표기" (적용 예시 #4)의 적용 사례. (3) 검증 상태: **Anthropic 자사 수치, 독립 재현 대기** — 8개 중 1개는 경신 실패 (미공개).
+- 상세: [[concepts/claude-quantum-circuit-discovery]]
+
 ## 관련 패턴
 
 - [[concepts/llm-evaluation|LLM Evaluation]] — "AI discovers X" 주장에 대한 평가 프레임 (주장 강도 단계별 검증)
@@ -128,3 +139,4 @@ Claude의 ART 발견이 "에이전트가 wet-lab과 협업해 발견"하는 사�
 - [Claude agents identify a CRISPR-like enzyme system (ART) — 950 agents, 21 hours, 210M tokens](raw/articles/2026-09-25-anthropic-claude-crispr-art-enzyme.md)
 - [Stanford Paper2Agent: research papers become MCP-based AI agents (~45 min, ~$14)](raw/articles/2026-09-26-stanford-paper2agent.md)
 - [OpenAI, 미공개 모델의 수학 논문 722건 GitHub 공개 — '영수증을 달라'는 수학계 반발 (Decrypt, 10/7)](raw/articles/2026-10-08-openai-722-math-manuscripts.md)
+- [Claude Mythos 5, 양자회로 설계 8개 중 7개 기존 최고 경신 (Particle News·Crypto Briefing·Anthropic, 10/16)](raw/articles/2026-10-17-claude-mythos5-quantum-circuits.md)

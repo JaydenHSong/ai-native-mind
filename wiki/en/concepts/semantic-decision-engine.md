@@ -1,19 +1,21 @@
 ---
 title: "Semantic Decision Engine"
 category: concepts
-tags: [semantic-decision-engine, jev, typesafeai, non-generative, routing, classification, decisions-api, openai, musubi, policylm]
+tags: [semantic-decision-engine, jev, typesafeai, non-generative, routing, classification, decisions-api, openai, musubi, policylm, clairic, extraction, system-one, cloudflare]
 created: 2026-09-27
-updated: 2026-10-08
+updated: 2026-10-20
 sources:
   - "raw/articles/2026-09-27-jevs-semantic-decision-engine.md"
   - "raw/articles/2026-10-02-decision-models-clef-decider-2b.md"
   - "raw/articles/2026-10-03-openai-decisions-api-devday.md"
   - "raw/articles/2026-10-08-musubi-policylm-decision-model.md"
+  - "raw/articles/2026-10-20-cloudflare-clairic-system-one-extraction.md"
 related:
   - "[[patterns/ai-cost-management]]"
   - "[[concepts/agent-supply-chain-security]]"
   - "[[patterns/agent-safety-runtime]]"
   - "[[patterns/agent-authority-model]]"
+  - "[[concepts/cloudflare-clairic-system-one-extraction]]"
 status: draft
 confidence: medium
 ---
@@ -97,6 +99,18 @@ TechCrunch exclusive (10/6) — Musubi released **PolicyLM-1.7B, a 1.7B-paramete
 - Lineage: TypeSafeAI Jev (9/27) → Clef/Decider 2B (10/2) → OpenAI Decisions API (10/3) → **PolicyLM-1.7B (10/6)**. The fourth commercial decision model in 11 days — the open-source/small-vendor-leads, big-labs-follow pattern repeating.
 - Connects directly to [[patterns/agent-safety-runtime]]: sub-50ms real-time judgment is a candidate "judgment layer" for runtime security. Through the [[patterns/agent-authority-model]] lens, it's a mechanism for mechanically enforcing authority boundaries expressed in natural language.
 - Source limitation: TechCrunch exclusive — the 50ms figure and similar numbers are vendor claims, no independent verification. This page's confidence stays at medium.
+
+## 2026-10-20 update — Clairic: System One expands from decision into extraction/forecasting
+
+Cloudflare released Clairic on 10/19 — the first System One **extraction** model, in preview on Workers AI.
+
+- Non-generative — single forward pass, **zero output tokens**, input-only billing at **$0.10/M**. 65,536-token context. Typed-fields API (extract/compute/estimate/forecast) plus vision (up to 4 embedded images).
+- Self-tested: the Clairic + Clef + GLM-5.3 pipeline is **49% cheaper and 3.2× faster** than GLM-5.3 alone. Damage-claim extraction: 0.68s vs 38s.
+- Lineage: Jev (9/27) → Clef/Decider 2B (10/2) → OpenAI Decisions API (10/3) → PolicyLM-1.7B (10/6) → **Clairic (10/19)** — the fifth commercial non-generative model in three weeks, expanding from "decision" into "extraction/forecasting."
+- Admitted weakness (the company's own): multi-step arithmetic, calibration, forecasting.
+- Read against this page's framing: "don't generate" expands from decision into extraction — the agent pipeline's division of labor ("generation on the expensive LLM, judgment/extraction on cheap specialized models") hardens from optimization trick into product lineup. The hybrid becomes standard architecture.
+- Limitations: 49%/3.2× are Cloudflare's own measurements — no independent verification. Open weights "soon" has no date.
+- Details: [[concepts/cloudflare-clairic-system-one-extraction]]
 
 ## Sources
 

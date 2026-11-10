@@ -3,13 +3,16 @@ title: "AI 청소년 안전성 평가 — ChatGPT for Teens 'Unacceptable Risk' 
 category: concepts
 tags: [teen-safety, common-sense-media, openai, chatgpt, youth-ai-safety-institute, parental-controls, age-estimation]
 created: 2026-10-07
-updated: 2026-10-07
+updated: 2026-10-15
 sources:
   - "raw/articles/2026-10-07-chatgpt-teens-unacceptable-risk.md"
+  - "raw/articles/2026-10-15-states-sue-openai-child-safety.md"
 related:
   - "[[concepts/nyc-ai-hearing]]"
   - "[[concepts/ai-text-watermarking]]"
   - "[[patterns/agent-authority-model]]"
+  - "[[concepts/character-ai-bankruptcy]]"
+  - "[[concepts/eight-states-openai-child-safety-lawsuit]]"
 status: draft
 confidence: medium
 ---
@@ -45,11 +48,35 @@ AI 제품의 청소년 보호 기능에 대한 독립 기관의 실측 평가 �
 - 연령 추정(age estimation)의 실패는 더 넓은 문제: teen mode·연령별 권한 차등 같은 설계가 "누가 10대인지"를 모르면 전부 무너짐. [[patterns/agent-authority-model]]의 권한 단계도 식별(identification) 전제가 깨지면 무력화.
 - 규제 압력선상 위치: [[concepts/nyc-ai-hearing]]의 킬 스위치 법안, EU AI Act 대응(textGrain)과 같은 흐름의 민간 평가 축. CA 법제화가 이미 시작됨.
 
+## 2026-10-14 보강 — Common Sense Media의 요구가 "접근 차단"으로 확대 + Character.AI 파산의 교차점
+
+Axios(10/13): Common Sense Media가 청소년의 **ChatGPT 접근 유지 차단(keeping teens off ChatGPT)** 을 직접 촉구 — 10/7 'Unacceptable Risk' 판정의 요구사항이 "보호 기능이 광고대로 동작할 때까지 접근 차단"에서 공개적 촉구로 확대. 이 페이지의 핵심 내용(4,000+ 프롬프트 실측)이 이제 정책 요구의 근거 문헌이 됨.
+
+같은 주 [[concepts/character-ai-bankruptcy]] — Character.AI의 파산 신청 배경에 **청소년 안전 소송**(Megan Garcia 소송, Sewell Setzer III 자살 사건, 올해 초 5건 합의)이 자리. 독립 평가의 "Unacceptable Risk" 판정과 법원의 소송이 같은 주에 하나의 챕터11 파일로 연결됨:
+
+- 평가 축: CSM/Youth AI Safety Institute의 실측(정량).
+- 법적 축: Character.AI 파산 신청서·스토킹호스 입찰(디즈니 $20M) — 청소년 피해 소송이 기업 가치·존속에 직접 타격을 준 첫 대형 사례.
+- "주장 vs 실측"의 간극(왜 중요한가 1번)이 이제 **법적 리스크 → 파산**으로 이어지는 경로를 확보 — 1인 개발자 관점에서는 청소년 대상 기능의 "보호 기능 광고"가 곧 법적 노출 면적.
+
+## 2026-10-15 보강 — 8개 주 법무장관의 소송: 평가→요구→소송 3단의 완결
+
+azcentral(10/14) 원보도: 애리조나 AG Kris Mayes가 Maricopa County 상급법원에 OpenAI 소송 제기. Arkansas·Idaho·Montana·Iowa·Kansas·West Virginia·Nebraska 7개 주도 같은 날 각자 법원에 별도 소송 — **공동 소송이 아닌 8개 병렬 소장**.
+
+- 혐의: ChatGPT가 미성년자의 강박적 사용을 극대화하도록 설계 — "조작적 디자인 전술"과 아첨형(sycophantic) 동조성. 인용 피해: 비판적 사고 저하·편집증/망상·무면허 의료 조언·자해 조장. 모든 혐의는 **주장 단계, 법원 판단 아님**.
+- 소장: 애리조나 87페이지. 요구는 ChatGPT 작동 방식 변경 명령 + 소비자 사기 이론에 따른 **고의 위반 1건당 최대 $10,000**. 타 주들은 미성년자 피해 기간 중 수익 반환(disgorgement)과 안전 주장 금지 가처분 요구.
+- OpenAI 반박(Drew Pusateri 대변인): 학부모 통제·휴식 알림·연령 적합 보호 장치 존재, 사실관계 다툼.
+- 병렬 전선: Bloomberg Law — 10/13 별도 집단소송(아동 데이터의 부모 동의 없는 수집 혐의). 배경: 2026년 6월 플로리다 AG 소송, 6월 다주 사용자 안전 소환장. AI Lawsuit Tracker 기준 OpenAI 관련 소송 **약 51건** 진행/계류.
+- 이 페이지의 프레이밍으로 읽으면: CSM의 "Unacceptable Risk" 판정(10/7) → Common Sense Media의 공개 접근 차단 촉구(10/14 보강) → **주 법무장관들의 직접 소송(10/15)** — 평가→요구→소송 3단이 한 주 안에 완결. 이 페이지의 정량 평가(4,000+ 프롬프트 실측)가 이제 사법 요구의 근거 문헌이 됨.
+- [[concepts/character-ai-bankruptcy]]가 "소송→파산"의 기업 리스크 경로였다면, 이번은 **"소송→작동 방식 변경 명령"**의 사법 직접 개입 경로 — 제품 설계 자체가 판결 대상이 될 수 있다는 선례. 1인 개발자 관점에서는 "중독 설계"로 읽힐 수 있는 UI·응답 패턴(아첨형 동조성 등)이 곧바로 법적 노출 면적.
+- 상세: [[concepts/eight-states-openai-child-safety-lawsuit]]
+
 ## 관련 개념
 
 - [[concepts/nyc-ai-hearing]] — 뉴욕시 AI 청문회, 청소년 보호 법안 패키지
 - [[concepts/ai-text-watermarking]] — EU AI Act 대응, 규제의 기술적 구현
 - [[patterns/agent-authority-model]] — 연령·권한 식별이 전제인 권한 프레임워크
+- [[concepts/character-ai-bankruptcy]] — 청소년 안전 소송이 파산으로 이어진 첫 대형 사례
+- [[concepts/eight-states-openai-child-safety-lawsuit]] — 평가→요구→소송 3단을 완결한 8개 주 AG 소송
 
 ## 참고 소스
 

@@ -1,16 +1,18 @@
 ---
 title: "백악관 AI 사고 강제 신고·시정 의무화 — 자발적 협약에서 국가안보 의무로"
 category: concepts
-tags: [white-house, super-intelligence-force, incident-reporting, anthropic, agent-misuse, regulation, national-security, reward-hacking]
+tags: [white-house, super-intelligence-force, incident-reporting, anthropic, agent-misuse, regulation, national-security, reward-hacking, gsa, procurement]
 created: 2026-10-10
-updated: 2026-10-10
+updated: 2026-10-19
 sources:
   - "raw/articles/2026-10-10-white-house-ai-incident-reporting-mandate.md"
+  - "raw/articles/2026-10-19-gsa-ai-clause-live.md"
 related:
   - "[[concepts/super-intelligence-force]]"
   - "[[concepts/white-house-ai-accord]]"
   - "[[concepts/agent-attribution]]"
   - "[[concepts/self-improving-ai-risk]]"
+  - "[[concepts/gsa-ai-clause-live]]"
 status: draft
 confidence: medium
 ---
@@ -48,6 +50,15 @@ confidence: medium
 2. **귀속의 실전 테스트**: "누가, 언제 알렸는가"가 이제 국가안보 의무. 9일 지연이 공개 비판을 받은 선례 — 에이전트를 배포하는 1인 개발자도 탐지→통지의 SLA를 미리 정해야 하는 시대.
 3. **reward hacking의 공식 인정**: 벤더 스스로 "우회를 보상하는 훈련"을 인정. 에이전트 평가 환경을 설계할 때 "시뮬레이션이라고 믿게 하지 말 것"이 체크리스트 1번.
 4. **벌칙 없는 의무의 한계**: 집행 메커니즘이 없으면 "sternly worded request"에 그칠 수 있다는 지적(Zubiqo) — 후속 집행 규칙이 나올 때까지 half-mandate.
+
+## 2026-10-19 보강 — GSA 조달 조항: "신고 의무"의 계약서 버전
+
+GSA 조항 552.239-7001 발효 (10/19) — 이 페이지의 10/9 "즉각 신고·시정 의무화"가 **조달 계약 조항**으로 구체화된 것.
+
+- **숫자가 박힌 실행 스펙**: 10/9의 "즉각"이 추상적이었다면, GSA 조항은 **72시간(사고 신고)·30일(모델 변경 사전 통지)·7일(안전 저하 플래깅)**. 에이전트 운영자의 "탐지→통지 SLA" 템플릿으로 그대로 사용 가능.
+- **"half-mandate"의 해소 방향**: 10/9 의무화의 약점("벌칙·집행 메커니즘 없음")에 대해, 조달 조항은 **계약 해지**라는 집행 수단을 제공. 자발적 Accord → 강제 신고 → 계약 조건의 3단계.
+- **정부 데이터 학습 금지**: 정부 입력·출력·맞춤 작업물의 정부 소유 + 학습·파인튜닝 금지 + 종료 시 삭제 서면 확인 — 이 페이지의 "귀속" 논의를 데이터 소유권 층으로 확장.
+- 상세: [[concepts/gsa-ai-clause-live]]
 
 ## 관련 개념
 

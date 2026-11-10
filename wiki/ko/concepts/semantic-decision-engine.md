@@ -1,20 +1,22 @@
 ---
 title: "Semantic Decision Engine"
 category: concepts
-tags: [semantic-decision-engine, non-generative, model-routing, cost-optimization, llm-evaluation, decisions-api, openai, musubi, policylm]
+tags: [semantic-decision-engine, non-generative, model-routing, cost-optimization, llm-evaluation, decisions-api, openai, musubi, policylm, clairic, extraction, system-one, cloudflare]
 created: 2026-09-27
-updated: 2026-10-08
+updated: 2026-10-20
 sources:
   - "raw/articles/2026-09-27-jevs-semantic-decision-engine.md"
   - "raw/articles/2026-10-02-decision-models-clef-decider-2b.md"
   - "raw/articles/2026-10-03-openai-decisions-api-devday.md"
   - "raw/articles/2026-10-08-musubi-policylm-decision-model.md"
+  - "raw/articles/2026-10-20-cloudflare-clairic-system-one-extraction.md"
 related:
   - "[[patterns/ai-cost-management]]"
   - "[[concepts/llm-evaluation]]"
   - "[[concepts/structured-output]]"
   - "[[patterns/agent-safety-runtime]]"
   - "[[patterns/agent-authority-model]]"
+  - "[[concepts/cloudflare-clairic-system-one-extraction]]"
 status: draft
 confidence: medium
 ---
@@ -93,6 +95,18 @@ DevDay(10/3)에서 OpenAI가 **Decisions API**를 발표 — Luna 모델 기반,
 - 계보: TypeSafeAI Jev(9/27) → Clef·Decider 2B(10/2) → OpenAI Decisions API(10/3) → **PolicyLM-1.7B(10/6)**. 11일 만에 4번째 상용 결정 모델 — 오픈소스/소규모 벤더가 선도하고 빅랩이 후행하는 패턴의 반복.
 - [[patterns/agent-safety-runtime]]과 직결: 50ms 실시간 판정은 실행시점 보안 런타임의 "판정 레이어" 후보. [[patterns/agent-authority-model]] 관점에서는 자연어로 표현된 권한 경계를 기계적으로 강제하는 메커니즘.
 - 출처 한계: TechCrunch 단독 — 50ms 등 수치는 회사 주장, 독립 검증 없음. 이 페이지 confidence는 medium 유지.
+
+## 2026-10-20 보강 — Clairic: System One이 결정에서 추출/예측으로
+
+Cloudflare가 10/19 첫 System One **추출** 모델 Clairic을 Workers AI 프리뷰로 공개.
+
+- 비생성형 — 단일 forward pass, **출력 토큰 0개**, 입력 전용 과금 **$0.10/M**. 65,536 토큰 컨텍스트. typed fields API (extract/compute/estimate/forecast) + 비전 (최대 4 임베드 이미지).
+- 자체 테스트: Clairic + Clef + GLM-5.3 파이프라인이 GLM-5.3 단독 대비 **49% 저렴·3.2× 빠름**. 손해사정 추출 0.68초 vs 38초.
+- 계보: Jev(9/27) → Clef·Decider 2B(10/2) → OpenAI Decisions API(10/3) → PolicyLM-1.7B(10/6) → **Clairic(10/19)** — 3주 만에 5번째 상용 비생성 모델. "결정"에서 "추출/예측"으로 영역 확장.
+- 회사가 스스로 밝힌 약점: 다단계 산술·캘리브레이션·예측.
+- 이 페이지의 프레이밍으로 읽으면: "생성하지 않는다"가 결정에서 추출로 확장 — 에이전트 파이프라인의 "생성(비싼 LLM) + 판단/추출(싼 특화 모델)" 분업이 제품 라인업으로 굳어짐. 하이브리드가 최적화 기법에서 표준 아키텍처로.
+- 한계: 49%/3.2×는 Cloudflare 자체 측정 — 독립 검증 없음. 오픈 웨이트 "soon"은 날짜 없음.
+- 상세: [[concepts/cloudflare-clairic-system-one-extraction]]
 
 ## 관련 개념
 

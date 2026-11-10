@@ -1,19 +1,23 @@
 ---
 title: "Gemini 4 Argon"
 category: concepts
-tags: [google, gemini-4, argon, frontier-model, gated-release, benchmark, hallucination, pricing, carbon, checkpoint]
+tags: [google, gemini-4, argon, frontier-model, gated-release, benchmark, hallucination, pricing, carbon, checkpoint, minecraft, multi-agent-coordination]
 created: 2026-10-01
-updated: 2026-10-12
+updated: 2026-10-19
 sources:
   - "raw/articles/2026-10-01-google-gemini-4-argon-launch.md"
   - "raw/articles/2026-10-10-gemini-4-carbon-internal-testing.md"
   - "raw/articles/2026-10-12-us-restores-uk-frontier-model-access.md"
+  - "raw/articles/2026-10-14-google-gemini-4-argon-ga.md"
+  - "raw/articles/2026-10-19-gemini-4-argon-minecraft.md"
 related:
   - "[[patterns/ai-cost-management]]"
   - "[[patterns/mid-tier-performance-inversion]]"
   - "[[concepts/agent-supply-chain-security]]"
   - "[[concepts/gemini-4-carbon-testing]]"
   - "[[concepts/uk-frontier-model-access-restoration]]"
+  - "[[concepts/gemini-4-argon-minecraft]]"
+  - "[[concepts/taste-bench]]"
 status: draft
 confidence: high
 ---
@@ -99,6 +103,37 @@ Business Insider(10/9): 구글 내부 코딩 플랫폼 Jetski에서 Gemini 4 계
 - 이 페이지의 "벤치마크 괴리" 읽는 법과 연결: Argon의 자체 벤치 선두 주장 vs AA 지수 53 괴리가 AISI 같은 **국가급 독립 평가**로 검증될 관측점이 생김. AISI의 평가 결과가 공개될지는 미지수지만, 평가 대상에 명시됐다는 것 자체가 Argon의 "프론티어" 지위를 각인.
 - MS Brad Smith(BBC 인터뷰): 영국이 AI 안전 가이드라인 주도 적임 — 평가 주체의 위상도 함께 상승 중.
 - 상세: [[concepts/uk-frontier-model-access-restoration]]
+
+## 2026-10-14 보강 — GA(일반 공개): Fairwind에서 전체 채널로
+
+Koray Kavukcuoglu(SVP, Google DeepMind)가 2026-10-13 Argon의 **전면 공개(GA)** 를 발표 — 9/30 Fairwind 한정 출시의 후속. Fairwind Program 자체는 수백 개 파트너로 확대 병행.
+
+### 채널·모델 ID
+
+- **유료 Gemini API / AI Studio**, Gemini platform + Gemini for business, Gemini 앱 & Search의 AI Mode(Pro/Ultra 티어), **Google Antigravity(Ultra 전용)**.
+- 모델 ID `gemini-4-argon`, stable. **1M 통합 입출력 토큰 한도** + 새 **"continuation protocol"**, cached input **95% 할인**.
+
+### 가격 — $2/$10 도입가의 기한이 확정
+
+- **11/30까지 $2 in / $10 out per 1M**, 이후 **$4/$20** — **Claude Opus 5.5와 동가**. 이 페이지 초판의 "도입 기간 미공개"가 해소됨 — 비용 우위의 만료 시점이 11/30으로 못 박힌 셈.
+- Muse Wonder API도 $4/$20(10/13 보강) — Opus 5.5가 사실상 **플래그십 정가의 기준점**이 됨.
+
+### Google의 주장
+
+- Vals Index 1위 주장(자체 발표), 내부 에이전틱 코딩 제출 **+35%**·롤백 **−30%**, Antigravity 월간 내부 사용자 **10만+**.
+- 읽는 법: "1위"는 Google 자체 인용 지수 — 이 페이지의 "자체 차트 vs 독립 지수(AA 53)" 괴리 읽는 법을 GA 버전에도 그대로 적용. AISI 평가(10/12 보강)가 독립 검증의 관측점으로 남은 이유.
+- 소스: Google 공식 블로그 + VentureBeat (10/13).
+
+## 2026-10-19 보강 — 마인크래프트 완주: 27시간짜리 협업 코딩 테스트
+
+Google DeepMind 논문(10/15 arXiv, 10/18–19 보도) — Gemini 4 Argon 4개 에이전트가 무작위 마인크래프트 서바이벌에서 **27시간 14분** 만에 엔더드래곤 격파, 인간 개입 0.
+
+- 역할 미지정 상태에서 자발 분업 (도구 제작·식량·포털·최후의 일격), 인게임 채팅+공유 메모리. 프로그램 **2,783개**(63,313줄), 채팅 229개, 사망 **605회**. 입력 토큰 13.5억 개.
+- **비용**: 승리까지 출시가 기준 약 $520, 전체 세션 $810(출시가)/$1,620(표준가, 2027년 적용) — "27시간 일하는 에이전트"의 첫 공개 가격표.
+- 5번째 Observer 에이전트가 부정행위 감시 — 이상 없음. 저자들은 "인간처럼 플레이"가 아니라 **장기 수평적 코딩·협조 테스트**로 프레임.
+- 이 페이지의 프레이밍으로 읽으면: 10/1 출시·10/13 GA의 "주장"(Vals Index 1위·내부 코딩 +35%)에 대한 **실전 검증 1호**. 벤치 점수가 아니라 27시간짜리 실제 작업. 같은 날 수집된 [[concepts/taste-bench]]가 "중간 판단력"을 502개 분기로 쟀다면, 이건 그 판단력을 2,783개 프로그램으로 증명한 셈.
+- 한계: 단일 런(재현율 미공개), easy 난이도, 텍스트 상태 접근, 마인크래프트는 학습 데이터에 거의 확실. "잘한다"가 아니라 "오래 버틴다"의 기록.
+- 상세: [[concepts/gemini-4-argon-minecraft]]
 
 ## 관련 개념
 

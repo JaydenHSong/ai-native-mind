@@ -1,17 +1,19 @@
 ---
 title: "Agent Authority Model — Grading Agent Permissions by Task (Logistics Reply LEA)"
 category: patterns
-tags: [agent-authority, governance, guardrails, autonomy-levels, logistics-reply, lea, operations]
+tags: [agent-authority, governance, guardrails, autonomy-levels, logistics-reply, lea, operations, platform-blocks, bank-block]
 created: 2026-10-05
-updated: 2026-10-13
+updated: 2026-10-18
 sources:
   - "raw/articles/2026-10-05-lea-ai-agent-authority-model.md"
   - "raw/articles/2026-10-13-meta-sierra-poppy-protocol.md"
+  - "raw/articles/2026-10-18-websites-block-ai-agents.md"
 related:
   - "[[patterns/agent-safety-runtime]]"
   - "[[concepts/ai-orchestration]]"
   - "[[concepts/agent-attribution]]"
   - "[[concepts/meta-sierra-poppy-protocol]]"
+  - "[[concepts/websites-block-ai-agents]]"
 status: draft
 confidence: low
 ---
@@ -58,7 +60,19 @@ Meta×Sierra's Personal Agent Protocol (Poppy) draft 0.1 (10/9, Apache 2.0) is t
 - Limits: still draft 0.1, so the spec can change. Whether the "block vs. full delegation" third option is actually adopted by businesses depends on how fast the 35 design partners move.
 - Details: [[concepts/meta-sierra-poppy-protocol]]
 
+## 2026-10-18 update — Banks treat agents as "unauthorized actors": the authority grades compressed in practice
+
+The Verge (10/17) — JPMorgan and Charles Schwab block AI agents from customer accounts.
+
+- Schwab CEO Rick Wurster (10/15 investor call): agents logging in on a client's behalf "is not safe. We are not going to allow that." Credential-using agents blocked at the source.
+- JPMorgan (Dimon, 10/13 earnings call): "not going to allow just any… outside agent to come inside the company, because it's just too risky for clients and for JPMorgan." Spokesperson: outside AI agents blocked from performing customer tasks.
+- Yelp (paid data licensing only) and Delta (no partnership) restricted access the same week.
+
+Read through this page's framing: the LEA five levels (Inform → Governed Autonomy) were a **design tool** for companies; from the platform's side they compress to **"unauthorized actor"** in one line. Poppy's view-only/change negotiation (10/13 update) becomes the only "legal channel." When designing an agent service, check **"the authority grades the platform recognizes"** before "the authority grades we designed" — the authority map must be drawn from both sides.
+- Details: [[concepts/websites-block-ai-agents]]
+
 ## Sources
 
 - [Logistics Reply Introduces the LEA AI Agent Authority Model (Business Wire)](raw/articles/2026-10-05-lea-ai-agent-authority-model.md)
 - [Meta×Sierra Poppy: personal agent protocol draft 0.1 (PYMNTS, 10/12)](raw/articles/2026-10-13-meta-sierra-poppy-protocol.md)
+- [JPMorgan and Schwab block agent access to customer accounts (The Verge 10/17)](raw/articles/2026-10-18-websites-block-ai-agents.md)

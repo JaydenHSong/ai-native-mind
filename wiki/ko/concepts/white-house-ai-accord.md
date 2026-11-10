@@ -3,7 +3,7 @@ title: "White House Accord on Superintelligence"
 category: concepts
 tags: [white-house, accord, superintelligence, governance, regulation, self-regulation, audit, trump, ai-policy, joint-commitment, ftc-subpoena, california]
 created: 2026-09-30
-updated: 2026-10-05
+updated: 2026-10-14
 sources:
   - "raw/articles/2026-09-29-white-house-ai-accord-outcome.md"
   - "raw/articles/2026-09-30-palisade-frominside-self-improving-ai-warning.md"
@@ -18,6 +18,7 @@ related:
   - "[[patterns/agent-safety-runtime]]"
   - "[[journal/2026-09-29]]"
   - "[[concepts/super-intelligence-force]]"
+  - "[[concepts/evaluator-independence-restrictions]]"
 status: draft
 confidence: medium-high
 ---
@@ -112,6 +113,13 @@ Reuters 보도: 캘리포니아 법무장관 **Rob Bonta**가 AI 사이버보안
 ## 2026-10-05 후속 — 자발적 협약 → Super Intelligence Force 출범
 
 2026-10-05 후속: 자발적 협약 → Super Intelligence Force 출범으로 연방 조정 기구화. 트럼프가 Jay Clayton(DNI)을 AI 차르 겸 의장으로 임명, 120일 AI 리뷰 착수 — "조정하되 규제하지 않는다"는 연방 노선 — [[concepts/super-intelligence-force]].
+
+## 2026-10-14 보강 — 임베디드 평가의 독립성 역진: 약속 3번(외부 독립 평가)이 흔들린다
+
+Reuters(10/13): OpenAI·Anthropic이 임베디드 평가자의 공개에 **편집권·승인권**을 요구 — 이 페이지의 4대 약속 중 3번(외부 독립 평가자 파트너십)과 직접 충돌. 한 달 전 양사가 "편집 통제 없이" 공개를 약속했던 것과 정반대. Joint Commitment(10/2)의 "독립 외부 평가기관의 재검증" 문구도 "누가 편집권을 쥐는가" 앞에서는 빈 약속이 됨.
+
+- 읽는 법: Accord의 3대 한계("법적 구속력 없음·선정 주체 미정·공개 수준 미정")에 **4번째 한계**가 추가 — 평가자의 독립성 자체를 랩이 통제하려 함. 자발적 협약의 "외부 평가"는 랩이 편집권을 쥐는 순간 **내부 평가의 아웃소싱**으로 전락.
+- 상세: [[concepts/evaluator-independence-restrictions]], [[concepts/llm-evaluation]]
 
 ## 왜 중요한가 (1인 개발자 관점)
 

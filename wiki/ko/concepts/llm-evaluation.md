@@ -1,9 +1,9 @@
 ---
 title: "LLM Evaluation (Evals)"
 category: concepts
-tags: [evaluation, testing, llm, quality, evals, judge-reliability, long-horizon, native-runtime, benchmark, coding-benchmark, behavioral-safety, version-upgrade, trajectory-audit, harness-safety, artifact-aware-review, delegation-benchmark, privacy-benchmark, reward-hacking, process-evaluation, reproducibility, disclosure-audit, terminal-benchmark, benchmark-provenance, workflow-evaluation, artifact-quality, claim-scrutiny, agent-scientific-discovery]
+tags: [evaluation, testing, llm, quality, evals, judge-reliability, long-horizon, native-runtime, benchmark, coding-benchmark, behavioral-safety, version-upgrade, trajectory-audit, harness-safety, artifact-aware-review, delegation-benchmark, privacy-benchmark, reward-hacking, process-evaluation, reproducibility, disclosure-audit, terminal-benchmark, benchmark-provenance, workflow-evaluation, artifact-quality, claim-scrutiny, agent-scientific-discovery, evaluator-independence, taste-bench, mid-task-judgment]
 created: 2026-04-09
-updated: 2026-09-25
+updated: 2026-10-19
 sources:
   - "raw/notes/2026-04-09-llm-evaluation.md"
   - "raw/articles/2026-05-12-judge-reliability-harness-rand.md"
@@ -21,6 +21,8 @@ sources:
   - "raw/articles/2026-05-24-workstreambench-finance-spreadsheet-agents.md"
   - "raw/articles/2026-09-24-agentic-commerce-benchmark-booking.md"
   - "raw/articles/2026-09-25-anthropic-claude-crispr-art-enzyme.md"
+  - "raw/articles/2026-10-14-openai-anthropic-evaluator-restrictions.md"
+  - "raw/articles/2026-10-19-taste-bench.md"
 related:
   - "[[concepts/harness-engineering]]"
   - "[[concepts/context-rot-hallucination]]"
@@ -30,6 +32,8 @@ related:
   - "[[journal/2026-05-17]]"
   - "[[patterns/agentic-commerce]]"
   - "[[patterns/agent-scientific-discovery]]"
+  - "[[concepts/evaluator-independence-restrictions]]"
+  - "[[concepts/taste-bench]]"
 status: active
 confidence: high
 ---
@@ -754,6 +758,35 @@ HN 토론(566 pts)이 던진 eval 질문들:
 - LLM 탐색의 재현성 약함 → 같은 탐색을 다시 돌리면 같은 결과가 나오는가?
 
 → 에이전트의 "발견"을 eval할 때는 **주장의 강도를 단계별로 표기**하고, 각 단계의 통과 기준을 미리 정한다. 자세한 패턴: [[patterns/agent-scientific-discovery|Agent Scientific Discovery]]
+
+## 2026-10-14 보강 — Embedded Evaluation의 독립성: "편집권 없는 공개" 약속의 역진
+
+Reuters(10/13): OpenAI와 Anthropic이 **임베디드 평가(embedded evaluation)** 를 수행하는 독립 안전 평가자의 공개 행위를 제한하려 한다. Reuters가 이 협상의 세부 내용을 처음 보도.
+
+### 논의 중인 조치
+
+- 평가자의 공개 내용에 대한 **랩의 통제 요구** — 임베디드 평가 인력이 경쟁사로 전이될 수 있는 기밀 정보를 들고 갈 수 있다는 우려.
+- 랩 직원이 임베디드 평가 직원을 **관찰**하는 방안.
+- 평가자가 여러 랩에서 동시에 일하는 것을 **금지**.
+- 보고서에 대한 **편집권·승인권** — Anthropic은 신규 평가 회사에 대해 승인권 보유를 유보.
+
+### 역진의 구조
+
+- 한 달 전 양사는 평가자가 핵심 발견을 **"편집 통제 없이(without editorial control)"** / **"편집 독립성 하에(with editorial independence)"** 공개해야 한다고 말했다. 자발적 감독 합의(트럼프+AI 경영진이 서명한 1페이지 문서 — 독립 평가 포함, 집행 메커니즘·방법론 미지정)의 약속과 정반대 방향.
+- 이 페이지의 eval 층으로 읽으면: JRH(5/12 보강)가 "채점자가 믿을 만한가"를 물었다면, 이번은 **"채점자가 독립적인가"** — judge reliability 아래에 judge independence 층이 새로 드러남. Disclosure Audit(5/22 보강)이 "실행 조건 공개"를 요구했다면, 임베디드 평가는 그 공개의 **주체(랩 vs 평가자)** 자체가 쟁점.
+- 1인 개발자 관점: 서드파티 eval 리포트를 읽을 때 "누가 편집권을 가졌는가"를 메타데이터로 본다 — 승인권이 랩에 있으면 그 리포트는 마케팅 문서에 가깝다.
+- 상세: [[concepts/evaluator-independence-restrictions]]
+
+## 2026-10-19 보강 — Taste-Bench: "끝냈는가"가 아니라 "어떻게 갔는가"
+
+Microsoft·홍콩시티대 "The Tasteful Agent" (9월 arXiv, 10/18 보도) — 에이전트의 장기 과제 **중간 판단력(taste)** 측정. 502개 이진 결정 분기.
+
+- **새 eval 층**: SWE-bench가 "끝냈는가"라면, Taste-Bench는 "똑똑한 경로 vs 운" — 10-14 보강의 "judge independence"(채점자가 독립적인가) 아래에 **"judge the journey"(과정이 현명했는가)** 층이 추가됨.
+- **수치**: 최고 GPT-5.6 Sol 59.7% (무작위 25%). detour 분기가 parallel보다 어려움. 증거가 늦게 드러나면 **21%** — 무작위 수준.
+- **설계 시사점**: 추론 예산을 늘려도 나아지지 않음. 해결책은 판단 기준의 주입(증류·조언) — Qwen3.6-27B 30%→47.9%, SWE-bench Pro 14.6%→33.7%.
+- 이 페이지의 벤치 목록에 "과정 평가" 카테고리 추가 후보. 장기 실행 에이전트의 eval에는 성공률 + 중간 판단력 2축.
+- 한계: 논문은 9월 프리프린트 — 10/18 보도가 뉴스 훅. 모델별 세부 점수는 보도 인용.
+- 상세: [[concepts/taste-bench]]
 
 ## 1인 개발자에게
 

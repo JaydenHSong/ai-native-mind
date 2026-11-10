@@ -1,16 +1,19 @@
 ---
 title: "AI Talent Bottleneck"
 category: concepts
-tags: [anthropic, frontier-academy, enterprise, talent, workforce, ai-adoption, bottleneck]
+tags: [anthropic, frontier-academy, enterprise, talent, workforce, ai-adoption, bottleneck, junior-hiring, attention-bottleneck]
 created: 2026-10-03
-updated: 2026-10-03
+updated: 2026-10-19
 sources:
   - "raw/articles/2026-10-03-anthropic-frontier-academy-100m.md"
+  - "raw/articles/2026-10-19-anthropic-workforce-report.md"
 related:
   - "[[tools/managed-agents]]"
   - "[[comparisons/frontier-lab-economics]]"
   - "[[patterns/agentic-coding]]"
   - "[[journal/2026-10-03]]"
+  - "[[concepts/anthropic-workforce-report]]"
+  - "[[concepts/imf-asia-ai-labor-outlook]]"
 status: draft
 confidence: medium
 ---
@@ -50,6 +53,18 @@ Anthropic이 Claude Frontier Academy에 **1억 달러(약 1,360억 원)** 투입
 - 단일 press-digest 소스 (kimkj) — Anthropic 공식 발표의 2차 전달.
 - 1만 명은 **목표치**, 달성 실적 아님. $100M의 집행 시점·세부 커리큘럼 미공개.
 - confidence **medium** (발표 사실 자체는 복수 경로 보도 경향이나, 세부 수치는 단일 소스).
+
+## 2026-10-19 보강 — Anthropic 내부 실측: 주니어 채용 절벽 27%→9%
+
+Anthropic Institute 보고서 "How employment is changing at Anthropic" (10/16 발표, 10/18 ANI 와이어 재보도) — 이 페이지가 10/3에 "병목이 모델에서 인력으로 이동"이라 썼던 것의 **13일 만의 실측 후속**.
+
+- **주니어 채용 절벽**: 기술직 채용 중 주니어 비중 27%→9% (2025년 초→2026년). 주니어 공고는 2025-12 이후 특히 급감. "인력 병목"이 구체적 수치로.
+- **에이전트 근무시간 6배**: 8월 기준 직원이 지시하는 에이전트의 근무시간은 인간 핸들러의 약 6배. 코드 커밋 5배.
+- **새 병목은 주의력**: 회의 시간 +20%, 메타 작업 10%→22%, 세션 시간의 80%는 에이전트가 인간을 기다리는 시간.
+- 이 페이지의 프레이밍으로 읽으면: 10/3의 "두 번째 병목"(인력)은 이제 **"세 번째 병목"(주의력)** 으로 이동 중. Frontier Academy($100M)가 "사람을 키우자"였다면, 이번 보고서는 "키운 사람을 **어디에** 쓸 것인가" — 실행이 아니라 감독·판단에.
+- 같은 주 IMF 아시아 보고서(10/18 수집, 4천만 공고 −10%)와 쌍을 이룸 — 매크로 vs 기업 내부 실측. 합쳐서 읽되 섞지 말 것.
+- 한계: 자기 연구(도구 판매 회사의 자기 측정). 원발표 10/16 — 10/18 재보도 기준 수집.
+- 상세: [[concepts/anthropic-workforce-report]]
 
 ## 관련 개념
 

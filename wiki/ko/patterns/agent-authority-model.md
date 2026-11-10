@@ -1,17 +1,19 @@
 ---
 title: "Agent Authority Model — 업무별 에이전트 권한 등급화 (Logistics Reply LEA)"
 category: patterns
-tags: [agent-authority, governance, guardrails, autonomy-levels, logistics-reply, lea, operations]
+tags: [agent-authority, governance, guardrails, autonomy-levels, logistics-reply, lea, operations, platform-blocks, bank-block]
 created: 2026-10-05
-updated: 2026-10-13
+updated: 2026-10-18
 sources:
   - "raw/articles/2026-10-05-lea-ai-agent-authority-model.md"
   - "raw/articles/2026-10-13-meta-sierra-poppy-protocol.md"
+  - "raw/articles/2026-10-18-websites-block-ai-agents.md"
 related:
   - "[[patterns/agent-safety-runtime]]"
   - "[[concepts/ai-orchestration]]"
   - "[[concepts/agent-attribution]]"
   - "[[concepts/meta-sierra-poppy-protocol]]"
+  - "[[concepts/websites-block-ai-agents]]"
 status: draft
 confidence: low
 ---
@@ -58,7 +60,19 @@ Meta×Sierra의 Personal Agent Protocol (Poppy) draft 0.1 (10/9, Apache 2.0)은 
 - 한계: draft 0.1이라 스펙 변동 가능. "차단 vs 전권"의 제3 옵션이 실제로 기업에 채택되는지는 35개 디자인 파트너의 이행 속도에 달림.
 - 상세: [[concepts/meta-sierra-poppy-protocol]]
 
+## 2026-10-18 보강 — 은행의 "미허가 행위자" 간주: 권한 등급의 실전 압축
+
+The Verge(10/17) 보도 — JPMorgan·Charles Schwab이 고객 계정에 대한 AI 에이전트 접근을 차단.
+
+- Schwab CEO Rick Wurster (10/15 투자자 콜): "에이전트가 고객 대신 사이트에 로그인하는 건 안전하지 않다. 허용하지 않을 것." 클라이언트 로그인 자격 증명 사용 에이전트 원천 차단.
+- JPMorgan (Dimon, 10/13 실적 콜): "외부 에이전트가 회사 안에 들어오는 걸 허용하지 않을 것, 고객과 JPMorgan에 너무 위험하다." 대변인: 외부 AI 에이전트의 고객 작업 수행 차단.
+- Yelp (유료 데이터 라이선스만) · Delta (파트너십 없음)도 같은 주에 접근 제한.
+
+- 이 페이지의 프레이밍으로 읽으면: LEA 5단계(Inform→Governed Autonomy)는 기업의 **설계 도구**였는데, 플랫폼 측에서는 **"미허가 행위자" 한 줄로 압축**된다. Poppy의 view-only/change 협상(10/13 보강)이 "합법 통로"의 유일한 대안으로 부상. 에이전트 서비스 설계 시 "우리가 정한 권한 등급"이 아니라 **"플랫폼이 인정하는 권한 등급"** 을 먼저 확인할 것 — 권한 지도는 양쪽에서 그려야 한다.
+- 상세: [[concepts/websites-block-ai-agents]]
+
 ## 참고 소스
 
 - [Logistics Reply Introduces the LEA AI Agent Authority Model (Business Wire)](raw/articles/2026-10-05-lea-ai-agent-authority-model.md)
 - [Meta×Sierra Poppy: 개인 에이전트 프로토콜 draft 0.1 (PYMNTS, 10/12)](raw/articles/2026-10-13-meta-sierra-poppy-protocol.md)
+- [JPMorgan·Schwab의 에이전트 계정 접근 차단 (The Verge 10/17)](raw/articles/2026-10-18-websites-block-ai-agents.md)

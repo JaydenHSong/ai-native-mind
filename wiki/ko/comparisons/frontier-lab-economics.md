@@ -1,9 +1,9 @@
 ---
 title: "저가 파괴자 vs 가격 결정력 인프라"
 category: comparisons
-tags: [deepseek, huawei, ascend, revenue, fundraising, api-pricing, open-weights, llm-business, china, external-funding, nous-research, manus, mecka-ai, robot-data]
+tags: [deepseek, huawei, ascend, revenue, fundraising, api-pricing, open-weights, llm-business, china, external-funding, nous-research, manus, mecka-ai, robot-data, xai, character-ai, bundling, nvidia, openai-lifecycle, compute-diplomacy, meta, muse-spark, capital-sustainability, accenture, spend-cap, replit, provider-switching, deepseek-v41-flash-1017, nscale, neocloud, ai-debt, power-constraint, minimax, agent-cost, torchneuron, trainium, llm-d, inference-infra]
 created: 2026-09-24
-updated: 2026-10-13
+updated: 2026-10-20
 sources:
   - "raw/articles/2026-09-24-deepseek-1b-annualized-revenue.md"
   - "raw/articles/2026-10-01-anthropic-ipo-prospectus-reuters.md"
@@ -19,6 +19,20 @@ sources:
   - "raw/articles/2026-10-12-microsoft-maia-300-ai-chip.md"
   - "raw/articles/2026-10-12-nvidia-reflection-ai-acquisition-talks.md"
   - "raw/articles/2026-10-13-meta-muse-wonder-models.md"
+  - "raw/articles/2026-10-14-character-ai-bankruptcy-disney-bid.md"
+  - "raw/articles/2026-10-15-nvidia-uk-ai-safety-compute.md"
+  - "raw/articles/2026-10-15-openai-gpt4-series-retirement.md"
+  - "raw/articles/2026-10-15-xai-grok-voice-3.md"
+  - "raw/articles/2026-10-16-meta-muse-spark-open.md"
+  - "raw/articles/2026-10-16-ai-debt-boom-cracking.md"
+  - "raw/articles/2026-10-17-accenture-claude-29-cap.md"
+  - "raw/articles/2026-10-17-replit-drops-anthropic.md"
+  - "raw/articles/2026-10-18-deepseek-v41-flash-1017.md"
+  - "raw/articles/2026-10-19-microsoft-nscale-uk-pullout.md"
+  - "raw/articles/2026-10-20-minimax-m3-1-flash.md"
+  - "raw/articles/2026-10-20-aws-torchneuron-trainium-pytorch.md"
+  - "raw/articles/2026-10-20-cloudflare-clairic-system-one-extraction.md"
+  - "raw/articles/2026-10-20-llm-d-1-0-pytorch-conference.md"
 related:
   - "[[patterns/ai-cost-management]]"
   - "[[concepts/amd-world-labs-physical-ai]]"
@@ -32,6 +46,20 @@ related:
   - "[[concepts/microsoft-maia-300]]"
   - "[[concepts/nvidia-reflection-acquisition-talks]]"
   - "[[concepts/meta-muse-wonder-models]]"
+  - "[[concepts/character-ai-bankruptcy]]"
+  - "[[concepts/nvidia-uk-ai-safety-compute]]"
+  - "[[concepts/openai-gpt4-series-retirement]]"
+  - "[[concepts/grok-voice-3]]"
+  - "[[concepts/meta-muse-spark-open]]"
+  - "[[concepts/ai-debt-boom-cracking]]"
+  - "[[concepts/accenture-ai-cost-cap]]"
+  - "[[concepts/replit-anthropic-split]]"
+  - "[[concepts/deepseek-v41-flash-1017]]"
+  - "[[concepts/microsoft-nscale-uk-pullout]]"
+  - "[[concepts/minimax-m3-1-flash]]"
+  - "[[concepts/aws-torchneuron-trainium-pytorch]]"
+  - "[[concepts/cloudflare-clairic-system-one-extraction]]"
+  - "[[concepts/llm-d-1-0-pytorch-conference]]"
 status: draft
 confidence: low
 ---
@@ -199,6 +227,84 @@ Microsoft가 3세대 자체 AI 칩 **Maia 300** 발표 (10/12, Reuters) — TSMC
 - 이 페이지의 프레이밍으로 읽으면: 10/11 보강(Ultrafast — 레이턴시가 가격 결정력)에 **두 개의 새 근거** — (1) Meta의 클로즈드 전환: 가격 결정력의 원천이 "모델 성능"에서 "에이전트 인프라(Active Memory·Active Focus)"로, (2) Maia의 multi-GW: 가격 결정력의 방어가 "칩"에서 "배치 규모"로. "저가→인프라→하드웨어→자본" 4단계 위에 이제 "배포 채널(오픈→클로즈드 전환)"과 "규모의 선언"이 얹힘.
 - 상세: [[concepts/meta-muse-wonder-models]], [[concepts/microsoft-maia-300]]
 
+## 2026-10-14 보강 — xAI 'The X Subscription': 번들링이 가격 결정력이 되다
+
+xAI가 10/12 **단일 플랜 "The X Subscription"** 발표 (10/13 언론) — **Grok + Grok Bot + Cursor + X Premium**을 한 요금제에 묶었다. **$8/$30/$100/$200** 4개 티어. Premium 티어는 기존 SuperGrok + Cursor Pro + X Premium+ 조합(**~$90/월**)을 대체, **주간 공유 사용량 풀(shared weekly usage pool)**.
+
+- 이 페이지의 프레이밍으로 읽으면: 가격 결정력의 **새 근거 — 번들링**. 10/11 보강(Ultrafast — 레이턴시가 가격 결정력), 10/13 보강(Muse Wonder 클로즈드 전환 — 에이전트 인프라)이 "제품력으로 올리는" 방식이라면, xAI는 "묶어서 내리기 어려운 구조"로. Cursor를 8월에 인수한 뒤의 수순 — **인수 → 번들 → 이탈 장벽**.
+- DeepSeek식 "인상 후에도 이탈 없음"(2단계)의 수요 비탄력성과 같은 문법이지만 방향이 다름: DeepSeek은 "올려도 남는다", xAI는 "묶어서 안 떠나게 한다". 1인 개발자 관점: [[patterns/ai-cost-management]]의 3축 라우팅(속도·가격·품질)에 **"번들 잠금" 제4의 축** — Cursor를 쓰는 순간 Grok 생태계로 묶이는 구조.
+
+## 2026-10-14 보강 — Character.AI 파산: 단위 경제의 경고등
+
+Character.AI(Chapter 11, 10/12 신청): 자산·부채 각 **$50M–$100M**, 디즈니의 **$20M 스토킹호스 입찰**(비독점 영구 IP 라이선스 + 전직 직원 전직 서비스). 2023년 3월 **~$10억 밸류**($150M 라운드) → Google 딜 당시 **~$25억 함의** → 지금 **$20M 입찰** — 소비자 AI 앱의 밸류 붕괴 곡선.
+
+- 이 페이지의 프레이밍으로 읽으면: DeepSeek("올려도 남는" 가격 결정력)의 **정반대 사례 — 단위 경제가 안 맞으면 챕터11**. ~20M MAU(피크 28M)에도 수익화 실패 + 청소년 안전 소송 비용 → wind-down. "오픈 웨이트 = 저가 파괴"가 깨졌다면, 이번엔 "MAU = 가치"가 깨짐 — **MAU가 많은 소비자 AI도 가격 결정력이 없으면 파산**.
+- [[patterns/ai-cost-management]]의 귀결: 모델·API 가격만 보는 게 아니라 **제품 단위 경제**(LTV/CAC, 소송 리스크 비용)가 프론티어 경제학의 한 축. Manus($5억 조달, 10/9 보강)의 반대편 — 자본이 몰리는 쪽과 파산하는 쪽이 같은 주에 공존.
+- 상세: [[concepts/character-ai-bankruptcy]]
+
+## 2026-10-15 보강 — 엔비디아 컴퓨트 외교 + GPT-4 세대 은퇴 + Grok 가격 동결: 자본·라이프사이클·가격이 가격 결정력을 떠받친다
+
+**엔비디아의 영국 AI 안전 연구 $250M 컴퓨트 기부** (10/14, Reuters 와이어) — 향후 5년간 연 약 $50M 상당의 컴퓨트 접근권. 영국 소재 엔비디아 클라우드 파트너 인프라에서 제공. 수혜: Oxford 주도 BOLD 랩, UCL 주도 SOFAIR, Imperial College London + 영국 AI 안전 커뮤니티. 연구 범위: 에이전틱 파운데이션 모델·안전 엔지니어링·로봇 안전·보안 에이전트·오픈 모델 보안·실세계 위협 완화 — **OpenShell 보안 런타임과 Sentry 레퍼런스 디자인을 활용**. Huang: "AI 역량과 안전은 함께 전진해야 한다". 영국 AI 장관 Kanishka Narayan — 영국 프론티어 AI 안전 역량에 대한 신뢰. 제공자 선정·기술 아키텍처·상업 조건은 미확정. 맥락: 엔비디아 시총 약 $5.8T(10월 초), IMF의 AI 자금조달 버블 경고와 같은 시기, Huang의 10/13–14 유럽 투어 일환.
+
+**OpenAI GPT-4 시리즈 일괄 은퇴 예고** (10/14, 공식 이메일 "Plan your transition from GPT-4 series to newer OpenAI models", noreply@email.openai.com → jsong@spigen.com) — **GPT-4o·GPT-4o mini·GPT-4.1·GPT-4.1 mini** 4개 모델 일괄 은퇴. 사유(OpenAI 주장): 신형 모델의 더 강한 역량과 안전 성능. 은퇴 시점·유예 기간의 구체 날짜는 이메일 앞부분에 명시되지 않음. 언론 후속 보도 미확인.
+
+**Grok Voice 3.0** (10/14, xAI 발표, Unite.AI) — 실시간 speech-to-speech, **$0.08/분($4.80/시간)으로 Voice 2.0과 가격 동결**. Artificial Analysis(10/13 측정) Speech-to-Speech Index 86.9로 1위(GPT-Live-1 Astra Medium 83.2, Gemini 3.8 Live 82.6 상회). 태스크당 비용 $0.025 vs GPT-Live-1 $0.030, GPT-Realtime-2.1 $0.055. 배포 주장(xAI, 미검증): Tesla·SpaceX 하루 수백만 대화, Starlink 콜센터 일 20,000콜 중 ~70% 무인 해결.
+
+- 이 페이지의 프레이밍으로 읽으면: (1) **컴퓨트 외교** — 자본 조달(4단계)이 아니라 **기부를 통한 영향력 확보**. $250M 컴퓨트는 OpenShell/Sentry라는 엔비디아의 런타임 스택을 영국 안전 연구의 기본 인프라로 심으려는 움직임 — Maia multi-GW(10/13 보강)가 "배치 규모로 가격 결정력을 방어"했다면, 이건 "표준 채택으로 가격 결정력을 선점". (2) **라이프사이클 관리** — GPT-4 시리즈 은퇴는 "가격 결정력"의 반대편이 아니라 **뒷받침**: Ultrafast(10/11 보강)의 6배 프리미엄이 설득력을 얻으려면 구세대의 저가 옵션이 사라져야 한다. 은퇴는 프리미엄 가격대의 전제 조건. (3) **가격 동결 전략** — Grok Voice 3은 성능 상승에도 가격 동결 — DeepSeek의 "인상 후에도 이탈 없음"과 반대 방향의 가격 결정력: "성능이 올라도 가격은 안 올린다"가 점유율 확보의 신호.
+- 상세: [[concepts/nvidia-uk-ai-safety-compute]], [[concepts/openai-gpt4-series-retirement]], [[concepts/grok-voice-3]]
+
+## 2026-10-16 보강 — Muse Spark Open + AI 부채 붐: 오픈의 회귀와 자본의 한계
+
+**Meta Muse Spark Open** (10/15, TechCrunch·MacRumors) — 816B(활성 42B) MoE 오픈웨이트, 1M 컨텍스트, 코딩·에이전트 특화. GPQA Diamond 89.0·Terminal-Bench 2.1 76.4, AA 지능지수 39(중국 GLM 5.3·Kimi K3보다 낮음). 가중치는 HuggingFace·SageMaker·GCP·Microsoft Foundry, API는 Baseten·Fireworks·Groq·Modal·Nebius·OpenRouter·Together. **연매출 $20M 초과 서비스는 별도 계약**.
+
+**Axios "부채로 연명하는 AI 붐에 균열"** (10/16) — 월스트리트가 AI 지출 한계에 도달. CoreWeave 부채 ~$50B·2031만기 채권 수익률 ~16%·CDS 1000bp(5년내 디폴트 확률 ~63%). Gartner "네오클라우드 80%가 2030년까지 문 닫을 수, $3.5T AI 지출 손상 가능". 2026년 AI 인프라 지출 ~$1T·2027~2030 추가 $6T 전망. Broadcom·Intel CEO(10/12 DBS) "가장 큰 병목은 자본". OpenAI 2026년 9월 연환산 매출 ~$50B. 필라델피아 반도체지수 6거래일 -11.6%($1.6T 증발).
+
+- 이 페이지의 프레이밍으로 읽으면: (1) **오픈의 회귀 — 이원 전략**: 10/13 보강이 "오픈 전략 = 프론티어 전략도 깨졌다"(Muse Wonder 클로즈드 전환)였는데 하루 만에 오픈웨이트 회귀. 모순이 아니라 이원 전략 — Wonder=클로즈드 프론티어, Spark=에이전트 특화 오픈. "오픈 = 프론티어"가 아니라 **"오픈 = 유통(에이전트 배포 채널)"** — Nous/Hermes(10/8 보강)의 논리와 통함. $20M 초과 서비스 별도 계약은 "오픈 = 저가" 등식의 예외 조항 — 오픈이 유통 채널이 되면 대형 서비스의 수익 회수는 라이선스 경계에서. (2) **가격 결정력의 반대편 — 자본의 한계**: 수요의 가격 비탄력성(DeepSeek·Ultrafast)이 아니라 **자금조달의 지속가능성**이 먼저 무너질 수 있다. 4단계(저가→인프라→하드웨어→자본)에 5번째 질문 "자본의 한계"가 붙는다. Manus·Nous(자본 집중)와 CoreWeave(자본 이탈)의 분리 — "AI" 단일 버킷이 아니라 신용도별 분리.
+- 같은 날의 대조: 오픈웨이트 유통은 확장하는데 인프라 자본은 경색 — "모델은 싸지는데 인프라는 비싸진다"는 분기.
+- 상세: [[concepts/meta-muse-spark-open]], [[concepts/ai-debt-boom-cracking]]
+
+## 2026-10-17 보강 — Accenture $29 상한 + Replit 결별 논란: 비용 거버넌스와 공급자 교체권
+
+**Accenture의 Claude $29 월 상한** (10/15–16, 404미디어 입수 내부 공지) — Claude Enterprise 중앙 지원이 직원당 월 $29로 제한 (10/1 발효). 초과분은 consumption-based로 프로젝트 WBS 코드에 청구. 일부 직원(Claude Code)이 월 $500~$1,000 지출, 한 명은 접근 취소.
+
+**Replit의 Anthropic 결별 선언** (10/16, TechCrunch Disrupt) — CEO Masad: 비용·파트너십·성능 이유로 'no longer working with Anthropic'. 그러나 익명 내부 반박('파트너십 여전히 유효') + 9월 블로그의 Claude Fable 5/5.1 배치 기재 — **사실관계 논란 중**.
+
+- 이 페이지의 프레이밍으로 읽으면: (1) **에이전트 경제의 수요 측 실측** — 지금까지의 4단계(저가→인프라→하드웨어→자본)는 "공급자의 가격 결정력" 서사였는데, Accenture는 **수요자(기업)의 지출 한도**가 단위 경제를 재정의하는 사례. $29는 사용 제한이 아니라 예산 귀속의 기준점 — "모델 가격이 고정 변수"가 아니라 "사용자당 월 한도가 고정 변수". (2) **공급자 교체권의 등장** — Replit은 "모델이 교체 가능한 인프라"임을 선언 (비용·벤치·파트너십의 함수). 가격 결정력 인프라의 역방향: 고객이 **공급자를 갈아타는 힘**. 단, 논란 중이므로 확정 서술 금지 — "선언된 교체"와 "배치된 교체"는 다를 수 있다.
+- [[patterns/ai-cost-management]]의 귀결: 라우팅·캐싱 + **스펜드 캡 거버넌스**가 3축으로. "변동성에 대비" (10/3 보강)에서 "한도에 맞춰 설계"로.
+- 상세: [[concepts/accenture-ai-cost-cap]], [[concepts/replit-anthropic-split]]
+
+## 2026-10-18 보강 — DeepSeek V4.1-Flash-1017: 1/42 가격의 파괴자
+
+**DeepSeek V4.1-Flash-1017** (10/17, X 발표) — MIT 오픈웨이트, 763B MoE(활성 16B). 벤치 자사 측정: Terminal-Bench 4.0 31.2→42.3, DeepSWE v1.1 77.0. 태스크당 비용 $0.5→$0.2 미만. API 출력 $0.6/1M 토큰(off-peak) — GPT-5.6 Sol $20, Claude Opus 5 $25의 약 **1/42**. Search·Fetch 도구 API 신규 개방.
+
+- 이 페이지의 프레이밍으로 읽으면: 4단계(저가→인프라→하드웨어→자본) 중 **1단계(저가 파괴자)의 정량적 극대화**. 10/11 Ultrafast(6배 프리미엄)와 정반대 지점 — "가격 결정력 인프라"의 역방향 증거가 아니라 **파괴자 축의 새 기록**. HF CSO Thomas Wolf도 "내부 평가 밖 유지"에 의문을 표함 — 벤치 수치는 자사 측정.
+- 가격 양극화의 완성: Ultrafast 6배 ↑ vs DeepSeek 1/42 ↓ — 중간 지대가 비는 "모래시계" 가격 구조.
+- 상세: [[concepts/deepseek-v41-flash-1017]]
+
+## 2026-10-19 보강 — Nscale: 네오클라우드의 실행 리스크가 숫자로
+
+Microsoft가 영국 Nscale의 Loughton 데이터센터 앵커 계약을 해지 (Telegraph 10/18→Reuters). 최대 $3B IPO를 앞둔 네오클라우드의 전력난·공기 지연.
+
+- **구조적 리스크의 정량화**: 차입 건설 + 빅테크 세입자 의존 — Microsoft는 Nscale 계약 매출의 **약 40%**. 세입자 하나가 빠지자 IPO가 흔들림. 2.5년 만에 계약 총액 $1억→$1,030억+의 성장 서사 vs 실행 리스크.
+- **병목의 이동**: 칩이 아니라 **전력**. 영국 전력망이 2030년대까지 공급 불가. 노르웨이 주력 시설도 6개월 지연(30MW 중 6.4MW).
+- **자금 경색**: FT 10/10 — 글로벌 AI 부채 발행 6월 $113B → 9월 **$23B**. CoreWeave 전주 −25%. 10/16 수집 "AI 부채 붐 균열"의 3일 만의 실전 사례.
+- 이 페이지의 프레이밍으로 읽으면: 4단계(저가→인프라→하드웨어→자본) 중 **2단계(인프라)의 자금 조달 리스크**가 터진 첫 대형 케이스. "가격 결정력 인프라"가 되려면 먼저 **"전력 확보 인프라"** 여야 함. Microsoft의 양면 전략(자체 Maia 300 + 외부 네오클라우드)은 인프라 의존도 분산의 실전 예시.
+- 한계: 파기 사유 미공개 — 전력난은 표면 이유. $35B/$3B는 Telegraph 보도 수치.
+- 상세: [[concepts/microsoft-nscale-uk-pullout]]
+
+## 2026-10-20 보강 — 비용 하락 3축: 모델·칩·스택이 동시에 싸진다
+
+10/20의 테마는 에이전트 실행 비용의 3축 동시 하락.
+
+- **모델 축**: MiniMax M3.1 Flash (10/19) — 428B/23B MoE, 태스크당 약 **$0.22** (회사 주장 70%↓). DeepSWE 73.7%, HLE 48%, CyberGym ~82%. 10/23 오픈 웨이트 예정.
+- **칩 축**: AWS TorchNeuron (10/19) — Trainium2/3용 PyTorch 네이티브 백엔드, 한 줄 설정. Deepgram 사례: 달러당 오디오 처리량 **11–70%↑** (배치 한정 상한). 같은 날 Google TorchTPU도 오픈소스.
+- **스택 축**: llm-d 1.0 (10/20) — K8s 네이티브 분산 추론, 에이전트용 세션 어웨어 라우팅. IBM: 양자 오류정정 워크로드에서 **11.8×** 비용 효율.
+
+- 이 페이지의 프레이밍으로 읽으면: "가격 결정력 인프라"의 반대편에서 **"비용 하락 인프라"**가 3개 층위로 동시 진격. 10/18 "AI 부채 붐 균열"(돈줄 조임)과 반대 방향의 힘 — 돈은 조여드는데 실행 비용은 내려간다. Ultrafast(10/11 보강)의 "레이턴시 프리미엄"과 M3.1 Flash의 "태스크당 $0.22"는 가격대 양극화의 양 끝이 같은 날 확정된 셈.
+- 그림자: "건당 $50" 해킹 (Cairn, 오늘 수집) — 비용 하락은 공격자의 단위 경제도 개선. [[concepts/cairn-norforge-ai-agent-hacking-spree]] 참조.
+- 한계: 11–70%는 Deepgram 단일 사례, 11.8×는 IBM 단일 워크로드, $0.22는 Oossa 추산 — 셋 다 일반화 대기. "70%↓"는 회사 주장.
+- 상세: [[concepts/minimax-m3-1-flash]], [[concepts/aws-torchneuron-trainium-pytorch]], [[concepts/llm-d-1-0-pytorch-conference]]
+
 ## 참고 소스
 
 - [DeepSeek hits $1B annualized revenue, finalizing ~$7.5B raise at ~$74B valuation](raw/articles/2026-09-24-deepseek-1b-annualized-revenue.md)
@@ -210,3 +316,15 @@ Microsoft가 3세대 자체 AI 칩 **Maia 300** 발표 (10/12, Reuters) — TSMC
 - [Manus, Meta 인수 무산 후 $5억+ 조달 (Reuters, 10/8)](raw/articles/2026-10-09-manus-500m-funding-meta-exit.md)
 - [Mecka AI, Sequoia 주도 $60M 시리즈B — 로봇 훈련용 휴먼 모션 데이터 (TechCrunch 10/7·FT 10/10)](raw/articles/2026-10-10-mecka-ai-60m-series-b.md)
 - [Meta Muse Wonder·Wonder Full — 클로즈드 프론티어 에이전트 모델 (10/12)](raw/articles/2026-10-13-meta-muse-wonder-models.md)
+- [엔비디아, 영국 AI 안전 연구에 5년간 $250M 컴퓨트 기부 (Reuters 와이어, 10/14)](raw/articles/2026-10-15-nvidia-uk-ai-safety-compute.md)
+- [OpenAI, GPT-4 시리즈 일괄 은퇴 예고 — 공식 이메일 (10/14)](raw/articles/2026-10-15-openai-gpt4-series-retirement.md)
+- [xAI, Grok Voice 3.0 출시 — speech-to-speech 1위·가격 동결 (Unite.AI, 10/14)](raw/articles/2026-10-15-xai-grok-voice-3.md)
+- [Meta Muse Spark Open — 816B 오픈웨이트, Mac Studio 로컬 구동 (TechCrunch·MacRumors, 10/15)](raw/articles/2026-10-16-meta-muse-spark-open.md)
+- [Axios — "부채로 연명하는 AI 붐에 균열" (Axios·DevDiscourse, 10/16)](raw/articles/2026-10-16-ai-debt-boom-cracking.md)
+- [Accenture, 직원 Claude 사용비 중앙 지원 월 29달러 제한 (404 Media·People Matters·Tech Times UK, 10/15–16)](raw/articles/2026-10-17-accenture-claude-29-cap.md)
+- [Replit CEO 'Anthropic과 더 이상 협력 안 한다' (TechCrunch·Unite.AI, 10/16) — 논란 중](raw/articles/2026-10-17-replit-drops-anthropic.md)
+- [DeepSeek V4.1-Flash-1017 — MIT 오픈웨이트, 1/42 가격 (MoneyToday·AIWeekly·AI Compass, 10/17–18)](raw/articles/2026-10-18-deepseek-v41-flash-1017.md)
+- [Microsoft의 Nscale 영국 계약 파기 — $3B IPO 앞둔 전력난 (Telegraph·Reuters, 10/18)](raw/articles/2026-10-19-microsoft-nscale-uk-pullout.md)
+- [MiniMax M3.1 Flash — 태스크당 $0.22의 에이전트 모델 (Reuters·Oossa, 10/19)](raw/articles/2026-10-20-minimax-m3-1-flash.md)
+- [AWS TorchNeuron — PyTorch 한 줄로 Trainium 실행 (TechCrunch·Amazon, 10/19)](raw/articles/2026-10-20-aws-torchneuron-trainium-pytorch.md)
+- [llm-d 1.0 — 에이전트용 분산 추론 스택 (Google Cloud·SiliconANGLE, 10/20)](raw/articles/2026-10-20-llm-d-1-0-pytorch-conference.md)

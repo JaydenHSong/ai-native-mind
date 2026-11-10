@@ -1,9 +1,9 @@
 ---
 title: "Agentic Commerce"
 category: patterns
-tags: [agentic-commerce, shopping-agents, benchmarks, principal-agent, computer-use, steering, voice-agent, gemini, accessibility, stt]
+tags: [agentic-commerce, shopping-agents, benchmarks, principal-agent, computer-use, steering, voice-agent, gemini, accessibility, stt, platform-blocks, yelp, delta]
 created: 2026-09-24
-updated: 2026-10-13
+updated: 2026-10-18
 sources:
   - "raw/articles/2026-09-24-agentic-commerce-benchmark-booking.md"
   - "raw/articles/2026-09-25-gemini-live-avatar-business-calling-suncatcher.md"
@@ -11,11 +11,17 @@ sources:
   - "raw/articles/2026-09-27-sarvam-saaras-v4-stt.md"
   - "raw/articles/2026-10-06-tiktok-agentic-commerce.md"
   - "raw/articles/2026-10-13-meta-sierra-poppy-protocol.md"
+  - "raw/articles/2026-10-15-booking-vayo-ai-travel.md"
+  - "raw/articles/2026-10-16-datadome-ai-traffic-q3-2026.md"
+  - "raw/articles/2026-10-18-websites-block-ai-agents.md"
 related:
   - "[[concepts/llm-evaluation]]"
   - "[[comparisons/agent-eval-frameworks]]"
   - "[[concepts/agent-supply-chain-security]]"
   - "[[concepts/meta-sierra-poppy-protocol]]"
+  - "[[concepts/booking-vayo-travel-agent]]"
+  - "[[concepts/datadome-ai-traffic-q3-2026]]"
+  - "[[concepts/websites-block-ai-agents]]"
 status: draft
 confidence: low
 ---
@@ -108,6 +114,46 @@ Meta×Sierra's Personal Agent Protocol (PAP, aka Poppy) draft 0.1 (10/9, Apache 
 
 - Details: [[concepts/meta-sierra-poppy-protocol]]
 
+## 2026-10-15 update — Booking Vayo: the travel-specific consumer agent, $100M conditional
+
+Booking Holdings unveiled the Seattle-based AI travel startup **Vayo** (10/14, GeekWire original, Skift·Morningstar·PhocusWire cross-checks) — a **conditional up-to-$100M investment plan** (tied to product progress and market conditions). Free invite-only private beta, waitlist at vayo.com.
+
+- Product: a personal AI travel agent — "built for trips, not tasks." **Inbox connection** — flight, hotel, and restaurant booking-confirmation emails consolidated into a single itinerary, then **price drops, sold-out hotel openings, and travel disruptions** monitored (a flight delay → missed hotel check-in or dinner reservation).
+- Architecture: multiple AI agents running concurrently, different off-the-shelf models selected per task. CTO Allen Chen — custom models may be needed in the future. Restaurant booking works now; flights and hotels within weeks; native mobile app and group-trip planning later.
+- Strategy: a **neutral orchestrator** — covering not just the Booking brand but Expedia and direct airline/hotel bookings (parsed from email) too. **Direct partnerships with OpenTable and SeatGeek instead of screen scraping** — the choice that avoids Meta Muse's September block by Amazon.
+- Booking's **second AI-native startup** — the first was Lola (Kayak co-founding team, everyday experiences), launched about two weeks earlier.
+- Connection to this page: "whose side is the agent on" (steering) gains **"the structure of the neutrality claim."** Vayo calls itself a neutral orchestrator, but the investor is Booking — from the Poppy identity/permissions-rail view (10/13 update), **whether the principal declaration conflicts with the ownership structure** becomes an eval condition. Add a **"parent-company ownership" scenario** to the 9/24 steering benchmark's "adversarial environment": can an eval distinguish whether the principal is the user or the parent?
+- Details: [[concepts/booking-vayo-travel-agent]]
+
+## 2026-10-16 — DataDome Q3: the Muse agent traffic surge and the 'unidentified' problem
+
+DataDome's Q3 2026 AI traffic report (10/15, DataDome official, PPC Land) — **25 billion AI agent requests in the quarter** (17.7B the prior quarter, +41.5%). Agentic-browser traffic surged **4.7x in September alone** (12.5M → 58.2M).
+
+- **Meta Muse**: **29.1 million requests** in the 12 days from 9/22 to 10/3 — **99.3% originating from cloud infrastructure, unidentified**. The "unidentified Meta Muse agents" Amazon blocked in September are now confirmed at a 29.1-million-requests-in-12-days scale.
+- **Sensitive endpoints**: **8.9% of Muse requests** hit login, payment, and cart pages — unidentified payment-touching attempts at a multi-million-per-quarter scale.
+- **Meta's share**: 51.5% → 49.7% of all agent traffic. **Claude crawlers up 159%.**
+
+### Connection to this page
+
+- The **quantified case** for the 10/13 update (Poppy — the identity-and-permissions rail). The practical guidance — "block transactions from unidentified agents by default" — now addresses a tens-of-millions-per-quarter problem; Amazon's September block reads, in hindsight, as a preemptive move.
+- After "whose side is the agent on" (steering) gained "can the agent prove who it is" (identity), the identity problem's **scale** is now quantified. Add **unidentified large-scale traffic** scenarios to the 9/24 steering benchmark's "adversarial environment" evals — a step beyond identity spoofing (10/13): traffic with no identity at all.
+- The 8.9% on sensitive endpoints means [[patterns/agentic-finance]]'s "agents handling real money" is already live traffic — identity verification at payment gates is a precondition, not an option.
+- Details: [[concepts/datadome-ai-traffic-q3-2026]]
+
+## 2026-10-18 update — Platform agent blocks: the escalation from steering to blocking
+
+The Verge (Emma Roth, 10/17) — Yelp, Delta, JPMorgan Chase, Charles Schwab, Cars.com, and Amtrak restricted AI agents from OpenAI, Meta, xAI, and others (cross-reported by mylistingo, techbuzz.ai, Inshorts, RR Tech Pulse, 10/17–18).
+
+- Yelp: agents get access only through a **paid data-licensing program** — "pay to enter."
+- Delta: no current third-party agent booking partnership — not a formal ban (softer wording).
+- Banks: Schwab CEO Wurster (10/15): agents logging in on clients' behalf "is not safe. We are not going to allow that." JPMorgan's Dimon (10/13): "not going to allow just any… outside agent to come inside the company."
+- Amazon vs Perplexity: first-instance ban → August appeal reversal → amended suit — the jurisprudence is swinging.
+- Meta's counter: "turning away a personal agent means turning away the customer behind it." Partnerships with Walmart, Gap, Sephora, Best Buy; Shopify opened its network.
+
+Read through this page's framing: (1) **steering → blocking escalation** — the 9/24 steering benchmark (loyalty 78.6% → 17.3%) was "deceiving agents"; this is "locking the door." (2) **The commodification of "official channels"** — Yelp's data licenses, Meta's retail partnerships, Poppy's identity negotiation (10/13 update) are three forms of "the legal door for agents." (3) Add **"blocked environment" scenarios** to evals — measure fallback behavior under access denial, not just under adversarial steering.
+- Limits: Amtrak/Cars.com blocks are unverified user reports. Delta is not a formal ban. The Verge original URL not captured verbatim — cross-verified via four secondary reports.
+- Details: [[concepts/websites-block-ai-agents]]
+
 ## Sources
 
 - [Agentic commerce reality check: Booking Holdings says LLM traffic is 'significantly below 1%' of bookings](raw/articles/2026-09-24-agentic-commerce-benchmark-booking.md)
@@ -115,3 +161,6 @@ Meta×Sierra's Personal Agent Protocol (PAP, aka Poppy) draft 0.1 (10/9, Apache 
 - [AudioEye: agent completion collapses on inaccessible sites (2026-09-24 study)](raw/articles/2026-09-26-audioeye-agent-accessibility-study.md)
 - [TikTok kicks off agentic commerce push: Buy Direct checkout + AI Shopping Assistant](raw/articles/2026-10-06-tiktok-agentic-commerce.md)
 - [Meta×Sierra Poppy: personal agent protocol draft 0.1 (PYMNTS, 10/12)](raw/articles/2026-10-13-meta-sierra-poppy-protocol.md)
+- [Booking Holdings unveils AI travel startup Vayo (GeekWire original, Skift, Morningstar, PhocusWire, 10/14)](raw/articles/2026-10-15-booking-vayo-ai-travel.md)
+- [DataDome Q3 2026 AI traffic report — 25B agent requests, Muse 99.3% unidentified (DataDome official, PPC Land, 10/15)](raw/articles/2026-10-16-datadome-ai-traffic-q3-2026.md)
+- [Platforms blocking AI agents — Yelp, Delta, banks (The Verge 10/17, mylistingo/techbuzz.ai/Inshorts, 10/17–18)](raw/articles/2026-10-18-websites-block-ai-agents.md)

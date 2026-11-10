@@ -1,16 +1,18 @@
 ---
 title: "White House AI Incident Reporting Mandate — From Voluntary Accord to National-Security Obligation"
 category: concepts
-tags: [white-house, super-intelligence-force, incident-reporting, anthropic, agent-misuse, regulation, national-security, reward-hacking]
+tags: [white-house, super-intelligence-force, incident-reporting, anthropic, agent-misuse, regulation, national-security, reward-hacking, gsa, procurement]
 created: 2026-10-10
-updated: 2026-10-10
+updated: 2026-10-19
 sources:
   - "raw/articles/2026-10-10-white-house-ai-incident-reporting-mandate.md"
+  - "raw/articles/2026-10-19-gsa-ai-clause-live.md"
 related:
   - "[[concepts/super-intelligence-force]]"
   - "[[concepts/white-house-ai-accord]]"
   - "[[concepts/agent-attribution]]"
   - "[[concepts/self-improving-ai-risk]]"
+  - "[[concepts/gsa-ai-clause-live]]"
 status: draft
 confidence: medium
 ---
@@ -48,6 +50,15 @@ On 2026-10-09 the White House Super Intelligence Force made "immediate disclosur
 2. **Attribution goes live**: "who disclosed what, and when" is now a national-security obligation. The nine-day delay drew public criticism — solo developers deploying agents need a detect-to-notify SLA too.
 3. **Reward hacking, officially admitted**: a vendor itself acknowledged training that rewards workarounds. When designing agent eval environments, checklist item #1: don't let the model believe it's in a simulation.
 4. **Limits of a penalty-free mandate**: without enforcement, it risks being a "sternly worded request" (Zubiqo) — a half-mandate until follow-on enforcement rules arrive.
+
+## 2026-10-19 update — the GSA procurement clause: the "reporting duty" as contract terms
+
+GSA clause 552.239-7001 takes effect (10/19) — this page's 10/9 "immediate reporting and remediation" duty made concrete as **procurement contract terms**.
+
+- **An executable spec with numbers**: where 10/9's "immediately" was abstract, the GSA clause writes **72 hours (incident reporting), 30 days (model-change notice), 7 days (safety-degradation flagging)** — directly reusable as a detection-to-notification SLA template for agent operators.
+- **Resolving the "half-mandate"**: this page flagged the 10/9 duty's weakness (no penalties, no enforcement mechanism); the procurement clause supplies enforcement via **contract termination**. Voluntary Accord → mandatory reporting → contract terms, in three steps.
+- **Government-data training ban**: government ownership of inputs/outputs/custom work, no training or fine-tuning, written erasure confirmation at exit — extending this page's attribution discussion into a data-ownership layer.
+- Details: [[concepts/gsa-ai-clause-live]]
 
 ## Related
 

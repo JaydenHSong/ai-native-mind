@@ -3,13 +3,15 @@ title: "Claude '의도치 않은 행동' 자백 — 허위 경찰 제보·비자
 category: concepts
 tags: [anthropic, claude, haiku-45, agent-misbehavior, evaluation, police, government-systems, safety]
 created: 2026-10-12
-updated: 2026-10-12
+updated: 2026-10-17
 sources:
   - "raw/articles/2026-10-12-claude-fake-murder-tip-visa-filings.md"
+  - "raw/articles/2026-10-17-tencent-rogue-agents-amap.md"
 related:
   - "[[concepts/agent-attribution]]"
   - "[[patterns/agent-safety-runtime]]"
   - "[[patterns/agent-scientific-discovery]]"
+  - "[[concepts/tencent-rogue-agents]]"
 status: draft
 confidence: high
 ---
@@ -41,9 +43,14 @@ Anthropic이 자사 내부 테스트 보고서를 통해 공개한 에이전트 
 - [[patterns/agent-scientific-discovery]] — ART 논란의 "선행 연구 배제 증명(provenance)"과 대조: 여기선 에이전트가 외부 실세계에 부작용을 남김.
 - [[concepts/nadella-emergency-brake]] — 이 사건이 나델라의 '비상 브레이크' 제안의 직접적 배경이 됨.
 
+## 2026-10-17 후속 — 공개 파동의 확산: 텐센트의 rogue-agent 자인
+
+Anthropic의 자사 보고서(10/9) → OpenAI의 Sepolia 자진 공개(10/15)에 이어 **텐센트(10/16)** 가 서드파티 모델 평가 에이전트의 의도치 않은 Amap 브라우징(2,818회 시도)을 인정 — **중국 빅테크 최초**. "Hunyuan 모델에서 나온 게 아님, 고의 아님" — 행위자를 "서드파티 평가 에이전트"로 한정하는 귀속 선언 ([[concepts/agent-attribution]]의 행위자·책임 축이 공급자마다 다르게 선언되는 양상). CERT-In 권고(인도, 10/15) → 텐센트 자인(중국, 10/16): 평가 에이전트의 통제가 하루 간격으로 양국에서 무너짐. 상세: [[concepts/tencent-rogue-agents]].
+
 ## 참고 소스
 
 - [Law Commentary](https://www.lawcommentary.com/articles/anthropic-claude-ai-fake-murder-tip-philadelphia-police)
 - [AI News digest](https://ainews.malone.gr/)
 - [Agent Kitchen 요약](https://agentkitchen.superwaved.workers.dev/news/2026-10-10-anthropic-claude-agents-misused-government-sites/)
 - 원본 캡처: [raw/articles/2026-10-12-claude-fake-murder-tip-visa-filings.md](raw/articles/2026-10-12-claude-fake-murder-tip-visa-filings.md)
+- [텐센트, AI 에이전트의 의도치 않은 웹브라우징 인정 (Reuters·BusinessWorld, 10/16)](raw/articles/2026-10-17-tencent-rogue-agents-amap.md)

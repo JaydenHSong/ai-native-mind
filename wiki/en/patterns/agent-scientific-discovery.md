@@ -3,18 +3,20 @@ title: "Agent Scientific Discovery"
 category: patterns
 tags: [agentic-research, scientific-discovery, evaluation, anthropic, claude, claims, openai, math-discovery, agmai, verification-asymmetry]
 created: 2026-09-25
-updated: 2026-10-11
+updated: 2026-10-17
 sources:
   - "raw/articles/2026-09-25-anthropic-claude-crispr-art-enzyme.md"
   - "raw/articles/2026-09-26-stanford-paper2agent.md"
   - "raw/articles/2026-10-07-openai-377-math-results-github.md"
   - "raw/articles/2026-10-08-openai-722-math-manuscripts.md"
   - "raw/articles/2026-10-11-claude-art-discovery-controversy.md"
+  - "raw/articles/2026-10-17-claude-mythos5-quantum-circuits.md"
 related:
   - "[[concepts/llm-evaluation]]"
   - "[[concepts/harness-engineering]]"
   - "[[concepts/mcp]]"
   - "[[concepts/claude-art-discovery-controversy]]"
+  - "[[concepts/claude-quantum-circuit-discovery]]"
 status: draft
 confidence: medium
 ---
@@ -97,6 +99,15 @@ The follow-up to Case 1's 9/25 ART announcement — Copenhagen PhD candidate Mar
 - "The discovery process is logged and auditable" (a strength in the trade-offs table) — but unless the **input data's provenance** is also logged, independence can never be proven. The auditable surface must extend from outputs to **inputs and outputs**.
 - Details: [[concepts/claude-art-discovery-controversy]]
 
+## Case 5 — Claude Mythos 5's quantum circuits (2026-10-16): discovery measured in numbers
+
+Where the ART discovery (case 1) was a qualitative "it existed / it didn't" finding, Mythos 5's quantum-circuit design is a discovery **measured in 17x and 12x** — the evaluator loop's finished form, where a discovery pipeline's output is evaluated as quantitative metrics (Anthropic, 10/16 announcement; 53-hour closed loop; led by Andi Gu; Harvard and QuEra collaboration).
+
+- **Result**: 7 of 8 primitives beat best-published records. Elliptic-curve modular inversion — Toffoli gates ~17x fewer (70M → 4M), qubits +12% (838 → 935). Reed-Solomon decoder — ~12x fewer gates than Google's prior record, 403M sample decodings.
+- **Method**: generator–judge loop with an automated evaluator (score = Toffoli count × peak qubits). Simulations + Lean formal proofs.
+- **Read through this page's template**: (1) "whoever designs the evaluator decides the discovery" — the score function is the constitution of the search direction. The quantitative edition of the fourth stage (prior-art exclusion proof, case 4): advance publication of the evaluation criteria. (2) A model for stating scope — "resource estimates only; not run on real hardware, not an attack on deployed crypto" stated in the announcement itself. An applied case of "grade claim strength by stage" (the checklist's #4). (3) Verification status: **Anthropic's own numbers, independent reproduction pending** — 1 of 8 failed to beat the prior best (undisclosed which).
+- Details: [[concepts/claude-quantum-circuit-discovery]]
+
 ## Example application
 
 A checklist for handing "discovery" to agents:
@@ -122,3 +133,4 @@ A checklist for handing "discovery" to agents:
 ## Sources
 
 - [Claude agents identify a CRISPR-like enzyme system (ART) — 950 agents, 21 hours, 210M tokens](raw/articles/2026-09-25-anthropic-claude-crispr-art-enzyme.md)
+- [Claude Mythos 5 beats prior bests on 7 of 8 quantum circuit tasks (Particle News, Crypto Briefing, Anthropic, 10/16)](raw/articles/2026-10-17-claude-mythos5-quantum-circuits.md)

@@ -3,13 +3,15 @@ title: "Agentic Finance — 에이전트에게 실제 돈을 맡기는 상품화
 category: patterns
 tags: [agentic-finance, robinhood, trading-agent, mcp, hitl, dedicated-account, consumer-fintech]
 created: 2026-10-01
-updated: 2026-10-01
+updated: 2026-10-17
 sources:
   - "raw/articles/2026-10-01-robinhood-agents-launch.md"
+  - "raw/articles/2026-10-17-replit-drops-anthropic.md"
 related:
   - "[[concepts/persistent-agent]]"
   - "[[patterns/agentic-commerce]]"
   - "[[concepts/agent-supply-chain-security]]"
+  - "[[concepts/replit-anthropic-split]]"
 status: draft
 confidence: high
 ---
@@ -67,6 +69,14 @@ confidence: high
 
 - 8월 말부터 **Claude가 Robinhood MCP 경유 매매를 거부**한다는 사용자 보고 다수 — 모델 제공자가 플랫폼 상품의 실행을 거부하는, 플랫폼-모델 간 책임 경계의 실증. 상품(승인 ON)과 모델(거부)이 서로 다른 안전 판단을 내리는 이중 구조.
 
+## 2026-10-17 보강 — Replit의 공급자 교체 논란: "모델 선택권의 상품화"가 금융 밖으로
+
+**Replit의 Anthropic 결별 선언** (10/16) — CEO Masad가 TechCrunch Disrupt에서 'no longer working with Anthropic' (비용·파트너십·성능 이유). 그러나 익명 내부 반박('파트너십 여전히 유효') + 9월 블로그의 Claude Fable 5/5.1 배치 기재 — **사실관계 논란 중**.
+
+- 이 페이지와의 연결: Robinhood의 "모델 선택권의 상품화"(사용자가 GPT-6 vs Opus 4.8을 골라 돈을 맡김)가 **금융 밖 코딩 에이전트 제품으로 확장** — Replit은 그 선택을 비용·벤치(VBench 주장)·파트너십으로 공개 평가한 첫 사례(단, 논란 중). "왜 중요한가 #3"의 연장: 모델 브랜드가 소비자 선택 변수인 데서 **공급자 교체의 트리거**로.
+- 1인 개발자 관점: 제품의 모델 공급자를 선언으로 믿지 말고 실제 라우팅을 확인하라. "발언과 배치의 괴리" — Replit이 정말 Anthropic을 뺐는지, 아니면 협상용 선언인지는 TechCrunch 추가 확인 대기.
+- 상세: [[concepts/replit-anthropic-split]]
+
 ## 왜 중요한가 (1인 개발자 관점)
 
 1. **"에이전트에게 돈을 맡기는" 첫 메인스트림 UX**: 전용 계정 + 승인 기본값 + 한도 — 에이전트 권한 설계의 소비자 표준이 여기서 굳어질 가능성.
@@ -89,3 +99,4 @@ confidence: high
 ## 참고 소스
 
 - [Robinhood Agents 출시](raw/articles/2026-10-01-robinhood-agents-launch.md)
+- [Replit CEO 'Anthropic과 더 이상 협력 안 한다' (TechCrunch·Unite.AI, 10/16) — 논란 중](raw/articles/2026-10-17-replit-drops-anthropic.md)

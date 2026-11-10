@@ -1,19 +1,23 @@
 ---
 title: "Gemini 4 Argon"
 category: concepts
-tags: [google, gemini-4, argon, frontier-model, gated-release, benchmark, hallucination, pricing, carbon, checkpoint]
+tags: [google, gemini-4, argon, frontier-model, gated-release, benchmark, hallucination, pricing, carbon, checkpoint, minecraft, multi-agent-coordination]
 created: 2026-10-01
-updated: 2026-10-12
+updated: 2026-10-19
 sources:
   - "raw/articles/2026-10-01-google-gemini-4-argon-launch.md"
   - "raw/articles/2026-10-10-gemini-4-carbon-internal-testing.md"
   - "raw/articles/2026-10-12-us-restores-uk-frontier-model-access.md"
+  - "raw/articles/2026-10-14-google-gemini-4-argon-ga.md"
+  - "raw/articles/2026-10-19-gemini-4-argon-minecraft.md"
 related:
   - "[[patterns/ai-cost-management]]"
   - "[[patterns/mid-tier-performance-inversion]]"
   - "[[concepts/agent-supply-chain-security]]"
   - "[[concepts/gemini-4-carbon-testing]]"
   - "[[concepts/uk-frontier-model-access-restoration]]"
+  - "[[concepts/gemini-4-argon-minecraft]]"
+  - "[[concepts/taste-bench]]"
 status: draft
 confidence: high
 ---
@@ -100,6 +104,25 @@ As the UK AI Security Institute's pre-deployment model access was restored after
 - MS's Brad Smith (BBC interview): the UK is the right lead for AI safety guidelines — the evaluator's stature is rising alongside.
 - Details: [[concepts/uk-frontier-model-access-restoration]]
 
+## 2026-10-14 update — Argon goes GA: the $2/$10 intro price gets a deadline
+
+Google DeepMind SVP Koray Kavukcuoglu announced **general availability** (10/13): paid Gemini API and AI Studio, the Gemini platform (including Gemini for Business), the Gemini app and Search AI Mode (Pro/Ultra tiers), and Google Antigravity (Ultra). Model ID `gemini-4-argon` (stable): a unified **1M-token input/output limit** plus a new **continuation protocol**, with cached input still at a 95% discount.
+
+- The $2/$10 pricing pattern this page has tracked since 9/30 now has a deadline: **$2/$10 per 1M tokens through 2026-11-30, then $4/$20** — the exact list price of Claude Opus 5.5. "Intro price → Opus-5.5 parity" is the confirmed shape of the pattern; [[comparisons/frontier-lab-economics]] reads it as price *matching* rather than a price war.
+- Google's GA claims: **Vals Index #1**, internal agentic-coding submissions +35% / rollbacks −30%, 100,000+ Google employees on Antigravity monthly. Company claims, kept separate from independent verification — the UK AISI evaluation (10/12 update) remains the open observation point.
+- Fairwind also expands to hundreds of partners.
+
+## 2026-10-19 update — the Minecraft run: a 27-hour collaborative coding test
+
+Google DeepMind paper (10/15 arXiv; 10/18–19 press): four Gemini 4 Argon agents defeated Minecraft's Ender Dragon in **27 hours 14 minutes** with zero human intervention.
+
+- Emergent role division with no assigned roles (tools, food, portal, final blow), in-game chat plus shared memory. **2,783 programs** (63,313 lines), 229 chat messages, **605 deaths**. 1.35 billion input tokens.
+- **Cost**: ~$520 to the win at launch API pricing; full session $810 (launch) / $1,620 (standard, effective 2027) — the first published price tag for a "27-hour agent workday."
+- A fifth Observer agent monitored for cheating — none found. The authors frame it as a long-horizon coding-and-coordination test, not human-style play.
+- Read against this page's framing: the first field validation of the 10/1 launch and 10/13 GA claims (Vals Index #1, internal coding +35%) — not a benchmark score but 27 hours of real work. Where [[concepts/taste-bench]] (collected the same day) measured mid-task judgment across 502 forks, this run demonstrates that judgment across 2,783 programs.
+- Limitations: single run (no reproducibility data), easy difficulty, text game-state access, Minecraft almost certainly in training data. A record of endurance, not skill.
+- Details: [[concepts/gemini-4-argon-minecraft]]
+
 ## Related concepts
 
 - [[patterns/ai-cost-management]] — the $2/$10 intro-price pattern and where the price war stands
@@ -111,3 +134,4 @@ As the UK AI Security Institute's pre-deployment model access was restored after
 
 - [Google Gemini 4 Argon launch](raw/articles/2026-10-01-google-gemini-4-argon-launch.md)
 - [Google testing Gemini 4 'Carbon' on internal coding platform — Opus 5.5-level assessment (Business Insider original, 10/9)](raw/articles/2026-10-10-gemini-4-carbon-internal-testing.md)
+- [Gemini 4 Argon GA — intro pricing $2/$10 through 11/30, then $4/$20 (Google official blog, VentureBeat, 10/13)](raw/articles/2026-10-14-google-gemini-4-argon-ga.md)

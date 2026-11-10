@@ -1,20 +1,24 @@
 ---
 title: "에이전트의 상주 형태 — 로컬 모델 vs 클라우드 컴퓨터"
 category: concepts
-tags: [agent-residence, local-model, open-weights, privacy, cloud-agent, meta, xai, openai, underdog, claude-workspace, microsoft, windows-agents, surface]
+tags: [agent-residence, local-model, open-weights, privacy, cloud-agent, meta, xai, openai, underdog, claude-workspace, microsoft, windows-agents, surface, apple, china, alibaba, muse-spark, mlx]
 created: 2026-10-04
-updated: 2026-10-08
+updated: 2026-10-16
 sources:
   - "raw/articles/2026-10-04-agent-residence-local-vs-cloud.md"
   - "raw/articles/2026-10-07-underdog-ondevice-ai-assistant.md"
   - "raw/articles/2026-10-07-claude-google-workspace-beta.md"
   - "raw/articles/2026-10-08-microsoft-surface-ultra-agentic-windows.md"
+  - "raw/articles/2026-10-15-apple-intelligence-china.md"
+  - "raw/articles/2026-10-16-meta-muse-spark-open.md"
 related:
   - "[[concepts/persistent-agent]]"
   - "[[patterns/agentic-finance]]"
   - "[[comparisons/managed-vs-deep-agents]]"
   - "[[tools/claude-google-workspace]]"
   - "[[patterns/agent-safety-runtime]]"
+  - "[[concepts/apple-intelligence-china-launch]]"
+  - "[[concepts/meta-muse-spark-open]]"
 status: draft
 confidence: medium
 ---
@@ -69,6 +73,26 @@ AI 네이티브 프로그래머에게는 두 형태가 다른 도구다: 로컬 
 
 → 이 페이지의 2축(로컬 vs 클라우드)에 3축 추가: 로컬(프라이버시) · 클라우드(워크플로) · **OS 내장(플랫폼)**. OS가 에이전트 보안(Containment·Identity·Manageability)을 강제하는 주체가 되면, [[patterns/agent-safety-runtime]]의 실행시점 보안이 OS 레벨 표준으로 굳어진다.
 
+## 2026-10-15 보강 — 강제된 "Alibaba 클라우드 상주": Apple Intelligence 중국판
+
+Apple이 12월 **iOS 27.3**로 중국 본토에 Apple Intelligence 출시 예정 (10/14, 9to5Mac·Bloomberg·SCMP) — 2년 넘는 규제 지연(2025년 5월→2025년 말→2026년 초 모두 불발)의 끝. iPhone Duo 중국 출시는 다음 주.
+
+- **제한판 구성**: 올해 플래그십인 개편 Siri AI 제외, Apple 자체 이미지 생성 도구 제외, 일부 앱 텍스트 생성 제한, 카메라 기반 비주얼 인텔리전스 제외. 포함은 Genmoji·AI 알림 요약·글쓰기 도구·사진 Clean Up — **2024년 오리지널 기능 세트 수준**.
+- **양보 조건**: Alibaba와 공동 개발한 가드레일 — **정부가 AI 모델 업데이트를 승인하는 필터** 포함. 클라우드 쿼리는 Alibaba 경유(**Tongyi Qianwen이 OpenAI 대체**, Alibaba 이미지 모델이 Apple 도구 대체). Baidu와는 검색·Siri 협력.
+- **규제 궤적**: 2026년 7월 예비 승인, 9/29 MIIT 망접속 허가(iPhone Duo·iPhone 18 Pro·iPhone 15 Pro까지 소급 — Apple Intelligence와 Tongyi Qianwen·Tongyi Wanxiang 병기, 등록번호 공개).
+- **맥락 수치**: 중국은 Apple 매출의 **17–20%**. 경쟁사(Huawei·Xiaomi·Oppo·Vivo)는 이미 AI 기능 탑재. Apple 시총 종가 기준 $5T 돌파(Nvidia 다음 2위). Bloomberg — 2년 된 기능을 이제 내놓는 실익은 불투명. Apple은 10/13 EU에 대해서도 Siri AI 관련 "건설적 협력 중".
+- 이 페이지의 프레이밍으로 읽으면: "어디에 상주하는가"가 **주권의 질문**이 된 사례 — 온디바이스 모델이라도 클라우드 상주(Alibaba)는 중국 정부가 강제. 3축(로컬·클라우드·OS 내장)에 4번째 질문이 붙는다: **"상주 인프라를 누가 허가하는가"**. Apple의 프라이버시 포지셔닝(온디바이스)은 유지되지만, 클라우드 쿼리 경로는 정부의 업데이트 승인 필터를 통과 — "데이터가 기기 밖으로 안 나감"이 아니라 "밖으로 나간 쿼리가 Alibaba를 경유하고 모델 업데이트는 정부가 승인"하는 구조. Underdog(10/7 보강)가 "로컬 = 프라이버시"였다면, 중국판은 **"로컬 ≠ 주권"** — 상주 위치와 통제 주체의 분리.
+- 상세: [[concepts/apple-intelligence-china-launch]]
+
+## 2026-10-16 보강 — Muse Spark Open: Mac Studio가 에이전트의 집이 된다
+
+Meta Muse Spark Open (10/15, TechCrunch·MacRumors) — 816B(활성 42B) MoE 오픈웨이트를 **M5 Ultra Mac Studio 2대(MLX·통합메모리 1TB)** 에서 로컬 구동 시연. Apple과의 협력.
+
+- **"로컬" 스펙트럼의 상단 확장**: 2026-08 Meta 30B(소비자 GPU 1장) → 2026-10 Muse Spark(816B, Mac Studio 2대·1TB 통합메모리). "로컬 상주"가 단일 GPU에서 워크스테이션급으로 넓어짐. GPQA Diamond 89.0·Terminal-Bench 2.1 76.4 — 로컬에서 프론티어급 에이전트 성능의 주장(단 AA 지능지수 39는 중국 오픈 모델보다 낮음 — 자사 벤치와 독립 지수 괴리).
+- **플랫폼(OS) × 모델(오픈웨이트)의 교차**: 10/8 보강의 OS 내장(Surface Ultra + Agentic Windows)이 "OS가 에이전트의 집"이었다면, 이번은 **Apple 하드웨어 × Meta 모델** — OS 벤더와 모델 벤더의 결합으로 로컬 에이전트 스택이 완성되는 형태. MLX(Apple 실리콘 추론 스택)가 오픈웨이트 배포 채널의 일부가 됨.
+- 1인 개발자 관점: "로컬"은 이제 소비자 GPU(30B급)와 워크스테이션(816B급)의 2단 — 무엇을 어디에 상주시킬지의 아키텍처 분리가 더 정교해진다. 민감 코드는 온디바이스, 무거운 에이전트 워크로드는 Mac Studio급 로컬.
+- 상세: [[concepts/meta-muse-spark-open]]
+
 ## 관련 개념
 
 - [[concepts/persistent-agent]] — 상주 에이전트 개념의 원형 (OpenAI "O" 리크, 2026-09-27)
@@ -81,3 +105,5 @@ AI 네이티브 프로그래머에게는 두 형태가 다른 도구다: 로컬 
 - [Sigil Wen의 Underdog — 온디바이스 프라이버시 AI 어시스턴트 (TechCrunch, 10/6)](raw/articles/2026-10-07-underdog-ondevice-ai-assistant.md)
 - [Anthropic, Google Workspace용 Claude 공개 베타 (10/6)](raw/articles/2026-10-07-claude-google-workspace-beta.md)
 - [Microsoft×Nvidia, Surface Laptop Ultra — '에이전트를 위한 OS' (Reuters, 10/7)](raw/articles/2026-10-08-microsoft-surface-ultra-agentic-windows.md)
+- [Apple Intelligence, 12월 iOS 27.3으로 중국 출시 예정 (9to5Mac·Bloomberg·SCMP, 10/14)](raw/articles/2026-10-15-apple-intelligence-china.md)
+- [Meta Muse Spark Open — 816B 오픈웨이트, Mac Studio 로컬 구동 (TechCrunch·MacRumors, 10/15)](raw/articles/2026-10-16-meta-muse-spark-open.md)

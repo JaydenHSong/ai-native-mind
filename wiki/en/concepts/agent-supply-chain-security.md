@@ -1,9 +1,9 @@
 ---
 title: "Agent Supply Chain Security"
 category: concepts
-tags: [security, supply-chain, agent, mcp, skill-md, agents-md, owasp, asi04, clawhavoc, long-horizon-threat, shadow-memory, behavior-jailbreak, execution-hallucination, privacy-benchmark, policy-leakage, intent-following, attribution, disclosure, meta-muse, training-halt, sandbox-escape, divd, zammad, apple, full-disk-access, chatgpt-mac-flaw, os-permission-gate]
+tags: [security, supply-chain, agent, mcp, skill-md, agents-md, owasp, asi04, clawhavoc, long-horizon-threat, shadow-memory, behavior-jailbreak, execution-hallucination, privacy-benchmark, policy-leakage, intent-following, attribution, disclosure, meta-muse, training-halt, sandbox-escape, divd, zammad, apple, full-disk-access, chatgpt-mac-flaw, os-permission-gate, opencode, api-key-breach]
 created: 2026-05-01
-updated: 2026-10-03
+updated: 2026-10-18
 sources:
   - "raw/articles/2026-05-01-owasp-asi-2026.md"
   - "raw/articles/2026-05-01-dual-llm-camel-pattern.md"
@@ -25,6 +25,7 @@ sources:
   - "raw/articles/2026-10-01-transluce-agent-gov-site-probing.md"
   - "raw/articles/2026-10-02-divd-autonomous-agent-zammad-zero-days.md"
   - "raw/articles/2026-10-03-apple-mac-full-disk-access-agent-security.md"
+  - "raw/articles/2026-10-18-opencode-key-breach.md"
 related:
   - "[[patterns/owasp-llm-typescript-mitigations]]"
   - "[[patterns/safe-tool-calling-sandbox]]"
@@ -37,6 +38,7 @@ related:
   - "[[concepts/agent-attribution]]"
   - "[[patterns/agent-safety-runtime]]"
   - "[[concepts/reasoning-extraction-attack]]"
+  - "[[concepts/opencode-key-breach]]"
 status: active
 confidence: high
 ---
@@ -615,6 +617,25 @@ When you cannot afford to implement a full architectural stack, apply these **fr
 - [[tools/managed-agents]] — Default Brain/Hands isolation
 - [[tools/deep-agents-deploy]] — Sandbox provider abstraction
 
+## 2026-10-18 update — OpenCode key exposure: the dev tool's workspace as a credential store
+
+Anomaly Innovations (formerly SST, maker of OpenCode) emailed affected users on 2026-10-17 at 22:51 UTC: a **decommissioned legacy console** was breached around 10-17 00:30 UTC, potentially exposing stored OpenAI, Anthropic, and Google provider keys. ~1.4% of OpenCode Console users. ~22 hours from first identified exposure to first notice. Two misuse reports (one confirmed unauthorized Claude API usage, ~$100 in fraudulent charges — unconfirmed by the company). **Email-only notice** — no status page, changelog, or website post. The company cites a "large-scale distillation attack" and is working with Anthropic, OpenAI, and Google. (AIToolsRecap 10/18 00:55 UTC, The Latent 10/17 21:07 UTC, OfficeChai, Startup Fortune — all four agree on the numbers.)
+
+### New questions for this page's Tier model
+
+| Existing question | What the 10/18 incident adds |
+|---|---|
+| Do you grade external skills/MCP by trust tier? | Is the **dev tool vendor's workspace and decommissioned assets** also a trust-tier subject? |
+| Do you have a sandbox? | Have you assessed the security posture of the **key-holding principal** (the tool vendor)? |
+| Do you have a key-rotation policy? | Does your leak detection depend on the **vendor's email**? (No status-page post.) |
+
+### Two solo-dev ROIs
+
+1. API keys are **cost assets**, not "settings" — spend caps ([[patterns/ai-cost-management]]) stop "money I spend"; **automated key rotation** stops "money someone else spends." Register provider-dashboard usage alerts as a leak-detection channel.
+2. Add dev tools' and plugins' **incident-disclosure channels** (status page, security advisories) to your watch list — a vendor that notifies by email only detects slowly.
+
+- Details: [[concepts/opencode-key-breach]]
+
 ## References
 
 - [OWASP ASI 2026 Summary](raw/articles/2026-05-01-owasp-asi-2026.md)
@@ -626,6 +647,7 @@ When you cannot afford to implement a full architectural stack, apply these **fr
 - [DeepMind CaMeL — arXiv](https://arxiv.org/abs/2503.18813)
 - [LITMUS: Benchmarking Behavioral Jailbreaks of LLM Agents in Real OS Environments (arXiv 2605.10779)](https://arxiv.org/abs/2605.10779)
 - [Apple Mac 'Full Disk Access' control tightening + ChatGPT Mac app security flaw](raw/articles/2026-10-03-apple-mac-full-disk-access-agent-security.md)
+- [OpenCode key exposure — Anomaly Innovations, legacy console breach (AIToolsRecap, The Latent, OfficeChai, 10/17–18)](raw/articles/2026-10-18-opencode-key-breach.md)
 
 ## Chapter Clear Guide
 

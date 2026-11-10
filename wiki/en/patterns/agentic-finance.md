@@ -3,13 +3,15 @@ title: "Agentic Finance — Productizing Agents That Handle Real Money"
 category: patterns
 tags: [agentic-finance, robinhood, trading-agent, mcp, hitl, dedicated-account, consumer-fintech]
 created: 2026-10-01
-updated: 2026-10-01
+updated: 2026-10-17
 sources:
   - "raw/articles/2026-10-01-robinhood-agents-launch.md"
+  - "raw/articles/2026-10-17-replit-drops-anthropic.md"
 related:
   - "[[concepts/persistent-agent]]"
   - "[[patterns/agentic-commerce]]"
   - "[[concepts/agent-supply-chain-security]]"
+  - "[[concepts/replit-anthropic-split]]"
 status: draft
 confidence: high
 ---
@@ -67,6 +69,14 @@ The pattern in which a finance platform gives an agent, **inside its own app**, 
 
 - Since late August, multiple user reports say **Claude refuses trades routed through the Robinhood MCP** — the model provider declining to execute a platform product's orders, a live case of the platform–model liability boundary. A dual structure where the product (approval ON) and the model (refusal) make different safety calls.
 
+## 2026-10-17 update — Replit's provider-switch dispute: "model choice as a product feature" moves beyond finance
+
+**Replit's Anthropic split declaration** (10/16) — CEO Masad declared 'no longer working with Anthropic' at TechCrunch Disrupt (cost, partnership, performance). But an anonymous insider rebutted ('partnership still in place') + a September blog lists Claude Fable 5/5.1 in Replit Agent production — **facts in dispute**.
+
+- Connection to this page: Robinhood's "model choice as a product feature" (users pick GPT-6 vs Opus 4.8 to entrust their money to) now extends **to coding-agent products beyond finance** — Replit is the first case of a company publicly evaluating that choice on cost, benchmarks (its VBench claim), and partnerships (with the dispute noted). The continuation of this page's point #3: model brands move from consumer choice variables to **provider-switch triggers**.
+- Solo-dev takeaway: don't take a product's provider announcements at face value — verify actual routing. "The gap between announcement and deployment" — whether Replit truly removed Anthropic, or the statement is a negotiation lever, awaits TechCrunch's follow-up.
+- Details: [[concepts/replit-anthropic-split]]
+
 ## Why it matters (solo-developer lens)
 
 1. **The first mainstream UX for "letting an agent hold money"**: dedicated account + approval default + limits — the consumer standard for agent permissions may be set here.
@@ -89,3 +99,4 @@ The pattern in which a finance platform gives an agent, **inside its own app**, 
 ## References
 
 - [Robinhood Agents launch](raw/articles/2026-10-01-robinhood-agents-launch.md)
+- [Replit CEO says company is no longer working with Anthropic (TechCrunch, Unite.AI, 10/16) — facts in dispute](raw/articles/2026-10-17-replit-drops-anthropic.md)

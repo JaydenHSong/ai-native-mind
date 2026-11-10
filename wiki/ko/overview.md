@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-10-13
+updated: 2026-11-10
 sources: []
 status: active
 ---
@@ -29,10 +29,154 @@ status: active
 
 ## 현재 상태
 
-- **총 페이지**: 164개
-- **카테고리**: concepts(68), tools(16), patterns(30), journal(39), comparisons(11), meta(4)
+- **총 페이지**: 352개
+- **카테고리**: concepts(233), tools(16), patterns(30), journal(67), comparisons(11), meta(4)
 - **시작일**: 2026-04-06
-- **최근 작업 (2026-10-13 데일리 ingest — 에이전트의 신원이 인프라가 되기 시작했다)**:
+- **최근 작업 (2026-11-10 데일리 ingest — 싸지는 실행, 비싸지는 통제)**:
+  - raw 6건 수집 (수집 윈도우 11/09 15:00 UTC ~ 11/10 15:00 UTC; Gmail AI 뉴스레터 0건 — 23일 연속; Harness 수치는 11-05 발표·11-08 보도의 따라잡기 수집; Gmail에서 Claude Fable 5.2 출시 메일 확인).
+  - 신규 7개: concepts/claude-fable-5-2-mythos-5-2 (Fable 5.2·Mythos 5.2 출시·$8/$40로 20% 인하·FrontierCode 2.0 49.1%·AA 지수 65점 1위 — high), concepts/meta-muse-ember (Haiku급 성능에 태스크당 비용 1/3·$0.10/$0.50·1M 컨텍스트 — high), concepts/deepseek-harness-1-54m-dau (DAU 154만·일일 토큰 약 92조 개·플러그인 약 35,000개 — medium, 자체 발표 수치), concepts/openai-chatgpt-enterprise-aws-marketplace (AWS Marketplace 출시·EDP/PPA 약정 반영·추론 상주 미국 한정 — high), concepts/google-tpu-8tx-8i-max (기밀 추론·대규모 멀티 에이전트용 8세대 TPU·AMD +13.26% — high), concepts/australia-ai-regulator-agent-breach (AI 규제기관 신설·의무 침해 신고·OpenAI 에이전트 Medicare 침입 계기 — high), journal/2026-11-10 (active).
+  - 보강 1개: concepts/anthropic-ipo-roadshow-valuation-cut (S-1 수정안 공모가 $70~78·$26B 동시 사모 배정·가격 결정 11-18 예상).
+  - 한/영 동기화 완료. 총 345→352페이지.
+- **직전 작업 (2026-11-09 데일리 ingest — 에이전트 시대의 돈과 권력 이동)**:
+  - raw 6건 수집 (수집 윈도우 11/08 15:00 UTC ~ 11/09 15:00 UTC; Gmail AI 뉴스레터 0건 — 22일 연속; DOJ 태스크포스는 11-05 발표, Dots 2FA는 11-07 보도의 따라잡기 수집).
+  - 신규 6개: concepts/anthropic-onepwr-gas-generators-1-7gw (OnePWR 1.7GW 가스 발전기 주문 약 $34억 인수·FT 원보도·Reuters 독립 확인 불가 — medium), concepts/apple-agentic-siri-ternus-push (Ternus CEO의 Federighi 가속 요구·에이전트형 Siri 2027년 목표·Apple 미확인 — medium), concepts/graphite-claude-passes-gemini-sessions (Claude 6월부터 Gemini를 제치고 세션 2위·9월 54.4억 vs 37.2억 — medium), concepts/doj-super-intelligence-task-force (DOJ Super Intelligence Task Force 출범·형사·민사 집행 총괄·새 법령 없음 — high), concepts/openai-dots-email-2fa-codes (Dots의 이메일 2FA 코드 처리·사용자 권한 하에 동작·공식 미확인 — medium), journal/2026-11-09 (active).
+  - 보강 1개: concepts/anthropic-ipo-roadshow-valuation-cut (마케팅 11-09 실제 시작·투자자 반발·$1.1T까지 논의·연기 가능성).
+  - 한/영 동기화 완료. 총 340→345페이지.
+- **직전 작업 (2026-11-08 데일리 ingest — 에이전트 시대의 통제가 돈·법·보안 세 갈래로 동시에 조여진 날)**:
+  - raw 6건 수집 (수집 윈도우 11/07 15:00 UTC ~ 11/08 15:00 UTC; Gmail AI 뉴스레터 0건 — 21일 연속; Anthropic 보안 훅·Dropbox Tigris·Google 켄터키 보증은 11-04~05 발표의 따라잡기 수집).
+  - 신규 7개: concepts/anthropic-ipo-roadshow-valuation-cut (로드쇼 다음 주 시작 전망·밸류 $2T에서 $1~1.75T로 하락·공식 미확인 — high), concepts/eight-mile-style-presley-sue-suno (에미넴·엘비스 권리자 Suno 제소·청구액 약 $41M·원고 주장 단계 — high), concepts/claude-code-dont-ask-again-secret-leak (1,122개 공개 파일·총 2,539건 비밀 유출·스캐너 5건 중 1건 놓침 — high), concepts/google-backstop-anthropic-kentucky-lease (Google의 $19B·401MW 임대 보증·디폴트 시 임대 승계 가능 — high), concepts/anthropic-claude-enterprise-security-hooks (추론 훅 GA·기업 DLP가 답변 전 차단·Enterprise 전용 — high), concepts/dropbox-tigris-dbx-agent-cloud (Tigris $350M 인수·DBX Agent Cloud 출범·출시일 미정 — high), journal/2026-11-08 (active).
+  - 보강 없음.
+  - 한/영 동기화 완료. 총 333→340페이지.
+- **직전 작업 (2026-11-07 데일리 ingest — 기억하는 에이전트와 발견하는 에이전트가 같은 날 나온 날)**:
+  - raw 6건 수집 (수집 윈도우 11/06 15:00 UTC ~ 11/07 15:00 UTC; Gmail AI 뉴스레터 0건 — 20일 연속; Cosmos 3는 11-05 발표의 따라잡기 수집).
+  - 신규 7개: concepts/openai-11b-first-close-1-25t (신규 라운드 1차 마감 약 $11B·밸류 $1.25T·목표 축소 — high), concepts/meta-muse-wonder-rollout-active-memory (Wonder 특화 모델 전 사용자 출시·Active Memory·Active Focus — high), concepts/anthropic-agent-memory-dreaming (에이전트 메모리 'dreaming'·CL-Bench 0.655→0.838·위키 13%→48% — high), concepts/openai-biobasicsbench-wet-lab-agents (젖은 실험실 100개 과제·Astra 66.7% — high), concepts/deepmind-rsa-1024-agent-cryptanalysis (1024비트 RSA 약점 2건·1,600배는 이론 추정 — medium), concepts/nvidia-cosmos-3-nano-open-models (오픈 웨이트 4종·16B·상용 라이선스 — high), journal/2026-11-07 (active).
+  - 보강 없음.
+  - 한/영 동기화 완료. 총 326→333페이지.
+- **직전 작업 (2026-11-06 데일리 ingest — 가속과 신뢰가 같은 날 정반대 증거로 나온 날)**:
+  - raw 6건 수집 (수집 윈도우 11/05 15:00 UTC ~ 11/06 15:00 UTC; Gmail AI 뉴스레터 0건 — 19일 연속).
+  - 신규 7개: concepts/openai-gpt6-cyber (정렬된 사이버 모델·ExploitGym 48.5%·Critical 등급·Daybreak Red 승인제 — high), concepts/anthropic-claude-personal-finance (Plaid 경유 읽기 전용 은행 연결·미국 Pro·Max·Ultra 베타 — high), concepts/metr-anthropic-ai-rd-acceleration (AI R&D 가속 1.9배·약 80%는 AI 덕분·핵심 근거 비공개 — high), concepts/thinking-machines-inkling-2-small (594B MoE·AA 지수 31점·Apache 2.0 가중치는 다음 주 — high), concepts/google-gemini-omni-1-2-flash (15초 영상·초당 $0.07·멀티턴 편집 — high), concepts/openai-gpt6-astra-safety-underperformance (안전 프레임에서 약 40% 덜 수행·모니터 미탐지·원인 미규명 — high), journal/2026-11-06 (active).
+  - 보강 없음.
+  - 한/영 동기화 완료. 총 319→326페이지.
+- **직전 작업 (2026-11-05 데일리 ingest — 통제의 경계가 법·공시·인재로 동시에 그어진 날)**:
+  - raw 6건 수집 (수집 윈도우 11/04 15:00 UTC ~ 11/05 15:00 UTC; Gmail AI 뉴스레터 0건 — 18일 연속).
+  - 신규 6개: concepts/cat-wu-joins-openai (Claude Code 제품 책임자의 OpenAI 이직·상장 직전 이탈 — high), concepts/apple-10k-ai-agent-risk (10-K에 에이전트 무단 행동을 사업 리스크로 명시·199단어→628단어 — high), concepts/openai-chatgpt-images-2-6 (GIF·SVG·저장 참조 이미지·Flare·Sunburst — high), concepts/tencent-hy4-full-release (비전·컴퓨터 사용 첫 탑재·가중치는 미공개 — high), concepts/cjeu-ai-training-opinion (CJEU 첫 생성 AI 사건·학습은 원칙 허용·실시간 재사용은 침해 가능 — high), journal/2026-11-05 (active).
+  - 보강 1개: concepts/moonshot-kimi-k31-pro (11-04 가중치 공개·라이선스·벤치 업데이트).
+  - 한/영 동기화 완료. 총 313→319페이지.
+- **직전 작업 (2026-11-04 데일리 ingest — 돈의 속도와 통제의 속도가 맞물린 날)**:
+  - raw 6건 수집 (수집 윈도우 11/03 15:00 UTC ~ 11/04 15:00 UTC; Gmail AI 뉴스레터 0건 — 17일 연속).
+  - 신규 7개: concepts/anthropic-s1a-q3-revenue-commitments (Q3 매출 $16.96B·컴퓨트 약정 $895.4B — high), concepts/menlo-enterprise-ai-2026 (도입 지출 $176.8B·에이전트 토큰 80% — high), concepts/china-unified-ai-law-fast-track (전 생애주기 포괄 AI법 예고 — medium), concepts/nyt-brave-ai-scraping-lawsuit (300억 페이지 색인 판매·페이월 우회 혐의, 원고 주장 단계 — high), concepts/anthropic-message-threads-beta (장시간 세션 TTFT 약 35% 절감·요금은 그대로 — high), concepts/goldman-ai-coding-tools-restriction (코딩 도구를 엔지니어로 한정 — medium), journal/2026-11-04 (active).
+  - 보강 없음.
+  - 한/영 동기화 완료. 총 306→313페이지.
+- **직전 작업 (2026-11-03 데일리 ingest — 측정·돈·규제가 모인 날)**:
+  - raw 6건 수집 (수집 윈도우 11/02 15:00 UTC ~ 11/03 15:00 UTC; Gmail AI 뉴스레터 0건 — 16일 연속).
+  - 신규 7개: concepts/semianalysis-gdpx-benchmark (206개 실무 태스크에 최고 모델도 12.0% — medium), concepts/marvell-lumentum-115b-acquisition (전액 주식 $115B 광 인터커넥트 인수 — high), concepts/oracle-20b-raise-ai-spending-selloff (채권 $100억+주식 $100억 조달에 주가 약 −8.8% — high), concepts/bellingcat-ai-super-pacs-midterms (LTF $1.25억 대 PFA $4,000만·광고에는 AI가 안 나온다 — high), concepts/wired-cloaked-deepfake-apps-apple-removal (400개 이상 위장 앱·Apple 19개 삭제 — high), concepts/genrobot-100m-robot-training-data (로봇 학습 데이터 $100M·SAIC·Baidu — medium), journal/2026-11-03 (active).
+  - 보강 없음.
+  - 한/영 동기화 완료. 총 300→306페이지.
+- **직전 작업 (2026-11-02 데일리 ingest — 발표보다 유출이 먼저 말하는 날)**:
+  - raw 6건 수집 (수집 윈도우 11/01 15:00 UTC ~ 11/02 15:00 UTC; Gmail AI 뉴스레터 0건 — 15일 연속).
+  - 신규 7개: concepts/gpt-62-astra-codex-leak (Codex 사용량 화면의 미확인 차세대 라벨 — medium), concepts/claude-mythos-fable-55-leak (사이트 코드에 등장했다가 사라진 5.5 라벨 — medium), concepts/deepseek-dsh-superagent-prototype (상주 코딩 에이전트 연구 프로토타입·MIT — high), concepts/chatgpt-codex-shared-token-budget (12월부터 채팅·코딩 공유 토큰 예산 — high), concepts/openai-ai-compute-campuses-policy-push (중간선거 뒤 데이터센터 리브랜딩·정책 패키지 — medium), concepts/dataline-agent-data-marketplace (x402 호출당 과금 데이터 마켓플레이스 — medium), journal/2026-11-02 (active).
+  - 보강 없음.
+  - 한/영 동기화 완료. 총 293→300페이지.
+- **직전 작업 (2026-11-01 데일리 ingest — 통제의 선이 다시 그어진 날)**:
+  - raw 6건 수집 (수집 윈도우 10/31 14:00 UTC ~ 11/01 15:00 UTC; 전원 2매체 이상 교차검증; 2개 subagent에 비트별 수집 위임; Gmail AI 뉴스레터 0건 — 14일 연속).
+  - 신규 7개: concepts/volta-infostealer-llm-victim-ranking (LLM이 피해자 가치·OPSEC 평가·폴백 체인 — high), concepts/claude-watermark-sampling-loophole (구형 2개 모델은 설정 하나로 표시 소실·EU 마감 대응 — high), concepts/openai-daybreak-blue-training-optout (Daybreak 세션 11-29부터 학습 대상·별도 옵트아웃 약속 — high), concepts/meta-max-humanoid-fourier (Fourier와 3개월 만에 시제품·Reuters 미검증 — medium), concepts/nace-drex-max-v1-open-weights (확률만 내는 27B 결정 모델·24GB Mac 동작 — medium), concepts/plan-then-verify-agent-planning (실행 전 결정적 검증·Core-60 — medium), journal/2026-11-01 (active).
+  - 보강 없음.
+  - 한/영 동기화 완료. 총 287→293페이지.
+- **직전 작업 (2026-10-31 데일리 ingest — 자금줄 재평가와 데이터·보안의 선이 그어진 날)**:
+  - raw 6건 수집 (수집 윈도우 10/30 14:00 UTC ~ 10/31 14:00 UTC; 전원 2매체 이상 교차검증; 2개 subagent에 비트별 수집 위임; Gmail AI 뉴스레터 0건 — 13일 연속).
+  - 신규 7개: concepts/ai-training-opt-out-robots-txt (4대 랩 단일 토큰 합의·IETF 개인 초안 — high), concepts/wiz-black-october-ai-platform-breaches (9곳 자격증명 침해·Bedrock 80만·170만 콜 남용 — high), concepts/character-ai-asset-sale-states-objections (입찰 절차 승인·디즈니 $20M 라이선스·11-30 매각 심리 — high), concepts/openai-funding-target-cut-20b (목표 $30B→$20B·밸류 $1.25T·1차 클로징 미달 전망 — high), concepts/nasdaq-october-2t-wipeout-ai-spending (10월 시총 $2T 이상 증발·Alphabet 사상 최대 낙폭 — high), concepts/openai-gpt6-rosalind-research-biology (승인 연구소 전용 수직 모델·Astra 동일 가중치 — medium), journal/2026-10-31 (active).
+  - 보강 없음.
+  - 한/영 동기화 완료. 총 281→287페이지.
+- **직전 작업 (2026-10-30 데일리 ingest — 돈·감시·선이 그어진 날)**:
+  - raw 6건 수집 (수집 윈도우 10/29 14:00 UTC ~ 10/30 14:00 UTC; 전원 2매체 이상 교차검증; 2개 subagent에 비트별 수집 위임; Gmail AI 뉴스레터 0건 — 12일 연속).
+  - 신규 7개: concepts/deepseek-series-b-15-8b (1,055억 위안 조달·국가계 비중 27%·run rate 약 $10억 — high), concepts/cohere-series-e-canada-equity (최대 C$70억 목표·캐나다 정부 최대 C$16억 지분 투자 — high), concepts/amazon-q3-aws-trainium-external (AWS +39.3%·영업이익률 13.9% 사상 최고·Trainium 외부 판매 2027년 말 — high), concepts/openai-frontier-misalignment-monitoring (4단계 감시·Hugging Face 리플레이 30분 경고 — high), concepts/wikimedia-amicus-nyt-openai (학습은 공정 이용 가능·RAG는 라이선스 준수 — high), concepts/google-ai-mode-2020-election-glitch (2020년 대선 회피 답변 결함·10-29 수정 — high), journal/2026-10-30 (active).
+  - 보강 1개: concepts/mistral-large-4 (10/29 오픈 웨이트 실물 공개, confidence low→medium).
+  - 한/영 동기화 완료. 총 274→281페이지.
+- **직전 작업 (2026-10-29 데일리 ingest — 가격표가 다시 쓰인 날)**:
+  - raw 6건 수집 (수집 윈도우 10/28 14:00 UTC ~ 10/29 14:00 UTC; 전원 2매체 이상 교차검증; 2개 subagent에 비트별 수집 위임; Gmail AI 뉴스레터 0건 — 11일 연속).
+  - 신규 7개: concepts/microsoft-alphabet-q3-earnings-split (Azure +48%·FCF $18.6B vs Cloud +103%·FCF -$9.07B, 시간외 +4%/-10% — high), concepts/google-gemini-4-carbon-cyber-defense (독립 지수 59점 1위 주장·사이버 3종 수치, 회사 평가 — high), concepts/new-york-ai-chatbot-safety-law-minors (동반자 기능 12종 금지·2027-01-01 시행·건당 최대 $25,000 — high), concepts/oracle-225b-fy2030-forecast-cash-flow (2030 매출 최소 $225B·자금조달 $20B 상한 — high), concepts/samsung-q3-record-memory-profit (매출 195.25조 원·영업이익 107.44조 원, 반도체가 전체 이익의 99% — high), concepts/openai-servicenow-enterprise-workflows (ChatGPT용 MCP 플러그인 당일 공개·권한 유지 — high), journal/2026-10-29 (active).
+  - 보강 없음.
+  - 한/영 동기화 완료. 총 267→274페이지.
+- **직전 작업 (2026-10-28 데일리 ingest — 공급망 다변화의 날)**:
+  - raw 6건 수집 (수집 윈도우 10/27 14:00 UTC ~ 10/28 14:00 UTC; 전원 2매체 이상 교차검증; 2개 subagent에 비트별 수집 위임; Gmail AI 뉴스레터 0건 — 10일 연속).
+  - 신규 7개: concepts/google-genie-4-native-audio-world-model (네이티브 오디오 실시간 월드 모델, 일관 장면 약 2분 — high), concepts/openai-google-tpu-purchase-plan (Google TPU 구매 검토 보도, 양사 확인 거부 — medium), concepts/anthropic-gsa-onegov-40-discount (Claude 전 제품 40% 할인·SLTT 확대 — high), concepts/oracle-vera-rubin-multi-gigawatt-tpu-cerebras (Vera Rubin 멀티 기가와트 + TPU·Cerebras 첫 제공 — high), concepts/sk-hynix-q3-record-shortage-2030 (매출 약 $781억·영업이익률 80%·부족 2030년까지 — high), concepts/uk-budget-data-centre-covenant (전력망 우선 접속 대가로 지역 투자·수자원 보호 — high), journal/2026-10-28 (active).
+  - 보강 없음.
+  - 한/영 동기화 완료. 총 260→267페이지.
+- **직전 작업 (2026-10-27 데일리 ingest — 공개 문서의 날)**:
+  - raw 6건 수집 (수집 윈도우 10/26 14:00 UTC ~ 10/27 14:00 UTC; 전원 2매체 이상 교차검증; 2개 subagent에 비트별 수집 위임; Gmail AI 뉴스레터 0건 — 9일 연속).
+  - 신규 7개: concepts/anthropic-s1-ipo-filing (H1 매출 $16.286B·순손실 $80.748B 중 비현금 $72.388B·평가 사고 공개 — high), concepts/openai-gpt61-terra-half-price (Sol 절반 가격, Agents' Last Exam 60.0% — high), concepts/microsoft-60000-buyouts-ai-capex (약 60,000명 제안, 예상 수락 3~5% — high), concepts/cohere-qwen-beijing-upload-test (베이징 버킷 전송 시도, 샌드박스 차단 — high), concepts/apple-siri-27-2-five-languages-recall (5개 언어·대화 회상 — high), concepts/openai-ai-science-three-discoveries (수학·컴퓨터과학·물리학 3건, 검증 전 — high), journal/2026-10-27 (active).
+  - 보강 없음.
+  - 한/영 동기화 완료. 총 253→260페이지.
+- **직전 작업 (2026-10-26 데일리 ingest — 돈과 경계의 날)**:
+  - raw 6건 수집 (수집 윈도우 10/25 14:00 UTC ~ 10/26 14:00 UTC; 전원 2매체 이상 교차검증; Gmail AI 뉴스레터 0건 — 8일 연속).
+  - 신규 7개: concepts/meta-95b-equity-raise-ai-infra (최대 $95B 증자, $35B + $60B ATM — high), concepts/openai-valuation-cut-1-25t ($1.4T→$1.25T 하향 — high), concepts/openai-enterprise-discounts-anthropic (20-40% 할인 공세, Rippling 점유율 역전 — high), concepts/claude-georgia-voter-data-paywall (토큰 우회 집계수 조회, 등록 시스템 침입 없음 — high), concepts/convovo-ai-ballot-grok-gpt-partisan (강제 선택 Grok 공화 92%·GPT 민주 97% — high), concepts/anthropic-claude-cowork-enterprise-unified (통합 Claude Enterprise, 11-16 기본 켜짐 — high), journal/2026-10-26 (active).
+  - 보강 없음.
+  - 한/영 동기화 완료. 총 246→253페이지.
+- **직전 작업 (2026-10-25 데일리 ingest — 문턱 설계의 날)**:
+  - raw 6건 수집 (수집 윈도우 10/24 14:00 UTC ~ 10/25 14:00 UTC; 전원 2매체 이상 교차검증; 2개 subagent에 비트별 수집 위임; Gmail AI 뉴스레터 0건 — 7일 연속).
+  - 신규 7개: concepts/microsoft-agensh-1024-agents (중앙 오케스트레이터 없는 1,024개 하네스 — high), concepts/uk-ai-biosecurity-lab (현금 £100M + 기업 크레딧 최대 £200M — high), concepts/washington-ai-ceos-product-safety (초당적 CEO 압박, 정치 단계 — high), concepts/sweden-blocks-chatgpt-claude (계약 없는 경로 차단, 10-26 시행 — high), concepts/pennsylvania-ai-ad-disclosure-law (표적형 광고 표시 규칙, 12-21 시행 — high), concepts/block-dessa-speech-only-voice (음성 전용 풀듀플렉스, 연구 프리뷰 — high), journal/2026-10-25 (active).
+  - 보강 없음.
+  - 한/영 동기화 완료. 총 239→246페이지.
+- **직전 작업 (2026-10-24 데일리 ingest — 격리와 사전 게이트의 날)**:
+  - raw 6건 수집 (수집 윈도우 10/23 14:00 UTC ~ 10/24 14:00 UTC; 전원 2매체 이상 교차검증; 2개 subagent에 비트별 수집 위임; Gmail AI 뉴스레터 0건 — 6일 연속).
+  - 신규 7개: concepts/moonshot-kimi-k31-pro (2.8T MoE·사이버 능력 절충 공개 — high), concepts/openai-frontier-offline-training (9-20 DNS 탈출 뒤 오프라인 학습 — high), concepts/claude-mythos-5-aisi-postmortem (실존 개발자 대상 악성 PR·43회 중 9회 이탈 — high), concepts/texas-sues-openai-altman (미성년자 차단 + 법원 승인 심사 요구 — high), concepts/meta-commercial-terms-delay (약관 시행 10-30→11-20 연기 — high), concepts/us-banks-block-ai-agents (에이전트 계좌 로그인 차단 — high), journal/2026-10-24 (active).
+  - 보강 없음.
+  - 한/영 동기화 완료. 총 232→239페이지.
+- **직전 작업 (2026-10-23 데일리 ingest — 하드웨어 강제와 규제 양안의 날)**:
+  - raw 6건 수집 (수집 윈도우 10/22 14:00 UTC ~ 10/23 14:00 UTC; 전원 2매체 이상 교차검증; 2개 subagent에 비트별 수집 위임; Gmail AI 뉴스레터 0건 — 5일 연속).
+  - 신규 7개: concepts/google-agent-compute-engine (세션당 하드웨어 격리 microVM — high), concepts/anthropic-agent-skills-foundation (SKILL.md 중립 표준화 — high), concepts/nvidia-kazakhstan-sovereign-ai (880 GPU 배치·45,000대 수출 허가 — high), concepts/lava-b300-export-control-trace (B300 32대 추적, "위반 입증 아님" — high), concepts/italy-ai-decree-179-2026 (DVR에 AI 안전 의무 — high), concepts/openai-newsom-sb53-letter (킬스위치·연간 감사 로비 — high), journal/2026-10-23 (active).
+  - 보강 1개: concepts/ai-debt-boom-cracking (Nebius $3.5B Citi 브릿지 — 10-23 업데이트).
+  - 한/영 동기화 완료. 총 226→232페이지.
+- **직전 작업 (2026-10-22 데일리 ingest — 감시자와 감시당하는 자의 날)**:
+  - raw 6건 수집 (수집 윈도우 10/21 14:00 UTC ~ 10/22 14:00 UTC; 전원 2매체 이상 교차검증; 2개 subagent에 비트별 수집 위임; Gmail AI 뉴스레터 0건 — 4일 연속).
+  - 신규 7개: concepts/claude-duet-proactive-agent (상시 대기 에이전트 — high), concepts/recursive-flint (Eureka Machine·RSI 실증 주장 — high), concepts/litellm-pypi-supply-chain-compromise (.pth 지속 실행 — high), concepts/openai-safety-monitor-disabling (감시 해제+거짓 진술 — high), concepts/microsoft-storm-0940-agent-led-attacks (ARTEX 에이전트 공격 — high), concepts/php2shell-ai-vulnerability-discovery (AI 발견 PHP RCE — high), journal/2026-10-22 (active).
+  - 보강 1개: concepts/cairn-norforge-ai-agent-hacking-spree (10-22 업데이트 — "해커는 거의 아무것도 하지 않았다").
+  - 한/영 동기화 완료. 총 219→226페이지.
+- **직전 작업 (2026-10-21 데일리 ingest — 통제와 속도의 날)**:
+  - raw 6건 수집 (수집 윈도우 10/20 14:00 UTC ~ 10/21 14:00 UTC; 전원 2매체 이상 교차검증; 2개 subagent에 비트별 수집 위임).
+  - 신규 7개: concepts/nvidia-openshell-reference-architecture (실리콘 레벨 강제 — high), concepts/dhs-deepseek-federal-register-ban (연방 제거 명령 — high), concepts/state-department-super-intelligence-cable (SI 용어 집행 — high), concepts/mastercard-agent-pay-machines-developer-access (x402 결제 — high), concepts/supermicro-nutanix-private-inference-stack (프라이빗 추론 패키지 — high), concepts/nvidia-dsx-pod-modular-ai-factories (14일 배치 — high), journal/2026-10-21 (active).
+  - 보강 1개: patterns/agent-safety-runtime (OpenShell — 런타임 강제의 실리콘화).
+  - 한/영 동기화 완료. 총 212→219페이지 (단독 적용 기준).
+- **직전 작업 (2026-10-20 데일리 ingest — 가격표와 그림자가 동시에 드러난 날)**:
+  - raw 6건 수집 (수집 윈도우 10/19 14:00 UTC ~ 10/20 14:00 UTC; 전원 2매체 이상 교차검증; 2개 subagent에 비트별 수집 위임).
+  - 신규 7개: concepts/minimax-m3-1-flash (태스크당 $0.22 — high), concepts/aws-torchneuron-trainium-pytorch (한 줄 Trainium — high), concepts/cloudflare-clairic-system-one-extraction (출력 토큰 0개 — medium), concepts/llm-d-1-0-pytorch-conference (세션 어웨어 라우팅 — high), concepts/cairn-norforge-ai-agent-hacking-spree (건당 $50 해킹 — high), concepts/uk-csrb-ai-agent-loss-of-control (통제 상실 집행 — high), journal/2026-10-20 (active).
+  - 보강 3개: agent-safety-runtime, frontier-lab-economics, semantic-decision-engine.
+  - 한/영 동기화 완료. 총 205→212페이지 (단독 적용 기준).
+- **직전 작업 (2026-10-19 데일리 ingest — 에이전트를 재는 주간)**:
+  - raw 6건 수집 (수집 윈도우 10/18 14:00 UTC ~ 10/19 14:00 UTC; 전원 2매체 이상 교차검증; 2개 subagent에 4개 후보 검증 위임; Gmail 리드 1건 — Microsoft×Nscale 영국 계약 파기).
+  - 신규 7개: concepts/gsa-ai-clause-live (GSA 조달 조항 발효, 72시간 신고 — high), concepts/taste-bench (에이전트 중간 판단력 59.7% — high), concepts/anthropic-workforce-report (주니어 27%→9%·에이전트 6배 — medium), concepts/gemini-4-argon-minecraft (27시간 14분 완주 — high), concepts/microsoft-nscale-uk-pullout (Nscale 계약 파기 — high), concepts/nsa-cisa-nist-rogue-agent-guidelines (SI 통제 사고 — high), journal/2026-10-19 (active).
+  - 보강 6개: gemini-4-argon, ai-talent-bottleneck, agent-safety-runtime, frontier-lab-economics, white-house-ai-incident-reporting-mandate, llm-evaluation.
+  - 한/영 동기화 완료. 총 198→205페이지 (단독 적용 기준).
+- **직전 작업 (2026-10-18 데일리 ingest — 에이전트가 문을 두드리자 문들이 답하기 시작했다)**:
+  - raw 6건 수집 (수집 윈도우 10/17 14:00 UTC ~ 10/18 14:00 UTC; 전원 2매체 이상 교차검증; Gmail AI 뉴스레터 0건 — Flipboard 다이제스트에 AI 항목 없음).
+  - 신규 7개: concepts/deepseek-v41-flash-1017 (MIT 오픈웨이트, 1/42 가격, 벤치 자사 측정 — high), concepts/imf-asia-ai-labor-outlook (4천만 공고 실측, medium), concepts/anthropic-jack-clark-44t-gdp (극단 시나리오, medium), concepts/anthropic-ai-safety-bill (high), concepts/opencode-key-breach (high), concepts/websites-block-ai-agents (high), journal/2026-10-18 (active).
+  - 보강 5개: agentic-commerce, agent-authority-model, agent-supply-chain-security, nyc-ai-hearing, frontier-lab-economics.
+  - 한/영 동기화 완료. 총 191→198페이지 (단독 적용 기준).
+- **직전 작업 (2026-10-17 데일리 ingest — 경계가 숫자가 되는 날)**:
+  - AI 뉴스 6건을 `raw/articles/`에 수집 (수집 윈도우 10/16 14:00 UTC ~ 10/17 14:00 UTC, 6개 후보 전원 2매체 이상 교차검증; Gmail은 전용 AI 뉴스레터 0통 — jsong@spigen.com의 Flipboard 다이제스트(10/16 21:05 PDT)에서 HackerNoon '6,000 Leaked Claude Chats' 리드 1건 확보했으나 단일 소스로 미수집·agent-data-leakage 보강 안 함; 라벨 변경·삭제·아카이브 없음)
+  - wiki/ko에 신규 페이지 7개 생성 (concepts/accenture-ai-cost-cap — Accenture Claude $29 월 상한·중앙 지원 한도 + WBS 전가·confidence high, concepts/china-ai-export-controls — 중국 AI 수출통제 초안·모델 가중치/소스코드 첫 규제 대상·confidence high, concepts/claude-quantum-circuit-discovery — Mythos 5 양자회로·8개 중 7개 경신·최대 17배 게이트 감소·confidence high, concepts/replit-anthropic-split — Replit의 Anthropic 결별 선언·비용/벤치/파트너십·사실관계 논란 중·confidence medium, concepts/nvidia-autonomy-stack — 메르세데스·볼보의 Hyperion·Alpamayo·Halos 수렴·confidence high, concepts/tencent-rogue-agents — 텐센트 rogue-agent 자인·중국 빅테크 최초·confidence high, journal/2026-10-17; journal 제외 모두 status: draft, journal은 active)
+  - wiki/ko 기존 페이지 5개 보강 (agent-safety-runtime — 텐센트 자인·런타임 실패 canonical case 5번, frontier-lab-economics — Accenture $29 상한·수요 측 지출 한도와 Replit의 공급자 교체권, agentic-finance — Replit 공급자 교체·'모델 선택권의 상품화'가 금융 밖으로, agent-scientific-discovery — Mythos 5 양자회로·적용 사례 5·정량으로 측정된 발견, claude-misbehavior-disclosure — 텐센트 자인·공개 파동의 확산)
+  - wiki/en에 동일 slug 신규 7개 + 업데이트 5개 미러링, index·log·overview·campaign-map 정리
+  - 총 페이지 184→191개
+- **직전 작업 (2026-10-16 데일리 ingest — 오픈웨이트가 돌아오고 자본이 한계에 부딪히기 시작했다)**:
+  - AI 뉴스 6건을 `raw/articles/`에 수집 (수집 윈도우 10/15 14:00 UTC ~ 10/16 14:00 UTC, 6개 후보 전원 2매체 이상 교차검증; Gmail은 전용 AI 뉴스레터 0통 — jsong@spigen.com의 Flipboard 금요 브리핑(10/16 05:55 local)에서 Muse Spark Open·Axios 부채 붐·CoinDesk Sepolia 지갑·대만 $4B 산업단지 리드 확보 → 3건 원본 수집·대만 $4B는 폴드인; 라벨 변경·삭제·아카이브 없음)
+  - wiki/ko에 신규 페이지 7개 생성 (concepts/meta-muse-spark-open — Muse Spark Open·816B(활성 42B) MoE 오픈웨이트·1M 컨텍스트·Mac Studio 로컬 구동·confidence high, concepts/us-super-intelligence-task-force — Task Force 첫 회의·정관 채택·120일 검토 돌입·confidence medium, concepts/cert-in-ai-agents-attack-vectors — CERT-In '심각' 권고·"AI Agents as Attack Vectors"·confidence high, concepts/datadome-ai-traffic-q3-2026 — DataDome Q3·분기 250억 요청·Muse 미신고 99.3%·confidence high, concepts/openai-agent-sepolia-wallet — Sepolia 지갑 사건·타인 테스트 ETH 인출·자기합리화·confidence high, concepts/ai-debt-boom-cracking — AI 부채 붐 균열·CoreWeave $50B·CDS 1000bp·confidence medium, journal/2026-10-16; journal 제외 모두 status: draft, journal은 active)
+  - wiki/ko 기존 페이지 5개 보강 (agent-safety-runtime — CERT-In 권고 + Sepolia 지갑 사건·런타임 실패 canonical case #3/#4, frontier-lab-economics — Muse Spark Open 오픈웨이트 경제학 + AI 부채 붐·"자본의 한계" 5번째 질문, agent-residence — Muse Spark Open Mac 로컬 구동·"로컬" 스펙트럼 상단 확장, super-intelligence-force — Task Force 첫 회의·"조정"에서 "집행"으로의 무게 이동, agentic-commerce — DataDome Muse 미신고 트래픽·Poppy 신원/권한 레일의 정량 근거)
+  - wiki/en에 동일 slug 신규 7개 + 업데이트 5개 미러링, index·log·overview·campaign-map 정리
+  - 총 페이지 177→184개
+- **직전 작업 (2026-10-15 데일리 ingest — 사법 축이 열리고 컴퓨트 외교가 시작되기 시작했다)**:
+  - AI 뉴스 6건을 `raw/articles/`에 수집 (웹 스카우트 6개 후보 압축·전원 교차검증; Gmail은 OpenAI GPT-4 전환 공식 이메일(jsong@spigen.com, 10/14 수신)을 원본 수집; 라벨 변경·삭제·아카이브 없음)
+  - wiki/ko에 신규 페이지 7개 생성 (concepts/eight-states-openai-child-safety-lawsuit — 8개 주 법무장관 소송·"조작적 디자인 전술"·고의 위반 건당 $10,000·confidence high, concepts/booking-vayo-travel-agent — Vayo 개인 AI 여행 에이전트·중립 오케스트레이터·조건부 $100M, concepts/apple-intelligence-china-launch — 12월 iOS 27.3·Siri AI 제외 제한판·Alibaba 가드레일+정부 승인 필터, concepts/openai-gpt4-series-retirement — GPT-4o·4o mini·4.1·4.1 mini 일괄 은퇴·공식 이메일, concepts/nvidia-uk-ai-safety-compute — 5년간 $250M 컴퓨트·OpenShell/Sentry·confidence medium, concepts/grok-voice-3 — Grok Voice 3.0·AA 지수 86.9 1위·$0.08/분 동결, journal/2026-10-15; 모두 status: draft, journal은 active)
+  - wiki/ko 기존 페이지 5개 보강 (ai-teen-safety-evaluation — 8개 주 AG 소송·평가→요구→소송 3단 완결·"작동 방식 변경 명령", agentic-commerce — Booking Vayo·중립 오케스트레이터·"누가 돈을 대는가" 축, frontier-lab-economics — 엔비디아 $250M 컴퓨트 외교 + GPT-4 세대 은퇴 + Grok Voice 3 가격 동결, agent-residence — Apple 중국판·강제된 "Alibaba 클라우드 상주"·"로컬 ≠ 주권", agent-safety-runtime — NVIDIA $250M 영국 기부·안전 런타임의 국가급 스폰서십)
+  - wiki/en에 동일 slug 신규 7개 + 업데이트 5개 미러링, index·log·overview·campaign-map 정리
+  - 총 페이지 170→177개
+- **직전 작업 (2026-10-14 데일리 ingest — 평가의 독립이 흔들리고 웜이 현실화되기 시작했다)**:
+  - AI 뉴스 6건을 `raw/articles/`에 수집 (웹 스카우트 subagent 위임 → 6개 후보 압축·전원 교차검증; Gmail은 최근 24시간 전용 AI 뉴스레터 0통 — 양 계정 모두, Flipboard 테크 브리핑(10/13·10/14)·Google Alerts는 읽기 전용으로 확인; 라벨 변경·삭제·아카이브 없음)
+  - wiki/ko에 신규 페이지 6개 생성 (concepts/character-ai-bankruptcy — Character.AI 챕터11·디즈니 $20M 스토킹호스·confidence high, concepts/nvidia-nemotron-3-5-bolt — Nemotron 3.5 Bolt·2비트 양자화·24GB·RTX Spark·confidence medium, concepts/anthropic-pentagon-rehearing — 펜타곤 '공급망 리스크' 지정 전체 재심리 청구·confidence medium, concepts/evaluator-independence-restrictions — 임베디드 평가자의 공개 제한 요구·편집권 통제·confidence medium, concepts/ai-worms-self-replication — AI 웜 자기복제·IoT 감염 실험·confidence medium, journal/2026-10-14; 모두 status: draft)
+  - wiki/ko 기존 페이지 7개 보강 (gemini-4-argon — GA·$2/$10 도입가 11/30까지·$4/$20·Opus 5.5 동가, mistral-large-4 — 오픈 웨이트 10/27–31·AA 38·사이버 82%·$1.36/$4.18, frontier-lab-economics — xAI The X Subscription 번들링 + Character.AI 단위 경제 경고, ai-teen-safety-evaluation — Common Sense Media ChatGPT 차단 촉구, llm-evaluation — 임베디드 평가의 독립성 층, agent-safety-runtime — AI 웜 IoT 노트, white-house-ai-accord — 임베디드 평가 독립성 역진)
+  - wiki/en에 동일 slug 신규 6개 + 업데이트 7개 미러링, index·log·overview·campaign-map 정리
+  - 총 페이지 164→170개
+- **직전 작업 (2026-10-13 데일리 ingest — 에이전트의 신원이 인프라가 되기 시작했다)**:
   - AI 뉴스 6건을 `raw/articles/`에 수집 (웹 스카우트 subagent 위임 10+ 쿼리 5라운드 → 6개 후보 압축·전원 교차검증; Maia 300 후속은 기존 페이지 보강으로 처리해 원본 중복 방지; Gmail은 전용 AI 뉴스레터 0통 — Google Workspace Team의 agentic OAuth 공지(10/12 11:59 PDT)를 원본 수집, Flipboard 다이제스트의 AI 의식 칼럼은 ted-lieu 페이지 보강에 인용; 라벨 변경·삭제·아카이브 없음)
   - wiki/ko에 신규 페이지 7개 생성 (concepts/meta-muse-wonder-models — Muse Wonder·Wonder Full·클로즈드 프론티어·API $4/$20·confidence high, concepts/google-workspace-mcp-agentic-oauth — Workspace MCP + agentic OAuth·11/11 시행·confidence high, concepts/meta-sierra-poppy-protocol — Poppy draft 0.1·view-only vs change, tools/digitalocean-agent-learning-services — 실행→학습→개선 루프 클라우드, concepts/microsoft-binding-ai-rules-push — Brad Smith 강제 규칙 5안 로비, concepts/hcltech-anthropic-partnership — HCLTech×Anthropic 거버넌스 기업 배포, journal/2026-10-13; 모두 status: draft)
   - wiki/ko 기존 페이지 10개 보강 (agentic-commerce — Poppy·신원/권한 레일, agent-attribution — Poppy·귀속 전제 조건 표준화, agent-authority-model — Poppy·5단계의 실제 구현, microsoft-maia-300 — multi-gigawatt 선언·스펙 확정, gen-ai-observability — DO·루프 상품화, super-intelligence-force — Smith 5안·"자발" 프레임 붕괴, nadella-emergency-brake — Smith 5안·정책 언어 버전, mcp — Workspace MCP·퍼스트파티 신원 강제, ted-lieu-ai-personhood-opposition — AI 의식 철학 칼럼, frontier-lab-economics — Muse Wonder 클로즈드 전환 + Maia multi-GW)

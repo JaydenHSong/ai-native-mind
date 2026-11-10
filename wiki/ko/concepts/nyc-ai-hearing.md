@@ -1,15 +1,17 @@
 ---
 title: "뉴욕시 의회 AI 청문회 (2026-10-05) — 주요 AI사의 첫 선서 증언"
 category: concepts
-tags: [nyc-council, ai-hearing, regulation, whistleblower, kill-switch, anthropic, openai, google, meta]
+tags: [nyc-council, ai-hearing, regulation, whistleblower, kill-switch, anthropic, openai, google, meta, ai-safety-bill, model-shutdown, federal]
 created: 2026-10-05
-updated: 2026-10-05
+updated: 2026-10-18
 sources:
   - "raw/articles/2026-10-05-nyc-council-ai-hearing-testimony.md"
+  - "raw/articles/2026-10-18-anthropic-ai-safety-bill.md"
 related:
   - "[[concepts/agent-attribution]]"
   - "[[concepts/super-intelligence-force]]"
   - "[[patterns/agent-safety-runtime]]"
+  - "[[concepts/anthropic-ai-safety-bill]]"
 status: draft
 confidence: medium
 ---
@@ -39,6 +41,19 @@ OpenAI·Google·Anthropic·Meta가 선서 하에 AI 리스크를 증언한 첫 �
 - [[concepts/super-intelligence-force]] — 같은 날 출범한 연방 조정 기구, "조정" vs "압박"의 투트랙
 - [[patterns/agent-safety-runtime]] — 킬 스위치 법안화 시 런타임 안전 장치가 법적 의무로
 
+## 2026-10-18 보강 — Anthropic 안전 법안 초안: 지방 킬 스위치에서 연방 법안 문안으로
+
+Anthropic이 비공개로 의회에 로비 중인 연방법 초안 (Politico·Reuters 10/16 확인, hokanews·AIWeekly 10/18 재보도). 정식 발의는 아직 안 됨, 후원 의원 미확인.
+
+- **중단 요건**: "foreseeable, imminent risk"가 **10억 달러 이상 피해 또는 50명 이상 사망·중상**을 초래할 때만.
+- **위험 경로 3종**: 생물무기 생성/유출, 모델의 개발자 통제 탈출, 사이버공격.
+- **절차**: 상무부 등록 독립 평가자 주기 평가 → 임박 위험 발견 시 72시간 내 상무부 통보 → 상무부가 DC 연방지방법원 판사에게 중단 청원. **다른 연방 기관의 독자적 중단은 명시 금지**.
+- Anthropic 대변인: 자사 "Advanced AI Framework"의 입법화.
+
+- 이 페이지와의 연결: 10/5 청문회에서 논의된 킬 스위치 패키지가 **13일 만에 연방 법안 문안의 형태**로 등장 — "자율적 선택"([[patterns/agent-safety-runtime]])이 "법적 의무"로 바뀌는 지점이 구체적인 숫자(10억/50명/72시간)를 갖기 시작. 단, 아직 법안이 아니므로 확정 서술 금지 — "기업이 쓴 중단 절차안"으로 기록.
+- 상세: [[concepts/anthropic-ai-safety-bill]]
+
 ## 참고 소스
 
 - [Ex-Anthropic researcher Coxon to appear at NYC hearing on AI (Bloomberg via Moneyweb)](raw/articles/2026-10-05-nyc-council-ai-hearing-testimony.md)
+- [Anthropic의 미국 AI 안전 법안 초안 — 10억 달러·50명 임계값 (Politico·Reuters 10/16, hokanews 10/18)](raw/articles/2026-10-18-anthropic-ai-safety-bill.md)

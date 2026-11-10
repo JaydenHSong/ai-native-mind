@@ -1,9 +1,9 @@
 ---
 title: "Agentic Commerce"
 category: patterns
-tags: [agentic-commerce, shopping-agents, benchmarks, principal-agent, computer-use, steering, voice-agent, gemini, accessibility, stt]
+tags: [agentic-commerce, shopping-agents, benchmarks, principal-agent, computer-use, steering, voice-agent, gemini, accessibility, stt, platform-blocks, yelp, delta]
 created: 2026-09-24
-updated: 2026-10-13
+updated: 2026-10-18
 sources:
   - "raw/articles/2026-09-24-agentic-commerce-benchmark-booking.md"
   - "raw/articles/2026-09-25-gemini-live-avatar-business-calling-suncatcher.md"
@@ -11,11 +11,17 @@ sources:
   - "raw/articles/2026-09-27-sarvam-saaras-v4-stt.md"
   - "raw/articles/2026-10-06-tiktok-agentic-commerce.md"
   - "raw/articles/2026-10-13-meta-sierra-poppy-protocol.md"
+  - "raw/articles/2026-10-15-booking-vayo-ai-travel.md"
+  - "raw/articles/2026-10-16-datadome-ai-traffic-q3-2026.md"
+  - "raw/articles/2026-10-18-websites-block-ai-agents.md"
 related:
   - "[[concepts/llm-evaluation]]"
   - "[[comparisons/agent-eval-frameworks]]"
   - "[[concepts/agent-supply-chain-security]]"
   - "[[concepts/meta-sierra-poppy-protocol]]"
+  - "[[concepts/booking-vayo-travel-agent]]"
+  - "[[concepts/datadome-ai-traffic-q3-2026]]"
+  - "[[concepts/websites-block-ai-agents]]"
 status: draft
 confidence: low
 ---
@@ -130,6 +136,46 @@ Meta×Sierra의 Personal Agent Protocol (PAP, 별칭 Poppy) draft 0.1 (10/9, Apa
 
 - 상세: [[concepts/meta-sierra-poppy-protocol]]
 
+## 2026-10-15 보강 — Booking Vayo: 여행 전용 소비자 에이전트, 자본 조건부 $100M
+
+Booking Holdings가 시애틀 기반 AI 여행 스타트업 **Vayo** 공개 (10/14, GeekWire 원보도, Skift·Morningstar·PhocusWire 교차) — **조건부 최대 $100M 투자 계획**(제품 진척·시장 조건 연동). 무료 초대 전용 프라이빗 베타, vayo.com 대기자 명단.
+
+- 제품: 개인 AI 여행 에이전트 — "작업이 아닌 여행을 위해 설계(built for trips, not tasks)". 사용자 **인박스 연결** — 항공·호텔·식당 예약 확인 메일을 통합 여정으로 정리, 이후 **가격 하락·매진 호텔 공실·운항 차질**(항공 지연→호텔 체크인/디너 예약 놓침) 모니터링.
+- 아키텍처: 다수 AI 에이전트 동시 가동, 작업별로 다른 기성 모델 선택 사용. CTO Allen Chen — 향후 커스텀 모델 필요 가능. 식당 예약 동작, 항공·호텔은 수 주 내, 네이티브 모바일 앱·그룹 여행 기획은 이후.
+- 전략: **중립 오케스트레이터** — Booking 브랜드뿐 아니라 Expedia·항공사·호텔 직접 예약(메일 파싱)까지 포괄. 스크린 스크래핑 대신 **OpenTable·SeatGeek과 직접 파트너십** — Meta Muse가 Amazon에서 차단된 전철(9월)을 피하려는 선택.
+- Booking의 **두 번째 AI 네이티브 스타트업** — 첫 번째는 약 2주 전 출시 Lola(Kayak 공동 창업팀, 일상 경험용).
+- 이 페이지와의 연결: "에이전트가 누구 편인가"(스티어링)에 **"중립 선언의 구조"**가 추가된다. Vayo는 "중립 오케스트레이터"를 자처하지만, 투자자가 Booking인 구조 — Poppy(10/13 보강)의 신원·권한 레일 관점에서 읽으면, **누가 주인인지(principal) 선언이 투자 구조와 충돌하는지**가 eval 조건이 된다. 9/24 스티어링 벤치마크의 "적대적 환경"에 **"모회사 소유권" 시나리오** 추가 후보 — 주인이 사용자인가, 모회사인가를 구별할 수 있는가.
+- 상세: [[concepts/booking-vayo-travel-agent]]
+
+## 2026-10-16 보강 — DataDome Q3: Muse 에이전트 트래픽의 폭증과 '미신고' 문제
+
+DataDome Q3 2026 AI 트래픽 보고서 (10/15, DataDome 공식·PPC Land) — **분기 AI 에이전트 요청 250억 건**(전분기 177억, +41.5%). 에이전틱 브라우저 트래픽이 9월 한 달 **4.7배 급증**(1,250만→5,820만).
+
+- **Meta Muse**: 9/22~10/3 출시 12일 만에 **2,910만 요청** — 그중 **99.3%가 클라우드 인프라에서 미신고(unidentified) 발생**. Amazon이 9월 차단한 "신원 미표시 Muse 에이전트"가 12일 만에 2,910만 요청 규모로 실전 확인.
+- **민감 엔드포인트**: Muse 요청의 **8.9%가 로그인·결제·장바구니** 등 민감 엔드포인트에 도달 — 신원 없는 결제 시도가 분기 수백만 건 규모.
+- **Meta 비중**: 전체 에이전트 중 51.5%→49.7%. **Claude 크롤러 159% 급증**.
+
+### 이 페이지와의 연결
+
+- 10/13 보강(Poppy — 신원·권한 레일)의 **정량 근거**. "신원 미표시 에이전트의 거래는 기본 차단 정책"이라는 실무 적용이 이제 분기 수천만 건 규모의 문제로 확인 — Amazon의 9월 차단이 선제적 대응이었음이 수치로 입증.
+- "에이전트가 누구 편인가"(스티어링)에 "에이전트가 누구인지 증명하는가"(신원)가 추가된 데 이어, 이번엔 그 신원 문제의 **규모감**이 정량화. 9/24 스티어링 벤치마크의 "적대적 환경" eval에 **미신고 대규모 트래픽** 시나리오 추가 — 신원 위장(10/13)에서 한 걸음 더 나아가 "신원 자체가 없는" 트래픽.
+- 민감 엔드포인트 8.9%는 [[patterns/agentic-finance]]의 "돈을 만지는 에이전트"가 이미 실전 트래픽임을 의미 — 결제 게이트의 신원 검증이 선택이 아닌 전제.
+- 상세: [[concepts/datadome-ai-traffic-q3-2026]]
+
+## 2026-10-18 보강 — 플랫폼의 에이전트 차단: 스티어링에서 차단으로의 에스컬레이션
+
+The Verge(Emma Roth, 10/17) — Yelp·Delta·JPMorgan Chase·Charles Schwab·Cars.com·Amtrak이 OpenAI·Meta·xAI 등의 에이전트 접근을 제한 (mylistingo·techbuzz.ai·inshorts·rrtechpulse 10/17–18 교차 보도).
+
+- Yelp: **유료 데이터 라이선스 프로그램**을 통해서만 에이전트 접근 허용 — "돈을 내면 들어와".
+- Delta: 서드파티 에이전트의 항공권 검색·예약 파트너십 "현재 없음" — 공식 금지 선언은 아님 (완곡 표현).
+- 은행: Schwab CEO Wurster(10/15) "고객 대신 로그인하는 건 안전하지 않다. 허용하지 않을 것." JPMorgan Dimon(10/13) "외부 에이전트가 회사 안에 들어오는 걸 허용하지 않을 것."
+- Amazon×Perplexity 소송: 1심 금지 명령 → 8월 항소 뒤집힘 → Amazon 수정 소송 — 사법 판단도 요동 중.
+- Meta 반론: "개인 에이전트를 외면하는 건 그 뒤의 고객을 외면하는 것." Walmart·Gap·Sephora·Best Buy와 파트너십 체결 — Muse 구매 가능. Shopify도 네트워크 개방.
+
+- 이 페이지의 프레이밍으로 읽으면: (1) **스티어링 → 차단의 에스컬레이션** — 9/24 스티어링 벤치마크(충성도 78.6%→17.3%)가 "에이전트 유인"이었다면, 이번은 "입구 폐쇄". 마켓플레이스가 에이전트를 속이는 데서 막는 데로 선회. (2) **"공식 통로"의 상품화** — Yelp의 데이터 라이선스, Meta의 리테일 파트너십, Poppy의 신원 협상(10/13 보강)이 "에이전트가 합법적으로 들어가는 문"의 세 가지 형태. (3) eval에 **"차단 환경" 시나리오** 추가 — 적대적 환경(스티어링)에 이어 "접근 거부" 환경에서의 폴백 동작을 측정해야 함.
+- 한계: Amtrak·Cars.com 차단은 사용자 보고 기반 미검증. Delta는 공식 금지가 아님. The Verge 원문 URL은 verbatim 미확보 — 2차 보도 4개로 교차확인.
+- 상세: [[concepts/websites-block-ai-agents]]
+
 ## 참고 소스
 
 - [Agentic commerce reality check: Booking Holdings says LLM traffic is 'significantly below 1%' of bookings](raw/articles/2026-09-24-agentic-commerce-benchmark-booking.md)
@@ -137,3 +183,6 @@ Meta×Sierra의 Personal Agent Protocol (PAP, 별칭 Poppy) draft 0.1 (10/9, Apa
 - [AudioEye study: AI agent task completion falls two-thirds on inaccessible sites; median run uses 43% more tokens](raw/articles/2026-09-26-audioeye-agent-accessibility-study.md)
 - [TikTok kicks off agentic commerce push: Buy Direct checkout + AI Shopping Assistant](raw/articles/2026-10-06-tiktok-agentic-commerce.md)
 - [Meta×Sierra Poppy: 개인 에이전트 프로토콜 draft 0.1 (PYMNTS, 10/12)](raw/articles/2026-10-13-meta-sierra-poppy-protocol.md)
+- [Booking Holdings, AI 여행 스타트업 Vayo 공개 (GeekWire 원보도·Skift·Morningstar·PhocusWire, 10/14)](raw/articles/2026-10-15-booking-vayo-ai-travel.md)
+- [DataDome Q3 2026 AI 트래픽 보고서 — 250억 에이전트 요청·Muse 미신고 99.3% (DataDome 공식·PPC Land, 10/15)](raw/articles/2026-10-16-datadome-ai-traffic-q3-2026.md)
+- [플랫폼의 에이전트 차단 — Yelp·Delta·은행 (The Verge 10/17, mylistingo·techbuzz.ai·inshorts, 10/17–18)](raw/articles/2026-10-18-websites-block-ai-agents.md)

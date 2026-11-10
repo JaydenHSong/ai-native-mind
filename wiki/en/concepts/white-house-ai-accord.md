@@ -3,13 +3,14 @@ title: "White House Accord on Superintelligence"
 category: concepts
 tags: [white-house, accord, superintelligence, governance, regulation, self-regulation, audit, trump, ai-policy, joint-commitment, ftc-subpoena, california]
 created: 2026-09-30
-updated: 2026-10-05
+updated: 2026-10-14
 sources:
   - "raw/articles/2026-09-29-white-house-ai-accord-outcome.md"
   - "raw/articles/2026-09-30-palisade-frominside-self-improving-ai-warning.md"
   - "raw/articles/2026-10-01-ftc-probe-openai-anthropic.md"
   - "raw/articles/2026-10-03-white-house-frontier-responsibilities-commitment.md"
   - "raw/articles/2026-10-03-ftc-probe-update-ca-ag-subpoena.md"
+  - "raw/articles/2026-10-14-openai-anthropic-evaluator-restrictions.md"
 related:
   - "[[concepts/agent-attribution]]"
   - "[[concepts/agent-supply-chain-security]]"
@@ -18,6 +19,7 @@ related:
   - "[[patterns/agent-safety-runtime]]"
   - "[[journal/2026-09-29]]"
   - "[[concepts/super-intelligence-force]]"
+  - "[[concepts/evaluator-independence-restrictions]]"
 status: draft
 confidence: medium-high
 ---
@@ -112,6 +114,14 @@ Reuters reports California Attorney General **Rob Bonta** issued a **subpoena to
 ## 2026-10-05 Update — voluntary pact → Super Intelligence Force
 
 2026-10-05 follow-up: the voluntary pact graduated into a dedicated federal coordination body. Trump appointed Jay Clayton (DNI) as AI czar and chairman of the new "Super Intelligence Force," launching a 120-day AI review — the "coordinate but don't regulate" federal line — [[concepts/super-intelligence-force]].
+
+## 2026-10-14 Update — Accord promise #3 shakes: the labs want editorial control over independent evaluators
+
+Reuters (10/13): OpenAI and Anthropic are negotiating to **restrict the public disclosures of independent safety evaluators doing embedded evaluations** — editorial and approval control over reports (Anthropic reserves approval rights over new evaluation firms), lab-staff observation of evaluators, and bans on multi-lab work. This is this page's promise #3 (**independent external evaluators**) and the Joint Commitment's "independent external-evaluator re-verification" (10/3 update) under the question "who holds editorial control" — the moment the lab holds it, independent evaluation becomes outsourced internal evaluation.
+
+- This page's own limits section already recorded "who picks the external evaluators and how much of the evaluation gets disclosed are undecided" — the labs are now answering that question in their favor.
+- Stage: a private negotiation Reuters is first to report — no lab confirmation. The accord's "could become codified over time" now faces the counter-direction: codified *control* by the evaluated.
+- Details: [[concepts/evaluator-independence-restrictions]], [[concepts/llm-evaluation]]
 
 ## Why it matters (solo-developer lens)
 

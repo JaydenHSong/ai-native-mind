@@ -1,20 +1,24 @@
 ---
 title: "Agent Residence — Local Models vs Cloud Computers"
 category: concepts
-tags: [agent-residence, local-model, open-weights, privacy, cloud-agent, meta, xai, openai, underdog, claude-workspace, microsoft, windows-agents, surface]
+tags: [agent-residence, local-model, open-weights, privacy, cloud-agent, meta, xai, openai, underdog, claude-workspace, microsoft, windows-agents, surface, apple, china, alibaba, muse-spark, mlx]
 created: 2026-10-04
-updated: 2026-10-08
+updated: 2026-10-16
 sources:
   - "raw/articles/2026-10-04-agent-residence-local-vs-cloud.md"
   - "raw/articles/2026-10-07-underdog-ondevice-ai-assistant.md"
   - "raw/articles/2026-10-07-claude-google-workspace-beta.md"
   - "raw/articles/2026-10-08-microsoft-surface-ultra-agentic-windows.md"
+  - "raw/articles/2026-10-15-apple-intelligence-china.md"
+  - "raw/articles/2026-10-16-meta-muse-spark-open.md"
 related:
   - "[[concepts/persistent-agent]]"
   - "[[patterns/agentic-finance]]"
   - "[[comparisons/managed-vs-deep-agents]]"
   - "[[tools/claude-google-workspace]]"
   - "[[patterns/agent-safety-runtime]]"
+  - "[[concepts/apple-intelligence-china-launch]]"
+  - "[[concepts/meta-muse-spark-open]]"
 status: draft
 confidence: medium
 ---
@@ -69,6 +73,26 @@ The local/cloud polarization has gained a third commercial vector — **the OS i
 
 → A third axis joins this page's two: local (privacy) · cloud (workflow) · **OS-embedded (platform)**. With the OS becoming the enforcer of agent security (Containment, Identity, Manageability), [[patterns/agent-safety-runtime]]'s runtime security hardens into an OS-level standard.
 
+## 2026-10-15 update — the mandated "Alibaba cloud residence": Apple Intelligence in China
+
+Apple plans to ship Apple Intelligence to mainland China via the **December iOS 27.3** update (10/14, 9to5Mac·Bloomberg·SCMP) — ending a 2+ year regulatory delay (May 2025 → end-2025 → early-2026 targets all missed). The China iPhone Duo launch is next week.
+
+- **Restricted build**: this year's flagship — the redesigned Siri AI — excluded; Apple's own image-generation tools excluded; text generation limited in some apps; camera-based Visual Intelligence excluded. Included: Genmoji, AI notification summaries, writing tools, photo Clean Up — the **2024 original feature set**.
+- **Concessions**: guardrails co-developed with Alibaba — including a **filter that gives the government approval over AI model updates**. Cloud queries routed through Alibaba (**Tongyi Qianwen replacing OpenAI**, Alibaba's image models replacing Apple's tools). Baidu covers search and Siri cooperation.
+- **Regulatory trajectory**: preliminary approval July 2026, MIIT network-access licensing 9/29 (retroactive to iPhone Duo, iPhone 18 Pro, iPhone 15 Pro — Apple Intelligence listed alongside Tongyi Qianwen and Tongyi Wanxiang, registration numbers public).
+- **Context numbers**: China is **17–20%** of Apple's revenue. Rivals (Huawei, Xiaomi, Oppo, Vivo) already ship AI features. Apple's market cap crossed **$5T** at close (second behind Nvidia). Bloomberg: the payoff of shipping two-year-old features is unclear. Apple said on 10/13 it is "constructively engaging" with the EU on Siri AI too.
+- Read through this page's framing: the case where "where it resides" became a **sovereignty question** — even on-device models get a government-mandated cloud residence (Alibaba). The three axes (local · cloud · OS-embedded) gain a fourth question: **"who licenses the residence infrastructure?"** Apple's on-device privacy positioning holds, but cloud queries pass through a government update-approval filter — not "data never leaves the device" but "departing queries route through Alibaba and model updates clear government approval." Where Underdog (10/7 update) stood for "local = privacy," the China build proves **"local ≠ sovereignty"** — residence location and control authority separate.
+- Details: [[concepts/apple-intelligence-china-launch]]
+
+## 2026-10-16 update — Muse Spark Open: the Mac Studio becomes the agent's home
+
+Meta Muse Spark Open (10/15, TechCrunch, MacRumors) — an 816B (42B active) MoE open-weight model demonstrated **running locally on two M5 Ultra Mac Studios (MLX, 1TB unified memory)**. An Apple collaboration.
+
+- **The "local" spectrum extends upward**: August 2026's Meta 30B (one consumer GPU) → October's Muse Spark (816B, two Mac Studios, 1TB unified memory). "Local residence" stretches from a single GPU to workstation class. GPQA Diamond 89.0, Terminal-Bench 2.1 76.4 — the claim of frontier-class agent performance on local hardware (though the AA intelligence index scores 39, below the Chinese open models — the in-house-benchmark vs independent-index gap).
+- **The platform (OS) × model (open weights) intersection**: where the 10/8 update's OS-embedded vector (Surface Ultra + Agentic Windows) made "the OS the agent's home," this is **Apple hardware × Meta model** — the local agent stack completing through an OS-vendor/model-vendor pairing. MLX (Apple's silicon inference stack) becomes part of the open-weight distribution channel.
+- Solo-dev takeaway: "local" is now two tiers — consumer GPU (30B-class) and workstation (816B-class) — and the architectural separation of what resides where gets sharper. Sensitive code on-device, heavy agent workloads on Mac-Studio-class local.
+- Details: [[concepts/meta-muse-spark-open]]
+
 ## Related concepts
 
 - [[concepts/persistent-agent]] — the origin of the resident-agent concept (OpenAI "O" leak, 2026-09-27)
@@ -81,3 +105,5 @@ The local/cloud polarization has gained a third commercial vector — **the OS i
 - [Sigil Wen's Underdog — on-device private AI assistant (TechCrunch, 10/6)](raw/articles/2026-10-07-underdog-ondevice-ai-assistant.md)
 - [Anthropic launches Claude for Google Workspace public beta (10/6)](raw/articles/2026-10-07-claude-google-workspace-beta.md)
 - [Microsoft x Nvidia Surface Laptop Ultra — 'the OS for agents' (Reuters, 10/7)](raw/articles/2026-10-08-microsoft-surface-ultra-agentic-windows.md)
+- [Apple Intelligence reportedly coming to China in December via iOS 27.3 (9to5Mac, Bloomberg, SCMP, 10/14)](raw/articles/2026-10-15-apple-intelligence-china.md)
+- [Meta Muse Spark Open — 816B open weights, local on Mac Studio (TechCrunch, MacRumors, 10/15)](raw/articles/2026-10-16-meta-muse-spark-open.md)

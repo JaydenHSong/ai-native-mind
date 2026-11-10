@@ -3,7 +3,7 @@ title: "Super Intelligence Force — 트럼프 행정부의 연방 AI 조정 기
 category: concepts
 tags: [super-intelligence-force, ai-czar, jay-clayton, trump, regulation, federal-ai-policy, doj, eo-14434, terminology, incident-reporting, uk-aisi, nadella]
 created: 2026-10-05
-updated: 2026-10-13
+updated: 2026-10-16
 sources:
   - "raw/articles/2026-10-05-trump-jay-clayton-ai-czar-super-intelligence-force.md"
   - "raw/articles/2026-10-07-doj-super-intelligence-memo.md"
@@ -11,6 +11,7 @@ sources:
   - "raw/articles/2026-10-12-us-restores-uk-frontier-model-access.md"
   - "raw/articles/2026-10-12-microsoft-nadella-ai-emergency-brake.md"
   - "raw/articles/2026-10-13-brad-smith-ai-regulation-proposals.md"
+  - "raw/articles/2026-10-16-us-super-intelligence-task-force.md"
 related:
   - "[[concepts/white-house-ai-accord]]"
   - "[[concepts/agent-attribution]]"
@@ -18,6 +19,7 @@ related:
   - "[[concepts/uk-frontier-model-access-restoration]]"
   - "[[concepts/nadella-emergency-brake]]"
   - "[[concepts/microsoft-binding-ai-rules-push]]"
+  - "[[concepts/us-super-intelligence-task-force]]"
 status: draft
 confidence: medium
 ---
@@ -78,11 +80,23 @@ MS 사장 Brad Smith가 BBC Big Boss Interview 팟캐스트 (10/12 공개)에서
 - 미국 기준선: 2026년 6월 행정명령의 자발적 출시 전 검토 위주. Cantwell(10/7)·Warner의 강제 법안이 입법 방향을 결정.
 - 상세: [[concepts/microsoft-binding-ai-rules-push]]
 
+## 2026-10-16 전개 — Task Force 첫 회의: 정관 채택과 120일 검토 돌입
+
+백악관 Super Intelligence Task Force의 첫 공식 회의 (10/15, 10/16 Reuters·AI Affairs) — **정관(charter) 채택**으로 120일 검토가 공식 궤도에 진입.
+
+- **위원장**: Jay Clayton (DNI·AI 차르). **위원**: Scott Kupor (OPM), Andrew Ferguson (FTC), Emil Michael (국방부).
+- **PCAST**: 사이버보안·바이오보안·모델통제 3대 리스크 보고서. **David Sacks**: 리스크 연구 주도.
+- **Emil Michael (국방부)**: AI 연구소 침해·해킹·탈옥에 대한 **조기경보 보고 프로토콜** 수립 담당 — 10/9 Anthropic 사건(연방 시스템 무단 사용)의 후속 제도화. "사건 후 신고"에서 "침해 전 조기경보"로.
+- **집행**: FTC·법무부(DOJ)의 위반 집행 채널 명시.
+- 이 페이지의 노선과의 관계: 출범 당시 "조정하되 규제하지 않는다"였으나, 10/9 강제 신고 의무화에 이어 이제 정관과 함께 **FTC·법무부 집행 채널이 문서화** — "조정"에서 "집행"으로의 무게 이동이 네 번째 실전 행사로 굳어지는 중. 120일 리뷰(2027년 1월)가 "리스크 검토"에서 끝나지 않고 집행 근거로 쓰일 수 있는 구조.
+- 상세: [[concepts/us-super-intelligence-task-force]]
+
 ## 관련 개념
 
 - [[concepts/white-house-ai-accord]] — White House Accord on Superintelligence (2026-09-30), 자발적 협약에서 전담 기구로의 단계 상승
 - [[concepts/agent-attribution]] — 귀속·책임 논쟁의 사법 채널 (FTC·주·뉴욕시)과 대비되는 연방 조정 채널
 - [[concepts/white-house-ai-incident-reporting-mandate]] — 10/9 강제 신고·시정 의무화의 상세
+- [[concepts/us-super-intelligence-task-force]] — Task Force 첫 회의: 정관 채택·120일 검토 돌입
 
 ## 참고 소스
 
@@ -90,3 +104,4 @@ MS 사장 Brad Smith가 BBC Big Boss Interview 팟캐스트 (10/12 공개)에서
 - [미 법무부, 전 직원에 'super intelligence' 사용 지시 (Reuters, 10/6)](raw/articles/2026-10-07-doj-super-intelligence-memo.md)
 - [백악관, AI 사고 강제 신고·시정 의무화 — Anthropic 연방 시스템 무단 사용 계기 (Axios 원보도, 10/9)](raw/articles/2026-10-10-white-house-ai-incident-reporting-mandate.md)
 - [MS 사장 Brad Smith, 강제 AI 규칙 5안 제시 (PYMNTS, 10/12)](raw/articles/2026-10-13-brad-smith-ai-regulation-proposals.md)
+- [백악관 Super Intelligence Task Force 첫 회의, 정관 채택 (Reuters·AI Affairs, 10/16)](raw/articles/2026-10-16-us-super-intelligence-task-force.md)
