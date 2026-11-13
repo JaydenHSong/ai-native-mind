@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-11-12
+updated: 2026-11-13
 sources: []
 status: active
 ---
@@ -29,10 +29,15 @@ This page is a **table of contents and learning map** for the wiki. The links be
 
 ## Current state
 
-- **Total pages**: 365
-- **Categories**: concepts(245), tools(16), patterns(30), journal(69), comparisons(11), meta(4)
+- **Total pages**: 372
+- **Categories**: concepts(251), tools(16), patterns(30), journal(70), comparisons(11), meta(4)
 - **Start date**: 2026-04-06
-- **Latest work (2026-11-12 daily ingest — judgment gets cheaper, control gets more expensive)**:
+- **Latest work (2026-11-13 daily ingest — attack and defence both became agents)**:
+  - 6 raw sources collected (window 11/12 15:00 UTC ~ 11/13 15:00 UTC; zero Gmail AI newsletters — 26th straight day; Gemini 4 Hydrogen is confirmed by Google's official blog announcement, correcting yesterday's rumour exclusion; Daybreak benchmark figures are unverified because they do not appear on the official page; the freeze lawsuit is cross-checked against the Reuters report).
+  - 7 new: concepts/gemini-4-hydrogen (execution model, 1M context, $1.50/$7.50 flat pricing, AA Index 51 — high), concepts/openai-daybreak-red-team-defense-factory (Red Team penetration-testing agents, Defense Factory patch factory, GPT-6 Cyber, no pricing announced — high), concepts/anthropic-self-hosted-claude-managed-agents (cma-server, PostgreSQL 16+, sandbox workers self-operated, model calls external, 7 features missing — high), concepts/anthropic-anvil-automated-red-teaming (automated red-teaming, bio 430 hours vs 24–48 hours, Chrome/Firefox exploits — medium, first-party figures), concepts/spacex-74b-ai-supercomputing-campuses (Starbase more than $24B + Arizona about $50B, county approval pending, plan stage — high), concepts/nonprofits-sue-freeze-frontier-ai (four groups sue, five defendants, no freeze order, opposite of the 09-18 antitrust suit — high), journal/2026-11-13 (active).
+  - No reinforcements.
+  - EN sync complete. 365→372 pages.
+- **Previous work (2026-11-12 daily ingest — judgment gets cheaper, control gets more expensive)**:
   - 6 raw sources collected (window 11/11 15:00 UTC ~ 11/12 15:00 UTC; zero Gmail AI newsletters — 25th straight day; the Huang ouster was verified separately against the WSJ original and NYT corroboration; Fireworks → Notion is a Nov 9 advisory with a Nov 11 key-revocation follow-up).
   - 7 new: concepts/nvidia-huang-ousted-ceo (Huang resigns, Kress interim CEO, shares −8–10% premarket, $500B+ in market value gone — high), concepts/openai-codex-npm-prompt-injection (issue text to release-signing credentials, ~26M weekly downloads — medium, production reach uncertain), concepts/google-gemini-decisions-api (1,000 questions in a single forward pass, 150–250 ms, $0.10/MTok — high), concepts/anthropic-worse-together-multi-agent (coordinator leads peer teams by 10–45 points, MAMUBench — high), concepts/deepmind-alphagenome-2 (cell-specific variant prediction, 30% causal-variant recall — medium, first-party figures), concepts/fireworks-notion-ai-breach (Notion AI chat records exposed, zero-retention promise broken, API keys revoked Nov 11 — high), journal/2026-11-12 (active).
   - 1 reinforced: concepts/anthropic-ipo-roadshow-valuation-cut (price range $70–78, pricing Nov 18 and trading debut Nov 19 confirmed, Q3 revenue $17B, run-rate ~$81B, TSMC approves up to $500M into Anthropic plus up to $500M in OpenAI preferred shares).

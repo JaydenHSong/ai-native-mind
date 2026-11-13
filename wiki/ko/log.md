@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-11-12
+updated: 2026-11-13
 sources: []
 status: active
 ---
@@ -19,6 +19,18 @@ status: active
 - 월드맵 허브: [[campaign-map|Campaign Map]]
 - 진행 가이드: [[overview|Overview]]
 - 전체 도감: [[index|Index]]
+
+## [2026-11-13] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + 한/영 위키 정제
+
+- **Raw collected** (raw/articles/, 6건 — 일일 최대치):
+  - `2026-11-13-gemini-4-hydrogen.md` — Google Gemini 4 Hydrogen 출시 (11-12; Google 블로그 원문·다이제스트 교차 확인): Gemini 4 패밀리 실행형 멤버, 1M 컨텍스트 전 구간 균일 요금 $1.50/$7.50, 사고 4단계(low/medium/high/xhigh). AA 지수 51점(Argon 50점), xhigh 54점. 3.8 Flash 대비 2.5배 빠름, Terminal-Bench 4.1 57% vs 18.2%. Antigravity Orchestrator가 Carbon·Hydrogen 전환해 할당량 24% 절감·19% 빨라짐. 어제 미확인 루머로 제외했던 것이 오늘 공식 출시로 확정.
+  - `2026-11-13-openai-daybreak-red-team-defense-factory.md` — OpenAI Daybreak 공개 (11-12; Cyber at the Frontier 키노트 경유 The Register·SecurityWeek·Silicon Report·GBHackers): Red Team은 에이전트 함대의 웹앱 침투 테스트·취약점 검증·패치 재테스트(조기 액세스·신청제), Defense Factory는 코드베이스 스캔·근본 원인 추적·테스트 포함 병합 준비 PR(ChatGPT 프리뷰 플러그인). 기반 GPT-6 Cyber. 가격 미발표, ExploitGym 77.0%·PatchBench 79.1% 수치는 공식 페이지에 없어 미검증.
+  - `2026-11-13-anthropic-self-hosted-claude-managed-agents.md` — Anthropic 셀프호스팅 Claude Managed Agents 프라이빗 베타 (11-12; Anthropic 원문): cma-server·PostgreSQL 16+·샌드박스 워커를 고객 클라우드·온프레미스에서 운영, Anthropic 원격 접근 없음. 모델 호출은 Anthropic·Bedrock·Google·Microsoft Foundry 등 외부로. 가격·GA 일정 미공개, 호스팅 기능 7개 누락(dreams 포함), 마이그레이션 없음. 안전 통지 후 8시간 이내 롤백·1영업일 이내 안전 업데이트 의무.
+  - `2026-11-13-anthropic-anvil-automated-red-teaming.md` — Anthropic Anvil 자동 레드티밍 공개 (11-12; Anthropic safeguards 블로그 원문): 8문항 바이오 버그바운티에서 인간은 7주·430시간 들여 1문항만 고위험 탈옥을 찾았는데 Anvil은 모든 분류기에서 최고 인간 탈옥과 동등 이상을 24~48시간에. 사이버에서는 알려진 Chrome·Firefox JS 엔진 취약점의 완전한 작동 익스플로잇으로 임의 코드 실행까지. 단 Anthropic 자체 발표로 독립 검증 없음.
+  - `2026-11-13-spacex-74b-ai-supercomputing-campuses.md` — SpaceX $74B 이상 AI 슈퍼컴퓨팅 캠퍼스 계획 (11-12; Reuters 원보도): Starbase 240억 달러 이상 + 애리조나 Cochise County 약 500억 달러. 애리조나는 카운티 승인 대기, 건설 5,500개·상시 1,000개 일자리 전망. 텍사스는 자체 발전. 계획이지 집행이 아님.
+  - `2026-11-13-nonprofits-sue-freeze-frontier-ai.md` — 비영리 4단체, 프론티어 AI 개발 동결 소송 (11-12; Reuters 보도 경유 AI Frontier Post·Machine.net·Al Jazeera): Irreplaceable Education Fund·Public Citizen·Heat Initiative·Alliance for Secure AI가 Anthropic·Google·Meta·OpenAI·SpaceX Super Intelligence를 샌프란시스코 고등법원에 제소. 11-12 기준 가장 유능한 시스템보다 더 유능한 모델의 개발·배포 금지 + AI의 자율 연구 지휘 금지 요구. 63쪽 소장, 캘리포니아 부정경쟁방지법 단일 청구. 동결 명령·심리 일정·사건 번호 없음. 09-18 반독점 소송('늦추기로 담합했다')과 정반대 방향.
+- **Ingest** (wiki/ko, 개념 6건 신규 + 저널 1건): gemini-4-hydrogen, openai-daybreak-red-team-defense-factory, anthropic-self-hosted-claude-managed-agents, anthropic-anvil-automated-red-teaming, spacex-74b-ai-supercomputing-campuses, nonprofits-sue-freeze-frontier-ai 신규; journal/2026-11-13. 모순 플래그 없음. 제외: ARC-AGI-3 검증 결과(Claude Fable 5.2 97.7%·Gemini 4 Carbon 99.1% — 슬롯 한계·2차 미러 경유), SGLang Consortium 출범(거버넌스 발표·성능 수치 없음), Claude Meetings 베타(날짜 11-11/11-12 엇갈림), GPT-6.2 Astra 루머(미확인), PPI 11-13 발표·NVDA 실적 11-17·Anthropic IPO 가격 결정 11-18(브리핑 매크로 맥락으로만 언급), Gmail AI 뉴스레터는 최근 24시간 신규 수신 없음(hoon.iccorp·jsong@spigen.com 양 계정 확인 — 26일 연속).
+- **EN sync**: en 개념 6건 신규 + 저널 1건 미러, en index/log/overview/campaign-map 동기화. 번역 공백 0건.
 
 ## [2026-11-12] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + 한/영 위키 정제
 

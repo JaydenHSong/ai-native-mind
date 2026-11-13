@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-11-12
-total_pages: 365
+updated: 2026-11-13
+total_pages: 372
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 전체 365개 페이지 | 최종 업데이트: 2026-11-12 (데일리 ingest: AI 뉴스 6건 수집 + 한/영 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
+> 전체 372개 페이지 | 최종 업데이트: 2026-11-13 (데일리 ingest: AI 뉴스 6건 수집 + 한/영 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
 
 ## 쉽게 읽기
 
@@ -26,7 +26,7 @@ status: active
 - **실전(Chapter 3~5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **엔드게임(Chapter 6~7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (245개)
+## Concepts (251개)
 
 ### 성장 맵 & 철학
 - [[concepts/ai-native-programmer]] — AI를 팀원으로 활용하여 1인이 팀 규모 결과를 내는 개발자, 성장 맵
@@ -155,6 +155,10 @@ status: active
 - [[concepts/google-gemini-decisions-api]] — Google Gemini Decisions API, gemini-decision-1 단일 forward pass 판단 모델·1,000문항·$0.10/MTok (2026-11-11)
 - [[concepts/anthropic-worse-together-multi-agent]] — Anthropic 'Worse Together', 다중 에이전트 팀이 단일 코디네이터보다 열등·MAMUBench (2026-11-11)
 - [[concepts/deepmind-alphagenome-2]] — DeepMind AlphaGenome 2, 세포 특이적 DNA 변이 효과 예측·인과 변이 회수 30% (2026-11-11)
+- [[concepts/gemini-4-hydrogen]] — Google Gemini 4 Hydrogen, 실행형 코딩 에이전트 모델·1M 컨텍스트·$1.50/$7.50 균일 요금 (2026-11-12)
+- [[concepts/openai-daybreak-red-team-defense-factory]] — OpenAI Daybreak, Red Team 침투 테스트 에이전트·Defense Factory 패치 공장·GPT-6 Cyber (2026-11-12)
+- [[concepts/anthropic-self-hosted-claude-managed-agents]] — Anthropic 셀프호스팅 Claude Managed Agents 프라이빗 베타, 하네스는 내 클라우드에 (2026-11-12)
+- [[concepts/anthropic-anvil-automated-red-teaming]] — Anthropic Anvil 자동 레드티밍, 인간 전문가를 능가·바이오 430시간 vs 24~48시간 (2026-11-12)
 
 ### 운영·관측
 - [[concepts/gen-ai-observability]] — OpenTelemetry GenAI·에이전트 시맨틱 컨벤션, 트레이스·표준 계측
@@ -189,6 +193,8 @@ status: active
 - [[concepts/openai-chatgpt-enterprise-aws-marketplace]] — OpenAI ChatGPT Enterprise AWS Marketplace 출시, 클라우드 약정으로 결제 가능 (2026-11-09)
 - [[concepts/openai-businesses-in-chatgpt]] — OpenAI Businesses in ChatGPT 베타, Business Hub·Business Agents·미국 이커머스 (2026-11-10)
 - [[concepts/nvidia-huang-ousted-ceo]] — Jensen Huang 축출, NVIDIA 창업자 CEO 사임·Kress 임시 체제·주가 개장 전 −8~10% (2026-11-12)
+- [[concepts/spacex-74b-ai-supercomputing-campuses]] — SpaceX $74B 이상 AI 슈퍼컴퓨팅 캠퍼스 계획, 텍사스·애리조나·전력 자급 (2026-11-12)
+- [[concepts/nonprofits-sue-freeze-frontier-ai]] — 비영리 4단체의 프론티어 AI 개발 동결 소송, 5개사 피고·캘리포니아 부정경쟁방지법 (2026-11-12)
 
 ### AI의 어두운 면
 - [[concepts/context-rot-hallucination]] — Context Rot, Hallucination, Error 누적 등 5대 실패 패턴
@@ -344,7 +350,9 @@ status: active
 - [[patterns/agent-mvp-stack-2026]] — 1인 MVP 스택 5대 영역 × 4 단계 + 의사결정 트리 (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — Vibe Coding의 7대 안티패턴과 회피법
 
-## Journal (69개)
+## Journal (70개)
+
+- [[journal/2026-11-13]] — 금요 데일리: Gemini 4 Hydrogen·OpenAI Daybreak·Anthropic 셀프호스팅 Managed Agents·Anvil·SpaceX $74B·프론티어 AI 동결 소송
 
 - [[journal/2026-11-12]] — 목요 데일리: Huang 축출·Codex npm 인젝션·Gemini Decisions API·Worse Together·AlphaGenome 2·Fireworks→Notion
 

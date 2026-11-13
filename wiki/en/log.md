@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-11-12
+updated: 2026-11-13
 sources: []
 status: active
 ---
@@ -19,6 +19,18 @@ This page records only **what changed** by date. For concept explanations, see t
 - World-map hub: [[campaign-map|Campaign Map]]
 - Navigation guide: [[overview|Overview]]
 - Full catalog: [[index|Index]]
+
+## [2026-11-13] ingest | Daily AI news scrape — 6 raw sources + ko/en wiki refinement
+
+- **Raw collected** (raw/articles/, 6 — daily max):
+  - `2026-11-13-gemini-4-hydrogen.md` — Google Gemini 4 Hydrogen launch (11-12; Google blog original, cross-checked against digest): execution member of the Gemini 4 family, flat $1.50/$7.50 pricing across the full 1M context, four thinking levels (low/medium/high/xhigh). AA Index 51 (Argon 50), 54 at xhigh. 2.5x faster than 3.8 Flash, Terminal-Bench 4.1 57% vs 18.2%. Antigravity Orchestrator switches Carbon/Hydrogen, cutting quota 24% and running 19% faster. What was excluded yesterday as an unconfirmed rumour is confirmed today as an official launch.
+  - `2026-11-13-openai-daybreak-red-team-defense-factory.md` — OpenAI Daybreak unveiled (11-12; Cyber at the Frontier keynote via The Register, SecurityWeek, Silicon Report, GBHackers): Red Team is an agent fleet for web-app penetration testing, vulnerability verification and patch retesting (early access, application-based); Defense Factory scans codebases, traces vulnerabilities to their root cause and creates merge-ready PRs including tests (preview plugin in ChatGPT). Built on GPT-6 Cyber. No pricing announced; ExploitGym 77.0% and PatchBench 79.1% figures are not on the official page, so unverified.
+  - `2026-11-13-anthropic-self-hosted-claude-managed-agents.md` — Anthropic self-hosted Claude Managed Agents private beta (11-12; Anthropic original): cma-server, PostgreSQL 16+ and sandbox workers run in the customer's cloud or on-premises, no remote access from Anthropic. Model calls still go out to Anthropic, Bedrock, Google, Microsoft Foundry and others. No pricing or GA schedule disclosed; 7 hosted features missing (including dreams); no migration. Rollback within 8 hours of a safety notice and a safety update within 1 business day required.
+  - `2026-11-13-anthropic-anvil-automated-red-teaming.md` — Anthropic Anvil automated red-teaming unveiled (11-12; Anthropic safeguards blog original): in an 8-question bio bug bounty, humans spent 7 weeks and 430 hours and found a high-risk jailbreak on only 1 question, while Anvil matched or beat the best human jailbreak on every classifier within 24–48 hours. In cyber, a fully working exploit for known Chrome and Firefox JS engine vulnerabilities, reaching arbitrary code execution. But it is Anthropic's own announcement, with no independent verification.
+  - `2026-11-13-spacex-74b-ai-supercomputing-campuses.md` — SpaceX $74B+ AI supercomputing campus plan (11-12; original Reuters report): Starbase more than $24 billion + Arizona's Cochise County about $50 billion. Arizona awaits county approval; 5,500 construction jobs and 1,000 permanent jobs projected. Texas generates its own power. A plan, not execution.
+  - `2026-11-13-nonprofits-sue-freeze-frontier-ai.md` — Four nonprofits sue to freeze frontier AI development (11-12; Reuters report via AI Frontier Post, Machine.net, Al Jazeera): Irreplaceable Education Fund, Public Citizen, Heat Initiative and Alliance for Secure AI sued Anthropic, Google, Meta, OpenAI and SpaceX Super Intelligence in San Francisco Superior Court. They demand a ban on developing and deploying models more capable than the most capable system as of 2026-11-12, plus a ban on AI autonomously directing research. A 63-page complaint, a single California Unfair Competition Law claim. No freeze order, hearing schedule or case number. The opposite direction from the 2026-09-18 antitrust suit ('they conspired to slow down').
+- **Ingest** (wiki/ko, 6 new concepts + 1 journal): gemini-4-hydrogen, openai-daybreak-red-team-defense-factory, anthropic-self-hosted-claude-managed-agents, anthropic-anvil-automated-red-teaming, spacex-74b-ai-supercomputing-campuses, nonprofits-sue-freeze-frontier-ai new; journal/2026-11-13. No contradiction flags. Excluded: ARC-AGI-3 verification results (Claude Fable 5.2 97.7%, Gemini 4 Carbon 99.1% — slot limits, via secondary mirrors), SGLang Consortium launch (governance announcement, no performance figures), Claude Meetings beta (dates 11-11/11-12 conflict), GPT-6.2 Astra rumour (unconfirmed), PPI 11-13 release, NVDA earnings 11-17 and Anthropic IPO pricing decision 11-18 (briefing macro context only). Gmail AI newsletters: 0 new in the last 24 hours across both accounts (hoon.iccorp and jsong@spigen.com) — 26th consecutive zero day.
+- **EN sync**: 6 new en concepts + 1 en journal mirror created, en index/log/overview/campaign-map synced. Translation gaps: 0.
 
 ## [2026-11-12] ingest | Daily AI news scrape — 6 raw sources + ko/en wiki refinement
 

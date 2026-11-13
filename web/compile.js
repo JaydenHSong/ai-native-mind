@@ -177,6 +177,21 @@ try {
   // JSON 파일로 저장
   fs.writeFileSync(OUT_FILE, JSON.stringify(wikiData, null, 2), 'utf-8');
   console.log(`✨ 컴파일 성공! 데이터 파일이 저장되었습니다: ${OUT_FILE}`);
+
+  // 3단계 분리 출력: 메타데이터 인덱스 + 문서별 본문 파일 (초기 로딩 경량화)
+  const indexData = wikiData.map(doc => {
+    const { body, easyRead, ...meta } = doc;
+    return meta;
+  });
+  fs.writeFileSync(path.resolve(__dirname, 'wiki-index.json'), JSON.stringify(indexData), 'utf-8');
+  const DOCS_DIR = path.resolve(__dirname, 'wiki-docs');
+  fs.rmSync(DOCS_DIR, { recursive: true, force: true });
+  wikiData.forEach(doc => {
+    const docFile = path.join(DOCS_DIR, doc.lang, `${doc.id}.json`);
+    fs.mkdirSync(path.dirname(docFile), { recursive: true });
+    fs.writeFileSync(docFile, JSON.stringify({ easyRead: doc.easyRead, body: doc.body }), 'utf-8');
+  });
+  console.log(`📦 분리 출력 완료: wiki-index.json + wiki-docs/ ${wikiData.length}건`);
   console.log(`📊 빌드 완료 통계:
   - 총 페이지 수: ${wikiData.length} (KO: ${wikiData.filter(d => d.lang === 'ko').length}개 / EN: ${wikiData.filter(d => d.lang === 'en').length}개)
   - Concepts: ${wikiData.filter(d => d.category === 'concepts').length}개

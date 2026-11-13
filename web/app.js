@@ -6,6 +6,12 @@ let wikiData = [];
 let currentDoc = null;
 let graphSimulation = null;
 
+// 3단계: 분리 로딩 상태 (인덱스 선행 로드, 본문/검색 코퍼스 지연 로드)
+let fullDataLoaded = false;
+let searchCorpusPromise = null;
+let searchDebounceTimer = null;
+let currentQuery = "";
+
 let currentLanguage = localStorage.getItem("lang") || "ko";
 
 // 다국어 (i18n) 사전 정의
@@ -180,8 +186,8 @@ function initLanguage() {
     renderLibraryIndex();
     renderCampaignMap();
     
-    // 물리 그래프 재생성 (리스너 및 시뮬레이션 교체)
-    initGraph();
+    // 물리 그래프 재생성 (이미 초기화된 경우만 — 3단계 지연 초기화)
+    if (graphSimulation) initGraph();
     
     // 현재 읽던 문서가 있다면 대칭 라우팅 실행
     if (currentDoc) {
@@ -259,8 +265,14 @@ function showNonBlockingError(message) {
 // ==========================================================================
 async function fetchWikiData() {
   try {
-    const response = await fetch("wiki-data.json");
-    if (!response.ok) throw new Error("데이터 파일을 불러올 수 없습니다.");
+    // 3단계: 메타데이터 인덱스만 먼저 받아 첫 화면을 가볍게 띄운다
+    let response = await fetch("wiki-index.json");
+    if (!response.ok) {
+      // 구 배포 호환: 인덱스가 없으면 전체 데이터로 폴백
+      response = await fetch("wiki-data.json");
+      if (!response.ok) throw new Error("데이터 파일을 불러올 수 없습니다.");
+      fullDataLoaded = true;
+    }
     wikiData = await response.json();
   } catch (error) {
     console.error("데이터 로드 실패:", error);
@@ -279,7 +291,7 @@ async function fetchWikiData() {
     filterWiki();
     renderLibraryIndex();
     renderCampaignMap();
-    initGraph();
+    // 그래프는 탭을 처음 열 때 지연 초기화한다 (3단계)
     
     // 해시 라우팅 처리
     handleRouting();
@@ -288,6 +300,57 @@ async function fetchWikiData() {
     console.error("위키 렌더링 실패:", error);
     showNonBlockingError(`렌더링 오류: ${error.message}`);
   }
+}
+
+// 3단계: 문서 본문 지연 로드 (wiki-docs/<lang>/<id>.json)
+async function ensureDocBody(doc) {
+  if (!doc || doc.body !== undefined) return doc;
+  if (doc._bodyPromise) return doc._bodyPromise;
+  doc._bodyPromise = (async () => {
+    try {
+      const r = await fetch(`wiki-docs/${doc.lang}/${doc.id}.json`);
+      if (!r.ok) throw new Error(`본문 로드 실패: ${r.status}`);
+      const data = await r.json();
+      doc.easyRead = data.easyRead || "";
+      doc.body = data.body || "";
+    } catch (e) {
+      // 분리 파일이 없으면 전체 데이터 병합으로 폴백
+      await ensureSearchCorpus();
+      if (doc.body === undefined) {
+        doc.easyRead = doc.easyRead || "";
+        doc.body = "";
+      }
+    }
+    return doc;
+  })();
+  return doc._bodyPromise;
+}
+
+// 3단계: 검색용 전체 본문 코퍼스 지연 로드 (최초 검색 시 1회)
+function ensureSearchCorpus() {
+  if (fullDataLoaded) return Promise.resolve();
+  if (searchCorpusPromise) return searchCorpusPromise;
+  searchCorpusPromise = (async () => {
+    try {
+      const r = await fetch("wiki-data.json");
+      if (!r.ok) return;
+      const full = await r.json();
+      const byKey = new Map(full.map(d => [`${d.lang}/${d.id}`, d]));
+      wikiData.forEach(doc => {
+        const f = byKey.get(`${doc.lang}/${doc.id}`);
+        if (f) {
+          doc.easyRead = f.easyRead || "";
+          doc.body = f.body || "";
+        }
+      });
+      fullDataLoaded = true;
+      // 검색 중이었다면 본문 매칭까지 반영해 다시 필터링
+      if (currentQuery) filterWiki();
+    } catch (e) {
+      searchCorpusPromise = null;
+    }
+  })();
+  return searchCorpusPromise;
 }
 
 // 왼쪽 문서 사이드바 리스트 렌더링
@@ -308,12 +371,19 @@ function renderDocumentList(data) {
     li.setAttribute("data-id", doc.id);
     li.setAttribute("data-category", doc.category);
     
+    // 3단계: 본문/요약 매칭 시 스니펫 + 하이라이트
+    let snippetHTML = "";
+    if (currentQuery && doc.body !== undefined) {
+      snippetHTML = buildSnippet(doc, currentQuery);
+    }
+
     li.innerHTML = `
       <div class="doc-item-title">${doc.title}</div>
       <div class="doc-item-meta">
         <span class="doc-item-category">${doc.category}</span>
         <span>${doc.updated || doc.created}</span>
       </div>
+      ${snippetHTML}
     `;
     
     li.addEventListener("click", () => {
@@ -495,7 +565,7 @@ function toggleChapterCompletion(num) {
 // ==========================================================================
 // 3. 마크다운 문서 렌더링 및 해시 라우팅 (Routing & Rendering)
 // ==========================================================================
-function handleRouting() {
+async function handleRouting() {
   const hash = window.location.hash.slice(1);
   
   if (!hash) {
@@ -516,6 +586,9 @@ function handleRouting() {
   }
   
   if (doc) {
+    await ensureDocBody(doc);
+    // 본문을 받는 사이 해시가 바뀌었으면 최신 라우팅에 양보
+    if (window.location.hash.slice(1) !== hash) return;
     loadDocument(doc, isFallback);
   } else {
     console.warn("문서를 찾을 수 없습니다:", hash);
@@ -724,7 +797,9 @@ function setupEventListeners() {
     } else {
       clearBtn.classList.add("hidden");
     }
-    filterWiki();
+    // 3단계: 디바운스 150ms
+    clearTimeout(searchDebounceTimer);
+    searchDebounceTimer = setTimeout(filterWiki, 150);
   });
 
   if (clearBtn && searchInput) clearBtn.addEventListener("click", () => {
@@ -775,9 +850,13 @@ function showTab(tabId) {
     }
   });
 
-  // 그래프 탭 전환 시 시뮬레이션 동작 트리거
-  if (tabId === "graph" && graphSimulation) {
-    graphSimulation.restart();
+  // 그래프 탭 전환 시 시뮬레이션 동작 트리거 (최초 진입 시 지연 초기화 — 3단계)
+  if (tabId === "graph") {
+    if (!graphSimulation) {
+      initGraph();
+    } else {
+      graphSimulation.restart();
+    }
   }
 }
 
@@ -785,6 +864,7 @@ function showTab(tabId) {
 function filterWiki() {
   const searchInput = document.getElementById("search-input");
   const query = searchInput ? searchInput.value.toLowerCase().trim() : "";
+  currentQuery = query;
   const activeChip = document.querySelector(".filter-chip.active");
   const category = activeChip ? activeChip.getAttribute("data-category") : "all";
 
@@ -799,18 +879,62 @@ function filterWiki() {
     filtered = filtered.filter(doc => doc.category === category || (category === 'meta' && doc.category === 'wiki'));
   }
 
-  // 2. 퍼지/검색어 필터링
+  // 2. 검색어 필터링 + 관련도 랭킹 (제목 > 초성 > 태그 > 요약 > 본문)
   if (query) {
-    filtered = filtered.filter(doc => {
-      const titleMatch = doc.title.toLowerCase().includes(query);
-      const tagMatch = doc.tags.some(t => t.toLowerCase().includes(query));
-      const contentMatch = doc.body.toLowerCase().includes(query);
-      const summaryMatch = doc.easyRead.toLowerCase().includes(query);
-      return titleMatch || tagMatch || contentMatch || summaryMatch;
+    // 본문 검색용 코퍼스를 아직 안 받았으면 백그라운드로 받아온다 (도착 시 자동 재필터)
+    if (!fullDataLoaded) ensureSearchCorpus();
+    const choseongQuery = isChoseongQuery(query);
+    const scored = [];
+    filtered.forEach(doc => {
+      let rank = -1;
+      if (doc.title.toLowerCase().includes(query)) rank = 0;
+      else if (choseongQuery && (toChoseong(doc.title).includes(query) || doc.tags.some(t => toChoseong(t).includes(query)))) rank = 1;
+      else if (doc.tags.some(t => t.toLowerCase().includes(query))) rank = 2;
+      else if ((doc.easyRead || "").toLowerCase().includes(query)) rank = 3;
+      else if ((doc.body || "").toLowerCase().includes(query)) rank = 4;
+      if (rank >= 0) scored.push({ doc, rank });
     });
+    scored.sort((a, b) => a.rank - b.rank || (b.doc.updated || b.doc.created || "").localeCompare(a.doc.updated || a.doc.created || ""));
+    filtered = scored.map(s => s.doc);
   }
 
   renderDocumentList(filtered);
+}
+
+// 한글 초성 변환/판정 (3단계 검색)
+const CHOSEONG = ["ㄱ","ㄲ","ㄴ","ㄷ","ㄸ","ㄹ","ㅁ","ㅂ","ㅃ","ㅅ","ㅆ","ㅇ","ㅈ","ㅉ","ㅊ","ㅋ","ㅌ","ㅍ","ㅎ"];
+function toChoseong(str) {
+  let out = "";
+  for (const ch of str) {
+    const code = ch.charCodeAt(0);
+    if (code >= 0xAC00 && code <= 0xD7A3) {
+      out += CHOSEONG[Math.floor((code - 0xAC00) / 588)];
+    } else {
+      out += ch;
+    }
+  }
+  return out;
+}
+function isChoseongQuery(q) {
+  const stripped = q.replace(/\s/g, "");
+  return stripped.length > 0 && [...stripped].every(ch => CHOSEONG.includes(ch));
+}
+function escapeHTML(s) {
+  return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+function escapeRegExp(s) {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+function buildSnippet(doc, query) {
+  const text = (doc.body || "") + "\n" + (doc.easyRead || "");
+  const lower = text.toLowerCase();
+  const idx = lower.indexOf(query);
+  if (idx === -1) return "";
+  const start = Math.max(0, idx - 40);
+  const end = Math.min(text.length, idx + query.length + 60);
+  let snippet = (start > 0 ? "…" : "") + text.slice(start, end).replace(/\s+/g, " ").trim() + (end < text.length ? "…" : "");
+  snippet = escapeHTML(snippet).replace(new RegExp(escapeRegExp(escapeHTML(query)), "gi"), m => `<mark>${m}</mark>`);
+  return `<div class="doc-item-snippet">${snippet}</div>`;
 }
 
 function updateDocCount() {

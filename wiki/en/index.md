@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-11-12
-total_pages: 365
+updated: 2026-11-13
+total_pages: 372
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 365 managed pages total | Last updated: 2026-11-12 (daily ingest: 6 AI news sources collected + ko/en wiki refinement) — most pages include a **Start here** block.
+> 372 managed pages total | Last updated: 2026-11-13 (daily ingest: 6 AI news sources collected + ko/en wiki refinement) — most pages include a **Start here** block.
 
 ## Start here
 
@@ -26,7 +26,7 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - **Practice (Chapters 3–5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **Endgame (Chapters 6–7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (245)
+## Concepts (251)
 
 ### Growth map & philosophy
 - [[concepts/ai-native-programmer]] — a developer who uses AI as teammates to achieve team-scale outcomes solo; growth map
@@ -153,6 +153,10 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[concepts/google-gemini-decisions-api]] — Google Gemini Decisions API: gemini-decision-1 scores up to 1,000 questions in a single forward pass, $0.10/MTok (2026-11-11)
 - [[concepts/anthropic-worse-together-multi-agent]] — Anthropic 'Worse Together': multi-agent teams lose to a single coordinator, MAMUBench (2026-11-11)
 - [[concepts/deepmind-alphagenome-2]] — DeepMind AlphaGenome 2: cell-specific DNA variant effect prediction, 30% causal-variant recall (2026-11-11)
+- [[concepts/gemini-4-hydrogen]] — Google Gemini 4 Hydrogen: execution model for coding agents, 1M context, $1.50/$7.50 flat pricing (2026-11-12)
+- [[concepts/openai-daybreak-red-team-defense-factory]] — OpenAI Daybreak: Red Team penetration-testing agents and Defense Factory patch factory, GPT-6 Cyber (2026-11-12)
+- [[concepts/anthropic-self-hosted-claude-managed-agents]] — Anthropic self-hosted Claude Managed Agents private beta, the harness in your own cloud (2026-11-12)
+- [[concepts/anthropic-anvil-automated-red-teaming]] — Anthropic Anvil automated red-teaming, beating human experts, bio 430 hours vs 24–48 hours (2026-11-12)
 
 ### Operations & observability
 - [[concepts/gen-ai-observability]] — OpenTelemetry GenAI and agent semantic conventions, traces, and standard instrumentation
@@ -187,6 +191,8 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[concepts/openai-chatgpt-enterprise-aws-marketplace]] — OpenAI brings ChatGPT Enterprise to AWS Marketplace, payable against cloud commitments (2026-11-10)
 - [[concepts/openai-businesses-in-chatgpt]] — OpenAI opens Businesses in ChatGPT in beta: Business Hub, Business Agents, US ecommerce first (2026-11-10)
 - [[concepts/nvidia-huang-ousted-ceo]] — Jensen Huang ousted: NVIDIA founder-CEO resigns, Kress interim, shares −8–10% premarket (2026-11-12)
+- [[concepts/spacex-74b-ai-supercomputing-campuses]] — SpaceX $74B+ AI supercomputing campus plan, Texas and Arizona, self-generated power (2026-11-12)
+- [[concepts/nonprofits-sue-freeze-frontier-ai]] — Four nonprofits sue to freeze frontier AI development, five defendants, California Unfair Competition Law (2026-11-12)
 
 ### The darker side of AI
 - [[concepts/context-rot-hallucination]] — five major failure patterns including context rot, hallucination, and error accumulation
@@ -344,7 +350,9 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[patterns/agent-mvp-stack-2026]] — solo MVP stack: 5 areas × 4 stages + decision tree (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — seven major anti-patterns in vibe coding and how to avoid them
 
-## Journal (69)
+## Journal (70)
+
+- [[journal/2026-11-13]] — Friday daily: Gemini 4 Hydrogen · OpenAI Daybreak · Anthropic self-hosted Managed Agents · Anvil · SpaceX $74B · Frontier AI freeze lawsuit
 
 - [[journal/2026-11-12]] — Thursday daily: Huang ousted · Codex npm injection · Gemini Decisions API · Worse Together · AlphaGenome 2 · Fireworks → Notion
 

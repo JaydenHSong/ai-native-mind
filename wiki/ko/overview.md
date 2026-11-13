@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-11-12
+updated: 2026-11-13
 sources: []
 status: active
 ---
@@ -29,10 +29,15 @@ status: active
 
 ## 현재 상태
 
-- **총 페이지**: 365개
-- **카테고리**: concepts(245), tools(16), patterns(30), journal(69), comparisons(11), meta(4)
+- **총 페이지**: 372개
+- **카테고리**: concepts(251), tools(16), patterns(30), journal(70), comparisons(11), meta(4)
 - **시작일**: 2026-04-06
-- **최근 작업 (2026-11-12 데일리 ingest — 판단은 싸지고, 통제는 비싸진다)**:
+- **최근 작업 (2026-11-13 데일리 ingest — 공격과 방어가 모두 에이전트가 된 날)**:
+  - raw 6건 수집 (수집 윈도우 11/12 15:00 UTC ~ 11/13 15:00 UTC; Gmail AI 뉴스레터 0건 — 26일 연속; Gemini 4 Hydrogen은 Google 공식 블로그 발표로 확정돼 어제 루머 제외를 정정; Daybreak 벤치마크 수치는 공식 페이지에 없어 미검증으로 처리; 동결 소송은 Reuters 보도 교차 확인).
+  - 신규 7개: concepts/gemini-4-hydrogen (실행형 모델·1M 컨텍스트·$1.50/$7.50 균일 요금·AA 지수 51점 — high), concepts/openai-daybreak-red-team-defense-factory (Red Team 침투 테스트 에이전트·Defense Factory 패치 공장·GPT-6 Cyber·가격 미발표 — high), concepts/anthropic-self-hosted-claude-managed-agents (cma-server·PostgreSQL 16+·샌드박스 워커 자가 운영·모델 호출은 외부·7개 기능 누락 — high), concepts/anthropic-anvil-automated-red-teaming (자동 레드티밍·바이오 430시간 vs 24~48시간·Chrome·Firefox 익스플로잇 — medium, 자체 발표 수치), concepts/spacex-74b-ai-supercomputing-campuses (Starbase 240억 달러 이상 + 애리조나 약 500억 달러·카운티 승인 대기·계획 단계 — high), concepts/nonprofits-sue-freeze-frontier-ai (4단체 제소·5개사 피고·동결 명령 없음·09-18 반독점 소송과 정반대 — high), journal/2026-11-13 (active).
+  - 보강 없음.
+  - 한/영 동기화 완료. 총 365→372페이지.
+- **직전 작업 (2026-11-12 데일리 ingest — 판단은 싸지고, 통제는 비싸진다)**:
   - raw 6건 수집 (수집 윈도우 11/11 15:00 UTC ~ 11/12 15:00 UTC; Gmail AI 뉴스레터 0건 — 25일 연속; Huang 축출은 WSJ 원보도·NYT 교차 확인으로 별도 검증; Fireworks→Notion은 11-09 권고·11-11 키 폐기의 후속 전개).
   - 신규 7개: concepts/nvidia-huang-ousted-ceo (Huang 사임·Kress 임시 CEO·개장 전 −8~10%·시가총액 5,000억 달러 이상 증발 — high), concepts/openai-codex-npm-prompt-injection (이슈 본문→릴리스 발행 자격증명 체인·주간 다운로드 2,600만 회 — medium, 프로덕션 도달 불확실), concepts/google-gemini-decisions-api (1,000문항 단일 forward pass·150~250ms·$0.10/MTok — high), concepts/anthropic-worse-together-multi-agent (코디네이터가 피어 팀보다 10~45%포인트 우세·MAMUBench — high), concepts/deepmind-alphagenome-2 (세포 특이적 변이 예측·인과 변이 회수 30% — medium, 자체 발표 수치), concepts/fireworks-notion-ai-breach (Notion AI 채팅 기록 노출·제로 리텐션 약속과 달리 보관·11-11 API 키 폐기 — high), journal/2026-11-12 (active).
   - 보강 1개: concepts/anthropic-ipo-roadshow-valuation-cut (공모가 $70~78·가격 결정 11-18·거래 개시 11-19 확정, Q3 매출 $17B·run-rate 약 $81B, TSMC Anthropic 최대 $500M + OpenAI 우선주 최대 $500M 승인).
