@@ -45,7 +45,7 @@
   /* 기본 컬러 */
   --text-primary: #f4f4f5;
   --text-secondary: #a1a1aa;
-  --text-muted: #71717a;
+  --text-muted: #9f9faa;
   --accent-primary: #6366f1;     /* 인디고 */
   --accent-glow: rgba(99, 102, 241, 0.15);
   
@@ -96,7 +96,7 @@
 
   --text-primary: #0f172a;
   --text-secondary: #475569;
-  --text-muted: #94a3b8;
+  --text-muted: #64748b;
   --accent-primary: #4f46e5;
   --accent-glow: rgba(79, 70, 229, 0.08);
 
@@ -340,7 +340,7 @@ body {
   padding: 12px 16px 12px 38px;
   font-family: var(--font-body);
   color: var(--text-primary);
-  font-size: 0.88rem;
+  font-size: 1rem;
   outline: none;
   transition: var(--transition-fast);
 }
@@ -1213,9 +1213,9 @@ body {
   gap: 6px;
 }
 .easy-read-body {
-  font-size: 0.8rem;
-  color: var(--text-secondary);
-  line-height: 1.5;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  line-height: 1.7;
 }
 .easy-read-body table {
   width: 100%;
@@ -1234,9 +1234,11 @@ body {
 
 /* 마크다운 스타일링 */
 .markdown-body {
-  font-size: 0.88rem;
-  line-height: 1.6;
+  font-size: 1rem;
+  line-height: 1.75;
   color: var(--text-primary);
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 .markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4 {
   font-family: var(--font-title);
@@ -1245,17 +1247,17 @@ body {
   margin-top: 24px;
   margin-bottom: 12px;
 }
-.markdown-body h1 { font-size: 1.3rem; border-bottom: 1px solid var(--border-color); padding-bottom: 6px; }
-.markdown-body h2 { font-size: 1.15rem; }
-.markdown-body h3 { font-size: 1rem; }
-.markdown-body p { margin-bottom: 12px; }
+.markdown-body h1 { font-size: 1.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 6px; }
+.markdown-body h2 { font-size: 1.28rem; margin-top: 32px; }
+.markdown-body h3 { font-size: 1.12rem; }
+.markdown-body p { margin-bottom: 0.9em; }
 .markdown-body ul, .markdown-body ol {
   margin-bottom: 12px;
   padding-left: 20px;
 }
-.markdown-body li { margin-bottom: 4px; }
+.markdown-body li { margin-bottom: 6px; }
 .markdown-body code {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, Consolas, monospace;
   background: var(--inline-code-bg);
   border: 1px solid var(--border-color);
   padding: 2px 6px;
@@ -1297,7 +1299,6 @@ body {
   border-radius: 0 8px 8px 0;
   margin-bottom: 16px;
   color: var(--text-secondary);
-  font-style: italic;
 }
 
 /* Obsidian Wikilink 커스텀 스타일 */
@@ -1532,4 +1533,30 @@ body {
 [data-theme="light"] .markdown-body pre code .token.tag {
   color: #ea580c !important; /* 오렌지 계열 프로퍼티/태그 */
 }
+
+/* === 1단계 개선 (2026-11-10): 작은 텍스트 최소 0.75rem 하한 === */
+.lang-btn, .logo-text .subtext, .filter-chip, .count-badge, .doc-item-meta, .doc-item-category, .chapter-marker .ch-num, .section-lbl, .board-lbl, .graph-legend, #graph-tooltip .tooltip-category, .doc-category-badge, .meta-item, .doc-tag, .easy-read-body th, .easy-read-body td, .doc-dates {
+  font-size: 0.75rem;
+}
+
+/* === 1단계 개선 (2026-11-10): 키보드 포커스 표시 === */
+:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+/* === 1단계 개선 (2026-11-10): 모바일 safe-area + 터치 타깃 === */
+@media (max-width: 992px) {
+  #app-container {
+    padding: max(16px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) max(16px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+  }
+  .filter-chip {
+    min-height: 40px;
+    padding: 8px 14px;
+  }
+  .lang-btn {
+    height: 40px;
+  }
+}
+
 

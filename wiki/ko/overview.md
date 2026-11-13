@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-11-10
+updated: 2026-11-12
 sources: []
 status: active
 ---
@@ -29,10 +29,20 @@ status: active
 
 ## 현재 상태
 
-- **총 페이지**: 352개
-- **카테고리**: concepts(233), tools(16), patterns(30), journal(67), comparisons(11), meta(4)
+- **총 페이지**: 365개
+- **카테고리**: concepts(245), tools(16), patterns(30), journal(69), comparisons(11), meta(4)
 - **시작일**: 2026-04-06
-- **최근 작업 (2026-11-10 데일리 ingest — 싸지는 실행, 비싸지는 통제)**:
+- **최근 작업 (2026-11-12 데일리 ingest — 판단은 싸지고, 통제는 비싸진다)**:
+  - raw 6건 수집 (수집 윈도우 11/11 15:00 UTC ~ 11/12 15:00 UTC; Gmail AI 뉴스레터 0건 — 25일 연속; Huang 축출은 WSJ 원보도·NYT 교차 확인으로 별도 검증; Fireworks→Notion은 11-09 권고·11-11 키 폐기의 후속 전개).
+  - 신규 7개: concepts/nvidia-huang-ousted-ceo (Huang 사임·Kress 임시 CEO·개장 전 −8~10%·시가총액 5,000억 달러 이상 증발 — high), concepts/openai-codex-npm-prompt-injection (이슈 본문→릴리스 발행 자격증명 체인·주간 다운로드 2,600만 회 — medium, 프로덕션 도달 불확실), concepts/google-gemini-decisions-api (1,000문항 단일 forward pass·150~250ms·$0.10/MTok — high), concepts/anthropic-worse-together-multi-agent (코디네이터가 피어 팀보다 10~45%포인트 우세·MAMUBench — high), concepts/deepmind-alphagenome-2 (세포 특이적 변이 예측·인과 변이 회수 30% — medium, 자체 발표 수치), concepts/fireworks-notion-ai-breach (Notion AI 채팅 기록 노출·제로 리텐션 약속과 달리 보관·11-11 API 키 폐기 — high), journal/2026-11-12 (active).
+  - 보강 1개: concepts/anthropic-ipo-roadshow-valuation-cut (공모가 $70~78·가격 결정 11-18·거래 개시 11-19 확정, Q3 매출 $17B·run-rate 약 $81B, TSMC Anthropic 최대 $500M + OpenAI 우선주 최대 $500M 승인).
+  - 한/영 동기화 완료. 총 358→365페이지.
+- **직전 작업 (2026-11-11 데일리 ingest — 일하는 곳으로 들어간 에이전트, 검증의 양극화)**:
+  - raw 6건 수집 (수집 윈도우 11/10 15:00 UTC ~ 11/11 15:00 UTC; Gmail AI 뉴스레터 0건 — 24일 연속; Operation Snowball은 11-08 보고서·11-11 CISA KEV의 따라잡기 수집).
+  - 신규 7개: concepts/google-gemini-4-carbon-launch (Carbon 전면 공개·장기 에이전트·사이버 특화·AA 지수 59점·$2/$10→$4/$20 — high), concepts/anthropic-claude-workplace-tools (Meetings·Sheets·Whiteboards·Data 오피스 번들 — high), concepts/openai-businesses-in-chatgpt (Business Hub·Business Agents 베타·미국 이커머스 — high), concepts/deepmind-gemini-robotics-2-5 (Apollo 2 메르세데스 라인 키팅 96%·ASIMOV-Jailbreak — medium, 분모 미공개), concepts/deepmind-alphaproof-code-signal (Signal 암호 프로토콜 기계어 수준 검증·Lean 650만 줄·4주 — high), concepts/malbear-operation-snowball-deepseek-telecom (탈옥 DeepSeek 에이전트 유럽 통신사 2주간 침투·CISA KEV — medium, 피해 규모 미검증), journal/2026-11-11 (active).
+  - 보강 1개: concepts/anthropic-ipo-roadshow-valuation-cut (수정 투자설명서 철회·$1.4T 완전 희석 vs $1T 비희석 밸류 명확화·상장 11-19·가격 결정 11-18 예상 유지).
+  - 한/영 동기화 완료. 총 352→358페이지.
+- **직전 작업 (2026-11-10 데일리 ingest — 싸지는 실행, 비싸지는 통제)**:
   - raw 6건 수집 (수집 윈도우 11/09 15:00 UTC ~ 11/10 15:00 UTC; Gmail AI 뉴스레터 0건 — 23일 연속; Harness 수치는 11-05 발표·11-08 보도의 따라잡기 수집; Gmail에서 Claude Fable 5.2 출시 메일 확인).
   - 신규 7개: concepts/claude-fable-5-2-mythos-5-2 (Fable 5.2·Mythos 5.2 출시·$8/$40로 20% 인하·FrontierCode 2.0 49.1%·AA 지수 65점 1위 — high), concepts/meta-muse-ember (Haiku급 성능에 태스크당 비용 1/3·$0.10/$0.50·1M 컨텍스트 — high), concepts/deepseek-harness-1-54m-dau (DAU 154만·일일 토큰 약 92조 개·플러그인 약 35,000개 — medium, 자체 발표 수치), concepts/openai-chatgpt-enterprise-aws-marketplace (AWS Marketplace 출시·EDP/PPA 약정 반영·추론 상주 미국 한정 — high), concepts/google-tpu-8tx-8i-max (기밀 추론·대규모 멀티 에이전트용 8세대 TPU·AMD +13.26% — high), concepts/australia-ai-regulator-agent-breach (AI 규제기관 신설·의무 침해 신고·OpenAI 에이전트 Medicare 침입 계기 — high), journal/2026-11-10 (active).
   - 보강 1개: concepts/anthropic-ipo-roadshow-valuation-cut (S-1 수정안 공모가 $70~78·$26B 동시 사모 배정·가격 결정 11-18 예상).

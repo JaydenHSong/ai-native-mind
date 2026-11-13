@@ -3,7 +3,7 @@ title: "Anthropic's IPO Roadshow Expected Next Week as Valuation Hopes Fall from
 category: concepts
 tags: [anthropic, ipo, valuation, roadshow, nasdaq]
 created: 2026-11-08
-updated: 2026-11-10
+updated: 2026-11-12
 sources:
   - "raw/articles/2026-11-08-anthropic-ipo-roadshow-valuation-cut.md"
   - "raw/articles/2026-11-09-anthropic-ipo-marketing-begins-pushback.md"
@@ -69,6 +69,20 @@ On November 10, Anthropic filed an amended S-1 that sets the offering price rang
 - **TSMC separately approved** up to $500M of Anthropic IPO shares and up to $500M of OpenAI preferred shares. TSMC's capex is about $40.93B; its dividend rose from NT$7.0 to NT$9.0.
 - **How to read it**: the price range that was still blank on November 9 is now filled. The $70–78 range implies about $1.02 trillion, so the market's low-end discussion of $1.1–1.25 trillion has become the official ceiling. The $26B of strategic buyers — Google, NVIDIA, AMD, TSMC and others — is the largest anchor book in the IPO, but a high number of shares at a lower valuation is dilution. The November 8 page's "valuation $1–1.75T" now reads as a confirmed range with a midpoint near $74.
 - Launched the same day: [[concepts/claude-fable-5-2-mythos-5-2]] — Claude Fable 5.2 and Mythos 5.2, the flagship release paired with the filing.
+
+## 2026-11-11 update — Amended prospectus withdrawn, $1.4T fully diluted valuation clarified
+
+Anthropic's outside counsel withdrew the amended prospectus sent to banks on November 10, saying some pricing details were incorrect (Daily Post of AI, November 10, citing Reuters). Reuters Breakingviews (November 10) clarified the amended figures: about $1.4 trillion fully diluted at the $78 top of the range, about $1 trillion undiluted. The raise of up to $64.4 billion (825 million shares at $70–78), the separate $26B private placement, a November 19 listing and November 18 pricing are unchanged.
+
+- **How to read it**: the numbers are the same as in the November 10 update — about $1.02 trillion undiluted to about $1.405 trillion fully diluted. What changed is that the dependence on the share-count assumption is now explicit at headline level: the valuation reads as $1T or $1.4T depending on which count is used. The withdrawal itself did not change the price range; the final range is set at pricing on November 18.
+
+## 2026-11-12 update — Price range and schedule confirmed, Q3 revenue $17B disclosed, TSMC approves $1B
+
+The price range of $70–78, 825 million Class A shares and Nasdaq ticker ANT are now confirmed. Pricing is set for November 18 (US Eastern) and trading is expected to begin November 19 (subject to regulatory approval). The offering raises up to about $64.4 billion, and up to about $90.4 billion including the separate $26B private placement. Reuters puts fully diluted market capitalisation at about $1.33 trillion at the midpoint and about $1.4 trillion at the top. The November 11 note about the withdrawn prospectus did not change the price range — the November 12 reports now treat that range as confirmed terms.
+
+- **Fundamentals confirmed**: Q3 2026 revenue of $17 billion (+1,127% year over year, +47% quarter over quarter), $33.2 billion for the first nine months. Run-rate of about $81 billion as of October 31 (up from $71 billion at the end of September). A nine-month net loss of about $104 billion was reported (Motley Fool). CNBC-cited reporting also says 20% of the offering is allocated to retail investors.
+- **TSMC's separate move**: TSMC's board approved up to $500M into Anthropic at the IPO price and up to $500M in OpenAI preferred shares (Nov 10), a combined ceiling of $1B. The Anthropic leg may overlap TSMC's share of the $26B private placement — the filings do not spell out whether it is the same commitment — and an approval is not a completed purchase.
+- **How to read it**: the numbers are the same as in the November 10 update — about $1.02 trillion undiluted to about $1.405 trillion fully diluted. What changed is that the schedule (pricing Nov 18, trading Nov 19) and the fundamentals (Q3 revenue $17B, run-rate $81B) are now confirmed at filing and reporting level. It lands in the same week as the NVIDIA CEO ouster ([[concepts/nvidia-huang-ousted-ceo]]), concentrating AI-sector news. Sources: thecircuitry, Phillip Nova, Motley Fool, Morningstar/Dow Jones, Nov 11–12.
 
 ## Sources
 

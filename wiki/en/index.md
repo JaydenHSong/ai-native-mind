@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-11-10
-total_pages: 352
+updated: 2026-11-12
+total_pages: 365
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 352 managed pages total | Last updated: 2026-11-10 (daily ingest: 6 AI news sources collected + ko/en wiki refinement) — most pages include a **Start here** block.
+> 365 managed pages total | Last updated: 2026-11-12 (daily ingest: 6 AI news sources collected + ko/en wiki refinement) — most pages include a **Start here** block.
 
 ## Start here
 
@@ -26,7 +26,7 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - **Practice (Chapters 3–5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **Endgame (Chapters 6–7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (233)
+## Concepts (245)
 
 ### Growth map & philosophy
 - [[concepts/ai-native-programmer]] — a developer who uses AI as teammates to achieve team-scale outcomes solo; growth map
@@ -146,6 +146,13 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[concepts/meta-muse-ember]] — Meta Muse Ember: Haiku-class performance at one-third the cost per task, $0.10/$0.50 (2026-11-10)
 - [[concepts/deepseek-harness-1-54m-dau]] — DeepSeek Harness reaches 1.54M daily users, ~92T tokens per day, ~35,000 plugins (2026-11-10)
 - [[concepts/google-tpu-8tx-8i-max]] — Google TPU 8tx and TPU 8i Max: confidential inference and large multi-agent inference (2026-11-10)
+- [[concepts/google-gemini-4-carbon-launch]] — Google Gemini 4 Carbon broadly available: strongest model for long-horizon agents and cybersecurity, $2/$10 until Nov 30, then $4/$20 (2026-11-10)
+- [[concepts/anthropic-claude-workplace-tools]] — Anthropic Claude workplace bundle: Meetings, Sheets, Whiteboards and Data (2026-11-10)
+- [[concepts/deepmind-gemini-robotics-2-5]] — DeepMind Gemini Robotics 2.5: Apollo 2 kitting at 96% on a real Mercedes line, ASIMOV-Jailbreak benchmark (2026-11-10)
+- [[concepts/deepmind-alphaproof-code-signal]] — DeepMind AlphaProof Code verifies Signal's encryption at machine-code level, ~6.5M lines of Lean (2026-11-10)
+- [[concepts/google-gemini-decisions-api]] — Google Gemini Decisions API: gemini-decision-1 scores up to 1,000 questions in a single forward pass, $0.10/MTok (2026-11-11)
+- [[concepts/anthropic-worse-together-multi-agent]] — Anthropic 'Worse Together': multi-agent teams lose to a single coordinator, MAMUBench (2026-11-11)
+- [[concepts/deepmind-alphagenome-2]] — DeepMind AlphaGenome 2: cell-specific DNA variant effect prediction, 30% causal-variant recall (2026-11-11)
 
 ### Operations & observability
 - [[concepts/gen-ai-observability]] — OpenTelemetry GenAI and agent semantic conventions, traces, and standard instrumentation
@@ -178,6 +185,8 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[concepts/apple-agentic-siri-ternus-push]] — Apple pushes for an agentic Siri, Ternus presses Federighi to accelerate, target 2027 (2026-11-09)
 - [[concepts/graphite-claude-passes-gemini-sessions]] — Graphite report: Claude passed Gemini in chatbot sessions in June, 5.44B vs 3.72B in September (2026-11-09)
 - [[concepts/openai-chatgpt-enterprise-aws-marketplace]] — OpenAI brings ChatGPT Enterprise to AWS Marketplace, payable against cloud commitments (2026-11-10)
+- [[concepts/openai-businesses-in-chatgpt]] — OpenAI opens Businesses in ChatGPT in beta: Business Hub, Business Agents, US ecommerce first (2026-11-10)
+- [[concepts/nvidia-huang-ousted-ceo]] — Jensen Huang ousted: NVIDIA founder-CEO resigns, Kress interim, shares −8–10% premarket (2026-11-12)
 
 ### The darker side of AI
 - [[concepts/context-rot-hallucination]] — five major failure patterns including context rot, hallucination, and error accumulation
@@ -272,6 +281,9 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[concepts/claude-code-dont-ask-again-secret-leak]] — Claude Code's 'Don't Ask Again' leaks secrets into 1,122 public GitHub files, 2,539 in total (2026-11-08)
 - [[concepts/doj-super-intelligence-task-force]] — US Justice Department launches a Super Intelligence Task Force, coordinating criminal and civil enforcement against AI misuse (2026-11-09)
 - [[concepts/australia-ai-regulator-agent-breach]] — Australia creates an AI regulator after an OpenAI agent breached the Medicare portal, mandatory incident reporting (2026-11-10)
+- [[concepts/malbear-operation-snowball-deepseek-telecom]] — Operation Snowball: jailbroken DeepSeek agent inside a European telecom for two weeks, CISA KEV (2026-11-08, Nov 11)
+- [[concepts/openai-codex-npm-prompt-injection]] — OpenAI Codex npm pipeline prompt injection: issue text to release-signing credentials (2026-11-11)
+- [[concepts/fireworks-notion-ai-breach]] — Fireworks AI breach exposes Notion AI chat records; zero-retention promise broken, API keys revoked Nov 11 (2026-11-09, Nov 11)
 
 ## Tools (16)
 
@@ -332,7 +344,11 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[patterns/agent-mvp-stack-2026]] — solo MVP stack: 5 areas × 4 stages + decision tree (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — seven major anti-patterns in vibe coding and how to avoid them
 
-## Journal (67)
+## Journal (69)
+
+- [[journal/2026-11-12]] — Thursday daily: Huang ousted · Codex npm injection · Gemini Decisions API · Worse Together · AlphaGenome 2 · Fireworks → Notion
+
+- [[journal/2026-11-11]] — Wednesday daily: Gemini 4 Carbon · Claude workplace bundle · Businesses in ChatGPT · Gemini Robotics 2.5 · AlphaProof Code · Operation Snowball
 
 - [[journal/2026-11-10]] — Tuesday daily: Claude Fable 5.2 and Mythos 5.2 · Meta Muse Ember · DeepSeek Harness 1.54M DAU · ChatGPT Enterprise on AWS Marketplace · Google TPU 8tx/8i Max · Australia AI regulator
 

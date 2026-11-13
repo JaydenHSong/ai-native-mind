@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-11-10
-total_pages: 352
+updated: 2026-11-12
+total_pages: 365
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 전체 352개 페이지 | 최종 업데이트: 2026-11-10 (데일리 ingest: AI 뉴스 6건 수집 + 한/영 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
+> 전체 365개 페이지 | 최종 업데이트: 2026-11-12 (데일리 ingest: AI 뉴스 6건 수집 + 한/영 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
 
 ## 쉽게 읽기
 
@@ -26,7 +26,7 @@ status: active
 - **실전(Chapter 3~5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **엔드게임(Chapter 6~7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (233개)
+## Concepts (245개)
 
 ### 성장 맵 & 철학
 - [[concepts/ai-native-programmer]] — AI를 팀원으로 활용하여 1인이 팀 규모 결과를 내는 개발자, 성장 맵
@@ -148,6 +148,13 @@ status: active
 - [[concepts/meta-muse-ember]] — Meta Muse Ember, Haiku급 성능에 태스크당 비용 1/3의 초저가 에이전트 모델 (2026-11-09)
 - [[concepts/deepseek-harness-1-54m-dau]] — DeepSeek Harness 일일 사용자 154만 명, 오픈 에이전트 프레임워크 플러그인 마켓플레이스 추진 (2026-11-05)
 - [[concepts/google-tpu-8tx-8i-max]] — Google TPU 8tx·TPU 8i Max 공개, 기밀 추론·대규모 멀티 에이전트용 8세대 TPU (2026-11-09)
+- [[concepts/google-gemini-4-carbon-launch]] — Google Gemini 4 Carbon 전면 공개, 최강 모델·장기 에이전트·사이버 특화·$2/$10→$4/$20 (2026-11-10)
+- [[concepts/anthropic-claude-workplace-tools]] — Anthropic Claude 오피스 번들, Meetings·Sheets·Whiteboards·Data (2026-11-10)
+- [[concepts/deepmind-gemini-robotics-2-5]] — DeepMind Gemini Robotics 2.5, 메르세데스 라인 Apollo 2 키팅 96%·ASIMOV-Jailbreak (2026-11-10)
+- [[concepts/deepmind-alphaproof-code-signal]] — DeepMind AlphaProof Code, Signal 암호 프로토콜 기계어 수준 검증·Lean 650만 줄 (2026-11-10)
+- [[concepts/google-gemini-decisions-api]] — Google Gemini Decisions API, gemini-decision-1 단일 forward pass 판단 모델·1,000문항·$0.10/MTok (2026-11-11)
+- [[concepts/anthropic-worse-together-multi-agent]] — Anthropic 'Worse Together', 다중 에이전트 팀이 단일 코디네이터보다 열등·MAMUBench (2026-11-11)
+- [[concepts/deepmind-alphagenome-2]] — DeepMind AlphaGenome 2, 세포 특이적 DNA 변이 효과 예측·인과 변이 회수 30% (2026-11-11)
 
 ### 운영·관측
 - [[concepts/gen-ai-observability]] — OpenTelemetry GenAI·에이전트 시맨틱 컨벤션, 트레이스·표준 계측
@@ -180,6 +187,8 @@ status: active
 - [[concepts/apple-agentic-siri-ternus-push]] — Apple 에이전트형 Siri 추진, Ternus CEO의 Federighi 가속 요구·2027년 목표 (2026-11-09)
 - [[concepts/graphite-claude-passes-gemini-sessions]] — Graphite 보고서, Claude 6월부터 Gemini를 제치고 챗봇 세션 2위 (2026-11-09)
 - [[concepts/openai-chatgpt-enterprise-aws-marketplace]] — OpenAI ChatGPT Enterprise AWS Marketplace 출시, 클라우드 약정으로 결제 가능 (2026-11-09)
+- [[concepts/openai-businesses-in-chatgpt]] — OpenAI Businesses in ChatGPT 베타, Business Hub·Business Agents·미국 이커머스 (2026-11-10)
+- [[concepts/nvidia-huang-ousted-ceo]] — Jensen Huang 축출, NVIDIA 창업자 CEO 사임·Kress 임시 체제·주가 개장 전 −8~10% (2026-11-12)
 
 ### AI의 어두운 면
 - [[concepts/context-rot-hallucination]] — Context Rot, Hallucination, Error 누적 등 5대 실패 패턴
@@ -272,6 +281,9 @@ status: active
 - [[concepts/claude-code-dont-ask-again-secret-leak]] — Claude Code 'Don't Ask Again' 비밀 유출, 1,122개 공개 GitHub 파일·총 2,539건 (2026-11-08)
 - [[concepts/doj-super-intelligence-task-force]] — 미 법무부 Super Intelligence Task Force 출범, AI 악용 형사·민사 집행 총괄 (2026-11-09)
 - [[concepts/australia-ai-regulator-agent-breach]] — 호주 AI 규제기관 신설, OpenAI 에이전트 Medicare 침입 계기·의무 침해 신고 (2026-11-10)
+- [[concepts/malbear-operation-snowball-deepseek-telecom]] — Operation Snowball, 탈옥 DeepSeek 에이전트 유럽 통신사 2주간 침투·CISA KEV (2026-11-08·11-11)
+- [[concepts/openai-codex-npm-prompt-injection]] — OpenAI Codex npm 파이프라인 프롬프트 인젝션, 이슈 본문→릴리스 발행 자격증명 체인 (2026-11-11)
+- [[concepts/fireworks-notion-ai-breach]] — Fireworks AI 침해로 Notion AI 채팅 기록 노출, 제로 리텐션 약속과 달리 보관·11-11 API 키 폐기 (2026-11-09·11-11)
 
 ## Tools (16개)
 
@@ -332,7 +344,11 @@ status: active
 - [[patterns/agent-mvp-stack-2026]] — 1인 MVP 스택 5대 영역 × 4 단계 + 의사결정 트리 (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — Vibe Coding의 7대 안티패턴과 회피법
 
-## Journal (67개)
+## Journal (69개)
+
+- [[journal/2026-11-12]] — 목요 데일리: Huang 축출·Codex npm 인젝션·Gemini Decisions API·Worse Together·AlphaGenome 2·Fireworks→Notion
+
+- [[journal/2026-11-11]] — 수요 데일리: Gemini 4 Carbon·Claude 오피스 번들·Businesses in ChatGPT·Gemini Robotics 2.5·AlphaProof Code·Operation Snowball
 
 - [[journal/2026-11-10]] — 화요 데일리: Fable 5.2·Mythos 5.2·Muse Ember·DeepSeek Harness·ChatGPT Enterprise AWS·TPU 8tx/8i Max·호주 AI 규제기관
 

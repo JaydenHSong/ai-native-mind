@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-11-10
+updated: 2026-11-12
 sources: []
 status: active
 ---
@@ -19,6 +19,30 @@ status: active
 - 월드맵 허브: [[campaign-map|Campaign Map]]
 - 진행 가이드: [[overview|Overview]]
 - 전체 도감: [[index|Index]]
+
+## [2026-11-12] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + 한/영 위키 정제
+
+- **Raw collected** (raw/articles/, 6건 — 일일 최대치):
+  - `2026-11-12-nvidia-huang-ousted-ceo.md` — Jensen Huang NVIDIA CEO 사임 (11-12; WSJ 원보도·NYT 교차 확인): 두 건의 혼외 관계 뒤 사임, 임시 CEO CFO Colette Kress·첫 의장 Harvey C. Jones. 개장 전 주가 약 8~10% 하락, 조사 개시 이후 시가총액 5,000억 달러 이상 증발. Citi 목표주가 $285→$225, Oppenheimer 목표주가 철회. 실적 11-17 예정대로.
+  - `2026-11-12-openai-codex-npm-prompt-injection.md` — OpenAI Codex npm 파이프라인 프롬프트 인젝션 체인 (11-11; Depi 보고 경유 promtime): `issue-labeler.yml`이 이슈 제목·본문을 Codex 프롬프트에 그대로 전달 → 샌드박스 탈출 → 러너 메모리에서 GITHUB_TOKEN·ACTIONS_RUNTIME_TOKEN 탈취 → 공식 `@openai/codex` 릴리스 발행 자격증명까지. 주간 다운로드 약 2,600만 회. Bugcrowd P1 해결·9-29 공개. 단 프로덕션 labeler는 5-29부터 read-only 모드라 실제 도달 가능성 불확실.
+  - `2026-11-12-google-gemini-decisions-api.md` — Google Gemini Decisions API, gemini-decision-1 (11-11; Google 블로그 원문): 비생성 모델이 최대 1,000개 yes/no·선택·루브릭 문항을 단일 forward pass로 점수화. 150~250ms, $0.10/MTok·출력 $0. JevBench 92.2%(자체) vs Artificial Analysis Decision Index 9위(65.98)로 엇갈림. 컨텍스트 상한은 2차 보도 간 16K/256K로 엇갈림.
+  - `2026-11-12-anthropic-worse-together-multi-agent.md` — Anthropic 'Worse Together', 다중 에이전트 팀이 단일 코디네이터보다 열등 (11-11; Anthropic Alignment Science·arXiv:2610.00583): 5개 프론티어 모델·4개 환경·77개 시나리오. 코디네이터가 피어 팀보다 10~45%포인트 우세, 채널 없으면 두 환경에서 완전 붕괴. MAMUBench(74개 시나리오) 공개. 같은 주 Grok Bot 1.0·Cursor 멀티플레이어 출시와 대비.
+  - `2026-11-12-deepmind-alphagenome-2.md` — DeepMind AlphaGenome 2 (11-11; DeepMind 발표 경유 AI Frontier Post): 세포 특이적 DNA 변이 효과 예측 조건부 모델. 1억 700만 개 단일세포 프로파일·68개 조직 학습. TenK10K 기준 인과 변이 회수 30%(1은 16%), IBD/ETS2 발견 1.5년 작업을 30분 만에 재현 주장. 단 절대값 30%는 10개 중 7개 놓친다는 뜻. 비영리 연구용 API 제공.
+  - `2026-11-12-fireworks-notion-ai-breach.md` — Fireworks AI 침해로 Notion AI 채팅 기록 노출 (Notion 권고 11-09·11-11 API 키 폐기): 10월 23~24일 침해로 Insights용 채팅 기록 노출, 전체 워크스페이스 1% 미만. 'zero data retention' 약속과 달리 데이터 보관. 11-03 Fireworks 연결 차단·Insights 비활성화, 11-11 채팅에서 발견된 Notion API 키 폐기.
+- **Ingest** (wiki/ko, 개념 6건 신규 + 1건 보강 + 저널 1건): nvidia-huang-ousted-ceo, openai-codex-npm-prompt-injection, google-gemini-decisions-api, anthropic-worse-together-multi-agent, deepmind-alphagenome-2, fireworks-notion-ai-breach 신규; anthropic-ipo-roadshow-valuation-cut 보강(공모가 $70~78·가격 결정 11-18·거래 개시 11-19 확정, Q3 매출 $17B·run-rate 약 $81B, TSMC Anthropic 최대 $500M + OpenAI 우선주 최대 $500M 승인 — $26B 사모 배정과 동일 건인지 불명확); journal/2026-11-12. 모순 플래그 없음. 제외: Grok Bot 1.0 팀 봇(xAI 제품 출시·Worse Together 페이지 맥락으로만 참조), Runway Praxis-1 오픈웨이트(9월 모델의 가중치 공개·로봇 슬롯 한계), Genpact 에이전트 도입 조사(벤더 자체 조사·단일 출처), Square Squaremates GA(보도자료 수준), ByteDance Muse-like 어시스턴트(Bloomberg 단일 출처·윈도우 밖), TSMC $1B 투자 승인(승인 단계·IPO 페이지 보강 맥락), GPT-6.2 Astra·Gemini 4 Hydrogen 루머(미확인), CBRS 실적(오늘 발표·브리핑 매크로 맥락으로만 언급), Gmail AI 뉴스레터는 최근 24시간 신규 수신 없음(hoon.iccorp·jsong@spigen.com 양 계정 확인 — 25일 연속).
+- **EN sync**: en 개념 6건 신규 + 1건 보강 + 저널 1건 미러, en index/log/overview/campaign-map 동기화. 번역 공백 0건.
+
+## [2026-11-11] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + 한/영 위키 정제
+
+- **Raw collected** (raw/articles/, 6건 — 일일 최대치):
+  - `2026-11-11-google-gemini-4-carbon-launch.md` — Google Gemini 4 Carbon 전면 공개 (11-10; Google 블로그 원문): 10-28 발표 후 2주간 Fairwind 한정 공개에서 유료 개발자·기업·Ultra·과학자로 확대. AA 지수 59점(11-11 기준 60점), MKA #2이나 과제당 비용 1위 모델의 1/6. SEC-bench Pro 88.2%·ExploitGym 54.8%·CWE-bench 71.0%, Gray Swan 0.0%. $2/$10 per MTok은 11-30까지, 12-01부터 $4/$20. Antigravity /swarm 프리뷰 동반.
+  - `2026-11-11-anthropic-claude-workplace-tools.md` — Anthropic Claude 오피스 번들 출시 (11-10; Anthropic 발표 경유 ExplainX·TechCrunch·Reuters): Meetings(베타, Team·Enterprise, Google Meet)·Sheets(베타)·Whiteboards(베타)·Data(GA, 구 Dashboards). 회의에 참가자로 합류해 계획 초안·수치 인용까지. 단 공식 글은 Meetings를 "coming soon"으로 표기해 베타 보도와 엇갈림. Sheets는 기본 기능 수준이라고 Anthropic 스스로 밝힘.
+  - `2026-11-11-openai-businesses-in-chatgpt.md` — OpenAI Businesses in ChatGPT 베타 (11-10; Reuters): Business Hub에서 프로필 주장·관리·상품 피드·28일 언급/클릭 지표. 미국 이커머스·온라인 서비스 기업은 Business Agent 게시 가능. 구매·예약·주문 조회는 아직 불가, Agent 스폰서 시 ChatGPT Ads 도착지로 사용 가능. Hub·Agent 당분간 무료.
+  - `2026-11-11-deepmind-gemini-robotics-2-5.md` — DeepMind Gemini Robotics 2.5 공개 (11-10; DeepMind 블로그 원문): VLA 모델, Apptronik Apollo 2가 메르세데스-벤츠 케치케메트·진델핑겐 실제 라인에서 부품 키팅 96% 성공률. 200개 이상 과제에서 성공률 30~100% 향상 주장. ASIMOV-Jailbreak 오픈 벤치마크 동반. 단 96%의 분모·성공 정의·개입 횟수 미공개, 99.5% 탈옥 저항은 Argon 수치로 2.5 자체 점수 없음. 파트너 한정 롤아웃.
+  - `2026-11-11-deepmind-alphaproof-code-signal.md` — DeepMind AlphaProof Code, Signal 암호 프로토콜 기계어 수준 검증 (11-10; DeepMind 블로그 원문): Gemini Carbon 에이전트가 libsignal PQXDH·Triple Ratchet의 4개 속성을 증명, 논문 기준 Lean 약 650만 줄·4주 소요. 인간 검토는 코드베이스 약 1%, 나머지는 Lean 커널 검사. 과거 버그 2건 재심으로 검증력 확인. 단 블로그 안 수치 표기가 300만·600만·650만 줄로 엇갈림. 프레임워크 자체는 미출시.
+  - `2026-11-11-malbear-operation-snowball-deepseek-telecom.md` — Operation Snowball, 탈옥 DeepSeek 에이전트 유럽 통신사 침투 (11-08 Malbear 보고서·11-11 CISA KEV; Infosecurity Magazine·The Hacker News): DeepSeek-V4.1-Flash + 78,000자 탈옥 프롬프트 하네스가 2주 넘게 유럽 통신사 1곳·호스팅 13개 조직 내부망 침투. 출발점은 패치된 Cisco CVE-2026-20320. 환자 기록 수백만 건 노출 등은 피해자 미확인 주장. 11-11 CISA KEV 등재, 연방 기관 11-24까지 패치 권고. 전일 실행 누락분 따라잡기 수집.
+- **Ingest** (wiki/ko, 개념 6건 신규 + 1건 보강 + 저널 1건): google-gemini-4-carbon-launch, anthropic-claude-workplace-tools, openai-businesses-in-chatgpt, deepmind-gemini-robotics-2-5, deepmind-alphaproof-code-signal, malbear-operation-snowball-deepseek-telecom 신규; anthropic-ipo-roadshow-valuation-cut 보강(수정 투자설명서 철회·$1.4T 완전 희석 vs $1T 비희석 밸류 명확화, 상장 11-19·가격 결정 11-18 예상 유지); journal/2026-11-11. 모순 플래그 없음. 제외: ChatGPT 시장 점유율 50% 아래 첫 하락(Sensor Tower 단일 보고서·시장 지표로 슬롯 한계), OpenAI Q3 매출 약 $10B 보도(단일 출처·기업 실적 소식), ChatGPT 구형 음성 모드 12-11 은퇴(소규모 제품 공지), Google 학교 Search 옵트인 철회(정책 후속·소규모), NVIDIA GR00T 2(전일 제외분·슬롯 한계), Gmail AI 뉴스레터는 최근 24시간 신규 수신 없음(hoon.iccorp·jsong@spigen.com 양 계정 확인 — PostHog 제품 메일·Google 환영 메일만 도착).
+- **EN sync**: en 개념 6건 신규 + 1건 보강 + 저널 1건 미러, en index/log/overview/campaign-map 동기화. 번역 공백 0건.
 
 ## [2026-11-10] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + 한/영 위키 정제
 

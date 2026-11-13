@@ -3,7 +3,7 @@ title: "Anthropic IPO 로드쇼 다음 주 시작 전망, 밸류 기대치 $2T�
 category: concepts
 tags: [anthropic, ipo, valuation, roadshow, nasdaq]
 created: 2026-11-08
-updated: 2026-11-10
+updated: 2026-11-12
 sources:
   - "raw/articles/2026-11-08-anthropic-ipo-roadshow-valuation-cut.md"
   - "raw/articles/2026-11-09-anthropic-ipo-marketing-begins-pushback.md"
@@ -68,6 +68,20 @@ Bloomberg AI Today(11-09): Anthropic은 11-09 IPO 마케팅을 시작했다. 다
 - **동시 사모 $26.0B**: 의결권 없는 Class N 주식으로 Google $10B·NVIDIA $10B·AMD 약 $2.5B·Broadcom/Micron/Microsoft 각 약 $1B·TSMC 약 $500M이 참여한다. $74 중간값 기준 순수익 약 $84.6B. 전략 투자자(칩·클라우드 공급사)가 공모와 동시에 대규모로 들어오는 구조다.
 - **TSMC 별도 행보**: TSMC 이사회는 11-10 Anthropic IPO 가격으로 최대 $500M 투자와 OpenAI 우선주 최대 $500M 투자를 각각 승인했다. TSMC의 2026년 capex는 약 $40.93B, 배당은 NT$7.0→NT$9.0으로 인상됐다.
 - **읽는 법**: 밸류 논의 하단이 $1.1T까지 내려갔던 11-09와 달리, 서류상 범위는 $1.02T(기본)~$1.405T(완전 희석)다. '기본 주식 수'와 '완전 희석' 가정이 달라 직접 비교는 어렵다. Fable 5.2 출시([[concepts/claude-fable-5-2-mythos-5-2]])와 같은 날 제출된 수정안으로, 모델 출시와 상장 일정이 맞물려 있다. 출처: WebProNews 11-10, AIStockWire.
+
+## 2026-11-11 보강 — 수정안 철회·$1.4T 완전 희석 밸류 명확화
+
+Anthropic 외부 법무법인이 11-10 은행들에 보낸 수정 투자설명서를 철회했다. 일부 가격 세부사항이 부정확하다는 이유다(Medium Daily Post of AI 11-10, Reuters 인용). Reuters Breakingviews(11-10)는 수정안 기준으로 $78 상단에서 완전 희석 시총 약 $1.4T, 비희석 기준 약 $1T라고 정리했다. 조달 최대 $64.4B(8.25억 주 $70~78), 동시 사모 $26B, 상장 예정 11-19, 가격 결정 11-18 예상은 유지된다.
+
+- **읽는 법**: 11-10 보강의 "$1.02T(기본)~$1.405T(완전 희석)"와 같은 숫자다. 달라진 건 숫자가 아니라 '어떤 주식 수 가정을 쓰느냐'에 따라 밸류가 $1T와 $1.4T로 갈린다는 점이 기사 제목 수준으로 명확해졌다는 것이다. 수정안 철회 자체가 가격 범위를 바꾼 것은 아니며, 최종 가격 범위는 11-18 가격 결정 때 확정된다.
+
+## 2026-11-12 보강 — 공모가·일정 확정, Q3 매출 $17B 공개, TSMC $1B 승인
+
+가격 범위 $70~78·Class A 8.25억 주·Nasdaq 티커 ANT가 확정됐다. 가격 결정은 11월 18일(미 동부), 거래 개시는 11월 19일 예정(규제 승인 조건부). 공모로 최대 약 $64.4B 조달, 별도 $26B 사모 배정 포함 시 최대 약 $90.4B. Reuters 기준 완전희석 시총 약 $1.33조(중간값)~$1.4조(상단)다. 11-11 보강의 '수정안 철회'는 가격 범위를 바꾸지 않았다 — 11-12 보도는 그 범위를 '확정된 조건'으로 다루기 시작했다.
+
+- **펀더멘털 확정**: 2026년 Q3 매출 $17B(전년 동기 대비 +1,127%, 전분기 대비 +47%), 9개월 누적 $33.2B. 10월 31일 기준 run-rate 약 $81B(9월 말 $71B에서 +$10B). 단 9개월 순손실 약 $104B(Motley Fool 보도). 20% 물량을 소매 투자자에 배정한다는 CNBC 인용 보도도 있다.
+- **TSMC 별도 행보**: TSMC 이사회는 11-10 Anthropic IPO 가격으로 최대 $500M 투자와 OpenAI 우선주 최대 $500M 투자를 각각 승인했다(합계 상한 $1B). 단, Anthropic 쪽 $500M이 $26B 사모 배정의 TSMC 몫과 동일 건인지 서류상 불명확하다 — 승인(authorization)이지 완료된 매수가 아니다.
+- **읽는 법**: 11-10 보강의 "$1.02T(기본)~$1.405T(완전 희석)"와 같은 숫자다. 달라진 건 일정(가격 결정 11-18·거래 11-19)과 펀더멘털(Q3 매출 $17B·run-rate $81B)이 서류·보도 수준에서 확정됐다는 점이다. 같은 주 NVIDIA CEO 축출([[concepts/nvidia-huang-ousted-ceo]])과 겹쳐 AI 섹터 뉴스가 집중되는 한 주다. 출처: thecircuitry·Phillip Nova·Motley Fool·Morningstar/Dow Jones 11-11~12.
 
 ## 참고 소스
 

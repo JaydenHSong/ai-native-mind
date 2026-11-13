@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-11-10
+updated: 2026-11-12
 sources: []
 status: active
 ---
@@ -29,10 +29,20 @@ This page is a **table of contents and learning map** for the wiki. The links be
 
 ## Current state
 
-- **Total pages**: 352
-- **Categories**: concepts(233), tools(16), patterns(30), journal(67), comparisons(11), meta(4)
+- **Total pages**: 365
+- **Categories**: concepts(245), tools(16), patterns(30), journal(69), comparisons(11), meta(4)
 - **Start date**: 2026-04-06
-- **Latest work (2026-11-10 daily ingest — execution gets cheaper, control gets more expensive)**:
+- **Latest work (2026-11-12 daily ingest — judgment gets cheaper, control gets more expensive)**:
+  - 6 raw sources collected (window 11/11 15:00 UTC ~ 11/12 15:00 UTC; zero Gmail AI newsletters — 25th straight day; the Huang ouster was verified separately against the WSJ original and NYT corroboration; Fireworks → Notion is a Nov 9 advisory with a Nov 11 key-revocation follow-up).
+  - 7 new: concepts/nvidia-huang-ousted-ceo (Huang resigns, Kress interim CEO, shares −8–10% premarket, $500B+ in market value gone — high), concepts/openai-codex-npm-prompt-injection (issue text to release-signing credentials, ~26M weekly downloads — medium, production reach uncertain), concepts/google-gemini-decisions-api (1,000 questions in a single forward pass, 150–250 ms, $0.10/MTok — high), concepts/anthropic-worse-together-multi-agent (coordinator leads peer teams by 10–45 points, MAMUBench — high), concepts/deepmind-alphagenome-2 (cell-specific variant prediction, 30% causal-variant recall — medium, first-party figures), concepts/fireworks-notion-ai-breach (Notion AI chat records exposed, zero-retention promise broken, API keys revoked Nov 11 — high), journal/2026-11-12 (active).
+  - 1 reinforced: concepts/anthropic-ipo-roadshow-valuation-cut (price range $70–78, pricing Nov 18 and trading debut Nov 19 confirmed, Q3 revenue $17B, run-rate ~$81B, TSMC approves up to $500M into Anthropic plus up to $500M in OpenAI preferred shares).
+  - EN sync complete. 358→365 pages.
+- **Previous work (2026-11-11 daily ingest — agents move into the workplace, verification splits in two)**:
+  - 6 raw sources collected (window 11/10 15:00 UTC ~ 11/11 15:00 UTC; zero Gmail AI newsletters — 24th straight day; Operation Snowball is a 11-08 report with a 11-11 CISA KEV follow-up, a catch-up).
+  - 7 new: concepts/google-gemini-4-carbon-launch (Carbon broadly available, long-horizon agents and cybersecurity, AA Index 59, $2/$10 until Nov 30, then $4/$20 — high), concepts/anthropic-claude-workplace-tools (Meetings, Sheets, Whiteboards and Data workplace bundle — high), concepts/openai-businesses-in-chatgpt (Business Hub and Business Agents beta, US ecommerce first — high), concepts/deepmind-gemini-robotics-2-5 (Apollo 2 kitting at 96% on a real Mercedes line, ASIMOV-Jailbreak — medium, denominator undisclosed), concepts/deepmind-alphaproof-code-signal (Signal's encryption verified at machine-code level, ~6.5M lines of Lean, four weeks — high), concepts/malbear-operation-snowball-deepseek-telecom (jailbroken DeepSeek agent inside a European telecom for two weeks, CISA KEV — medium, damage figures unverified), journal/2026-11-11 (active).
+  - 1 reinforced: concepts/anthropic-ipo-roadshow-valuation-cut (amended prospectus withdrawn, $1.4T fully diluted vs $1T undiluted valuation clarified, listing 11-19 and pricing 11-18 unchanged).
+  - EN sync complete. 352→358 pages.
+- **Previous work (2026-11-10 daily ingest — execution gets cheaper, control gets more expensive)**:
   - 6 raw sources collected (window 11/09 15:00 UTC ~ 11/10 15:00 UTC; zero Gmail AI newsletters — 23rd straight day; the Harness figures are a 11-05 disclosure reported 11-08, a catch-up; the Claude Fable 5.2 launch was confirmed in Gmail).
   - 7 new: concepts/claude-fable-5-2-mythos-5-2 (Fable 5.2 and Mythos 5.2 launched, $8/$40, 20% cheaper, FrontierCode 2.0 49.1%, AA Index 65, #1 — high), concepts/meta-muse-ember (Haiku-class performance at one-third the cost per task, $0.10/$0.50, 1M context — high), concepts/deepseek-harness-1-54m-dau (1.54M DAU, ~92T tokens per day, ~35,000 plugins — medium, self-reported figures), concepts/openai-chatgpt-enterprise-aws-marketplace (AWS Marketplace launch, EDP/PPA commitments, inference residency US-only — high), concepts/google-tpu-8tx-8i-max (confidential inference and large multi-agent inference, AMD +13.26% — high), concepts/australia-ai-regulator-agent-breach (new AI regulator, mandatory incident reporting, OpenAI agent Medicare breach as trigger — high), journal/2026-11-10 (active).
   - 1 reinforced: concepts/anthropic-ipo-roadshow-valuation-cut (amended S-1, $70–78 price range, $26B concurrent private placement, pricing expected 11-18).

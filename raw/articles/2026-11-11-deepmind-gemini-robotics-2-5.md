@@ -1,0 +1,31 @@
+---
+title: "DeepMind, Gemini Robotics 2.5 공개 — 메르세데스 라인에서 Apollo 2 키팅 96% (11-10)"
+source_url: "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/"
+source_type: "news"
+authors: ["Google DeepMind"]
+published: 2026-11-10
+fetched: 2026-11-11
+tags: [deepmind, gemini-robotics, vla, humanoid, apptronik, mercedes]
+status: raw
+---
+
+# DeepMind, Gemini Robotics 2.5 공개 — 메르세데스 라인에서 Apollo 2 키팅 96% (11-10)
+
+> Google DeepMind가 11-10 Gemini Robotics 2.5를 공개했다. 카메라 이미지와 지시를 받아 로봇 동작을 내는 VLA(vision-language-action) 모델로, 지금까지 가장 유능한 버전이다. Apptronik의 Apollo 2 휴머노이드가 메르세데스-벤츠 실제 생산 라인에서 자동차 부품 키팅을 96% 성공률로 수행했다고 한다. ASIMOV-Jailbreak라는 오픈 로봇 안전 벤치마크도 함께 나왔다.
+
+## 내용
+
+- **모델**: Gemini Robotics 2.5는 VLA 모델로, 로봇 몸체를 가리지 않고 일반화되도록 학습됐다. Apptronik Apollo 2(5지 SharpaWave 손, 22 자유도)와 Franka Duo(2지 그리퍼)에서 동작한다. 200개 이상 과제에서 이전 베이스라인 대비 성공률 30~100% 향상, 과제 완료 20~30% 빨라졌다고 DeepMind는 밝혔다.
+- **메르세데스 파일럿**: 헝가리 케치케메트·독일 진델핑겐의 실제 생산 라인에서 Apollo 2가 벌크 빈에서 자동차 부품을 골라 차량별 순서대로 트레이에 담는 키팅을 수행, 96% 성공률. Gemini Robotics ER 모델이 워크플로를 추적하고 2.5가 손·팔을 제어했다. DeepMind 스스로 proof of concept이라 부른다.
+- **주의(수치 해석)**: 96%의 분모(시도 횟수)·성공 정의·인간 개입 횟수가 공개되지 않았다. 25회 중 24회와 1,000회 중 960회는 둘 다 96%지만 신뢰구간이 크게 다르다. 메르세데스 측이 96%를 확인하는 별도 성명은 없다. 파일럿에서 양산 전환 일정도 미정이다.
+- **ASIMOV-Jailbreak**: 수백 개 프롬프트가 수십 개 장면에서 안전하지 않은 요청을 위장해 로봇 AI를 속일 수 있는지 재는 오픈소스 벤치마크(Hugging Face 공개). 단 99.5% 저항 점수는 Gemini Robotics 2.5가 아니라 범용 물리 추론 모델 Gemini 4 Argon의 수치(이전 ER 2의 82%에서 상승)이며, 2.5 자체의 점수는 발표에 없다.
+- **접근**: 로봇 파트너(Agile·Apptronik·Boston Dynamics 등 100+ 신뢰 테스터)에만 롤아웃 중이며, 공개 API·가격·GA 일정은 없다. Gemini 4 Argon이 시뮬레이션을 통해 2.5 개발을 가속했다고 DeepMind는 밝혔다.
+- **의미**: 휴머노이드가 연구실 데모를 넘어 실제 생산 라인에서 반복 작업을 맡은 사례다. 다만 아직은 단일 작업·두 개 공장·파트너 감독 하의 파일럿이며, 안전 벤치마크와 함께 나왔다는 점이 물리 AI의 다음 관문이 '할 수 있는가'에서 '속지 않고 안전한가'로 옮겨가고 있음을 보여준다. EU 기계규정(Regulation (EU) 2023/1230)이 2027-01-20부터 적용된다.
+
+## 맥락
+
+- [[concepts/nvidia-cosmos-3-nano-open-models]] — NVIDIA Cosmos 3 Nano 오픈 웨이트 4종, 자율주행·로봇용 월드 시뮬레이션 (2026-11-07)
+- [[concepts/amd-world-labs-physical-ai]] — AMD의 World Labs $8.2B 인수, physical AI·월드모델 하드웨어 축 (2026-09-30)
+- [[concepts/robojepa-robot-scaling-laws]] — Meta RoboJEPA 8B, 로봇 월드모델 스케일링 법칙 (2026-10-09)
+- [[concepts/gemini-4-argon]] — Google Gemini 4 Argon, 로봇 안전 점수 99.5%의 주인공 (2026-10-01)
+- [[concepts/mecka-robot-motion-data]] — Mecka AI $60M Series B, 휴먼 모션 데이터 인프라 (2026-10-10)

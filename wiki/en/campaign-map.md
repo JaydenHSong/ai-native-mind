@@ -3,7 +3,7 @@ title: "Campaign Map"
 category: meta
 tags: [map, campaign, navigation]
 created: 2026-04-12
-updated: 2026-11-10
+updated: 2026-11-12
 sources:
   - "wiki/overview.md"
   - "wiki/index.md"
@@ -152,3 +152,5 @@ This is not a document you read from top to bottom. Pick one chapter that matche
 - 2026-11-08: daily ingest — [[concepts/anthropic-ipo-roadshow-valuation-cut]]·[[concepts/eight-mile-style-presley-sue-suno]]·[[concepts/claude-code-dont-ask-again-secret-leak]]·[[concepts/google-backstop-anthropic-kentucky-lease]]·[[concepts/anthropic-claude-enterprise-security-hooks]]·[[concepts/dropbox-tigris-dbx-agent-cloud]] new, no reinforcements, 340 pages total.
 - 2026-11-09: daily ingest — [[concepts/anthropic-onepwr-gas-generators-1-7gw]]·[[concepts/apple-agentic-siri-ternus-push]]·[[concepts/graphite-claude-passes-gemini-sessions]]·[[concepts/doj-super-intelligence-task-force]]·[[concepts/openai-dots-email-2fa-codes]] new, [[concepts/anthropic-ipo-roadshow-valuation-cut]] reinforced, 345 pages total.
 - 2026-11-10: daily ingest — [[concepts/claude-fable-5-2-mythos-5-2]]·[[concepts/meta-muse-ember]]·[[concepts/deepseek-harness-1-54m-dau]]·[[concepts/openai-chatgpt-enterprise-aws-marketplace]]·[[concepts/google-tpu-8tx-8i-max]]·[[concepts/australia-ai-regulator-agent-breach]] new, [[concepts/anthropic-ipo-roadshow-valuation-cut]] reinforced, 352 pages total.
+- 2026-11-11: daily ingest — [[concepts/google-gemini-4-carbon-launch]]·[[concepts/anthropic-claude-workplace-tools]]·[[concepts/openai-businesses-in-chatgpt]]·[[concepts/deepmind-gemini-robotics-2-5]]·[[concepts/deepmind-alphaproof-code-signal]]·[[concepts/malbear-operation-snowball-deepseek-telecom]] new, [[concepts/anthropic-ipo-roadshow-valuation-cut]] reinforced, 358 pages total.
+- 2026-11-12: daily ingest — [[concepts/nvidia-huang-ousted-ceo]]·[[concepts/openai-codex-npm-prompt-injection]]·[[concepts/google-gemini-decisions-api]]·[[concepts/anthropic-worse-together-multi-agent]]·[[concepts/deepmind-alphagenome-2]]·[[concepts/fireworks-notion-ai-breach]] new, [[concepts/anthropic-ipo-roadshow-valuation-cut]] reinforced, 365 pages total.
