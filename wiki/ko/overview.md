@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-11-13
+updated: 2026-11-14
 sources: []
 status: active
 ---
@@ -29,10 +29,15 @@ status: active
 
 ## 현재 상태
 
-- **총 페이지**: 372개
-- **카테고리**: concepts(251), tools(16), patterns(30), journal(70), comparisons(11), meta(4)
+- **총 페이지**: 378개
+- **카테고리**: concepts(257), tools(16), patterns(30), journal(71), comparisons(11), meta(4)
 - **시작일**: 2026-04-06
-- **최근 작업 (2026-11-13 데일리 ingest — 공격과 방어가 모두 에이전트가 된 날)**:
+- **최근 작업 (2026-11-14 데일리 ingest — 에이전트의 입구·지갑·브라우저가 같은 날 열렸다)**:
+  - raw 6건 수집 (수집 윈도우 11/13 15:00 UTC ~ 11/14 15:00 UTC; Gmail AI 뉴스레터 0건 — 27일 연속; 로봇 팀 해산은 Fortune 단독 보도에 회사 대변인 확인; ARTEX는 Microsoft의 Storm-0940 연결과 일치해 모순 없음; Kitesurf 효율 주장은 공개 측정값이 없어 미검증으로 처리).
+  - 신규 7개: concepts/sierra-poppy-1-0 (개인 에이전트 프로토콜 1.0·Shopify 전 상점 poppy.json 자동 게시·Meta Muse 전 사용자·스펙은 draft 1.0 — high), concepts/openai-chatgpt-wallet (dots 에이전트 결제·토큰화 카드·매 건 생체 승인·미국 Pro·신용카드 한정·출시 시 수수료 0% — high), concepts/fbi-artex-ai-agents (FBI FLASH 경보·침입→권한 탈취 3시간 미만 일부 사례·Storm-0940 연결·한국 금융기관 67,000명 유출 — high), concepts/deepseek-api-app-toolkit-flash (앱 기능 API 개방·deepseek-flash=V4.1-Flash-1017·Search·Fetch $0.75/1,000건·비피크 $0.15/$0.60 — high), concepts/openai-disbands-robotics-team (두 번째 해산·GPT-6 Astra RoboLab-120 74.8%·시뮬레이션 한정·호출당 약 $36.40·2027년 휴머노이드 데모 유지 — high), concepts/cloudflare-kitesurf-open-source (AI 에이전트용 브라우저 엔진·Apache 2.0·Workers 위 동작·실험 단계·효율 주장 미검증 — high), journal/2026-11-14 (active).
+  - 보강 없음.
+  - 한/영 동기화 완료. 총 372→378페이지.
+- **직전 작업 (2026-11-13 데일리 ingest — 공격과 방어가 모두 에이전트가 된 날)**:
   - raw 6건 수집 (수집 윈도우 11/12 15:00 UTC ~ 11/13 15:00 UTC; Gmail AI 뉴스레터 0건 — 26일 연속; Gemini 4 Hydrogen은 Google 공식 블로그 발표로 확정돼 어제 루머 제외를 정정; Daybreak 벤치마크 수치는 공식 페이지에 없어 미검증으로 처리; 동결 소송은 Reuters 보도 교차 확인).
   - 신규 7개: concepts/gemini-4-hydrogen (실행형 모델·1M 컨텍스트·$1.50/$7.50 균일 요금·AA 지수 51점 — high), concepts/openai-daybreak-red-team-defense-factory (Red Team 침투 테스트 에이전트·Defense Factory 패치 공장·GPT-6 Cyber·가격 미발표 — high), concepts/anthropic-self-hosted-claude-managed-agents (cma-server·PostgreSQL 16+·샌드박스 워커 자가 운영·모델 호출은 외부·7개 기능 누락 — high), concepts/anthropic-anvil-automated-red-teaming (자동 레드티밍·바이오 430시간 vs 24~48시간·Chrome·Firefox 익스플로잇 — medium, 자체 발표 수치), concepts/spacex-74b-ai-supercomputing-campuses (Starbase 240억 달러 이상 + 애리조나 약 500억 달러·카운티 승인 대기·계획 단계 — high), concepts/nonprofits-sue-freeze-frontier-ai (4단체 제소·5개사 피고·동결 명령 없음·09-18 반독점 소송과 정반대 — high), journal/2026-11-13 (active).
   - 보강 없음.

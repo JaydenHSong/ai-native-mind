@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-11-13
-total_pages: 372
+updated: 2026-11-14
+total_pages: 378
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 전체 372개 페이지 | 최종 업데이트: 2026-11-13 (데일리 ingest: AI 뉴스 6건 수집 + 한/영 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
+> 전체 378개 페이지 | 최종 업데이트: 2026-11-14 (데일리 ingest: AI 뉴스 6건 수집 + 한/영 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
 
 ## 쉽게 읽기
 
@@ -26,7 +26,7 @@ status: active
 - **실전(Chapter 3~5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **엔드게임(Chapter 6~7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (251개)
+## Concepts (257개)
 
 ### 성장 맵 & 철학
 - [[concepts/ai-native-programmer]] — AI를 팀원으로 활용하여 1인이 팀 규모 결과를 내는 개발자, 성장 맵
@@ -159,6 +159,11 @@ status: active
 - [[concepts/openai-daybreak-red-team-defense-factory]] — OpenAI Daybreak, Red Team 침투 테스트 에이전트·Defense Factory 패치 공장·GPT-6 Cyber (2026-11-12)
 - [[concepts/anthropic-self-hosted-claude-managed-agents]] — Anthropic 셀프호스팅 Claude Managed Agents 프라이빗 베타, 하네스는 내 클라우드에 (2026-11-12)
 - [[concepts/anthropic-anvil-automated-red-teaming]] — Anthropic Anvil 자동 레드티밍, 인간 전문가를 능가·바이오 430시간 vs 24~48시간 (2026-11-12)
+- [[concepts/sierra-poppy-1-0]] — Sierra Poppy 1.0, 개인 에이전트 프로토콜·Shopify 전 상점 poppy.json 자동 게시·Meta Muse 전 사용자 (2026-11-13)
+- [[concepts/openai-chatgpt-wallet]] — OpenAI ChatGPT Wallet, 에이전트 결제·토큰화 카드·매 건 생체 승인·미국 Pro 한정 (2026-11-13)
+- [[concepts/deepseek-api-app-toolkit-flash]] — DeepSeek 앱 기능 API 개방, deepseek-flash(V4.1-Flash-1017)·서버 쪽 도구 호출·건당 요금 (2026-11-13)
+- [[concepts/openai-disbands-robotics-team]] — OpenAI 로봇 팀 해산, GPT-6 Astra가 로봇 직접 조종·RoboLab-120 74.8%·두 번째 해산 (2026-11-13)
+- [[concepts/cloudflare-kitesurf-open-source]] — Cloudflare Kitesurf 오픈소스, AI 에이전트용 브라우저 엔진·Workers 위 동작·Apache 2.0 (2026-11-13)
 
 ### 운영·관측
 - [[concepts/gen-ai-observability]] — OpenTelemetry GenAI·에이전트 시맨틱 컨벤션, 트레이스·표준 계측
@@ -277,6 +282,7 @@ status: active
 - [[concepts/oracle-20b-raise-ai-spending-selloff]] — Oracle $20B 조달 계획과 11-02 AI 지출 우려 매도, 나스닥 −1.07% (2026-11-03)
 - [[concepts/bellingcat-ai-super-pacs-midterms]] — Bellingcat AI 슈퍼PAC 추적, $125M 대 $40M·광고에는 AI가 안 나온다 (2026-11-03)
 - [[concepts/wired-cloaked-deepfake-apps-apple-removal]] — WIRED 위장 딥페이크 앱 네트워크, 400개 이상 앱·Apple 19개 삭제 (2026-11-03)
+- [[concepts/fbi-artex-ai-agents]] — FBI ARTEX 경고, AI 에이전트 주도 침입·권한 탈취까지 3시간 미만·Storm-0940 연결 (2026-11-13)
 - [[concepts/genrobot-100m-robot-training-data]] — GenRobot $100M 시리즈 A+, 로봇 학습 데이터 인프라 (2026-11-03)
 - [[concepts/china-unified-ai-law-fast-track]] — 중국 포괄 AI법 제정 가속, 전 생애주기 규율 예고 (2026-11-04)
 - [[concepts/nyt-brave-ai-scraping-lawsuit]] — NYT 등 4개 신문의 Brave 제소, AI 색인 판매·페이월 우회 혐의 (2026-11-04)
@@ -350,7 +356,9 @@ status: active
 - [[patterns/agent-mvp-stack-2026]] — 1인 MVP 스택 5대 영역 × 4 단계 + 의사결정 트리 (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — Vibe Coding의 7대 안티패턴과 회피법
 
-## Journal (70개)
+## Journal (71개)
+
+- [[journal/2026-11-14]] — 토요 데일리: Sierra Poppy 1.0·ChatGPT Wallet·FBI ARTEX 경고·DeepSeek 앱 기능 API·OpenAI 로봇 팀 해산·Cloudflare Kitesurf
 
 - [[journal/2026-11-13]] — 금요 데일리: Gemini 4 Hydrogen·OpenAI Daybreak·Anthropic 셀프호스팅 Managed Agents·Anvil·SpaceX $74B·프론티어 AI 동결 소송
 

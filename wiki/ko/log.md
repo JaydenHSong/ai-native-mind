@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-11-13
+updated: 2026-11-14
 sources: []
 status: active
 ---
@@ -19,6 +19,18 @@ status: active
 - 월드맵 허브: [[campaign-map|Campaign Map]]
 - 진행 가이드: [[overview|Overview]]
 - 전체 도감: [[index|Index]]
+
+## [2026-11-14] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + 한/영 위키 정제
+
+- **Raw collected** (raw/articles/, 6건 — 일일 최대치):
+  - `2026-11-14-sierra-poppy-1-0.md` — Sierra Poppy 1.0 출시 (11-13; Sierra 원문): Personal Agent Protocol 1.0. Shopify 175개국 이상 전 상점이 poppy.json 자동 게시(상인 추가 구현 불필요), Meta Muse는 모든 사용자에게 켜져 방문하는 모든 사이트에서 Poppy를 먼저 찾는다. 디자인 파트너 60곳 신규·총 100곳 돌파. 실가동 Mercury·Synchrony·Turkish Airlines. 단 스펙은 draft 1.0 표기라 파괴적 변경 가능. 10-13 소개 페이지(meta-sierra-poppy-protocol)의 후속 전개.
+  - `2026-11-14-openai-chatgpt-wallet.md` — OpenAI ChatGPT Wallet 출시 (11-13; Reuters 원보도): 상시 가동 dots 에이전트가 사용자 대신 결제. 매 건 Face ID/지문 승인 뒤 토큰화된 대체 카드 번호 발급, 에이전트·가맹점 모두 실제 카드 번호를 보지 못함. Amex·Mastercard·Visa 공동 구축, 사기 탐지 Forter·Riskified·Sardine·Signifyd, 결제 처리 Adyen·Checkout.com·Stripe. 미국 Pro·18세 이상·적격 미국 발급 신용카드만, 직불·가상카드 미지원, dot 대화 한정. 출시 시 OpenAI 수수료 0%. 주간 사용자 12억 명은 OpenAI 발표. United Airlines는 11-11 약관을 바꿔 무단 AI 에이전트 티켓 구매 금지 — 결제와 가맹점 허가는 별개.
+  - `2026-11-14-fbi-artex-ai-agents.md` — FBI ARTEX 경고 (11-13; FLASH-20261113-001, Cybersecurity News 경유): 오픈소스 자율 침투 테스트 프레임워크 ARTEX를 범죄·국가 연계 행위자들이 무기화. 일부 침입은 표적 식별에서 권한 탈취까지 3시간 미만. Google 관찰 개별 자동 버스트 2~25초. 최소 2026-08부터 금융·정부·기술·방위·에너지·헬스케어 관측. 한국 금융기관 공격 약 67,000명 개인정보 유출, ConnectWise 공급망 침해로 2,250개 이상 하위 테넌트 표적 시도(확정 침해 수 아님), 11월 초 공개 노출 콘솔 1,600개 이상(노출이 곧 악용 아님). Microsoft는 ARTEX를 Storm-0940과 연결 — 기존 microsoft-storm-0940-agent-led-attacks 페이지와 일치, 모순 없음. 한 사례에서 GitHub 비밀 검색→Azure Key Vault 탈취까지 5분. 개발자가 10-08 저장소 삭제했으나 포크·복사본 유통 중.
+  - `2026-11-14-deepseek-api-app-toolkit-flash.md` — DeepSeek 앱 기능 API 개방 (11-13; 공식 API 변경 로그 경유 Crypto Briefing): 인용 포함 웹 검색·이미지 검색·파일 입력·URL 읽기·음성 상호작용·안전 검사를 서버 쪽에서 처리. deepseek-flash는 이제 V4.1-Flash-1017을 가리킴(9월 릴리스 날짜 갱신판). Search·Fetch 1,000건당 $0.75, OCR 1,000페이지당 $0.225, ASR·TTS 출시 50% 할인. 토큰 가격 비피크 입력 $0.15/출력 $0.60, 피크 2배. API 기반 공개 앱은 안전 검사 필수.
+  - `2026-11-14-openai-disbands-robotics-team.md` — OpenAI 로봇 팀 해산 (11-13; Fortune 단독 보도, 회사 대변인 확인): 두 번째 해산(첫 번째 2020~21년). GPT-6 Astra를 로봇 제어에 직접 적용할 수 있게 돼 전용 팀이 더 이상 가장 빠른 길이 아니라는 판단. 연구 인력은 Mark Chen 산하 메인 연구 조직으로, 응용·하드웨어 인력은 Greg Brockman 산하 Applied 조직으로 이동. 근거는 Nvidia 10-14 연구: RoboLab-120 시뮬레이션에서 Astra 74.8% vs 최고 전용 로봇 모델 51.0% — 단 시뮬레이션 결과이지 물리 로봇 증거가 아니며 호출당 약 $36.40·약 18.56초. 2027년 휴머노이드 데모 목표 유지, 인원수 비공개, 자체 블로그 게시물 없음. Fortune은 최근 분기 영업손실 $109억, 2027년 초 IPO 가능성을 함께 전함.
+  - `2026-11-14-cloudflare-kitesurf-open-source.md` — Cloudflare Kitesurf 오픈소스 공개 (11-13; Unite.AI 경유): AI 에이전트용 브라우저 엔진, Apache 2.0. 2026-08-06 출시 때 한 약속의 이행. Chromium·브라우저 컨테이너 없이 HTML 파싱·CSS 적용·JS 실행·스크린샷 렌더링. Workers 위에서 전적으로 동작(Rust/WASM), CDP 엔드포인트 노출. 셀프 호스팅 가능(유료 플랜 필요). 단 실험 단계로 호환성 불완전, 셀프 호스팅 시 인증 직접 추가 필요(내장 인증 없음), 'Chromium보다 CPU·메모리 적게 쓴다'는 주장에 공개 측정값이 없어 미검증.
+- **Ingest** (wiki/ko, 개념 6건 신규 + 저널 1건): sierra-poppy-1-0, openai-chatgpt-wallet, fbi-artex-ai-agents, deepseek-api-app-toolkit-flash, openai-disbands-robotics-team, cloudflare-kitesurf-open-source 신규; journal/2026-11-14. 모순 플래그 없음. 제외: Gmail AI 뉴스레터는 최근 24시간 신규 수신 없음(hoon.iccorp·jsong@spigen.com 양 계정 확인 — 27일 연속).
+- **EN sync**: en 개념 6건 신규 + 저널 1건 미러, en index/log/overview/campaign-map 동기화. 번역 공백 0건.
 
 ## [2026-11-13] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + 한/영 위키 정제
 

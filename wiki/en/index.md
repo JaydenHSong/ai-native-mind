@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-11-13
-total_pages: 372
+updated: 2026-11-14
+total_pages: 378
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 372 managed pages total | Last updated: 2026-11-13 (daily ingest: 6 AI news sources collected + ko/en wiki refinement) — most pages include a **Start here** block.
+> 378 managed pages total | Last updated: 2026-11-14 (daily ingest: 6 AI news sources collected + ko/en wiki refinement) — most pages include a **Start here** block.
 
 ## Start here
 
@@ -26,7 +26,7 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - **Practice (Chapters 3–5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **Endgame (Chapters 6–7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (251)
+## Concepts (257)
 
 ### Growth map & philosophy
 - [[concepts/ai-native-programmer]] — a developer who uses AI as teammates to achieve team-scale outcomes solo; growth map
@@ -157,6 +157,11 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[concepts/openai-daybreak-red-team-defense-factory]] — OpenAI Daybreak: Red Team penetration-testing agents and Defense Factory patch factory, GPT-6 Cyber (2026-11-12)
 - [[concepts/anthropic-self-hosted-claude-managed-agents]] — Anthropic self-hosted Claude Managed Agents private beta, the harness in your own cloud (2026-11-12)
 - [[concepts/anthropic-anvil-automated-red-teaming]] — Anthropic Anvil automated red-teaming, beating human experts, bio 430 hours vs 24–48 hours (2026-11-12)
+- [[concepts/sierra-poppy-1-0]] — Sierra Poppy 1.0, personal agent protocol, poppy.json auto-published across all Shopify stores, Muse for all users (2026-11-13)
+- [[concepts/openai-chatgpt-wallet]] — OpenAI ChatGPT Wallet, agent payments, tokenized cards, biometric approval every time, US Pro only (2026-11-13)
+- [[concepts/deepseek-api-app-toolkit-flash]] — DeepSeek opens app features to the API, deepseek-flash (V4.1-Flash-1017), server-side tool calling, per-call pricing (2026-11-13)
+- [[concepts/openai-disbands-robotics-team]] — OpenAI disbands its robotics team, GPT-6 Astra drives robots directly, RoboLab-120 74.8%, second disbanding (2026-11-13)
+- [[concepts/cloudflare-kitesurf-open-source]] — Cloudflare open-sources Kitesurf, a browser engine for AI agents, runs on Workers, Apache 2.0 (2026-11-13)
 
 ### Operations & observability
 - [[concepts/gen-ai-observability]] — OpenTelemetry GenAI and agent semantic conventions, traces, and standard instrumentation
@@ -277,6 +282,7 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[concepts/oracle-20b-raise-ai-spending-selloff]] — Oracle's $20B raise plan and the Nov 2 AI-spending selloff, Nasdaq −1.07% (2026-11-03)
 - [[concepts/bellingcat-ai-super-pacs-midterms]] — Bellingcat tracks AI super PACs: $125M vs $40M, AI absent from the ads (2026-11-03)
 - [[concepts/wired-cloaked-deepfake-apps-apple-removal]] — WIRED's cloaked deepfake app network: 400+ apps, Apple removes 19 (2026-11-03)
+- [[concepts/fbi-artex-ai-agents]] — FBI ARTEX warning, agent-led intrusion, privilege escalation in under 3 hours, Storm-0940 link (2026-11-13)
 - [[concepts/genrobot-100m-robot-training-data]] — GenRobot $100M Series A+: robot training-data infrastructure (2026-11-03)
 - [[concepts/china-unified-ai-law-fast-track]] — China fast-tracks a comprehensive AI law: full-lifecycle regulation previewed (2026-11-04)
 - [[concepts/nyt-brave-ai-scraping-lawsuit]] — NYT and three newspapers sue Brave: AI index sales, paywall bypass alleged (2026-11-04)
@@ -350,7 +356,9 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[patterns/agent-mvp-stack-2026]] — solo MVP stack: 5 areas × 4 stages + decision tree (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — seven major anti-patterns in vibe coding and how to avoid them
 
-## Journal (70)
+## Journal (71)
+
+- [[journal/2026-11-14]] — Saturday daily: Sierra Poppy 1.0 · ChatGPT Wallet · FBI ARTEX warning · DeepSeek app-features API · OpenAI robotics team disbanded · Cloudflare Kitesurf
 
 - [[journal/2026-11-13]] — Friday daily: Gemini 4 Hydrogen · OpenAI Daybreak · Anthropic self-hosted Managed Agents · Anvil · SpaceX $74B · Frontier AI freeze lawsuit
 

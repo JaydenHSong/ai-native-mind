@@ -3,7 +3,7 @@ title: "Campaign Map"
 category: meta
 tags: [map, campaign, navigation]
 created: 2026-04-12
-updated: 2026-11-13
+updated: 2026-11-14
 sources:
  - "wiki/overview.md"
  - "wiki/index.md"
@@ -136,4 +136,5 @@ confidence: high
 - 2026-11-11: 데일리 ingest — [[concepts/google-gemini-4-carbon-launch]]·[[concepts/anthropic-claude-workplace-tools]]·[[concepts/openai-businesses-in-chatgpt]]·[[concepts/deepmind-gemini-robotics-2-5]]·[[concepts/deepmind-alphaproof-code-signal]]·[[concepts/malbear-operation-snowball-deepseek-telecom]] 신규, [[concepts/anthropic-ipo-roadshow-valuation-cut]] 보강, 총 358페이지.
 - 2026-11-12: 데일리 ingest — [[concepts/nvidia-huang-ousted-ceo]]·[[concepts/openai-codex-npm-prompt-injection]]·[[concepts/google-gemini-decisions-api]]·[[concepts/anthropic-worse-together-multi-agent]]·[[concepts/deepmind-alphagenome-2]]·[[concepts/fireworks-notion-ai-breach]] 신규, [[concepts/anthropic-ipo-roadshow-valuation-cut]] 보강, 총 365페이지.
 - 2026-11-13: 데일리 ingest — [[concepts/gemini-4-hydrogen]]·[[concepts/openai-daybreak-red-team-defense-factory]]·[[concepts/anthropic-self-hosted-claude-managed-agents]]·[[concepts/anthropic-anvil-automated-red-teaming]]·[[concepts/spacex-74b-ai-supercomputing-campuses]]·[[concepts/nonprofits-sue-freeze-frontier-ai]] 신규, 보강 없음, 총 372페이지.
+- 2026-11-14: 데일리 ingest — [[concepts/sierra-poppy-1-0]]·[[concepts/openai-chatgpt-wallet]]·[[concepts/fbi-artex-ai-agents]]·[[concepts/deepseek-api-app-toolkit-flash]]·[[concepts/openai-disbands-robotics-team]]·[[concepts/cloudflare-kitesurf-open-source]] 신규, 보강 없음, 총 378페이지.
 

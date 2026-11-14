@@ -3,7 +3,7 @@ title: "Campaign Map"
 category: meta
 tags: [map, campaign, navigation]
 created: 2026-04-12
-updated: 2026-11-13
+updated: 2026-11-14
 sources:
   - "wiki/overview.md"
   - "wiki/index.md"
@@ -155,3 +155,4 @@ This is not a document you read from top to bottom. Pick one chapter that matche
 - 2026-11-11: daily ingest — [[concepts/google-gemini-4-carbon-launch]]·[[concepts/anthropic-claude-workplace-tools]]·[[concepts/openai-businesses-in-chatgpt]]·[[concepts/deepmind-gemini-robotics-2-5]]·[[concepts/deepmind-alphaproof-code-signal]]·[[concepts/malbear-operation-snowball-deepseek-telecom]] new, [[concepts/anthropic-ipo-roadshow-valuation-cut]] reinforced, 358 pages total.
 - 2026-11-12: daily ingest — [[concepts/nvidia-huang-ousted-ceo]]·[[concepts/openai-codex-npm-prompt-injection]]·[[concepts/google-gemini-decisions-api]]·[[concepts/anthropic-worse-together-multi-agent]]·[[concepts/deepmind-alphagenome-2]]·[[concepts/fireworks-notion-ai-breach]] new, [[concepts/anthropic-ipo-roadshow-valuation-cut]] reinforced, 365 pages total.
 - 2026-11-13: daily ingest — [[concepts/gemini-4-hydrogen]]·[[concepts/openai-daybreak-red-team-defense-factory]]·[[concepts/anthropic-self-hosted-claude-managed-agents]]·[[concepts/anthropic-anvil-automated-red-teaming]]·[[concepts/spacex-74b-ai-supercomputing-campuses]]·[[concepts/nonprofits-sue-freeze-frontier-ai]] new, no reinforcements, 372 pages total.
+- 2026-11-14: daily ingest — [[concepts/sierra-poppy-1-0]]·[[concepts/openai-chatgpt-wallet]]·[[concepts/fbi-artex-ai-agents]]·[[concepts/deepseek-api-app-toolkit-flash]]·[[concepts/openai-disbands-robotics-team]]·[[concepts/cloudflare-kitesurf-open-source]] new, no reinforcements, 378 pages total.

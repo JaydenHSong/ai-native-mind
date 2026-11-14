@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-11-13
+updated: 2026-11-14
 sources: []
 status: active
 ---
@@ -29,10 +29,15 @@ This page is a **table of contents and learning map** for the wiki. The links be
 
 ## Current state
 
-- **Total pages**: 372
-- **Categories**: concepts(251), tools(16), patterns(30), journal(70), comparisons(11), meta(4)
+- **Total pages**: 378
+- **Categories**: concepts(257), tools(16), patterns(30), journal(71), comparisons(11), meta(4)
 - **Start date**: 2026-04-06
-- **Latest work (2026-11-13 daily ingest — attack and defence both became agents)**:
+- **Latest work (2026-11-14 daily ingest — the agent's entrance, wallet, and browser opened on the same day)**:
+  - 6 raw sources collected (window 11/13 15:00 UTC ~ 11/14 15:00 UTC; zero Gmail AI newsletters — 27th straight day; the robotics-team disbanding is a Fortune exclusive confirmed by a company spokesperson; ARTEX matches Microsoft's Storm-0940 link, so no contradiction; the Kitesurf efficiency claim has no published measurements, so it is treated as unverified).
+  - 7 new: concepts/sierra-poppy-1-0 (Personal Agent Protocol 1.0, poppy.json auto-published across all Shopify stores, Muse for all users, spec still draft 1.0 — high), concepts/openai-chatgpt-wallet (dots agent payments, tokenized cards, biometric approval every time, US Pro and credit cards only, 0% fee at launch — high), concepts/fbi-artex-ai-agents (FBI FLASH alert, intrusion to privilege escalation in under three hours in some cases, Storm-0940 link, ~67,000 people exposed in the South Korean bank attack — high), concepts/deepseek-api-app-toolkit-flash (app features opened to the API, deepseek-flash = V4.1-Flash-1017, Search/Fetch $0.75 per 1,000 calls, $0.15/$0.60 off-peak — high), concepts/openai-disbands-robotics-team (second disbanding, GPT-6 Astra RoboLab-120 74.8%, simulation only, about $36.40 per call, 2027 humanoid demo target kept — high), concepts/cloudflare-kitesurf-open-source (browser engine for AI agents, Apache 2.0, runs on Workers, experimental, efficiency claim unverified — high), journal/2026-11-14 (active).
+  - No reinforcements.
+  - EN sync complete. 372→378 pages.
+- **Previous work (2026-11-13 daily ingest — attack and defence both became agents)**:
   - 6 raw sources collected (window 11/12 15:00 UTC ~ 11/13 15:00 UTC; zero Gmail AI newsletters — 26th straight day; Gemini 4 Hydrogen is confirmed by Google's official blog announcement, correcting yesterday's rumour exclusion; Daybreak benchmark figures are unverified because they do not appear on the official page; the freeze lawsuit is cross-checked against the Reuters report).
   - 7 new: concepts/gemini-4-hydrogen (execution model, 1M context, $1.50/$7.50 flat pricing, AA Index 51 — high), concepts/openai-daybreak-red-team-defense-factory (Red Team penetration-testing agents, Defense Factory patch factory, GPT-6 Cyber, no pricing announced — high), concepts/anthropic-self-hosted-claude-managed-agents (cma-server, PostgreSQL 16+, sandbox workers self-operated, model calls external, 7 features missing — high), concepts/anthropic-anvil-automated-red-teaming (automated red-teaming, bio 430 hours vs 24–48 hours, Chrome/Firefox exploits — medium, first-party figures), concepts/spacex-74b-ai-supercomputing-campuses (Starbase more than $24B + Arizona about $50B, county approval pending, plan stage — high), concepts/nonprofits-sue-freeze-frontier-ai (four groups sue, five defendants, no freeze order, opposite of the 09-18 antitrust suit — high), journal/2026-11-13 (active).
   - No reinforcements.
