@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-11-14
+updated: 2026-11-15
 sources: []
 status: active
 ---
@@ -29,10 +29,15 @@ This page is a **table of contents and learning map** for the wiki. The links be
 
 ## Current state
 
-- **Total pages**: 378
-- **Categories**: concepts(257), tools(16), patterns(30), journal(71), comparisons(11), meta(4)
+- **Total pages**: 385
+- **Categories**: concepts(263), tools(16), patterns(30), journal(72), comparisons(11), meta(4)
 - **Start date**: 2026-04-06
-- **Latest work (2026-11-14 daily ingest — the agent's entrance, wallet, and browser opened on the same day)**:
+- **Latest work (2026-11-15 daily ingest — evidence is the axis: weights speak about chips, traces about supply chains)**:
+  - 6 raw sources collected (window 11/14 15:00 UTC ~ 11/15 15:00 UTC; zero Gmail AI newsletters — 28th straight day; the Blackwell fingerprint report was read in full from the original; the Cursor account is Cursor's own, while Fireworks' own bulletins do not mention Cursor; the Weil formalization has no published repository or paper, so the headline figures are Google's own account; LongCat's "trained without Nvidia" is the company's claim).
+  - 7 new: concepts/blackwell-fingerprints-chinese-models (six Chinese frontier models carry Blackwell initialisation fingerprints, 49–1,385 sigma, about 12,000 GPUs and $500M+ estimated, location and legality unproven — high), concepts/cursor-security-incident-fireworks (Fireworks key leak, tampered Claude Code extension 2.1.312/2.1.313, about 11 hours, at most 5,000 users, Privacy Mode users safe — high), concepts/meituan-longcat-2-5 (1.6-trillion-parameter agent model, about 48B active per token, MIT weights, Terminal Bench 88.4 vendor-measured, self-hosting guide with 194 Huawei Ascend accelerators — high), concepts/anthropic-claude-code-projects (coordinator orchestrating parallel thread sessions, Pro/Max beta, cloud-only, usage limits reached faster — high), concepts/google-antigravity-teamwork (agent teams formalizing the Weil conjectures, about 1.8M lines of Lean, 28,800 subagent invocations, 99.5% of the Courtade–Kumar lines are generated certificate data — medium), concepts/llama-cpp-1-0 (llama.cpp and ggml v1.0.0, stable public API promise, 35 deprecated functions removed, FP8 KV caches, no speed figures — high), journal/2026-11-15 (active).
+  - No reinforcements.
+  - EN sync complete. 378→385 pages.
+- **Previous work (2026-11-14 daily ingest — the agent's entrance, wallet, and browser opened on the same day)**:
   - 6 raw sources collected (window 11/13 15:00 UTC ~ 11/14 15:00 UTC; zero Gmail AI newsletters — 27th straight day; the robotics-team disbanding is a Fortune exclusive confirmed by a company spokesperson; ARTEX matches Microsoft's Storm-0940 link, so no contradiction; the Kitesurf efficiency claim has no published measurements, so it is treated as unverified).
   - 7 new: concepts/sierra-poppy-1-0 (Personal Agent Protocol 1.0, poppy.json auto-published across all Shopify stores, Muse for all users, spec still draft 1.0 — high), concepts/openai-chatgpt-wallet (dots agent payments, tokenized cards, biometric approval every time, US Pro and credit cards only, 0% fee at launch — high), concepts/fbi-artex-ai-agents (FBI FLASH alert, intrusion to privilege escalation in under three hours in some cases, Storm-0940 link, ~67,000 people exposed in the South Korean bank attack — high), concepts/deepseek-api-app-toolkit-flash (app features opened to the API, deepseek-flash = V4.1-Flash-1017, Search/Fetch $0.75 per 1,000 calls, $0.15/$0.60 off-peak — high), concepts/openai-disbands-robotics-team (second disbanding, GPT-6 Astra RoboLab-120 74.8%, simulation only, about $36.40 per call, 2027 humanoid demo target kept — high), concepts/cloudflare-kitesurf-open-source (browser engine for AI agents, Apache 2.0, runs on Workers, experimental, efficiency claim unverified — high), journal/2026-11-14 (active).
   - No reinforcements.

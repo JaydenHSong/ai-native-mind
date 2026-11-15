@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-11-14
-total_pages: 378
+updated: 2026-11-15
+total_pages: 385
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 전체 378개 페이지 | 최종 업데이트: 2026-11-14 (데일리 ingest: AI 뉴스 6건 수집 + 한/영 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
+> 전체 385개 페이지 | 최종 업데이트: 2026-11-15 (데일리 ingest: AI 뉴스 6건 수집 + 한/영 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
 
 ## 쉽게 읽기
 
@@ -26,7 +26,7 @@ status: active
 - **실전(Chapter 3~5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **엔드게임(Chapter 6~7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (257개)
+## Concepts (263개)
 
 ### 성장 맵 & 철학
 - [[concepts/ai-native-programmer]] — AI를 팀원으로 활용하여 1인이 팀 규모 결과를 내는 개발자, 성장 맵
@@ -164,6 +164,12 @@ status: active
 - [[concepts/deepseek-api-app-toolkit-flash]] — DeepSeek 앱 기능 API 개방, deepseek-flash(V4.1-Flash-1017)·서버 쪽 도구 호출·건당 요금 (2026-11-13)
 - [[concepts/openai-disbands-robotics-team]] — OpenAI 로봇 팀 해산, GPT-6 Astra가 로봇 직접 조종·RoboLab-120 74.8%·두 번째 해산 (2026-11-13)
 - [[concepts/cloudflare-kitesurf-open-source]] — Cloudflare Kitesurf 오픈소스, AI 에이전트용 브라우저 엔진·Workers 위 동작·Apache 2.0 (2026-11-13)
+- [[concepts/blackwell-fingerprints-chinese-models]] — 중국 프론티어 모델 6종 Blackwell GPU 지문, 수출 통제 칩 사용 정황·49~1,385 시그마 (2026-11-12)
+- [[concepts/cursor-security-incident-fireworks]] — Cursor 보안 사고 조사 결과, Fireworks 키 유출로 변조된 Claude Code 확장·최대 5,000명 (2026-11-13)
+- [[concepts/meituan-longcat-2-5]] — Meituan LongCat-2.5 가중치 공개, Nvidia 없이 만든 1.6조 파라미터 에이전트 모델·MIT (2026-11-15)
+- [[concepts/anthropic-claude-code-projects]] — Anthropic Claude Projects 재설계, 코디네이터가 병렬 스레드 조율·Pro·Max 베타 (2026-11-14)
+- [[concepts/google-antigravity-teamwork]] — Google Antigravity /teamwork, 에이전트 팀의 Weil 추측 형식화·180만 줄 Lean (2026-11-13)
+- [[concepts/llama-cpp-1-0]] — llama.cpp·ggml v1.0.0, 로컬 AI 추론의 안정 공개 API 약속·3년 반 만의 1.0 (2026-11-13)
 
 ### 운영·관측
 - [[concepts/gen-ai-observability]] — OpenTelemetry GenAI·에이전트 시맨틱 컨벤션, 트레이스·표준 계측
@@ -356,7 +362,9 @@ status: active
 - [[patterns/agent-mvp-stack-2026]] — 1인 MVP 스택 5대 영역 × 4 단계 + 의사결정 트리 (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — Vibe Coding의 7대 안티패턴과 회피법
 
-## Journal (71개)
+## Journal (72개)
+
+- [[journal/2026-11-15]] — 일요 데일리: Blackwell 지문·Cursor 보안 사고·Meituan LongCat-2.5·Claude Projects·Antigravity /teamwork·llama.cpp 1.0
 
 - [[journal/2026-11-14]] — 토요 데일리: Sierra Poppy 1.0·ChatGPT Wallet·FBI ARTEX 경고·DeepSeek 앱 기능 API·OpenAI 로봇 팀 해산·Cloudflare Kitesurf
 

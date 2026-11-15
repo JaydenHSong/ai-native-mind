@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-11-14
-total_pages: 378
+updated: 2026-11-15
+total_pages: 385
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 378 managed pages total | Last updated: 2026-11-14 (daily ingest: 6 AI news sources collected + ko/en wiki refinement) — most pages include a **Start here** block.
+> 385 managed pages total | Last updated: 2026-11-15 (daily ingest: 6 AI news sources collected + ko/en wiki refinement) — most pages include a **Start here** block.
 
 ## Start here
 
@@ -26,7 +26,7 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - **Practice (Chapters 3–5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **Endgame (Chapters 6–7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (257)
+## Concepts (263)
 
 ### Growth map & philosophy
 - [[concepts/ai-native-programmer]] — a developer who uses AI as teammates to achieve team-scale outcomes solo; growth map
@@ -162,6 +162,12 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[concepts/deepseek-api-app-toolkit-flash]] — DeepSeek opens app features to the API, deepseek-flash (V4.1-Flash-1017), server-side tool calling, per-call pricing (2026-11-13)
 - [[concepts/openai-disbands-robotics-team]] — OpenAI disbands its robotics team, GPT-6 Astra drives robots directly, RoboLab-120 74.8%, second disbanding (2026-11-13)
 - [[concepts/cloudflare-kitesurf-open-source]] — Cloudflare open-sources Kitesurf, a browser engine for AI agents, runs on Workers, Apache 2.0 (2026-11-13)
+- [[concepts/blackwell-fingerprints-chinese-models]] — Blackwell GPU fingerprints in six Chinese frontier models, evidence of export-controlled chip use, 49–1,385 sigma (2026-11-12)
+- [[concepts/cursor-security-incident-fireworks]] — Cursor security incident findings, Fireworks key leak led to a tampered Claude Code extension, at most 5,000 users (2026-11-13)
+- [[concepts/meituan-longcat-2-5]] — Meituan LongCat-2.5 weights released, a 1.6-trillion-parameter agent model built without Nvidia, MIT (2026-11-15)
+- [[concepts/anthropic-claude-code-projects]] — Anthropic rebuilds Claude Projects, a coordinator orchestrating parallel threads, Pro/Max beta (2026-11-14)
+- [[concepts/google-antigravity-teamwork]] — Google Antigravity /teamwork, agent teams formalizing the Weil conjectures, 1.8M lines of Lean (2026-11-13)
+- [[concepts/llama-cpp-1-0]] — llama.cpp and ggml v1.0.0, a stable public API promise for local AI inference, the first 1.0 in 3.5 years (2026-11-13)
 
 ### Operations & observability
 - [[concepts/gen-ai-observability]] — OpenTelemetry GenAI and agent semantic conventions, traces, and standard instrumentation
@@ -356,7 +362,9 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[patterns/agent-mvp-stack-2026]] — solo MVP stack: 5 areas × 4 stages + decision tree (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — seven major anti-patterns in vibe coding and how to avoid them
 
-## Journal (71)
+## Journal (72)
+
+- [[journal/2026-11-15]] — Sunday daily: Blackwell fingerprints · Cursor security incident · Meituan LongCat-2.5 · Claude Projects · Antigravity /teamwork · llama.cpp 1.0
 
 - [[journal/2026-11-14]] — Saturday daily: Sierra Poppy 1.0 · ChatGPT Wallet · FBI ARTEX warning · DeepSeek app-features API · OpenAI robotics team disbanded · Cloudflare Kitesurf
 

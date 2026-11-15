@@ -997,8 +997,9 @@ function initGraph() {
 
   // 노드 및 링크 데이터 매핑
   const nodes = langDocs.map((doc, i) => {
-    const angle = (i / langDocs.length) * Math.PI * 2;
-    const r = Math.min(worldWidth, worldHeight) * 0.3 * Math.random() + 100;
+    // 해바라기(황금각) 균일 배치 — 랜덤 뭉침 없이 고르게 퍼진 상태에서 시작
+    const angle = i * 2.399963;
+    const r = Math.min(worldWidth, worldHeight) * 0.44 * Math.sqrt((i + 0.5) / langDocs.length);
     return {
       id: doc.id,
       title: doc.title,
@@ -1050,7 +1051,7 @@ function initGraph() {
   let alpha = 1.0; // 물리 시뮬레이션 에너지 냉각수 (d3-force cooling 모델 도입)
 
   function wakeSimulation() {
-    alpha = 1.0; // 깨울 때 물리계를 다시 뜨겁게 가열
+    alpha = Math.max(alpha, 0.3); // 살짝만 깨운다 — 전체 재가열(폭발) 방지
     activeAnimation = true;
     if (!isLooping) {
       isLooping = true;
@@ -1100,16 +1101,16 @@ function initGraph() {
 
     // d3-force 방식의 냉각 수렴 모델 (에너지를 7%씩 우아하고 부드럽게 감쇠)
     if (draggedNode) {
-      alpha = 1.0; // 드래그 중에는 식지 않도록 에너지 가득 공급
+      alpha = Math.max(alpha, 0.6); // 드래그 중에도 과열 없이 주변만 정리
     } else {
-      alpha *= 0.967; // 냉각 인자를 높여 유영(잔여 모션) 수명을 약 2.2초로 대폭 늘려 매끄러운 감속 유도
+      alpha *= 0.94; // 빠르게 식혀 짧고 단정하게 안착 (약 1.2초)
     }
 
-    const decay = 0.88; // 관성력을 올려 스르륵 미끄러지는 은하수 유영 효과 연장
+    const decay = 0.85; // 속도 감쇠를 조금 높여 출렁임 없이 안착
     const gravity = 0.0012; // 가상 평원 은은한 중심 중력
     const coulombConstant = 10000; // 척력 강도를 적정히 낮추어 과격한 튕김 방지
     const hookeConstant = 0.016; // 스프링 장력을 부드럽게 완화하여 출렁임 소거
-    const desiredLength = 180; // 목표 결합선 거리
+    const desiredLength = 120; // 목표 결합선 거리 (노드 378개 규모에 맞게 축소)
 
     // 1. 노드 간 척력 (Coulomb's Law) - alpha를 곱해 시간이 지날수록 약화시킴
     for (let i = 0; i < nodes.length; i++) {
@@ -1152,7 +1153,7 @@ function initGraph() {
     // 물리 수렴 완료 시점에 겹침 보정으로 인한 무한 덜덜 떨림 현상을 완전히 박멸하기 위해,
     // 이 겹침 보정의 힘에도 alpha 온도를 똑같이 곱해줍니다. 
     // 이렇게 하면 물리 온도가 식어감에 따라 밀쳐내기 보정 거리 또한 0에 수렴하여 완벽히 정지합니다.
-    const minDistance = 140; 
+    const minDistance = 56; // 378개 노드가 월드 안에서 동시 만족 가능한 간격 
     for (let i = 0; i < nodes.length; i++) {
       for (let j = i + 1; j < nodes.length; j++) {
         const n1 = nodes[i];
@@ -1518,8 +1519,8 @@ function initGraph() {
             scale: nextScale 
           };
           nodes.forEach((n, i) => {
-            const angle = (i / nodes.length) * Math.PI * 2;
-            const r = Math.min(worldWidth, worldHeight) * 0.3 * Math.random() + 100;
+            const angle = i * 2.399963;
+            const r = Math.min(worldWidth, worldHeight) * 0.44 * Math.sqrt((i + 0.5) / nodes.length);
             n.x = worldWidth / 2 + Math.cos(angle) * r;
             n.y = worldHeight / 2 + Math.sin(angle) * r;
             n.vx = 0;

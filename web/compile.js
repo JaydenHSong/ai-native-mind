@@ -129,6 +129,14 @@ function parseMarkdownFile(filePath) {
     }
   }
 
+  // 쉽게 읽기 절은 읽기 패널 상단에서 따로 보여주므로 본문에서는 제거
+  // (제거 전 위키링크 추출을 마쳐, 쉽게 읽기 안의 링크도 연결망에 남는다)
+  if (easyReadMatch) {
+    body = (body.slice(0, easyReadMatch.index) + body.slice(easyReadMatch.index + easyReadMatch[0].length))
+      .replace(/\n{3,}/g, '\n\n')
+      .trim();
+  }
+
   // frontmatter의 related 대칭 매핑
   const cleanedRelated = (metadata.related || []).map(link => {
     let cleanLink = link.replace(/\\/g, '/');

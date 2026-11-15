@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-11-14
+updated: 2026-11-15
 sources: []
 status: active
 ---
@@ -19,6 +19,18 @@ status: active
 - 월드맵 허브: [[campaign-map|Campaign Map]]
 - 진행 가이드: [[overview|Overview]]
 - 전체 도감: [[index|Index]]
+
+## [2026-11-15] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + 한/영 위키 정제
+
+- **Raw collected** (raw/articles/, 6건 — 일일 최대치):
+  - `2026-11-15-blackwell-fingerprints-chinese-models.md` — 중국 프론티어 모델 6종의 Blackwell GPU 지문 (11-12; Unemployment Labs 보고서 원문): DeepSeek-V4-Flash·V4-Pro, Kimi K3·K3.1-Pro, MiniMax-M3, Ling-3.1-flash의 공개 가중치에 Blackwell 초기화 지문. Philox 초기값 배열이 SM 수(148/152)를 드러낸다. 증거 강도 49~1,385 시그마, V4-Flash·K3는 실제 칩 대조 확인. 5개 실행 합계 약 12,000개 GPU·5억 달러 이상 추산(가정 의존, 저자 스스로 확신 없음). 단 칩 위치·입수 경로·법 위반 여부는 입증하지 않음. Alibaba·Zhipu·Tencent·Xiaomi·StepFun은 여전히 Hopper, Meituan LongCat-2.0은 NVIDIA 지문 없음. TechCrunch 11-13 보도, CPU 재현 스크립트 공개.
+  - `2026-11-15-cursor-security-incident-fireworks.md` — Cursor 보안 사고 조사 결과 (11-14; Cursor 11-13 조사 결과 경유 iFynx): Fireworks에 노출된 접근 키가 출발점. 공유 읽기 전용 버킷에서 2025년 무렵 Privacy Mode 미적용 코딩 에이전트 트레이스 복사, 검열되지 않은 API 자격증명으로 내부 시스템까지 침투. 트레이스 노출 0.05% 미만, 자격증명 노출 0.01% 미만. 10-29 변조된 `Anthropic.claude-code` 2.1.312·2.1.313이 마켓플레이스 캐시에 약 11시간 노출, 최대 5,000명이 받았을 수 있음. 변조본은 SSH 키 설치·원격 로그인·역방향 터널로 지속성 노림. Privacy Mode 사용자 프롬프트·코드, 코드 저장소, 프로덕션 시스템은 무사. 마지막 공격 활동 11-01 차단. 모든 추론 트래픽을 Fireworks에서 이전. Uber도 같은 Fireworks 경유로 운전자 면허 데이터 유출(11-10 신고).
+  - `2026-11-15-meituan-longcat-2-5.md` — Meituan LongCat-2.5 가중치 공개 (11-15; The Decoder 원보도): 1.6조 파라미터 에이전트 모델, 토큰당 약 480억 개 활성화되는 네이티브 멀티모달 MoE. 11-02 공개 후 11-10 가중치 MIT 라이선스 배포. Terminal Bench v2.1 88.4점(Claude Opus 5 89.1점)은 회사 자체 측정·참고용, 독립 검증 없음. 전문가 가중치·활성화 4비트 양자화, 자가 호스팅 가이드 샘플은 Huawei Ascend Atlas A2 194개. Nvidia GPU 안내 없음. 전작 LongCat-2.0은 5만 개 이상 중국 AI 칩 클러스터에서 학습했다고 회사 주장. API 프로모션 가격 입력 약 €0.27·출력 약 €1.07(100만 토큰당). 단 "Nvidia 없이 학습"은 회사 주장, 학습 칩 벤더는 회사 게시물에 명시되지 않음.
+  - `2026-11-15-anthropic-claude-code-projects.md` — Anthropic Claude Projects 재설계 (11-14; Anthropic 원문): 파일 폴더에서 조율된 작업 세션 집합으로. 코디네이터가 범위·위임·검토·합치를 맡고, 각 스레드는 자기 브랜치·저장소 복사본에서 도는 Claude Code 클라우드 세션. 서브에이전트·루프·워크플로우로 더 쪼갤 수 있고, 겹침은 일반 PR 머지 충돌로. 공유 메모리·프로젝트 라이브러리 동반. 휴대폰 조율 가능, 자리 비워도 계속. 오늘부터 클라우드 세션을 쓰는 일부 Pro·Max 구독자 중 기존 프로젝트 없는 사람에게 베타, 다음 주 확대, 이후 Claude 전체·Team·Enterprise로. 스레드 하나가 세션 하나라 사용량 한도에 더 빨리 도달. 하루 신규 스레드 200개 상한은 보도 인용. 로컬 머신 실행은 "곧".
+  - `2026-11-15-google-antigravity-teamwork.md` — Google Antigravity /teamwork 성과 (11-13; Google Research 블로그 원문): 전문 서브에이전트 팀과 Lean 4 증명 검사기 같은 자동 반증자를 짝지은 멀티 에이전트. Gemini 4 Argon·Carbon·Hydrogen 기반. /teamwork-LEAP이 Weil 추측의 기계 검증 형식화를 완전 자율로 만들었다고 주장(약 180만 줄 Lean, 서브에이전트 호출 28,800회). Courtade–Kumar 추측 증명 형식화 약 5,000만 줄(인간 협업), Hilbert 10번 문제 첫 형식화(약 92만 줄), Birkhoff 추측 첫 형식화, 3차원 Bochner–Riesz 증명 빈틈 수정. NMR 분자 구조 top-1 95%·top-3 100%, Zircon Rust 재작성 약 80만 줄, libgav1 Rust 포팅이 C++보다 20~30% 빠르다고 주장. 외부 연구자·개발자가 Antigravity에서 오늘부터 사용 가능, 학계 10,000명에게 최상위 티어 6개월 무료 신청 개방. 단 독립 점검(sysnote): Courtade–Kumar 5,000만 줄 중 사람이 읽을 수 있는 증명 코드는 약 23만 8,690줄, 나머지 99.5%는 생성된 인증서 데이터. Weil 형식화는 저장소·논문 미공개로 외부 확인 불가, Axiom이 11-06 이미 자체 Weil 형식화 공개.
+  - `2026-11-15-llama-cpp-1-0.md` — llama.cpp·ggml v1.0.0 출시 (11-13; Unite.AI 경유): 3년 반 만의 첫 1.0. 핵심은 속도보다 약속 — 앞으로 공개 C API를 깨는 변경은 메이저 버전 상승과 함께만. 35개 deprecated 공개 함수 제거, NextN 추측 디코딩 API를 메인 공개 헤더로 승격, FP8 KV 캐시 추가(Qwen2.5-7B 기준 32,768 토큰 KV 페이로드 1,792→896 MiB 계산치), 호스트 메모리 MoE 전문가 캐시, llama-server SSRF·DNS 리바인딩 방어 강화. 150개 이상 모델 아키텍처 지원, GitHub 스타 약 135,000개, MIT 라이선스. 단 전후 속도 측정 수치 없음.
+- **Ingest** (wiki/ko, 개념 6건 신규 + 저널 1건): blackwell-fingerprints-chinese-models, cursor-security-incident-fireworks, meituan-longcat-2-5, anthropic-claude-code-projects, google-antigravity-teamwork, llama-cpp-1-0 신규; journal/2026-11-15. 모순 플래그 없음. 제외: Anthropic 안전 평가 설계 권고 10건(11-13, 슬롯 한계), Gemini 4 Carbon MathArena 1위(11-14, 기존 Carbon 페이지 보강 후보·슬롯 한계), NVIDIA GPU 인위적 부족 WSJ 보도(11-14, 시장 소식·단일 출처·슬롯 한계), Agentic AI Foundation 프로젝트 4건 추가(거버넌스 발표·슬롯 한계), NiCE Cognigy 차세대(11-12, 벤더 보도자료·슬롯 한계), Amazon AI 쇼핑 에이전트 견제 계획(Reuters, Google Alert 스니펫만 확인·슬롯 한계), Claude Meetings(anthropic-claude-workplace-tools 페이지에 이미 포함), DeepSeek 검색 API 가격(전일 DeepSeek API 페이지에 포함), Gmail AI 뉴스레터는 최근 24시간 신규 수신 없음(hoon.iccorp·jsong@spigen.com 양 계정 확인 — 28일 연속).
+- **EN sync**: en 개념 6건 신규 + 저널 1건 미러, en index/log/overview/campaign-map 동기화. 번역 공백 0건.
 
 ## [2026-11-14] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + 한/영 위키 정제
 

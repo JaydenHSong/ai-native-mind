@@ -1583,4 +1583,22 @@ body {
   padding: 0 1px;
 }
 
+/* === 4단계 개선 (2026-11-14): 작은 라벨 하한 + 모션 배려 === */
+.count-badge { font-size: 0.72rem; }
+.doc-item-category { font-size: 0.72rem; }
+.section-lbl { font-size: 0.72rem; }
+.board-lbl { font-size: 0.72rem; }
+#graph-tooltip .tooltip-category { font-size: 0.72rem; }
+.doc-category-badge { font-size: 0.72rem; }
+.doc-tag { font-size: 0.72rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 

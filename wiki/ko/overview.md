@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-11-14
+updated: 2026-11-15
 sources: []
 status: active
 ---
@@ -29,10 +29,15 @@ status: active
 
 ## 현재 상태
 
-- **총 페이지**: 378개
-- **카테고리**: concepts(257), tools(16), patterns(30), journal(71), comparisons(11), meta(4)
+- **총 페이지**: 385개
+- **카테고리**: concepts(263), tools(16), patterns(30), journal(72), comparisons(11), meta(4)
 - **시작일**: 2026-04-06
-- **최근 작업 (2026-11-14 데일리 ingest — 에이전트의 입구·지갑·브라우저가 같은 날 열렸다)**:
+- **최근 작업 (2026-11-15 데일리 ingest — 증거가 축이다: 가중치는 칩을, 트레이스는 공급망을 말한다)**:
+  - raw 6건 수집 (수집 윈도우 11/14 15:00 UTC ~ 11/15 15:00 UTC; Gmail AI 뉴스레터 0건 — 28일 연속; Blackwell 지문 보고서는 원문 전문 정독; Cursor 경위는 Cursor 자체 발표이나 Fireworks 자체 공지에는 Cursor 언급 없음; Weil 형식화는 공개 저장소·논문이 없어 Google 자체 설명으로 처리; LongCat의 "Nvidia 없이 학습"은 회사 주장으로 처리).
+  - 신규 7개: concepts/blackwell-fingerprints-chinese-models (중국 프론티어 모델 6종 Blackwell 초기화 지문·49~1,385 시그마·약 12,000개 GPU·5억 달러 이상 추산·위치·법 위반 미입증 — high), concepts/cursor-security-incident-fireworks (Fireworks 키 유출·변조된 Claude Code 확장 2.1.312·2.1.313·약 11시간·최대 5,000명·Privacy Mode 사용자 무사 — high), concepts/meituan-longcat-2-5 (1.6조 파라미터 에이전트 모델·토큰당 약 480억 개 활성화·MIT 가중치·Terminal Bench 88.4점 자체 측정·자가 호스팅 가이드 Huawei Ascend 194개 — high), concepts/anthropic-claude-code-projects (코디네이터가 병렬 스레드 조율·Pro·Max 베타·클라우드 한정·사용량 한도 조기 도달 — high), concepts/google-antigravity-teamwork (에이전트 팀의 Weil 추측 형식화·약 180만 줄 Lean·서브에이전트 호출 28,800회·Courtade–Kumar 5,000만 줄 중 99.5%는 생성 인증서 데이터 — medium), concepts/llama-cpp-1-0 (llama.cpp·ggml v1.0.0·안정 공개 API 약속·deprecated 35개 제거·FP8 KV 캐시·속도 수치 없음 — high), journal/2026-11-15 (active).
+  - 보강 없음.
+  - 한/영 동기화 완료. 총 378→385페이지.
+- **직전 작업 (2026-11-14 데일리 ingest — 에이전트의 입구·지갑·브라우저가 같은 날 열렸다)**:
   - raw 6건 수집 (수집 윈도우 11/13 15:00 UTC ~ 11/14 15:00 UTC; Gmail AI 뉴스레터 0건 — 27일 연속; 로봇 팀 해산은 Fortune 단독 보도에 회사 대변인 확인; ARTEX는 Microsoft의 Storm-0940 연결과 일치해 모순 없음; Kitesurf 효율 주장은 공개 측정값이 없어 미검증으로 처리).
   - 신규 7개: concepts/sierra-poppy-1-0 (개인 에이전트 프로토콜 1.0·Shopify 전 상점 poppy.json 자동 게시·Meta Muse 전 사용자·스펙은 draft 1.0 — high), concepts/openai-chatgpt-wallet (dots 에이전트 결제·토큰화 카드·매 건 생체 승인·미국 Pro·신용카드 한정·출시 시 수수료 0% — high), concepts/fbi-artex-ai-agents (FBI FLASH 경보·침입→권한 탈취 3시간 미만 일부 사례·Storm-0940 연결·한국 금융기관 67,000명 유출 — high), concepts/deepseek-api-app-toolkit-flash (앱 기능 API 개방·deepseek-flash=V4.1-Flash-1017·Search·Fetch $0.75/1,000건·비피크 $0.15/$0.60 — high), concepts/openai-disbands-robotics-team (두 번째 해산·GPT-6 Astra RoboLab-120 74.8%·시뮬레이션 한정·호출당 약 $36.40·2027년 휴머노이드 데모 유지 — high), concepts/cloudflare-kitesurf-open-source (AI 에이전트용 브라우저 엔진·Apache 2.0·Workers 위 동작·실험 단계·효율 주장 미검증 — high), journal/2026-11-14 (active).
   - 보강 없음.
