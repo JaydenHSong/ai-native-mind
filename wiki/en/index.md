@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-11-15
-total_pages: 385
+updated: 2026-11-16
+total_pages: 392
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 385 managed pages total | Last updated: 2026-11-15 (daily ingest: 6 AI news sources collected + ko/en wiki refinement) — most pages include a **Start here** block.
+> 392 managed pages total | Last updated: 2026-11-16 (daily ingest: 6 AI news sources collected + ko/en wiki refinement) — most pages include a **Start here** block.
 
 ## Start here
 
@@ -26,7 +26,7 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - **Practice (Chapters 3–5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **Endgame (Chapters 6–7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (263)
+## Concepts (269)
 
 ### Growth map & philosophy
 - [[concepts/ai-native-programmer]] — a developer who uses AI as teammates to achieve team-scale outcomes solo; growth map
@@ -168,6 +168,12 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[concepts/anthropic-claude-code-projects]] — Anthropic rebuilds Claude Projects, a coordinator orchestrating parallel threads, Pro/Max beta (2026-11-14)
 - [[concepts/google-antigravity-teamwork]] — Google Antigravity /teamwork, agent teams formalizing the Weil conjectures, 1.8M lines of Lean (2026-11-13)
 - [[concepts/llama-cpp-1-0]] — llama.cpp and ggml v1.0.0, a stable public API promise for local AI inference, the first 1.0 in 3.5 years (2026-11-13)
+- [[concepts/alibaba-qwen4-max]] — Alibaba Qwen4-Max official launch, 2.4T MoE flagship, DeepSWE 75.7 claimed, $1.50 input (2026-11-16)
+- [[concepts/tencent-hy4-flash]] — Tencent Hy4 Flash, Hy4 low-cost tier, $0.07 input, Haiku-parity claim (2026-11-16)
+- [[concepts/weightbench-llm-weight-space]] — WeightBench, evaluating LLMs as weight-space programmers, Opus 5.5 leads (2026-11-16)
+- [[concepts/openai-science-blog-gpt6-astra-lattice]] — OpenAI opens a science blog, GPT-6 Astra's Standard Model lattice-definition candidate (2026-11-15)
+- [[concepts/apple-health-ai-usage-study]] — Apple AI health usage study, measuring trust and behavior change in conversational health AI (2026-11-15)
+- [[concepts/us-chip-export-controls-ndaa]] — US Congress pushes tougher AI chip export controls, three bills eyed for NDAA inclusion (2026-11-15)
 
 ### Operations & observability
 - [[concepts/gen-ai-observability]] — OpenTelemetry GenAI and agent semantic conventions, traces, and standard instrumentation
@@ -362,7 +368,9 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[patterns/agent-mvp-stack-2026]] — solo MVP stack: 5 areas × 4 stages + decision tree (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — seven major anti-patterns in vibe coding and how to avoid them
 
-## Journal (72)
+## Journal (73)
+
+- [[journal/2026-11-16]] — Monday daily: Qwen4-Max · Hy4 Flash · WeightBench · OpenAI science blog · Apple health AI study · US Congress export-control push
 
 - [[journal/2026-11-15]] — Sunday daily: Blackwell fingerprints · Cursor security incident · Meituan LongCat-2.5 · Claude Projects · Antigravity /teamwork · llama.cpp 1.0
 

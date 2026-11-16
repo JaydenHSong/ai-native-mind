@@ -10,6 +10,7 @@ related:
   - "[[concepts/nvidia-cosmos-3-nano-open-models]]"
   - "[[concepts/amd-world-labs-physical-ai]]"
   - "[[concepts/anthropic-ipo-roadshow-valuation-cut]]"
+  - "[[concepts/us-chip-export-controls-ndaa]]"
 status: draft
 confidence: high
 ---
@@ -56,6 +57,7 @@ confidence: high
 - [[concepts/nvidia-cosmos-3-nano-open-models]] — NVIDIA Cosmos 3 Nano 오픈 웨이트, AI 인프라의 소프트웨어 축 (2026-11-07)
 - [[concepts/amd-world-labs-physical-ai]] — AMD의 World Labs 인수, AI 인프라 경쟁 축 (2026-09-30)
 - [[concepts/anthropic-ipo-roadshow-valuation-cut]] — Anthropic IPO, AI 기업 지배구조·시장 흐름 (2026-11-08)
+- [[concepts/us-chip-export-controls-ndaa]] — 미 의회 AI 칩 수출통제 강화 추진, NDAA 3개 법안 포함 전망·Huang 축출 후속 입법 (2026-11-15)
 
 ## 참고 소스
 

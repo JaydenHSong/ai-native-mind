@@ -238,6 +238,15 @@
         <div class="placeholder-icon"><i class="fa-solid fa-book-open"></i></div>
         <h3>지식 문서 읽기</h3>
         <p>왼쪽 목록, 지식 그래프, 혹은 캠페인 맵에서 문서를 선택하여 본문을 확인해 보세요.</p>
+
+        <!-- 0-2: 빈 읽기 패널 채우기 — 최근 문서 + 시작 안내 -->
+        <div class="placeholder-recent">
+          <h4 id="placeholder-recent-title">최근에 들어온 이야기</h4>
+          <ul id="placeholder-recent-list" class="placeholder-recent-list"></ul>
+        </div>
+        <div class="placeholder-start">
+          <a href="#patterns/llm-wiki" id="placeholder-start-link">처음 오셨나요? 챕터 0 튜토리얼부터 시작하기</a>
+        </div>
       </div>
 
       <!-- 실제 문서 렌더링 뷰 -->

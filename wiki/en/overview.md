@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-11-15
+updated: 2026-11-16
 sources: []
 status: active
 ---
@@ -29,10 +29,15 @@ This page is a **table of contents and learning map** for the wiki. The links be
 
 ## Current state
 
-- **Total pages**: 385
-- **Categories**: concepts(263), tools(16), patterns(30), journal(72), comparisons(11), meta(4)
+- **Total pages**: 392
+- **Categories**: concepts(269), tools(16), patterns(30), journal(73), comparisons(11), meta(4)
 - **Start date**: 2026-04-06
-- **Latest work (2026-11-15 daily ingest — evidence is the axis: weights speak about chips, traces about supply chains)**:
+- **Latest work (2026-11-16 daily ingest — price tags and fences: China lowers prices, Congress raises fences)**:
+  - 6 raw sources collected (the Qwen 2.4T parameter count is absent from QwenCloud docs, so it is treated as announcement/report-based; the Hy4 Flash performance claim rests only on Tencent's own blind test with no independent verification; the three export-control bills are an FT-reported inclusion prospect, not passed law, with the FT original reached only via Newsmax citation; whether Gmail AI newsletters arrived was not separately checked at the ko-ingest stage).
+  - 7 new: concepts/alibaba-qwen4-max (2.4T MoE flagship, DeepSWE 75.7 vendor figure, $1.50 input — high), concepts/tencent-hy4-flash (Hy4 low-cost tier, $0.07 input, Haiku parity from Tencent's own blind test — medium), concepts/weightbench-llm-weight-space (weight-space evaluation, Opus 5.5 leads at 0.535, GPT-6.1-sol narrowly ahead on the 38-task comparison — medium), concepts/openai-science-blog-gpt6-astra-lattice (science blog opens, Standard Model lattice-definition candidate, no peer review, Craig's "in-principle answer" — high), concepts/apple-health-ai-usage-study (measuring trust and behavior change in conversational health AI, US-only, 200,000 cap, study data not used for AI training — high), concepts/us-chip-export-controls-ndaa (three NDAA bills eyed for inclusion, OpenAI support, passage not confirmed — medium), journal/2026-11-16 (active).
+  - 1 reinforced: concepts/nvidia-huang-ousted-ceo (reciprocal link to us-chip-export-controls-ndaa added — follow-up legislative development, no contradiction).
+  - EN sync complete. 385→392 pages.
+- **Previous work (2026-11-15 daily ingest — evidence is the axis: weights speak about chips, traces about supply chains)**:
   - 6 raw sources collected (window 11/14 15:00 UTC ~ 11/15 15:00 UTC; zero Gmail AI newsletters — 28th straight day; the Blackwell fingerprint report was read in full from the original; the Cursor account is Cursor's own, while Fireworks' own bulletins do not mention Cursor; the Weil formalization has no published repository or paper, so the headline figures are Google's own account; LongCat's "trained without Nvidia" is the company's claim).
   - 7 new: concepts/blackwell-fingerprints-chinese-models (six Chinese frontier models carry Blackwell initialisation fingerprints, 49–1,385 sigma, about 12,000 GPUs and $500M+ estimated, location and legality unproven — high), concepts/cursor-security-incident-fireworks (Fireworks key leak, tampered Claude Code extension 2.1.312/2.1.313, about 11 hours, at most 5,000 users, Privacy Mode users safe — high), concepts/meituan-longcat-2-5 (1.6-trillion-parameter agent model, about 48B active per token, MIT weights, Terminal Bench 88.4 vendor-measured, self-hosting guide with 194 Huawei Ascend accelerators — high), concepts/anthropic-claude-code-projects (coordinator orchestrating parallel thread sessions, Pro/Max beta, cloud-only, usage limits reached faster — high), concepts/google-antigravity-teamwork (agent teams formalizing the Weil conjectures, about 1.8M lines of Lean, 28,800 subagent invocations, 99.5% of the Courtade–Kumar lines are generated certificate data — medium), concepts/llama-cpp-1-0 (llama.cpp and ggml v1.0.0, stable public API promise, 35 deprecated functions removed, FP8 KV caches, no speed figures — high), journal/2026-11-15 (active).
   - No reinforcements.

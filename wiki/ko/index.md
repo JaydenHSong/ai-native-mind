@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-11-15
-total_pages: 385
+updated: 2026-11-16
+total_pages: 392
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 전체 385개 페이지 | 최종 업데이트: 2026-11-15 (데일리 ingest: AI 뉴스 6건 수집 + 한/영 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
+> 전체 392개 페이지 | 최종 업데이트: 2026-11-16 (데일리 ingest: AI 뉴스 6건 수집 + 한/영 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
 
 ## 쉽게 읽기
 
@@ -26,7 +26,7 @@ status: active
 - **실전(Chapter 3~5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **엔드게임(Chapter 6~7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (263개)
+## Concepts (269개)
 
 ### 성장 맵 & 철학
 - [[concepts/ai-native-programmer]] — AI를 팀원으로 활용하여 1인이 팀 규모 결과를 내는 개발자, 성장 맵
@@ -170,6 +170,12 @@ status: active
 - [[concepts/anthropic-claude-code-projects]] — Anthropic Claude Projects 재설계, 코디네이터가 병렬 스레드 조율·Pro·Max 베타 (2026-11-14)
 - [[concepts/google-antigravity-teamwork]] — Google Antigravity /teamwork, 에이전트 팀의 Weil 추측 형식화·180만 줄 Lean (2026-11-13)
 - [[concepts/llama-cpp-1-0]] — llama.cpp·ggml v1.0.0, 로컬 AI 추론의 안정 공개 API 약속·3년 반 만의 1.0 (2026-11-13)
+- [[concepts/alibaba-qwen4-max]] — Alibaba Qwen4-Max 정식 출시, 2.4조 MoE 플래그십·DeepSWE 75.7점 주장·입력 $1.50 (2026-11-16)
+- [[concepts/tencent-hy4-flash]] — Tencent Hy4 Flash, Hy4 저가 티어·입력 $0.07·Haiku 대등 주장 (2026-11-16)
+- [[concepts/weightbench-llm-weight-space]] — WeightBench, LLM 가중치 공간 프로그래머 평가·Opus 5.5 선두 (2026-11-16)
+- [[concepts/openai-science-blog-gpt6-astra-lattice]] — OpenAI 과학 블로그 개설, GPT-6 Astra 표준모형 격자 정의 후보 (2026-11-15)
+- [[concepts/apple-health-ai-usage-study]] — Apple AI 건강 사용 연구, 대화형 건강 AI 신뢰·행동 변화 측정 (2026-11-15)
+- [[concepts/us-chip-export-controls-ndaa]] — 미 의회 AI 칩 수출통제 강화 추진, NDAA 3개 법안 포함 전망 (2026-11-15)
 
 ### 운영·관측
 - [[concepts/gen-ai-observability]] — OpenTelemetry GenAI·에이전트 시맨틱 컨벤션, 트레이스·표준 계측
@@ -362,7 +368,9 @@ status: active
 - [[patterns/agent-mvp-stack-2026]] — 1인 MVP 스택 5대 영역 × 4 단계 + 의사결정 트리 (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — Vibe Coding의 7대 안티패턴과 회피법
 
-## Journal (72개)
+## Journal (73개)
+
+- [[journal/2026-11-16]] — 월요 데일리: Qwen4-Max·Hy4 Flash·WeightBench·OpenAI 과학 블로그·Apple 건강 AI 연구·미 의회 수출통제 강화
 
 - [[journal/2026-11-15]] — 일요 데일리: Blackwell 지문·Cursor 보안 사고·Meituan LongCat-2.5·Claude Projects·Antigravity /teamwork·llama.cpp 1.0
 

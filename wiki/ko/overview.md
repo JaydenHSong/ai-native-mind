@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-11-15
+updated: 2026-11-16
 sources: []
 status: active
 ---
@@ -29,10 +29,15 @@ status: active
 
 ## 현재 상태
 
-- **총 페이지**: 385개
-- **카테고리**: concepts(263), tools(16), patterns(30), journal(72), comparisons(11), meta(4)
+- **총 페이지**: 392개
+- **카테고리**: concepts(269), tools(16), patterns(30), journal(73), comparisons(11), meta(4)
 - **시작일**: 2026-04-06
-- **최근 작업 (2026-11-15 데일리 ingest — 증거가 축이다: 가중치는 칩을, 트레이스는 공급망을 말한다)**:
+- **최근 작업 (2026-11-16 데일리 ingest — 가격표와 울타리: 중국은 가격을 낮추고, 의회는 울타리를 높인다)**:
+  - raw 6건 수집 (Qwen 2.4조 파라미터 수는 QwenCloud 문서에 없어 발표·보도 기준으로 처리; Hy4 Flash 성능 주장은 Tencent 자체 블라인드 테스트에만 기대어 독립 검증 없음; 수출통제 3개 법안은 통과 확정이 아니라 FT 보도 기준 포함 전망, FT 원문은 Newsmax 인용 경유; Gmail AI 뉴스레터 수신 여부는 ko-ingest 단계에서 별도 확인하지 않음).
+  - 신규 7개: concepts/alibaba-qwen4-max (2.4조 MoE 플래그십·DeepSWE 75.7점 자체 수치·입력 $1.50 — high), concepts/tencent-hy4-flash (Hy4 저가 티어·입력 $0.07·Haiku 대등은 자체 블라인드 테스트 — medium), concepts/weightbench-llm-weight-space (가중치 공간 평가·Opus 5.5 0.535 선두·GPT-6.1-sol 38태스크 비교 근소 우위 — medium), concepts/openai-science-blog-gpt6-astra-lattice (과학 블로그 개설·표준모형 격자 정의 후보·동료심사 없음·Craig "원칙상의 답" — high), concepts/apple-health-ai-usage-study (대화형 건강 AI 신뢰·행동 변화 측정·미국 한정·200,000명 상한·연구 데이터 AI 학습 미사용 — high), concepts/us-chip-export-controls-ndaa (NDAA 3개 법안 포함 전망·OpenAI 지지·통과 미확정 — medium), journal/2026-11-16 (active).
+  - 보강: concepts/nvidia-huang-ousted-ceo에 us-chip-export-controls-ndaa 상호 링크 추가 (후속 입법 전개, 모순 없음).
+  - 한/영 동기화: en은 별도 worker 담당 (ko 단계 미수행). 총 385→392페이지.
+- **직전 작업 (2026-11-15 데일리 ingest — 증거가 축이다: 가중치는 칩을, 트레이스는 공급망을 말한다)**:
   - raw 6건 수집 (수집 윈도우 11/14 15:00 UTC ~ 11/15 15:00 UTC; Gmail AI 뉴스레터 0건 — 28일 연속; Blackwell 지문 보고서는 원문 전문 정독; Cursor 경위는 Cursor 자체 발표이나 Fireworks 자체 공지에는 Cursor 언급 없음; Weil 형식화는 공개 저장소·논문이 없어 Google 자체 설명으로 처리; LongCat의 "Nvidia 없이 학습"은 회사 주장으로 처리).
   - 신규 7개: concepts/blackwell-fingerprints-chinese-models (중국 프론티어 모델 6종 Blackwell 초기화 지문·49~1,385 시그마·약 12,000개 GPU·5억 달러 이상 추산·위치·법 위반 미입증 — high), concepts/cursor-security-incident-fireworks (Fireworks 키 유출·변조된 Claude Code 확장 2.1.312·2.1.313·약 11시간·최대 5,000명·Privacy Mode 사용자 무사 — high), concepts/meituan-longcat-2-5 (1.6조 파라미터 에이전트 모델·토큰당 약 480억 개 활성화·MIT 가중치·Terminal Bench 88.4점 자체 측정·자가 호스팅 가이드 Huawei Ascend 194개 — high), concepts/anthropic-claude-code-projects (코디네이터가 병렬 스레드 조율·Pro·Max 베타·클라우드 한정·사용량 한도 조기 도달 — high), concepts/google-antigravity-teamwork (에이전트 팀의 Weil 추측 형식화·약 180만 줄 Lean·서브에이전트 호출 28,800회·Courtade–Kumar 5,000만 줄 중 99.5%는 생성 인증서 데이터 — medium), concepts/llama-cpp-1-0 (llama.cpp·ggml v1.0.0·안정 공개 API 약속·deprecated 35개 제거·FP8 KV 캐시·속도 수치 없음 — high), journal/2026-11-15 (active).
   - 보강 없음.

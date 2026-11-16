@@ -10,6 +10,7 @@ related:
   - "[[concepts/nvidia-cosmos-3-nano-open-models]]"
   - "[[concepts/amd-world-labs-physical-ai]]"
   - "[[concepts/anthropic-ipo-roadshow-valuation-cut]]"
+  - "[[concepts/us-chip-export-controls-ndaa]]"
 status: draft
 confidence: high
 ---
@@ -57,6 +58,7 @@ On 2026-11-12, NVIDIA founder and CEO Jensen Huang (63) resigned after two extra
 - [[concepts/nvidia-cosmos-3-nano-open-models]] — NVIDIA Cosmos 3 Nano open weights, the software side of AI infrastructure (2026-11-07)
 - [[concepts/amd-world-labs-physical-ai]] — AMD's $8.2B World Labs acquisition, the competitive axis in AI infrastructure (2026-09-30)
 - [[concepts/anthropic-ipo-roadshow-valuation-cut]] — Anthropic IPO, AI-company governance and market flows (2026-11-08)
+- [[concepts/us-chip-export-controls-ndaa]] — US Congress pushes tougher AI chip export controls, three bills eyed for NDAA inclusion — the legislative follow-up to Huang's ouster (2026-11-15)
 
 ## Sources
 

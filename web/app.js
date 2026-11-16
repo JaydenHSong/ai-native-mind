@@ -31,7 +31,9 @@ const i18n = {
     fallbackNotice: "영어 번역 준비 중 - 국문 본문 제공",
     noResults: "검색 결과가 없습니다.",
     relatedDocs: "연관 지식 링크",
-    originalSources: "참고 및 출처 소스"
+    originalSources: "참고 및 출처 소스",
+    recentTitle: "최근에 들어온 이야기",
+    startHere: "처음 오셨나요? 챕터 0 튜토리얼부터 시작하기"
   },
   en: {
     quickStats: "pages loaded",
@@ -48,7 +50,9 @@ const i18n = {
     fallbackNotice: "Translation in progress. Showing Korean version.",
     noResults: "No results found.",
     relatedDocs: "Related Knowledge Links",
-    originalSources: "Sources & References"
+    originalSources: "Sources & References",
+    recentTitle: "Recently added stories",
+    startHere: "New here? Start with the Chapter 0 tutorial"
   }
 };
 
@@ -185,6 +189,7 @@ function initLanguage() {
     filterWiki();
     renderLibraryIndex();
     renderCampaignMap();
+    renderHomePlaceholder();
     
     // 물리 그래프 재생성 (이미 초기화된 경우만 — 3단계 지연 초기화)
     if (graphSimulation) initGraph();
@@ -291,6 +296,7 @@ async function fetchWikiData() {
     filterWiki();
     renderLibraryIndex();
     renderCampaignMap();
+    renderHomePlaceholder();
     // 그래프는 탭을 처음 열 때 지연 초기화한다 (3단계)
     
     // 해시 라우팅 처리
@@ -351,6 +357,29 @@ function ensureSearchCorpus() {
     }
   })();
   return searchCorpusPromise;
+}
+
+// 0-2: 문서 미선택 시 빈 읽기 패널에 최근 문서 목록을 채운다
+function renderHomePlaceholder() {
+  const t = i18n[currentLanguage];
+  const titleElement = document.getElementById("placeholder-recent-title");
+  if (titleElement) titleElement.textContent = t.recentTitle;
+  const startLink = document.getElementById("placeholder-start-link");
+  if (startLink) startLink.textContent = t.startHere;
+  const listElement = document.getElementById("placeholder-recent-list");
+  if (!listElement) return;
+  // 메타 문서(캠페인 맵·인덱스·로그 등)는 매일 갱신돼 목록을 차지하므로 제외
+  const recent = wikiData
+    .filter(d => d.lang === currentLanguage && d.category !== "meta")
+    .sort((a, b) => (b.updated || b.created || "").localeCompare(a.updated || a.created || ""))
+    .slice(0, 5);
+  listElement.innerHTML = recent.map(doc => `
+    <li>
+      <a href="#${doc.id}">
+        <span class="ph-recent-title">${doc.title}</span>
+        <span class="ph-recent-date">${doc.updated || doc.created || ""}</span>
+      </a>
+    </li>`).join("");
 }
 
 // 왼쪽 문서 사이드바 리스트 렌더링

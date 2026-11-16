@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-11-15
+updated: 2026-11-16
 sources: []
 status: active
 ---
@@ -31,6 +31,18 @@ status: active
   - `2026-11-15-llama-cpp-1-0.md` — llama.cpp·ggml v1.0.0 출시 (11-13; Unite.AI 경유): 3년 반 만의 첫 1.0. 핵심은 속도보다 약속 — 앞으로 공개 C API를 깨는 변경은 메이저 버전 상승과 함께만. 35개 deprecated 공개 함수 제거, NextN 추측 디코딩 API를 메인 공개 헤더로 승격, FP8 KV 캐시 추가(Qwen2.5-7B 기준 32,768 토큰 KV 페이로드 1,792→896 MiB 계산치), 호스트 메모리 MoE 전문가 캐시, llama-server SSRF·DNS 리바인딩 방어 강화. 150개 이상 모델 아키텍처 지원, GitHub 스타 약 135,000개, MIT 라이선스. 단 전후 속도 측정 수치 없음.
 - **Ingest** (wiki/ko, 개념 6건 신규 + 저널 1건): blackwell-fingerprints-chinese-models, cursor-security-incident-fireworks, meituan-longcat-2-5, anthropic-claude-code-projects, google-antigravity-teamwork, llama-cpp-1-0 신규; journal/2026-11-15. 모순 플래그 없음. 제외: Anthropic 안전 평가 설계 권고 10건(11-13, 슬롯 한계), Gemini 4 Carbon MathArena 1위(11-14, 기존 Carbon 페이지 보강 후보·슬롯 한계), NVIDIA GPU 인위적 부족 WSJ 보도(11-14, 시장 소식·단일 출처·슬롯 한계), Agentic AI Foundation 프로젝트 4건 추가(거버넌스 발표·슬롯 한계), NiCE Cognigy 차세대(11-12, 벤더 보도자료·슬롯 한계), Amazon AI 쇼핑 에이전트 견제 계획(Reuters, Google Alert 스니펫만 확인·슬롯 한계), Claude Meetings(anthropic-claude-workplace-tools 페이지에 이미 포함), DeepSeek 검색 API 가격(전일 DeepSeek API 페이지에 포함), Gmail AI 뉴스레터는 최근 24시간 신규 수신 없음(hoon.iccorp·jsong@spigen.com 양 계정 확인 — 28일 연속).
 - **EN sync**: en 개념 6건 신규 + 저널 1건 미러, en index/log/overview/campaign-map 동기화. 번역 공백 0건.
+
+## [2026-11-16] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + 한/영 위키 정제
+
+- **Raw collected** (raw/articles/, 6건 — 일일 최대치):
+  - `2026-11-16-alibaba-qwen4-max.md` — Alibaba Qwen4-Max 정식 출시 (11-16; CellCog): 스파스 MoE 총 2.4조 파라미터(토큰당 활성 71B), 네이티브 비전, 1M 컨텍스트. 입력 $1.50 / 출력 $4.50 per 1M 토큰, 전작 Qwen3.8-Max 대비 약 25% 인하. DeepSWE v1.1 75.7점(Claude Opus 5.5 74.2, Kimi K3.1 75.5 앞섬)은 Alibaba 자체 수치·독립 검증 없음. 플래그십은 API 전용·가중치 비공개. 단 파라미터 수 2.4조는 Qwen 공식 발표·보도 기준이며 QwenCloud 문서에는 파라미터 수가 기재돼 있지 않다.
+  - `2026-11-16-tencent-hy4-flash.md` — Tencent Hy4 Flash 출시 (11-16; CASRAI): 11-4 출시 Hy4의 저가 티어. 총 224B 파라미터, 토큰당 12B 활성화, 1M 컨텍스트, 네이티브 멀티모달. 입력 $0.070 / 출력 $0.281 per 1M 토큰으로 Qwen4-Max 입력가의 약 1/21. Tencent 자체 블라인드 테스트(85명, 259개 과제) 만족도 2.79/4점으로 Claude Haiku 5.5(2.81)와 대등하다는 주장이나 독립 검증·모델 카드·벤치마크 원본 없음. 가중치 미공개, 오픈소스 예정(날짜·라이선스 없음).
+  - `2026-11-16-weightbench-llm-weight-space.md` — WeightBench 벤치마크 (11-16; arXiv 2611.18553): LLM이 신경망 가중치를 직접 읽고·고치고·쓰는 능력을 평가. 42개 태스크, 5개 트랙. 전체 매크로 스코어 Claude Opus 5.5 0.535 선두, Sonnet 5.5 0.466, Haiku 5.5 0.402, DeepSeek v4-flash 0.215. 38개 태스크 직접 비교에서는 GPT-6.1-sol 0.568 vs Opus 5.5 0.546. 코드 공개.
+  - `2026-11-16-openai-science-blog-gpt6-astra-lattice.md` — OpenAI 과학 블로그 개설 (11-15; OpenAI): 첫 게스트 글은 UCSB Nathaniel Craig. GPT-6 Astra와 함께 표준모형의 비섭동 격자 정의 후보 도출. 바탕 논문은 10-6 arXiv 프리프린트(본문 60쪽 + 수학 companion 63쪽 + Lean 형식화). 격자장 이론가 3명 비공개 검토했으나 동료심사 아님. Craig 본인 "원칙상의 답이지 실용적 답은 아니다". GPT-6 Astra는 논문 저자가 아니라 증명의 협력자.
+  - `2026-11-16-apple-health-ai-usage-study.md` — Apple AI 건강 사용 연구 출범 (11-15; Apple Newsroom): 미국 한정 가상 연구 + 전용 iPhone 앱, OpenEvidence 협업, 참여 기간 최대 12개월. 측정 대상은 대화형 건강 AI의 신뢰·이해·일상 행동 변화, 진단·치료 목적 아님 명시. 등록 상한 200,000명, 만 21세 이상 미국 거주자, iPhone 15 Pro 이후 + iOS 26 이상. 연구 데이터는 AI 학습에 미사용 명시.
+  - `2026-11-16-us-chip-export-controls-ndaa.md` — 미 의회 AI 칩 수출통제 강화 추진 (11-15; Newsmax 경유 FT 보도): AI OVERWATCH·Chip Security·MATCH 3개 법안이 연말 NDAA 최종안에 포함될 가능성. 상원 NDAA안에 이미 포함, 하원 외교위는 Chip Security Act 만장일치(42-0) 통과, 초당적 공동발의 56명. 배경은 Huang 축출(11-12)과 Megaspeed 밀수 의혹, OpenAI 11-12 공개 지지. 단 법안 통과 확정 아님, FT 원문은 직접 확인하지 못해 Newsmax 인용에 의존.
+- **Ingest** (wiki/ko, 개념 6건 신규 + 저널 1건): alibaba-qwen4-max (high), tencent-hy4-flash (medium), weightbench-llm-weight-space (medium), openai-science-blog-gpt6-astra-lattice (high), apple-health-ai-usage-study (high), us-chip-export-controls-ndaa (medium) 신규; journal/2026-11-16. 모순 플래그 없음. 수출통제 페이지는 nvidia-huang-ousted-ceo의 후속 입법 전개로, 기존 페이지와 모순 없음 — nvidia-huang-ousted-ceo에 상호 링크 추가. Gmail AI 뉴스레터 수신 여부는 본 ko-ingest 단계에서 별도 확인하지 않음(수집 단계 기록 참조).
+- **EN sync**: 별도 en worker 담당 (ko 단계에서는 미수행).
 
 ## [2026-11-14] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + 한/영 위키 정제
 

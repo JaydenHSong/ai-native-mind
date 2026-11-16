@@ -3,7 +3,7 @@ title: "Campaign Map"
 category: meta
 tags: [map, campaign, navigation]
 created: 2026-04-12
-updated: 2026-11-15
+updated: 2026-11-16
 sources:
  - "wiki/overview.md"
  - "wiki/index.md"
@@ -138,4 +138,5 @@ confidence: high
 - 2026-11-13: 데일리 ingest — [[concepts/gemini-4-hydrogen]]·[[concepts/openai-daybreak-red-team-defense-factory]]·[[concepts/anthropic-self-hosted-claude-managed-agents]]·[[concepts/anthropic-anvil-automated-red-teaming]]·[[concepts/spacex-74b-ai-supercomputing-campuses]]·[[concepts/nonprofits-sue-freeze-frontier-ai]] 신규, 보강 없음, 총 372페이지.
 - 2026-11-14: 데일리 ingest — [[concepts/sierra-poppy-1-0]]·[[concepts/openai-chatgpt-wallet]]·[[concepts/fbi-artex-ai-agents]]·[[concepts/deepseek-api-app-toolkit-flash]]·[[concepts/openai-disbands-robotics-team]]·[[concepts/cloudflare-kitesurf-open-source]] 신규, 보강 없음, 총 378페이지.
 - 2026-11-15: 데일리 ingest — [[concepts/blackwell-fingerprints-chinese-models]]·[[concepts/cursor-security-incident-fireworks]]·[[concepts/meituan-longcat-2-5]]·[[concepts/anthropic-claude-code-projects]]·[[concepts/google-antigravity-teamwork]]·[[concepts/llama-cpp-1-0]] 신규, 보강 없음, 총 385페이지.
+- 2026-11-16: 데일리 ingest — [[concepts/alibaba-qwen4-max]]·[[concepts/tencent-hy4-flash]]·[[concepts/weightbench-llm-weight-space]]·[[concepts/openai-science-blog-gpt6-astra-lattice]]·[[concepts/apple-health-ai-usage-study]]·[[concepts/us-chip-export-controls-ndaa]] 신규, [[concepts/nvidia-huang-ousted-ceo]] 상호 링크 보강, 총 392페이지.
 
