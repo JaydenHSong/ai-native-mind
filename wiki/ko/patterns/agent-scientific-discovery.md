@@ -3,7 +3,7 @@ title: "Agent Scientific Discovery"
 category: patterns
 tags: [agentic-research, scientific-discovery, evaluation, anthropic, claude, claims, openai, math-discovery, agmai, verification-asymmetry]
 created: 2026-09-25
-updated: 2026-10-17
+updated: 2026-11-17
 sources:
   - "raw/articles/2026-09-25-anthropic-claude-crispr-art-enzyme.md"
   - "raw/articles/2026-09-26-stanford-paper2agent.md"
@@ -17,6 +17,8 @@ related:
   - "[[concepts/mcp]]"
   - "[[concepts/claude-art-discovery-controversy]]"
   - "[[concepts/claude-quantum-circuit-discovery]]"
+  - "[[concepts/nvidia-nemotron-for-science]]"
+  - "[[concepts/cerebras-tungsten-wafer-scale-code]]"
 status: draft
 confidence: medium
 ---
@@ -133,6 +135,8 @@ ART 발견(적용 사례 1)이 "있었다/없었다"의 질적 발견이라면, 
 
 - [[concepts/llm-evaluation|LLM Evaluation]] — "AI discovers X" 주장에 대한 평가 프레임 (주장 강도 단계별 검증)
 - [[concepts/harness-engineering|Harness Engineering]] — 950개 에이전트의 탐색을 지휘한 하네스 자체가 핵심 인프라
+- [[concepts/nvidia-nemotron-for-science]] — SC26 오픈 화학 에이전트 툴킷, 모델·LitmusBench·포스트트레이닝 레시피 한 묶음 (2026-11-16)
+- [[concepts/cerebras-tungsten-wafer-scale-code]] — 연구원 1명 + 코딩 에이전트 1명이 쓴 웨이퍼 스케일 PIC 시뮬레이션, XOOPIC 대조 검증 (2026-11-16)
 
 ## 참고 소스
 

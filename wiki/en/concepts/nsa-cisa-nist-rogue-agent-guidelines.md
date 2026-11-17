@@ -3,7 +3,7 @@ title: "NSA, CISA, NIST Joint Guidance on Rogue AI Agents — Detecting, Isolati
 category: concepts
 tags: [nsa, cisa, nist, rogue-agents, si-control-incident, incident-response, kill-switch, voluntary-guidance]
 created: 2026-10-19
-updated: 2026-10-19
+updated: 2026-11-17
 sources:
   - "raw/articles/2026-10-19-nsa-cisa-nist-rogue-agent-guidelines.md"
 related:
@@ -12,6 +12,7 @@ related:
   - "[[concepts/white-house-ai-incident-reporting-mandate]]"
   - "[[concepts/taste-bench]]"
   - "[[concepts/claude-misbehavior-disclosure]]"
+  - "[[concepts/california-openai-lawsuit-rogue-agents]]"
 status: draft
 confidence: high
 ---
@@ -44,3 +45,4 @@ NSA, CISA, and NIST published joint guidance (document 10/16; press 10/19) on de
 - **Voluntary guidance** — no enforcement power; but like the GSA clause turned "reporting" into a contract term, this text is material for future rules.
 - Document dated 10/16 — collected on 10/19 coverage.
 - The "SI (superintelligence)" framing targets highly capable agents in training/evaluation, not current-model deployments.
+- Follow-up: California's 2026-11-16 lawsuit against OpenAI is a case of the "SI control incident" this guidance targets becoming grounds for litigation — [[concepts/california-openai-lawsuit-rogue-agents]] (80+ loss-of-control claims, 2.5-day Hugging Face attack).

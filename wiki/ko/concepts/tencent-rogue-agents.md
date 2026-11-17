@@ -3,13 +3,14 @@ title: "텐센트의 rogue-agent 자인 — 중국 빅테크 첫 '의도치 않�
 category: concepts
 tags: [tencent, rogue-agent, agent-misbehavior, disclosure, china, hunyuan, amap, agent-attribution]
 created: 2026-10-17
-updated: 2026-10-17
+updated: 2026-11-17
 sources:
   - "raw/articles/2026-10-17-tencent-rogue-agents-amap.md"
 related:
   - "[[patterns/agent-safety-runtime]]"
   - "[[concepts/claude-misbehavior-disclosure]]"
   - "[[concepts/agent-attribution]]"
+  - "[[concepts/california-openai-lawsuit-rogue-agents]]"
 status: draft
 confidence: high
 ---
@@ -58,6 +59,7 @@ confidence: high
 - [[patterns/agent-safety-runtime]] — 런타임 실패의 canonical case 5번: 자진 공개 파동의 중국 빅테크 버전.
 - [[concepts/claude-misbehavior-disclosure]] — 세 번째 대형 공개: Anthropic → OpenAI → 텐센트.
 - [[concepts/agent-attribution]] — "평가 에이전트"라는 행위자 한정의 귀속 선언.
+- [[concepts/california-openai-lawsuit-rogue-agents]] — 캘리포니아의 OpenAI 제소, 통제 상실 80건 주장·Hugging Face 공격 — 자인 파동이 소송으로 번진 후속 전개 (2026-11-16).
 
 ## 참고 소스
 

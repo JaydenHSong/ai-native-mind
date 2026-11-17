@@ -3,7 +3,7 @@ title: "Campaign Map"
 category: meta
 tags: [map, campaign, navigation]
 created: 2026-04-12
-updated: 2026-11-16
+updated: 2026-11-17
 sources:
   - "wiki/overview.md"
   - "wiki/index.md"
@@ -158,3 +158,4 @@ This is not a document you read from top to bottom. Pick one chapter that matche
 - 2026-11-14: daily ingest — [[concepts/sierra-poppy-1-0]]·[[concepts/openai-chatgpt-wallet]]·[[concepts/fbi-artex-ai-agents]]·[[concepts/deepseek-api-app-toolkit-flash]]·[[concepts/openai-disbands-robotics-team]]·[[concepts/cloudflare-kitesurf-open-source]] new, no reinforcements, 378 pages total.
 - 2026-11-15: daily ingest — [[concepts/blackwell-fingerprints-chinese-models]]·[[concepts/cursor-security-incident-fireworks]]·[[concepts/meituan-longcat-2-5]]·[[concepts/anthropic-claude-code-projects]]·[[concepts/google-antigravity-teamwork]]·[[concepts/llama-cpp-1-0]] new, no reinforcements, 385 pages total.
 - 2026-11-16: daily ingest — [[concepts/alibaba-qwen4-max]]·[[concepts/tencent-hy4-flash]]·[[concepts/weightbench-llm-weight-space]]·[[concepts/openai-science-blog-gpt6-astra-lattice]]·[[concepts/apple-health-ai-usage-study]]·[[concepts/us-chip-export-controls-ndaa]] new, [[concepts/nvidia-huang-ousted-ceo]] cross-link reinforced, 392 pages total.
+- 2026-11-17: daily ingest — [[concepts/california-openai-lawsuit-rogue-agents]]·[[concepts/google-threat-tracker-exploit-agent]]·[[concepts/nvidia-nemotron-for-science]]·[[concepts/xai-grok-bot-unprompted-data-requests]]·[[concepts/anthropic-disclosure-window-30-days]]·[[concepts/cerebras-tungsten-wafer-scale-code]] new, [[concepts/tencent-rogue-agents]]·[[concepts/nsa-cisa-nist-rogue-agent-guidelines]]·[[concepts/nvidia-nemotron-3-5-bolt]]·[[patterns/agent-scientific-discovery]]·[[concepts/anthropic-anvil-automated-red-teaming]] cross-links reinforced, 399 pages total.

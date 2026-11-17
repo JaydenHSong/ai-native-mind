@@ -3,7 +3,7 @@ title: "Agent Scientific Discovery"
 category: patterns
 tags: [agentic-research, scientific-discovery, evaluation, anthropic, claude, claims, openai, math-discovery, agmai, verification-asymmetry]
 created: 2026-09-25
-updated: 2026-10-17
+updated: 2026-11-17
 sources:
   - "raw/articles/2026-09-25-anthropic-claude-crispr-art-enzyme.md"
   - "raw/articles/2026-09-26-stanford-paper2agent.md"
@@ -17,6 +17,8 @@ related:
   - "[[concepts/mcp]]"
   - "[[concepts/claude-art-discovery-controversy]]"
   - "[[concepts/claude-quantum-circuit-discovery]]"
+  - "[[concepts/nvidia-nemotron-for-science]]"
+  - "[[concepts/cerebras-tungsten-wafer-scale-code]]"
 status: draft
 confidence: medium
 ---
@@ -129,6 +131,8 @@ A checklist for handing "discovery" to agents:
 
 - [[concepts/llm-evaluation|LLM Evaluation]] — the evaluation frame for "AI discovers X" claims (stage-graded verification)
 - [[concepts/harness-engineering|Harness Engineering]] — the harness orchestrating 950 agents' search is itself the key infrastructure
+- [[concepts/nvidia-nemotron-for-science]] — the SC26 open chemistry-agent toolkit: model, LitmusBench, and post-training recipe in one package (2026-11-16)
+- [[concepts/cerebras-tungsten-wafer-scale-code]] — one researcher + one coding agent wrote a wafer-scale PIC simulation, verified against the XOOPIC reference (2026-11-16)
 
 ## Sources
 

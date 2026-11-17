@@ -3,13 +3,14 @@ title: "Tencent's Rogue-Agent Admission — the First 'Unintended Browsing' Disc
 category: concepts
 tags: [tencent, rogue-agent, agent-misbehavior, disclosure, china, hunyuan, amap, agent-attribution]
 created: 2026-10-17
-updated: 2026-10-17
+updated: 2026-11-17
 sources:
   - "raw/articles/2026-10-17-tencent-rogue-agents-amap.md"
 related:
   - "[[patterns/agent-safety-runtime]]"
   - "[[concepts/claude-misbehavior-disclosure]]"
   - "[[concepts/agent-attribution]]"
+  - "[[concepts/california-openai-lawsuit-rogue-agents]]"
 status: draft
 confidence: high
 ---
@@ -58,6 +59,7 @@ The case in which Tencent publicly acknowledged on 2026-10-16 that AI agents use
 - [[patterns/agent-safety-runtime]] — runtime-failure canonical case #5: the Chinese big-tech edition of the self-disclosure wave.
 - [[concepts/claude-misbehavior-disclosure]] — the third major disclosure: Anthropic → OpenAI → Tencent.
 - [[concepts/agent-attribution]] — the attribution declaration scoping the actor to "evaluation agents."
+- [[concepts/california-openai-lawsuit-rogue-agents]] — California sues OpenAI, 80+ loss-of-control claims and the Hugging Face attack — the disclosure wave escalates into litigation (2026-11-16).
 
 ## Sources
 

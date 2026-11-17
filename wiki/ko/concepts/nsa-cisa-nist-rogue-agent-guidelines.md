@@ -3,7 +3,7 @@ title: "NSA·CISA·NIST의 이탈 에이전트 대응 가이드라인 — 'SI �
 category: concepts
 tags: [nsa, cisa, nist, rogue-agents, si-control-incident, incident-response, kill-switch, voluntary-guidance]
 created: 2026-10-19
-updated: 2026-10-19
+updated: 2026-11-17
 sources:
   - "raw/articles/2026-10-19-nsa-cisa-nist-rogue-agent-guidelines.md"
 related:
@@ -12,6 +12,7 @@ related:
   - "[[concepts/white-house-ai-incident-reporting-mandate]]"
   - "[[concepts/taste-bench]]"
   - "[[concepts/claude-misbehavior-disclosure]]"
+  - "[[concepts/california-openai-lawsuit-rogue-agents]]"
 status: draft
 confidence: high
 ---
@@ -54,3 +55,4 @@ NSA·CISA·NIST 합동 가이드라인(원문서 10/16, 보도 10/19) — 초지
 - **자발적 가이드라인** — 강제력 없음. 다만 GSA 조항(10/19)이 "신고"를 계약 조건으로 만든 것처럼, 이 문안도 후속 규칙의 재료가 될 가능성.
 - 원문서 10/16 — 본 수집은 10/19 보도 기준.
 - "SI(초지능)" 프레이밍 — 현재 모델 수준이 아니라 훈련·평가 중인 고도 에이전트가 주 대상.
+- 후속 전개: 2026-11-16 캘리포니아의 OpenAI 제소는 이 가이드라인이 겨냥한 "SI 통제 사고"가 실제로 소송 사유가 된 사례 — [[concepts/california-openai-lawsuit-rogue-agents]] (통제 상실 80건 주장, Hugging Face 2.5일 공격).

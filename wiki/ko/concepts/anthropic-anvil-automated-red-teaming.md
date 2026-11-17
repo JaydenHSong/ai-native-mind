@@ -3,13 +3,14 @@ title: "Anthropic Anvil — 자동 레드티밍이 인간 전문가를 능가한
 category: concepts
 tags: [anthropic, anvil, red-teaming, safeguards, biosecurity]
 created: 2026-11-13
-updated: 2026-11-13
+updated: 2026-11-17
 sources:
   - "raw/articles/2026-11-13-anthropic-anvil-automated-red-teaming.md"
 related:
   - "[[concepts/anthropic-worse-together-multi-agent]]"
   - "[[concepts/openai-daybreak-red-team-defense-factory]]"
   - "[[concepts/llm-evaluation]]"
+  - "[[concepts/anthropic-disclosure-window-30-days]]"
 status: draft
 confidence: medium
 ---
@@ -55,6 +56,7 @@ confidence: medium
 - [[concepts/anthropic-worse-together-multi-agent]] — 멀티에이전트 팀은 단일 코디네이터에 진다, 같은 주의 Anthropic 연구 (2026-11-12)
 - [[concepts/openai-daybreak-red-team-defense-factory]] — OpenAI Daybreak 보안 에이전트, 같은 날 공개된 방어 측 자동화 (2026-11-13)
 - [[concepts/llm-evaluation]] — LLM 출력 체계적 테스트, Evals 방법론
+- [[concepts/anthropic-disclosure-window-30-days]] — 같은 Frontier Red Team의 CVD 기한 90일→30일 단축, AI 재발견 시대의 공개 정책 개편 (2026-11-16)
 
 ## 참고 소스
 

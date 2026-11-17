@@ -3,13 +3,14 @@ title: "Anthropic Anvil — Automated Red-Teaming Beats Human Experts (Nov 12)"
 category: concepts
 tags: [anthropic, anvil, red-teaming, safeguards, biosecurity]
 created: 2026-11-13
-updated: 2026-11-13
+updated: 2026-11-17
 sources:
   - "raw/articles/2026-11-13-anthropic-anvil-automated-red-teaming.md"
 related:
   - "[[concepts/anthropic-worse-together-multi-agent]]"
   - "[[concepts/openai-daybreak-red-team-defense-factory]]"
   - "[[concepts/llm-evaluation]]"
+  - "[[concepts/anthropic-disclosure-window-30-days]]"
 status: draft
 confidence: medium
 ---
@@ -56,6 +57,7 @@ On 2026-11-12, Anthropic unveiled Anvil, an automated red-teaming system, on its
 - [[concepts/anthropic-worse-together-multi-agent]] — Multi-agent teams lose to a single coordinator, Anthropic research from the same week (2026-11-12)
 - [[concepts/openai-daybreak-red-team-defense-factory]] — OpenAI Daybreak security agents, defence-side automation announced the same day (2026-11-13)
 - [[concepts/llm-evaluation]] — Systematic testing of LLM outputs, the evals methodology
+- [[concepts/anthropic-disclosure-window-30-days]] — the same Frontier Red Team's CVD window cut from 90 to 30 days, disclosure policy for the AI-rediscovery era (2026-11-16)
 
 ## Sources
 

@@ -3,12 +3,13 @@ title: "NVIDIA Nemotron 3.5 Bolt — RTX Spark용 오픈웨이트 에이전틱 �
 category: concepts
 tags: [nvidia, nemotron, bolt, open-weights, agentic-ai, rtx-spark, edge-ai, quantization, mcp, pair]
 created: 2026-10-14
-updated: 2026-10-14
+updated: 2026-11-17
 sources:
   - "raw/articles/2026-10-14-nvidia-nemotron-3-5-bolt-rtx-spark.md"
 related:
   - "[[comparisons/frontier-lab-economics]]"
   - "[[patterns/agent-safety-runtime]]"
+  - "[[concepts/nvidia-nemotron-for-science]]"
 status: draft
 confidence: medium
 ---
@@ -65,6 +66,7 @@ NVIDIA가 2026-10-13 발표한 에이전틱 AI 전용 오픈웨이트 모델 **N
 
 - [[comparisons/frontier-lab-economics]] — 오픈웨이트의 유통 장악 + 하드웨어 수직 통합의 서구 버전
 - [[patterns/agent-safety-runtime]] — 오픈 에이전틱 모델의 엣지 확산이 넓히는 강제 대상
+- [[concepts/nvidia-nemotron-for-science]] — Nemotron for Science, SC26 오픈 화학 에이전트 툴킷 — 같은 Nemotron 계열의 과학 에이전트 갈래 (2026-11-16)
 
 ## 참고 소스
 

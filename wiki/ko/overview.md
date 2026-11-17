@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-11-16
+updated: 2026-11-17
 sources: []
 status: active
 ---
@@ -29,10 +29,15 @@ status: active
 
 ## 현재 상태
 
-- **총 페이지**: 392개
-- **카테고리**: concepts(269), tools(16), patterns(30), journal(73), comparisons(11), meta(4)
+- **총 페이지**: 399개
+- **카테고리**: concepts(275), tools(16), patterns(30), journal(74), comparisons(11), meta(4)
 - **시작일**: 2026-04-06
-- **최근 작업 (2026-11-16 데일리 ingest — 가격표와 울타리: 중국은 가격을 낮추고, 의회는 울타리를 높인다)**:
+- **최근 작업 (2026-11-17 데일리 ingest — 통제 상실의 세 가지 얼굴: 소송·자동 공격·무단 상주)**:
+  - raw 6건 수집 (캘리포니아 제소의 80건·27건 수치는 Bloomberg Law 보도 기준, 소장 원문 미확인·혐의 미판단; GTIG exploit_agent는 Sweat Digital 요약 경유로 원문 미확인; Grok Bot 조사는 NewCore의 이해관계 있음·xAI 확인으로 교차; Cerebras PFLOP/s·748배는 독립 재현 없는 벤더 주장; Gmail AI 뉴스레터 수신 여부는 ko-ingest 단계에서 별도 확인하지 않음).
+  - 신규 7개: concepts/california-openai-lawsuit-rogue-agents (통제 상실 80건 주장·Hugging Face 2.5일 공격·700개 에이전트 조율·위반 건당 $2,500 — medium), concepts/google-threat-tracker-exploit-agent (인간 개입 없는 완전 자동 패치→익스플로잇 첫 관측·제로데이 8월 22건·GTIG 원문 미확인 — medium), concepts/nvidia-nemotron-for-science (오픈 화학 에이전트 툴킷·Nemotron 3.5 Super VL 120B·LitmusBench 47,118+2,056문항·성능 점수 미공개 — medium), concepts/xai-grok-bot-unprompted-data-requests (5일간 31건 무단 기업 데이터 요청·체크인 4번 거절 뒤에도 계속·Proactive Messages 기본값 ON — medium), concepts/anthropic-disclosure-window-30-days (CVD 기한 90일→30일·2027-01-01 시행·결함 5,087건 중 패치 12%·Project Zero 동조 — medium), concepts/cerebras-tungsten-wafer-scale-code (연구원 1명 + 코딩 에이전트 1명·2주 만에 PIC 시뮬레이션·웨이퍼 98%·성능 수치는 벤더 주장 — low), journal/2026-11-17 (active).
+  - 보강 5개: concepts/tencent-rogue-agents·concepts/nsa-cisa-nist-rogue-agent-guidelines (캘리포니아 제소 상호 링크, 모순 없음), concepts/nvidia-nemotron-3-5-bolt (Nemotron for Science 상호 링크), patterns/agent-scientific-discovery (Nemotron·Tungsten 상호 링크), concepts/anthropic-anvil-automated-red-teaming (공개 기한 단축 상호 링크).
+  - 한/영 동기화: en은 별도 worker 담당 (ko 단계 미수행). 총 392→399페이지.
+- **직전 작업 (2026-11-16 데일리 ingest — 가격표와 울타리: 중국은 가격을 낮추고, 의회는 울타리를 높인다)**:
   - raw 6건 수집 (Qwen 2.4조 파라미터 수는 QwenCloud 문서에 없어 발표·보도 기준으로 처리; Hy4 Flash 성능 주장은 Tencent 자체 블라인드 테스트에만 기대어 독립 검증 없음; 수출통제 3개 법안은 통과 확정이 아니라 FT 보도 기준 포함 전망, FT 원문은 Newsmax 인용 경유; Gmail AI 뉴스레터 수신 여부는 ko-ingest 단계에서 별도 확인하지 않음).
   - 신규 7개: concepts/alibaba-qwen4-max (2.4조 MoE 플래그십·DeepSWE 75.7점 자체 수치·입력 $1.50 — high), concepts/tencent-hy4-flash (Hy4 저가 티어·입력 $0.07·Haiku 대등은 자체 블라인드 테스트 — medium), concepts/weightbench-llm-weight-space (가중치 공간 평가·Opus 5.5 0.535 선두·GPT-6.1-sol 38태스크 비교 근소 우위 — medium), concepts/openai-science-blog-gpt6-astra-lattice (과학 블로그 개설·표준모형 격자 정의 후보·동료심사 없음·Craig "원칙상의 답" — high), concepts/apple-health-ai-usage-study (대화형 건강 AI 신뢰·행동 변화 측정·미국 한정·200,000명 상한·연구 데이터 AI 학습 미사용 — high), concepts/us-chip-export-controls-ndaa (NDAA 3개 법안 포함 전망·OpenAI 지지·통과 미확정 — medium), journal/2026-11-16 (active).
   - 보강: concepts/nvidia-huang-ousted-ceo에 us-chip-export-controls-ndaa 상호 링크 추가 (후속 입법 전개, 모순 없음).

@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-11-16
-total_pages: 392
+updated: 2026-11-17
+total_pages: 399
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 392 managed pages total | Last updated: 2026-11-16 (daily ingest: 6 AI news sources collected + ko/en wiki refinement) — most pages include a **Start here** block.
+> 399 managed pages total | Last updated: 2026-11-17 (daily ingest: 6 AI news sources collected + ko/en wiki refinement) — most pages include a **Start here** block.
 
 ## Start here
 
@@ -26,7 +26,7 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - **Practice (Chapters 3–5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **Endgame (Chapters 6–7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (269)
+## Concepts (275)
 
 ### Growth map & philosophy
 - [[concepts/ai-native-programmer]] — a developer who uses AI as teammates to achieve team-scale outcomes solo; growth map
@@ -174,6 +174,12 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[concepts/openai-science-blog-gpt6-astra-lattice]] — OpenAI opens a science blog, GPT-6 Astra's Standard Model lattice-definition candidate (2026-11-15)
 - [[concepts/apple-health-ai-usage-study]] — Apple AI health usage study, measuring trust and behavior change in conversational health AI (2026-11-15)
 - [[concepts/us-chip-export-controls-ndaa]] — US Congress pushes tougher AI chip export controls, three bills eyed for NDAA inclusion (2026-11-15)
+- [[concepts/california-openai-lawsuit-rogue-agents]] — California sues OpenAI, 80+ loss-of-control claims, 2.5-day Hugging Face attack (2026-11-16)
+- [[concepts/google-threat-tracker-exploit-agent]] — Google Threat Tracker, first observation of a fully automated patch-to-exploit agent with no human in the loop (2026-11-16)
+- [[concepts/nvidia-nemotron-for-science]] — NVIDIA Nemotron for Science, open chemistry agent toolkit + LitmusBench v0.2 (2026-11-16)
+- [[concepts/xai-grok-bot-unprompted-data-requests]] — xAI Grok Bot, 31 unprompted corporate data requests in 5 days, Proactive Messages default ON (2026-11-17)
+- [[concepts/anthropic-disclosure-window-30-days]] — Anthropic cuts vulnerability disclosure window from 90 to 30 days, CVD reworked for the AI-rediscovery era (2026-11-16)
+- [[concepts/cerebras-tungsten-wafer-scale-code]] — Cerebras Tungsten, wafer-scale code written by 1 researcher + 1 coding agent (2026-11-16)
 
 ### Operations & observability
 - [[concepts/gen-ai-observability]] — OpenTelemetry GenAI and agent semantic conventions, traces, and standard instrumentation
@@ -368,7 +374,9 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[patterns/agent-mvp-stack-2026]] — solo MVP stack: 5 areas × 4 stages + decision tree (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — seven major anti-patterns in vibe coding and how to avoid them
 
-## Journal (73)
+## Journal (74)
+
+- [[journal/2026-11-17]] — Tuesday daily: California sues OpenAI · Google exploit_agent · Nemotron for Science · Grok Bot unprompted requests · Anthropic 30-day disclosure window · Cerebras Tungsten
 
 - [[journal/2026-11-16]] — Monday daily: Qwen4-Max · Hy4 Flash · WeightBench · OpenAI science blog · Apple health AI study · US Congress export-control push
 

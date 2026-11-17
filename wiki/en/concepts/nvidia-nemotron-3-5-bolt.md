@@ -3,12 +3,13 @@ title: "NVIDIA Nemotron 3.5 Bolt — the Open-Weight Agentic Model for RTX Spark
 category: concepts
 tags: [nvidia, nemotron, bolt, open-weights, agentic-ai, rtx-spark, edge-ai, quantization, mcp, pair]
 created: 2026-10-14
-updated: 2026-10-14
+updated: 2026-11-17
 sources:
   - "raw/articles/2026-10-14-nvidia-nemotron-3-5-bolt-rtx-spark.md"
 related:
   - "[[comparisons/frontier-lab-economics]]"
   - "[[patterns/agent-safety-runtime]]"
+  - "[[concepts/nvidia-nemotron-for-science]]"
 status: draft
 confidence: medium
 ---
@@ -65,6 +66,7 @@ NVIDIA's 2026-10-13 launch of the agentic-AI-focused open-weight model **Nemotro
 
 - [[comparisons/frontier-lab-economics]] — open-weight distribution capture + the Western version of hardware vertical integration
 - [[patterns/agent-safety-runtime]] — the widening enforcement target as open agentic models spread to the edge
+- [[concepts/nvidia-nemotron-for-science]] — Nemotron for Science, the SC26 open chemistry-agent toolkit — the science-agent branch of the same Nemotron line (2026-11-16)
 
 ## References
 
