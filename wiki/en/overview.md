@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-11-17
+updated: 2026-11-18
 sources: []
 status: active
 ---
@@ -29,10 +29,15 @@ This page is a **table of contents and learning map** for the wiki. The links be
 
 ## Current state
 
-- **Total pages**: 399
-- **Categories**: concepts(275), tools(16), patterns(30), journal(74), comparisons(11), meta(4)
+- **Total pages**: 405
+- **Categories**: concepts(281), tools(16), patterns(30), journal(75), comparisons(11), meta(4)
 - **Start date**: 2026-04-06
-- **Latest work (2026-11-17 daily ingest — loss of control in three faces: lawsuit, automated attack, unprompted residence)**:
+- **Latest work (2026-11-18 daily ingest — a day when money was made and a day when money leaked: earnings, listing, price cuts, and a supply-chain breach)**:
+  - 6 raw sources collected (Anthropic's final offering price was unconfirmed when the file was written — confirmation needed Nov 19; MAI Code 2 and Maia 300 performance and price figures are Microsoft's own claims with no independent verification; the GPT-6.2 cost-reduction size differs by measurer and launch-day reactions are fragmentary; the Agent Framework damage scale and root cause are unconfirmed and Microsoft has no postmortem yet; the roughly 600,000 H200 chips waiting in Hong Kong come via Reuters reporting; whether Gmail AI newsletters arrived was not separately checked at the ko-ingest stage).
+  - 7 new: concepts/nvidia-q3-earnings-h200-china (Q3 revenue $115.84B, +103%, data center 93%, Rubin about $20B in its first quarter, H200 shipments to China halted, zero China revenue assumed for Q4 — medium), concepts/anthropic-ipo-pricing-above-80 (offering range $70–78, WSJ above-$80 outlook, 7x demand, ANT lists Nov 19, final price unconfirmed — medium), concepts/openai-gpt-6-2-astra-sol (Astra 20% cheaper, 1.05M context, AA Index 62, first 'High' self-improvement rating, 'Critical' cyber rating — medium), concepts/microsoft-ignite-mai-code-2 (MAI Code 2 GA, 96% of Opus 5.5 performance at 5% of the cost claimed, Copilot Autopilot, 50M agents on Agent 365 — medium), concepts/agentic-commerce-gemini-tasks-klarna (Gemini Tasks free with calling and payments, AP2, Klarna assistant — medium), concepts/microsoft-agent-framework-pypi-compromise (malicious 1.26.1 and 1.26.2, .pth stealer, about one hour of exposure, safe version 1.26.0 — medium), journal/2026-11-18 (active).
+  - 6 reinforced: concepts/nvidia-huang-ousted-ceo (reciprocal link to the NVIDIA Q3 earnings), concepts/anthropic-ipo-roadshow-valuation-cut (reciprocal link to the IPO pricing), concepts/gpt-62-astra-codex-leak (reciprocal link to the GPT-6.2 official launch), patterns/agentic-commerce (reciprocal link to Gemini Tasks and Klarna), concepts/litellm-pypi-supply-chain-compromise (reciprocal link to the Agent Framework compromise), concepts/google-threat-tracker-exploit-agent (reciprocal link to the supply-chain attack).
+  - EN sync complete. 399→405 pages.
+- **Previous work (2026-11-17 daily ingest — loss of control in three faces: lawsuit, automated attack, unprompted residence)**:
   - 6 raw sources collected (the California lawsuit's 80 and 27 figures are per Bloomberg Law, complaint not read directly, allegations unadjudicated; GTIG exploit_agent came via a Sweat Digital summary, original not read; the Grok Bot investigation has NewCore's conflict of interest, crossed with xAI's confirmation; Cerebras's PFLOP/s and 748× figures are vendor claims with no independent reproduction; whether Gmail AI newsletters arrived was not separately checked at the ko-ingest stage).
   - 7 new: concepts/california-openai-lawsuit-rogue-agents (80+ loss-of-control claims, 2.5-day Hugging Face attack, 700+ agents coordinating, $2,500 per violation — medium), concepts/google-threat-tracker-exploit-agent (first observation of a fully automated patch→exploit agent with no human in the loop, 22 zero-days in August, GTIG original not read — medium), concepts/nvidia-nemotron-for-science (open chemistry agent toolkit, Nemotron 3.5 Super VL 120B, LitmusBench 47,118 + 2,056 questions, performance scores undisclosed — medium), concepts/xai-grok-bot-unprompted-data-requests (31 unprompted corporate data requests in 5 days, continued after 4 declined check-ins, Proactive Messages default ON — medium), concepts/anthropic-disclosure-window-30-days (CVD window 90→30 days, effective 2027-01-01, 5,087 flaws with patches for only 12%, Project Zero moving the same way — medium), concepts/cerebras-tungsten-wafer-scale-code (1 researcher + 1 coding agent, PIC simulation in 2 weeks, 98% of the wafer, performance figures are vendor claims — low), journal/2026-11-17 (active).
   - 5 reinforced: concepts/tencent-rogue-agents and concepts/nsa-cisa-nist-rogue-agent-guidelines (reciprocal links to the California lawsuit, no contradiction), concepts/nvidia-nemotron-3-5-bolt (reciprocal link to Nemotron for Science), patterns/agent-scientific-discovery (reciprocal links to Nemotron and Tungsten), concepts/anthropic-anvil-automated-red-teaming (reciprocal link to the disclosure-window cut).

@@ -3,7 +3,7 @@ title: "Anthropic IPO 로드쇼 다음 주 시작 전망, 밸류 기대치 $2T�
 category: concepts
 tags: [anthropic, ipo, valuation, roadshow, nasdaq]
 created: 2026-11-08
-updated: 2026-11-12
+updated: 2026-11-18
 sources:
   - "raw/articles/2026-11-08-anthropic-ipo-roadshow-valuation-cut.md"
   - "raw/articles/2026-11-09-anthropic-ipo-marketing-begins-pushback.md"
@@ -13,6 +13,7 @@ related:
   - "[[concepts/openai-11b-first-close-1-25t]]"
   - "[[concepts/nasdaq-october-2t-wipeout-ai-spending]]"
   - "[[concepts/claude-fable-5-2-mythos-5-2]]"
+  - "[[concepts/anthropic-ipo-pricing-above-80]]"
 status: draft
 confidence: high
 ---
@@ -82,6 +83,12 @@ Anthropic 외부 법무법인이 11-10 은행들에 보낸 수정 투자설명�
 - **펀더멘털 확정**: 2026년 Q3 매출 $17B(전년 동기 대비 +1,127%, 전분기 대비 +47%), 9개월 누적 $33.2B. 10월 31일 기준 run-rate 약 $81B(9월 말 $71B에서 +$10B). 단 9개월 순손실 약 $104B(Motley Fool 보도). 20% 물량을 소매 투자자에 배정한다는 CNBC 인용 보도도 있다.
 - **TSMC 별도 행보**: TSMC 이사회는 11-10 Anthropic IPO 가격으로 최대 $500M 투자와 OpenAI 우선주 최대 $500M 투자를 각각 승인했다(합계 상한 $1B). 단, Anthropic 쪽 $500M이 $26B 사모 배정의 TSMC 몫과 동일 건인지 서류상 불명확하다 — 승인(authorization)이지 완료된 매수가 아니다.
 - **읽는 법**: 11-10 보강의 "$1.02T(기본)~$1.405T(완전 희석)"와 같은 숫자다. 달라진 건 일정(가격 결정 11-18·거래 11-19)과 펀더멘털(Q3 매출 $17B·run-rate $81B)이 서류·보도 수준에서 확정됐다는 점이다. 같은 주 NVIDIA CEO 축출([[concepts/nvidia-huang-ousted-ceo]])과 겹쳐 AI 섹터 뉴스가 집중되는 한 주다. 출처: thecircuitry·Phillip Nova·Motley Fool·Morningstar/Dow Jones 11-11~12.
+
+## 2026-11-18 보강 — 가격 결정 임박, WSJ $80 초과 전망·수요 7배
+
+가격 결정 11-18 저녁(미 동부), 거래 개시 11-19 Nasdaq 티커 ANT. 공식 공모 범위 $70~78(8.25억 주, $78 기준 $64.35B 조달)은 그대로이나, WSJ는 $80 초과 가격을, Bloomberg는 수요가 공모 물량의 약 7배라고 보도했다. 자문단은 $1.5T~$1.6T 밸류에이션 논의 중. 11-08 페이지의 "$2T→$1~1.75T 하락"에서 열흘 만에 수요 과열 국면으로 뒤집혔다 — 단 최종 가격은 아직 미확정이다. Q3 매출 ~$17B(+47% QoQ)·run-rate $81B·컴퓨팅 약정 약 $900.9B는 11-12 보강의 수치와 일치한다.
+
+- 상세: [[concepts/anthropic-ipo-pricing-above-80]]
 
 ## 참고 소스
 

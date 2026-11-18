@@ -3,7 +3,7 @@ title: "Agentic Commerce"
 category: patterns
 tags: [agentic-commerce, shopping-agents, benchmarks, principal-agent, computer-use, steering, voice-agent, gemini, accessibility, stt, platform-blocks, yelp, delta]
 created: 2026-09-24
-updated: 2026-10-18
+updated: 2026-11-18
 sources:
   - "raw/articles/2026-09-24-agentic-commerce-benchmark-booking.md"
   - "raw/articles/2026-09-25-gemini-live-avatar-business-calling-suncatcher.md"
@@ -14,6 +14,7 @@ sources:
   - "raw/articles/2026-10-15-booking-vayo-ai-travel.md"
   - "raw/articles/2026-10-16-datadome-ai-traffic-q3-2026.md"
   - "raw/articles/2026-10-18-websites-block-ai-agents.md"
+  - "raw/articles/2026-11-18-agentic-commerce-gemini-tasks-klarna.md"
 related:
   - "[[concepts/llm-evaluation]]"
   - "[[comparisons/agent-eval-frameworks]]"
@@ -22,6 +23,7 @@ related:
   - "[[concepts/booking-vayo-travel-agent]]"
   - "[[concepts/datadome-ai-traffic-q3-2026]]"
   - "[[concepts/websites-block-ai-agents]]"
+  - "[[concepts/agentic-commerce-gemini-tasks-klarna]]"
 status: draft
 confidence: low
 ---
@@ -154,6 +156,13 @@ Read through this page's framing: (1) **steering → blocking escalation** — t
 - Limits: Amtrak/Cars.com blocks are unverified user reports. Delta is not a formal ban. The Verge original URL not captured verbatim — cross-verified via four secondary reports.
 - Details: [[concepts/websites-block-ai-agents]]
 
+## 2026-11-18 update — Gemini Tasks free with calling and payments + Klarna assistant
+
+Google made Gemini Tasks free and added calling and payment features (Nov 17; US, Japan, Korea, Canada, Australia, India). Tasks calls local businesses in parallel to check prices, stock, and bookings, and pays via Google Pay (AP2-based, spending limit up to $1,000 within 14 days). On the same day, Klarna announced a concierge-style AI assistant inside WhatsApp and iMessage.
+
+- Read through this page's framing: (1) the 9/25 update's "calling businesses directly" moved from a paid subscription feature to a free mass-market product — voice-channel steering and confirmation are now default-UX problems. (2) "Whose side is the agent on" gains a control axis — "how much may the agent spend" (spending limits) — and Klarna's "you don't pay until it arrives" is the same control framing in different words. (3) Payment protocols (AP2) pair with Poppy's identity-and-permissions rails (10/13 update) to form the infrastructure layer of agentic commerce.
+- Details: [[concepts/agentic-commerce-gemini-tasks-klarna]]
+
 ## Sources
 
 - [Agentic commerce reality check: Booking Holdings says LLM traffic is 'significantly below 1%' of bookings](raw/articles/2026-09-24-agentic-commerce-benchmark-booking.md)
@@ -164,3 +173,4 @@ Read through this page's framing: (1) **steering → blocking escalation** — t
 - [Booking Holdings unveils AI travel startup Vayo (GeekWire original, Skift, Morningstar, PhocusWire, 10/14)](raw/articles/2026-10-15-booking-vayo-ai-travel.md)
 - [DataDome Q3 2026 AI traffic report — 25B agent requests, Muse 99.3% unidentified (DataDome official, PPC Land, 10/15)](raw/articles/2026-10-16-datadome-ai-traffic-q3-2026.md)
 - [Platforms blocking AI agents — Yelp, Delta, banks (The Verge 10/17, mylistingo/techbuzz.ai/Inshorts, 10/17–18)](raw/articles/2026-10-18-websites-block-ai-agents.md)
+- [Agentic commerce goes mainstream — Gemini Tasks free with calling and payments, plus Klarna's assistant (Google, 11-17)](raw/articles/2026-11-18-agentic-commerce-gemini-tasks-klarna.md)

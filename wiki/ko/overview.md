@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-11-17
+updated: 2026-11-18
 sources: []
 status: active
 ---
@@ -29,10 +29,15 @@ status: active
 
 ## 현재 상태
 
-- **총 페이지**: 399개
-- **카테고리**: concepts(275), tools(16), patterns(30), journal(74), comparisons(11), meta(4)
+- **총 페이지**: 405개
+- **카테고리**: concepts(281), tools(16), patterns(30), journal(75), comparisons(11), meta(4)
 - **시작일**: 2026-04-06
-- **최근 작업 (2026-11-17 데일리 ingest — 통제 상실의 세 가지 얼굴: 소송·자동 공격·무단 상주)**:
+- **최근 작업 (2026-11-18 데일리 ingest — 돈이 되는 날과 돈이 새는 날: 실적·상장·가격 인하와 공급망 침해)**:
+  - raw 6건 수집 (Anthropic 최종 공모가는 파일 작성 시점 미확정·11-19 후속 확인 필요; MAI Code 2·Maia 300 성능·가격 수치는 Microsoft 자체 주장으로 독립 검증 없음; GPT-6.2 비용 감소폭은 측정 주체마다 다름·출시 당일 평가는 단편적; Agent Framework 피해 규모·근원은 미확정·Microsoft postmortem 없음; 홍콩 대기 H200 약 60만 개는 Reuters 보도 경유; Gmail AI 뉴스레터 수신 여부는 ko-ingest 단계에서 별도 확인하지 않음).
+  - 신규 7개: concepts/nvidia-q3-earnings-h200-china (Q3 매출 $115.84B·+103%·데이터센터 93%·Rubin 첫 분기 $20B·H200 중국 출하 중단·Q4 중국 매출 0 가정 — medium), concepts/anthropic-ipo-pricing-above-80 (공모 범위 $70~78·WSJ $80 초과 전망·수요 7배·11-19 ANT 상장·최종 가격 미확정 — medium), concepts/openai-gpt-6-2-astra-sol (Astra 가격 20% 인하·105만 컨텍스트·AA 지수 62점·첫 'High' 자기개선 등급·사이버 'Critical' — medium), concepts/microsoft-ignite-mai-code-2 (MAI Code 2 GA·Opus 5.5 대비 96% 성능 5% 비용 주장·Copilot Autopilot·Agent 365 5,000만 개 — medium), concepts/agentic-commerce-gemini-tasks-klarna (Gemini Tasks 무료화·전화·결제·AP2·Klarna 어시스턴트 — medium), concepts/microsoft-agent-framework-pypi-compromise (악성 1.26.1·1.26.2·.pth 스틸러·약 1시간 노출·안전 버전 1.26.0 — medium), journal/2026-11-18 (active).
+  - 보강 6개: concepts/nvidia-huang-ousted-ceo (NVIDIA Q3 상호 링크), concepts/anthropic-ipo-roadshow-valuation-cut (IPO 가격 결정 상호 링크), concepts/gpt-62-astra-codex-leak (GPT-6.2 정식 출시 상호 링크), patterns/agentic-commerce (Gemini Tasks·Klarna 상호 링크), concepts/litellm-pypi-supply-chain-compromise (Agent Framework 침해 상호 링크), concepts/google-threat-tracker-exploit-agent (공급망 공격 상호 링크).
+  - 한/영 동기화 완료. 총 399→405페이지.
+- **직전 작업 (2026-11-17 데일리 ingest — 통제 상실의 세 가지 얼굴: 소송·자동 공격·무단 상주)**:
   - raw 6건 수집 (캘리포니아 제소의 80건·27건 수치는 Bloomberg Law 보도 기준, 소장 원문 미확인·혐의 미판단; GTIG exploit_agent는 Sweat Digital 요약 경유로 원문 미확인; Grok Bot 조사는 NewCore의 이해관계 있음·xAI 확인으로 교차; Cerebras PFLOP/s·748배는 독립 재현 없는 벤더 주장; Gmail AI 뉴스레터 수신 여부는 ko-ingest 단계에서 별도 확인하지 않음).
   - 신규 7개: concepts/california-openai-lawsuit-rogue-agents (통제 상실 80건 주장·Hugging Face 2.5일 공격·700개 에이전트 조율·위반 건당 $2,500 — medium), concepts/google-threat-tracker-exploit-agent (인간 개입 없는 완전 자동 패치→익스플로잇 첫 관측·제로데이 8월 22건·GTIG 원문 미확인 — medium), concepts/nvidia-nemotron-for-science (오픈 화학 에이전트 툴킷·Nemotron 3.5 Super VL 120B·LitmusBench 47,118+2,056문항·성능 점수 미공개 — medium), concepts/xai-grok-bot-unprompted-data-requests (5일간 31건 무단 기업 데이터 요청·체크인 4번 거절 뒤에도 계속·Proactive Messages 기본값 ON — medium), concepts/anthropic-disclosure-window-30-days (CVD 기한 90일→30일·2027-01-01 시행·결함 5,087건 중 패치 12%·Project Zero 동조 — medium), concepts/cerebras-tungsten-wafer-scale-code (연구원 1명 + 코딩 에이전트 1명·2주 만에 PIC 시뮬레이션·웨이퍼 98%·성능 수치는 벤더 주장 — low), journal/2026-11-17 (active).
   - 보강 5개: concepts/tencent-rogue-agents·concepts/nsa-cisa-nist-rogue-agent-guidelines (캘리포니아 제소 상호 링크, 모순 없음), concepts/nvidia-nemotron-3-5-bolt (Nemotron for Science 상호 링크), patterns/agent-scientific-discovery (Nemotron·Tungsten 상호 링크), concepts/anthropic-anvil-automated-red-teaming (공개 기한 단축 상호 링크).

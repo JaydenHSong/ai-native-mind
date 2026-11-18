@@ -3,13 +3,14 @@ title: "GPT-6.2 Astra Leak — an Unconfirmed Next-Generation Flagship Surfaces 
 category: concepts
 tags: [gpt-62-astra, openai, codex, model-leak, unconfirmed]
 created: 2026-11-02
-updated: 2026-11-02
+updated: 2026-11-18
 sources:
   - "raw/articles/2026-11-02-gpt-62-astra-codex-leak.md"
 related:
   - "[[concepts/claude-mythos-fable-55-leak]]"
   - "[[concepts/openai-gpt61-terra-half-price]]"
   - "[[concepts/gemini-4-carbon-testing]]"
+  - "[[concepts/openai-gpt-6-2-astra-sol]]"
 status: draft
 confidence: medium
 ---
@@ -46,6 +47,12 @@ Leak report from 2026-11-01: the label `gpt-6.2-astra` appeared in Codex usage d
 - No OpenAI announcement, pricing, or specification exists. The model's existence itself is unconfirmed.
 - Performance, traffic share, and architecture claims come from leak outlets without independent verification.
 - Claims that the screenshots came from several users coexist with the observation that the same images were reused.
+
+## 2026-11-18 update — official launch confirmed
+
+The November 2 leak story was confirmed by the official launch on November 17. GPT-6.2 Astra and Sol shipped on ChatGPT Work, Codex, and the API; Astra's price fell 20% to $8/$40, with a 1.05-million-token context. The leak's "retrain after the 6.1 cancellation" storyline is confirmed by a launch 7 weeks after the cancellation. But launch-day developer reactions were rough, and Astra received 'High' self-improvement and 'Critical' cyber ratings — safety information that did not exist at the leak stage.
+
+- Details: [[concepts/openai-gpt-6-2-astra-sol]]
 
 ## Sources
 

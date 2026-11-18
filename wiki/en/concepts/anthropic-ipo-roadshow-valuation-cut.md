@@ -3,7 +3,7 @@ title: "Anthropic's IPO Roadshow Expected Next Week as Valuation Hopes Fall from
 category: concepts
 tags: [anthropic, ipo, valuation, roadshow, nasdaq]
 created: 2026-11-08
-updated: 2026-11-12
+updated: 2026-11-18
 sources:
   - "raw/articles/2026-11-08-anthropic-ipo-roadshow-valuation-cut.md"
   - "raw/articles/2026-11-09-anthropic-ipo-marketing-begins-pushback.md"
@@ -13,6 +13,7 @@ related:
   - "[[concepts/openai-11b-first-close-1-25t]]"
   - "[[concepts/nasdaq-october-2t-wipeout-ai-spending]]"
   - "[[concepts/claude-fable-5-2-mythos-5-2]]"
+  - "[[concepts/anthropic-ipo-pricing-above-80]]"
 status: draft
 confidence: high
 ---
@@ -83,6 +84,12 @@ The price range of $70–78, 825 million Class A shares and Nasdaq ticker ANT ar
 - **Fundamentals confirmed**: Q3 2026 revenue of $17 billion (+1,127% year over year, +47% quarter over quarter), $33.2 billion for the first nine months. Run-rate of about $81 billion as of October 31 (up from $71 billion at the end of September). A nine-month net loss of about $104 billion was reported (Motley Fool). CNBC-cited reporting also says 20% of the offering is allocated to retail investors.
 - **TSMC's separate move**: TSMC's board approved up to $500M into Anthropic at the IPO price and up to $500M in OpenAI preferred shares (Nov 10), a combined ceiling of $1B. The Anthropic leg may overlap TSMC's share of the $26B private placement — the filings do not spell out whether it is the same commitment — and an approval is not a completed purchase.
 - **How to read it**: the numbers are the same as in the November 10 update — about $1.02 trillion undiluted to about $1.405 trillion fully diluted. What changed is that the schedule (pricing Nov 18, trading Nov 19) and the fundamentals (Q3 revenue $17B, run-rate $81B) are now confirmed at filing and reporting level. It lands in the same week as the NVIDIA CEO ouster ([[concepts/nvidia-huang-ousted-ceo]]), concentrating AI-sector news. Sources: thecircuitry, Phillip Nova, Motley Fool, Morningstar/Dow Jones, Nov 11–12.
+
+## 2026-11-18 update — pricing imminent, WSJ reports above $80, demand 7x
+
+Pricing is set for the evening of Nov 18 (US Eastern), with trading to begin Nov 19 on Nasdaq under ticker ANT. The official offering range of $70–78 (825 million shares; $64.35B raised at $78) is unchanged, but the WSJ reports a price above $80 and Bloomberg reports demand at about 7x the offering. Advisers are discussing a $1.5T–$1.6T valuation. Ten days after this page's "$2T → $1–1.75T" slide, the mood has flipped to overheated demand — but the final price is still unconfirmed. Q3 revenue of ~$17B (+47% QoQ), an $81B run-rate, and about $900.9B in computing commitments match the figures in the Nov 12 update.
+
+- Details: [[concepts/anthropic-ipo-pricing-above-80]]
 
 ## Sources
 

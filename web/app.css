@@ -1454,15 +1454,55 @@ body {
   color: var(--text-muted);
 }
 
+/* 다음 돌 카드 (리벰프 2단계): 열람실 하단, 다음 이야기로 이어지는 큰 버튼 */
+.doc-next-stone {
+  margin-top: 20px;
+  border: 1px solid var(--accent-primary);
+  background: var(--accent-glow);
+  border-radius: 12px;
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+.doc-next-stone:hover {
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+.doc-next-stone:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+.doc-next-stone .next-stone-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.doc-next-stone .next-stone-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 4px;
+  line-height: 1.4;
+}
+.doc-next-stone .next-stone-sub {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+.doc-next-stone .next-stone-sub:empty {
+  display: none;
+}
+
 /* ==========================================================================
    스크롤바 스타일 및 유틸리티
    ========================================================================== */
 /* 현대 표준 scrollbar-color 지원 */
-.doc-list, .campaign-container, .library-grid, #reading-panel {
+.doc-list, .campaign-container, .home-scroll, .library-grid, #reading-panel {
   scrollbar-width: thin;
   scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
 }
-[data-theme="light"] .doc-list, [data-theme="light"] .campaign-container, [data-theme="light"] .library-grid, [data-theme="light"] #reading-panel {
+[data-theme="light"] .doc-list, [data-theme="light"] .campaign-container, [data-theme="light"] .home-scroll, [data-theme="light"] .library-grid, [data-theme="light"] #reading-panel {
   scrollbar-color: rgba(0, 0, 0, 0.15) transparent;
 }
 
@@ -1470,6 +1510,7 @@ body {
 @supports not (scrollbar-color: auto) {
   .doc-list::-webkit-scrollbar, 
   .campaign-container::-webkit-scrollbar, 
+  .home-scroll::-webkit-scrollbar, 
   .library-grid::-webkit-scrollbar,
   #reading-panel::-webkit-scrollbar {
     width: 6px;
@@ -1477,6 +1518,7 @@ body {
   }
   .doc-list::-webkit-scrollbar-thumb, 
   .campaign-container::-webkit-scrollbar-thumb, 
+  .home-scroll::-webkit-scrollbar-thumb, 
   .library-grid::-webkit-scrollbar-thumb,
   #reading-panel::-webkit-scrollbar-thumb {
     background: rgba(255, 255, 255, 0.15);
@@ -1484,6 +1526,7 @@ body {
   }
   .doc-list::-webkit-scrollbar-track, 
   .campaign-container::-webkit-scrollbar-track, 
+  .home-scroll::-webkit-scrollbar-track, 
   .library-grid::-webkit-scrollbar-track,
   #reading-panel::-webkit-scrollbar-track {
     background: transparent;
@@ -1667,3 +1710,382 @@ body {
 }
 
 
+
+/* === 반응형 중간 구간 보정 (2026-11-17): 993~1560px에서 중앙 작업공간이 눌려 글자가 세로로 쌓이던 문제 === */
+.tab-btn { white-space: nowrap; flex-shrink: 0; }
+.workspace-status { white-space: nowrap; flex-shrink: 0; }
+.chapter-check-btn { white-space: nowrap; flex-shrink: 0; }
+.workspace-header { flex-wrap: wrap; height: auto; min-height: 64px; row-gap: 6px; padding-top: 10px; padding-bottom: 10px; }
+.tabs { flex-wrap: wrap; }
+
+@media (min-width: 993px) and (max-width: 1560px) {
+  #app-container { padding: 8px; gap: 8px; }
+  #reading-panel { width: 560px; min-width: 560px; padding: 16px; }
+}
+
+@media (min-width: 993px) and (max-width: 1280px) {
+  #sidebar { width: 264px; min-width: 264px; }
+  #reading-panel { width: 480px; min-width: 480px; }
+  .quest-reward-board { grid-template-columns: 1fr; }
+}
+
+@media (min-width: 993px) and (max-width: 1150px) {
+  #reading-panel { width: 420px; min-width: 420px; }
+}
+
+/* ==========================================================================
+   홈 탭 (도서관 로비) — 리벰프 1단계 (2026-11-17)
+   기존 디자인 토큰만 사용해 다크/라이트 양쪽에서 동작하게 한다.
+   위쪽 993~1560px 중간 구간 규칙과는 선택자가 겹치지 않는다.
+   ========================================================================== */
+.home-scroll {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 8px;
+}
+.home-lobby {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 10px 10px 48px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 히어로 + 큰 검색 */
+.home-hero {
+  text-align: center;
+  padding: 26px 0 4px;
+}
+.home-hero h2 {
+  font-family: var(--font-title);
+  font-size: 1.7rem;
+  font-weight: 800;
+  letter-spacing: -0.6px;
+}
+.home-hero p {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  margin-top: 8px;
+}
+.home-search {
+  margin: 20px auto 10px;
+  max-width: 560px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--search-input-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 14px 16px;
+  transition: var(--transition-fast);
+}
+.home-search:focus-within {
+  border-color: var(--border-focus);
+  background: var(--search-input-focus-bg);
+}
+.home-search i {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+.home-search input {
+  flex: 1;
+  min-width: 0;
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+}
+.home-search input::placeholder {
+  color: var(--text-muted);
+}
+.home-hint {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* 오늘의 질문 */
+.home-question {
+  margin-top: 26px;
+  border-left: 3px solid var(--meta-color);
+  border-radius: 14px;
+  padding: 16px 18px;
+  cursor: pointer;
+}
+.home-question:hover {
+  border-color: var(--meta-color);
+}
+.home-question-lbl {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--meta-color);
+  letter-spacing: 0.4px;
+}
+.home-question-q {
+  font-size: 1.08rem;
+  font-weight: 700;
+  margin-top: 6px;
+  letter-spacing: -0.3px;
+  color: var(--text-primary);
+}
+.home-question-a {
+  color: var(--text-secondary);
+  font-size: 0.87rem;
+  margin-top: 4px;
+}
+.home-question-a b {
+  color: var(--accent-primary);
+  font-weight: 600;
+}
+
+/* 섹션 공통 */
+.home-section {
+  margin-top: 40px;
+}
+.home-sec-head h3 {
+  font-family: var(--font-title);
+  font-size: 1.18rem;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+  color: var(--text-primary);
+}
+.home-sec-head p {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  margin-top: 3px;
+  line-height: 1.5;
+}
+
+/* 징검다리 */
+.home-stones {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.stone-row {
+  display: grid;
+  grid-template-columns: 1fr 60px 1fr;
+  align-items: center;
+  position: relative;
+  padding: 7px 0;
+  cursor: pointer;
+  border-radius: 12px;
+}
+.stone-row:hover .stone {
+  border-color: var(--accent-primary);
+}
+.stone-row::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  border-left: 2px dotted var(--text-muted);
+  opacity: 0.3;
+}
+.stone-row:first-child::before { top: 50%; }
+.stone-row:last-child::before { bottom: 50%; }
+.stone {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-surface);
+  border: 2px solid var(--border-color);
+  color: var(--text-secondary);
+  transition: var(--transition-fast);
+}
+.stone .n {
+  font-size: 0.72rem;
+  font-weight: 700;
+  opacity: 0.65;
+}
+.stone .ic {
+  font-size: 1rem;
+  line-height: 1.15;
+}
+.stone.done {
+  background: var(--bg-surface-hover);
+  background: color-mix(in srgb, var(--tools-color) 10%, transparent);
+  border-color: var(--tools-color);
+  color: var(--tools-color);
+}
+.stone.now {
+  background: var(--accent-glow);
+  border-color: var(--accent-primary);
+  color: var(--text-primary);
+  box-shadow: 0 0 0 5px var(--accent-glow);
+}
+.stone-info {
+  padding: 0 6px;
+  min-width: 0;
+}
+.stone-info.right {
+  text-align: right;
+}
+.stone-info .t {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+.stone-info .d {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+}
+.now-badge {
+  display: inline-block;
+  background: var(--accent-primary);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  border-radius: 20px;
+  padding: 1px 8px;
+  margin-left: 6px;
+  vertical-align: 2px;
+  white-space: nowrap;
+}
+.home-stones-note {
+  margin-top: 14px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  border: 1px dashed var(--border-color);
+  border-radius: 10px;
+  padding: 10px 14px;
+  line-height: 1.55;
+}
+
+/* 신간 카드 */
+.home-cards {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.home-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+.home-card:hover {
+  border-color: var(--accent-primary);
+  background: var(--bg-surface-hover);
+}
+.home-card .t {
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: -0.2px;
+  color: var(--text-primary);
+}
+.home-card .meta {
+  margin-top: 6px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+.home-chip {
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 1px 9px;
+  font-weight: 600;
+}
+
+/* 서가 안내 */
+.home-shelves {
+  margin-top: 16px;
+  border-radius: 14px;
+  overflow: hidden;
+}
+.home-shelf {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 16px;
+  border-bottom: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+.home-shelf:last-child {
+  border-bottom: none;
+}
+.home-shelf:hover {
+  background: var(--bg-surface-hover);
+}
+.home-shelf .dot {
+  width: 10px;
+  height: 10px;
+  min-width: 10px;
+  border-radius: 3px;
+}
+.home-shelf .nm {
+  font-weight: 700;
+  font-size: 0.92rem;
+  min-width: 82px;
+  color: var(--text-primary);
+}
+.home-shelf .ds {
+  flex: 1;
+  min-width: 0;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+.home-shelf .ct {
+  color: var(--text-secondary);
+  font-weight: 700;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+.home-shelf .ct small {
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 0.72rem;
+}
+
+/* 지도실 */
+.home-maproom {
+  margin-top: 40px;
+  border-radius: 14px;
+  padding: 16px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+}
+.home-maproom-t {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.home-maproom-d {
+  color: var(--text-muted);
+  font-size: 0.83rem;
+  margin-top: 2px;
+  line-height: 1.5;
+}
+.home-maproom-go {
+  color: var(--accent-primary);
+  font-weight: 700;
+  font-size: 0.88rem;
+  white-space: nowrap;
+}
+
+/* 좁은 폭: 돌 크기 축소 + 서가 설명 숨김 (목업 v2의 560px 규칙 이식) */
+@media (max-width: 560px) {
+  .stone-row { grid-template-columns: 1fr 52px 1fr; }
+  .stone { width: 46px; height: 46px; }
+  .home-shelf .ds { display: none; }
+  .home-hero h2 { font-size: 1.4rem; }
+}

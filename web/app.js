@@ -20,39 +20,105 @@ const i18n = {
     quickStats: "개 문서 로드됨",
     searchPlaceholder: "제목, 태그, 내용 검색...",
     docCountLabel: "문서 목록",
-    tabCampaign: "성장 로드맵",
+    tabHome: "홈",
     tabLibrary: "지식 인덱스",
     tabGraph: "지식 관계망",
-    chapterClear: "Clear!",
-    chapterComplete: "클리어하기",
-    requiredDocs: "필수 수행 문서",
-    clearCond: "클리어 조건",
-    questReward: "퀘스트 보상",
     fallbackNotice: "영어 번역 준비 중 - 국문 본문 제공",
     noResults: "검색 결과가 없습니다.",
     relatedDocs: "연관 지식 링크",
     originalSources: "참고 및 출처 소스",
     recentTitle: "최근에 들어온 이야기",
-    startHere: "처음 오셨나요? 챕터 0 튜토리얼부터 시작하기"
+    startHere: "처음 오셨나요? 징검다리 첫 돌부터 시작하기",
+    // 홈(도서관 로비) — 리벰프 1단계
+    heroTitle: "오늘은 뭐가 궁금해요?",
+    heroSub: "모르는 말을 만나도 괜찮아요. 쉬운 이야기부터 차근차근 있어요.",
+    homeSearchPlaceholder: "검색어를 입력하세요 — 초성만 쳐도 돼요",
+    homeHint: (n) => `지금 서가에 이야기 ${n}개 · 매일 아침 새 이야기가 들어와요`,
+    questionLabel: "오늘의 질문",
+    questionWallet: "\"AI가 내 카드 번호도 모른 채, 나 대신 결제할 수 있을까?\"",
+    questionFallback: "\"오늘은 어떤 이야기가 새로 들어왔을까요?\"",
+    questionLinkPrefix: "궁금하면 이 이야기부터 →",
+    stonesTitle: "🪨 처음 왔어요? 징검다리 따라오기",
+    stonesSub: "모르는 게 당연해요. 돌을 하나씩 밟으면 어느새 건너편이에요. 급하면 건너뛰어도 돼요.",
+    stonesNote: "챕터 이름(기본 전투·보스전 같은 게임 말)을 쉬운 말로 바꿨어요. 퀘스트·보상·클리어 버튼은 빼고, 읽은 돌에 색이 칠해지는 것까지만 남겼어요. 돌을 누르면 그 구간의 첫 이야기가 열려요.",
+    stoneLabel: "돌",
+    nowBadge: "지금 여기",
+    storyCount: (n) => `이야기 ${n}개`,
+    readProgress: (r, n) => `읽은 이야기 ${r}/${n}개`,
+    nextStone: "다음 돌",
+    nextChapter: "다음 구간",
+    nextStoneOf: (i, n) => `이야기 ${i}/${n}번째`,
+    nextChapterSub: (name) => `“${name}” 구간의 첫 이야기`,
+    nextStoneAllDone: "징검다리 완주!",
+    nextStoneBackHome: "처음으로 돌아가기",
+    homeRecentTitle: "📖 새로 들어온 이야기",
+    homeRecentSub: "최근에 들어온 이야기예요.",
+    shelvesTitle: "🗄️ 서가 안내",
+    shelvesSub: "주제별로 꽂아 뒀어요. 서가를 누르면 왼쪽 목록이 그 주제로 걸러져요.",
+    shelfNames: { concepts: "개념 서가", tools: "도구 서가", patterns: "패턴 서가", comparisons: "비교 서가", journal: "기록 서가", meta: "메타 서가" },
+    shelfDescs: {
+      concepts: "낯선 말을 쉬운 말로 풀어 둔 곳",
+      tools: "써먹을 수 있는 AI 도구들",
+      patterns: "\"이렇게 하면 된다\" 검증된 방법들",
+      comparisons: "둘 중 뭐가 나은지 나란히 놓고 보기",
+      journal: "그날그날의 뉴스와 일지",
+      meta: "이 도서관 자체에 대한 이야기"
+    },
+    mapRoomTitle: "이야기들이 어떻게 이어져 있는지 보고 싶으면",
+    mapRoomDesc: "지식 관계망 지도 — 평소엔 서가와 검색으로 충분해요. 지도는 가끔 전체 그림이 궁금할 때만.",
+    mapRoomGo: "지도 열기 →"
   },
   en: {
     quickStats: "pages loaded",
     searchPlaceholder: "Search titles, tags, content...",
     docCountLabel: "Documents",
-    tabCampaign: "Growth Roadmap",
+    tabHome: "Home",
     tabLibrary: "Knowledge Index",
     tabGraph: "Knowledge Graph",
-    chapterClear: "Clear!",
-    chapterComplete: "Complete",
-    requiredDocs: "Prerequisite Readings",
-    clearCond: "Clear Conditions",
-    questReward: "Quest Rewards",
     fallbackNotice: "Translation in progress. Showing Korean version.",
     noResults: "No results found.",
     relatedDocs: "Related Knowledge Links",
     originalSources: "Sources & References",
     recentTitle: "Recently added stories",
-    startHere: "New here? Start with the Chapter 0 tutorial"
+    startHere: "New here? Start with the first stepping stone",
+    // Home (library lobby) — revamp phase 1
+    heroTitle: "What are you curious about today?",
+    heroSub: "Unfamiliar words are fine. Easy stories first, one step at a time.",
+    homeSearchPlaceholder: "Type to search — Korean initial consonants work too",
+    homeHint: (n) => `${n} stories on the shelves · New stories arrive every morning`,
+    questionLabel: "Today's Question",
+    questionWallet: "\"Can an AI pay for me without ever seeing my card number?\"",
+    questionFallback: "\"What new story arrived today?\"",
+    questionLinkPrefix: "Start with this story →",
+    stonesTitle: "🪨 New here? Follow the stepping stones",
+    stonesSub: "Not knowing is normal. Step on one stone at a time and you'll be across before you know it. Skipping ahead is fine too.",
+    stonesNote: "Chapter names (game words like Basic Combat or Boss Fight) were renamed into plain words. Quests, rewards and clear buttons are gone — read stones simply fill with color. Click a stone to open the first story of that stretch.",
+    stoneLabel: "Stone",
+    nowBadge: "You are here",
+    storyCount: (n) => `${n} stories`,
+    readProgress: (r, n) => `${r}/${n} stories read`,
+    nextStone: "Next stone",
+    nextChapter: "Next stretch",
+    nextStoneOf: (i, n) => `story ${i} of ${n}`,
+    nextChapterSub: (name) => `First story of “${name}”`,
+    nextStoneAllDone: "You crossed all the stones!",
+    nextStoneBackHome: "Back to the start",
+    homeRecentTitle: "📖 New arrivals",
+    homeRecentSub: "Stories that arrived most recently.",
+    shelvesTitle: "🗄️ Shelf guide",
+    shelvesSub: "Everything is shelved by topic. Click a shelf to filter the list on the left.",
+    shelfNames: { concepts: "Concepts", tools: "Tools", patterns: "Patterns", comparisons: "Comparisons", journal: "Journal", meta: "Meta" },
+    shelfDescs: {
+      concepts: "Unfamiliar words explained in plain language",
+      tools: "AI tools you can actually use",
+      patterns: "Proven ways that work",
+      comparisons: "Side-by-side, which one is better",
+      journal: "Daily news and logs",
+      meta: "Stories about this library itself"
+    },
+    mapRoomTitle: "Want to see how the stories connect?",
+    mapRoomDesc: "The knowledge graph map — shelves and search are enough day to day. The map is for when you want the whole picture.",
+    mapRoomGo: "Open the map →"
   }
 };
 
@@ -124,6 +190,28 @@ const CHAPTERS = [
   }
 ];
 
+// 징검다리 표시 이름 (리벰프 1단계): CHAPTERS 데이터를 그대로 쓰되, 홈에서는 쉬운 말 이름으로만 보여준다
+const CHAPTER_STONES = {
+  0: { name: { ko: "시작하기", en: "Getting Started" }, desc: { ko: "이 도서관 쓰는 법부터", en: "How to use this library" }, icon: "🌱" },
+  1: { name: { ko: "세상 이해하기", en: "Understanding the World" }, desc: { ko: "AI 세상이 어떻게 돌아가는지", en: "How the AI world works" }, icon: "🌍" },
+  2: { name: { ko: "기본기 익히기", en: "Building the Basics" }, desc: { ko: "자주 쓰는 기본 기술", en: "Core skills you will use often" }, icon: "🛠️" },
+  3: { name: { ko: "같이 일하기", en: "Working Together" }, desc: { ko: "AI와 팀으로 일하는 법", en: "Working as a team with AI" }, icon: "🤝" },
+  4: { name: { ko: "작업실 열기", en: "Opening the Workshop" }, desc: { ko: "직접 만들어 보는 곳", en: "Where you build things yourself" }, icon: "🔨" },
+  5: { name: { ko: "안전 지키기", en: "Staying Safe" }, desc: { ko: "사고 없이, 속지 않고 쓰는 법", en: "Using AI safely, without getting fooled" }, icon: "🛡️" },
+  6: { name: { ko: "실전 운영하기", en: "Running in Practice" }, desc: { ko: "매일 굴러가게 돌보는 법", en: "Keeping things running every day" }, icon: "⚙️" },
+  7: { name: { ko: "그다음 단계", en: "The Next Step" }, desc: { ko: "더 깊이 가고 싶을 때", en: "For when you want to go deeper" }, icon: "🌌" }
+};
+
+// 서가 안내 카테고리 정의 (renderLibraryIndex와 동일한 색상 토큰 사용)
+const SHELF_CATEGORIES = [
+  { key: "concepts", color: "var(--concepts-color)" },
+  { key: "tools", color: "var(--tools-color)" },
+  { key: "patterns", color: "var(--patterns-color)" },
+  { key: "comparisons", color: "var(--comparisons-color)" },
+  { key: "journal", color: "var(--journal-color)" },
+  { key: "meta", color: "var(--meta-color)" }
+];
+
 // 초기화
 document.addEventListener("DOMContentLoaded", () => {
   initTheme();
@@ -188,7 +276,7 @@ function initLanguage() {
     updateUILanguage();
     filterWiki();
     renderLibraryIndex();
-    renderCampaignMap();
+    renderHome();
     renderHomePlaceholder();
     
     // 물리 그래프 재생성 (이미 초기화된 경우만 — 3단계 지연 초기화)
@@ -206,8 +294,8 @@ function updateUILanguage() {
   if (!t) return;
 
   // 1. 탭 버튼 번역
-  const tabCampaign = document.querySelector('.tab-btn[data-tab="campaign"]');
-  if (tabCampaign) tabCampaign.innerHTML = `<i class="fa-solid fa-map"></i> ${t.tabCampaign}`;
+  const tabHome = document.querySelector('.tab-btn[data-tab="home"]');
+  if (tabHome) tabHome.innerHTML = `<i class="fa-solid fa-house"></i> ${t.tabHome}`;
   
   const tabLibrary = document.querySelector('.tab-btn[data-tab="library"]');
   if (tabLibrary) tabLibrary.innerHTML = `<i class="fa-solid fa-list-check"></i> ${t.tabLibrary}`;
@@ -218,6 +306,29 @@ function updateUILanguage() {
   // 2. 검색 플레이스홀더 번역
   const searchInput = document.getElementById("search-input");
   if (searchInput) searchInput.placeholder = t.searchPlaceholder;
+
+  // 2.1. 홈(도서관 로비) 정적 텍스트 번역 — 동적 영역(돌·신간·서가·질문)은 renderHome이 다시 그린다
+  const homeTexts = {
+    "home-hero-title": t.heroTitle,
+    "home-hero-sub": t.heroSub,
+    "home-question-lbl": t.questionLabel,
+    "home-stones-title": t.stonesTitle,
+    "home-stones-sub": t.stonesSub,
+    "home-stones-note": t.stonesNote,
+    "home-recent-title": t.homeRecentTitle,
+    "home-recent-sub": t.homeRecentSub,
+    "home-shelves-title": t.shelvesTitle,
+    "home-shelves-sub": t.shelvesSub,
+    "home-maproom-t": t.mapRoomTitle,
+    "home-maproom-d": t.mapRoomDesc,
+    "home-maproom-go": t.mapRoomGo
+  };
+  Object.entries(homeTexts).forEach(([id, text]) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = text;
+  });
+  const homeSearchInput = document.getElementById("home-search-input");
+  if (homeSearchInput) homeSearchInput.placeholder = t.homeSearchPlaceholder;
   
   // 3. 문서 목록 헤더 번역
   const listHeader = document.querySelector(".nav-section-title span:first-child");
@@ -295,7 +406,7 @@ async function fetchWikiData() {
     // UI 필터링 렌더링
     filterWiki();
     renderLibraryIndex();
-    renderCampaignMap();
+    renderHome();
     renderHomePlaceholder();
     // 그래프는 탭을 처음 열 때 지연 초기화한다 (3단계)
     
@@ -472,123 +583,276 @@ function renderLibraryIndex() {
   });
 }
 
-// Campaign Map 탭 렌더링
-function renderCampaignMap() {
-  const container = document.getElementById("campaign-flow");
+// ==========================================================================
+// 2.5. 홈 탭 (도서관 로비) 렌더링 — 리벰프 1단계 (2026-11-17)
+// 기존 캠페인 탭을 대체한다. 챕터 데이터(CHAPTERS)와 클리어 기록
+// (localStorage "completed-chapters")은 그대로 재사용하고, 표시만
+// "징검다리"로 바꾼다. 퀘스트·보상·클리어 버튼은 로비에 없다.
+// ==========================================================================
+
+// 챕터 문서 ID를 실제 문서 객체로 매칭 (구 renderCampaignMap의 매칭 규칙 재사용: 현재 언어 우선, 없으면 국문 폴백)
+function findChapterDoc(docId) {
+  let doc = wikiData.find(d => (d.id === docId || d.filename === docId.split('/').pop()) && d.lang === currentLanguage);
+  if (!doc) {
+    doc = wikiData.find(d => (d.id === docId || d.filename === docId.split('/').pop()) && d.lang === 'ko');
+  }
+  return doc || null;
+}
+
+// ==========================================================================
+// 2.6. 읽음 기록 + 다음 돌 — 리벰프 2단계 (2026-11-18)
+// 예전 "completed-chapters"는 손으로 누르는 클리어 버튼이 사라지면서 더 이상
+// 아무도 안 쓰는 멈춘 기록이다. 이제 문서를 실제로 열면 "read-docs"에 남기고,
+// 돌의 완료·진행은 그 기록으로 가린다. 예전 기록은 있는 그대로 인정한다
+// (이미 클리어한 챕터는 완료로 계속 보여준다).
+// ==========================================================================
+
+// 읽은 문서 ID 목록 읽기 (없거나 깨졌으면 빈 목록)
+function getReadDocs() {
+  try {
+    const raw = JSON.parse(localStorage.getItem("read-docs") || "[]");
+    return Array.isArray(raw) ? raw.filter(id => typeof id === "string") : [];
+  } catch (e) {
+    return [];
+  }
+}
+
+// 문서를 열면 읽은 기록에 남기기 (중복 없이, 최신 순으로 앞에)
+function markDocAsRead(docId) {
+  if (!docId) return;
+  const read = getReadDocs().filter(id => id !== docId);
+  read.unshift(docId);
+  try {
+    localStorage.setItem("read-docs", JSON.stringify(read.slice(0, 2000)));
+  } catch (e) {
+    // 저장 공간이 꽉 찼으면 오래된 기록부터 덜어내고 다시 시도
+    try { localStorage.setItem("read-docs", JSON.stringify(read.slice(0, 500))); } catch (e2) {}
+  }
+}
+
+// 문서가 속한 챕터와 그 안에서의 위치 찾기 (없으면 null)
+function findChapterOfDoc(doc) {
+  if (!doc) return null;
+  for (const ch of CHAPTERS) {
+    const index = ch.docs.findIndex(docId => doc.id === docId || doc.filename === docId.split('/').pop());
+    if (index !== -1) return { chapter: ch, index };
+  }
+  return null;
+}
+
+// 챕터 안에서 실제로 읽은 이야기 수
+function countChapterRead(ch) {
+  const read = getReadDocs();
+  return ch.docs.filter(docId => {
+    const d = findChapterDoc(docId);
+    return d && read.includes(d.id);
+  }).length;
+}
+
+// 챕터 완료: 핵심 이야기를 다 읽었거나, 예전 클리어 기록이 있는 경우
+function isChapterDone(ch) {
+  try {
+    const legacy = JSON.parse(localStorage.getItem("completed-chapters") || "[]");
+    if (Array.isArray(legacy) && legacy.includes(ch.num)) return true;
+  } catch (e) {}
+  return ch.docs.length > 0 && countChapterRead(ch) >= ch.docs.length;
+}
+
+// 다음 돌 찾기: 같은 구간 다음 이야기 → 다음 구간 첫 이야기 → 전부 다 읽음
+function getNextStone(doc) {
+  const found = findChapterOfDoc(doc);
+  if (!found) return null;
+  const { chapter, index } = found;
+  for (let i = index + 1; i < chapter.docs.length; i++) {
+    const nextDoc = findChapterDoc(chapter.docs[i]);
+    if (nextDoc) return { kind: "next", chapter, index: i, target: nextDoc };
+  }
+  for (let n = chapter.num + 1; n < CHAPTERS.length; n++) {
+    const nextChapter = CHAPTERS[n];
+    for (let i = 0; i < nextChapter.docs.length; i++) {
+      const firstDoc = findChapterDoc(nextChapter.docs[i]);
+      if (firstDoc) return { kind: "chapter", chapter: nextChapter, index: i, target: firstDoc };
+    }
+  }
+  return { kind: "done", chapter, index: -1, target: null };
+}
+
+// 최근 문서 선별 (renderHomePlaceholder와 동일 규칙: 현재 언어, 메타 제외, 수정일 내림차순)
+function pickRecentDocs(count) {
+  return wikiData
+    .filter(d => d.lang === currentLanguage && d.category !== "meta")
+    .sort((a, b) => (b.updated || b.created || "").localeCompare(a.updated || a.created || ""))
+    .slice(0, count);
+}
+
+function renderHome() {
+  renderHomeHint();
+  renderHomeQuestion();
+  renderSteppingStones();
+  renderHomeRecent();
+  renderHomeShelves();
+}
+
+// 히어로 아래 안내줄: 현재 언어 문서 수
+function renderHomeHint() {
+  const hint = document.getElementById("home-hint");
+  if (!hint) return;
+  const t = i18n[currentLanguage];
+  const count = wikiData.filter(d => d.lang === currentLanguage).length;
+  hint.textContent = t.homeHint(count);
+}
+
+// 오늘의 질문 카드: ChatGPT Wallet 문서가 있으면 그 문서로, 없으면 가장 최근 문서로
+function renderHomeQuestion() {
+  const card = document.getElementById("home-question-card");
+  if (!card) return;
+  const t = i18n[currentLanguage];
+
+  let doc = wikiData.find(d => d.id === "concepts/openai-chatgpt-wallet" && d.lang === currentLanguage)
+    || wikiData.find(d => d.id === "concepts/openai-chatgpt-wallet");
+  const isWallet = !!doc;
+  if (!doc) {
+    doc = pickRecentDocs(1)[0] || null;
+  }
+  if (!doc) {
+    card.classList.add("hidden");
+    return;
+  }
+  card.classList.remove("hidden");
+  card.setAttribute("data-id", doc.id);
+
+  const qEl = document.getElementById("home-question-q");
+  if (qEl) qEl.textContent = isWallet ? t.questionWallet : t.questionFallback;
+  const aEl = document.getElementById("home-question-a");
+  if (aEl) aEl.innerHTML = `${escapeHTML(t.questionLinkPrefix)} <b>${escapeHTML(doc.title)}</b>`;
+}
+
+// 징검다리: CHAPTERS를 쉬운 말 이름(CHAPTER_STONES)으로 표시. 돌 클릭 시 그 챕터의 첫 문서를 연다.
+// 완료·진행 표시는 실제 읽음 기록("read-docs") 기준이다. 예전 클리어 기록이 있는
+// 챕터는 완료로 계속 인정한다. "지금 여기"는 아직 다 읽지 않은 첫 챕터에 붙인다.
+function renderSteppingStones() {
+  const container = document.getElementById("home-stones");
   if (!container) return;
   container.innerHTML = "";
-  
-  const completedChapters = JSON.parse(localStorage.getItem("completed-chapters") || "[]");
-
   const t = i18n[currentLanguage];
-  
-  CHAPTERS.forEach(ch => {
-    const isCompleted = completedChapters.includes(ch.num);
+
+  // "지금 여기"는 아직 다 읽지 않은 첫 구간. 완료 여부는 실제 읽음 기록 기준.
+  const nowNum = (CHAPTERS.find(ch => !isChapterDone(ch)) || {}).num;
+
+  CHAPTERS.forEach((ch, idx) => {
+    const stone = CHAPTER_STONES[ch.num] || { name: ch.title, desc: ch.desc, icon: "🪨" };
+    const isDone = isChapterDone(ch);
+    const isNow = ch.num === nowNum;
+    const name = stone.name[currentLanguage] || stone.name.ko;
+    const desc = stone.desc[currentLanguage] || stone.desc.ko;
+    const icon = isDone ? "✓" : stone.icon;
+    const nowBadge = isNow ? `<span class="now-badge">${t.nowBadge}</span>` : "";
+    const readCount = countChapterRead(ch);
+
+    const infoHTML = `
+      <div class="stone-info ${idx % 2 === 0 ? "right" : ""}">
+        <div class="t">${escapeHTML(name)}${nowBadge}</div>
+        <div class="d">${escapeHTML(desc)} · ${t.readProgress(readCount, ch.docs.length)}</div>
+      </div>`;
+    const stoneHTML = `
+      <div class="stone ${isDone ? "done" : ""} ${isNow ? "now" : ""}">
+        <span class="n">${t.stoneLabel} ${ch.num + 1}</span>
+        <span class="ic">${icon}</span>
+      </div>`;
+
     const row = document.createElement("div");
-    row.className = `chapter-row ${isCompleted ? 'completed' : ''}`;
-    row.id = `chapter-row-${ch.num}`;
+    row.className = "stone-row";
+    row.setAttribute("role", "button");
+    row.setAttribute("tabindex", "0");
+    row.innerHTML = idx % 2 === 0
+      ? `${infoHTML}${stoneHTML}<div></div>`
+      : `<div></div>${stoneHTML}${infoHTML}`;
 
-    // 연관된 문서들 칩 마크업 생성
-    const docsHTML = ch.docs.map(docId => {
-      // 해당 챕터용 문서 매칭 (언어 및 폴백 처리)
-      let doc = wikiData.find(d => (d.id === docId || d.filename === docId.split('/').pop()) && d.lang === currentLanguage);
-      if (!doc) {
-        doc = wikiData.find(d => (d.id === docId || d.filename === docId.split('/').pop()) && d.lang === 'ko');
+    const openFirstDoc = () => {
+      const firstDoc = ch.docs.length > 0 ? findChapterDoc(ch.docs[0]) : null;
+      window.location.hash = firstDoc ? firstDoc.id : (ch.docs[0] || "");
+    };
+    row.addEventListener("click", openFirstDoc);
+    row.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        openFirstDoc();
       }
-      const title = doc ? doc.title : docId.split('/').pop();
-      return `
-        <a class="ch-doc-link" data-id="${doc ? doc.id : docId}">
-          <i class="fa-regular fa-file-text"></i> ${title}
-        </a>
-      `;
-    }).join("");
-
-    row.innerHTML = `
-      <div class="chapter-marker" title="CH ${ch.num}">
-        <span class="ch-num">CH</span>
-        <span class="ch-id">${ch.num}</span>
-      </div>
-      
-      <div class="chapter-card glass-panel">
-        <div class="chapter-header-info">
-          <div>
-            <h3>${ch.title[currentLanguage] || ch.title['ko']}</h3>
-            <div class="ch-desc">${ch.desc[currentLanguage] || ch.desc['ko']}</div>
-          </div>
-          <button class="chapter-check-btn" data-num="${ch.num}">
-            <i class="fa-solid ${isCompleted ? 'fa-circle-check' : 'fa-circle'}"></i> 
-            <span>${isCompleted ? t.chapterClear : t.chapterComplete}</span>
-          </button>
-        </div>
-
-        <div class="chapter-docs-section">
-          <span class="section-lbl">${t.requiredDocs}</span>
-          <div class="chapter-links">
-            ${docsHTML}
-          </div>
-        </div>
-
-        <div class="quest-reward-board">
-          <div class="quest-item">
-            <span class="board-lbl"><i class="fa-solid fa-bullseye"></i> ${t.clearCond}</span>
-            <span>${ch.quest[currentLanguage] || ch.quest['ko']}</span>
-          </div>
-          <div class="reward-item">
-            <span class="board-lbl"><i class="fa-solid fa-gift"></i> ${t.questReward}</span>
-            <span>${ch.reward[currentLanguage] || ch.reward['ko']}</span>
-          </div>
-        </div>
-      </div>
-    `;
-
-    // 칩 클릭 시 문서 이동
-    row.querySelectorAll(".ch-doc-link").forEach(link => {
-      link.addEventListener("click", () => {
-        window.location.hash = link.getAttribute("data-id");
-      });
-    });
-
-    // 클리어 토글 버튼
-    const checkBtn = row.querySelector(".chapter-check-btn");
-    checkBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      toggleChapterCompletion(ch.num);
     });
 
     container.appendChild(row);
   });
 }
 
-function toggleChapterCompletion(num) {
-  let completed = JSON.parse(localStorage.getItem("completed-chapters") || "[]");
-  const index = completed.indexOf(num);
-  const row = document.getElementById(`chapter-row-${num}`);
-  const btn = row.querySelector(".chapter-check-btn");
+// 신간 카드: 최근 문서 5개 (제목 + 카테고리 칩 + 날짜 + 태그)
+function renderHomeRecent() {
+  const list = document.getElementById("home-recent-list");
+  if (!list) return;
+  list.innerHTML = "";
 
-  if (index === -1) {
-    // 클리어 처리
-    completed.push(num);
-    localStorage.setItem("completed-chapters", JSON.stringify(completed));
-    const t = i18n[currentLanguage];
-    row.classList.add("completed");
-    btn.innerHTML = `<i class="fa-solid fa-circle-check"></i> <span>${t.chapterClear}</span>`;
-    
-    // 폭죽 효과 (canvas-confetti)
-    if (typeof confetti === "function") {
-      confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: 0.6 }
-      });
-    }
-  } else {
-    // 취소 처리
-    const t = i18n[currentLanguage];
-    completed.splice(index, 1);
-    localStorage.setItem("completed-chapters", JSON.stringify(completed));
-    row.classList.remove("completed");
-    btn.innerHTML = `<i class="fa-solid fa-circle"></i> <span>${t.chapterComplete}</span>`;
-  }
+  pickRecentDocs(5).forEach(doc => {
+    const card = document.createElement("div");
+    card.className = "home-card";
+    card.setAttribute("role", "button");
+    card.setAttribute("tabindex", "0");
+    const tags = (doc.tags || []).slice(0, 2).map(tag => `<span>#${escapeHTML(tag)}</span>`).join("");
+    card.innerHTML = `
+      <div class="t">${escapeHTML(doc.title)}</div>
+      <div class="meta">
+        <span class="home-chip" style="color: var(--${doc.category}-color)">${doc.category}</span>
+        <span>${doc.updated || doc.created || ""}</span>
+        ${tags}
+      </div>`;
+    const open = () => { window.location.hash = doc.id; };
+    card.addEventListener("click", open);
+    card.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        open();
+      }
+    });
+    list.appendChild(card);
+  });
+}
+
+// 서가 안내: 카테고리별 문서 수. 클릭하면 사이드바 카테고리 칩 필터를 그대로 발동한다.
+// 칩이 없는 meta 서가는 Library Index 탭으로 보낸다.
+function renderHomeShelves() {
+  const container = document.getElementById("home-shelves");
+  if (!container) return;
+  container.innerHTML = "";
+  const t = i18n[currentLanguage];
+
+  SHELF_CATEGORIES.forEach(({ key, color }) => {
+    const count = wikiData.filter(d => d.lang === currentLanguage && (d.category === key || (key === "meta" && d.category === "wiki"))).length;
+    const row = document.createElement("div");
+    row.className = "home-shelf";
+    row.setAttribute("role", "button");
+    row.setAttribute("tabindex", "0");
+    row.innerHTML = `
+      <span class="dot" style="background: ${color}"></span>
+      <span class="nm">${escapeHTML(t.shelfNames[key] || key)}</span>
+      <span class="ds">${escapeHTML(t.shelfDescs[key] || "")}</span>
+      <span class="ct">${count}<small>${currentLanguage === "ko" ? "개" : ""}</small></span>`;
+    const activate = () => {
+      const chip = document.querySelector(`.filter-chip[data-category="${key}"]`);
+      if (chip) {
+        document.querySelectorAll(".filter-chip").forEach(c => c.classList.remove("active"));
+        chip.classList.add("active");
+        filterWiki();
+      } else {
+        showTab("index");
+      }
+    };
+    row.addEventListener("click", activate);
+    row.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        activate();
+      }
+    });
+    container.appendChild(row);
+  });
 }
 
 // ==========================================================================
@@ -598,8 +862,9 @@ async function handleRouting() {
   const hash = window.location.hash.slice(1);
   
   if (!hash) {
-    // 기본 화면: 플레이 맵 표시
-    showTab("campaign");
+    // 기본 화면: 홈(도서관 로비) 표시 — 읽음 기록이 바뀌었을 수 있으니 징검다리 진행도 다시 그린다
+    showTab("home");
+    renderHome();
     closeReadingPanel();
     return;
   }
@@ -636,6 +901,9 @@ async function handleRouting() {
 function loadDocument(doc, isFallback = false) {
   currentDoc = doc;
   const t = i18n[currentLanguage];
+
+  // 문서를 열면 읽은 기록에 남긴다 (리벰프 2단계: 실제 읽음 기반)
+  markDocAsRead(doc.id);
   
   // 사이드바 활성 아이템 강조
   document.querySelectorAll(".doc-item").forEach(item => {
@@ -745,6 +1013,9 @@ function loadDocument(doc, isFallback = false) {
     sourcesContainer.parentElement.classList.add("hidden");
   }
 
+  // 다음 돌 카드 (리벰프 2단계)
+  renderNextStone(doc);
+
   // 코드 하이라이팅 적용
   if (typeof Prism !== "undefined") {
     Prism.highlightAllUnder(bodyViewer);
@@ -765,6 +1036,62 @@ function loadDocument(doc, isFallback = false) {
       readingPanel.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   }, 80);
+}
+
+// 열람실 하단 "다음 돌" 카드 — 리벰프 2단계 (2026-11-18)
+// 같은 구간 다음 이야기 → 다음 구간 첫 이야기 → 전부 다 읽음 순으로 안내한다.
+// 챕터에 속하지 않은 문서(저널 등)에서는 카드를 숨긴다.
+function renderNextStone(doc) {
+  const card = document.getElementById("doc-next-stone");
+  if (!card) return;
+  const t = i18n[currentLanguage];
+  const labelEl = document.getElementById("doc-next-stone-label");
+  const titleEl = document.getElementById("doc-next-stone-title");
+  const subEl = document.getElementById("doc-next-stone-sub");
+
+  const next = getNextStone(doc);
+  if (!next) {
+    card.classList.add("hidden");
+    return;
+  }
+
+  let label = "";
+  let title = "";
+  let sub = "";
+  let targetHash = "";
+
+  if (next.kind === "next") {
+    const stone = CHAPTER_STONES[next.chapter.num] || {};
+    const stoneName = (stone.name && (stone.name[currentLanguage] || stone.name.ko)) || "";
+    label = t.nextStone;
+    title = next.target.title;
+    sub = `${stoneName} · ${t.nextStoneOf(next.index + 1, next.chapter.docs.length)}`;
+    targetHash = next.target.id;
+  } else if (next.kind === "chapter") {
+    const stone = CHAPTER_STONES[next.chapter.num] || {};
+    const stoneName = (stone.name && (stone.name[currentLanguage] || stone.name.ko)) || "";
+    label = t.nextChapter;
+    title = next.target.title;
+    sub = t.nextChapterSub(stoneName);
+    targetHash = next.target.id;
+  } else {
+    label = t.nextStoneAllDone;
+    title = t.nextStoneBackHome;
+    sub = "";
+    targetHash = "";
+  }
+
+  if (labelEl) labelEl.textContent = label;
+  if (titleEl) titleEl.textContent = title;
+  if (subEl) subEl.textContent = sub;
+  card.classList.remove("hidden");
+  card.onclick = () => { window.location.hash = targetHash; };
+  card.onkeydown = (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      window.location.hash = targetHash;
+    }
+  };
 }
 
 // Obsidian 위키링크 파싱 및 해시 링크로 변환
@@ -818,25 +1145,69 @@ function setupEventListeners() {
   // 실시간 퍼지 검색 바
   const searchInput = document.getElementById("search-input");
   const clearBtn = document.getElementById("search-clear-btn");
-  
-  if (searchInput) searchInput.addEventListener("input", (e) => {
-    const q = e.target.value.toLowerCase().trim();
-    if (q) {
-      clearBtn.classList.remove("hidden");
-    } else {
-      clearBtn.classList.add("hidden");
+  const homeSearchInput = document.getElementById("home-search-input");
+
+  // 두 검색창(사이드바/홈 히어로)의 값을 동기화한다. filterWiki는 사이드바 입력값을 읽으므로
+  // 홈 입력은 사이드바 입력에 값을 복사한 뒤 같은 디바운스 경로를 태운다.
+  const syncSearchInputs = (source, value) => {
+    if (source !== searchInput && searchInput) searchInput.value = value;
+    if (source !== homeSearchInput && homeSearchInput) homeSearchInput.value = value;
+    if (clearBtn) {
+      if (value.toLowerCase().trim()) {
+        clearBtn.classList.remove("hidden");
+      } else {
+        clearBtn.classList.add("hidden");
+      }
     }
     // 3단계: 디바운스 150ms
     clearTimeout(searchDebounceTimer);
     searchDebounceTimer = setTimeout(filterWiki, 150);
+  };
+
+  if (searchInput) searchInput.addEventListener("input", (e) => {
+    syncSearchInputs(searchInput, e.target.value);
+  });
+
+  if (homeSearchInput) homeSearchInput.addEventListener("input", (e) => {
+    syncSearchInputs(homeSearchInput, e.target.value);
   });
 
   if (clearBtn && searchInput) clearBtn.addEventListener("click", () => {
     searchInput.value = "";
+    if (homeSearchInput) homeSearchInput.value = "";
     clearBtn.classList.add("hidden");
     filterWiki();
     searchInput.focus();
   });
+
+  // 오늘의 질문 카드 클릭 → 해당 문서 열기 (data-id는 renderHomeQuestion이 채운다)
+  const questionCard = document.getElementById("home-question-card");
+  if (questionCard) {
+    const openQuestion = () => {
+      const id = questionCard.getAttribute("data-id");
+      if (id) window.location.hash = id;
+    };
+    questionCard.addEventListener("click", openQuestion);
+    questionCard.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        openQuestion();
+      }
+    });
+  }
+
+  // 지도실 카드 클릭 → 지식 관계망 탭 열기
+  const mapRoom = document.getElementById("home-maproom");
+  if (mapRoom) {
+    const openMap = () => showTab("graph");
+    mapRoom.addEventListener("click", openMap);
+    mapRoom.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        openMap();
+      }
+    });
+  }
 
   // 카테고리 빠른 필터 칩
   document.querySelectorAll(".filter-chip").forEach(chip => {
@@ -1063,8 +1434,15 @@ function initGraph() {
     });
   });
 
+  // 연결 수(degree) 계산 — 허브 노드는 크게, 잎 노드는 작게. 라벨 표시 기준으로도 사용
+  nodes.forEach(n => { n.degree = 0; });
+  links.forEach(l => { l.source.degree++; l.target.degree++; });
+  nodes.forEach(n => { if (n.category !== 'meta') n.radius = 6 + Math.min(n.degree, 30) * 0.35; });
+  const sortedDegrees = nodes.map(n => n.degree).sort((a, b) => b - a);
+  const hubDegreeThreshold = Math.max(6, sortedDegrees[Math.floor(nodes.length * 0.08)] || 6);
+
   // 76개 노드가 흩어진 가상 월드 전체를 조망할 수 있는 최적의 초기 줌 비율 계산
-  const initScale = Math.min(width / worldWidth, height / worldHeight) * 1.35 || 0.4;
+  const initScale = Math.min(width / worldWidth, height / worldHeight) * 1.05 || 0.4;
   let transform = { 
     x: width / 2 - (worldWidth / 2) * initScale, 
     y: height / 2 - (worldHeight / 2) * initScale, 
@@ -1331,8 +1709,11 @@ function initGraph() {
       ctx.lineWidth = 1.5;
       ctx.stroke();
 
-      // 노드 라벨 텍스트 (호버 상태이거나 클릭 활성화 상태일 경우 무조건 글자 굵게 표시)
-      const shouldShowLabel = transform.scale > 0.6 || node === hoveredNode || isActiveNode;
+      // 노드 라벨: 전체 보기에서는 연결 많은 허브(상위 약 8%)만, 확대하면 전부, 호버·활성 노드는 항상 표시
+      const isHubLabel = node.degree >= hubDegreeThreshold;
+      const shouldShowLabel = node === hoveredNode || isActiveNode
+        || transform.scale >= 1.15
+        || (transform.scale >= 0.42 && isHubLabel);
       if (shouldShowLabel) {
         ctx.fillStyle = isLightTheme ? '#334155' : '#e4e4e7';
         ctx.font = (node === hoveredNode || isActiveNode) 
@@ -1340,7 +1721,10 @@ function initGraph() {
           : `${9 / transform.scale}px var(--font-title)`;
         ctx.textAlign = "center";
         ctx.textBaseline = "top";
-        ctx.fillText(node.title, node.x, node.y + node.radius + 5);
+        const labelText = (node === hoveredNode || isActiveNode || node.title.length <= 26)
+          ? node.title
+          : node.title.slice(0, 26) + '…';
+        ctx.fillText(labelText, node.x, node.y + node.radius + 5);
       }
     });
 

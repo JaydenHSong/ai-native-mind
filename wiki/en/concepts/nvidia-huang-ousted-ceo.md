@@ -11,6 +11,7 @@ related:
   - "[[concepts/amd-world-labs-physical-ai]]"
   - "[[concepts/anthropic-ipo-roadshow-valuation-cut]]"
   - "[[concepts/us-chip-export-controls-ndaa]]"
+  - "[[concepts/nvidia-q3-earnings-h200-china]]"
 status: draft
 confidence: high
 ---
@@ -59,6 +60,8 @@ On 2026-11-12, NVIDIA founder and CEO Jensen Huang (63) resigned after two extra
 - [[concepts/amd-world-labs-physical-ai]] — AMD's $8.2B World Labs acquisition, the competitive axis in AI infrastructure (2026-09-30)
 - [[concepts/anthropic-ipo-roadshow-valuation-cut]] — Anthropic IPO, AI-company governance and market flows (2026-11-08)
 - [[concepts/us-chip-export-controls-ndaa]] — US Congress pushes tougher AI chip export controls, three bills eyed for NDAA inclusion — the legislative follow-up to Huang's ouster (2026-11-15)
+
+- [[concepts/nvidia-q3-earnings-h200-china]] — Q3 revenue $115.8B (+103%), the first earnings under the interim structure, H200 shipments to China halted (2026-11-17)
 
 ## Sources
 

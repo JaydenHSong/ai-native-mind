@@ -3,13 +3,14 @@ title: "LiteLLM 1.107.0 PyPI Supply-Chain Compromise — .pth Persistent Backdoo
 category: concepts
 tags: [litellm, pypi, supply-chain-attack, backdoor, pth-persistence, credential-theft, ai-infra-security, agent-supply-chain]
 created: 2026-10-22
-updated: 2026-10-22
+updated: 2026-11-18
 sources:
   - "raw/articles/2026-10-22-litellm-pypi-compromise.md"
 related:
   - "[[concepts/agent-supply-chain-security]]"
   - "[[concepts/opencode-key-breach]]"
   - "[[patterns/agent-safety-runtime]]"
+  - "[[concepts/microsoft-agent-framework-pypi-compromise]]"
 status: draft
 confidence: high
 ---
@@ -39,3 +40,9 @@ litellm 1.107.0 was published to PyPI (2026-10-21) carrying a credential stealer
 - Actual infection scale (downloads, victims) undisclosed.
 - Attacker attribution (TeamPCP link etc.) unconfirmed — the March-incident connection is speculative.
 - `cook.pth` detection/removal guidance is per the Datadog report — environment differences possible.
+
+## 2026-11-18 follow-up — Agent Framework compromised on PyPI, same .pth technique
+
+The second major case with the same technique in a month. Malicious versions 1.26.1 and 1.26.2 of Microsoft's official AI agent framework `agent-framework` were uploaded to PyPI on November 17 and removed about an hour later. A `.pth` startup hook stole Azure and GitHub Actions OIDC tokens and credentials, exfiltrating them to webhook.site. This time the target was not an "LLM proxy" but "the agent framework itself" — and because agents carry cloud credentials, the theft value is higher. The safe version is 1.26.0. The root cause (ESRP certificate theft) is per a Wiz update, and Microsoft has not published an official postmortem yet.
+
+- Details: [[concepts/microsoft-agent-framework-pypi-compromise]]

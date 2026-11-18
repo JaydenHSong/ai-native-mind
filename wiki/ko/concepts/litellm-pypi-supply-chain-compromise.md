@@ -3,13 +3,14 @@ title: "LiteLLM 1.107.0 PyPI 공급망 침해 — .pth 지속 실행 백도어"
 category: concepts
 tags: [litellm, pypi, supply-chain-attack, backdoor, pth-persistence, credential-theft, ai-infra-security, agent-supply-chain]
 created: 2026-10-22
-updated: 2026-10-22
+updated: 2026-11-18
 sources:
   - "raw/articles/2026-10-22-litellm-pypi-compromise.md"
 related:
   - "[[concepts/agent-supply-chain-security]]"
   - "[[concepts/opencode-key-breach]]"
   - "[[patterns/agent-safety-runtime]]"
+  - "[[concepts/microsoft-agent-framework-pypi-compromise]]"
 status: draft
 confidence: high
 ---
@@ -50,3 +51,9 @@ confidence: high
 - 실제 감염 규모 (다운로드 수·피해자 수) 는 미공개.
 - 공격자 귀속 (TeamPCP 연관 여부 등) 은 미확인 — 3월 사건과의 연결은 추측 수준.
 - `cook.pth` 탐지·제거 가이드는 Datadog 리포트 기준 — 환경별 차이 가능.
+
+## 2026-11-18 후속 — Agent Framework PyPI 침해, 같은 .pth 수법
+
+한 달 만에 같은 수법의 두 번째 대형 사례다. Microsoft의 공식 AI 에이전트 프레임워크 `agent-framework`의 악성 버전 1.26.1·1.26.2가 11월 17일 PyPI에 올라 약 1시간 만에 제거됐다. `.pth` 시작 훅으로 Azure·GitHub Actions OIDC 토큰과 자격증명을 탈취해 webhook.site로 유출했다. 이번에는 표적이 "LLM 프록시"가 아니라 "에이전트 프레임워크 자체" — 에이전트가 클라우드 자격증명을 들고 다닌다는 점에서 탈취 가치가 더 크다. 안전 버전은 1.26.0. 근원(ESRP 인증서 탈취)은 Wiz 업데이트 기준이며 Microsoft 공식 postmortem은 아직 없다.
+
+- 상세: [[concepts/microsoft-agent-framework-pypi-compromise]]

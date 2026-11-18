@@ -11,6 +11,7 @@ related:
   - "[[concepts/amd-world-labs-physical-ai]]"
   - "[[concepts/anthropic-ipo-roadshow-valuation-cut]]"
   - "[[concepts/us-chip-export-controls-ndaa]]"
+  - "[[concepts/nvidia-q3-earnings-h200-china]]"
 status: draft
 confidence: high
 ---
@@ -58,6 +59,7 @@ confidence: high
 - [[concepts/amd-world-labs-physical-ai]] — AMD의 World Labs 인수, AI 인프라 경쟁 축 (2026-09-30)
 - [[concepts/anthropic-ipo-roadshow-valuation-cut]] — Anthropic IPO, AI 기업 지배구조·시장 흐름 (2026-11-08)
 - [[concepts/us-chip-export-controls-ndaa]] — 미 의회 AI 칩 수출통제 강화 추진, NDAA 3개 법안 포함 전망·Huang 축출 후속 입법 (2026-11-15)
+- [[concepts/nvidia-q3-earnings-h200-china]] — Q3 매출 $115.8B(+103%), 임시 체제 하 첫 실적·H200 중국 출하 중단 (2026-11-17)
 
 ## 참고 소스
 

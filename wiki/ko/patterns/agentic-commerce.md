@@ -3,7 +3,7 @@ title: "Agentic Commerce"
 category: patterns
 tags: [agentic-commerce, shopping-agents, benchmarks, principal-agent, computer-use, steering, voice-agent, gemini, accessibility, stt, platform-blocks, yelp, delta]
 created: 2026-09-24
-updated: 2026-10-18
+updated: 2026-11-18
 sources:
   - "raw/articles/2026-09-24-agentic-commerce-benchmark-booking.md"
   - "raw/articles/2026-09-25-gemini-live-avatar-business-calling-suncatcher.md"
@@ -14,6 +14,7 @@ sources:
   - "raw/articles/2026-10-15-booking-vayo-ai-travel.md"
   - "raw/articles/2026-10-16-datadome-ai-traffic-q3-2026.md"
   - "raw/articles/2026-10-18-websites-block-ai-agents.md"
+  - "raw/articles/2026-11-18-agentic-commerce-gemini-tasks-klarna.md"
 related:
   - "[[concepts/llm-evaluation]]"
   - "[[comparisons/agent-eval-frameworks]]"
@@ -22,6 +23,7 @@ related:
   - "[[concepts/booking-vayo-travel-agent]]"
   - "[[concepts/datadome-ai-traffic-q3-2026]]"
   - "[[concepts/websites-block-ai-agents]]"
+  - "[[concepts/agentic-commerce-gemini-tasks-klarna]]"
 status: draft
 confidence: low
 ---
@@ -176,6 +178,13 @@ The Verge(Emma Roth, 10/17) — Yelp·Delta·JPMorgan Chase·Charles Schwab·Car
 - 한계: Amtrak·Cars.com 차단은 사용자 보고 기반 미검증. Delta는 공식 금지가 아님. The Verge 원문 URL은 verbatim 미확보 — 2차 보도 4개로 교차확인.
 - 상세: [[concepts/websites-block-ai-agents]]
 
+## 2026-11-18 보강 — Gemini Tasks 무료화·전화·결제 + Klarna 어시스턴트
+
+Google이 Gemini Tasks를 무료로 풀고 전화·결제 기능을 붙였다(11-17, 미국·일본·한국·캐나다·호주·인도). Tasks가 현지 업체에 병렬로 전화를 걸어 가격·재고·예약을 확인하고, Google Pay 경유로 결제한다(AP2 기반, 지출 한도 최대 $1,000·14일 이내). 같은 날 Klarna도 WhatsApp·iMessage 안의 컨시어지형 AI 어시스턴트를 발표했다.
+
+- 이 페이지의 프레이밍으로 읽으면: (1) 9/25 보강의 "사업자에 직접 전화"가 유료 구독 기능에서 무료 대중 제품이 됐다 — 음성 채널의 스티어링·확인 절차가 이제 기본 UX의 문제다. (2) "에이전트가 누구 편인가"에 "에이전트가 얼마까지 쓸 수 있는가"(지출 한도)가 통제 축으로 추가됐다 — Klarna의 "도착 전에는 결제하지 않는다"는 같은 통제 프레이밍의 다른 표현이다. (3) 결제 프로토콜(AP2)이 Poppy(10/13 보강)의 신원·권한 레일과 짝을 이뤄 에이전트 커머스의 인프라 층이 된다.
+- 상세: [[concepts/agentic-commerce-gemini-tasks-klarna]]
+
 ## 참고 소스
 
 - [Agentic commerce reality check: Booking Holdings says LLM traffic is 'significantly below 1%' of bookings](raw/articles/2026-09-24-agentic-commerce-benchmark-booking.md)
@@ -186,3 +195,4 @@ The Verge(Emma Roth, 10/17) — Yelp·Delta·JPMorgan Chase·Charles Schwab·Car
 - [Booking Holdings, AI 여행 스타트업 Vayo 공개 (GeekWire 원보도·Skift·Morningstar·PhocusWire, 10/14)](raw/articles/2026-10-15-booking-vayo-ai-travel.md)
 - [DataDome Q3 2026 AI 트래픽 보고서 — 250억 에이전트 요청·Muse 미신고 99.3% (DataDome 공식·PPC Land, 10/15)](raw/articles/2026-10-16-datadome-ai-traffic-q3-2026.md)
 - [플랫폼의 에이전트 차단 — Yelp·Delta·은행 (The Verge 10/17, mylistingo·techbuzz.ai·inshorts, 10/17–18)](raw/articles/2026-10-18-websites-block-ai-agents.md)
+- [에이전트 커머스, 주류로 — Gemini Tasks 무료화·전화·결제 + Klarna 어시스턴트 (Google, 11-17)](raw/articles/2026-11-18-agentic-commerce-gemini-tasks-klarna.md)

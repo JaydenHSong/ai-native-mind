@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-11-17
-total_pages: 399
+updated: 2026-11-18
+total_pages: 405
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 전체 399개 페이지 | 최종 업데이트: 2026-11-17 (데일리 ingest: AI 뉴스 6건 수집 + ko 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
+> 전체 405개 페이지 | 최종 업데이트: 2026-11-18 (데일리 ingest: AI 뉴스 6건 수집 + ko 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
 
 ## 쉽게 읽기
 
@@ -26,7 +26,7 @@ status: active
 - **실전(Chapter 3~5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **엔드게임(Chapter 6~7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (275개)
+## Concepts (281개)
 
 ### 성장 맵 & 철학
 - [[concepts/ai-native-programmer]] — AI를 팀원으로 활용하여 1인이 팀 규모 결과를 내는 개발자, 성장 맵
@@ -182,6 +182,9 @@ status: active
 - [[concepts/xai-grok-bot-unprompted-data-requests]] — xAI Grok Bot, 5일간 31건 무단 기업 데이터 요청·Proactive Messages 기본값 ON (2026-11-17)
 - [[concepts/anthropic-disclosure-window-30-days]] — Anthropic CVD 기한 90일→30일 단축, AI 재발견 시대의 공개 정책 개편 (2026-11-16)
 - [[concepts/cerebras-tungsten-wafer-scale-code]] — Cerebras Tungsten, 연구원 1명 + 코딩 에이전트 1명이 쓴 웨이퍼 스케일 코드 (2026-11-16)
+- [[concepts/openai-gpt-6-2-astra-sol]] — OpenAI GPT-6.2 Astra·Sol 출시, Astra 가격 20% 인하·첫 'High' 자기개선 등급 (2026-11-17)
+- [[concepts/microsoft-ignite-mai-code-2]] — Microsoft MAI Code 2 공개, Copilot Autopilot·Agent 365 5,000만 개 (2026-11-17)
+- [[concepts/agentic-commerce-gemini-tasks-klarna]] — Gemini Tasks 무료화·전화·결제 + Klarna 어시스턴트, 에이전트 커머스 주류화 (2026-11-17)
 
 ### 운영·관측
 - [[concepts/gen-ai-observability]] — OpenTelemetry GenAI·에이전트 시맨틱 컨벤션, 트레이스·표준 계측
@@ -218,6 +221,9 @@ status: active
 - [[concepts/nvidia-huang-ousted-ceo]] — Jensen Huang 축출, NVIDIA 창업자 CEO 사임·Kress 임시 체제·주가 개장 전 −8~10% (2026-11-12)
 - [[concepts/spacex-74b-ai-supercomputing-campuses]] — SpaceX $74B 이상 AI 슈퍼컴퓨팅 캠퍼스 계획, 텍사스·애리조나·전력 자급 (2026-11-12)
 - [[concepts/nonprofits-sue-freeze-frontier-ai]] — 비영리 4단체의 프론티어 AI 개발 동결 소송, 5개사 피고·캘리포니아 부정경쟁방지법 (2026-11-12)
+
+- [[concepts/nvidia-q3-earnings-h200-china]] — NVIDIA Q3 매출 $115.8B(+103%), 황 사임 후 첫 실적·H200 중국 출하 중단 (2026-11-17)
+- [[concepts/anthropic-ipo-pricing-above-80]] — Anthropic IPO 가격 결정 오늘 밤, $80 상회 전망·11-19 ANT 상장 (2026-11-18)
 
 ### AI의 어두운 면
 - [[concepts/context-rot-hallucination]] — Context Rot, Hallucination, Error 누적 등 5대 실패 패턴
@@ -315,6 +321,8 @@ status: active
 - [[concepts/openai-codex-npm-prompt-injection]] — OpenAI Codex npm 파이프라인 프롬프트 인젝션, 이슈 본문→릴리스 발행 자격증명 체인 (2026-11-11)
 - [[concepts/fireworks-notion-ai-breach]] — Fireworks AI 침해로 Notion AI 채팅 기록 노출, 제로 리텐션 약속과 달리 보관·11-11 API 키 폐기 (2026-11-09·11-11)
 
+- [[concepts/microsoft-agent-framework-pypi-compromise]] — Microsoft Agent Framework PyPI 침해, 악성 1.26.1·1.26.2 클라우드 자격증명 탈취 (2026-11-17)
+
 ## Tools (16개)
 
 - [[tools/claude-code]] — Anthropic의 CLI 기반 AI 코딩 도구, 위키 유지보수 LLM
@@ -374,7 +382,9 @@ status: active
 - [[patterns/agent-mvp-stack-2026]] — 1인 MVP 스택 5대 영역 × 4 단계 + 의사결정 트리 (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — Vibe Coding의 7대 안티패턴과 회피법
 
-## Journal (74개)
+## Journal (75개)
+
+- [[journal/2026-11-18]] — 수요 데일리: NVIDIA Q3 $115.8B·H200 중국 출하 중단·Anthropic IPO $80 상회 전망·GPT-6.2 Astra·Sol·MAI Code 2·Gemini Tasks 무료화·Agent Framework PyPI 침해
 
 - [[journal/2026-11-17]] — 화요 데일리: 캘리포니아 OpenAI 제소·Google exploit_agent·Nemotron for Science·Grok Bot 무단 요청·Anthropic 공개 기한 30일·Cerebras Tungsten
 

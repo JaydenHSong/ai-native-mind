@@ -3,13 +3,14 @@ title: "GPT-6.2 Astra 유출설 — Codex 사용량 화면에 등장한 미확�
 category: concepts
 tags: [gpt-62-astra, openai, codex, model-leak, unconfirmed]
 created: 2026-11-02
-updated: 2026-11-02
+updated: 2026-11-18
 sources:
   - "raw/articles/2026-11-02-gpt-62-astra-codex-leak.md"
 related:
   - "[[concepts/claude-mythos-fable-55-leak]]"
   - "[[concepts/openai-gpt61-terra-half-price]]"
   - "[[concepts/gemini-4-carbon-testing]]"
+  - "[[concepts/openai-gpt-6-2-astra-sol]]"
 status: draft
 confidence: medium
 ---
@@ -46,6 +47,12 @@ confidence: medium
 - OpenAI의 발표·가격·스펙이 전혀 없다. 존재 자체가 미확인이다.
 - 성능·트래픽 비중·아키텍처 주장은 유출설 매체발로 독립 검증이 없다.
 - 스크린샷의 출처가 여러 사용자로 분산됐다는 주장과 동일 이미지 재사용 지적이 공존한다.
+
+## 2026-11-18 보강 — 정식 출시 확정
+
+11월 2일 유출설이 11월 17일 정식 출시로 확정됐다. GPT-6.2 Astra·Sol이 ChatGPT Work·Codex·API에 출시됐고, Astra 가격은 $8/$40으로 20% 인하, 컨텍스트 105만 토큰이다. 유출설의 "6.1 취소 뒤 재학습" 줄거리는 7주 만의 출시로 확인됐다. 다만 출시 당일 개발자 평가는 거칠었고, Astra는 자기개선 'High'·사이버 'Critical' 등급을 받았다 — 유출설 단계에서는 없던 안전 정보다.
+
+- 상세: [[concepts/openai-gpt-6-2-astra-sol]]
 
 ## 참고 소스
 

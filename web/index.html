@@ -125,8 +125,8 @@
       <!-- 뷰 모드 탭 헤더 -->
       <header class="workspace-header glass-panel">
         <div class="tabs">
-          <button class="tab-btn active" data-tab="campaign">
-            <i class="fa-solid fa-map-location-dot"></i> Campaign Map
+          <button class="tab-btn active" data-tab="home">
+            <i class="fa-solid fa-house"></i> 홈
           </button>
           <button class="tab-btn" data-tab="graph">
             <i class="fa-solid fa-circle-nodes"></i> Knowledge Graph
@@ -144,49 +144,63 @@
 
       <!-- 탭 컨텐츠 컨테이너 -->
       <div class="workspace-content">
-        <!-- 탭 A: 캠페인 맵 (게임화 챕터 테크트리) -->
-        <section id="campaign-tab" class="tab-panel active">
-          <div class="panel-intro">
-            <h2><i class="fa-solid fa-gamepad text-gradient"></i> AI-Native Campaign Road</h2>
-            <p>위키 전체를 "챕터 클리어 게임"처럼 따라가는 성장 캠페인 월드맵입니다. 각 챕터의 문서를 읽고 조건과 산출물을 달성해 보세요.</p>
-          </div>
-          
-          <div class="campaign-container">
-            <!-- 챕터별 카드 렌더링 영역 (JS에서 동적 생성) -->
-            <div id="campaign-flow" class="campaign-flow">
-              <!-- 데이터 로딩 전 임시 스켈레톤 로더 (연결선 붕괴 방지) -->
-              <div class="chapter-row active skeleton-row">
-                <div class="chapter-marker skeleton-marker">
-                  <span class="ch-num">CH</span>
-                  <span class="ch-id">..</span>
+        <!-- 탭 A: 홈 (도서관 로비) — 리벰프 1단계 (2026-11-17) -->
+        <section id="home-tab" class="tab-panel active">
+          <div class="home-scroll">
+            <div class="home-lobby">
+              <!-- 히어로: 큰 검색 -->
+              <div class="home-hero">
+                <h2 id="home-hero-title">오늘은 뭐가 궁금해요?</h2>
+                <p id="home-hero-sub">모르는 말을 만나도 괜찮아요. 쉬운 이야기부터 차근차근 있어요.</p>
+                <div class="home-search">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <input type="text" id="home-search-input" placeholder="검색어를 입력하세요 — 초성만 쳐도 돼요" autocomplete="off">
                 </div>
-                <div class="chapter-card glass-panel skeleton-card">
-                  <div class="skeleton-line skeleton-title"></div>
-                  <div class="skeleton-line skeleton-text"></div>
-                  <div class="skeleton-line skeleton-text-short"></div>
-                </div>
+                <div class="home-hint" id="home-hint"></div>
               </div>
-              <div class="chapter-row skeleton-row">
-                <div class="chapter-marker skeleton-marker">
-                  <span class="ch-num">CH</span>
-                  <span class="ch-id">..</span>
-                </div>
-                <div class="chapter-card glass-panel skeleton-card">
-                  <div class="skeleton-line skeleton-title"></div>
-                  <div class="skeleton-line skeleton-text"></div>
-                  <div class="skeleton-line skeleton-text-short"></div>
-                </div>
+
+              <!-- 오늘의 질문 -->
+              <div id="home-question-card" class="home-question glass-panel" role="button" tabindex="0">
+                <div class="home-question-lbl" id="home-question-lbl">오늘의 질문</div>
+                <div class="home-question-q" id="home-question-q"></div>
+                <div class="home-question-a" id="home-question-a"></div>
               </div>
-              <div class="chapter-row skeleton-row">
-                <div class="chapter-marker skeleton-marker">
-                  <span class="ch-num">CH</span>
-                  <span class="ch-id">..</span>
+
+              <!-- 징검다리 (챕터 데이터 재사용, 쉬운 말 이름) -->
+              <div class="home-section">
+                <div class="home-sec-head">
+                  <h3 id="home-stones-title">🪨 처음 왔어요? 징검다리 따라오기</h3>
+                  <p id="home-stones-sub">모르는 게 당연해요. 돌을 하나씩 밟으면 어느새 건너편이에요. 급하면 건너뛰어도 돼요.</p>
                 </div>
-                <div class="chapter-card glass-panel skeleton-card">
-                  <div class="skeleton-line skeleton-title"></div>
-                  <div class="skeleton-line skeleton-text"></div>
-                  <div class="skeleton-line skeleton-text-short"></div>
+                <div id="home-stones" class="home-stones"><!-- JS에서 동적 생성 --></div>
+                <div class="home-stones-note" id="home-stones-note"></div>
+              </div>
+
+              <!-- 신간: 새로 들어온 이야기 -->
+              <div class="home-section">
+                <div class="home-sec-head">
+                  <h3 id="home-recent-title">📖 새로 들어온 이야기</h3>
+                  <p id="home-recent-sub">최근에 들어온 이야기예요.</p>
                 </div>
+                <div id="home-recent-list" class="home-cards"><!-- JS에서 동적 생성 --></div>
+              </div>
+
+              <!-- 서가 안내 -->
+              <div class="home-section">
+                <div class="home-sec-head">
+                  <h3 id="home-shelves-title">🗄️ 서가 안내</h3>
+                  <p id="home-shelves-sub">주제별로 꽂아 뒀어요. 서가를 누르면 왼쪽 목록이 그 주제로 걸러져요.</p>
+                </div>
+                <div id="home-shelves" class="home-shelves glass-panel"><!-- JS에서 동적 생성 --></div>
+              </div>
+
+              <!-- 지도실 (지식 관계망으로 이동) -->
+              <div class="home-maproom glass-panel" id="home-maproom" role="button" tabindex="0">
+                <div>
+                  <div class="home-maproom-t" id="home-maproom-t">이야기들이 어떻게 이어져 있는지 보고 싶으면</div>
+                  <div class="home-maproom-d" id="home-maproom-d">지식 관계망 지도 — 평소엔 서가와 검색으로 충분해요. 지도는 가끔 전체 그림이 궁금할 때만.</div>
+                </div>
+                <div class="home-maproom-go" id="home-maproom-go">지도 열기 →</div>
               </div>
             </div>
           </div>
@@ -303,6 +317,13 @@
               <!-- 참고 원천 소스 파일 리스트 -->
             </ul>
           </div>
+
+          <!-- 다음 돌 카드 (리벰프 2단계): 같은 구간 다음 이야기 / 다음 구간 / 완주 안내 -->
+          <div id="doc-next-stone" class="doc-next-stone hidden" role="button" tabindex="0">
+            <div class="next-stone-label" id="doc-next-stone-label"></div>
+            <div class="next-stone-title" id="doc-next-stone-title"></div>
+            <div class="next-stone-sub" id="doc-next-stone-sub"></div>
+          </div>
         </footer>
       </div>
     </article>
@@ -314,9 +335,6 @@
   <!-- Prism 코드 하이라이터 -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
-  <!-- Canvas Confetti 이펙트 (챕터 클리어용) -->
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-  
   <!-- 코어 애플리케이션 JS -->
   <script src="app.js" type="module"></script>
 </body>

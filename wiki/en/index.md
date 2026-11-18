@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-11-17
-total_pages: 399
+updated: 2026-11-18
+total_pages: 405
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 399 managed pages total | Last updated: 2026-11-17 (daily ingest: 6 AI news sources collected + ko/en wiki refinement) — most pages include a **Start here** block.
+> 405 managed pages total | Last updated: 2026-11-18 (daily ingest: 6 AI news sources collected + ko/en wiki refinement) — most pages include a **Start here** block.
 
 ## Start here
 
@@ -26,7 +26,7 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - **Practice (Chapters 3–5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **Endgame (Chapters 6–7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (275)
+## Concepts (281)
 
 ### Growth map & philosophy
 - [[concepts/ai-native-programmer]] — a developer who uses AI as teammates to achieve team-scale outcomes solo; growth map
@@ -180,6 +180,9 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[concepts/xai-grok-bot-unprompted-data-requests]] — xAI Grok Bot, 31 unprompted corporate data requests in 5 days, Proactive Messages default ON (2026-11-17)
 - [[concepts/anthropic-disclosure-window-30-days]] — Anthropic cuts vulnerability disclosure window from 90 to 30 days, CVD reworked for the AI-rediscovery era (2026-11-16)
 - [[concepts/cerebras-tungsten-wafer-scale-code]] — Cerebras Tungsten, wafer-scale code written by 1 researcher + 1 coding agent (2026-11-16)
+- [[concepts/openai-gpt-6-2-astra-sol]] — OpenAI launches GPT-6.2 Astra and Sol, Astra 20% cheaper, first 'High' self-improvement rating (2026-11-17)
+- [[concepts/microsoft-ignite-mai-code-2]] — Microsoft unveils MAI Code 2, Copilot Autopilot and 50M agents on Agent 365 (2026-11-17)
+- [[concepts/agentic-commerce-gemini-tasks-klarna]] — Gemini Tasks free with calling and payments + Klarna assistant, agentic commerce goes mainstream (2026-11-17)
 
 ### Operations & observability
 - [[concepts/gen-ai-observability]] — OpenTelemetry GenAI and agent semantic conventions, traces, and standard instrumentation
@@ -216,6 +219,9 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[concepts/nvidia-huang-ousted-ceo]] — Jensen Huang ousted: NVIDIA founder-CEO resigns, Kress interim, shares −8–10% premarket (2026-11-12)
 - [[concepts/spacex-74b-ai-supercomputing-campuses]] — SpaceX $74B+ AI supercomputing campus plan, Texas and Arizona, self-generated power (2026-11-12)
 - [[concepts/nonprofits-sue-freeze-frontier-ai]] — Four nonprofits sue to freeze frontier AI development, five defendants, California Unfair Competition Law (2026-11-12)
+
+- [[concepts/nvidia-q3-earnings-h200-china]] — NVIDIA Q3 revenue $115.8B (+103%), first earnings since Huang's ouster, H200 shipments to China halted (2026-11-17)
+- [[concepts/anthropic-ipo-pricing-above-80]] — Anthropic IPO prices tonight, above-$80 outlook, ANT lists Nov 19 (2026-11-18)
 
 ### The darker side of AI
 - [[concepts/context-rot-hallucination]] — five major failure patterns including context rot, hallucination, and error accumulation
@@ -315,6 +321,8 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[concepts/openai-codex-npm-prompt-injection]] — OpenAI Codex npm pipeline prompt injection: issue text to release-signing credentials (2026-11-11)
 - [[concepts/fireworks-notion-ai-breach]] — Fireworks AI breach exposes Notion AI chat records; zero-retention promise broken, API keys revoked Nov 11 (2026-11-09, Nov 11)
 
+- [[concepts/microsoft-agent-framework-pypi-compromise]] — Microsoft Agent Framework compromised on PyPI, malicious 1.26.1 and 1.26.2 steal cloud credentials (2026-11-17)
+
 ## Tools (16)
 
 - [[tools/claude-code]] — Anthropic’s CLI-based AI coding tool; the wiki maintenance LLM
@@ -374,7 +382,9 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[patterns/agent-mvp-stack-2026]] — solo MVP stack: 5 areas × 4 stages + decision tree (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — seven major anti-patterns in vibe coding and how to avoid them
 
-## Journal (74)
+## Journal (75)
+
+- [[journal/2026-11-18]] — Wednesday daily: NVIDIA Q3 $115.8B · H200 shipments to China halted · Anthropic IPO above-$80 outlook · GPT-6.2 Astra and Sol · MAI Code 2 · Gemini Tasks goes free · Agent Framework PyPI compromise
 
 - [[journal/2026-11-17]] — Tuesday daily: California sues OpenAI · Google exploit_agent · Nemotron for Science · Grok Bot unprompted requests · Anthropic 30-day disclosure window · Cerebras Tungsten
 

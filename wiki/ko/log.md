@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-11-17
+updated: 2026-11-18
 sources: []
 status: active
 ---
@@ -19,6 +19,18 @@ status: active
 - 월드맵 허브: [[campaign-map|Campaign Map]]
 - 진행 가이드: [[overview|Overview]]
 - 전체 도감: [[index|Index]]
+
+## [2026-11-18] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + 한/영 위키 정제
+
+- **Raw collected** (raw/articles/, 6건 — 일일 최대치):
+  - `2026-11-18-nvidia-q3-earnings-h200-china.md` — NVIDIA Q3 FY2027 실적 (11-17; NVIDIA): 분기 매출 $115.84B(+103% YoY), 컨센서스 ~$109.1B 상회, 비GAAP EPS $2.68, 순이익 $65.3B(+105%). 데이터센터 $107.61B(+110%), 전체의 약 93%. Vera Rubin 첫 양산 분기에 약 $20B 기여. Q4 가이던스 $130B. 같은 콜에서 임시 CEO Kress가 라이선스 Hopper(H200) 칩의 중국 출하 중단을 밝히고 Q4 가이던스에는 중국 데이터센터 컴퓨팅 매출을 0으로 가정. 중단 이유·영구 여부는 밝히지 않음. 배경으로 미 상무부의 제3국 경유 원격 접근 차단 규칙(11-16)과 베이징의 H200 수입 보류(약 60만 개 칩 홍콩 대기, Reuters)가 거론됨. 황 사임 이후 첫 실적, 이사회 의장은 황의 CEO 복귀 의사가 없다고 밝힘.
+  - `2026-11-18-anthropic-ipo-pricing-above-80.md` — Anthropic IPO 가격 결정 (11-18; Invezz): 11월 18일 저녁 가격 확정, 11월 19일 Nasdaq 티커 ANT로 거래 개시. 공식 공모 범위 주당 $70~78(8.25억 주, $78 기준 $64.35B 조달)이나 WSJ는 $80 초과 가격을, Bloomberg는 수요가 공모 물량의 약 7배라고 보도. Google·NVIDIA·AMD·Microsoft·Broadcom·Micron·TSMC 등이 IPO 가격으로 $26B 규모 Class N 주식 동시 사모에 참여. 연환산 매출 run-rate 약 $81B, Q3 매출 ~$17B(+47% QoQ, Q2 +144%에서 둔화), 컴퓨팅 약정 약 $900.9B. 창업자 Class F 주식이 의결권 50.1% 유지. 단 최종 가격은 파일 작성 시점 미확정 — 11월 19일 후속 확인 필요.
+  - `2026-11-18-openai-gpt-6-2-astra-sol.md` — OpenAI GPT-6.2 Astra·Sol 출시 (11-17; WinBuzzer): ChatGPT Work·Codex·API에 출시, 컨텍스트 105만 토큰. Astra $8/$40으로 20% 인하, Sol $2/$10 유지. AA 지수 Astra 62점(Fable 5.2 65점에 이어 2위), Sol 57점. OpenAI는 작업당 비용이 3분의 1 미만으로 줄었다고 주장했으나 독립 측정치는 AA 36% 감소, Vals AI 50% 감소. 시스템 카드 기준 Astra는 AI 자기개선 'High' 등급을 받은 첫 외부 공개 OpenAI 모델, 두 모델 모두 사이버보안 'Critical' 등급. Astra ExploitBench 내부 임의 코드 실행률 53.5%(전임 31.5%). 영국 AISI는 사전 출시 버전에서 견고성 하락과 범용 탈옥 발견. 출시 당일 개발자 평가는 거칠었다. 9월 GPT-6.1 Astra 안전 기준 미달 취소 7주 만의 출시.
+  - `2026-11-18-microsoft-ignite-mai-code-2.md` — Microsoft Ignite 2026, MAI Code 2 공개 (11-17; Microsoft): 7개 자체 MAI 모델 공개. 코딩 모델 MAI Code 2 GitHub Copilot GA(약 2.8T 전체 / 77B 활성 파라미터). Microsoft 주장(자체 내부 하네스, 독립 재현 없음): Claude Opus 5.5 대비 96% 성능을 5% 비용으로, GPT-6.1 Sol 대비 98% 성능을 40% 비용으로 제공. 비용은 50% 프로모션 가격 기준($0.50/$2.50, 2027년 5월 17일까지). Copilot은 Chat·Cowork·Code·Autopilot 4개 모드로 재편, 24시간 상주 Autopilot과 Agent 365 등록 에이전트 5,000만 개 돌파. Maia 300 자체 AI 칩 공개(와트당 토큰 40%↑ 주장, 자체 기준). MAI Licensed Weights 프로그램도 함께 발표.
+  - `2026-11-18-agentic-commerce-gemini-tasks-klarna.md` — 에이전트 커머스 주류화 (11-17; Google): Gemini Tasks를 미국·일본·한국·캐나다·호주·인도에서 무료 제공(기존 월 $19.99 AI Pro 필요). 미국에서 먼저 Tasks가 현지 업체에 병렬로 전화해 가격·재고·예약을 확인(AI임을 밝히고 통화, 업체 수신 거부 가능, 5개 주 불가). Google Pay 경유 결제, AP2 기반, Visa·Mastercard 토큰 지원, 사용자 지출 한도 설정(최대 $1,000, 기한 14일 이내). 같은 날 Klarna가 WhatsApp·iMessage 안의 컨시어지형 AI 어시스턴트 발표(소수 조기 사용자 라이브, 대기자 명단 개설). Klarna Q3: 매출 4분기 연속 $1B 초과(+12% YoY), 순손실 $65M, GMV $36.1B(+10%).
+  - `2026-11-18-microsoft-agent-framework-pypi-compromise.md` — Microsoft Agent Framework PyPI 침해 (11-17; Socket Research Team): 악성 버전 1.26.1(20:35 UTC)·1.26.2(21:08 UTC)가 PyPI에 업로드, ~21:30 UTC 제거. 두 버전 모두 `.pth` 시작 훅으로 Azure·GitHub Actions OIDC 토큰과 각종 자격증명을 수집해 webhook.site로 유출. Socket 최초 분석, 8개 보안 업체가 수 시간 내 플래그. 유출 엔드포인트 무료 티어라 Wiz가 확인한 요청은 최대 50건, 실제 설치·피해자 수는 미공개. Wiz 11-18 업데이트에 따르면 공격자가 Microsoft ESRP용 클라이언트 인증서·개인키를 탈취한 것으로 보이며, 공격 도구 자체가 "Cairn" 오픈소스 AI 침투 테스트 프레임워크. Microsoft 공식 postmortem은 아직 없음. 최근 안전 버전 1.26.0.
+- **Ingest** (wiki/ko, 개념 6건 신규 + 저널 1건): nvidia-q3-earnings-h200-china (medium), anthropic-ipo-pricing-above-80 (medium), openai-gpt-6-2-astra-sol (medium), microsoft-ignite-mai-code-2 (medium), agentic-commerce-gemini-tasks-klarna (medium), microsoft-agent-framework-pypi-compromise (medium) 신규; journal/2026-11-18. 모순 플래그 없음. NVIDIA Q3는 nvidia-huang-ousted-ceo의 후속 실적(모순 없음 — Kress 임시 체제·황 복귀 의사 없음과 일치), Anthropic IPO 가격 전망은 anthropic-ipo-roadshow-valuation-cut·anthropic-s1a-q3-revenue-commitments와 수치상 일치(Q3 ~$17B vs S-1/A $16.96B), GPT-6.2 정식 출시는 gpt-62-astra-codex-leak 유출설과 일치, Agent Framework 침해는 litellm-pypi-supply-chain-compromise와 같은 .pth 수법의 후속(모순 없음). Gmail AI 뉴스레터 수신 여부는 본 ko-ingest 단계에서 별도 확인하지 않음(수집 단계 기록 참조).
+- **EN sync**: en 개념 6건 신규 + 저널 1건 미러, en index/log/overview/campaign-map 동기화. 번역 공백 0건.
 
 ## [2026-11-15] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + 한/영 위키 정제
 
