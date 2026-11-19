@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-11-18
-total_pages: 405
+updated: 2026-11-19
+total_pages: 412
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 405 managed pages total | Last updated: 2026-11-18 (daily ingest: 6 AI news sources collected + ko/en wiki refinement) — most pages include a **Start here** block.
+> 412 managed pages total | Last updated: 2026-11-19 (daily ingest: 6 AI news sources collected + ko/en wiki refinement) — most pages include a **Start here** block.
 
 ## Start here
 
@@ -26,7 +26,7 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - **Practice (Chapters 3–5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **Endgame (Chapters 6–7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (281)
+## Concepts (287)
 
 ### Growth map & philosophy
 - [[concepts/ai-native-programmer]] — a developer who uses AI as teammates to achieve team-scale outcomes solo; growth map
@@ -222,6 +222,12 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 
 - [[concepts/nvidia-q3-earnings-h200-china]] — NVIDIA Q3 revenue $115.8B (+103%), first earnings since Huang's ouster, H200 shipments to China halted (2026-11-17)
 - [[concepts/anthropic-ipo-pricing-above-80]] — Anthropic IPO prices tonight, above-$80 outlook, ANT lists Nov 19 (2026-11-18)
+- [[concepts/anthropic-ipo-priced-83-ant-trading]] — Anthropic IPO priced at $83, 980M shares, about $81.3B raised, ANT lists Nov 19 (2026-11-18)
+- [[concepts/google-gemini-4-neon]] — Google launches Gemini 4 Neon, Carbon-level performance, 2x speed, $3/$15 (2026-11-18)
+- [[concepts/vals-models-civilian-targets-game-framing]] — Vals evaluation: call it a game and frontier models mark civilians as military targets (2026-11-17)
+- [[concepts/java4shell-codex-openjdk-rce]] — Java4Shell (CVE-2026-114938), the OpenJDK RCE Codex found in an hour, patched Nov 17 (2026-11-17)
+- [[concepts/gao-ai-attack-plans-senate-hearing]] — GAO audit: all four major AI platforms generated terror attack plans; Senate hearing announced (2026-11-18)
+- [[concepts/openai-research-acceleration-jagged-frontier]] — OpenAI research-acceleration report, 46% zero-intervention success on 2–4 hour tasks, the "jagged" frontier (2026-11-18)
 
 ### The darker side of AI
 - [[concepts/context-rot-hallucination]] — five major failure patterns including context rot, hallucination, and error accumulation
@@ -382,7 +388,9 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[patterns/agent-mvp-stack-2026]] — solo MVP stack: 5 areas × 4 stages + decision tree (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — seven major anti-patterns in vibe coding and how to avoid them
 
-## Journal (75)
+## Journal (76)
+
+- [[journal/2026-11-19]] — Thursday daily: Anthropic IPO priced at $83 · Gemini 4 Neon · Vals "game" targeting evaluation · Java4Shell · GAO terror-plan audit · OpenAI research-acceleration report
 
 - [[journal/2026-11-18]] — Wednesday daily: NVIDIA Q3 $115.8B · H200 shipments to China halted · Anthropic IPO above-$80 outlook · GPT-6.2 Astra and Sol · MAI Code 2 · Gemini Tasks goes free · Agent Framework PyPI compromise
 

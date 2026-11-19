@@ -200,6 +200,36 @@ try {
     fs.writeFileSync(docFile, JSON.stringify({ easyRead: doc.easyRead, body: doc.body }), 'utf-8');
   });
   console.log(`📦 분리 출력 완료: wiki-index.json + wiki-docs/ ${wikiData.length}건`);
+
+  // 징검다리 챕터 구성: campaign-map(ko)의 메인 퀘스트 라인을 파싱해 chapters.json으로 내보낸다
+  // (앱의 정적 CHAPTERS는 폴백. 파싱이 실패해도 빌드는 계속한다)
+  try {
+    const campaignDoc = wikiData.find(d => d.id === 'campaign-map' && d.lang === 'ko');
+    const chapters = [];
+    if (campaignDoc) {
+      const mainLine = campaignDoc.body.split(/##\s*서브 퀘스트 라인/)[0] || '';
+      const chapterRegex = /###\s*Chapter\s+(\d+)[^\n]*\n([\s\S]*?)(?=\n###\s*Chapter\s+\d+|\n##\s|$)/g;
+      let chMatch;
+      while ((chMatch = chapterRegex.exec(mainLine)) !== null) {
+        const docsLine = chMatch[2].match(/-\s*문서:\s*(.+)/);
+        if (!docsLine) continue;
+        const docs = [];
+        const linkRegex = /\[\[([^\]|]+)(?:\|[^\]]+)?\]\]/g;
+        let linkMatch;
+        while ((linkMatch = linkRegex.exec(docsLine[1])) !== null) {
+          const slug = linkMatch[1].trim();
+          if (slug && !docs.includes(slug)) docs.push(slug);
+        }
+        if (docs.length > 0) chapters.push({ num: parseInt(chMatch[1], 10), docs });
+      }
+    }
+    chapters.sort((a, b) => a.num - b.num);
+    fs.writeFileSync(path.resolve(__dirname, 'chapters.json'), JSON.stringify({ chapters }, null, 2), 'utf-8');
+    console.log(`🧭 chapters.json 생성: ${chapters.length}개 챕터, 총 ${chapters.reduce((s, c) => s + c.docs.length, 0)}개 문서`);
+  } catch (chErr) {
+    console.warn('⚠️ chapters.json 생성 실패 (앱 정적 기본값으로 동작):', chErr);
+    try { fs.writeFileSync(path.resolve(__dirname, 'chapters.json'), JSON.stringify({ chapters: [] }), 'utf-8'); } catch (e) {}
+  }
   console.log(`📊 빌드 완료 통계:
   - 총 페이지 수: ${wikiData.length} (KO: ${wikiData.filter(d => d.lang === 'ko').length}개 / EN: ${wikiData.filter(d => d.lang === 'en').length}개)
   - Concepts: ${wikiData.filter(d => d.category === 'concepts').length}개

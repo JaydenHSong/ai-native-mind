@@ -3,7 +3,7 @@ title: "Campaign Map"
 category: meta
 tags: [map, campaign, navigation]
 created: 2026-04-12
-updated: 2026-11-18
+updated: 2026-11-19
 sources:
  - "wiki/overview.md"
  - "wiki/index.md"
@@ -141,4 +141,5 @@ confidence: high
 - 2026-11-16: 데일리 ingest — [[concepts/alibaba-qwen4-max]]·[[concepts/tencent-hy4-flash]]·[[concepts/weightbench-llm-weight-space]]·[[concepts/openai-science-blog-gpt6-astra-lattice]]·[[concepts/apple-health-ai-usage-study]]·[[concepts/us-chip-export-controls-ndaa]] 신규, [[concepts/nvidia-huang-ousted-ceo]] 상호 링크 보강, 총 392페이지.
 - 2026-11-17: 데일리 ingest — [[concepts/california-openai-lawsuit-rogue-agents]]·[[concepts/google-threat-tracker-exploit-agent]]·[[concepts/nvidia-nemotron-for-science]]·[[concepts/xai-grok-bot-unprompted-data-requests]]·[[concepts/anthropic-disclosure-window-30-days]]·[[concepts/cerebras-tungsten-wafer-scale-code]] 신규, [[concepts/tencent-rogue-agents]]·[[concepts/nsa-cisa-nist-rogue-agent-guidelines]]·[[concepts/nvidia-nemotron-3-5-bolt]]·[[patterns/agent-scientific-discovery]]·[[concepts/anthropic-anvil-automated-red-teaming]] 상호 링크 보강, 총 399페이지.
 - 2026-11-18: 데일리 ingest — [[concepts/nvidia-q3-earnings-h200-china]]·[[concepts/anthropic-ipo-pricing-above-80]]·[[concepts/openai-gpt-6-2-astra-sol]]·[[concepts/microsoft-ignite-mai-code-2]]·[[concepts/agentic-commerce-gemini-tasks-klarna]]·[[concepts/microsoft-agent-framework-pypi-compromise]] 신규, [[concepts/nvidia-huang-ousted-ceo]]·[[concepts/anthropic-ipo-roadshow-valuation-cut]]·[[concepts/gpt-62-astra-codex-leak]]·[[patterns/agentic-commerce]]·[[concepts/litellm-pypi-supply-chain-compromise]]·[[concepts/google-threat-tracker-exploit-agent]] 상호 링크 보강, 총 405페이지.
+- 2026-11-19: 데일리 ingest — [[concepts/anthropic-ipo-priced-83-ant-trading]]·[[concepts/google-gemini-4-neon]]·[[concepts/vals-models-civilian-targets-game-framing]]·[[concepts/java4shell-codex-openjdk-rce]]·[[concepts/gao-ai-attack-plans-senate-hearing]]·[[concepts/openai-research-acceleration-jagged-frontier]] 신규, [[concepts/anthropic-ipo-pricing-above-80]] 보강, 총 412페이지.
 

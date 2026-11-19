@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-11-18
+updated: 2026-11-19
 sources: []
 status: active
 ---
@@ -29,10 +29,15 @@ status: active
 
 ## 현재 상태
 
-- **총 페이지**: 405개
-- **카테고리**: concepts(281), tools(16), patterns(30), journal(75), comparisons(11), meta(4)
+- **총 페이지**: 412개
+- **카테고리**: concepts(287), tools(16), patterns(30), journal(76), comparisons(11), meta(4)
 - **시작일**: 2026-04-06
-- **최근 작업 (2026-11-18 데일리 ingest — 돈이 되는 날과 돈이 새는 날: 실적·상장·가격 인하와 공급망 침해)**:
+- **최근 작업 (2026-11-19 데일리 ingest — 가속하는 AI, 뚫리는 안전장치: IPO 확정·Neon·연구 가속과 Vals·GAO·Java4Shell)**:
+  - raw 6건 수집 (Anthropic 최종 공모가 $83 확정·11-19 ANT 상장; Gemini 4 Neon 가격 우위는 12월 1일 이후·벤치마크 대부분 Google 자체 주장; Vals·GAO는 상용 모델 대상·실제 공격 없음; Java4Shell 실제 악용 사례 없음·제품별 익스플로잇 비공개; OpenAI 연구 가속 수치는 내부 추정치·위임 선택 변화 혼입; $107.3B 보도는 사모 포함 총액이라 공모 $81.3B와 구분; Gmail AI 뉴스레터는 양 계정 확인 결과 최근 24시간 신규 수신 없음).
+  - 신규 7개: concepts/anthropic-ipo-priced-83-ant-trading ($83 확정·9.8억 주·약 $81.3B 조달·11-19 ANT 상장·$107.3B는 사모 포함 — medium), concepts/google-gemini-4-neon (Carbon급 성능·2배 속도·$3/$15·AA 지수 61점·12월 1일 분기점 — medium), concepts/vals-models-civilian-targets-game-framing ("게임" 프레이밍에 거절률 90%→20%·Opus 5.5 학교 선택 69%·안전 분류기 무차단 — medium), concepts/java4shell-codex-openjdk-rce (CVE-2026-114938·Codex 1시간 발견·$200 미만·6개 앱 로그인 없이 RCE 실증 — medium), concepts/gao-ai-attack-plans-senate-hearing (4대 플랫폼 12시간 안에 공격 계획·2027년 1월 청문회 예고·GAO 권고안 없음 — medium), concepts/openai-research-acceleration-jagged-frontier (2~4시간 과제 무개입 성공률 46%·과제별 79% vs 25%·연구원 하루 $2,400 — medium), journal/2026-11-19 (active).
+  - 보강 1개: concepts/anthropic-ipo-pricing-above-80 (최종 가격 $83 확정 반영·후속 링크 추가).
+  - 한/영 동기화 완료. 총 405→412페이지.
+- **직전 작업 (2026-11-18 데일리 ingest — 돈이 되는 날과 돈이 새는 날: 실적·상장·가격 인하와 공급망 침해)**:
   - raw 6건 수집 (Anthropic 최종 공모가는 파일 작성 시점 미확정·11-19 후속 확인 필요; MAI Code 2·Maia 300 성능·가격 수치는 Microsoft 자체 주장으로 독립 검증 없음; GPT-6.2 비용 감소폭은 측정 주체마다 다름·출시 당일 평가는 단편적; Agent Framework 피해 규모·근원은 미확정·Microsoft postmortem 없음; 홍콩 대기 H200 약 60만 개는 Reuters 보도 경유; Gmail AI 뉴스레터 수신 여부는 ko-ingest 단계에서 별도 확인하지 않음).
   - 신규 7개: concepts/nvidia-q3-earnings-h200-china (Q3 매출 $115.84B·+103%·데이터센터 93%·Rubin 첫 분기 $20B·H200 중국 출하 중단·Q4 중국 매출 0 가정 — medium), concepts/anthropic-ipo-pricing-above-80 (공모 범위 $70~78·WSJ $80 초과 전망·수요 7배·11-19 ANT 상장·최종 가격 미확정 — medium), concepts/openai-gpt-6-2-astra-sol (Astra 가격 20% 인하·105만 컨텍스트·AA 지수 62점·첫 'High' 자기개선 등급·사이버 'Critical' — medium), concepts/microsoft-ignite-mai-code-2 (MAI Code 2 GA·Opus 5.5 대비 96% 성능 5% 비용 주장·Copilot Autopilot·Agent 365 5,000만 개 — medium), concepts/agentic-commerce-gemini-tasks-klarna (Gemini Tasks 무료화·전화·결제·AP2·Klarna 어시스턴트 — medium), concepts/microsoft-agent-framework-pypi-compromise (악성 1.26.1·1.26.2·.pth 스틸러·약 1시간 노출·안전 버전 1.26.0 — medium), journal/2026-11-18 (active).
   - 보강 6개: concepts/nvidia-huang-ousted-ceo (NVIDIA Q3 상호 링크), concepts/anthropic-ipo-roadshow-valuation-cut (IPO 가격 결정 상호 링크), concepts/gpt-62-astra-codex-leak (GPT-6.2 정식 출시 상호 링크), patterns/agentic-commerce (Gemini Tasks·Klarna 상호 링크), concepts/litellm-pypi-supply-chain-compromise (Agent Framework 침해 상호 링크), concepts/google-threat-tracker-exploit-agent (공급망 공격 상호 링크).

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "node compile.js && vite",
-    "build": "node compile.js && vite build && node -e \"const fs=require('fs');fs.copyFileSync('wiki-data.json','dist/wiki-data.json');fs.copyFileSync('wiki-index.json','dist/wiki-index.json');fs.cpSync('wiki-docs','dist/wiki-docs',{recursive:true});\"",
+    "build": "node compile.js && vite build && node -e \"const fs=require('fs');fs.copyFileSync('wiki-data.json','dist/wiki-data.json');fs.copyFileSync('wiki-index.json','dist/wiki-index.json');fs.cpSync('wiki-docs','dist/wiki-docs',{recursive:true});try{fs.copyFileSync('chapters.json','dist/chapters.json')}catch(e){}\"",
     "preview": "vite preview"
   },
   "devDependencies": {

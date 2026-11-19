@@ -123,7 +123,7 @@ const i18n = {
 };
 
 // 챕터 데이터 정의 (campaign-map.md 기준, 다국어 지원)
-const CHAPTERS = [
+let CHAPTERS = [
   {
     num: 0,
     title: { ko: "튜토리얼 (Tutorial)", en: "Tutorial" },
@@ -379,6 +379,23 @@ function showNonBlockingError(message) {
 // ==========================================================================
 // 2. 데이터 페칭 및 렌더링 (Data Fetching)
 // ==========================================================================
+// 징검다리 챕터 구성을 chapters.json으로 교체 (챕터 번호로 매칭, 문서 목록만 데이터가 정본)
+async function applyChapterData() {
+  try {
+    const res = await fetch("chapters.json");
+    if (!res.ok) return;
+    const data = await res.json();
+    if (!data || !Array.isArray(data.chapters)) return;
+    data.chapters.forEach(chData => {
+      if (!chData || !Array.isArray(chData.docs) || chData.docs.length === 0) return;
+      const target = CHAPTERS.find(c => c.num === chData.num);
+      if (target) target.docs = chData.docs.slice();
+    });
+  } catch (e) {
+    // chapters.json이 없거나 깨졌으면 정적 기본값으로 계속 진행
+  }
+}
+
 async function fetchWikiData() {
   try {
     // 3단계: 메타데이터 인덱스만 먼저 받아 첫 화면을 가볍게 띄운다
@@ -390,6 +407,8 @@ async function fetchWikiData() {
       fullDataLoaded = true;
     }
     wikiData = await response.json();
+    // 징검다리 챕터 구성은 chapters.json(빌드 시 campaign-map에서 생성)이 정본 — 실패하면 정적 기본값 유지
+    await applyChapterData();
   } catch (error) {
     console.error("데이터 로드 실패:", error);
     const listElement = document.getElementById("document-list");

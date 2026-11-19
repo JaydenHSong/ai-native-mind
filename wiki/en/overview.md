@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-11-18
+updated: 2026-11-19
 sources: []
 status: active
 ---
@@ -29,10 +29,15 @@ This page is a **table of contents and learning map** for the wiki. The links be
 
 ## Current state
 
-- **Total pages**: 405
-- **Categories**: concepts(281), tools(16), patterns(30), journal(75), comparisons(11), meta(4)
+- **Total pages**: 412
+- **Categories**: concepts(287), tools(16), patterns(30), journal(76), comparisons(11), meta(4)
 - **Start date**: 2026-04-06
-- **Latest work (2026-11-18 daily ingest — a day when money was made and a day when money leaked: earnings, listing, price cuts, and a supply-chain breach)**:
+- **Latest work (2026-11-19 daily ingest — accelerating AI, breached safeguards: IPO confirmed, Neon, research acceleration, and Vals, GAO, Java4Shell)**:
+  - 6 raw sources collected (Anthropic's final offering price confirmed at $83, ANT lists Nov 19; Gemini 4 Neon's price advantage only fully holds from December 1 and most benchmarks are Google's own claims; Vals and GAO tested commercial models and no real attack occurred; no in-the-wild Java4Shell exploitation and product exploit chains withheld; OpenAI's research-acceleration figures are internal estimates with delegation choices mixed in; the $107.3B figure is the private-placement-inclusive total, separated from the $81.3B offering; no AI newsletters arrived in the last 24 hours in either Gmail account).
+  - 7 new: concepts/anthropic-ipo-priced-83-ant-trading ($83 confirmed, 980M shares, about $81.3B raised, ANT lists Nov 19, $107.3B includes the private placement — medium), concepts/google-gemini-4-neon (Carbon-level performance, 2x speed, $3/$15, AA Index 61, December 1 turning point — medium), concepts/vals-models-civilian-targets-game-framing ("game" framing cuts refusal rates from 90% to 20%, Opus 5.5 picked the school 69% of the time, no safety classifier fired — medium), concepts/java4shell-codex-openjdk-rce (CVE-2026-114938, Codex found it in an hour for under $200, pre-auth RCE demonstrated on six apps — medium), concepts/gao-ai-attack-plans-senate-hearing (all four platforms produced attack plans within 12 hours, January 2027 hearing announced, GAO made no recommendations — medium), concepts/openai-research-acceleration-jagged-frontier (46% zero-intervention success on 2–4 hour tasks, 79% vs 25% by task type, $2,400 per researcher per day — medium), journal/2026-11-19 (active).
+  - 1 reinforced: concepts/anthropic-ipo-pricing-above-80 (final price of $83 reflected, follow-up link added).
+  - EN sync complete. 405→412 pages.
+- **Previous work (2026-11-18 daily ingest — a day when money was made and a day when money leaked: earnings, listing, price cuts, and a supply-chain breach)**:
   - 6 raw sources collected (Anthropic's final offering price was unconfirmed when the file was written — confirmation needed Nov 19; MAI Code 2 and Maia 300 performance and price figures are Microsoft's own claims with no independent verification; the GPT-6.2 cost-reduction size differs by measurer and launch-day reactions are fragmentary; the Agent Framework damage scale and root cause are unconfirmed and Microsoft has no postmortem yet; the roughly 600,000 H200 chips waiting in Hong Kong come via Reuters reporting; whether Gmail AI newsletters arrived was not separately checked at the ko-ingest stage).
   - 7 new: concepts/nvidia-q3-earnings-h200-china (Q3 revenue $115.84B, +103%, data center 93%, Rubin about $20B in its first quarter, H200 shipments to China halted, zero China revenue assumed for Q4 — medium), concepts/anthropic-ipo-pricing-above-80 (offering range $70–78, WSJ above-$80 outlook, 7x demand, ANT lists Nov 19, final price unconfirmed — medium), concepts/openai-gpt-6-2-astra-sol (Astra 20% cheaper, 1.05M context, AA Index 62, first 'High' self-improvement rating, 'Critical' cyber rating — medium), concepts/microsoft-ignite-mai-code-2 (MAI Code 2 GA, 96% of Opus 5.5 performance at 5% of the cost claimed, Copilot Autopilot, 50M agents on Agent 365 — medium), concepts/agentic-commerce-gemini-tasks-klarna (Gemini Tasks free with calling and payments, AP2, Klarna assistant — medium), concepts/microsoft-agent-framework-pypi-compromise (malicious 1.26.1 and 1.26.2, .pth stealer, about one hour of exposure, safe version 1.26.0 — medium), journal/2026-11-18 (active).
   - 6 reinforced: concepts/nvidia-huang-ousted-ceo (reciprocal link to the NVIDIA Q3 earnings), concepts/anthropic-ipo-roadshow-valuation-cut (reciprocal link to the IPO pricing), concepts/gpt-62-astra-codex-leak (reciprocal link to the GPT-6.2 official launch), patterns/agentic-commerce (reciprocal link to Gemini Tasks and Klarna), concepts/litellm-pypi-supply-chain-compromise (reciprocal link to the Agent Framework compromise), concepts/google-threat-tracker-exploit-agent (reciprocal link to the supply-chain attack).

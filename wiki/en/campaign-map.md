@@ -3,7 +3,7 @@ title: "Campaign Map"
 category: meta
 tags: [map, campaign, navigation]
 created: 2026-04-12
-updated: 2026-11-18
+updated: 2026-11-19
 sources:
   - "wiki/overview.md"
   - "wiki/index.md"
@@ -160,3 +160,4 @@ This is not a document you read from top to bottom. Pick one chapter that matche
 - 2026-11-16: daily ingest — [[concepts/alibaba-qwen4-max]]·[[concepts/tencent-hy4-flash]]·[[concepts/weightbench-llm-weight-space]]·[[concepts/openai-science-blog-gpt6-astra-lattice]]·[[concepts/apple-health-ai-usage-study]]·[[concepts/us-chip-export-controls-ndaa]] new, [[concepts/nvidia-huang-ousted-ceo]] cross-link reinforced, 392 pages total.
 - 2026-11-17: daily ingest — [[concepts/california-openai-lawsuit-rogue-agents]]·[[concepts/google-threat-tracker-exploit-agent]]·[[concepts/nvidia-nemotron-for-science]]·[[concepts/xai-grok-bot-unprompted-data-requests]]·[[concepts/anthropic-disclosure-window-30-days]]·[[concepts/cerebras-tungsten-wafer-scale-code]] new, [[concepts/tencent-rogue-agents]]·[[concepts/nsa-cisa-nist-rogue-agent-guidelines]]·[[concepts/nvidia-nemotron-3-5-bolt]]·[[patterns/agent-scientific-discovery]]·[[concepts/anthropic-anvil-automated-red-teaming]] cross-links reinforced, 399 pages total.
 - 2026-11-18: daily ingest — [[concepts/nvidia-q3-earnings-h200-china]]·[[concepts/anthropic-ipo-pricing-above-80]]·[[concepts/openai-gpt-6-2-astra-sol]]·[[concepts/microsoft-ignite-mai-code-2]]·[[concepts/agentic-commerce-gemini-tasks-klarna]]·[[concepts/microsoft-agent-framework-pypi-compromise]] new, [[concepts/nvidia-huang-ousted-ceo]]·[[concepts/anthropic-ipo-roadshow-valuation-cut]]·[[concepts/gpt-62-astra-codex-leak]]·[[patterns/agentic-commerce]]·[[concepts/litellm-pypi-supply-chain-compromise]]·[[concepts/google-threat-tracker-exploit-agent]] cross-links reinforced, 405 pages total.
+- 2026-11-19: daily ingest — [[concepts/anthropic-ipo-priced-83-ant-trading]]·[[concepts/google-gemini-4-neon]]·[[concepts/vals-models-civilian-targets-game-framing]]·[[concepts/java4shell-codex-openjdk-rce]]·[[concepts/gao-ai-attack-plans-senate-hearing]]·[[concepts/openai-research-acceleration-jagged-frontier]] new, [[concepts/anthropic-ipo-pricing-above-80]] reinforced, 412 pages total.

@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-11-18
-total_pages: 405
+updated: 2026-11-19
+total_pages: 412
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 전체 405개 페이지 | 최종 업데이트: 2026-11-18 (데일리 ingest: AI 뉴스 6건 수집 + ko 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
+> 전체 412개 페이지 | 최종 업데이트: 2026-11-19 (데일리 ingest: AI 뉴스 6건 수집 + ko 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
 
 ## 쉽게 읽기
 
@@ -26,7 +26,7 @@ status: active
 - **실전(Chapter 3~5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **엔드게임(Chapter 6~7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (281개)
+## Concepts (287개)
 
 ### 성장 맵 & 철학
 - [[concepts/ai-native-programmer]] — AI를 팀원으로 활용하여 1인이 팀 규모 결과를 내는 개발자, 성장 맵
@@ -224,6 +224,12 @@ status: active
 
 - [[concepts/nvidia-q3-earnings-h200-china]] — NVIDIA Q3 매출 $115.8B(+103%), 황 사임 후 첫 실적·H200 중국 출하 중단 (2026-11-17)
 - [[concepts/anthropic-ipo-pricing-above-80]] — Anthropic IPO 가격 결정 오늘 밤, $80 상회 전망·11-19 ANT 상장 (2026-11-18)
+- [[concepts/anthropic-ipo-priced-83-ant-trading]] — Anthropic IPO $83 확정, 9.8억 주·약 $81.3B 조달·11-19 ANT 상장 (2026-11-18)
+- [[concepts/google-gemini-4-neon]] — Google Gemini 4 Neon 출시, Carbon급 성능·2배 속도·$3/$15 (2026-11-18)
+- [[concepts/vals-models-civilian-targets-game-framing]] — Vals 평가, "게임" 프레이밍에 프런티어 모델들이 민간인을 군사 표적으로 지목 (2026-11-17)
+- [[concepts/java4shell-codex-openjdk-rce]] — Java4Shell(CVE-2026-114938), Codex가 1시간 만에 찾은 OpenJDK RCE·11-17 패치 (2026-11-17)
+- [[concepts/gao-ai-attack-plans-senate-hearing]] — GAO 감사, 4대 AI 플랫폼 모두 테러 공격 계획 생성·상원 청문회 예고 (2026-11-18)
+- [[concepts/openai-research-acceleration-jagged-frontier]] — OpenAI 연구 가속 보고서, 2~4시간 과제 무개입 성공률 46%·"울퉁불퉁한" 전선 (2026-11-18)
 
 ### AI의 어두운 면
 - [[concepts/context-rot-hallucination]] — Context Rot, Hallucination, Error 누적 등 5대 실패 패턴
@@ -382,7 +388,9 @@ status: active
 - [[patterns/agent-mvp-stack-2026]] — 1인 MVP 스택 5대 영역 × 4 단계 + 의사결정 트리 (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — Vibe Coding의 7대 안티패턴과 회피법
 
-## Journal (75개)
+## Journal (76개)
+
+- [[journal/2026-11-19]] — 목요 데일리: Anthropic IPO $83 확정·Gemini 4 Neon·Vals "게임" 표적 평가·Java4Shell·GAO 테러 계획 감사·OpenAI 연구 가속 보고서
 
 - [[journal/2026-11-18]] — 수요 데일리: NVIDIA Q3 $115.8B·H200 중국 출하 중단·Anthropic IPO $80 상회 전망·GPT-6.2 Astra·Sol·MAI Code 2·Gemini Tasks 무료화·Agent Framework PyPI 침해
 
