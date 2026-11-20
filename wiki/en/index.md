@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-11-19
-total_pages: 412
+updated: 2026-11-20
+total_pages: 417
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 412 managed pages total | Last updated: 2026-11-19 (daily ingest: 6 AI news sources collected + ko/en wiki refinement) — most pages include a **Start here** block.
+> 417 managed pages total | Last updated: 2026-11-20 (daily ingest: 6 AI news sources collected + ko/en wiki refinement) — most pages include a **Start here** block.
 
 ## Start here
 
@@ -26,7 +26,7 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - **Practice (Chapters 3–5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **Endgame (Chapters 6–7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (287)
+## Concepts (291)
 
 ### Growth map & philosophy
 - [[concepts/ai-native-programmer]] — a developer who uses AI as teammates to achieve team-scale outcomes solo; growth map
@@ -228,6 +228,10 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[concepts/java4shell-codex-openjdk-rce]] — Java4Shell (CVE-2026-114938), the OpenJDK RCE Codex found in an hour, patched Nov 17 (2026-11-17)
 - [[concepts/gao-ai-attack-plans-senate-hearing]] — GAO audit: all four major AI platforms generated terror attack plans; Senate hearing announced (2026-11-18)
 - [[concepts/openai-research-acceleration-jagged-frontier]] — OpenAI research-acceleration report, 46% zero-intervention success on 2–4 hour tasks, the "jagged" frontier (2026-11-18)
+- [[concepts/anthropic-ipo-first-day-ant-97]] — Anthropic's first trading day: open $111.50, close $97.17, largest IPO ever at $81.3B (2026-11-19)
+- [[concepts/nvidia-california-subpoena-market-rout]] — California subpoenas NVIDIA, NVDA falls for a sixth straight session, market rout (2026-11-19)
+- [[concepts/dragos-canary-tokens-ai-supply-chain]] — Dragos canary-token study: prompt leaks proven at 3 AI hosting providers (2026-11-19)
+- [[concepts/intuit-credit-karma-ai-displacement]] — Intuit cuts Credit Karma outlook as LLMs displace its revenue, the first hard number (2026-11-19)
 
 ### The darker side of AI
 - [[concepts/context-rot-hallucination]] — five major failure patterns including context rot, hallucination, and error accumulation
@@ -388,7 +392,9 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[patterns/agent-mvp-stack-2026]] — solo MVP stack: 5 areas × 4 stages + decision tree (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — seven major anti-patterns in vibe coding and how to avoid them
 
-## Journal (76)
+## Journal (77)
+
+- [[journal/2026-11-20]] — Friday daily: Anthropic IPO first trading day · NVIDIA California subpoena · Dragos canary tokens · GPT-6.2 reasoning lock · Intuit Credit Karma outlook cut · Gemini 4 Neon benchmarks
 
 - [[journal/2026-11-19]] — Thursday daily: Anthropic IPO priced at $83 · Gemini 4 Neon · Vals "game" targeting evaluation · Java4Shell · GAO terror-plan audit · OpenAI research-acceleration report
 

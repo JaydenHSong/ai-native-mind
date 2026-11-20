@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-11-19
-total_pages: 412
+updated: 2026-11-20
+total_pages: 417
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 전체 412개 페이지 | 최종 업데이트: 2026-11-19 (데일리 ingest: AI 뉴스 6건 수집 + ko 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
+> 전체 417개 페이지 | 최종 업데이트: 2026-11-20 (데일리 ingest: AI 뉴스 6건 수집 + ko 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
 
 ## 쉽게 읽기
 
@@ -26,7 +26,7 @@ status: active
 - **실전(Chapter 3~5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **엔드게임(Chapter 6~7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (287개)
+## Concepts (291개)
 
 ### 성장 맵 & 철학
 - [[concepts/ai-native-programmer]] — AI를 팀원으로 활용하여 1인이 팀 규모 결과를 내는 개발자, 성장 맵
@@ -230,6 +230,10 @@ status: active
 - [[concepts/java4shell-codex-openjdk-rce]] — Java4Shell(CVE-2026-114938), Codex가 1시간 만에 찾은 OpenJDK RCE·11-17 패치 (2026-11-17)
 - [[concepts/gao-ai-attack-plans-senate-hearing]] — GAO 감사, 4대 AI 플랫폼 모두 테러 공격 계획 생성·상원 청문회 예고 (2026-11-18)
 - [[concepts/openai-research-acceleration-jagged-frontier]] — OpenAI 연구 가속 보고서, 2~4시간 과제 무개입 성공률 46%·"울퉁불퉁한" 전선 (2026-11-18)
+- [[concepts/anthropic-ipo-first-day-ant-97]] — Anthropic IPO 첫 거래일, 시초 $111.50·종가 $97.17·2일차 -5% (2026-11-19)
+- [[concepts/nvidia-california-subpoena-market-rout]] — NVIDIA 캘리포니아 소환장, NVDA 6거래일 연속 하락·증시 대폭락 (2026-11-19)
+- [[concepts/dragos-canary-tokens-ai-supply-chain]] — Dragos 카나리아 토큰 연구, AI 호스팅 3곳 침해·프롬프트 유출 실증 (2026-11-19)
+- [[concepts/intuit-credit-karma-ai-displacement]] — Intuit Credit Karma 전망 하향, LLM 매출 잠식의 첫 하드 수치 (2026-11-19)
 
 ### AI의 어두운 면
 - [[concepts/context-rot-hallucination]] — Context Rot, Hallucination, Error 누적 등 5대 실패 패턴
@@ -388,7 +392,9 @@ status: active
 - [[patterns/agent-mvp-stack-2026]] — 1인 MVP 스택 5대 영역 × 4 단계 + 의사결정 트리 (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — Vibe Coding의 7대 안티패턴과 회피법
 
-## Journal (76개)
+## Journal (77개)
+
+- [[journal/2026-11-20]] — 금요 데일리: Anthropic IPO 첫 거래일·NVIDIA 캘리포니아 소환장·Dragos 카나리아 토큰·GPT-6.2 추론 잠금·Intuit Credit Karma 전망 하향·Gemini 4 Neon 벤치마크 후속
 
 - [[journal/2026-11-19]] — 목요 데일리: Anthropic IPO $83 확정·Gemini 4 Neon·Vals "게임" 표적 평가·Java4Shell·GAO 테러 계획 감사·OpenAI 연구 가속 보고서
 

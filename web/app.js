@@ -1495,12 +1495,12 @@ function initGraph() {
     if (isLight) {
       switch (cat) {
         case 'concepts': return '#7c3aed';    // 진한 보라
-        case 'tools': return '#059669';       // 진한 에메랄드
-        case 'patterns': return '#ea580c';    // 진한 오렌지
-        case 'comparisons': return '#db2777'; // 진한 핑크
-        case 'journal': return '#0891b2';     // 진한 사이안
+        case 'tools': return '#047857';       // 진한 에메랄드
+        case 'patterns': return '#c2410c';    // 진한 오렌지
+        case 'comparisons': return '#be185d'; // 진한 핑크
+        case 'journal': return '#0e7490';     // 진한 사이안
         case 'meta':
-        case 'wiki': return '#ca8a04';        // 진한 골드
+        case 'wiki': return '#92600a';        // 진한 골드
         default: return '#4f46e5';            // 진한 인디고
       }
     } else {

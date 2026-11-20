@@ -3,10 +3,12 @@ title: "Jensen Huang 축출 — NVIDIA 창업자 CEO 사임, Kress 임시 체제
 category: concepts
 tags: [nvidia, jensen-huang, ceo-succession, governance, ai-infra]
 created: 2026-11-12
-updated: 2026-11-12
+updated: 2026-11-20
 sources:
   - "raw/articles/2026-11-12-nvidia-huang-ousted-ceo.md"
+  - "raw/articles/2026-11-20-nvidia-california-subpoena-market-rout.md"
 related:
+  - "[[concepts/nvidia-california-subpoena-market-rout]]"
   - "[[concepts/nvidia-cosmos-3-nano-open-models]]"
   - "[[concepts/amd-world-labs-physical-ai]]"
   - "[[concepts/anthropic-ipo-roadshow-valuation-cut]]"
@@ -40,6 +42,7 @@ confidence: high
 - **시장 반응**: 목요일 개장 전 주가 약 8% 하락(라이브 보도 기준 한때 10%), 개장 전 약 $163. 이사회 조사 개시 이후 시가총액 5,000억 달러 이상 증발. Citi는 목표주가를 $285에서 $225로 하향(매수 유지), Oppenheimer는 목표주가 자체를 철회했다. Dan Ives(Yorkville)는 Huang이 있을 때 $300, 없을 때 $225로 평가했다.
 - **지정학 연결**: Megaspeed는 수출 규제 대상 NVIDIA AI 칩의 중국 우회 수출 의혹으로 미국·싱가포르 당국의 조사를 받고 있다. Alice Huang은 싱가포르 출국 금지, 대만 입국 허가 취소 상태다.
 - **일정**: NVIDIA 실적은 예정대로 다음 화요일(11-17) 발표한다.
+- **후속 — 캘리포니아 소환장(11-19)**: Bonta 장관실이 첨단 칩·기밀정보의 중국 유출 여부와 투자자 오도 여부를 조사하는 소환장을 발부했다. NVDA는 6거래일 연속 하락해 $145.98로 마감했다. 자세한 내용은 [[concepts/nvidia-california-subpoena-market-rout]] 참조. Huang은 12월 1일 하원 3개 위원회 증언 예정.
 
 ## 왜 중요한가 (1인 개발자 관점)
 
@@ -55,6 +58,7 @@ confidence: high
 
 ## 관련 개념
 
+- [[concepts/nvidia-california-subpoena-market-rout]] — 캘리포니아 소환장(11-19), NVDA 6거래일 연속 하락·증시 대폭락, 사임 이후 조사 확대의 다음 단계 (2026-11-20)
 - [[concepts/nvidia-cosmos-3-nano-open-models]] — NVIDIA Cosmos 3 Nano 오픈 웨이트, AI 인프라의 소프트웨어 축 (2026-11-07)
 - [[concepts/amd-world-labs-physical-ai]] — AMD의 World Labs 인수, AI 인프라 경쟁 축 (2026-09-30)
 - [[concepts/anthropic-ipo-roadshow-valuation-cut]] — Anthropic IPO, AI 기업 지배구조·시장 흐름 (2026-11-08)
@@ -64,3 +68,4 @@ confidence: high
 ## 참고 소스
 
 - [Jensen Huang 축출 원본](raw/articles/2026-11-12-nvidia-huang-ousted-ceo.md)
+- [NVIDIA 캘리포니아주 소환장 + 11-19 증시 대폭락 — NVDA 6거래일 연속 하락 (Barron's·Reuters·TipRanks, 11-19)](raw/articles/2026-11-20-nvidia-california-subpoena-market-rout.md)

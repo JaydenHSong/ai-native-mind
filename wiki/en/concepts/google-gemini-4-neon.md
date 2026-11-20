@@ -3,9 +3,10 @@ title: "Google Gemini 4 Neon — Carbon-Level Performance, 2x Speed, $3/$15"
 category: concepts
 tags: [google, gemini, gemini-4-neon, model-release]
 created: 2026-11-19
-updated: 2026-11-19
+updated: 2026-11-20
 sources:
   - "raw/articles/2026-11-19-google-gemini-4-neon.md"
+  - "raw/articles/2026-11-20-gemini-4-neon-benchmarks-followup.md"
 related:
   - "[[concepts/gemini-4-carbon-testing]]"
   - "[[concepts/gemini-4-argon]]"
@@ -43,6 +44,14 @@ confidence: medium
 - **Use and rollout**: complex coding, analysis, and enterprise work; long-running agent workflows. Google also presents a setup where Neon acts as a fast, high-judgment orchestrator directing parallel Hydrogen subagents in Antigravity. Available in the Gemini API (AI Studio), Gemini for business, and for AI Pro and Ultra subscribers in Antigravity and the Gemini app.
 - **Caution**: scores vary widely by harness. The same model scored 12.8% on a coding test with a standard harness and 39.0% inside Google's own Antigravity environment (per Google's citation). "Which harness was used" matters as much as the model score.
 
+## Independent benchmark follow-up (2026-11-19)
+
+- **CAAC Go real-world agent test** (150 customer messages × 5 models, two independent AI judges): Neon scored 135/150, the best ever, statistically tied with Claude Opus 5.5 (133, p=0.72) and ahead of Gemini 4 Carbon (125, p=0.02).
+- **More Artificial Analysis scores**: Intelligence Index 61, 3rd in the world (behind Claude Fable 5.2 at 65 and GPT-6.2 Astra at 62). Coding Agent Index 58.6, 1st; Vending Bench 2nd, Zapier Automation Bench 1st, Pareto Frontier 2nd.
+- **The downsides**: average response time of 9.3 seconds (more than twice Opus 5.5's), cost of $28.80 per 1,000 requests (vs Opus 5.5's $21.65). Despite the launch claim of "fast and cheap," Neon trails Opus 5.5 on response speed and per-request cost.
+- **Re-checking the speed claim — '3x faster' vs about 40% in independent measurement**: Google's claim of '3x faster than Carbon' contrasts with independent measurements of about 40% faster on task time (21 vs 36 minutes). This page's "about 110 tokens per second, roughly twice Carbon's ~57" is a token-speed figure; "3x" is a separate Google claim; "40%" is a task-time figure — different measures give different numbers. See the Limits section below.
+- **Price re-check**: Neon costs $3 input / $15 output per million tokens. Carbon is $2/$10 on an introductory rate through November 30, so Neon is currently more expensive per token. Neon only becomes 25% cheaper than Carbon per token after Carbon rises to $4/$20 on December 1 — consistent with this page's December 1 turning point.
+
 ## Why it matters (solo-developer lens)
 
 1. **Model choice has become a price war**: within 72 hours, OpenAI cut Astra's price by 20%, Google shipped Neon, and Microsoft priced MAI Code 2 at $0.50/$2.50. The cost per task for the same job now differs several-fold by model. "Which model is smartest" matters less in practice than "which model finishes this job at this price."
@@ -55,6 +64,7 @@ confidence: medium
 - The price advantage only fully holds after Carbon's December price rise. In November, Neon costs more than Carbon's introductory rate.
 - Harness variance (12.8% vs 39.0%) is large, so scores must be read with their measurement conditions.
 - confidence is medium — Google's official announcement crossed with independent Artificial Analysis scores, but the self-reported benchmarks are unverified.
+- **Speed-figure caution (contradiction flag)**: '3x faster than Carbon' (Google's claim), 'about 2x token speed' (110 vs 57), and 'about 40% shorter task time' (21 vs 36 minutes) are numbers on different measures. No single one of them can be quoted alone as "how many times faster Neon is."
 
 ## Related concepts
 
@@ -66,3 +76,4 @@ confidence: medium
 ## Sources
 
 - [Google launches Gemini 4 Neon — Carbon-level performance, 2x speed, $3/$15 (Google, 11-18)](raw/articles/2026-11-19-google-gemini-4-neon.md)
+- [Gemini 4 Neon benchmark follow-up — CAAC Go agent test best ever, beats Carbon (CAAC Go, Crescendo Lab, 11-19)](raw/articles/2026-11-20-gemini-4-neon-benchmarks-followup.md)

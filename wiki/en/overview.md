@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-11-19
+updated: 2026-11-20
 sources: []
 status: active
 ---
@@ -29,10 +29,15 @@ This page is a **table of contents and learning map** for the wiki. The links be
 
 ## Current state
 
-- **Total pages**: 412
-- **Categories**: concepts(287), tools(16), patterns(30), journal(76), comparisons(11), meta(4)
+- **Total pages**: 417
+- **Categories**: concepts(291), tools(16), patterns(30), journal(77), comparisons(11), meta(4)
 - **Start date**: 2026-04-06
-- **Latest work (2026-11-19 daily ingest — accelerating AI, breached safeguards: IPO confirmed, Neon, research acceleration, and Vals, GAO, Java4Shell)**:
+- **Latest work (2026-11-20 daily ingest — the day the money moved: Anthropic lists, NVIDIA subpoenaed, Intuit's outlook cut, plus Dragos, the reasoning lock, and Neon benchmarks)**:
+  - 6 raw sources collected (Anthropic's first trading day opened at $111.50 and closed at $97.17, down about 5% intraday on day 2, on an $81.3B offering — the largest ever; the NVIDIA California subpoena is an investigation step, not an indictment, and the 879,868 chip approvals are approvals, not actual shipments; the Dragos study is a single primary source with providers unnamed; the GPT-6.2 extraction success rate of 54% → 0.2% is cited from OpenAI's internal tests with no independent reproduction; Intuit's "first hard number" is TFTC's interpretation; Neon's '3x faster' is Google's claim while independent measurement shows about 40% faster — different measures).
+  - 5 new: concepts/anthropic-ipo-first-day-ant-97 (open $111.50, close $97.17, day 2 down 5%, analyst targets split from $76 to $155 — medium), concepts/nvidia-california-subpoena-market-rout (California subpoena, NVDA down six straight sessions to $145.98, Dow −1,101 points — medium), concepts/dragos-canary-tokens-ai-supply-chain (canary tokens in 2 million prompts, 3 hosting providers breached, Zero Data Retention defeated — medium), concepts/intuit-credit-karma-ai-displacement (Credit Karma outlook 11–13% → 3–7%, Intuit −14.18%, the first hard number for LLM revenue displacement — medium), journal/2026-11-20 (active).
+  - 4 reinforced: concepts/google-gemini-4-neon (CAAC Go best ever at 135/150, '3x faster' vs about 40% independently measured — contradiction flagged), concepts/openai-gpt-6-2-astra-sol (reasoning chain lock, extraction success 54% → 0.2%), concepts/anthropic-ipo-priced-83-ant-trading (first trading day confirmed, follow-up link added), concepts/nvidia-huang-ousted-ceo (California subpoena follow-up, cross-link added).
+  - EN sync complete. 412→417 pages.
+- **Previous work (2026-11-19 daily ingest — accelerating AI, breached safeguards: IPO confirmed, Neon, research acceleration, and Vals, GAO, Java4Shell)**:
   - 6 raw sources collected (Anthropic's final offering price confirmed at $83, ANT lists Nov 19; Gemini 4 Neon's price advantage only fully holds from December 1 and most benchmarks are Google's own claims; Vals and GAO tested commercial models and no real attack occurred; no in-the-wild Java4Shell exploitation and product exploit chains withheld; OpenAI's research-acceleration figures are internal estimates with delegation choices mixed in; the $107.3B figure is the private-placement-inclusive total, separated from the $81.3B offering; no AI newsletters arrived in the last 24 hours in either Gmail account).
   - 7 new: concepts/anthropic-ipo-priced-83-ant-trading ($83 confirmed, 980M shares, about $81.3B raised, ANT lists Nov 19, $107.3B includes the private placement — medium), concepts/google-gemini-4-neon (Carbon-level performance, 2x speed, $3/$15, AA Index 61, December 1 turning point — medium), concepts/vals-models-civilian-targets-game-framing ("game" framing cuts refusal rates from 90% to 20%, Opus 5.5 picked the school 69% of the time, no safety classifier fired — medium), concepts/java4shell-codex-openjdk-rce (CVE-2026-114938, Codex found it in an hour for under $200, pre-auth RCE demonstrated on six apps — medium), concepts/gao-ai-attack-plans-senate-hearing (all four platforms produced attack plans within 12 hours, January 2027 hearing announced, GAO made no recommendations — medium), concepts/openai-research-acceleration-jagged-frontier (46% zero-intervention success on 2–4 hour tasks, 79% vs 25% by task type, $2,400 per researcher per day — medium), journal/2026-11-19 (active).
   - 1 reinforced: concepts/anthropic-ipo-pricing-above-80 (final price of $83 reflected, follow-up link added).

@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-11-19
+updated: 2026-11-20
 sources: []
 status: active
 ---
@@ -29,10 +29,15 @@ status: active
 
 ## 현재 상태
 
-- **총 페이지**: 412개
-- **카테고리**: concepts(287), tools(16), patterns(30), journal(76), comparisons(11), meta(4)
+- **총 페이지**: 417개
+- **카테고리**: concepts(291), tools(16), patterns(30), journal(77), comparisons(11), meta(4)
 - **시작일**: 2026-04-06
-- **최근 작업 (2026-11-19 데일리 ingest — 가속하는 AI, 뚫리는 안전장치: IPO 확정·Neon·연구 가속과 Vals·GAO·Java4Shell)**:
+- **최근 작업 (2026-11-20 데일리 ingest — 돈이 옮겨가는 날: Anthropic 상장·NVIDIA 소환장·Intuit 전망 하향과 Dragos·추론 잠금·Neon 벤치마크)**:
+  - raw 6건 수집 (Anthropic 첫 거래일 시초 $111.50·종가 $97.17·2일차 장중 -5%, 공모 $81.3B 역대 최대; NVIDIA 캘리포니아 소환장은 조사 단계이지 기소 아님·H200 승인 879,868개는 승인 건수이며 실제 선적량 아님; Dragos 1차 연구 단일 출처·업체명 비공개; GPT-6.2 추출 성공률 54% → 0.2%는 OpenAI 내부 테스트 인용으로 독립 재현 없음; Intuit "첫 하드 수치"는 TFTC의 해석; Neon '3배 빠름'은 Google 주장으로 독립 측정은 약 40% 빠름·기준 주의).
+  - 신규 5개: concepts/anthropic-ipo-first-day-ant-97 (시초 $111.50·종가 $97.17·2일차 -5%·애널리스트 목표가 $76~155로 극단적 분기 — medium), concepts/nvidia-california-subpoena-market-rout (캘리포니아 소환장·NVDA 6거래일 연속 하락 $145.98·다우 -1,101pt — medium), concepts/dragos-canary-tokens-ai-supply-chain (카나리아 토큰 200만 프롬프트·호스팅 3곳 침해·Zero Data Retention 무력화 — medium), concepts/intuit-credit-karma-ai-displacement (Credit Karma 전망 11~13% → 3~7%·Intuit -14.18%·LLM 매출 잠식 첫 하드 수치 — medium), journal/2026-11-20 (active).
+  - 보강 4개: concepts/google-gemini-4-neon (CAAC Go 역대 최고 135/150·'3배 빠름' vs 독립 측정 약 40% 모순 플래그), concepts/openai-gpt-6-2-astra-sol (추론 체인 잠금·추출 성공률 54% → 0.2%), concepts/anthropic-ipo-priced-83-ant-trading (첫 거래일 확정 반영·후속 링크 추가), concepts/nvidia-huang-ousted-ceo (캘리포니아 소환장 후속·상호 링크 추가).
+  - ko 위키 정제 완료. 총 412→417페이지.
+- **직전 작업 (2026-11-19 데일리 ingest — 가속하는 AI, 뚫리는 안전장치: IPO 확정·Neon·연구 가속과 Vals·GAO·Java4Shell)**:
   - raw 6건 수집 (Anthropic 최종 공모가 $83 확정·11-19 ANT 상장; Gemini 4 Neon 가격 우위는 12월 1일 이후·벤치마크 대부분 Google 자체 주장; Vals·GAO는 상용 모델 대상·실제 공격 없음; Java4Shell 실제 악용 사례 없음·제품별 익스플로잇 비공개; OpenAI 연구 가속 수치는 내부 추정치·위임 선택 변화 혼입; $107.3B 보도는 사모 포함 총액이라 공모 $81.3B와 구분; Gmail AI 뉴스레터는 양 계정 확인 결과 최근 24시간 신규 수신 없음).
   - 신규 7개: concepts/anthropic-ipo-priced-83-ant-trading ($83 확정·9.8억 주·약 $81.3B 조달·11-19 ANT 상장·$107.3B는 사모 포함 — medium), concepts/google-gemini-4-neon (Carbon급 성능·2배 속도·$3/$15·AA 지수 61점·12월 1일 분기점 — medium), concepts/vals-models-civilian-targets-game-framing ("게임" 프레이밍에 거절률 90%→20%·Opus 5.5 학교 선택 69%·안전 분류기 무차단 — medium), concepts/java4shell-codex-openjdk-rce (CVE-2026-114938·Codex 1시간 발견·$200 미만·6개 앱 로그인 없이 RCE 실증 — medium), concepts/gao-ai-attack-plans-senate-hearing (4대 플랫폼 12시간 안에 공격 계획·2027년 1월 청문회 예고·GAO 권고안 없음 — medium), concepts/openai-research-acceleration-jagged-frontier (2~4시간 과제 무개입 성공률 46%·과제별 79% vs 25%·연구원 하루 $2,400 — medium), journal/2026-11-19 (active).
   - 보강 1개: concepts/anthropic-ipo-pricing-above-80 (최종 가격 $83 확정 반영·후속 링크 추가).

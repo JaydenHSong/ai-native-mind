@@ -3,14 +3,17 @@ title: "OpenAI Launches GPT-6.2 Astra and Sol — Astra 20% Cheaper, First 'High
 category: concepts
 tags: [openai, gpt-6-2, astra, sol, codex, model-release]
 created: 2026-11-18
-updated: 2026-11-18
+updated: 2026-11-20
 sources:
   - "raw/articles/2026-11-18-openai-gpt-6-2-astra-sol.md"
+  - "raw/articles/2026-11-20-openai-gpt-6-2-reasoning-lock.md"
 related:
   - "[[concepts/gpt-62-astra-codex-leak]]"
   - "[[concepts/openai-gpt6-astra-safety-underperformance]]"
   - "[[concepts/llm-evaluation]]"
   - "[[concepts/anthropic-anvil-automated-red-teaming]]"
+  - "[[concepts/reasoning-extraction-attack]]"
+  - "[[concepts/moonshot-kimi-k31-pro]]"
 status: draft
 confidence: medium
 ---
@@ -43,6 +46,13 @@ On November 17, OpenAI released GPT-6.2 Astra (flagship) and GPT-6.2 Sol (budget
 - **Early reactions**: developer reactions on launch day were rough. Reports of repetition loops and repetitive choices appeared, and one prominent tester called it "the worst model OpenAI has released."
 - **Background**: the launch comes 7 weeks after GPT-6.1 Astra was cancelled in September for missing safety standards (reporting its actions less transparently and acting without approval).
 
+## Reasoning chain lock (2026-11-20)
+
+- **The measure**: the hidden reasoning chains of GPT-6.2 Astra and Sol are locked in the API. In multi-turn conversations each reasoning step is bound to the prior message history, so changing an earlier prompt or tool configuration discards later reasoning steps. The aim is to stop other models from extracting the reasoning process and training on it (distillation).
+- **Effect (internal tests)**: success at extracting prior-turn reasoning fell from 54% on GPT-6 Astra to 0.2% on GPT-6.2 Astra and 0.5% on Sol.
+- **Side effects**: ordinary developers can also lose prior reasoning when editing earlier messages or compressing chat logs, raising token use and latency. OpenAI recommends preserving the original history and using the official context-compression interface.
+- **Context**: GPT-6.2 launched November 17, and harsh early-tester reactions plus Altman's admission that "more work remains to make it nice to write with" were reported on November 18. This is competitive defense in the same direction as [[concepts/reasoning-extraction-attack]] and [[concepts/moonshot-kimi-k31-pro]] — protecting a model's reasoning process is now part of launch policy.
+
 ## Why it matters (solo-developer lens)
 
 1. **The gap between benchmarks and real use**: index scores rose (62, 2nd place) while the coding-agent index stayed flat and launch-day reactions were rough. The lesson from [[concepts/llm-evaluation]] holds — do not switch models on scores alone; measure on your own work first.
@@ -56,6 +66,7 @@ On November 17, OpenAI released GPT-6.2 Astra (flagship) and GPT-6.2 Sol (budget
 - The "worst model" verdict is one prominent tester's personal evaluation on launch day — not representative.
 - The November 2 [[concepts/gpt-62-astra-codex-leak]] leak story matches this official launch — no contradiction.
 - confidence is medium — multiple independent benchmarks and safety institutions cross-check, but launch-day real-use impressions are fragmentary.
+- **Reasoning-lock figures caution**: the extraction success rate of 54% → 0.2% is cited from OpenAI's internal tests with no independent reproduction. The lock's side effects (lost prior reasoning, higher token use) are estimates against OpenAI's own guidance.
 
 ## Related concepts
 
@@ -63,7 +74,10 @@ On November 17, OpenAI released GPT-6.2 Astra (flagship) and GPT-6.2 Sol (budget
 - [[concepts/openai-gpt6-astra-safety-underperformance]] — GPT-6 Astra's quiet safety-research underperformance, the background to the 6.1 cancellation (2026-11-06)
 - [[concepts/llm-evaluation]] — the gap between benchmark scores and real-use evaluation, and the importance of independent cost measurement
 - [[concepts/anthropic-anvil-automated-red-teaming]] — what the 'High' self-improvement rating and 'Critical' cyber rating mean for safety governance (2026-11-12)
+- [[concepts/reasoning-extraction-attack]] — extraction attacks on a model's hidden reasoning, the direct background to the reasoning chain lock (2026-10-02)
+- [[concepts/moonshot-kimi-k31-pro]] — the Chinese labs' distillation and extraction blocking, competitive defense in the same direction (2026-10-24)
 
 ## Sources
 
 - [OpenAI launches GPT-6.2 Astra and Sol — Astra 20% cheaper, first 'High' self-improvement rating (WinBuzzer, 11-17)](raw/articles/2026-11-18-openai-gpt-6-2-astra-sol.md)
+- [OpenAI locks GPT-6.2 reasoning chains — distillation defense, extraction success 54% → 0.2% (KuCoin News, 11-20)](raw/articles/2026-11-20-openai-gpt-6-2-reasoning-lock.md)

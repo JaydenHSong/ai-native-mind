@@ -3,10 +3,12 @@ title: "Anthropic IPO $83 확정 — 9.8억 주, 약 $81.3B 조달, 11-19 ANT �
 category: concepts
 tags: [anthropic, ipo, claude, funding]
 created: 2026-11-19
-updated: 2026-11-19
+updated: 2026-11-20
 sources:
   - "raw/articles/2026-11-19-anthropic-ipo-priced-83-ant-trading.md"
+  - "raw/articles/2026-11-20-anthropic-ipo-first-day-ant-97.md"
 related:
+  - "[[concepts/anthropic-ipo-first-day-ant-97]]"
   - "[[concepts/anthropic-ipo-pricing-above-80]]"
   - "[[concepts/anthropic-ipo-roadshow-valuation-cut]]"
   - "[[concepts/anthropic-s1a-q3-revenue-commitments]]"
@@ -52,11 +54,12 @@ Anthropic이 11월 18일 IPO 가격을 주당 **$83**으로 확정했다. 공모
 
 - $83·9.8억 주·$81.3B는 Anthropic 공식 발표 + dpa-AFX·CNBC·Bloomberg 등 다수 보도로 교차 확인됐다. 다만 424B4 최종 보충설명서는 작성 시점 기준으로 EDGAR에서 확인되지 않았다는 지적이 있다.
 - "$107.3B 역대 최대"는 사모 포함 총액 기준이며, 공모만 놓고 보면 $81.3B다. 어떤 기준의 "최대"인지 매체마다 다르다.
-- 첫 거래 가격(시가)은 공모가 $83과 다르다. 상장 첫날 실제 거래가는 11월 19일 장중에 정해진다.
+- 첫 거래 가격(11-19 확정): 시초 $111.50, 종가 $97.17(공모가 대비 +17.07%) — 자세한 내용은 [[concepts/anthropic-ipo-first-day-ant-97]] 참조. 2일차(11-20)에는 장중 약 -5% 하락했다.
 - confidence는 medium — 공식 발표 + 다수 보도 교차이나, 최종 서류(424B4) 확인은 남았다.
 
 ## 관련 개념
 
+- [[concepts/anthropic-ipo-first-day-ant-97]] — 첫 거래일 시초 $111.50·종가 $97.17·2일차 -5%, 역대 최대 $81.3B 조달의 시장 평가 (2026-11-20)
 - [[concepts/anthropic-ipo-pricing-above-80]] — 어제 파일의 가격 전망($80 초과)이 $83으로 확정되기 전 단계 (2026-11-18)
 - [[concepts/anthropic-ipo-roadshow-valuation-cut]] — IPO 로드쇼 전망, 밸류 기대치 $2T에서 $1~1.75T로 하락 (2026-11-08)
 - [[concepts/anthropic-s1a-q3-revenue-commitments]] — Anthropic S-1/A, Q3 매출 $16.96B·컴퓨트 약정 $895.4B (2026-11-04)
@@ -65,3 +68,4 @@ Anthropic이 11월 18일 IPO 가격을 주당 **$83**으로 확정했다. 공모
 ## 참고 소스
 
 - [Anthropic IPO $83에 가격 확정 — 9.8억 주, 약 $81.3B 조달, 11-19 ANT 상장 (dpa-AFX, 11-18)](raw/articles/2026-11-19-anthropic-ipo-priced-83-ant-trading.md)
+- [Anthropic IPO 첫 거래일 — 시초 $111.50 → 종가 $97.17, 2일차 -5% (Investopedia·Reuters·WSJ, 11-19)](raw/articles/2026-11-20-anthropic-ipo-first-day-ant-97.md)

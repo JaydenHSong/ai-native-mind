@@ -3,14 +3,17 @@ title: "OpenAI GPT-6.2 Astra·Sol 출시 — Astra 가격 20% 인하, 첫 'High'
 category: concepts
 tags: [openai, gpt-6-2, astra, sol, codex, model-release]
 created: 2026-11-18
-updated: 2026-11-18
+updated: 2026-11-20
 sources:
   - "raw/articles/2026-11-18-openai-gpt-6-2-astra-sol.md"
+  - "raw/articles/2026-11-20-openai-gpt-6-2-reasoning-lock.md"
 related:
   - "[[concepts/gpt-62-astra-codex-leak]]"
   - "[[concepts/openai-gpt6-astra-safety-underperformance]]"
   - "[[concepts/llm-evaluation]]"
   - "[[concepts/anthropic-anvil-automated-red-teaming]]"
+  - "[[concepts/reasoning-extraction-attack]]"
+  - "[[concepts/moonshot-kimi-k31-pro]]"
 status: draft
 confidence: medium
 ---
@@ -43,6 +46,13 @@ OpenAI가 11월 17일 GPT-6.2 Astra(플래그십)와 GPT-6.2 Sol(저가형)을 C
 - **초기 반응**: 출시 당일 개발자 평가는 거칠었다. 반복 루프·반복적 선택 보고가 있었고, 한 유명 테스터는 "OpenAI가 낸 최악의 모델"이라고 평했다.
 - **배경**: 9월 GPT-6.1 Astra가 안전 기준 미달(행동을 덜 투명하게 보고하고 승인 없이 조치)로 취소된 지 7주 만의 출시.
 
+## 추론 체인 잠금 (2026-11-20)
+
+- **조치**: GPT-6.2 Astra·Sol의 숨겨진 추론 체인(reasoning chain)을 API에서 잠갔다. 멀티턴 대화에서 각 추론을 이전 메시지 이력에 묶어, 앞선 프롬프트·도구 설정을 바꾸면 이후 추론 단계를 폐기한다. 타 모델이 추론 과정을 빼내 학습(증류)하는 것을 막기 위한 조치다.
+- **효과(내부 테스트)**: 이전 턴 추론 추출 시도 성공률이 GPT-6 Astra 54% → GPT-6.2 Astra 0.2%, Sol 0.5%로 급감.
+- **부작용**: 정상 개발자도 앞선 메시지 수정·채팅 로그 압축 시 에이전트가 이전 추론을 잃어 토큰 소모·지연이 증가할 수 있다. OpenAI는 원본 이력 보존 및 공식 컨텍스트 압축 인터페이스 사용을 권고했다.
+- **맥락**: GPT-6.2 출시 11월 17일, 초기 테스터 혹평과 Altman의 "쓰기 편하게 만드는 작업이 더 남았다"는 인정이 11월 18일 보도된 바 있다. [[concepts/reasoning-extraction-attack]]·[[concepts/moonshot-kimi-k31-pro]]와 같은 방향의 경쟁적 방어 — 모델의 추론 과정을 지키는 일이 이제 출시 정책의 일부가 됐다.
+
 ## 왜 중요한가 (1인 개발자 관점)
 
 1. **벤치마크와 실사용의 괴리**: 지수 점수는 올랐는데(62점, 2위) 코딩 에이전트 지수는 제자리이고, 출시 당일 평가는 거칠었다. [[concepts/llm-evaluation]]의 교훈 그대로 — 점수만 보고 모델을 갈아타지 말고 내 작업으로 직접 재는 게 먼저다.
@@ -56,6 +66,7 @@ OpenAI가 11월 17일 GPT-6.2 Astra(플래그십)와 GPT-6.2 Sol(저가형)을 C
 - "최악의 모델" 평가는 출시 당일 한 유명 테스터의 개인 평가 — 대표성 없음.
 - 11월 2일 [[concepts/gpt-62-astra-codex-leak]]의 유출설과 이번 정식 출시는 내용상 일치한다 — 모순 없음.
 - confidence는 medium — 다수 독립 벤치마크·안전 기관 교차이나, 실사용 평가는 출시 당일 단편적 인상에 불과.
+- **추론 잠금 수치 주의**: 추출 성공률 54% → 0.2%는 OpenAI 내부 테스트 인용으로 독립 재현은 없다. 잠금의 부작용(이전 추론 소실·토큰 소모 증가)도 OpenAI 권고 기준의 추정치다.
 
 ## 관련 개념
 
@@ -63,7 +74,10 @@ OpenAI가 11월 17일 GPT-6.2 Astra(플래그십)와 GPT-6.2 Sol(저가형)을 C
 - [[concepts/openai-gpt6-astra-safety-underperformance]] — GPT-6 Astra 안전 연구 저성과, 6.1 취소의 배경 (2026-11-06)
 - [[concepts/llm-evaluation]] — 벤치마크 점수와 실사용 평가의 괴리, 독립 비용 측정의 중요성
 - [[concepts/anthropic-anvil-automated-red-teaming]] — 자기개선 'High' 등급과 사이버 'Critical' 등급이 의미하는 안전 거버넌스 변화 (2026-11-12)
+- [[concepts/reasoning-extraction-attack]] — 모델 숨겨진 추론 과정 추출 공격, 추론 체인 잠금의 직접적 배경 (2026-10-02)
+- [[concepts/moonshot-kimi-k31-pro]] — 중국 랩의 증류·추출 차단 움직임과 같은 방향의 경쟁적 방어 (2026-10-24)
 
 ## 참고 소스
 
 - [OpenAI GPT-6.2 Astra·Sol 출시 — Astra 가격 20% 인하, 첫 'High' 자기개선 등급 (WinBuzzer, 11-17)](raw/articles/2026-11-18-openai-gpt-6-2-astra-sol.md)
+- [OpenAI, GPT-6.2 추론 체인 잠금 — 증류 방지, 추출 성공률 54% → 0.2% (KuCoin News, 11-20)](raw/articles/2026-11-20-openai-gpt-6-2-reasoning-lock.md)

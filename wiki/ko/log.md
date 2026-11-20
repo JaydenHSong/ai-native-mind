@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-11-19
+updated: 2026-11-20
 sources: []
 status: active
 ---
@@ -19,6 +19,17 @@ status: active
 - 월드맵 허브: [[campaign-map|Campaign Map]]
 - 진행 가이드: [[overview|Overview]]
 - 전체 도감: [[index|Index]]
+
+## [2026-11-20] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + ko 위키 정제
+
+- **Raw collected** (raw/articles/, 6건 — 일일 최대치):
+  - `2026-11-20-anthropic-ipo-first-day-ant-97.md` — Anthropic IPO 첫 거래일 (11-19; Investopedia·Reuters·WSJ): 시초 $111.50(+34%), 고점 $115.10, 종가 $97.17(+17.1%, 공모가 $83 대비), 거래량 약 8억4천만 주. 공모 총액 약 $81.3B로 SpaceX $75B를 제치고 역대 최대 IPO. 시초 기준 시총 약 $2조 돌파, 종가 기준 희석 시총 약 $1.77~1.8조. 9개월 매출 $33B, 영업손실 $1.2B, 2026년 예상 매출 $53B 기준 약 28배 밸류에이션. 애널리스트 커버리지 개시: Needham Buy $150·Melius Buy 2년 목표 $155·Wolfe Outperform $135·William Blair Outperform $130~150·Citizens Outperform $125 vs Seaport Neutral·Morningstar 공정가치 $92 유지·NYU Damodaran 약 $76. 2일차(11-20) 장중 스냅샷 전일 종가 대비 -5.26%. 같은 날 다우 -1,101pt, S&P 500 -2.0%, Nasdaq -2.3%.
+  - `2026-11-20-nvidia-california-subpoena-market-rout.md` — NVIDIA 캘리포니아 소환장 + 11-19 증시 대폭락 (11-19; Barron's·Reuters·TipRanks): Bonta 장관실이 첨단 칩·기밀정보의 중국 유출 여부와 투자자 오도 여부 조사 소환장 발부. 소환장은 조사 단계이지 기소가 아니다. 배경은 Huang의 Alice Huang 관계 인정·11-12 사임, WSJ 보도 SEC 조사(11-18), 이사회 자체 조사·수출통제 감독위원회 신설. Huang은 12월 1일 하원 3개 위원회 증언 예정. NVDA 11-19 -3.3% → $145.98, 6거래일 연속 하락(6일간 -16%, 시총 약 $6,690억 증발), 10월 6일 최고 종가 대비 약 -38~-40%. Moody's 신용전망 Positive→Stable. NYT: NVIDIA가 Megaspeed 관련 업체에 H200 4만 개 이상 판매 승인 신청. 하원 외교위원회 문서: 미 상무부가 2025년 12월~2026년 5월 중국 기업에 NVIDIA·AMD AI 칩 약 879,868개 판매 승인(실제 선적량 불명). ARK 11-19 33,430주 추가 매도. 다우 -1,101pt(49,097.06), S&P 500 -2.0%, Nasdaq -2.3%, VIX +14%. AMD -7.7%에는 Hunterbrook 숏리포트 겹침(이해상충 유의). 별도: NVIDIA의 Inflection 인수 막바지 협상 보도(>$500M).
+  - `2026-11-20-dragos-canary-tokens-ai-supply-chain.md` — Dragos 카나리아 토큰 연구 (11-19; Dragos 공식 블로그 1차 연구, HD Moore): 2026년 7~11월 약 200만 개 프롬프트에 고유 카나리아 토큰(URL·AWS 키)을 심어 추적. 최소 3개 AI 호스팅 업체에서 데이터 노출 증거 확인, 3곳 모두 Dragos가 알리기 전까지 침해를 몰랐다. 미끼 AWS 키가 공격자의 AWS API 호출(수만 건)에 사용됐고, 최대 침해 건은 10월 말 며칠간 약 200개의 AWS 키 전부 탈취. 추론 마켓플레이스 재판매자들이 표준 로깅만으로 고객 프롬프트 열람·보관 가능. Zero Data Retention 설정에도 프롬프트 유출, 한 사례는 24일 뒤 Feishu 채팅에 게시, 중국 AI 조직 도달 사례도 확인. 침해 업체명 비공개.
+  - `2026-11-20-openai-gpt-6-2-reasoning-lock.md` — OpenAI GPT-6.2 추론 체인 잠금 (11-20; KuCoin News): GPT-6.2 Astra·Sol의 숨겨진 추론 체인을 API에서 잠가 증류 방지. 멀티턴 대화에서 각 추론을 이전 메시지 이력에 묶어 앞선 프롬프트·도구 설정 변경 시 이후 추론 단계 폐기. OpenAI 내부 테스트에서 이전 턴 추론 추출 시도 성공률이 GPT-6 Astra 54% → GPT-6.2 Astra 0.2%, Sol 0.5%. 부작용: 정상 개발자도 앞선 메시지 수정·채팅 로그 압축 시 이전 추론을 잃어 토큰 소모·지연 증가 가능. OpenAI는 원본 이력 보존 및 공식 컨텍스트 압축 인터페이스 사용 권고. 수치는 OpenAI 내부 테스트 인용으로 독립 재현 없음.
+  - `2026-11-20-intuit-credit-karma-ai-displacement.md` — Intuit Credit Karma 전망 하향 (11-19; TFTC·Intuit 실적콜): Q1 2027 실적콜에서 Credit Karma 성장 전망 11~13% → 3~7% 하향. 소비자가 금융상품 탐색에 LLM을 쓰면서 Credit Karma 매출이 직접 타격받았다는 설명. Intuit 주가 당일 -14.18%로 Nasdaq-100 최대 낙폭. TFTC는 이를 "AI가 기존 애플리케이션 계층 매출을 파괴한다는 첫 번째 하드 보고 수치"로 평가. 출처 구분: 전망 하향 자체는 Intuit 실적콜(1차) 인용, "첫 하드 수치" 평가는 TFTC의 해석.
+  - `2026-11-20-gemini-4-neon-benchmarks-followup.md` — Gemini 4 Neon 벤치마크 후속 (11-19; CAAC Go·Crescendo Lab·Geeky Gadgets): CAAC Go 실전 에이전트 테스트(고객 메시지 150건×5모델, 독립 AI 심사 2명)에서 Neon 135/150 역대 최고, Claude Opus 5.5(133건)와 통계적 동점(p=0.72), Gemini 4 Carbon(125건) 상회(p=0.02). AA Intelligence Index 61점 세계 3위, Coding Agent Index 58.6점 1위, Vending Bench 2·Zapier Automation Bench 1위, Pareto Frontier 2위. 단점: 평균 응답 9.3초(Opus 5.5의 2배 이상), 1,000건당 비용 $28.80(Opus 5.5 $21.65보다 비쌈). Neon 입력 $3/출력 $15, Carbon은 11월 30일까지 도입가 $2/$10이라 현재는 Neon이 토큰당 더 비싸고, Neon이 25% 저렴해지는 건 12월 1일 Carbon 인상($4/$20) 이후. 수치 불일치 유의: Google 주장 'Carbon 대비 3배 빠름' vs 독립 측정 약 40% 빠름(작업 시간 21분 vs 36분).
+- **Ingest** (wiki/ko, 개념 4건 신규 + 보강 4건 + 저널 1건): anthropic-ipo-first-day-ant-97 (medium), nvidia-california-subpoena-market-rout (medium), dragos-canary-tokens-ai-supply-chain (medium), intuit-credit-karma-ai-displacement (medium) 신규; google-gemini-4-neon·openai-gpt-6-2-astra-sol·anthropic-ipo-priced-83-ant-trading·nvidia-huang-ousted-ceo 보강; journal/2026-11-20. 모순 플래그 1건: Gemini 4 Neon 속도 수치 기준 불일치('3배 빠름' Google 주장 vs 독립 측정 약 40% 빠름 vs 토큰 속도 약 2배) — neon 페이지 한계 항목에 기록. ko 위키 정제 완료; en 동기화는 본 작업 범위 밖.
 
 ## [2026-11-19] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + 한/영 위키 정제
 

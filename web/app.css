@@ -65,9 +65,9 @@
   /* 카테고리별 라이트 톤 최적화 (종속성 상부 선언) */
   --concepts-color: #7c3aed;
   --tools-color: #047857;
-  --patterns-color: #ea580c;
-  --comparisons-color: #db2777;
-  --journal-color: #0891b2;
+  --patterns-color: #c2410c;
+  --comparisons-color: #be185d;
+  --journal-color: #0e7490;
   --meta-color: #92600a;
 
   --bg-base: #f8fafc;
@@ -1621,7 +1621,7 @@ body {
 [data-theme="light"] .markdown-body pre code .token.char,
 [data-theme="light"] .markdown-body pre code .token.attr-value,
 [data-theme="light"] .markdown-body pre code .token.regex {
-  color: #059669 !important; /* 그린 계열 문자열 */
+  color: #047857 !important; /* 그린 계열 문자열 */
 }
 [data-theme="light"] .markdown-body pre code .token.comment,
 [data-theme="light"] .markdown-body pre code .token.prolog,
@@ -1645,7 +1645,7 @@ body {
 }
 [data-theme="light"] .markdown-body pre code .token.property,
 [data-theme="light"] .markdown-body pre code .token.tag {
-  color: #ea580c !important; /* 오렌지 계열 프로퍼티/태그 */
+  color: #c2410c !important; /* 오렌지 계열 프로퍼티/태그 */
 }
 
 /* === 1단계 개선 (2026-11-10): 작은 텍스트 최소 0.75rem 하한 === */

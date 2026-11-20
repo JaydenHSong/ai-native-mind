@@ -3,10 +3,12 @@ title: "Anthropic IPO Priced at $83 — 980M Shares, About $81.3B Raised, ANT Li
 category: concepts
 tags: [anthropic, ipo, claude, funding]
 created: 2026-11-19
-updated: 2026-11-19
+updated: 2026-11-20
 sources:
   - "raw/articles/2026-11-19-anthropic-ipo-priced-83-ant-trading.md"
+  - "raw/articles/2026-11-20-anthropic-ipo-first-day-ant-97.md"
 related:
+  - "[[concepts/anthropic-ipo-first-day-ant-97]]"
   - "[[concepts/anthropic-ipo-pricing-above-80]]"
   - "[[concepts/anthropic-ipo-roadshow-valuation-cut]]"
   - "[[concepts/anthropic-s1a-q3-revenue-commitments]]"
@@ -52,11 +54,12 @@ Anthropic set its IPO price at **$83** per share on November 18, 2026 — $5 abo
 
 - $83, 980 million shares, and $81.3B are cross-confirmed by Anthropic's official announcement and multiple outlets (dpa-AFX, CNBC, Bloomberg). The final Form 424B4 supplement, however, had not been confirmed on EDGAR at the time of writing, per one outlet.
 - "$107.3B, the largest ever" is a total including the private placement; the public offering alone is $81.3B. Which "largest" is meant differs by outlet.
-- The first trading price (the open) is different from the $83 offering price. The actual first-day price is set during trading on November 19.
+- The first trading price (now confirmed, Nov 19): open $111.50, close $97.17 (+17.07% vs the offering price) — see [[concepts/anthropic-ipo-first-day-ant-97]] for details. Day 2 (Nov 20) fell about 5% intraday.
 - confidence is medium — an official announcement crossed with multiple reports, with final filing confirmation still pending.
 
 ## Related concepts
 
+- [[concepts/anthropic-ipo-first-day-ant-97]] — first trading day: open $111.50, close $97.17, day 2 down 5%, the market's verdict on the record $81.3B raise (2026-11-20)
 - [[concepts/anthropic-ipo-pricing-above-80]] — the pre-pricing outlook (above-$80 report) that this $83 confirmation follows (2026-11-18)
 - [[concepts/anthropic-ipo-roadshow-valuation-cut]] — IPO roadshow outlook, valuation expectations cut from $2T to $1–1.75T (2026-11-08)
 - [[concepts/anthropic-s1a-q3-revenue-commitments]] — Anthropic S-1/A, Q3 revenue $16.96B and $895.4B in computing commitments (2026-11-04)
@@ -65,3 +68,4 @@ Anthropic set its IPO price at **$83** per share on November 18, 2026 — $5 abo
 ## Sources
 
 - [Anthropic IPO priced at $83 — 980M shares, about $81.3B raised, ANT lists Nov 19 (dpa-AFX, 11-18)](raw/articles/2026-11-19-anthropic-ipo-priced-83-ant-trading.md)
+- [Anthropic's first trading day — open $111.50 → close $97.17, day 2 down 5% (Investopedia, Reuters, WSJ, 11-19)](raw/articles/2026-11-20-anthropic-ipo-first-day-ant-97.md)
