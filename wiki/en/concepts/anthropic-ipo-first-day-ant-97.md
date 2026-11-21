@@ -3,11 +3,13 @@ title: "Anthropic's First Trading Day — Open $111.50, Close $97.17, Day 2 Down
 category: concepts
 tags: [anthropic, ipo, ant, markets, claude]
 created: 2026-11-20
-updated: 2026-11-20
+updated: 2026-11-21
 sources:
   - "raw/articles/2026-11-20-anthropic-ipo-first-day-ant-97.md"
+  - "raw/articles/2026-11-21-nasdaq-ai-rout-nvidia-sec-probe.md"
 related:
   - "[[concepts/anthropic-ipo-priced-83-ant-trading]]"
+  - "[[concepts/nasdaq-ai-rout-nvidia-sec-probe]]"
   - "[[concepts/anthropic-s1-ipo-filing]]"
   - "[[concepts/anthropic-ipo-roadshow-valuation-cut]]"
   - "[[concepts/ai-debt-boom-cracking]]"
@@ -31,7 +33,7 @@ confidence: medium
 
 ## One-line definition
 
-Anthropic began trading on Nasdaq under the ticker **ANT** on November 19, 2026. From an offering price of $83, it opened at **$111.50 (+34%)**, hit an intraday high of $115.10, and closed at **$97.17 (+17.1%)**. Gross proceeds of about $81.3B make it the largest IPO ever, passing SpaceX's $75B. On its second trading day, November 20, it fell about 5% intraday and traded around $92.
+Anthropic began trading on Nasdaq under the ticker **ANT** on November 19, 2026. From an offering price of $83, it opened at **$111.50 (+34%)**, hit an intraday high of $115.10, and closed at **$97.17 (+17.1%)**. Gross proceeds of about $81.3B make it the largest IPO ever, passing SpaceX's $75B. On its second trading day, November 20, it closed down 8.5% at $88.91, with an intraday low of $83.05, within 5 cents of the $83 offering price.
 
 ## Key points
 
@@ -40,6 +42,7 @@ Anthropic began trading on Nasdaq under the ticker **ANT** on November 19, 2026.
 - **Fundamentals**: nine-month revenue of $33B, operating loss of $1.2B, about 28x valuation on expected 2026 revenue of $53B. The seven co-founders' combined stake is worth about $140B at the offering price.
 - **Analyst coverage begins**: Needham Buy, $150 target (+54%); Melius Buy, two-year target $155 (+60%); Wolfe Outperform, $135 (+39%); William Blair Outperform, fair value $130–150; Citizens Market Outperform, $125. On the other side: Seaport Neutral (no target; flagged sharply slowing Q3 revenue growth and a DCF value of about $1.64T that assumes aggressive growth through 2028), Morningstar fair value $92 maintained (3 stars, Narrow Moat, Very High uncertainty), NYU's Damodaran at about $76 (data-center costs, regulatory pressure, governance risk from the founders' 50.01% voting control).
 - **Day-two decline**: November 20 opened about −6.8% in premarket; an intraday snapshot (15:00 UTC) showed open $89.86, high $92.55, low $87.26, −5.26% vs the previous close.
+- **Day-two final close (Nov 20, confirmed)**: down 8.5% to an $88.91 close, with an intraday low of $83.05, within 5 cents of the $83 offering price. About −23% from the day-one high of $115.10. With the greenshoe fully exercised, total proceeds reached about $93.5B and the IPO closed on November 20. Watch the close: AP, the Wall Street Journal, and MarketWatch reported $88.30 (−9.1%), so outlets disagree.
 - **Market context**: AI stocks fell hard on Anthropic's debut day all the same. The Dow fell 1,101 points (−2.2%), the S&P 500 −2.0%, the Nasdaq −2.3%.
 
 ## Why it matters (solo-developer lens)
@@ -52,7 +55,7 @@ Anthropic began trading on Nasdaq under the ticker **ANT** on November 19, 2026.
 
 - "Largest IPO ever" is on the $81.3B offering basis. Read it separately from the $107.3B figure that adds the $26B private placement (see [[concepts/anthropic-ipo-priced-83-ant-trading]]).
 - Nine-month revenue of $33B and an operating loss of $1.2B use a different basis from the S-1's first-half net loss of $80.7B (which includes $72.4B of non-cash items) — operating loss and net loss are different numbers.
-- The day-two −5% is an intraday snapshot, not a close.
+- The day-two −5% was an intraday snapshot. The final close was $88.91 (−8.5%), though some outlets reported $88.30 (−9.1%) — see [[concepts/nasdaq-ai-rout-nvidia-sec-probe]].
 - confidence is medium — Investopedia, Reuters, and WSJ cross-check, but analyst targets are opinions and the day-two figures are intraday.
 
 ## Related concepts
@@ -65,3 +68,4 @@ Anthropic began trading on Nasdaq under the ticker **ANT** on November 19, 2026.
 ## Sources
 
 - [Anthropic's first trading day — open $111.50 → close $97.17, day 2 down 5% (Investopedia, Reuters, WSJ, 11-19)](raw/articles/2026-11-20-anthropic-ipo-first-day-ant-97.md)
+- [Nasdaq drops 5.28% — Anthropic's day-two final close $88.91, greenshoe fully exercised, total proceeds $93.5B (Motley Fool, Reuters, CNBC, 11-20)](raw/articles/2026-11-21-nasdaq-ai-rout-nvidia-sec-probe.md)

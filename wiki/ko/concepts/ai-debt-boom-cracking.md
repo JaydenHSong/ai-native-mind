@@ -3,10 +3,12 @@ title: "AI 부채 붐의 균열 — 월스트리트가 AI 지출 한계에 도�
 category: concepts
 tags: [ai-bubble, debt, coreweave, neocloud, capex, capital, semiconductors, openai-revenue, funding-sustainability]
 created: 2026-10-16
-updated: 2026-10-23
+updated: 2026-11-21
 sources:
   - "raw/articles/2026-10-16-ai-debt-boom-cracking.md"
+  - "raw/articles/2026-11-21-nasdaq-ai-rout-nvidia-sec-probe.md"
 related:
+  - "[[concepts/nasdaq-ai-rout-nvidia-sec-probe]]"
   - "[[comparisons/frontier-lab-economics]]"
   - "[[concepts/mecka-robot-motion-data]]"
   - "[[concepts/meta-muse-spark-open]]"
@@ -40,6 +42,13 @@ Axios가 2026-10-16 보도한 "부채로 연명하는 AI 붐에 균열" — **�
 - Gartner: 네오클라우드의 80%가 2030년까지 독립 운영 중단 전망 (10-16과 동일).
 - 출처: Reuters (10-22), TradingView, TheStreet — 정보 제공 목적, 투자 판단 아님.
 
+## 2026-11-20 보강 — 나스닥 -5.28%, AI주 주간 $4조 증발
+
+- **폭락**: 11월 20일 나스닥 -5.28%로 2026년 상승분 소멸, S&P 500 -3.70%로 조정 국면 진입. 주간 나스닥 -10.0%로 2020년 3월 이후 최악의 주간.
+- **트리거**: 엔비디아 SEC 회계 조사 보도(미확인)에 NVDA -14.01% → $125.53. 같은 날 트럼프 대통령의 해외 데이터센터 세금 위협도 겹쳤다.
+- **해석**: 10-16 "균열" 분석이 11-20 실제 주가로 확인된 국면. 다만 "균열"의 실증이 디폴트·유동성 위기가 아니라 주가 급락이라는 점은 구분해 기록한다.
+- 자세한 내용은 [[concepts/nasdaq-ai-rout-nvidia-sec-probe]] 참조.
+
 ## 왜 중요한가
 
 1. **가격 결정력 논쟁의 반대편**: [[comparisons/frontier-lab-economics]]는 "수요의 가격 비탄력성"에서 가격 결정력을 찾았다(DeepSeek 인상 후 이탈 없음·Ultrafast 6배 프리미엄). 이번은 반대편 질문 — **자금조달의 지속가능성**. 가격이 아니라 자본이 먼저 무너질 수 있다. 4단계(저가→인프라→하드웨어→자본)에 5번째 질문: "자본의 한계".
@@ -62,3 +71,4 @@ Axios가 2026-10-16 보도한 "부채로 연명하는 AI 붐에 균열" — **�
 ## 참고 소스
 
 - [Axios — "부채로 연명하는 AI 붐에 균열" (Axios·DevDiscourse, 10/16)](raw/articles/2026-10-16-ai-debt-boom-cracking.md)
+- [나스닥 5.28% 폭락 — AI주 주간 $4조 증발 (Motley Fool·Reuters·CNBC, 11-20)](raw/articles/2026-11-21-nasdaq-ai-rout-nvidia-sec-probe.md)

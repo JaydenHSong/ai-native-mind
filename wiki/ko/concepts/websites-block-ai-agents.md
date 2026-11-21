@@ -3,10 +3,12 @@ title: "플랫폼의 에이전트 차단 — Yelp·Delta·은행이 에이전트
 category: concepts
 tags: [ai-agents, blocking, yelp, delta, banks, data-licensing, agentic-web, charles-schwab, jpmorgan]
 created: 2026-10-18
-updated: 2026-10-18
+updated: 2026-11-21
 sources:
   - "raw/articles/2026-10-18-websites-block-ai-agents.md"
+  - "raw/articles/2026-11-21-amazon-perplexity-comet-hearing.md"
 related:
+  - "[[concepts/apple-own-ai-agent-macos-friction]]"
   - "[[patterns/agentic-commerce]]"
   - "[[patterns/agent-authority-model]]"
   - "[[concepts/meta-sierra-poppy-protocol]]"
@@ -39,6 +41,7 @@ confidence: high
 - **Charles Schwab CEO Rick Wurster** (10/15 투자자 콜): "에이전트가 고객 대신 사이트에 로그인하는 건 안전하지 않다. 허용하지 않을 것."
 - **JPMorgan**: Jamie Dimon (10/13 실적 콜) — "외부 에이전트가 회사 안에 들어오는 걸 허용하지 않을 것, 고객과 JPMorgan에 너무 위험하다." 대변인: 외부 AI 에이전트의 고객 작업 수행 차단.
 - **Amazon×Perplexity**: 법원이 처음엔 Perplexity의 에이전트 구매 금지 명령 → 8월 항소법원이 뒤집음 → Amazon 수정 소송. 사법 판단도 요동 중.
+- **Amazon v Perplexity 심리(11-20)**: 샌프란시스코 연방법원 심리에서 Chesney 판사가 디스커버리를 중단하고, Amazon의 수정 소장이 2026년 8월 제9순회 판결("Amazon 컴퓨터에 접근하는 것은 사용자다")을 극복할 수 있을지 회의감을 드러냈다. 다만 Perplexity 직원 테스트 관련 청구 최소 1건은 살아남을 가능성을 시사했다. 최종 결정은 아직 없다.
 - **Meta 반론**: "개인 에이전트를 외면하는 건 그 뒤의 고객을 외면하는 것." Walmart·Gap·Sephora·Best Buy와 파트너십 — Muse 구매 가능. Shopify도 네트워크 개방.
 
 ## 왜 중요한가 (1인 개발자 관점)

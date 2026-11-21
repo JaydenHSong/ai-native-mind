@@ -3,10 +3,12 @@ title: "Thinking Machines Inkling 2 Small — 594B MoE, 31 on the AI Index, Apac
 category: concepts
 tags: [thinking-machines, inkling, open-weights, moe, tinker]
 created: 2026-11-06
-updated: 2026-11-06
+updated: 2026-11-21
 sources:
   - "raw/articles/2026-11-06-thinking-machines-inkling-2-small.md"
+  - "raw/articles/2026-11-21-thinking-machines-inkling-2-mini.md"
 related:
+  - "[[concepts/thinking-machines-inkling-2-mini]]"
   - "[[concepts/moonshot-kimi-k31-pro]]"
   - "[[concepts/meta-muse-spark-open]]"
   - "[[concepts/reflection-open-weight]]"
@@ -36,6 +38,7 @@ Announced 2026-11-05: Thinking Machines Lab, led by Mira Murati, released Inklin
 - **Performance**: 31 on the Artificial Analysis Intelligence Index v5.0.1, up 18 points from the first generation's 13 (some outlets report 12). 86.3% on SWE-bench Pro Hard. Artificial Analysis says that once the weights land, it would be the highest-scoring open-weights model developed outside China.
 - **Access**: available only on the Tinker platform for now. Tinker Playground offers inference-only access; Tinker supports inference and fine-tuning. The weights are closed at launch, with the full release under Apache 2.0 promised "next week" once external safety testing and red-teaming finish — no fixed date, and conditional. Artificial Analysis lists the model as proprietary at launch.
 - **Price**: on Tinker, $0.30 per million input tokens and $1.00 per million output tokens, $0.03 for cached input. Output pricing is about 75% lower than the first generation's Xhigh setting ($1.00/$4.05).
+- **Follow-up — Inkling 2 Mini released (Nov 20)**: the smaller sibling in the same Inkling 2 generation, Mini, was released on November 20 as Apache 2.0 open weights (26.4B MoE, loop transformer, runs on a 32GB Mac). Small's weights, by contrast, stay private until next week, pending external safety testing and red-teaming. See [[concepts/thinking-machines-inkling-2-mini]] for details.
 - **Business context**: Business Insider reports the lab is raising about $5B at a roughly $40B pre-money valuation, though the round is not final. The lab follows its July 31, 2026 staged-release framework and has stressed that publishing weights is irreversible.
 
 ## Why it matters (solo-developer view)
@@ -53,3 +56,4 @@ Announced 2026-11-05: Thinking Machines Lab, led by Mira Murati, released Inklin
 ## Sources
 
 - [Inkling 2 Small source](raw/articles/2026-11-06-thinking-machines-inkling-2-small.md)
+- [Inkling 2 Mini released — the open-weights loop transformer that runs on a laptop (Artificial Analysis, Thinking Machines Lab, 11-20)](raw/articles/2026-11-21-thinking-machines-inkling-2-mini.md)

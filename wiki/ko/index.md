@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-11-20
-total_pages: 417
+updated: 2026-11-21
+total_pages: 423
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 전체 417개 페이지 | 최종 업데이트: 2026-11-20 (데일리 ingest: AI 뉴스 6건 수집 + ko 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
+> 전체 423개 페이지 | 최종 업데이트: 2026-11-21 (데일리 ingest: AI 뉴스 6건 수집 + ko 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
 
 ## 쉽게 읽기
 
@@ -26,7 +26,7 @@ status: active
 - **실전(Chapter 3~5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **엔드게임(Chapter 6~7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (291개)
+## Concepts (296개)
 
 ### 성장 맵 & 철학
 - [[concepts/ai-native-programmer]] — AI를 팀원으로 활용하여 1인이 팀 규모 결과를 내는 개발자, 성장 맵
@@ -234,6 +234,11 @@ status: active
 - [[concepts/nvidia-california-subpoena-market-rout]] — NVIDIA 캘리포니아 소환장, NVDA 6거래일 연속 하락·증시 대폭락 (2026-11-19)
 - [[concepts/dragos-canary-tokens-ai-supply-chain]] — Dragos 카나리아 토큰 연구, AI 호스팅 3곳 침해·프롬프트 유출 실증 (2026-11-19)
 - [[concepts/intuit-credit-karma-ai-displacement]] — Intuit Credit Karma 전망 하향, LLM 매출 잠식의 첫 하드 수치 (2026-11-19)
+- [[concepts/nasdaq-ai-rout-nvidia-sec-probe]] — 나스닥 5.28% 폭락, NVDA SEC 회계 조사 보도에 -14%·ANT 2일차 -8.5% (2026-11-20)
+- [[concepts/trump-data-center-tax-threat]] — 트럼프, 해외 AI 데이터센터 짓는 미국 기업에 '엄청난 세금' 위협 (2026-11-20)
+- [[concepts/thinking-machines-inkling-2-mini]] — Thinking Machines Inkling 2 Mini, 32GB Mac에서 도는 오픈웨이트 루프 트랜스포머 (2026-11-20)
+- [[concepts/google-semantic-governance-policies]] — Google Semantic 거버넌스 정책 프리뷰, 에이전트 도구 호출 실행 전 LLM 검사 (2026-11-20)
+- [[concepts/apple-own-ai-agent-macos-friction]] — Apple 자체 AI 에이전트 개발, 채용공고 삭제·macOS 27.3 승인 14단계 (2026-11-19~20)
 
 ### AI의 어두운 면
 - [[concepts/context-rot-hallucination]] — Context Rot, Hallucination, Error 누적 등 5대 실패 패턴
@@ -392,7 +397,9 @@ status: active
 - [[patterns/agent-mvp-stack-2026]] — 1인 MVP 스택 5대 영역 × 4 단계 + 의사결정 트리 (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — Vibe Coding의 7대 안티패턴과 회피법
 
-## Journal (77개)
+## Journal (78개)
+
+- [[journal/2026-11-21]] — 토요 데일리: 나스닥 5.28% 폭락·트럼프 데이터센터 세금 위협·Amazon v Perplexity 심리·Inkling 2 Mini·Google Semantic 거버넌스·Apple 자체 AI 에이전트
 
 - [[journal/2026-11-20]] — 금요 데일리: Anthropic IPO 첫 거래일·NVIDIA 캘리포니아 소환장·Dragos 카나리아 토큰·GPT-6.2 추론 잠금·Intuit Credit Karma 전망 하향·Gemini 4 Neon 벤치마크 후속
 

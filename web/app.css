@@ -846,12 +846,6 @@ body {
   color: var(--tools-color);
   background: rgba(52, 211, 153, 0.04);
 }
-.chapter-row.completed .chapter-check-btn {
-  background: var(--tools-color);
-  border-color: var(--tools-color);
-  color: #0b0f19;
-}
-
 /* 챕터 문서 연결 칩 컨테이너 */
 .chapter-docs-section {
   display: flex;
@@ -1627,7 +1621,7 @@ body {
 [data-theme="light"] .markdown-body pre code .token.prolog,
 [data-theme="light"] .markdown-body pre code .token.doctype,
 [data-theme="light"] .markdown-body pre code .token.cdata {
-  color: #64748b !important; /* 차분한 회색 주석 */
+  color: #475569 !important; /* 차분한 회색 주석 */
   font-style: italic;
 }
 [data-theme="light"] .markdown-body pre code .token.function,
@@ -1637,7 +1631,7 @@ body {
 }
 [data-theme="light"] .markdown-body pre code .token.number,
 [data-theme="light"] .markdown-body pre code .token.boolean {
-  color: #d97706 !important; /* 오렌지 계열 숫자/불리언 */
+  color: #92400e !important; /* 오렌지 계열 숫자/불리언 */
 }
 [data-theme="light"] .markdown-body pre code .token.operator,
 [data-theme="light"] .markdown-body pre code .token.punctuation {

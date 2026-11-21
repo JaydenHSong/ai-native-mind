@@ -3,11 +3,13 @@ title: "California Subpoenas NVIDIA as the Market Routs — NVDA Falls for a Six
 category: concepts
 tags: [nvidia, markets, regulation, china, huang]
 created: 2026-11-20
-updated: 2026-11-20
+updated: 2026-11-21
 sources:
   - "raw/articles/2026-11-20-nvidia-california-subpoena-market-rout.md"
+  - "raw/articles/2026-11-21-nasdaq-ai-rout-nvidia-sec-probe.md"
 related:
   - "[[concepts/nvidia-huang-ousted-ceo]]"
+  - "[[concepts/nasdaq-ai-rout-nvidia-sec-probe]]"
   - "[[concepts/nvidia-q3-earnings-h200-china]]"
   - "[[concepts/china-ai-export-controls]]"
   - "[[concepts/ai-debt-boom-cracking]]"
@@ -36,6 +38,7 @@ On November 19, 2026, California Attorney General Rob Bonta issued an investigat
 
 - **The subpoena**: Bonta's office issued the investigative subpoena on November 19. It covers (1) whether advanced chips and confidential information flowed to China, and (2) whether investors and the public were misled. A subpoena is an investigation step, not an indictment. The background: Huang acknowledged a relationship with Alice Huang (linked to Megaspeed) and resigned on November 12; the WSJ reported an SEC investigation (Nov 18); the board opened its own investigation and created an export-controls oversight committee. Huang is scheduled to testify before three House committees on December 1.
 - **The stock**: NVDA closed November 19 at $145.98 (−3.3%), a sixth straight decline (−16% over six sessions, about $669B in market value wiped out). Down about 32% since October 28 and about −38–40% from the all-time closing high of $239.24 on October 6. It traded near its 52-week low of $145.71 intraday. Premarket on November 20 fell about another 2.6%. Moody's cut NVIDIA's credit outlook from Positive to Stable.
+- **Follow-up — Nov 20 rout, SEC accounting-probe report**: the next day, November 20, Reuters reported that the SEC is examining NVIDIA's accounting practices (unconfirmed by the SEC and NVIDIA), and NVDA closed down 14.01% at $125.53. The Nasdaq fell 5.28% and the S&P 500 entered correction territory. This reported SEC thread is separate from the California subpoena. See [[concepts/nasdaq-ai-rout-nvidia-sec-probe]] for details.
 - **Scale of China chip approvals**: per the NYT, NVIDIA has applied for approval to sell more than 40,000 H200 chips to Megaspeed-linked companies. Per House Foreign Affairs Committee documents, the U.S. Commerce Department approved sales of about 879,868 NVIDIA and AMD AI chips to Chinese companies between December 2025 and May 2026 (actual shipments unknown).
 - **ARK sells**: ARK Invest sold another 33,430 shares (about $5M) on November 19, after selling 543,092 shares (about $84.8M) on November 16.
 - **The broader market**: November 19 — Dow −1,101 points (−2.2%, 49,097.06, below 50,000 for the first time since early June), S&P 500 −2.0% (7,175.83, a sixth straight decline), Nasdaq −2.3% (23,879.20), VIX +14%. AI stocks that day: Nebius −9.4%, CoreWeave −6.1%, Amazon −3.9–4.06%, Meta −3.3%, Alphabet −3.3%, Microsoft −1.87–2.0%, AMD −7.7%. The Nasdaq is about −13.6–14% from its October 6 all-time high.
@@ -59,6 +62,7 @@ On November 19, 2026, California Attorney General Rob Bonta issued an investigat
 ## Related concepts
 
 - [[concepts/nvidia-huang-ousted-ceo]] — Huang's resignation (Nov 12), the next step as regulation and investigation widen (2026-11-12)
+- [[concepts/nasdaq-ai-rout-nvidia-sec-probe]] — Nasdaq drops 5.28%, NVDA down 14.01% on the SEC accounting-probe report, the next step after the subpoena (2026-11-20)
 - [[concepts/nvidia-q3-earnings-h200-china]] — the record earnings that still did not lift the stock (2026-11-17)
 - [[concepts/china-ai-export-controls]] — the tension between the draft China AI export controls and the Commerce Department's large-scale chip sale approvals (2026-10-17)
 - [[concepts/ai-debt-boom-cracking]] — the AI debt-boom cracking story and the November 19 AI-stock rout (2026-10-16)
@@ -66,3 +70,4 @@ On November 19, 2026, California Attorney General Rob Bonta issued an investigat
 ## Sources
 
 - [California subpoenas NVIDIA + Nov 19 market rout — NVDA falls for a sixth straight session (Barron's, Reuters, TipRanks, 11-19)](raw/articles/2026-11-20-nvidia-california-subpoena-market-rout.md)
+- [Nasdaq drops 5.28% — NVIDIA falls 14% on report of SEC accounting probe (Motley Fool, Reuters, CNBC, 11-20)](raw/articles/2026-11-21-nasdaq-ai-rout-nvidia-sec-probe.md)

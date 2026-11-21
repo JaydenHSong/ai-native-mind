@@ -3,11 +3,13 @@ title: "NVIDIA 캘리포니아 소환장 + 11-19 증시 대폭락 — NVDA 6거�
 category: concepts
 tags: [nvidia, markets, regulation, china, huang]
 created: 2026-11-20
-updated: 2026-11-20
+updated: 2026-11-21
 sources:
   - "raw/articles/2026-11-20-nvidia-california-subpoena-market-rout.md"
+  - "raw/articles/2026-11-21-nasdaq-ai-rout-nvidia-sec-probe.md"
 related:
   - "[[concepts/nvidia-huang-ousted-ceo]]"
+  - "[[concepts/nasdaq-ai-rout-nvidia-sec-probe]]"
   - "[[concepts/nvidia-q3-earnings-h200-china]]"
   - "[[concepts/china-ai-export-controls]]"
   - "[[concepts/ai-debt-boom-cracking]]"
@@ -36,6 +38,7 @@ confidence: medium
 
 - **소환장**: Bonta 장관실이 11월 19일 조사 소환장 발부. 조사 대상은 (1) 첨단 칩·기밀정보의 중국 유출 여부, (2) 투자자·대중 오도 여부. 소환장은 조사 단계이지 기소가 아니다. 배경은 Huang의 중국 스파이 의혹 인물(Alice Huang, Megaspeed 관련)과의 관계 인정과 11월 12일 사임, WSJ 보도 SEC 조사(11-18), 이사회 자체 조사·수출통제 감독위원회 신설. Huang은 12월 1일 하원 3개 위원회 증언 예정.
 - **주가**: NVDA 11-19 -3.3% → $145.98 마감, 6거래일 연속 하락(6일간 -16%, 시총 약 $6,690억 증발). 10월 28일 이후 -32%, 10월 6일 사상 최고 종가 $239.24 대비 약 -38~-40%. 장중 52주 저점 $145.71 근접. 11-20 프리마켓도 약 -2.6% 추가 하락. Moody's는 NVIDIA 신용전망을 Positive에서 Stable로 하향.
+- **후속 — 11-20 폭락·SEC 회계 조사 보도**: 다음 날인 11월 20일 로이터가 SEC가 엔비디아 회계 관행을 들여다보고 있다고 보도하면서(SEC·엔비디아 미확인) NVDA가 -14.01% → $125.53으로 마감했다. 나스닥 -5.28%, S&P 500 조정 국면 진입. 이번 SEC 보도 갈래는 캘리포니아 소환장과 별개다. 자세한 내용은 [[concepts/nasdaq-ai-rout-nvidia-sec-probe]] 참조.
 - **중국 칩 승인 규모**: NYT 보도에 따르면 NVIDIA는 Megaspeed 관련 업체에 H200 4만 개 이상 판매 승인 신청. 하원 외교위원회 문서에 따르면 미 상무부는 2025년 12월~2026년 5월 중국 기업에 NVIDIA·AMD AI 칩 약 879,868개를 판매 승인(실제 선적량은 불명).
 - **ARK 매도**: ARK Invest가 11-19에 33,430주(약 $500만) 추가 매도. 11-16에는 543,092주(약 $8,480만)를 매도한 바 있다.
 - **증시 전체**: 11-19 다우 -1,101pt(-2.2%, 49,097.06, 6월 초 이후 처음 50,000 하회), S&P 500 -2.0%(7,175.83, 6거래일 연속 하락), Nasdaq -2.3%(23,879.20), VIX +14%. 당일 AI주: Nebius -9.4%, CoreWeave -6.1%, Amazon -3.9~-4.06%, Meta -3.3%, Alphabet -3.3%, Microsoft -1.87~-2.0%, AMD -7.7%. Nasdaq은 10월 6일 사상 최고 대비 약 -13.6~-14%.
@@ -66,3 +69,4 @@ confidence: medium
 ## 참고 소스
 
 - [NVIDIA 캘리포니아주 소환장 + 11-19 증시 대폭락 — NVDA 6거래일 연속 하락 (Barron's·Reuters·TipRanks, 11-19)](raw/articles/2026-11-20-nvidia-california-subpoena-market-rout.md)
+- [나스닥 5.28% 폭락 — 엔비디아 SEC 회계 조사 보도에 -14% (Motley Fool·Reuters·CNBC, 11-20)](raw/articles/2026-11-21-nasdaq-ai-rout-nvidia-sec-probe.md)

@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-11-20
-total_pages: 417
+updated: 2026-11-21
+total_pages: 423
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 417 managed pages total | Last updated: 2026-11-20 (daily ingest: 6 AI news sources collected + ko/en wiki refinement) — most pages include a **Start here** block.
+> 423 managed pages total | Last updated: 2026-11-21 (daily ingest: 6 AI news sources collected + ko/en wiki refinement) — most pages include a **Start here** block.
 
 ## Start here
 
@@ -26,7 +26,7 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - **Practice (Chapters 3–5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **Endgame (Chapters 6–7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (291)
+## Concepts (296)
 
 ### Growth map & philosophy
 - [[concepts/ai-native-programmer]] — a developer who uses AI as teammates to achieve team-scale outcomes solo; growth map
@@ -232,6 +232,11 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[concepts/nvidia-california-subpoena-market-rout]] — California subpoenas NVIDIA, NVDA falls for a sixth straight session, market rout (2026-11-19)
 - [[concepts/dragos-canary-tokens-ai-supply-chain]] — Dragos canary-token study: prompt leaks proven at 3 AI hosting providers (2026-11-19)
 - [[concepts/intuit-credit-karma-ai-displacement]] — Intuit cuts Credit Karma outlook as LLMs displace its revenue, the first hard number (2026-11-19)
+- [[concepts/nasdaq-ai-rout-nvidia-sec-probe]] — Nasdaq drops 5.28%, NVDA falls 14% on report of SEC accounting probe, ANT down 8.5% on day two (2026-11-20)
+- [[concepts/trump-data-center-tax-threat]] — Trump threatens a 'tremendous tax' on US firms building AI data centers abroad (2026-11-20)
+- [[concepts/thinking-machines-inkling-2-mini]] — Thinking Machines Inkling 2 Mini, the open-weights loop transformer that runs on a 32GB Mac (2026-11-20)
+- [[concepts/google-semantic-governance-policies]] — Google Semantic governance policies in preview, LLM checks on agent tool calls before execution (2026-11-20)
+- [[concepts/apple-own-ai-agent-macos-friction]] — Apple builds its own AI agent, deletes the job posting, macOS 27.3 approval stretches to 14 steps (2026-11-19–20)
 
 ### The darker side of AI
 - [[concepts/context-rot-hallucination]] — five major failure patterns including context rot, hallucination, and error accumulation
@@ -392,7 +397,9 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[patterns/agent-mvp-stack-2026]] — solo MVP stack: 5 areas × 4 stages + decision tree (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — seven major anti-patterns in vibe coding and how to avoid them
 
-## Journal (77)
+## Journal (78)
+
+- [[journal/2026-11-21]] — Saturday daily: Nasdaq drops 5.28% · Trump data-center tax threat · Amazon v Perplexity hearing · Inkling 2 Mini · Google Semantic governance · Apple's own AI agent
 
 - [[journal/2026-11-20]] — Friday daily: Anthropic IPO first trading day · NVIDIA California subpoena · Dragos canary tokens · GPT-6.2 reasoning lock · Intuit Credit Karma outlook cut · Gemini 4 Neon benchmarks
 

@@ -3,10 +3,12 @@ title: "The Cracking of the Debt-Fueled AI Boom — Wall Street Hits Its AI Spen
 category: concepts
 tags: [ai-bubble, debt, coreweave, neocloud, capex, capital, semiconductors, openai-revenue, funding-sustainability]
 created: 2026-10-16
-updated: 2026-10-23
+updated: 2026-11-21
 sources:
   - "raw/articles/2026-10-16-ai-debt-boom-cracking.md"
+  - "raw/articles/2026-11-21-nasdaq-ai-rout-nvidia-sec-probe.md"
 related:
+  - "[[concepts/nasdaq-ai-rout-nvidia-sec-probe]]"
   - "[[comparisons/frontier-lab-economics]]"
   - "[[concepts/mecka-robot-motion-data]]"
   - "[[concepts/meta-muse-spark-open]]"
@@ -40,6 +42,13 @@ Axios's 2026-10-16 report that "the debt-fueled AI boom is cracking" — **Wall 
 - Gartner's 80%-of-neoclouds-gone-by-2030 forecast unchanged (same as 10-16).
 - Sources: Reuters (10-22), TradingView, TheStreet — informational only, not investment advice.
 
+## 2026-11-20 update — Nasdaq −5.28%, AI stocks lose $4T in a week
+
+- **The rout**: on November 20 the Nasdaq fell 5.28%, erasing its 2026 gain, and the S&P 500 fell 3.70% into correction territory. The Nasdaq fell 10.0% for the week, its worst week since March 2020.
+- **The trigger**: a Reuters report (unconfirmed) that the SEC is examining NVIDIA's accounting practices sent NVDA down 14.01% to $125.53. President Trump's overseas data-center tax threat landed the same day.
+- **Reading**: the October 16 "cracking" analysis is now confirmed in actual share prices. The distinction to keep: the evidence so far is a share-price rout, not defaults or a liquidity event.
+- See [[concepts/nasdaq-ai-rout-nvidia-sec-probe]] for details.
+
 ## Why it matters
 
 1. **The other side of the pricing-power debate**: [[comparisons/frontier-lab-economics]] found pricing power in demand inelasticity (DeepSeek raising prices with no churn, Ultrafast's 6x premium). This is the opposite question — **funding sustainability**. Capital could break before pricing does. A fifth question joins the four stages (low-cost → infrastructure → hardware → capital): "the limit of capital."
@@ -54,6 +63,7 @@ Axios's 2026-10-16 report that "the debt-fueled AI boom is cracking" — **Wall 
 
 ## Related concepts
 
+- [[concepts/nasdaq-ai-rout-nvidia-sec-probe]] — Nasdaq drops 5.28% on Nov 20, the cracking story priced into actual share prices (2026-11-20)
 - [[comparisons/frontier-lab-economics]] — the other side of the pricing-power-infrastructure debate: capital sustainability
 - [[concepts/mecka-robot-motion-data]] — the contrast with the 10/10 update's capital-spreading-into-data-infrastructure flow
 - [[concepts/meta-muse-spark-open]] — the same day: expanding open distribution vs tightening infrastructure capital
@@ -62,3 +72,4 @@ Axios's 2026-10-16 report that "the debt-fueled AI boom is cracking" — **Wall 
 ## Sources
 
 - [Axios — "the debt-fueled AI boom is cracking" (Axios, DevDiscourse, 10/16)](raw/articles/2026-10-16-ai-debt-boom-cracking.md)
+- [Nasdaq drops 5.28% — AI stocks lose $4T in a week (Motley Fool, Reuters, CNBC, 11-20)](raw/articles/2026-11-21-nasdaq-ai-rout-nvidia-sec-probe.md)

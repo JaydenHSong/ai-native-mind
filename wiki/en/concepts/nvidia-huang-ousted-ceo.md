@@ -3,11 +3,13 @@ title: "Jensen Huang Ousted — NVIDIA Founder-CEO Resigns, Kress Takes Over as 
 category: concepts
 tags: [nvidia, jensen-huang, ceo-succession, governance, ai-infra]
 created: 2026-11-12
-updated: 2026-11-20
+updated: 2026-11-21
 sources:
   - "raw/articles/2026-11-12-nvidia-huang-ousted-ceo.md"
   - "raw/articles/2026-11-20-nvidia-california-subpoena-market-rout.md"
+  - "raw/articles/2026-11-21-nasdaq-ai-rout-nvidia-sec-probe.md"
 related:
+  - "[[concepts/nasdaq-ai-rout-nvidia-sec-probe]]"
   - "[[concepts/nvidia-california-subpoena-market-rout]]"
   - "[[concepts/nvidia-cosmos-3-nano-open-models]]"
   - "[[concepts/amd-world-labs-physical-ai]]"
@@ -44,6 +46,7 @@ On 2026-11-12, NVIDIA founder and CEO Jensen Huang (63) resigned after two extra
 - **Geopolitical link**: Megaspeed is under US and Singapore scrutiny over allegations it transshipped export-restricted NVIDIA AI chips to China. Alice Huang has been barred from leaving Singapore, and Taiwan has revoked her entry permit.
 - **Schedule**: NVIDIA reports earnings as planned next Tuesday (Nov 17).
 - **Follow-up — California subpoena (Nov 19)**: Bonta's office issued a subpoena investigating whether advanced chips and confidential information flowed to China and whether investors were misled. NVDA fell for a sixth straight session to close at $145.98. See [[concepts/nvidia-california-subpoena-market-rout]] for details. Huang is scheduled to testify before three House committees on December 1.
+- **Follow-up — SEC accounting-probe report, Nov 20 rout**: on November 20, Reuters reported that the SEC is examining NVIDIA's accounting practices (unconfirmed by the SEC and NVIDIA), and NVDA closed down 14.01% at $125.53. This is a separate thread from the California subpoena. See [[concepts/nasdaq-ai-rout-nvidia-sec-probe]] for details.
 
 ## Why it matters (solo-developer view)
 
@@ -59,6 +62,7 @@ On 2026-11-12, NVIDIA founder and CEO Jensen Huang (63) resigned after two extra
 
 ## Related concepts
 
+- [[concepts/nasdaq-ai-rout-nvidia-sec-probe]] — Nasdaq drops 5.28%, NVDA down 14.01% on the SEC accounting-probe report, the latest step as the investigation widens (2026-11-20)
 - [[concepts/nvidia-california-subpoena-market-rout]] — California subpoena (Nov 19), NVDA's sixth straight decline and the market rout, the next step as the investigation widens after the resignation (2026-11-20)
 - [[concepts/nvidia-cosmos-3-nano-open-models]] — NVIDIA Cosmos 3 Nano open weights, the software side of AI infrastructure (2026-11-07)
 - [[concepts/amd-world-labs-physical-ai]] — AMD's $8.2B World Labs acquisition, the competitive axis in AI infrastructure (2026-09-30)
@@ -71,3 +75,4 @@ On 2026-11-12, NVIDIA founder and CEO Jensen Huang (63) resigned after two extra
 
 - [Jensen Huang ouster source](raw/articles/2026-11-12-nvidia-huang-ousted-ceo.md)
 - [California subpoenas NVIDIA + Nov 19 market rout — NVDA falls for a sixth straight session (Barron's, Reuters, TipRanks, 11-19)](raw/articles/2026-11-20-nvidia-california-subpoena-market-rout.md)
+- [Nasdaq drops 5.28% — NVIDIA falls 14% on report of SEC accounting probe (Motley Fool, Reuters, CNBC, 11-20)](raw/articles/2026-11-21-nasdaq-ai-rout-nvidia-sec-probe.md)

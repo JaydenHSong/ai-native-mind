@@ -3,10 +3,12 @@ title: "Platforms Blocking AI Agents — Yelp, Delta, and Banks Start Turning Ag
 category: concepts
 tags: [ai-agents, blocking, yelp, delta, banks, data-licensing, agentic-web, charles-schwab, jpmorgan]
 created: 2026-10-18
-updated: 2026-10-18
+updated: 2026-11-21
 sources:
   - "raw/articles/2026-10-18-websites-block-ai-agents.md"
+  - "raw/articles/2026-11-21-amazon-perplexity-comet-hearing.md"
 related:
+  - "[[concepts/apple-own-ai-agent-macos-friction]]"
   - "[[patterns/agentic-commerce]]"
   - "[[patterns/agent-authority-model]]"
   - "[[concepts/meta-sierra-poppy-protocol]]"
@@ -29,6 +31,7 @@ The Verge (Emma Roth, 10/17) reported that Yelp, Delta, JPMorgan Chase, Charles 
 - **Charles Schwab CEO Rick Wurster** (10/15 investor call): an agent logging in on a client's behalf "is not safe. We are not going to allow that."
 - **JPMorgan**: Jamie Dimon (10/13 earnings call) — "not going to allow just any… outside agent to come inside the company, because it's just too risky for clients and for JPMorgan." Spokesperson: outside AI agents blocked from performing customer tasks.
 - **Amazon vs Perplexity**: a court first ordered Perplexity to stop agent purchases, an appeals court overturned that in August, Amazon filed an amended suit. The jurisprudence is swinging.
+- **Amazon v Perplexity hearing (Nov 20)**: at a hearing in San Francisco federal court, Judge Chesney stayed discovery and expressed skepticism about whether Amazon's amended complaint can overcome the Ninth Circuit's August 2026 ruling vacating the injunction ("It is the user who accesses Amazon's computers"). She did suggest at least one claim about Perplexity employee testing may survive. No final decision yet.
 - **Meta's counter**: "turning away a personal agent means turning away the customer behind it." Partnerships with Walmart, Gap, Sephora, Best Buy — Muse can purchase there. Shopify opened its network.
 
 ## Why it matters

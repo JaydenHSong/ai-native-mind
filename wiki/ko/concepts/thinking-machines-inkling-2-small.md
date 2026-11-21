@@ -3,10 +3,12 @@ title: "Thinking Machines Inkling 2 Small — 594B MoE 2세대 모델, AA 지수
 category: concepts
 tags: [thinking-machines, inkling, open-weights, moe, tinker]
 created: 2026-11-06
-updated: 2026-11-06
+updated: 2026-11-21
 sources:
   - "raw/articles/2026-11-06-thinking-machines-inkling-2-small.md"
+  - "raw/articles/2026-11-21-thinking-machines-inkling-2-mini.md"
 related:
+  - "[[concepts/thinking-machines-inkling-2-mini]]"
   - "[[concepts/moonshot-kimi-k31-pro]]"
   - "[[concepts/meta-muse-spark-open]]"
   - "[[concepts/reflection-open-weight]]"
@@ -36,6 +38,7 @@ confidence: high
 - **성능**: Artificial Analysis Intelligence Index v5.0.1 기준 31점, 전작 13점(일부 매체는 12점으로 표기)에서 18점 상승. SWEBench Pro Hard 86.3%. Artificial Analysis는 가중치가 공개되면 중국 외 지역 개발사 중 최고 점수의 오픈웨이트 모델이 될 것이라고 평가했다.
 - **접근**: 현재는 Tinker 플랫폼에서만 이용 가능하다. Tinker Playground는 추론 전용, Tinker에서 추론·파인튜닝이 가능하다. 가중치는 출시 시점에는 비공개이며, 외부 안전 테스트와 레드티밍이 완료되면 "다음 주" 전체 가중치를 Apache 2.0 라이선스로 공개하겠다는 계획이다. 날짜는 미확정이고 조건부다. Artificial Analysis는 출시 시점을 proprietary로 표기했다.
 - **가격**: Tinker 기준 입력 $0.30·출력 $1.00(백만 토큰당), 캐시 입력 $0.03. 1세대 Xhigh 설정($1.00/$4.05) 대비 출력 가격이 약 75% 낮아졌다.
+- **후속 — Inkling 2 Mini 공개(11-20)**: 같은 Inkling 2세대의 작은 형 Mini가 11월 20일 Apache 2.0 오픈웨이트로 공개됐다(26.4B MoE, 루프 트랜스포머, 32GB Mac 구동). 반면 Small의 가중치는 외부 안전 테스트·레드팀이 끝나는 다음 주까지 비공개 유지다. 자세한 내용은 [[concepts/thinking-machines-inkling-2-mini]] 참조.
 - **사업 맥락**: Business Insider는 랩이 약 $40B 프리머니 밸류에이션으로 약 $50억 조달 중이라고 보도했으나, 라운드는 미확정이다. 랩은 2026-07-31 단계적 출시 프레임워크를 따르고 있으며, 가중치 공개는 되돌릴 수 없다는 점을 강조해 왔다.
 
 ## 왜 중요한가 (1인 개발자 관점)
@@ -53,3 +56,4 @@ confidence: high
 ## 참고 소스
 
 - [Inkling 2 Small 원본](raw/articles/2026-11-06-thinking-machines-inkling-2-small.md)
+- [Inkling 2 Mini 공개 — 노트북에서 도는 오픈웨이트 루프 트랜스포머 (Artificial Analysis·Thinking Machines Lab, 11-20)](raw/articles/2026-11-21-thinking-machines-inkling-2-mini.md)

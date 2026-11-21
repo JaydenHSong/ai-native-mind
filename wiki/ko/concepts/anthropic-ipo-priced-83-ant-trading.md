@@ -3,12 +3,14 @@ title: "Anthropic IPO $83 확정 — 9.8억 주, 약 $81.3B 조달, 11-19 ANT �
 category: concepts
 tags: [anthropic, ipo, claude, funding]
 created: 2026-11-19
-updated: 2026-11-20
+updated: 2026-11-21
 sources:
   - "raw/articles/2026-11-19-anthropic-ipo-priced-83-ant-trading.md"
   - "raw/articles/2026-11-20-anthropic-ipo-first-day-ant-97.md"
+  - "raw/articles/2026-11-21-nasdaq-ai-rout-nvidia-sec-probe.md"
 related:
   - "[[concepts/anthropic-ipo-first-day-ant-97]]"
+  - "[[concepts/nasdaq-ai-rout-nvidia-sec-probe]]"
   - "[[concepts/anthropic-ipo-pricing-above-80]]"
   - "[[concepts/anthropic-ipo-roadshow-valuation-cut]]"
   - "[[concepts/anthropic-s1a-q3-revenue-commitments]]"
@@ -54,7 +56,7 @@ Anthropic이 11월 18일 IPO 가격을 주당 **$83**으로 확정했다. 공모
 
 - $83·9.8억 주·$81.3B는 Anthropic 공식 발표 + dpa-AFX·CNBC·Bloomberg 등 다수 보도로 교차 확인됐다. 다만 424B4 최종 보충설명서는 작성 시점 기준으로 EDGAR에서 확인되지 않았다는 지적이 있다.
 - "$107.3B 역대 최대"는 사모 포함 총액 기준이며, 공모만 놓고 보면 $81.3B다. 어떤 기준의 "최대"인지 매체마다 다르다.
-- 첫 거래 가격(11-19 확정): 시초 $111.50, 종가 $97.17(공모가 대비 +17.07%) — 자세한 내용은 [[concepts/anthropic-ipo-first-day-ant-97]] 참조. 2일차(11-20)에는 장중 약 -5% 하락했다.
+- 첫 거래 가격(11-19 확정): 시초 $111.50, 종가 $97.17(공모가 대비 +17.07%) — 자세한 내용은 [[concepts/anthropic-ipo-first-day-ant-97]] 참조. 2일차(11-20) 최종 종가는 $88.91(-8.5%, 장중 저점 $83.05로 공모가 $83에 5센트까지 접근). 그린슈 전량 행사로 총 조달 약 $93.5B, 11월 20일 IPO 마감. 종가 수치는 매체 간 불일치($88.91 vs $88.30) — 자세한 내용은 [[concepts/nasdaq-ai-rout-nvidia-sec-probe]] 참조.
 - confidence는 medium — 공식 발표 + 다수 보도 교차이나, 최종 서류(424B4) 확인은 남았다.
 
 ## 관련 개념
@@ -69,3 +71,4 @@ Anthropic이 11월 18일 IPO 가격을 주당 **$83**으로 확정했다. 공모
 
 - [Anthropic IPO $83에 가격 확정 — 9.8억 주, 약 $81.3B 조달, 11-19 ANT 상장 (dpa-AFX, 11-18)](raw/articles/2026-11-19-anthropic-ipo-priced-83-ant-trading.md)
 - [Anthropic IPO 첫 거래일 — 시초 $111.50 → 종가 $97.17, 2일차 -5% (Investopedia·Reuters·WSJ, 11-19)](raw/articles/2026-11-20-anthropic-ipo-first-day-ant-97.md)
+- [나스닥 5.28% 폭락 — Anthropic 2일차 종가 $88.91·그린슈 전량 행사 총 조달 $93.5B (Motley Fool·Reuters·CNBC, 11-20)](raw/articles/2026-11-21-nasdaq-ai-rout-nvidia-sec-probe.md)

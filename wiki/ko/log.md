@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-11-20
+updated: 2026-11-21
 sources: []
 status: active
 ---
@@ -19,6 +19,17 @@ status: active
 - 월드맵 허브: [[campaign-map|Campaign Map]]
 - 진행 가이드: [[overview|Overview]]
 - 전체 도감: [[index|Index]]
+
+## [2026-11-21] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + ko 위키 정제
+
+- **Raw collected** (raw/articles/, 6건 — 일일 최대치):
+  - `2026-11-21-nasdaq-ai-rout-nvidia-sec-probe.md` — 나스닥 5.28% 폭락 (11-20; Motley Fool·Reuters·CNBC): 나스닥 -5.28% → 22,617.73으로 2026년 상승분 소멸(연초 대비 약 -2.7%). S&P 500 -3.70% → 6,910.39, 7거래일 연속 하락·10월 6일 사상 최고 대비 -11.6%로 조정 국면 진입. 다우 -1.93% → 48,147.33. 주간 S&P -8.6%, 나스닥 -10.0%, 다우 -8.0%로 2020년 3월 이후 최악의 주간. 엔비디아 -14.01% → $125.53 마감, 장중 저점 $124.50으로 52주 저점, 주간 -23%로 2008년 금융위기 이후 최악의 주간. 고점 대비 시총 약 $2.5조 증발(Motley Fool 기준). 장 막판 로이터의 SEC 회계 조사 보도에 낙폭 확대 — SEC·엔비디아 모두 미확인 보도 단계이며, 11-19 캘리포니아 소환장과는 별개의 갈래. AMD -13%대, Broadcom·Micron -12~14%, 필라델피아 반도체 지수 -10.7%, Nebius -16.1%, CoreWeave -12.0%. Anthropic 상장 이틀째 -8.5% → $88.91 마감(장중 저점 $83.05로 공모가 $83에 5센트까지 접근, 첫날 고점 $115.10 대비 약 -23%). 그린슈 전량 행사로 총 조달 약 $93.5B, 11월 20일 IPO 마감 발표. VIX 급등 40 안팎(+41%), 10년물 국채 금리 5% 아래로 하락, 비트코인 $60,000 붕괴. 배경: AI 투자 수익성 의구심 확산 — 데이터센터 투자 속도 둔화, AI 프로젝트 자금조달 방식, 대형 테크 지출 조절 신호, 연준 금리 인상 기조 신호.
+  - `2026-11-21-trump-data-center-tax-threat.md` — 트럼프, 해외 AI 데이터센터에 '엄청난 세금' 위협 (11-20; Reuters): 백악관 기자회견에서 미국 기업이 해외에 데이터센터를 짓는 것을 막겠다며 "엄청난 세금(tremendous tax)" 부과 발언. 중국 방문 직후. 대상은 아마존·구글·마이크로소프트·메타·오라클. 세율·법적 근거·일정 모두 미제시, 세금 부과에는 의회 입법이 필요하다. 같은 날 나스닥 급락과 겹침. 맥락: 11월 16일 BIS 원격 컴퓨트 규칙, 11월 19일 상원의 인허가 완화 법안과 함께 AI 인프라 입지·자금조달을 둘러싼 미국 정책의 최신 전환점.
+  - `2026-11-21-amazon-perplexity-comet-hearing.md` — Amazon v Perplexity 심리 (11-20; MLex·Bloomberg Law): 샌프란시스코 연방법원 약 3시간 심리에서 Maxine Chesney 수석 판사가 Perplexity의 요청을 받아들여 디스커버리를 중단했고, Amazon의 수정 소장이 Comet AI 쇼핑 어시스턴트를 막을 수 있을지에 깊은 회의감을 드러냈다. Amazon 주장: Comet이 Amazon 사이트와 고객 계정에 무단 접근해 CFAA와 캘리포니아 컴퓨터접근법 위반, 일반 Chrome인 것처럼 위장, Perplexity 직원이 자기 계정으로 테스트. 판사 반응: 수정 청구가 2026년 8월 제9순회항소법원의 가처분 취소 판결("Amazon 컴퓨터에 접근하는 것은 사용자다")을 극복할 수 있을지 회의적. 다만 직원 테스트 관련 청구 최소 1건은 살아남을 가능성 시사. 최종 결정은 아직 없음.
+  - `2026-11-21-thinking-machines-inkling-2-mini.md` — Thinking Machines Inkling 2 Mini 공개 (11-20; Artificial Analysis·Thinking Machines Lab): Apache 2.0 오픈웨이트. 총 26.4B 파라미터 / 활성 3.4B(토큰당 실효 5.4B) MoE, 24개 레이어 중 가운데 12개를 토큰마다 3번 반복하는 루프 트랜스포머. 약 20GB 체크포인트, 1M 토큰 컨텍스트, 텍스트+이미지 입력. 32GB Mac 또는 단일 DGX Spark에서 구동. 자체 보고 성능: AA Intelligence Index 20점(Qwen3.8-27B와 동점), DeepSWE v1.1 48.2%, SWE-bench Verified 79.2%, BrowseComp 79.0%, DeepSearchQA 85.3% — 100B 미만 오픈 모델 중 에이전트 코딩 선두 주장. 태스크당 Qwen3.8-27B 대비 약 6배 저렴, 약 4배 빠름($0.59 vs $3.53). 더 큰 Inkling 2 Small은 외부 안전 테스트·레드팀이 끝나는 다음 주까지 비공개 유지.
+  - `2026-11-21-google-semantic-governance-policies.md` — 구글 Semantic 거버넌스 정책 프리뷰 (11-20; Google Developers Blog): Gemini 플랫폼에 Agent Gateway 경유 LLM 판정자의 도구 호출 실행 전 검사 도입. 판단 기준은 평문 정책과 사용자의 원래 의도. 기준에 맞지 않는 호출은 거부 메시지로 대체되고 절대 실행되지 않으며, 판정과 근거는 Cloud Logging에 기록. Gemini뿐 아니라 Anthropic, OpenAI 호환 모델도 지원. IAM·Model Armor·Agent Anomaly Detection과 함께 다층 방어 포지셔닝. 간접 프롬프트 인젝션·소셜 엔지니어링 대응이 명시적 목표. 동반 발표: Agent Anomaly Detection을 Google Cloud 밖 에이전트(AWS Lambda, Microsoft Foundry 등)까지 OpenTelemetry로 확장.
+  - `2026-11-21-apple-own-ai-agent-macos-friction.md` — 애플, 자체 AI 에이전트 개발 중 (11-19~20; TechCrunch·Bloomberg): 블룸버그 Mark Gurman 보도 — 웹 탐색·앱 제어·코드 작성·디버깅을 하는 자율 AI 에이전트 개발 중. 근거는 이번 주 게시된 'Senior Engineering Manager, Agentic AI – Proactive' 채용공고로, 애플은 11월 20일 해당 공고를 삭제했다. 이르면 2027년 말 출시 목표이나 개발은 초기 단계, 애플은 논평 거부. 신임 CEO 존 터너스(John Ternus)가 소프트웨어 총괄 크레이그 페더리기에게 개발 가속을 압박하고 있다(Techstrong.ai 보도). 보도 직후 Anthropic 시간외 -4.7%($92.60), Meta 약 -2%. macOS 27.3 베타: 외부 AI 에이전트 승인 절차 강화로 ChatGPT 컴퓨터 사용 지원을 켜는 과정이 기존 4단계에서 14단계로 늘어났다. 서드파티 접근 차단 관련 DOJ 소송이 계류 중이다.
+- **Ingest** (wiki/ko, 개념 5건 신규 + 보강 7건 + 저널 1건): nasdaq-ai-rout-nvidia-sec-probe (medium), trump-data-center-tax-threat (low), thinking-machines-inkling-2-mini (medium), google-semantic-governance-policies (low), apple-own-ai-agent-macos-friction (medium) 신규; nvidia-huang-ousted-ceo·anthropic-ipo-priced-83-ant-trading·anthropic-ipo-first-day-ant-97·nvidia-california-subpoena-market-rout·websites-block-ai-agents·thinking-machines-inkling-2-small·ai-debt-boom-cracking 보강; journal/2026-11-21. 모순 플래그 2건: (1) ANT 2일차 종가 매체 간 불일치($88.91, -8.5% vs $88.30, -9.1%) — nasdaq-ai-rout 페이지와 anthropic-ipo-first-day-ant-97 한계 항목에 기록; (2) NVDA 시총 증발 수치의 기준 차이(고점 대비 약 $2.5조 vs 11-19까지 6일간 약 $6,690억) — 직접 비교 불가함을 nasdaq-ai-rout 페이지 한계 항목에 기록. ko 위키 정제 완료; en 동기화는 Phase 2에서 수행.
 
 ## [2026-11-20] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + ko 위키 정제
 

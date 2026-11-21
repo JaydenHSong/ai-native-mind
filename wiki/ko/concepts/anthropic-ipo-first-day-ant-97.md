@@ -3,11 +3,13 @@ title: "Anthropic IPO 첫 거래일 — 시초 $111.50, 종가 $97.17, 2일차 -
 category: concepts
 tags: [anthropic, ipo, ant, markets, claude]
 created: 2026-11-20
-updated: 2026-11-20
+updated: 2026-11-21
 sources:
   - "raw/articles/2026-11-20-anthropic-ipo-first-day-ant-97.md"
+  - "raw/articles/2026-11-21-nasdaq-ai-rout-nvidia-sec-probe.md"
 related:
   - "[[concepts/anthropic-ipo-priced-83-ant-trading]]"
+  - "[[concepts/nasdaq-ai-rout-nvidia-sec-probe]]"
   - "[[concepts/anthropic-s1-ipo-filing]]"
   - "[[concepts/anthropic-ipo-roadshow-valuation-cut]]"
   - "[[concepts/ai-debt-boom-cracking]]"
@@ -40,6 +42,7 @@ Anthropic이 2026년 11월 19일 Nasdaq에서 티커 **ANT**로 첫 거래를 �
 - **펀더멘털**: 9개월 매출 $33B, 영업손실 $1.2B, 2026년 예상 매출 $53B 기준 약 28배 밸류에이션. 7명의 공동창업자 합산 지분 가치 공모가 기준 약 $1,400억.
 - **애널리스트 커버리지 개시**: Needham Buy·목표가 $150(+54%), Melius Buy·2년 목표 $155(+60%), Wolfe Outperform·$135(+39%), William Blair Outperform·공정가치 $130~150, Citizens Market Outperform·$125. 반면 Seaport Neutral(목표가 없음, 3분기 매출 성장 급둔화 지적, DCF 기업가치 약 $1.64조는 2028년까지 공격적 성장 유지 전제), Morningstar 공정가치 $92 유지(3스타, Narrow Moat, 불확실성 Very High), NYU Damodaran 약 $76 평가(데이터센터 비용·규제 압박, 창업자 주식 50.01% 의결권 거버넌스 리스크).
 - **2일차 하락**: 11월 20일 프리마켓 약 -6.8%에서 시작, 장중 스냅샷(15:00 UTC) 시가 $89.86·고가 $92.55·저가 $87.26, 전일 종가 대비 -5.26%.
+- **2일차 최종 종가(11-20 확정)**: -8.5% → $88.91 마감, 장중 저점 $83.05로 공모가 $83에 5센트까지 접근. 첫날 고점 $115.10 대비 약 -23%. 그린슈 전량 행사로 총 조달 약 $93.5B, 11월 20일 IPO 마감. 종가 수치 주의: AP·WSJ·MarketWatch는 $88.30(-9.1%)으로 보도해 매체 간 불일치가 있다.
 - **시장 맥락**: Anthropic 데뷔에도 AI주는 같은 날 급락했다. 같은 날 다우 -1,101pt(-2.2%), S&P 500 -2.0%, Nasdaq -2.3%.
 
 ## 왜 중요한가 (1인 개발자 관점)
@@ -52,7 +55,7 @@ Anthropic이 2026년 11월 19일 Nasdaq에서 티커 **ANT**로 첫 거래를 �
 
 - "역대 최대 IPO"는 공모 $81.3B 기준이다. 사모 $26B를 합친 $107.3B와 구분해 읽을 것([[concepts/anthropic-ipo-priced-83-ant-trading]] 참조).
 - 9개월 매출 $33B·영업손실 $1.2B는 S-1의 상반기 순손실 $80.7B(비현금 $72.4B 포함)와 기준이 다르다 — 영업손실과 순손실은 다른 숫자다.
-- 2일차 -5%는 장중 스냅샷 기준이며 종가가 아니다.
+- 2일차 -5%는 장중 스냅샷 기준이었다. 최종 종가는 $88.91(-8.5%)이며, 일부 매체는 $88.30(-9.1%)으로 보도해 불일치가 있다 — 자세한 내용은 [[concepts/nasdaq-ai-rout-nvidia-sec-probe]] 참조.
 - confidence는 medium — Investopedia·Reuters·WSJ 교차이나, 애널리스트 목표가는 의견이며 2일차 수치는 장중 기준.
 
 ## 관련 개념
@@ -65,3 +68,4 @@ Anthropic이 2026년 11월 19일 Nasdaq에서 티커 **ANT**로 첫 거래를 �
 ## 참고 소스
 
 - [Anthropic IPO 첫 거래일 — 시초 $111.50 → 종가 $97.17, 2일차 -5% (Investopedia·Reuters·WSJ, 11-19)](raw/articles/2026-11-20-anthropic-ipo-first-day-ant-97.md)
+- [나스닥 5.28% 폭락 — Anthropic 2일차 최종 종가 $88.91·그린슈 전량 행사 총 조달 $93.5B (Motley Fool·Reuters·CNBC, 11-20)](raw/articles/2026-11-21-nasdaq-ai-rout-nvidia-sec-probe.md)
