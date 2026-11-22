@@ -3,10 +3,12 @@ title: "Dragos Canary-Token Study — 3 AI Hosting Providers Breached, Prompt Le
 category: concepts
 tags: [security, supply-chain, ai-hosting, canary-tokens, dragos]
 created: 2026-11-20
-updated: 2026-11-20
+updated: 2026-11-22
 sources:
   - "raw/articles/2026-11-20-dragos-canary-tokens-ai-supply-chain.md"
+  - "raw/articles/2026-11-22-together-ai-prompt-leak-openrouter-providers-dropped.md"
 related:
+  - "[[concepts/together-ai-prompt-leak-openrouter-providers-dropped]]"
   - "[[concepts/litellm-pypi-supply-chain-compromise]]"
   - "[[concepts/google-threat-tracker-exploit-agent]]"
   - "[[concepts/ai-memory-systems]]"
@@ -47,6 +49,11 @@ Industrial-security company Dragos published a study that planted unique canary 
 2. **Canary tokens are a working tracing tool**: a way to measure leaks, not trust promises. Planting fake secrets such as API keys or URLs captures the leak path as evidence. The same check can be applied to a supply chain when your own service uses external AI.
 3. **Supply-chain breaches are chaining up**: alongside this week's Microsoft Agent Framework PyPI compromise (in the [[concepts/litellm-pypi-supply-chain-compromise]] context), the "middle steps" of AI infrastructure are becoming the attack surface. Time to revisit the trust model in [[concepts/agent-supply-chain-security]].
 
+## 2026-11-22 update — Together AI leak and OpenRouter's removal of 3 providers: the canary becomes real evidence
+
+- **Follow-on fallout**: in Together AI's prompt-leak notice of November 21, five of the credentials inside the leaked samples were Dragos's experimental canary tokens. The next day OpenRouter removed three related providers and excluded 125 endpoints from ZDR eligibility.
+- **Meaning**: the study has moved from "an experiment showing leaks are possible" to "evidence behind an actual leak and removal." Canary tokens went from tracing tool to the basis for enforcement action. See [[concepts/together-ai-prompt-leak-openrouter-providers-dropped]] for details.
+
 ## Limits (stated explicitly)
 
 - A single primary Dragos study, with breached providers unnamed, so independent cross-checking is difficult.
@@ -55,6 +62,7 @@ Industrial-security company Dragos published a study that planted unique canary 
 
 ## Related concepts
 
+- [[concepts/together-ai-prompt-leak-openrouter-providers-dropped]] — the Together AI prompt leak, where five credentials in the leaked samples were this study's canary tokens — OpenRouter removes 3 providers (2026-11-21–22)
 - [[concepts/litellm-pypi-supply-chain-compromise]] — the Microsoft Agent Framework PyPI compromise in the same week, making AI supply-chain security a chaining issue (2026-10-22)
 - [[concepts/google-threat-tracker-exploit-agent]] — the widening attack surface on AI services and agent infrastructure (2026-11-16)
 - [[concepts/ai-memory-systems]] — the structural problem of prompts and conversation records remaining on third-party infrastructure
@@ -63,3 +71,4 @@ Industrial-security company Dragos published a study that planted unique canary 
 ## Sources
 
 - [Dragos canary-token study — 3 AI hosting providers breached, prompt leaks proven (Dragos official blog, 11-19)](raw/articles/2026-11-20-dragos-canary-tokens-ai-supply-chain.md)
+- [Together AI prompt leak — OpenRouter drops 3 providers (Together AI, OpenRouter, 11-21–22)](raw/articles/2026-11-22-together-ai-prompt-leak-openrouter-providers-dropped.md)

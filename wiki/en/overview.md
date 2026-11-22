@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-11-20
+updated: 2026-11-22
 sources: []
 status: active
 ---
@@ -29,10 +29,20 @@ This page is a **table of contents and learning map** for the wiki. The links be
 
 ## Current state
 
-- **Total pages**: 417
-- **Categories**: concepts(291), tools(16), patterns(30), journal(77), comparisons(11), meta(4)
+- **Total pages**: 428
+- **Categories**: concepts(300), tools(16), patterns(30), journal(79), comparisons(11), meta(4)
 - **Start date**: 2026-04-06
-- **Latest work (2026-11-20 daily ingest — the day the money moved: Anthropic lists, NVIDIA subpoenaed, Intuit's outlook cut, plus Dragos, the reasoning lock, and Neon benchmarks)**:
+- **Latest work (2026-11-22 daily ingest — verification, trust, and money all shook on the same day: the Riemann claim, the OpenAI outage, the Together leak, Oracle's funding declaration, DeepSeek's raise, and the Cairn zero-day)**:
+  - 6 raw sources collected (the Riemann proof claim is Lean- and Mathlib-certified but the Clay Institute still lists it unsolved, Alpöge admits he does not fully understand parts of it, and reports differ on the GRH certification status; the OpenAI outage is 211 minutes per the postmortem but 213 minutes per some outlets; whether real credentials leaked in the Together AI case is under review and the 3 removed providers are unnamed; Oracle's fully-funded declaration is a company statement and the share-move reading is market commentary; DeepSeek's round size is about RMB 100B per Caixin vs about RMB 105.5B per The Information; the Cairn zero-day comes from an AWS disclosure).
+  - 4 new: concepts/riemann-hypothesis-proof-claude-lean-verification (Claude plus Lean at 17.4M lines, Mathlib certification, Clay still lists it unsolved — medium), concepts/openai-outage-211-minutes-postgres-replicas (two Postgres replicas fail together, 75% of requests fail, 211 minutes — medium), concepts/together-ai-prompt-leak-openrouter-providers-dropped (a key committed by a coding agent, 5 canary tokens, OpenRouter drops 3 providers — medium), concepts/oracle-openai-fully-funded-300b (5-year $300B, 4.5 GW, shares down 8.5%, fundraising cap exhausted — medium), journal/2026-11-22 (active).
+  - 6 reinforced: concepts/anthropic-ipo-first-day-ant-97 (analyst targets average about $134, New Street $105 added; ANT close $88.91 vs $88.30 disagreement stays), concepts/dragos-canary-tokens-ai-supply-chain (Together leak and OpenRouter removals as follow-on fallout), concepts/ai-debt-boom-cracking (Oracle funding declaration), concepts/deepseek-series-b-15-8b (second raise closed, STAR IPO preparation, Caixin vs The Information figure gap), concepts/cairn-norforge-ai-agent-hacking-spree (MONAI Label zero-day found in 11 minutes), concepts/agentic-commerce-gemini-tasks-klarna (Duplex folded into Gemini Tasks). Claude Computer Use's Team/Enterprise expansion was not folded in — no matching page exists.
+  - EN sync complete. 423→428 pages.
+- **Previous work (2026-11-21 daily ingest — price, policy, and platform collided on one day: the Nasdaq rout, Trump's tax threat, Amazon v Perplexity, Inkling 2 Mini, Semantic governance, Apple's agent)**:
+  - 6 raw sources collected (the Nasdaq fell 5.28% and the NVDA SEC-probe report is unconfirmed; Trump's tax threat gives no rate, basis, or timetable; no final decision in Amazon v Perplexity; Inkling 2 Mini performance is self-reported; Google's Semantic governance has no real-world verification yet; Apple's agent is at an early stage).
+  - 5 new: concepts/nasdaq-ai-rout-nvidia-sec-probe (Nasdaq down 5.28%, NVDA down 14%, ANT down 8.5% on day two — medium), concepts/trump-data-center-tax-threat ('tremendous tax' threat on overseas data centers — low), concepts/thinking-machines-inkling-2-mini (the loop transformer that runs on a 32GB Mac — medium), concepts/google-semantic-governance-policies (LLM checks on agent tool calls before execution — low), concepts/apple-own-ai-agent-macos-friction (Apple's own AI agent, macOS 27.3 approval stretches to 14 steps — medium), journal/2026-11-21 (active).
+  - 7 reinforced: concepts/nvidia-huang-ousted-ceo, concepts/anthropic-ipo-priced-83-ant-trading, concepts/anthropic-ipo-first-day-ant-97, concepts/nvidia-california-subpoena-market-rout, concepts/websites-block-ai-agents, concepts/thinking-machines-inkling-2-small, concepts/ai-debt-boom-cracking. Two contradictions flagged: the ANT close $88.91 vs $88.30, and the differing NVIDIA market-value-erased baselines.
+  - EN sync complete. 417→423 pages.
+- **Previous work (2026-11-20 daily ingest — the day the money moved: Anthropic lists, NVIDIA subpoenaed, Intuit's outlook cut, plus Dragos, the reasoning lock, and Neon benchmarks)**:
   - 6 raw sources collected (Anthropic's first trading day opened at $111.50 and closed at $97.17, down about 5% intraday on day 2, on an $81.3B offering — the largest ever; the NVIDIA California subpoena is an investigation step, not an indictment, and the 879,868 chip approvals are approvals, not actual shipments; the Dragos study is a single primary source with providers unnamed; the GPT-6.2 extraction success rate of 54% → 0.2% is cited from OpenAI's internal tests with no independent reproduction; Intuit's "first hard number" is TFTC's interpretation; Neon's '3x faster' is Google's claim while independent measurement shows about 40% faster — different measures).
   - 5 new: concepts/anthropic-ipo-first-day-ant-97 (open $111.50, close $97.17, day 2 down 5%, analyst targets split from $76 to $155 — medium), concepts/nvidia-california-subpoena-market-rout (California subpoena, NVDA down six straight sessions to $145.98, Dow −1,101 points — medium), concepts/dragos-canary-tokens-ai-supply-chain (canary tokens in 2 million prompts, 3 hosting providers breached, Zero Data Retention defeated — medium), concepts/intuit-credit-karma-ai-displacement (Credit Karma outlook 11–13% → 3–7%, Intuit −14.18%, the first hard number for LLM revenue displacement — medium), journal/2026-11-20 (active).
   - 4 reinforced: concepts/google-gemini-4-neon (CAAC Go best ever at 135/150, '3x faster' vs about 40% independently measured — contradiction flagged), concepts/openai-gpt-6-2-astra-sol (reasoning chain lock, extraction success 54% → 0.2%), concepts/anthropic-ipo-priced-83-ant-trading (first trading day confirmed, follow-up link added), concepts/nvidia-huang-ousted-ceo (California subpoena follow-up, cross-link added).

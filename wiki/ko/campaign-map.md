@@ -3,7 +3,7 @@ title: "Campaign Map"
 category: meta
 tags: [map, campaign, navigation]
 created: 2026-04-12
-updated: 2026-11-20
+updated: 2026-11-22
 sources:
  - "wiki/overview.md"
  - "wiki/index.md"
@@ -143,4 +143,6 @@ confidence: high
 - 2026-11-18: 데일리 ingest — [[concepts/nvidia-q3-earnings-h200-china]]·[[concepts/anthropic-ipo-pricing-above-80]]·[[concepts/openai-gpt-6-2-astra-sol]]·[[concepts/microsoft-ignite-mai-code-2]]·[[concepts/agentic-commerce-gemini-tasks-klarna]]·[[concepts/microsoft-agent-framework-pypi-compromise]] 신규, [[concepts/nvidia-huang-ousted-ceo]]·[[concepts/anthropic-ipo-roadshow-valuation-cut]]·[[concepts/gpt-62-astra-codex-leak]]·[[patterns/agentic-commerce]]·[[concepts/litellm-pypi-supply-chain-compromise]]·[[concepts/google-threat-tracker-exploit-agent]] 상호 링크 보강, 총 405페이지.
 - 2026-11-19: 데일리 ingest — [[concepts/anthropic-ipo-priced-83-ant-trading]]·[[concepts/google-gemini-4-neon]]·[[concepts/vals-models-civilian-targets-game-framing]]·[[concepts/java4shell-codex-openjdk-rce]]·[[concepts/gao-ai-attack-plans-senate-hearing]]·[[concepts/openai-research-acceleration-jagged-frontier]] 신규, [[concepts/anthropic-ipo-pricing-above-80]] 보강, 총 412페이지.
 - 2026-11-20: 데일리 ingest — [[concepts/anthropic-ipo-first-day-ant-97]]·[[concepts/nvidia-california-subpoena-market-rout]]·[[concepts/dragos-canary-tokens-ai-supply-chain]]·[[concepts/intuit-credit-karma-ai-displacement]] 신규, [[concepts/google-gemini-4-neon]]·[[concepts/openai-gpt-6-2-astra-sol]]·[[concepts/anthropic-ipo-priced-83-ant-trading]]·[[concepts/nvidia-huang-ousted-ceo]] 보강, 총 417페이지.
+- 2026-11-21: 데일리 ingest — [[concepts/nasdaq-ai-rout-nvidia-sec-probe]]·[[concepts/trump-data-center-tax-threat]]·[[concepts/thinking-machines-inkling-2-mini]]·[[concepts/google-semantic-governance-policies]]·[[concepts/apple-own-ai-agent-macos-friction]] 신규, [[concepts/nvidia-huang-ousted-ceo]]·[[concepts/anthropic-ipo-priced-83-ant-trading]]·[[concepts/anthropic-ipo-first-day-ant-97]]·[[concepts/nvidia-california-subpoena-market-rout]]·[[concepts/websites-block-ai-agents]]·[[concepts/thinking-machines-inkling-2-small]]·[[concepts/ai-debt-boom-cracking]] 보강, 총 423페이지.
+- 2026-11-22: 데일리 ingest — [[concepts/riemann-hypothesis-proof-claude-lean-verification]]·[[concepts/openai-outage-211-minutes-postgres-replicas]]·[[concepts/together-ai-prompt-leak-openrouter-providers-dropped]]·[[concepts/oracle-openai-fully-funded-300b]] 신규, [[concepts/anthropic-ipo-first-day-ant-97]]·[[concepts/dragos-canary-tokens-ai-supply-chain]]·[[concepts/ai-debt-boom-cracking]]·[[concepts/deepseek-series-b-15-8b]]·[[concepts/cairn-norforge-ai-agent-hacking-spree]]·[[concepts/agentic-commerce-gemini-tasks-klarna]] 보강, 총 428페이지.
 

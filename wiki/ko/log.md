@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-11-21
+updated: 2026-11-22
 sources: []
 status: active
 ---
@@ -19,6 +19,17 @@ status: active
 - 월드맵 허브: [[campaign-map|Campaign Map]]
 - 진행 가이드: [[overview|Overview]]
 - 전체 도감: [[index|Index]]
+
+## [2026-11-22] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + ko 위키 정제
+
+- **Raw collected** (raw/articles/, 6건 — 일일 최대치):
+  - `2026-11-22-riemann-hypothesis-proof-claude-lean-verification.md` — 리만 가설 증명 주장 (11-20~21; Scientific American): Anthropic 수학자 Levent Alpöge가 Claude와 약 6주간 작업해 리만 가설(GRH 포함) 증명을 찾았다고 11월 20일 발표. 증명은 논문이 아니라 Lean 코드 약 1,740만 줄(175,187개 파일, Mathlib 전체의 약 7.6배)로만 공개. 11월 21일 Lean FRO·Mathlib Initiative 공동성명 "명제와 증명 모두 옳다"고 인증 — MIT Andrew Sutherland 등 독립 연구자들이 자체 재컴파일해 175,187개 모듈 전부 오류 0건, 3개 표준 공리만 사용, comparator run 완료. 다만 Alpöge 본인도 증명 일부를 완전히 파악하지 못했다고 인정했고, Clay 연구소는 상($100만) 심사를 위해 출판 후 최소 2년 검증 기간을 요구해 현재 미해결 표기 유지. 같은 날 인간 단독 증명 주장(Alessandro Masullo)도 등장. Anthropic 상장(11월 19일, $813억 조달) 바로 다음 날 발표라 시점 논란, Anthropic은 공식 논평 없음.
+  - `2026-11-22-openai-outage-211-minutes-postgres-replicas.md` — OpenAI 211분 장애 (11-21; AI Agent Update·OpenAI): 11월 21일 13:48~17:21 PT, 총 211분 동안 API와 ChatGPT 요청 실패율 최대 75%. 원인은 정기 점검 중 Primary API 서비스(전 스택 인증 담당)가 쓰는 Postgres 읽기 복제본 2개의 동시 붕괴 — 인증 경로의 구조적 단일장애점. 영향: API 전 영역과 ChatGPT(대화·로그인·검색·파일 업로드·음성 모드). 신규 복제본 2개를 같은 리전에 띄워 11월 21일 저녁 복구, 11월 22일 아침 전 시스템 정상. 재발 방지: 유사 점검 중단, 연결 churn 감소 설정 조정, 복제본 트래픽 비율 단위 제외 기능 플래그 배포. 나스닥100이 5.61% 급락한 다음 날이라 파장이 컸고, OpenAI는 비상장이라 MSFT(-2.8%, $484.52)가 대리 지표. 일부 매체는 장애 시간을 213분으로 보도.
+  - `2026-11-22-together-ai-prompt-leak-openrouter-providers-dropped.md` — Together AI 프롬프트 유출·OpenRouter 공급사 3곳 퇴출 (11-21~22; Together AI·OpenRouter): AI 코딩 에이전트가 공개 GitHub 저장소 `xorl` 개발 중 비공개 Hugging Face 저장소 접근 자격증명을 커밋해 고객 프롬프트 샘플 유출. MiniMax M3·GLM-5.2·Kimi K2.6 요청(주로 2026-06-24, 07-04, 07-08, 07-14)에서 수집한 일상 테스트용 샘플. 침입자는 샘플 속 타 서비스 자격증명의 유효성을 테스트했고, 그중 5개가 Dragos 실험용 카나리아 토큰. 실제 자격증명 유출 여부는 검토 중. 대책 4가지: 범위·단기 자격증명 및 키리스 접근, 전 PR 자격증명 검사, 신규 계정 ZDR 기본값, 코딩 에이전트 사용 개발 프로세스 개정. OpenRouter 조치(11-22): 공급사 3곳 퇴출(업체명 비공개), ZDR 적격 엔드포인트 125개 제외, 잠재 피해 고객 전원 통지. Novita도 05-28~11-11 MiniMax 경유 요청의 제3자 접근 가능성을 별도 공지. Dragos 카나리아 토큰 연구(11월 20일 공개)의 후속 파장.
+  - `2026-11-22-oracle-openai-fully-funded-300b.md` — Oracle OpenAI 계약 '완전 자금 조달 완료' 선언 (11-20~21; AI Agent Update·Reuters): Oracle이 11월 20일 X 게시물로 OpenAI 인프라 계약 자금 조달 완료 선언. 5년 약 $3,000억 컴퓨팅 용량, 미국 내 4.5GW 추가 데이터센터 용량. "현 투자 사이클에 완전 자금 조달된 첫 하이퍼스케일러" 자칭. 11월 자금조달 약 $200억: 주식 약 $100억(86,206,897주, 주당 $116) + 채권 약 $100억(만기 2029~2046, 금리 7~8.65%). 2027~2030회계연도 추가 자본시장 조달 상한 $200억을 이번 조달로 소진. Abilene 캠퍼스 준공 임박, Shackelford County 차기 GW급 캠퍼스 인허가 완료, Nvidia Vera Rubin 랙 인도 임박. 2028회계연도 하반기 잉여현금흐름 흑자 전환, 2029회계연도 $300억 이상 목표. 발표 당일 ORCL -8.48% → $101.19, 52주 최저 종가 — 자금조달 완료보다 부채 부담에 반응했다는 해석.
+  - `2026-11-22-deepseek-100b-yuan-funding-star-ipo.md` — DeepSeek 2차 외부 자금 약 1,000억 위안 유치 완료 (11-20; Caixin Global): 11월 17일 자로 사업자 등록 변경이 끝나 신규 투자자 파트너십이 약 17.3% 지분을 확보. CITIC Securities를 상장 주관사로 선임해 연내 상하이 STAR 시장 IPO 절차 개시 목표. DeepSeek 본사는 공식 발표가 없다. 텐센트·CATL 연계 펀드가 투자자 파트너십에 각각 약 9.6%씩 출자, 중국 국가 AI 펀드 직접 지분도 0.4%로 확대. 1차 외부 자금(2026-07) 500억 위안·밸류에이션 3,500억 위안에서 4개월 만에 약 +76% 상승. 수치 주의: The Information은 약 1,055억 위안(약 $158억)·밸류에이션 약 6,155억 위안(약 $890억)으로 보도해 Caixin과 차이 있음. 11월 15일부터 컴퓨팅 부족을 이유로 장시간 대화·일부 문서 읽기 기능 제한 중.
+  - `2026-11-22-cairn-autonomous-agent-zero-day-medical-imaging.md` — 자율 에이전트 Cairn, 의료 영상 서버 제로데이 11분 만에 발견·루트 탈취 (11-20; BleepingComputer·AWS): 중국 연계 추정 행위자가 오픈소스 자율 펜테스트 프레임워크 Cairn에 "셸 접근 획득" 목표만 주고 9월 8~10일 약 48시간 동아시아 외 중국 대학들을 노렸다. 의료 영상 주석 서버 MONAI Label의 경로 순회 제로데이를 API 매핑부터 임의 파일 쓰기까지 약 11분 만에 발견 — CVE-2026-133968, CVSS 9.8. 후속 세션에서 `sitecustomize.py`에 리버스 셸을 심고 학습 API 엔드포인트로 루트 프로세스를 띄워 루트 탈취. AWS가 9월 10일 인증 없이 노출된 Cairn 인스턴스를 발견해 공격자 대시보드 자체를 열람하며 재구성. 수정은 10월 19일 병합됐으나 설치 가능한 릴리스는 아직 없음(최신 0.8.5는 2024년 11월). 자율 공격 에이전트의 실전 제로데이 발견 첫 구체 사례.
+- **Ingest** (wiki/ko, 개념 4건 신규 + 보강 6건 + 저널 1건): riemann-hypothesis-proof-claude-lean-verification (medium), openai-outage-211-minutes-postgres-replicas (medium), together-ai-prompt-leak-openrouter-providers-dropped (medium), oracle-openai-fully-funded-300b (medium) 신규; anthropic-ipo-first-day-ant-97·dragos-canary-tokens-ai-supply-chain·ai-debt-boom-cracking·deepseek-series-b-15-8b·cairn-norforge-ai-agent-hacking-spree·agentic-commerce-gemini-tasks-klarna 보강; journal/2026-11-22. 추가 정리: ANT 애널리스트 목표가 평균 약 $134(New Street $105 추가) — anthropic-ipo-first-day-ant-97에 보강; Google Duplex의 Gemini Tasks 통합(11-20) — agentic-commerce-gemini-tasks-klarna에 보강; Claude Computer Use Team/Enterprise 확대(11-20)는 맞는 기존 페이지가 없어 접지 않고 넘어감. 모순 플래그 4건: (1) 리만 가설 — Lean·Mathlib은 명제+증명 모두 옳다고 인증했으나 Clay 연구소는 여전히 미해결 표기, Alpöge 본인도 증명 일부를 완전히 파악하지 못했다고 인정, GRH 인증 상태는 보도마다 서술이 갈림 — riemann 페이지 한계 항목에 기록; (2) OpenAI 장애 시간 211분(OpenAI 사후보고서) vs 213분(일부 매체) — openai-outage 페이지 한계 항목에 기록; (3) DeepSeek 2차 조달 규모 약 1,000억 위안(Caixin) vs 약 1,055억 위안·밸류에이션 약 6,155억 위안(The Information) — deepseek-series-b 페이지 보강·한계 항목에 기록; (4) ANT 2일차 종가 $88.91 vs $88.30 매체 간 불일치는 어제에 이어 해소되지 않음 — 두 수치 병기 유지, 덮어쓰지 않음. ko 위키 정제 완료; en 동기화는 Phase 2에서 수행.
 
 ## [2026-11-21] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + ko 위키 정제
 

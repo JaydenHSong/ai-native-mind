@@ -3,7 +3,7 @@ title: "Agentic Commerce Goes Mainstream — Gemini Tasks Free with Calling and 
 category: concepts
 tags: [google, gemini-tasks, agentic-commerce, klarna, agent-payments]
 created: 2026-11-18
-updated: 2026-11-18
+updated: 2026-11-22
 sources:
   - "raw/articles/2026-11-18-agentic-commerce-gemini-tasks-klarna.md"
 related:
@@ -47,6 +47,12 @@ Google made its agent mode Gemini Tasks free and added calling and payment featu
 3. **Payment protocols become infrastructure**: agent payment protocols such as AP2 are emerging as an axis of agent infrastructure alongside [[concepts/mcp]]. The next chapter of [[patterns/agentic-commerce]] is "which protocol becomes the standard."
 4. **Chat apps become the shopping front door**: Klarna's assistant works inside WhatsApp and iMessage — users call the agent from chats they already use instead of installing a new app. It is a different branch of the same direction as [[concepts/openai-chatgpt-wallet]]'s in-ChatGPT payments.
 5. **What free means**: with the $19.99/month barrier gone, the Tasks user base grows. The bottleneck for agentic commerce moves from "does the feature exist" to "how many people use it every day."
+
+## 2026-11-20 update — Google Duplex folded into Gemini Tasks
+
+- **The integration**: Google's phone-booking service Duplex has been integrated into Gemini Tasks (November 20). Tasks calling businesses directly to confirm bookings and quotes now runs on Duplex's calling technology.
+- **Models and scope**: built on Gemini 4 Hydrogen and Neon. Payments are U.S.-only — do not confuse the free rollout regions (including Korea) with where payments are available.
+- **Meaning**: the follow-through to the November 17 Tasks free rollout with calling and payments — "an AI that makes phone calls" is no longer a separate service (Duplex) but a default feature of Tasks. The phone channel of agentic commerce has been demoted from standalone product to platform feature.
 
 ## Limits (stated explicitly)
 

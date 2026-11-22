@@ -3,9 +3,10 @@ title: "Cairn 해킹 캠페인 — 오픈소스 에이전트 플랫폼으로 100
 category: concepts
 tags: [cairn, ai-agents, hacking, cybersecurity, norforge, autonomous-attack, dual-use, kill-chain]
 created: 2026-10-20
-updated: 2026-10-22
+updated: 2026-11-22
 sources:
   - "raw/articles/2026-10-20-cairn-norforge-ai-agent-hacking-spree.md"
+  - "raw/articles/2026-11-22-cairn-autonomous-agent-zero-day-medical-imaging.md"
 related:
   - "[[concepts/agent-supply-chain-security]]"
   - "[[patterns/agent-safety-runtime]]"
@@ -58,3 +59,16 @@ confidence: high
 - 10-22 CyberSecAsia 업데이트 (Reuters 10-19 원본의 후속): 해커는 "거의 아무것도 하지 않았고 (did almost nothing)", 에이전트가 수 시간에 걸쳐 자율적으로 탐침·침입. NorForge 연구원 Snorre Fagerland는 "인간 감독이 필요할 줄 알았는데" 자율 에이전트의 진전에 놀랐다고 밝힘.
 - 같은 날 Microsoft가 공개한 Storm-0940 (ARTEX 기반 에이전트 주도 공격) 과 트윈 케이스 — "에이전트 주도 실전 공격"이 10-20~10-22 사흘 연속 3건 (Cairn → Storm-0940 → 이번 업데이트).
 - 관측 가능성 (observability) 의 역설 재확인: 공격자의 노출된 대시보드가 포렌식 단서 — 에이전트의 "진행 문서화"가 수비자에게도 단서.
+
+## 2026-11-20 보강 — AWS 공개: Cairn이 의료 영상 서버 제로데이를 11분 만에 찾아 루트 탈취
+
+- **공격**: 9월 8~10일 약 48시간, 중국 연계 추정 행위자. 오픈소스 자율 펜테스트 프레임워크 Cairn에 목표("셸 접근 획득")만 입력하고 동아시아 외 중국 대학들을 노렸다.
+- **제로데이 발견**: 의료 영상 주석 서버 MONAI Label의 경로 순회(path traversal) 제로데이를 API 매핑부터 임의 파일 쓰기까지 약 11분 만에 발견. CVE-2026-133968, CVSS 9.8.
+- **탈취 과정**: 후속 세션에서 `sitecustomize.py`에 리버스 셸을 심고 학습 API 엔드포인트로 루트 프로세스를 띄워 루트 탈취.
+- **발견 경위**: AWS가 9월 10일 인증 없이 노출된 Cairn 인스턴스를 발견해 공격자 대시보드 자체를 열람하며 재구성 — 10월 NorForge 캠페인과 같은 "노출된 대시보드가 단서" 구조다.
+- **패치 상태**: 수정은 10월 19일 병합됐으나 설치 가능한 릴리스는 아직 없음(최신 0.8.5는 2024년 11월). 패치가 있어도 배포되지 않으면 노출은 계속된다는, 취약점 공개 정책의 빈틈을 보여준다.
+- **의미**: 10월 캠페인이 "알려진 취약점을 에이전트가 대량 악용"한 사례였다면, 이번엔 "에이전트가 제로데이를 직접 발견"한 첫 구체 사례다. [[concepts/google-threat-tracker-exploit-agent]]의 완전 자동 패치→익스플로잇과 같은 방향의 다른 갈래다.
+
+## 참고 소스
+
+- [자율 에이전트 Cairn, 의료 영상 서버 제로데이를 11분 만에 찾아 루트 탈취 — AWS 공개 (BleepingComputer·AWS, 11-20)](raw/articles/2026-11-22-cairn-autonomous-agent-zero-day-medical-imaging.md)

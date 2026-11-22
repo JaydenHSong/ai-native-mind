@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-11-20
+updated: 2026-11-22
 sources: []
 status: active
 ---
@@ -29,10 +29,20 @@ status: active
 
 ## 현재 상태
 
-- **총 페이지**: 417개
-- **카테고리**: concepts(291), tools(16), patterns(30), journal(77), comparisons(11), meta(4)
+- **총 페이지**: 428개
+- **카테고리**: concepts(300), tools(16), patterns(30), journal(79), comparisons(11), meta(4)
 - **시작일**: 2026-04-06
-- **최근 작업 (2026-11-20 데일리 ingest — 돈이 옮겨가는 날: Anthropic 상장·NVIDIA 소환장·Intuit 전망 하향과 Dragos·추론 잠금·Neon 벤치마크)**:
+- **최근 작업 (2026-11-22 데일리 ingest — 검증·신뢰·돈이 동시에 흔들린 날: 리만 가설·OpenAI 장애·Together 유출·Oracle 자금 선언·DeepSeek 조달·Cairn 제로데이)**:
+  - raw 6건 수집 (리만 가설 증명 주장 — Lean·Mathlib 인증은 있으나 Clay 연구소는 여전히 미해결 표기, Alpöge 본인도 증명 일부 미파악 인정, GRH 인증 상태는 보도마다 다름; OpenAI 211분 장애는 사후보고서 기준이나 일부 매체는 213분 보도; Together AI 유출은 실제 자격증명 유출 여부 검토 중·퇴출 공급사 3곳 업체명 비공개; Oracle 자금 조달 완료 선언은 자사 발표·주가 반응 해석은 시장 해설; DeepSeek 조달 규모 Caixin 약 1,000억 위안 vs The Information 약 1,055억 위안 차이; Cairn 제로데이는 AWS 공개 1차 자료).
+  - 신규 4개: concepts/riemann-hypothesis-proof-claude-lean-verification (Claude+Lean 1,740만 줄·Mathlib 인증·Clay 미해결 표기 유지 — medium), concepts/openai-outage-211-minutes-postgres-replicas (Postgres 복제본 2개 동시 붕괴·요청 75% 실패·211분 — medium), concepts/together-ai-prompt-leak-openrouter-providers-dropped (코딩 에이전트 커밋 키 유출·카나리아 5개·OpenRouter 공급사 3곳 퇴출 — medium), concepts/oracle-openai-fully-funded-300b (5년 $300B·4.5GW·주가 -8.5%·조달 상한 소진 — medium), journal/2026-11-22 (active).
+  - 보강 6개: concepts/anthropic-ipo-first-day-ant-97 (애널리스트 목표가 평균 약 $134·New Street $105 추가, ANT 종가 $88.91 vs $88.30 불일치 유지), concepts/dragos-canary-tokens-ai-supply-chain (Together 유출·OpenRouter 퇴출 후속 파장), concepts/ai-debt-boom-cracking (Oracle 자금 조달 선언 보강), concepts/deepseek-series-b-15-8b (2차 조달 완료·STAR IPO 준비 보강, Caixin vs The Information 수치 차이), concepts/cairn-norforge-ai-agent-hacking-spree (MONAI Label 제로데이 11분 발견 보강), concepts/agentic-commerce-gemini-tasks-klarna (Duplex Gemini Tasks 통합 보강). Claude Computer Use Team/Enterprise 확대는 맞는 기존 페이지가 없어 접지 않음.
+  - ko 위키 정제 완료. 총 423→428페이지.
+- **직전 작업 (2026-11-21 데일리 ingest — 가격·정책·플랫폼이 같은 날 겹친 날: 나스닥 폭락·트럼프 세금 위협·Amazon v Perplexity·Inkling 2 Mini·Semantic 거버넌스·Apple 에이전트)**:
+  - raw 6건 수집 (나스닥 -5.28%·NVDA SEC 조사 보도는 미확인 단계; 트럼프 세금 위협은 세율·근거·일정 미제시; Amazon v Perplexity 최종 결정 없음; Inkling 2 Mini 성능은 자체 보고; Google Semantic 거버넌스 실전 검증 없음; Apple 에이전트 개발 초기 단계).
+  - 신규 5개: concepts/nasdaq-ai-rout-nvidia-sec-probe (나스닥 -5.28%·NVDA -14%·ANT 2일차 -8.5% — medium), concepts/trump-data-center-tax-threat (해외 데이터센터 '엄청난 세금' 위협 — low), concepts/thinking-machines-inkling-2-mini (32GB Mac에서 도는 루프 트랜스포머 — medium), concepts/google-semantic-governance-policies (도구 호출 실행 전 LLM 검사 — low), concepts/apple-own-ai-agent-macos-friction (자체 AI 에이전트 개발·macOS 27.3 승인 14단계 — medium), journal/2026-11-21 (active).
+  - 보강 7개: concepts/nvidia-huang-ousted-ceo·concepts/anthropic-ipo-priced-83-ant-trading·concepts/anthropic-ipo-first-day-ant-97·concepts/nvidia-california-subpoena-market-rout·concepts/websites-block-ai-agents·concepts/thinking-machines-inkling-2-small·concepts/ai-debt-boom-cracking. 모순 플래그 2건: ANT 종가 $88.91 vs $88.30, NVDA 시총 증발 기준 차이.
+  - 한/영 동기화 완료. 총 417→423페이지.
+- **직전 작업 (2026-11-20 데일리 ingest — 돈이 옮겨가는 날: Anthropic 상장·NVIDIA 소환장·Intuit 전망 하향과 Dragos·추론 잠금·Neon 벤치마크)**:
   - raw 6건 수집 (Anthropic 첫 거래일 시초 $111.50·종가 $97.17·2일차 장중 -5%, 공모 $81.3B 역대 최대; NVIDIA 캘리포니아 소환장은 조사 단계이지 기소 아님·H200 승인 879,868개는 승인 건수이며 실제 선적량 아님; Dragos 1차 연구 단일 출처·업체명 비공개; GPT-6.2 추출 성공률 54% → 0.2%는 OpenAI 내부 테스트 인용으로 독립 재현 없음; Intuit "첫 하드 수치"는 TFTC의 해석; Neon '3배 빠름'은 Google 주장으로 독립 측정은 약 40% 빠름·기준 주의).
   - 신규 5개: concepts/anthropic-ipo-first-day-ant-97 (시초 $111.50·종가 $97.17·2일차 -5%·애널리스트 목표가 $76~155로 극단적 분기 — medium), concepts/nvidia-california-subpoena-market-rout (캘리포니아 소환장·NVDA 6거래일 연속 하락 $145.98·다우 -1,101pt — medium), concepts/dragos-canary-tokens-ai-supply-chain (카나리아 토큰 200만 프롬프트·호스팅 3곳 침해·Zero Data Retention 무력화 — medium), concepts/intuit-credit-karma-ai-displacement (Credit Karma 전망 11~13% → 3~7%·Intuit -14.18%·LLM 매출 잠식 첫 하드 수치 — medium), journal/2026-11-20 (active).
   - 보강 4개: concepts/google-gemini-4-neon (CAAC Go 역대 최고 135/150·'3배 빠름' vs 독립 측정 약 40% 모순 플래그), concepts/openai-gpt-6-2-astra-sol (추론 체인 잠금·추출 성공률 54% → 0.2%), concepts/anthropic-ipo-priced-83-ant-trading (첫 거래일 확정 반영·후속 링크 추가), concepts/nvidia-huang-ousted-ceo (캘리포니아 소환장 후속·상호 링크 추가).

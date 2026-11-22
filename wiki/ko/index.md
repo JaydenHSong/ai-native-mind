@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-11-21
-total_pages: 423
+updated: 2026-11-22
+total_pages: 428
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 전체 423개 페이지 | 최종 업데이트: 2026-11-21 (데일리 ingest: AI 뉴스 6건 수집 + ko 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
+> 전체 428개 페이지 | 최종 업데이트: 2026-11-22 (데일리 ingest: AI 뉴스 6건 수집 + ko 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
 
 ## 쉽게 읽기
 
@@ -26,7 +26,7 @@ status: active
 - **실전(Chapter 3~5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **엔드게임(Chapter 6~7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (296개)
+## Concepts (300개)
 
 ### 성장 맵 & 철학
 - [[concepts/ai-native-programmer]] — AI를 팀원으로 활용하여 1인이 팀 규모 결과를 내는 개발자, 성장 맵
@@ -239,6 +239,10 @@ status: active
 - [[concepts/thinking-machines-inkling-2-mini]] — Thinking Machines Inkling 2 Mini, 32GB Mac에서 도는 오픈웨이트 루프 트랜스포머 (2026-11-20)
 - [[concepts/google-semantic-governance-policies]] — Google Semantic 거버넌스 정책 프리뷰, 에이전트 도구 호출 실행 전 LLM 검사 (2026-11-20)
 - [[concepts/apple-own-ai-agent-macos-friction]] — Apple 자체 AI 에이전트 개발, 채용공고 삭제·macOS 27.3 승인 14단계 (2026-11-19~20)
+- [[concepts/riemann-hypothesis-proof-claude-lean-verification]] — 리만 가설 증명 주장, Claude+Lean 1,740만 줄·Mathlib 인증·Clay 미해결 표기 유지 (2026-11-20~21)
+- [[concepts/openai-outage-211-minutes-postgres-replicas]] — OpenAI 211분 장애, Postgres 복제본 2개 동시 붕괴·요청 75% 실패 (2026-11-21)
+- [[concepts/together-ai-prompt-leak-openrouter-providers-dropped]] — Together AI 프롬프트 유출·OpenRouter 공급사 3곳 퇴출, 카나리아 토큰 5개 (2026-11-21~22)
+- [[concepts/oracle-openai-fully-funded-300b]] — Oracle OpenAI 계약 '완전 자금 조달' 선언, 5년 $300B·4.5GW·주가 -8.5% (2026-11-20~21)
 
 ### AI의 어두운 면
 - [[concepts/context-rot-hallucination]] — Context Rot, Hallucination, Error 누적 등 5대 실패 패턴
@@ -397,7 +401,9 @@ status: active
 - [[patterns/agent-mvp-stack-2026]] — 1인 MVP 스택 5대 영역 × 4 단계 + 의사결정 트리 (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — Vibe Coding의 7대 안티패턴과 회피법
 
-## Journal (78개)
+## Journal (79개)
+
+- [[journal/2026-11-22]] — 일요 데일리: 리만 가설 증명 주장·OpenAI 211분 장애·Together AI 프롬프트 유출·Oracle 자금 조달 선언·DeepSeek 2차 조달·Cairn 제로데이
 
 - [[journal/2026-11-21]] — 토요 데일리: 나스닥 5.28% 폭락·트럼프 데이터센터 세금 위협·Amazon v Perplexity 심리·Inkling 2 Mini·Google Semantic 거버넌스·Apple 자체 AI 에이전트
 

@@ -3,7 +3,7 @@ title: "Anthropic's First Trading Day — Open $111.50, Close $97.17, Day 2 Down
 category: concepts
 tags: [anthropic, ipo, ant, markets, claude]
 created: 2026-11-20
-updated: 2026-11-21
+updated: 2026-11-22
 sources:
   - "raw/articles/2026-11-20-anthropic-ipo-first-day-ant-97.md"
   - "raw/articles/2026-11-21-nasdaq-ai-rout-nvidia-sec-probe.md"
@@ -40,7 +40,7 @@ Anthropic began trading on Nasdaq under the ticker **ANT** on November 19, 2026.
 - **First-day trading**: open $111.50, high $115.10, low $92.72, close $97.17 (+17.07% vs the offering price, −12.9% vs the open). Volume of about 840 million shares (above SpaceX's IPO-day volume of about 520 million).
 - **Market capitalization**: about $2T at the open; about $1.77–1.8T fully diluted at the close (about $1.3T on shares outstanding), roughly the world's 7th largest.
 - **Fundamentals**: nine-month revenue of $33B, operating loss of $1.2B, about 28x valuation on expected 2026 revenue of $53B. The seven co-founders' combined stake is worth about $140B at the offering price.
-- **Analyst coverage begins**: Needham Buy, $150 target (+54%); Melius Buy, two-year target $155 (+60%); Wolfe Outperform, $135 (+39%); William Blair Outperform, fair value $130–150; Citizens Market Outperform, $125. On the other side: Seaport Neutral (no target; flagged sharply slowing Q3 revenue growth and a DCF value of about $1.64T that assumes aggressive growth through 2028), Morningstar fair value $92 maintained (3 stars, Narrow Moat, Very High uncertainty), NYU's Damodaran at about $76 (data-center costs, regulatory pressure, governance risk from the founders' 50.01% voting control).
+- **Analyst coverage begins**: Needham Buy, $150 target (+54%); Melius Buy, two-year target $155 (+60%); Wolfe Outperform, $135 (+39%); William Blair Outperform, fair value $130–150; Citizens Market Outperform, $125; New Street, $105. Average target about $134. On the other side: Seaport Neutral (no target; flagged sharply slowing Q3 revenue growth and a DCF value of about $1.64T that assumes aggressive growth through 2028), Morningstar fair value $92 maintained (3 stars, Narrow Moat, Very High uncertainty), NYU's Damodaran at about $76 (data-center costs, regulatory pressure, governance risk from the founders' 50.01% voting control).
 - **Day-two decline**: November 20 opened about −6.8% in premarket; an intraday snapshot (15:00 UTC) showed open $89.86, high $92.55, low $87.26, −5.26% vs the previous close.
 - **Day-two final close (Nov 20, confirmed)**: down 8.5% to an $88.91 close, with an intraday low of $83.05, within 5 cents of the $83 offering price. About −23% from the day-one high of $115.10. With the greenshoe fully exercised, total proceeds reached about $93.5B and the IPO closed on November 20. Watch the close: AP, the Wall Street Journal, and MarketWatch reported $88.30 (−9.1%), so outlets disagree.
 - **Market context**: AI stocks fell hard on Anthropic's debut day all the same. The Dow fell 1,101 points (−2.2%), the S&P 500 −2.0%, the Nasdaq −2.3%.
@@ -50,6 +50,11 @@ Anthropic began trading on Nasdaq under the ticker **ANT** on November 19, 2026.
 1. **A 17% first-day gain is a "success," but −13% from the open is a sign of overheating**: buyers at the offering price gained; buyers at the open lost money on day one. First-day excitement and cold reassessment arrived in the same session. It continues the numbers from [[concepts/anthropic-ipo-priced-83-ant-trading]], where the $83 price was set.
 2. **Analyst opinion splits to extremes**: targets run from $150–155 (buy) to fair values of $76–92 (neutral/undervalued). Whether a 28x valuation is justified will be decided by the growth rate through 2028 — exactly the point Seaport flagged as its DCF assumption.
 3. **"Largest IPO ever" and "AI stocks plunge" happened on the same day**: Anthropic raised $81.3B while the Dow dropped 1,101 points. The cracking story in [[concepts/ai-debt-boom-cracking]] coexists with the record raise — money is pouring in, but prices are getting scrutinized.
+
+## 2026-11-22 update — analyst targets average $134, New Street $105 added
+
+- **Target summary**: the average buy-side target is about $134 (Melius $155, Needham $150, Wolfe $135, Citizens $125, New Street $105). Against the November 20 close of $88.91, the average target implies about +51% upside — but Morningstar's $92 fair value and Damodaran's ~$76 split the picture between "the price is cheap" and "still expensive."
+- **Day-two close discrepancy stays open**: the $88.91 (−8.5%) vs $88.30 (−9.1%) outlet disagreement is unresolved — both figures stay recorded; neither overwrites the other.
 
 ## Limits (stated explicitly)
 

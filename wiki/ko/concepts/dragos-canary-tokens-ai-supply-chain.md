@@ -3,10 +3,12 @@ title: "Dragos 카나리아 토큰 연구 — AI 호스팅 업체 3곳 침해, �
 category: concepts
 tags: [security, supply-chain, ai-hosting, canary-tokens, dragos]
 created: 2026-11-20
-updated: 2026-11-20
+updated: 2026-11-22
 sources:
   - "raw/articles/2026-11-20-dragos-canary-tokens-ai-supply-chain.md"
+  - "raw/articles/2026-11-22-together-ai-prompt-leak-openrouter-providers-dropped.md"
 related:
+  - "[[concepts/together-ai-prompt-leak-openrouter-providers-dropped]]"
   - "[[concepts/litellm-pypi-supply-chain-compromise]]"
   - "[[concepts/google-threat-tracker-exploit-agent]]"
   - "[[concepts/ai-memory-systems]]"
@@ -47,6 +49,11 @@ confidence: medium
 2. **카나리아 토큰은 실전 추적 도구다**: 유출을 "믿는" 게 아니라 "재는" 방법이다. API 키·URL 같은 가짜 비밀을 심어 두면, 유출 경로를 증거로 잡을 수 있다. 내 서비스가 외부 AI를 쓸 때도 같은 방식으로 공급망을 점검할 수 있다.
 3. **공급망 침해가 연쇄하고 있다**: 같은 주 Microsoft Agent Framework PyPI 침해([[concepts/litellm-pypi-supply-chain-compromise]] 맥락)와 함께, AI 인프라의 "중간 단계"가 공격 표면이 되고 있다. [[concepts/agent-supply-chain-security]]의 신뢰 모델을 다시 볼 때다.
 
+## 2026-11-22 보강 — Together AI 유출·OpenRouter 공급사 3곳 퇴출, 카나리아가 실전 증거로
+
+- **후속 파장**: Together AI가 11월 21일 공개한 프롬프트 유출 공지에서, 유출된 샘플 속 자격증명 중 5개가 Dragos 실험용 카나리아 토큰이었다. 다음 날 OpenRouter는 관련 공급사 3곳을 퇴출하고 ZDR 적격 엔드포인트 125개를 제외했다.
+- **의미**: 이 연구가 "유출 가능성을 보여준 실험"에서 "실제 유출·퇴출의 증거"로 바뀌었다. 카나리아 토큰이 추적 도구를 넘어, 공급사 퇴출이라는 조치의 근거가 됐다. 자세한 내용은 [[concepts/together-ai-prompt-leak-openrouter-providers-dropped]] 참조.
+
 ## 한계 (명시)
 
 - Dragos 1차 연구 단일 출처이며, 침해 업체명은 공개되지 않아 독립 교차검증이 어렵다.
@@ -55,6 +62,7 @@ confidence: medium
 
 ## 관련 개념
 
+- [[concepts/together-ai-prompt-leak-openrouter-providers-dropped]] — Together AI 프롬프트 유출, 유출 샘플 속 5개 자격증명이 이 연구의 카나리아 토큰 — OpenRouter 공급사 3곳 퇴출 (2026-11-21~22)
 - [[concepts/litellm-pypi-supply-chain-compromise]] — 같은 주 발생한 Microsoft Agent Framework PyPI 침해와 함께 AI 공급망 보안이 연쇄 이슈로 부상 (2026-10-22)
 - [[concepts/google-threat-tracker-exploit-agent]] — AI 서비스·에이전트 인프라를 겨냥한 공격 표면 확대의 연장선 (2026-11-16)
 - [[concepts/ai-memory-systems]] — 프롬프트·대화 기록이 제3자 인프라에 남는 구조적 문제와 연결
@@ -63,3 +71,4 @@ confidence: medium
 ## 참고 소스
 
 - [Dragos 카나리아 토큰 연구 — AI 호스팅 업체 3곳 침해, 프롬프트 유출 실증 (Dragos 공식 블로그, 11-19)](raw/articles/2026-11-20-dragos-canary-tokens-ai-supply-chain.md)
+- [Together AI 프롬프트 유출 — OpenRouter 공급사 3곳 퇴출 (Together AI·OpenRouter, 11-21~22)](raw/articles/2026-11-22-together-ai-prompt-leak-openrouter-providers-dropped.md)

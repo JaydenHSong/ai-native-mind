@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-11-21
-total_pages: 423
+updated: 2026-11-22
+total_pages: 428
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 423 managed pages total | Last updated: 2026-11-21 (daily ingest: 6 AI news sources collected + ko/en wiki refinement) — most pages include a **Start here** block.
+> 428 managed pages total | Last updated: 2026-11-22 (daily ingest: 6 AI news sources collected + ko/en wiki refinement) — most pages include a **Start here** block.
 
 ## Start here
 
@@ -26,7 +26,7 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - **Practice (Chapters 3–5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **Endgame (Chapters 6–7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (296)
+## Concepts (300)
 
 ### Growth map & philosophy
 - [[concepts/ai-native-programmer]] — a developer who uses AI as teammates to achieve team-scale outcomes solo; growth map
@@ -237,6 +237,10 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[concepts/thinking-machines-inkling-2-mini]] — Thinking Machines Inkling 2 Mini, the open-weights loop transformer that runs on a 32GB Mac (2026-11-20)
 - [[concepts/google-semantic-governance-policies]] — Google Semantic governance policies in preview, LLM checks on agent tool calls before execution (2026-11-20)
 - [[concepts/apple-own-ai-agent-macos-friction]] — Apple builds its own AI agent, deletes the job posting, macOS 27.3 approval stretches to 14 steps (2026-11-19–20)
+- [[concepts/riemann-hypothesis-proof-claude-lean-verification]] — Riemann hypothesis proof claimed: Claude plus Lean at 17.4M lines, Mathlib certification, Clay still lists it unsolved (2026-11-20–21)
+- [[concepts/openai-outage-211-minutes-postgres-replicas]] — OpenAI's 211-minute outage: two Postgres replicas fail together, 75% of requests fail (2026-11-21)
+- [[concepts/together-ai-prompt-leak-openrouter-providers-dropped]] — Together AI prompt leak, OpenRouter drops 3 providers, 5 canary tokens (2026-11-21–22)
+- [[concepts/oracle-openai-fully-funded-300b]] — Oracle declares its OpenAI deal 'fully funded': 5-year $300B, 4.5 GW, shares down 8.5% (2026-11-20–21)
 
 ### The darker side of AI
 - [[concepts/context-rot-hallucination]] — five major failure patterns including context rot, hallucination, and error accumulation
@@ -397,7 +401,9 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[patterns/agent-mvp-stack-2026]] — solo MVP stack: 5 areas × 4 stages + decision tree (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — seven major anti-patterns in vibe coding and how to avoid them
 
-## Journal (78)
+## Journal (79)
+
+- [[journal/2026-11-22]] — Sunday daily: Riemann hypothesis proof claim · OpenAI's 211-minute outage · Together AI prompt leak · Oracle's fully-funded declaration · DeepSeek's second raise · Cairn zero-day
 
 - [[journal/2026-11-21]] — Saturday daily: Nasdaq drops 5.28% · Trump data-center tax threat · Amazon v Perplexity hearing · Inkling 2 Mini · Google Semantic governance · Apple's own AI agent
 

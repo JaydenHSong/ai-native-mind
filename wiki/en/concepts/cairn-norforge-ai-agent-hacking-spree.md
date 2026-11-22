@@ -3,9 +3,10 @@ title: "Cairn Hacking Campaign — 100+ Companies Breached via an Open-Source Ag
 category: concepts
 tags: [cairn, ai-agents, hacking, cybersecurity, norforge, autonomous-attack, dual-use, kill-chain]
 created: 2026-10-20
-updated: 2026-10-22
+updated: 2026-11-22
 sources:
   - "raw/articles/2026-10-20-cairn-norforge-ai-agent-hacking-spree.md"
+  - "raw/articles/2026-11-22-cairn-autonomous-agent-zero-day-medical-imaging.md"
 related:
   - "[[concepts/agent-supply-chain-security]]"
   - "[[patterns/agent-safety-runtime]]"
@@ -48,3 +49,16 @@ A Chinese-speaking hacker ran a large-scale intrusion campaign from 2026-09-25 u
 - 10-22 CyberSecAsia update (follow-up to the 10-19 Reuters original): the hacker "did almost nothing" — the agents probed and intruded autonomously over hours. NorForge researcher Snorre Fagerland said he had expected human supervision to be necessary and was surprised by the autonomous agents' progress.
 - Twin case with Storm-0940, disclosed by Microsoft the same day (agent-led attacks via the ARTEX framework) — three "agent-led real-world attacks" in three consecutive days (Cairn → Storm-0940 → this update).
 - Reconfirms the observability paradox: the attacker's exposed dashboards were the forensic trail — agents' "progress documentation" cuts both ways for defenders.
+
+## 2026-11-20 update — AWS discloses: Cairn found a medical-imaging server zero-day in 11 minutes and took root
+
+- **The attack**: about 48 hours on September 8–10, by a suspected China-linked actor. The open-source autonomous pentesting framework Cairn was given only a goal ("obtain shell access") and aimed at universities in China outside East Asia.
+- **Zero-day discovery**: a path-traversal zero-day in MONAI Label (a medical-imaging annotation server) was found in about 11 minutes, from API mapping to arbitrary file write. CVE-2026-133968, CVSS 9.8.
+- **Takeover**: in a follow-up session the agent planted a reverse shell in `sitecustomize.py` and launched a root process through the training API endpoint, taking root.
+- **How it was found**: on September 10 AWS found an exposed Cairn instance with no authentication and reconstructed the attack by reading the attacker's own dashboard — the same "exposed dashboard as the trail" structure as the October NorForge campaign.
+- **Patch status**: the fix was merged on October 19, but no installable release exists yet (the latest, 0.8.5, dates from November 2024). A patch that is not shipped leaves the exposure in place — a gap in vulnerability-disclosure practice.
+- **Meaning**: where the October campaign was agents mass-exploiting *known* vulnerabilities, this is the first concrete case of an agent *discovering a zero-day itself*. It is another branch of the same direction as the fully automated patch-to-exploit agent in [[concepts/google-threat-tracker-exploit-agent]].
+
+## Sources
+
+- [Autonomous agent Cairn finds a medical-imaging server zero-day in 11 minutes and takes root — AWS discloses (BleepingComputer, AWS, 11-20)](raw/articles/2026-11-22-cairn-autonomous-agent-zero-day-medical-imaging.md)

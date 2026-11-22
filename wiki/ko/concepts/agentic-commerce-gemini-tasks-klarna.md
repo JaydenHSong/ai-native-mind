@@ -3,7 +3,7 @@ title: "에이전트 커머스, 주류로 — Gemini Tasks 무료화·전화·�
 category: concepts
 tags: [google, gemini-tasks, agentic-commerce, klarna, agent-payments]
 created: 2026-11-18
-updated: 2026-11-18
+updated: 2026-11-22
 sources:
   - "raw/articles/2026-11-18-agentic-commerce-gemini-tasks-klarna.md"
 related:
@@ -47,6 +47,12 @@ Google이 에이전트 모드 Gemini Tasks를 무료로 풀고 전화·결제 �
 3. **결제 프로토콜이 인프라가 된다**: AP2 같은 에이전트 결제 프로토콜이 [[concepts/mcp]]와 나란히 에이전트 인프라의 한 축으로 등장했다. [[patterns/agentic-commerce]]의 다음 장은 "어떤 프로토콜이 표준이 되느냐"다.
 4. **채팅 앱이 쇼핑의 입구가 된다**: Klarna 어시스턴트가 WhatsApp·iMessage 안에서 동작한다는 점 — 사용자가 앱을 새로 깔지 않고 이미 쓰는 채팅에서 에이전트를 부른다. [[concepts/openai-chatgpt-wallet]]의 ChatGPT 내 결제와 같은 방향의 다른 갈래다.
 5. **무료화의 의미**: 월 $19.99 장벽이 사라지면서 Tasks의 사용자 규모가 커진다. 에이전트 커머스의 병목이 "기능이 있느냐"에서 "얼마나 많은 사람이 매일 쓰느냐"로 이동한다.
+
+## 2026-11-20 보강 — Google Duplex, Gemini Tasks에 통합
+
+- **통합**: Google의 전화 예약 서비스 Duplex가 Gemini Tasks에 통합됐다(11월 20일). Tasks가 업체에 직접 전화를 걸어 예약·견적을 확인하는 흐름이 Duplex의 전화 기술과 합쳐졌다.
+- **모델·범위**: Gemini 4 Hydrogen·Neon 기반. 결제 기능은 미국 한정 — 한국을 포함한 무료 제공 지역과 결제 가능 지역이 다르니 혼동하지 말 것.
+- **의미**: 11월 17일 Tasks 무료화·전화·결제 발표의 연장선 — "전화를 거는 AI"가 별도 서비스(Duplex)가 아니라 Tasks의 기본 기능으로 흡수됐다. 에이전트 커머스의 전화 채널이 독립 제품에서 플랫폼 기능으로 격하된 셈이다.
 
 ## 한계 (명시)
 

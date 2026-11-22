@@ -3,11 +3,13 @@ title: "AI 부채 붐의 균열 — 월스트리트가 AI 지출 한계에 도�
 category: concepts
 tags: [ai-bubble, debt, coreweave, neocloud, capex, capital, semiconductors, openai-revenue, funding-sustainability]
 created: 2026-10-16
-updated: 2026-11-21
+updated: 2026-11-22
 sources:
   - "raw/articles/2026-10-16-ai-debt-boom-cracking.md"
   - "raw/articles/2026-11-21-nasdaq-ai-rout-nvidia-sec-probe.md"
+  - "raw/articles/2026-11-22-oracle-openai-fully-funded-300b.md"
 related:
+  - "[[concepts/oracle-openai-fully-funded-300b]]"
   - "[[concepts/nasdaq-ai-rout-nvidia-sec-probe]]"
   - "[[comparisons/frontier-lab-economics]]"
   - "[[concepts/mecka-robot-motion-data]]"
@@ -49,6 +51,12 @@ Axios가 2026-10-16 보도한 "부채로 연명하는 AI 붐에 균열" — **�
 - **해석**: 10-16 "균열" 분석이 11-20 실제 주가로 확인된 국면. 다만 "균열"의 실증이 디폴트·유동성 위기가 아니라 주가 급락이라는 점은 구분해 기록한다.
 - 자세한 내용은 [[concepts/nasdaq-ai-rout-nvidia-sec-probe]] 참조.
 
+## 2026-11-21 보강 — Oracle '완전 자금 조달' 선언에도 주가 -8.5%
+
+- **선언과 반응의 역설**: Oracle이 11월 20일 OpenAI 인프라 계약(5년 약 $300B·4.5GW)의 자금 조달 완료를 선언했지만, 당일 주가는 -8.48% → $101.19로 52주 최저 종가를 기록했다. 시장은 "자금 조달 완료"보다 부채 부담에 반응했다는 해석.
+- **자금 조달의 대가**: 11월 조달 약 $200억(주식 약 $100억 + 채권 약 $100억, 금리 7~8.65%)으로 2027~2030회계연도 추가 자본시장 조달 상한 $200억을 소진. 10-16 "자본이 먼저 무너질 수 있다"는 진단이 "돈은 마련했지만 여력은 소진했다"는 형태로 실증된 셈.
+- **전망**: Abilene 캠퍼스 준공 임박, 2028회계연도 하반기 잉여현금흐름 흑자 전환·2029회계연도 $300억 이상 목표. 자세한 내용은 [[concepts/oracle-openai-fully-funded-300b]] 참조.
+
 ## 왜 중요한가
 
 1. **가격 결정력 논쟁의 반대편**: [[comparisons/frontier-lab-economics]]는 "수요의 가격 비탄력성"에서 가격 결정력을 찾았다(DeepSeek 인상 후 이탈 없음·Ultrafast 6배 프리미엄). 이번은 반대편 질문 — **자금조달의 지속가능성**. 가격이 아니라 자본이 먼저 무너질 수 있다. 4단계(저가→인프라→하드웨어→자본)에 5번째 질문: "자본의 한계".
@@ -63,6 +71,7 @@ Axios가 2026-10-16 보도한 "부채로 연명하는 AI 붐에 균열" — **�
 
 ## 관련 개념
 
+- [[concepts/oracle-openai-fully-funded-300b]] — Oracle OpenAI 계약 '완전 자금 조달' 선언, 5년 $300B·4.5GW·주가 -8.5% (2026-11-20~21)
 - [[comparisons/frontier-lab-economics]] — 가격 결정력 인프라 논쟁의 반대편: 자본의 지속가능성
 - [[concepts/mecka-robot-motion-data]] — 자본이 데이터 인프라로 번지던 흐름과의 대조
 - [[concepts/meta-muse-spark-open]] — 같은 날: 오픈 유통 확장 vs 인프라 자본 경색
@@ -72,3 +81,4 @@ Axios가 2026-10-16 보도한 "부채로 연명하는 AI 붐에 균열" — **�
 
 - [Axios — "부채로 연명하는 AI 붐에 균열" (Axios·DevDiscourse, 10/16)](raw/articles/2026-10-16-ai-debt-boom-cracking.md)
 - [나스닥 5.28% 폭락 — AI주 주간 $4조 증발 (Motley Fool·Reuters·CNBC, 11-20)](raw/articles/2026-11-21-nasdaq-ai-rout-nvidia-sec-probe.md)
+- [Oracle, OpenAI 인프라 계약 '완전 자금 조달 완료' 선언 — 5년 $300B·4.5GW, 주가는 -8.5% (AI Agent Update·Reuters, 11-21)](raw/articles/2026-11-22-oracle-openai-fully-funded-300b.md)
