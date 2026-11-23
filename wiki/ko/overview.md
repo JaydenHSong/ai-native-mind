@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-11-22
+updated: 2026-11-23
 sources: []
 status: active
 ---
@@ -29,10 +29,15 @@ status: active
 
 ## 현재 상태
 
-- **총 페이지**: 428개
-- **카테고리**: concepts(300), tools(16), patterns(30), journal(79), comparisons(11), meta(4)
+- **총 페이지**: 433개
+- **카테고리**: concepts(304), tools(16), patterns(30), journal(80), comparisons(11), meta(4)
 - **시작일**: 2026-04-06
-- **최근 작업 (2026-11-22 데일리 ingest — 검증·신뢰·돈이 동시에 흔들린 날: 리만 가설·OpenAI 장애·Together 유출·Oracle 자금 선언·DeepSeek 조달·Cairn 제로데이)**:
+- **최근 작업 (2026-11-23 데일리 ingest — 숫자로 재고, 규칙으로 묶고, 문은 닫는 날: Pachocki 퍼플렉서티 제안·AAIF 공통 프로토콜·GLM-5.4·연구자 Plus 5만 건·아일랜드 DPC·구글 Maps 차단)**:
+  - raw 6건 수집 (Pachocki 제안은 합의된 상한이 아니라 제안 단계, 수치는 OpenAI 자사 데이터셋 기준이라 랩 간 비교 불가; GLM-5.4 '2~3T급 지능'은 공식 벤치마크 없이 Z.ai 주장; 연구자 그랜트 세부 조건은 2차 보도 기준이며 OpenAI 발표에 없음; DPC 보고서 자체는 2026-09-25 발행, 11-22는 보도 시점; Google Maps robots.txt는 롤아웃 불균일 가능성 있음·편집 날짜 미표기).
+  - 신규 4개: concepts/openai-perplexity-intelligence-pacing (로그-퍼플렉서티 GPT-3.5 약 0.99·GPT-4 약 0.91·최근 0.8 아래, 0.68~0.70 구간 속도 제한 제안 — medium), concepts/zai-glm-5-4-loop-transformer (750B 28개 레이어 두 번 실행·2~3T급 주장·1M 컨텍스트·비전 입력, 공식 벤치마크 없음 — medium), concepts/openai-chatgpt-academic-researchers (Plus 5만 건 선착순·20만 명 목표·파일럿 33개국 20,000명 — medium), concepts/ireland-dpc-ai-supervision (5년 180개 감독·9건 지연/취소·95% 지연 없이 출시·권고 72% 투명성 — medium), journal/2026-11-23 (active).
+  - 보강 3개: concepts/anthropic-agent-skills-foundation (AAIF 프로토콜 추진 — MCP·AGENTS.md·goose·x402 기부, 10,000+ MCP 서버, 1억 3,800만 x402 거래, Goertzel 통신-공유/내부-자율 구분, Barr 경고), concepts/ai-training-opt-out-robots-txt (Google Maps 차단 — __usage_ai-training 그룹 신설, 41개 크롤러, Disallow: /maps, Google-Extended 비대칭), concepts/mcp (AAIF 프로토콜 추진 2026-11-22 섹션 추가).
+  - ko 위키 정제 완료. 총 428→433페이지.
+- **직전 작업 (2026-11-22 데일리 ingest — 검증·신뢰·돈이 동시에 흔들린 날: 리만 가설·OpenAI 장애·Together 유출·Oracle 자금 선언·DeepSeek 조달·Cairn 제로데이)**:
   - raw 6건 수집 (리만 가설 증명 주장 — Lean·Mathlib 인증은 있으나 Clay 연구소는 여전히 미해결 표기, Alpöge 본인도 증명 일부 미파악 인정, GRH 인증 상태는 보도마다 다름; OpenAI 211분 장애는 사후보고서 기준이나 일부 매체는 213분 보도; Together AI 유출은 실제 자격증명 유출 여부 검토 중·퇴출 공급사 3곳 업체명 비공개; Oracle 자금 조달 완료 선언은 자사 발표·주가 반응 해석은 시장 해설; DeepSeek 조달 규모 Caixin 약 1,000억 위안 vs The Information 약 1,055억 위안 차이; Cairn 제로데이는 AWS 공개 1차 자료).
   - 신규 4개: concepts/riemann-hypothesis-proof-claude-lean-verification (Claude+Lean 1,740만 줄·Mathlib 인증·Clay 미해결 표기 유지 — medium), concepts/openai-outage-211-minutes-postgres-replicas (Postgres 복제본 2개 동시 붕괴·요청 75% 실패·211분 — medium), concepts/together-ai-prompt-leak-openrouter-providers-dropped (코딩 에이전트 커밋 키 유출·카나리아 5개·OpenRouter 공급사 3곳 퇴출 — medium), concepts/oracle-openai-fully-funded-300b (5년 $300B·4.5GW·주가 -8.5%·조달 상한 소진 — medium), journal/2026-11-22 (active).
   - 보강 6개: concepts/anthropic-ipo-first-day-ant-97 (애널리스트 목표가 평균 약 $134·New Street $105 추가, ANT 종가 $88.91 vs $88.30 불일치 유지), concepts/dragos-canary-tokens-ai-supply-chain (Together 유출·OpenRouter 퇴출 후속 파장), concepts/ai-debt-boom-cracking (Oracle 자금 조달 선언 보강), concepts/deepseek-series-b-15-8b (2차 조달 완료·STAR IPO 준비 보강, Caixin vs The Information 수치 차이), concepts/cairn-norforge-ai-agent-hacking-spree (MONAI Label 제로데이 11분 발견 보강), concepts/agentic-commerce-gemini-tasks-klarna (Duplex Gemini Tasks 통합 보강). Claude Computer Use Team/Enterprise 확대는 맞는 기존 페이지가 없어 접지 않음.

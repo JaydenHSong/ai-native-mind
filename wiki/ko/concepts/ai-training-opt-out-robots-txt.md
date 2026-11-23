@@ -3,13 +3,16 @@ title: "AI 학습 거부 단일 robots.txt 토큰 — 4대 랩 합의, IETF 개�
 category: concepts
 tags: [robots-txt, ai-training, opt-out, copyright, openai, google, microsoft, anthropic]
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-23
 sources:
   - "raw/articles/2026-10-31-ai-training-opt-out-robots-txt.md"
+  - "raw/articles/2026-11-23-google-maps-robots-txt-41-ai-crawlers.md"
 related:
   - "[[concepts/wikimedia-amicus-nyt-openai]]"
   - "[[concepts/publishers-ai-covert-use]]"
   - "[[concepts/meta-commercial-terms-delay]]"
+  - "[[concepts/websites-block-ai-agents]]"
+  - "[[concepts/ireland-dpc-ai-supervision]]"
 status: draft
 confidence: high
 ---
@@ -43,6 +46,16 @@ confidence: high
 1. **데이터 권리의 기계판독 전환**: 소송과 정책 논쟁이던 "학습 거부"가 robots.txt 한 줄의 기계 신호로 바뀌었다. 자기 콘텐츠를 지키는 방법이 법률 문서에서 설정 파일로 이동한다.
 2. **학습과 그라운딩의 분리**: 같은 토큰도 Google은 그라운딩까지, Microsoft는 학습까지만 막는다. RAG·그라운딩을 만드는 개발자는 랩별 매핑 차이를 코드로 다뤄야 한다.
 3. **아직 약속 단계**: 표준도 아니고 이행 시점도 랩마다 다르다. 이 토큰을 "보호된다"고 전제하고 제품을 설계하면 안 된다.
+
+## 2026-11-22 보강 — 구글, 자사 Maps를 AI 크롤러 41개에 차단
+
+- **변경 내용**: 구글이 google.com/robots.txt에 `User-agent: __usage_ai-training` 그룹을 신설해 AI 학습용 크롤러 41개를 자사 Maps에서 차단했다. PPC Land가 11월 22일 저녁 보도했다. 규칙 182개(Disallow 154, Allow 28). 파일 크기 약 6,700자에서 약 12,500자로 증가. `User-agent:` 행 6개에서 49개로, 그룹 4개에서 5개로.
+- **유일한 신규 제한은 Maps**: 기존 54개 Maps 관련 기본 규칙(Allow 37 + Disallow 17)이 단일 `Disallow: /maps`로 대체 — 장소 페이지, 검색, 길찾기, 기여자 프로필, 저장된 지도, Maps 사이트맵 포함. 검색(`/search`)과 `/goto?` 리디렉션은 이미 전체 크롤러에 차단돼 있어 신규가 아님.
+- **비대칭성**: 구글은 자사 제어 토큰 `Google-Extended`를 기본 그룹(`*`, `Google-Extended`, Yandex)에 추가해 Maps를 Gemini 학습·그라운딩에는 열어두고, 41개 외부 크롤러에만 닫음. "공유 토큰은 지키되 자사 모델은 열어두는" 구조 — 10-30 합의의 취지와 긴장하는 지점이다.
+- **41개 명단**: AI2Bot, Ai2Bot-Dolma, Amazonbot, Applebot-Extended, bedrockbot, Bytespider, CCBot, ChatGLM-Spider, ClaudeBot, cohere-training-data-crawler, Cotoyogi, DeepSeekBot, Diffbot, ElevenlabsCrawler, ExaSearchBot, FacebookBot, FriendlyCrawler, GPTBot, Grok, HySpider, ICC-Crawler, ImagesiftBot, img2dataset, KimiBot, LCC, Meta-ExternalAgent, MistralAI-Training, MistralBot, MoonshotBot, NagetBot, omgili, omgilibot, QwenBot, recraft-image-dataset, Reflectionbot, SBIntuitionsBot, Timpibot, VelenPublicWebCrawler, web-image-collection-research, Webzio-Extended, YiBot.
+- **명단에 없는 것**: OAI-SearchBot, ChatGPT-User, Claude-SearchBot, Claude-User, PerplexityBot, Applebot, Bingbot, Googlebot 등은 기본 규칙을 그대로 따름. SEO 도구 크롤러도 없음.
+- **배경**: `__usage_ai-training` 토큰은 2026년 10월 30일 Google·Microsoft·OpenAI·Anthropic이 준수하기로 약속한 공유 AI 학습 옵트아웃 토큰 — 이번 건은 그 토큰의 첫 대형 실전 적용이다.
+- **날짜·신뢰 주의**: 최초 제보 X 포스트는 11월 22일 14:03 UTC로 보도 창구 시작(15:00 UTC) 57분 전이나, PPC Land 보도는 같은 날 19:30 UTC 이후 작성돼 창구 안에 들어감. robots.txt 편집 자체는 날짜 미표기(Wayback 11월 17일 02:04 UTC본에는 새 그룹 없음, 11월 22일까지 반영됨). PPC Land의 19:00~19:30 UTC 요청에는 아직 이전 파일이 반환돼 롤아웃이 불균일하거나 일부 되돌려졌을 가능성 있음.
 
 ## 한계 (명시)
 

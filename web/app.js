@@ -1475,8 +1475,11 @@ function initGraph() {
   let isLooping = false;
   let animationFrameId = null;
   let alpha = 1.0; // 물리 시뮬레이션 에너지 냉각수 (d3-force cooling 모델 도입)
+  // 움직임 줄이기 설정: CSS만으로는 캔버스 물리 시뮬레이션을 못 멈추므로 그래프도 정적 배치로 보여준다
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function wakeSimulation() {
+    if (prefersReducedMotion) { draw(); return; } // 움직임 줄이기: 재가열 없이 지금 배치 그대로 한 번만 그린다
     alpha = Math.max(alpha, 0.3); // 살짝만 깨운다 — 전체 재가열(폭발) 방지
     activeAnimation = true;
     if (!isLooping) {
@@ -1519,6 +1522,12 @@ function initGraph() {
 
   // 간단한 물리 시뮬레이션 한 프레임
   function tick() {
+    if (prefersReducedMotion) { // 움직임 줄이기: 물리 연산 없이 정적 배치 한 번만 그리고 멈춘다
+      draw();
+      activeAnimation = false;
+      isLooping = false;
+      return;
+    }
     if (!activeAnimation) {
       isLooping = false;
       return;

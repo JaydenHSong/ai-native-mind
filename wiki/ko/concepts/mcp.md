@@ -3,12 +3,13 @@ title: "MCP (Model Context Protocol)"
 category: concepts
 tags: [mcp, anthropic, protocol, tools, integration]
 created: 2026-04-09
-updated: 2026-10-13
+updated: 2026-11-23
 sources:
   - "raw/notes/2026-04-09-mcp-research.md"
   - "raw/articles/2026-05-01-a2a-protocol-spec.md"
   - "raw/articles/2026-10-06-mcp-protocol-pivoting-vulnerability.md"
   - "raw/articles/2026-10-13-google-workspace-mcp-agentic-oauth.md"
+  - "raw/articles/2026-11-23-agentic-ai-foundation-protocols.md"
 related:
   - "[[concepts/context-engineering]]"
   - "[[concepts/harness-engineering]]"
@@ -19,6 +20,7 @@ related:
   - "[[tools/claude-marketplace]]"
   - "[[tools/zoho-zia]]"
   - "[[concepts/google-workspace-mcp-agentic-oauth]]"
+  - "[[concepts/anthropic-agent-skills-foundation]]"
 status: active
 confidence: high
 ---
@@ -140,6 +142,10 @@ MCP 표준의 신원 레이어가 퍼스트파티에서 실제로 강제되는 �
 - 10/5 보안(Protocol Pivoting)과 짝: "USB-C 비유의 어두운 면"(공격 표면)에 대한 플랫폼의 답이 "신원 분류의 강제" — 신뢰·인가 정보의 "번역 중 소실" 문제를 플랫폼이 신원 보증으로 메우는 방향.
 - 상세: [[concepts/google-workspace-mcp-agentic-oauth]]
 
+## 2026-11-22 — Agentic AI Foundation, MCP 포함 에이전트 공통 프로토콜 추진
+
+OpenAI·Anthropic·Google·Microsoft 등이 참여하는 Agentic AI Foundation(AAIF)이 자율 에이전트용 오픈 프로토콜 구축을 추진 중이다. Anthropic이 MCP를 기증했고, 이미 10,000개 이상 공개 서버에서 사용 중 — 2025년 12월 기부 당시의 "중립화"가 이번에는 OpenAI의 AGENTS.md, Block의 goose, Coinbase의 x402(1억 3,800만 건 이상 거래 처리) 기증과 함께 "재단 아래 프로토콜 묶음"으로 확장됐다. 상세: [[concepts/anthropic-agent-skills-foundation]]
+
 ## 참고 소스
 
 - [MCP 리서치](raw/notes/2026-04-09-mcp-research.md)
@@ -149,3 +155,4 @@ MCP 표준의 신원 레이어가 퍼스트파티에서 실제로 강제되는 �
 - [Code Execution with MCP (Anthropic)](https://www.anthropic.com/engineering/code-execution-with-mcp)
 - [MCP for agent-to-agent comms may be the riskiest protocol you've never heard of (Ars Technica)](raw/articles/2026-10-06-mcp-protocol-pivoting-vulnerability.md)
 - [Google Workspace MCP + agentic OAuth 의무화 (10/12)](raw/articles/2026-10-13-google-workspace-mcp-agentic-oauth.md)
+- [Agentic AI Foundation, MCP·AGENTS.md·x402 기부 (11/22)](raw/articles/2026-11-23-agentic-ai-foundation-protocols.md)

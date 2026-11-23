@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-11-22
-total_pages: 428
+updated: 2026-11-23
+total_pages: 433
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 전체 428개 페이지 | 최종 업데이트: 2026-11-22 (데일리 ingest: AI 뉴스 6건 수집 + ko 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
+> 전체 433개 페이지 | 최종 업데이트: 2026-11-23 (데일리 ingest: AI 뉴스 6건 수집 + ko 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
 
 ## 쉽게 읽기
 
@@ -26,7 +26,7 @@ status: active
 - **실전(Chapter 3~5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **엔드게임(Chapter 6~7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (300개)
+## Concepts (304개)
 
 ### 성장 맵 & 철학
 - [[concepts/ai-native-programmer]] — AI를 팀원으로 활용하여 1인이 팀 규모 결과를 내는 개발자, 성장 맵
@@ -243,6 +243,10 @@ status: active
 - [[concepts/openai-outage-211-minutes-postgres-replicas]] — OpenAI 211분 장애, Postgres 복제본 2개 동시 붕괴·요청 75% 실패 (2026-11-21)
 - [[concepts/together-ai-prompt-leak-openrouter-providers-dropped]] — Together AI 프롬프트 유출·OpenRouter 공급사 3곳 퇴출, 카나리아 토큰 5개 (2026-11-21~22)
 - [[concepts/oracle-openai-fully-funded-300b]] — Oracle OpenAI 계약 '완전 자금 조달' 선언, 5년 $300B·4.5GW·주가 -8.5% (2026-11-20~21)
+- [[concepts/openai-perplexity-intelligence-pacing]] — Pachocki 퍼플렉서티 지표 제안, 로그-퍼플렉서티 0.68~0.70 구간 속도 제한 (2026-11-22)
+- [[concepts/zai-glm-5-4-loop-transformer]] — Z.ai GLM-5.4, Loop Transformer·2~3T급 주장·1M 컨텍스트 (2026-11-23)
+- [[concepts/openai-chatgpt-academic-researchers]] — OpenAI 연구자 ChatGPT Plus 5만 건 선착순, 20만 명 목표 (2026-11-23)
+- [[concepts/ireland-dpc-ai-supervision]] — 아일랜드 DPC 5년 감독, AI 출시 9건 지연·취소·95% 지연 없이 출시 (2026-09-25 보고서, 보도 11-22)
 
 ### AI의 어두운 면
 - [[concepts/context-rot-hallucination]] — Context Rot, Hallucination, Error 누적 등 5대 실패 패턴
@@ -401,7 +405,9 @@ status: active
 - [[patterns/agent-mvp-stack-2026]] — 1인 MVP 스택 5대 영역 × 4 단계 + 의사결정 트리 (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — Vibe Coding의 7대 안티패턴과 회피법
 
-## Journal (79개)
+## Journal (80개)
+
+- [[journal/2026-11-23]] — 월요 데일리: Pachocki 퍼플렉서티 속도 제한 제안·AAIF 공통 프로토콜·GLM-5.4 루프 트랜스포머·연구자 Plus 5만 건·아일랜드 DPC 9건 지연·구글 Maps 크롤러 차단
 
 - [[journal/2026-11-22]] — 일요 데일리: 리만 가설 증명 주장·OpenAI 211분 장애·Together AI 프롬프트 유출·Oracle 자금 조달 선언·DeepSeek 2차 조달·Cairn 제로데이
 

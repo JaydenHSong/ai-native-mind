@@ -3,7 +3,7 @@ title: "Campaign Map"
 category: meta
 tags: [map, campaign, navigation]
 created: 2026-04-12
-updated: 2026-11-22
+updated: 2026-11-23
 sources:
   - "wiki/overview.md"
   - "wiki/index.md"
@@ -164,3 +164,4 @@ This is not a document you read from top to bottom. Pick one chapter that matche
 - 2026-11-20: daily ingest — [[concepts/anthropic-ipo-first-day-ant-97]]·[[concepts/nvidia-california-subpoena-market-rout]]·[[concepts/dragos-canary-tokens-ai-supply-chain]]·[[concepts/intuit-credit-karma-ai-displacement]] new, [[concepts/google-gemini-4-neon]]·[[concepts/openai-gpt-6-2-astra-sol]]·[[concepts/anthropic-ipo-priced-83-ant-trading]]·[[concepts/nvidia-huang-ousted-ceo]] cross-links reinforced, 417 pages total.
 - 2026-11-21: daily ingest — [[concepts/nasdaq-ai-rout-nvidia-sec-probe]]·[[concepts/trump-data-center-tax-threat]]·[[concepts/thinking-machines-inkling-2-mini]]·[[concepts/google-semantic-governance-policies]]·[[concepts/apple-own-ai-agent-macos-friction]] new, [[concepts/nvidia-huang-ousted-ceo]]·[[concepts/anthropic-ipo-priced-83-ant-trading]]·[[concepts/anthropic-ipo-first-day-ant-97]]·[[concepts/nvidia-california-subpoena-market-rout]]·[[concepts/websites-block-ai-agents]]·[[concepts/thinking-machines-inkling-2-small]]·[[concepts/ai-debt-boom-cracking]] reinforced, 423 pages total.
 - 2026-11-22: daily ingest — [[concepts/riemann-hypothesis-proof-claude-lean-verification]]·[[concepts/openai-outage-211-minutes-postgres-replicas]]·[[concepts/together-ai-prompt-leak-openrouter-providers-dropped]]·[[concepts/oracle-openai-fully-funded-300b]] new, [[concepts/anthropic-ipo-first-day-ant-97]]·[[concepts/dragos-canary-tokens-ai-supply-chain]]·[[concepts/ai-debt-boom-cracking]]·[[concepts/deepseek-series-b-15-8b]]·[[concepts/cairn-norforge-ai-agent-hacking-spree]]·[[concepts/agentic-commerce-gemini-tasks-klarna]] reinforced, 428 pages total.
+- 2026-11-23: daily ingest — [[concepts/openai-perplexity-intelligence-pacing]]·[[concepts/zai-glm-5-4-loop-transformer]]·[[concepts/openai-chatgpt-academic-researchers]]·[[concepts/ireland-dpc-ai-supervision]] new, [[concepts/anthropic-agent-skills-foundation]]·[[concepts/ai-training-opt-out-robots-txt]]·[[concepts/mcp]] reinforced, 433 pages total.

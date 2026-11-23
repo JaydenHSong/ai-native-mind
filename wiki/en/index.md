@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-11-22
-total_pages: 428
+updated: 2026-11-23
+total_pages: 433
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 428 managed pages total | Last updated: 2026-11-22 (daily ingest: 6 AI news sources collected + ko/en wiki refinement) — most pages include a **Start here** block.
+> 433 managed pages total | Last updated: 2026-11-23 (daily ingest: 6 AI news sources collected + ko/en wiki refinement) — most pages include a **Start here** block.
 
 ## Start here
 
@@ -26,7 +26,7 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - **Practice (Chapters 3–5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **Endgame (Chapters 6–7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (300)
+## Concepts (304)
 
 ### Growth map & philosophy
 - [[concepts/ai-native-programmer]] — a developer who uses AI as teammates to achieve team-scale outcomes solo; growth map
@@ -241,6 +241,10 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[concepts/openai-outage-211-minutes-postgres-replicas]] — OpenAI's 211-minute outage: two Postgres replicas fail together, 75% of requests fail (2026-11-21)
 - [[concepts/together-ai-prompt-leak-openrouter-providers-dropped]] — Together AI prompt leak, OpenRouter drops 3 providers, 5 canary tokens (2026-11-21–22)
 - [[concepts/oracle-openai-fully-funded-300b]] — Oracle declares its OpenAI deal 'fully funded': 5-year $300B, 4.5 GW, shares down 8.5% (2026-11-20–21)
+- [[concepts/openai-perplexity-intelligence-pacing]] — Pachocki's perplexity-metric proposal: pacing limits in the log-perplexity 0.68–0.70 range (2026-11-22)
+- [[concepts/zai-glm-5-4-loop-transformer]] — Z.ai GLM-5.4: Loop Transformer, claimed 2–3T-class intelligence, 1M context (2026-11-23)
+- [[concepts/openai-chatgpt-academic-researchers]] — OpenAI's 50,000 ChatGPT Plus grants for researchers, first-come first-served, 200,000 target (2026-11-23)
+- [[concepts/ireland-dpc-ai-supervision]] — Ireland's DPC, five years of supervision: 9 AI launches delayed or cancelled, 95% launched without delay (report 2026-09-25, covered 11-22)
 
 ### The darker side of AI
 - [[concepts/context-rot-hallucination]] — five major failure patterns including context rot, hallucination, and error accumulation
@@ -401,7 +405,9 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[patterns/agent-mvp-stack-2026]] — solo MVP stack: 5 areas × 4 stages + decision tree (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — seven major anti-patterns in vibe coding and how to avoid them
 
-## Journal (79)
+## Journal (80)
+
+- [[journal/2026-11-23]] — Monday daily: Pachocki's perplexity pacing proposal · AAIF shared protocols · GLM-5.4 loop transformer · 50,000 researcher Plus grants · Ireland DPC's 9 delayed launches · Google's Maps crawler block
 
 - [[journal/2026-11-22]] — Sunday daily: Riemann hypothesis proof claim · OpenAI's 211-minute outage · Together AI prompt leak · Oracle's fully-funded declaration · DeepSeek's second raise · Cairn zero-day
 

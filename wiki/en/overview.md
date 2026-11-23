@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-11-22
+updated: 2026-11-23
 sources: []
 status: active
 ---
@@ -29,10 +29,15 @@ This page is a **table of contents and learning map** for the wiki. The links be
 
 ## Current state
 
-- **Total pages**: 428
-- **Categories**: concepts(300), tools(16), patterns(30), journal(79), comparisons(11), meta(4)
+- **Total pages**: 433
+- **Categories**: concepts(304), tools(16), patterns(30), journal(80), comparisons(11), meta(4)
 - **Start date**: 2026-04-06
-- **Latest work (2026-11-22 daily ingest — verification, trust, and money all shook on the same day: the Riemann claim, the OpenAI outage, the Together leak, Oracle's funding declaration, DeepSeek's raise, and the Cairn zero-day)**:
+- **Latest work (2026-11-23 daily ingest — measure it in numbers, bind it in rules, and close the door: Pachocki's perplexity proposal, the AAIF shared protocols, GLM-5.4, 50,000 researcher Plus grants, Ireland's DPC, and Google's Maps block)**:
+  - 6 raw sources collected (the Pachocki proposal is a call to agree on a cap, not an agreed cap, and the figures rest on OpenAI's own dataset, so cross-lab comparison is not possible; GLM-5.4's "2–3T-class intelligence" is a Z.ai claim with no official benchmarks; the researcher-grant conditions come from secondary coverage and are absent from OpenAI's announcement; the DPC report itself was published on September 25, 2026, and November 22 is the coverage date; the Google Maps robots.txt rollout may have been uneven and the edit is undated).
+  - 4 new: concepts/openai-perplexity-intelligence-pacing (log-perplexity GPT-3.5 around 0.99, GPT-4 around 0.91, recent models below 0.8, pacing limits proposed in the 0.68–0.70 range — medium), concepts/zai-glm-5-4-loop-transformer (750B layers run twice, claimed 2–3T-class intelligence, 1M context, vision input, no official benchmarks — medium), concepts/openai-chatgpt-academic-researchers (50,000 Plus grants first-come first-served, 200,000 target, pilot across 33 countries with 20,000 participants — medium), concepts/ireland-dpc-ai-supervision (180 products supervised over five years, 9 launches delayed or cancelled, 95% launched without delay, 72% of recommendations about transparency — medium), journal/2026-11-23 (active).
+  - 3 reinforced: concepts/anthropic-agent-skills-foundation (the AAIF protocol push — MCP, AGENTS.md, goose, and x402 donations; 10,000+ MCP servers; 138M x402 transactions; Goertzel's share-communication/keep-internals-autonomous distinction; the Barr warning), concepts/ai-training-opt-out-robots-txt (the Google Maps block — new __usage_ai-training group, 41 crawlers, Disallow: /maps, the Google-Extended asymmetry), concepts/mcp (new 2026-11-22 section on the AAIF protocol push).
+  - EN sync complete. 428→433 pages.
+- **Previous work (2026-11-22 daily ingest — verification, trust, and money all shook on the same day: the Riemann claim, the OpenAI outage, the Together leak, Oracle's funding declaration, DeepSeek's raise, and the Cairn zero-day)**:
   - 6 raw sources collected (the Riemann proof claim is Lean- and Mathlib-certified but the Clay Institute still lists it unsolved, Alpöge admits he does not fully understand parts of it, and reports differ on the GRH certification status; the OpenAI outage is 211 minutes per the postmortem but 213 minutes per some outlets; whether real credentials leaked in the Together AI case is under review and the 3 removed providers are unnamed; Oracle's fully-funded declaration is a company statement and the share-move reading is market commentary; DeepSeek's round size is about RMB 100B per Caixin vs about RMB 105.5B per The Information; the Cairn zero-day comes from an AWS disclosure).
   - 4 new: concepts/riemann-hypothesis-proof-claude-lean-verification (Claude plus Lean at 17.4M lines, Mathlib certification, Clay still lists it unsolved — medium), concepts/openai-outage-211-minutes-postgres-replicas (two Postgres replicas fail together, 75% of requests fail, 211 minutes — medium), concepts/together-ai-prompt-leak-openrouter-providers-dropped (a key committed by a coding agent, 5 canary tokens, OpenRouter drops 3 providers — medium), concepts/oracle-openai-fully-funded-300b (5-year $300B, 4.5 GW, shares down 8.5%, fundraising cap exhausted — medium), journal/2026-11-22 (active).
   - 6 reinforced: concepts/anthropic-ipo-first-day-ant-97 (analyst targets average about $134, New Street $105 added; ANT close $88.91 vs $88.30 disagreement stays), concepts/dragos-canary-tokens-ai-supply-chain (Together leak and OpenRouter removals as follow-on fallout), concepts/ai-debt-boom-cracking (Oracle funding declaration), concepts/deepseek-series-b-15-8b (second raise closed, STAR IPO preparation, Caixin vs The Information figure gap), concepts/cairn-norforge-ai-agent-hacking-spree (MONAI Label zero-day found in 11 minutes), concepts/agentic-commerce-gemini-tasks-klarna (Duplex folded into Gemini Tasks). Claude Computer Use's Team/Enterprise expansion was not folded in — no matching page exists.

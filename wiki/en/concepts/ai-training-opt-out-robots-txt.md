@@ -3,13 +3,16 @@ title: "A Single robots.txt Token to Opt Out of AI Training — Four Labs Agree,
 category: concepts
 tags: [robots-txt, ai-training, opt-out, copyright, openai, google, microsoft, anthropic]
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-23
 sources:
   - "raw/articles/2026-10-31-ai-training-opt-out-robots-txt.md"
+  - "raw/articles/2026-11-23-google-maps-robots-txt-41-ai-crawlers.md"
 related:
   - "[[concepts/wikimedia-amicus-nyt-openai]]"
   - "[[concepts/publishers-ai-covert-use]]"
   - "[[concepts/meta-commercial-terms-delay]]"
+  - "[[concepts/websites-block-ai-agents]]"
+  - "[[concepts/ireland-dpc-ai-supervision]]"
 status: draft
 confidence: high
 ---
@@ -33,6 +36,16 @@ On October 30, 2026, OpenAI, Google, Microsoft, and Anthropic agreed on a single
 1. **Publisher consent becomes machine-readable**: a legal and policy dispute over training data turns into a one-line configuration. Protecting one's own content shifts from legal documents to a settings file.
 2. **Training and grounding split**: the same token means different things at Google (grounding excluded) and Microsoft (training only). Developers building RAG or grounding must handle the per-lab mapping in code.
 3. **Still a promise, not protection**: it is not yet a standard, and implementation dates differ by lab. Designing a product on the assumption that the token protects content would be premature.
+
+## 2026-11-22 update — Google blocks 41 AI crawlers from its own Maps
+
+- **The change**: Google added a `User-agent: __usage_ai-training` group to google.com/robots.txt, blocking 41 AI-training crawlers from its Maps service. PPC Land reported it on the evening of November 22. The group carries 182 rules (154 Disallow, 28 Allow). The file grew from about 6,700 to about 12,500 characters; `User-agent:` lines from 6 to 49, groups from 4 to 5.
+- **Maps is the only new restriction**: the 54 existing Maps-related default rules (37 Allow + 17 Disallow) were replaced by a single `Disallow: /maps` — covering place pages, search, directions, contributor profiles, saved maps, and the Maps sitemap. Search (`/search`) and the `/goto?` redirect were already blocked for all crawlers, so they are not new.
+- **Asymmetry**: Google added its own control token `Google-Extended` to the default group (`*`, `Google-Extended`, Yandex), keeping Maps open for Gemini training and grounding while closing it to the 41 external crawlers. A "shared token honored, own model exempt" structure — in tension with the spirit of the October 30 agreement.
+- **The 41 named crawlers**: AI2Bot, Ai2Bot-Dolma, Amazonbot, Applebot-Extended, bedrockbot, Bytespider, CCBot, ChatGLM-Spider, ClaudeBot, cohere-training-data-crawler, Cotoyogi, DeepSeekBot, Diffbot, ElevenlabsCrawler, ExaSearchBot, FacebookBot, FriendlyCrawler, GPTBot, Grok, HySpider, ICC-Crawler, ImagesiftBot, img2dataset, KimiBot, LCC, Meta-ExternalAgent, MistralAI-Training, MistralBot, MoonshotBot, NagetBot, omgili, omgilibot, QwenBot, recraft-image-dataset, Reflectionbot, SBIntuitionsBot, Timpibot, VelenPublicWebCrawler, web-image-collection-research, Webzio-Extended, YiBot.
+- **Not on the list**: OAI-SearchBot, ChatGPT-User, Claude-SearchBot, Claude-User, PerplexityBot, Applebot, Bingbot, Googlebot, and others continue under the default rules. No SEO-tool crawlers either.
+- **Background**: the `__usage_ai-training` token is the shared AI-training opt-out token Google, Microsoft, OpenAI, and Anthropic pledged to honor on October 30, 2026 — this is its first large-scale practical application.
+- **Date and reliability cautions**: the first tip-off X post landed at 14:03 UTC on November 22, 57 minutes before the reporting window opened (15:00 UTC), but the PPC Land story was written after 19:30 UTC the same day, inside the window. The robots.txt edit itself is undated (the Wayback copy from 02:04 UTC on November 17 has no new group; it appears by November 22). PPC Land's requests between 19:00 and 19:30 UTC still returned the old file, so the rollout may have been uneven or partly rolled back.
 
 ## Limitations
 

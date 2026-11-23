@@ -3,12 +3,13 @@ title: "MCP (Model Context Protocol)"
 category: concepts
 tags: [mcp, anthropic, protocol, tools, integration]
 created: 2026-04-09
-updated: 2026-10-13
+updated: 2026-11-23
 sources:
   - "raw/notes/2026-04-09-mcp-research.md"
   - "raw/articles/2026-05-01-a2a-protocol-spec.md"
   - "raw/articles/2026-10-06-mcp-protocol-pivoting-vulnerability.md"
   - "raw/articles/2026-10-13-google-workspace-mcp-agentic-oauth.md"
+  - "raw/articles/2026-11-23-agentic-ai-foundation-protocols.md"
 related:
   - "[[concepts/context-engineering]]"
   - "[[concepts/harness-engineering]]"
@@ -19,6 +20,7 @@ related:
   - "[[tools/claude-marketplace]]"
   - "[[tools/zoho-zia]]"
   - "[[concepts/google-workspace-mcp-agentic-oauth]]"
+  - "[[concepts/anthropic-agent-skills-foundation]]"
 status: active
 confidence: high
 ---
@@ -140,6 +142,10 @@ The first case of the MCP standard's identity layer being actually enforced by a
 - Pairs with the 10/5 security story (Protocol Pivoting): the platform's answer to the "dark side of the USB-C analogy" (attack surface) is "mandatory identity classification" — the platform closes the "lost in translation" trust/authorization gap with identity attestation.
 - Details: [[concepts/google-workspace-mcp-agentic-oauth]]
 
+## 2026-11-22 — Agentic AI Foundation pushes shared agent protocols, MCP included
+
+The Agentic AI Foundation (AAIF) — with OpenAI, Anthropic, Google, Microsoft and others participating — is pushing to build open protocols for autonomous agents. Anthropic donated MCP, already in use on more than 10,000 public servers — the December 2025 "neutralization" now extends into a "bundle of protocols under the foundation" alongside OpenAI's AGENTS.md, Block's goose, and Coinbase's x402 (more than 138 million transactions processed). Details: [[concepts/anthropic-agent-skills-foundation]]
+
 ## References
 
 - [MCP Research Notes](raw/notes/2026-04-09-mcp-research.md)
@@ -149,3 +155,4 @@ The first case of the MCP standard's identity layer being actually enforced by a
 - [Code Execution with MCP (Anthropic)](https://www.anthropic.com/engineering/code-execution-with-mcp)
 - [MCP for agent-to-agent comms may be the riskiest protocol you've never heard of (Ars Technica)](raw/articles/2026-10-06-mcp-protocol-pivoting-vulnerability.md)
 - [Google Workspace MCP + mandatory agentic OAuth (10/12)](raw/articles/2026-10-13-google-workspace-mcp-agentic-oauth.md)
+- [Agentic AI Foundation, MCP, AGENTS.md, and x402 donations (11/22)](raw/articles/2026-11-23-agentic-ai-foundation-protocols.md)
