@@ -3,10 +3,11 @@ title: "OpenAI Launches GPT-6.2 Astra and Sol — Astra 20% Cheaper, First 'High
 category: concepts
 tags: [openai, gpt-6-2, astra, sol, codex, model-release]
 created: 2026-11-18
-updated: 2026-11-20
+updated: 2026-11-24
 sources:
   - "raw/articles/2026-11-18-openai-gpt-6-2-astra-sol.md"
   - "raw/articles/2026-11-20-openai-gpt-6-2-reasoning-lock.md"
+  - "raw/articles/2026-11-24-openai-gpt-6-2-sol-chatgpt-chat-retirement.md"
 related:
   - "[[concepts/gpt-62-astra-codex-leak]]"
   - "[[concepts/openai-gpt6-astra-safety-underperformance]]"
@@ -52,6 +53,14 @@ On November 17, OpenAI released GPT-6.2 Astra (flagship) and GPT-6.2 Sol (budget
 - **Effect (internal tests)**: success at extracting prior-turn reasoning fell from 54% on GPT-6 Astra to 0.2% on GPT-6.2 Astra and 0.5% on Sol.
 - **Side effects**: ordinary developers can also lose prior reasoning when editing earlier messages or compressing chat logs, raising token use and latency. OpenAI recommends preserving the original history and using the official context-compression interface.
 - **Context**: GPT-6.2 launched November 17, and harsh early-tester reactions plus Altman's admission that "more work remains to make it nice to write with" were reported on November 18. This is competitive defense in the same direction as [[concepts/reasoning-extraction-attack]] and [[concepts/moonshot-kimi-k31-pro]] — protecting a model's reasoning process is now part of launch policy.
+
+## Chat tab expansion and 5.6 retirement (2026-11-23)
+
+- **Chat tab expansion**: on November 23, a version of GPT-6.2 Sol tuned for everyday conversation began rolling out globally in ChatGPT's Chat tab, six days after the Work and Codex launch (November 17). For Plus, Pro, Business, and Enterprise users. Free and Go users stay on GPT-6 Luna. The model picker option "Latest" now uses GPT-6.2 across all four thinking modes (Instant, Medium, High, Extra High). The Pro thinking level still uses GPT-6 Pro.
+- **Performance (OpenAI's own tests, November 23 system card)**: image understanding 71.7% (up from GPT-6's 47.4%). Instruction following 78.1%. Policy compliance in challenging chats 91–94% (up from GPT-6's 77–80%). Teen-safety evaluations also improved. The system card states the chat build meets the Critical cybersecurity and High biological capability thresholds under the Preparedness Framework.
+- **Retirement**: GPT-5.6 Sol retires from Chat, Work, and Codex on December 23. GPT-5.6 Terra leaves Work and Codex the same day (whether Terra stays in the Chat tab is unclear from reporting).
+- **Pricing**: on Enterprise token-based agreements, GPT-6.2 (GPT-6.2 Sol) costs $2 input / $0.10 cached input / $10 output per million tokens — a quarter of Astra.
+- **Limits**: the performance figures are OpenAI's own tests with no independent reproduction. The rollout is sequential, so accounts may see it days apart.
 
 ## Why it matters (solo-developer lens)
 

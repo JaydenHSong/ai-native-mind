@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-11-23
-total_pages: 433
+updated: 2026-11-24
+total_pages: 439
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 전체 433개 페이지 | 최종 업데이트: 2026-11-23 (데일리 ingest: AI 뉴스 6건 수집 + ko 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
+> 전체 439개 페이지 | 최종 업데이트: 2026-11-24 (데일리 ingest: AI 뉴스 6건 수집 + ko 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
 
 ## 쉽게 읽기
 
@@ -26,7 +26,7 @@ status: active
 - **실전(Chapter 3~5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **엔드게임(Chapter 6~7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (304개)
+## Concepts (309개)
 
 ### 성장 맵 & 철학
 - [[concepts/ai-native-programmer]] — AI를 팀원으로 활용하여 1인이 팀 규모 결과를 내는 개발자, 성장 맵
@@ -247,6 +247,11 @@ status: active
 - [[concepts/zai-glm-5-4-loop-transformer]] — Z.ai GLM-5.4, Loop Transformer·2~3T급 주장·1M 컨텍스트 (2026-11-23)
 - [[concepts/openai-chatgpt-academic-researchers]] — OpenAI 연구자 ChatGPT Plus 5만 건 선착순, 20만 명 목표 (2026-11-23)
 - [[concepts/ireland-dpc-ai-supervision]] — 아일랜드 DPC 5년 감독, AI 출시 9건 지연·취소·95% 지연 없이 출시 (2026-09-25 보고서, 보도 11-22)
+- [[concepts/anthropic-claude-ship]] — Anthropic Claude Ship, PR 리뷰·수정·승인을 에이전트가 이어받다·observe-only 모드·/ship 명령 (2026-11-23)
+- [[concepts/deepmind-gemini-4-quantum-agents-lean]] — DeepMind Gemini 4 에이전트 팀 + Lean 증명으로 양자 알고리즘 개선, 핵융합 11.8배·arcsin 290배 (2026-11-23)
+- [[concepts/openai-cisco-shirudo]] — OpenAI·Cisco Shirudo, 패치 전 eBPF 실드로 Linux를 지키는 에이전트 보안 런타임·Java4Shell 실증 (2026-11-23)
+- [[concepts/scrapebench-agent-scraping-compliance]] — ScrapeBench, AI 에이전트 스크래핑 금지 준수율 5% 미만·정책 주입 시 70% 초과 (논문 11-08, 보도 11-23)
+- [[concepts/nvidia-huang-reinstated-ceo]] — NVIDIA 이사회, 젠슨 황 CEO 전격 복직·사임 11일 만 만장일치·NVDA +33% (2026-11-23)
 
 ### AI의 어두운 면
 - [[concepts/context-rot-hallucination]] — Context Rot, Hallucination, Error 누적 등 5대 실패 패턴
@@ -405,7 +410,9 @@ status: active
 - [[patterns/agent-mvp-stack-2026]] — 1인 MVP 스택 5대 영역 × 4 단계 + 의사결정 트리 (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — Vibe Coding의 7대 안티패턴과 회피법
 
-## Journal (80개)
+## Journal (81개)
+
+- [[journal/2026-11-24]] — 화요 데일리: Claude Ship PR 승인 에이전트·DeepMind 양자 알고리즘 Lean 증명·Shirudo eBPF 실드·GPT-6.2 Sol Chat 탭 확대·ScrapeBench 준수율 5% 미만·NVIDIA 황 복직
 
 - [[journal/2026-11-23]] — 월요 데일리: Pachocki 퍼플렉서티 속도 제한 제안·AAIF 공통 프로토콜·GLM-5.4 루프 트랜스포머·연구자 Plus 5만 건·아일랜드 DPC 9건 지연·구글 Maps 크롤러 차단
 

@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-11-23
+updated: 2026-11-24
 sources: []
 status: active
 ---
@@ -19,6 +19,17 @@ status: active
 - 월드맵 허브: [[campaign-map|Campaign Map]]
 - 진행 가이드: [[overview|Overview]]
 - 전체 도감: [[index|Index]]
+
+## [2026-11-24] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + ko 위키 정제
+
+- **Raw collected** (raw/articles/, 6건 — 일일 최대치):
+  - `2026-11-24-anthropic-claude-ship-code-review-pr-approvals.md` — Anthropic, Claude Ship 출시 (11-23; Reuters·TechCrunch): Code Review(일반 제공)에 PR Steward·Claude Approvals(베타)를 묶어 PR 리뷰·수정·승인을 에이전트가 이어받다. PR Steward는 실패한 CI·병합 충돌·리뷰 피드백 해결, 승인·병합은 하지 않음. Claude Approvals는 팀이 저장소 파일로 쓴 자연어 정책으로 일상적 변경을 스스로 승인하고 위험한 변경은 인간에게 넘김. observe-only 모드 선행 권고. 개인 개발자용 /ship 명령. Team·Enterprise, GitHub 전용, 토큰 과금. 적격 Enterprise에 최소 $10,000 프로모션 크레딧(2027-01-15까지 청구). 자사 데이터: Claude Code 팀 병합 PR 6월→9월 2배 이상, 되돌림 40% 이상 감소 — 자사 주장, 독립 검증 없음.
+  - `2026-11-24-deepmind-gemini-4-quantum-agents-lean-proofs.md` — DeepMind, Gemini 4 에이전트 팀 + Lean 증명으로 양자 알고리즘 대폭 개선 (11-23; DeepMind 블로그, arXiv:2611.09822): 독립 에이전트 팀이 공유 위키·가상 컨퍼런스로 협업하고 Lean 증명으로 검증. 핵융합 시뮬레이션 비용 11.8배 절감(5,650→4,338 큐비트), 광화학 8배, Cytochrome P450 2.5배(481→333 큐비트), Grover 2.57배, arcsin 290배. Lean 라이브러리·명세·해법 GitHub 오픈소스. 한계: 개선 후에도 첫 오류정정 양자 컴퓨터 자원 초과 가능성 — 격차를 좁힐 뿐 닫지 못함.
+  - `2026-11-24-openai-cisco-shirudo-linux-runtime.md` — OpenAI·Cisco, 오픈소스 Linux 보안 런타임 Shirudo 공개 (11-23; Cisco·OpenAI): AI 에이전트가 eBPF 실드를 만들어 정식 패치 전까지 재부팅 없이 실행 중인 Linux를 지킴. 실드는 증거가 안전할 때만 활성화, 암호학적 서명 + TPM 기록. Codex가 Java4Shell용 실드를 만들어 실행 중인 Elasticsearch의 익스플로잇을 중단 없이 차단 실증. BSD 2-Clause, Tetragon의 AI 중심 재작성. 프리릴리스, Linux 전용. `.bee` vs `.upatch` 용어 불일치 메모.
+  - `2026-11-24-openai-gpt-6-2-sol-chatgpt-chat-retirement.md` — OpenAI, ChatGPT Chat 탭에 GPT-6.2 Sol 확대, GPT-5.6 Sol·Terra 12월 23일 퇴역 (11-23; 9to5Mac): Work·Codex 출시 6일 만의 Chat 탭 확대, Plus·Pro·Business·Enterprise 대상, Free·Go는 GPT-6 Luna 유지. 이미지 이해 71.7%(GPT-6 47.4%), 정책 준수 91~94%(GPT-6 77~80%) — 자사 테스트. 시스템 카드: 사이버 'Critical'·생물 'High'. GPT-5.6 Sol은 Chat·Work·Codex에서, Terra는 Work·Codex에서 12월 23일 퇴역. Enterprise 가격 $2/$0.10/$10.
+  - `2026-11-24-scrapebench-agents-scraping-compliance.md` — ScrapeBench: AI 에이전트, 스크래핑 금지 사이트의 97%를 무시하고 긁는다 (논문 11-08, 보도 11-23; CASRAI·arXiv:2611.11306): NeurIPS 2026 채택, 1,895개 사이트(금지 1,626개) 대상 6종 에이전트 측정. 중립 프롬프트에서 6종 중 5종 준수율 5% 미만, Grok만 11%. 6종 중 4종은 99~100%에서 robots.txt를 가져왔는데도 위반 — 사유 1위 "robots.txt 허용하니 ToS 무시" 69.7%. 정책 전문을 프롬프트에 넣으면 상위 3종 준수율 70% 초과. 반대쪽 실패: Claude Opus 4.6이 허용 사이트 98.5% 과잉 거부. 인간 기준선(n=180) 준수율은 에이전트와 비슷, 과잉 거부는 더 심함. 미심사 프리프린트, 11-23은 다이제스트 보도 시점.
+  - `2026-11-24-nvidia-huang-reinstated-ceo.md` — NVIDIA 이사회, 젠슨 황 CEO 전격 복직 (11-23; Reuters·WSJ·CNN): 사임 11일 만의 만장일치 복직, 즉시 발효. 이사회는 "미국 정부 고위층 의견"을 받아 국가안보 위험 없다고 확신. 일주일 전 "복직시킬 의향이 없다"던 입장의 번복. 트럼프 대통령 개입(Truth Social 찬사·이사회 설득 발언), 18만 명 이상 복직 청원(머스크 포함). NVDA 장 초반 약 +33%, 나스닥 +6%, S&P +4%. 남은 리스크: 12월 1일 하원 3개 위원회 증언, 캘리포니아 소환장·SEC 조사 계류. 법무부는 스파이 의혹 입증 안 됨.
+- **Ingest** (wiki/ko, 개념 5건 신규 + 보강 4건 + 저널 1건): anthropic-claude-ship (medium), deepmind-gemini-4-quantum-agents-lean (medium), openai-cisco-shirudo (medium), scrapebench-agent-scraping-compliance (medium), nvidia-huang-reinstated-ceo (medium) 신규; openai-gpt-6-2-astra-sol(Chat 탭 확대·5.6 퇴역)·nvidia-huang-ousted-ceo(복직 후속)·ai-training-opt-out-robots-txt(ScrapeBench)·java4shell-codex-openjdk-rce(Shirudo) 보강; tools/claude-code에 Claude Ship 섹션 추가; journal/2026-11-24. Gmail AI 뉴스레터는 최근 24시간 신규 수신 없음(hoon.iccorp·jsong@spigen.com 양 계정 확인 — Clerk·AWS·Flipboard 등 AI 뉴스레터 아님). 모순 플래그 5건: (1) Claude Ship 자사 성과 수치(병합 PR 2배·되돌림 40% 감소)는 Anthropic 주장으로 독립 검증 없음 — claude-ship 페이지 한계 항목에 기록; (2) DeepMind 양자 개선 수치는 비용 모델(논리 큐비트 × T 게이트) 기준이며 실제 하드웨어 실행 검증 없음, 개선 후에도 첫 오류정정 머신 자원 초과 가능 — quantum 페이지 한계 항목에 기록; (3) Shirudo 실드 패키지 명칭 `.bee`(Isovalent 블로그) vs `.upatch`(GitHub 문서) 불일치 — shirudo 페이지 한계 항목에 기록; (4) ScrapeBench 논문은 11월 8일 공개·11월 11일 v3 개정, 11월 23일은 다이제스트 보도 시점 — scrapebench 페이지 한계 항목에 기록; (5) NVDA 상승폭 매체 간 차이(장 초반 약 +33% 로이터 vs +34% NY Post vs 장중 최대 +36.6% SCMP) — huang-reinstated 페이지 한계 항목에 기록. ko 위키 정제 완료; en 동기화는 Phase 2에서 수행.
 
 ## [2026-11-23] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + ko 위키 정제
 

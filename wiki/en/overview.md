@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-11-23
+updated: 2026-11-24
 sources: []
 status: active
 ---
@@ -29,10 +29,15 @@ This page is a **table of contents and learning map** for the wiki. The links be
 
 ## Current state
 
-- **Total pages**: 433
-- **Categories**: concepts(304), tools(16), patterns(30), journal(80), comparisons(11), meta(4)
+- **Total pages**: 439
+- **Categories**: concepts(309), tools(16), patterns(30), journal(81), comparisons(11), meta(4)
 - **Start date**: 2026-04-06
-- **Latest work (2026-11-23 daily ingest — measure it in numbers, bind it in rules, and close the door: Pachocki's perplexity proposal, the AAIF shared protocols, GLM-5.4, 50,000 researcher Plus grants, Ireland's DPC, and Google's Maps block)**:
+- **Latest work (2026-11-24 daily ingest — the day agents were handed authority: Claude Ship approval agents, DeepMind quantum Lean proofs, Shirudo shields, GPT-6.2 Sol in the Chat tab, ScrapeBench compliance rates, and NVIDIA's Huang reinstatement)**:
+  - 6 raw sources collected (Claude Ship's in-house performance figures are Anthropic's own claims with no independent verification; the DeepMind quantum gains rest on a cost model with no execution on real hardware, and the improved circuits would still exceed the first error-corrected machines' resources; the Shirudo shield package names disagree — .bee vs .upatch; the ScrapeBench paper was published November 8 and revised to v3 on November 11, so November 23 is the digest coverage date; the NVDA gain differs by outlet — about 33% early trading vs 34% vs up to 36.6% intraday).
+  - 5 new: concepts/anthropic-claude-ship (Code Review, PR Steward, Claude Approvals, observe-only mode, /ship command, $10,000 promotional credits — medium), concepts/deepmind-gemini-4-quantum-agents-lean (fusion 11.8x, arcsin 290x, Lean proofs, open-source library — medium), concepts/openai-cisco-shirudo (eBPF shields, Java4Shell demonstration, BSD 2-Clause — medium), concepts/scrapebench-agent-scraping-compliance (compliance below 5%, Grok 11%, above 70% with the policy injected, Opus 4.6 over-refusal 98.5% — medium), concepts/nvidia-huang-reinstated-ceo (unanimous reinstatement, Trump's involvement, NVDA +33%, December 1 testimony — medium), journal/2026-11-24 (active).
+  - 5 reinforced: concepts/openai-gpt-6-2-astra-sol (Chat tab expansion and 5.6 retirement — image understanding 71.7%, December 23 retirement, Enterprise pricing $2/$0.10/$10), concepts/nvidia-huang-ousted-ceo (reinstatement follow-up), concepts/ai-training-opt-out-robots-txt (ScrapeBench — agents read robots.txt and still do not comply), concepts/java4shell-codex-openjdk-rce (Shirudo — the Java4Shell demonstration), tools/claude-code (new Claude Ship section).
+  - EN sync complete. 433→439 pages.
+- **Previous work (2026-11-23 daily ingest — measure it in numbers, bind it in rules, and close the door: Pachocki's perplexity proposal, the AAIF shared protocols, GLM-5.4, 50,000 researcher Plus grants, Ireland's DPC, and Google's Maps block)**:
   - 6 raw sources collected (the Pachocki proposal is a call to agree on a cap, not an agreed cap, and the figures rest on OpenAI's own dataset, so cross-lab comparison is not possible; GLM-5.4's "2–3T-class intelligence" is a Z.ai claim with no official benchmarks; the researcher-grant conditions come from secondary coverage and are absent from OpenAI's announcement; the DPC report itself was published on September 25, 2026, and November 22 is the coverage date; the Google Maps robots.txt rollout may have been uneven and the edit is undated).
   - 4 new: concepts/openai-perplexity-intelligence-pacing (log-perplexity GPT-3.5 around 0.99, GPT-4 around 0.91, recent models below 0.8, pacing limits proposed in the 0.68–0.70 range — medium), concepts/zai-glm-5-4-loop-transformer (750B layers run twice, claimed 2–3T-class intelligence, 1M context, vision input, no official benchmarks — medium), concepts/openai-chatgpt-academic-researchers (50,000 Plus grants first-come first-served, 200,000 target, pilot across 33 countries with 20,000 participants — medium), concepts/ireland-dpc-ai-supervision (180 products supervised over five years, 9 launches delayed or cancelled, 95% launched without delay, 72% of recommendations about transparency — medium), journal/2026-11-23 (active).
   - 3 reinforced: concepts/anthropic-agent-skills-foundation (the AAIF protocol push — MCP, AGENTS.md, goose, and x402 donations; 10,000+ MCP servers; 138M x402 transactions; Goertzel's share-communication/keep-internals-autonomous distinction; the Barr warning), concepts/ai-training-opt-out-robots-txt (the Google Maps block — new __usage_ai-training group, 41 crawlers, Disallow: /maps, the Google-Extended asymmetry), concepts/mcp (new 2026-11-22 section on the AAIF protocol push).

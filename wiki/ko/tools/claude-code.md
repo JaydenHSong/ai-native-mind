@@ -3,11 +3,13 @@ title: "Claude Code"
 category: tools
 tags: [claude-code, llm, ai-tool, cli]
 created: 2026-04-06
-updated: 2026-04-12
+updated: 2026-11-24
 sources:
   - "raw/articles/2026-04-04-llm-wiki-pattern.md"
+  - "raw/articles/2026-11-24-anthropic-claude-ship-code-review-pr-approvals.md"
 related:
   - "[[patterns/llm-wiki]]"
+  - "[[concepts/anthropic-claude-ship]]"
   - "[[tools/obsidian]]"
   - "[[comparisons/rag-vs-llm-wiki]]"
   - "[[concepts/ai-orchestration]]"
@@ -39,6 +41,10 @@ Anthropic의 CLI 기반 AI 코딩 도구로, 로컬 파일을 직접 읽고 쓰�
 - **CLAUDE.md 기반 설정**: 프로젝트별 규칙과 컨벤션 정의
 - **대화형 작업**: 사용자와 대화하며 작업 진행
 - **Agent 시스템**: 복잡한 작업을 서브에이전트에 위임
+
+## Claude Ship (2026-11-23)
+
+Anthropic이 2026-11-23 출시한 Claude Ship은 Code Review(일반 제공)에 PR Steward·Claude Approvals(베타)를 묶어 GitHub PR의 리뷰·수정·승인을 에이전트가 이어받는 제품이다. 개인 개발자는 Claude Code의 `/ship` 명령으로 변경 푸시·PR 생성·리뷰·실패 체크까지 맡길 수 있다. 승인 권한은 팀이 저장소 파일로 쓴 정책이 정하며, 처음에는 observe-only 모드로 시작하라고 권고한다. 자세한 내용은 [[concepts/anthropic-claude-ship]] 참조.
 
 ## 사용법 요약
 

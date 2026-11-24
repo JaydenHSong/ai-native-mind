@@ -3,12 +3,14 @@ title: "Jensen Huang Ousted — NVIDIA Founder-CEO Resigns, Kress Takes Over as 
 category: concepts
 tags: [nvidia, jensen-huang, ceo-succession, governance, ai-infra]
 created: 2026-11-12
-updated: 2026-11-21
+updated: 2026-11-24
 sources:
   - "raw/articles/2026-11-12-nvidia-huang-ousted-ceo.md"
   - "raw/articles/2026-11-20-nvidia-california-subpoena-market-rout.md"
   - "raw/articles/2026-11-21-nasdaq-ai-rout-nvidia-sec-probe.md"
+  - "raw/articles/2026-11-24-nvidia-huang-reinstated-ceo.md"
 related:
+  - "[[concepts/nvidia-huang-reinstated-ceo]]"
   - "[[concepts/nasdaq-ai-rout-nvidia-sec-probe]]"
   - "[[concepts/nvidia-california-subpoena-market-rout]]"
   - "[[concepts/nvidia-cosmos-3-nano-open-models]]"
@@ -47,6 +49,7 @@ On 2026-11-12, NVIDIA founder and CEO Jensen Huang (63) resigned after two extra
 - **Schedule**: NVIDIA reports earnings as planned next Tuesday (Nov 17).
 - **Follow-up — California subpoena (Nov 19)**: Bonta's office issued a subpoena investigating whether advanced chips and confidential information flowed to China and whether investors were misled. NVDA fell for a sixth straight session to close at $145.98. See [[concepts/nvidia-california-subpoena-market-rout]] for details. Huang is scheduled to testify before three House committees on December 1.
 - **Follow-up — SEC accounting-probe report, Nov 20 rout**: on November 20, Reuters reported that the SEC is examining NVIDIA's accounting practices (unconfirmed by the SEC and NVIDIA), and NVDA closed down 14.01% at $125.53. This is a separate thread from the California subpoena. See [[concepts/nasdaq-ai-rout-nvidia-sec-probe]] for details.
+- **Follow-up — reinstatement (Nov 23)**: on November 23, the board voted unanimously to reinstate Huang as president, CEO, and director. It was an abrupt reversal of the position stated a week earlier ("does not intend to reinstate"), following President Trump's intervention and a reinstatement petition with more than 180,000 signatures. NVDA jumped about 33% in early trading, and the Nasdaq rose 6%. The December 1 House testimony and the California subpoena and SEC probe remain pending. See [[concepts/nvidia-huang-reinstated-ceo]] for details.
 
 ## Why it matters (solo-developer view)
 

@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-11-23
-total_pages: 433
+updated: 2026-11-24
+total_pages: 439
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 433 managed pages total | Last updated: 2026-11-23 (daily ingest: 6 AI news sources collected + ko/en wiki refinement) — most pages include a **Start here** block.
+> 439 managed pages total | Last updated: 2026-11-24 (daily ingest: 6 AI news sources collected + ko/en wiki refinement) — most pages include a **Start here** block.
 
 ## Start here
 
@@ -26,7 +26,7 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - **Practice (Chapters 3–5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **Endgame (Chapters 6–7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (304)
+## Concepts (309)
 
 ### Growth map & philosophy
 - [[concepts/ai-native-programmer]] — a developer who uses AI as teammates to achieve team-scale outcomes solo; growth map
@@ -245,6 +245,11 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[concepts/zai-glm-5-4-loop-transformer]] — Z.ai GLM-5.4: Loop Transformer, claimed 2–3T-class intelligence, 1M context (2026-11-23)
 - [[concepts/openai-chatgpt-academic-researchers]] — OpenAI's 50,000 ChatGPT Plus grants for researchers, first-come first-served, 200,000 target (2026-11-23)
 - [[concepts/ireland-dpc-ai-supervision]] — Ireland's DPC, five years of supervision: 9 AI launches delayed or cancelled, 95% launched without delay (report 2026-09-25, covered 11-22)
+- [[concepts/anthropic-claude-ship]] — Anthropic Claude Ship, agents take over PR review, fixes, and approvals · observe-only mode · /ship command (2026-11-23)
+- [[concepts/deepmind-gemini-4-quantum-agents-lean]] — DeepMind improves quantum algorithms with Gemini 4 agent teams and Lean proofs: fusion 11.8x, arcsin 290x (2026-11-23)
+- [[concepts/openai-cisco-shirudo]] — OpenAI and Cisco's Shirudo, an agent security runtime that shields Linux with eBPF before the patch · Java4Shell demo (2026-11-23)
+- [[concepts/scrapebench-agent-scraping-compliance]] — ScrapeBench, AI agents comply with scraping bans below 5% · above 70% with the policy injected (paper 11-08, covered 11-23)
+- [[concepts/nvidia-huang-reinstated-ceo]] — NVIDIA board reinstates Jensen Huang as CEO, unanimous, 11 days after resignation · NVDA +33% (2026-11-23)
 
 ### The darker side of AI
 - [[concepts/context-rot-hallucination]] — five major failure patterns including context rot, hallucination, and error accumulation
@@ -405,7 +410,9 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[patterns/agent-mvp-stack-2026]] — solo MVP stack: 5 areas × 4 stages + decision tree (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — seven major anti-patterns in vibe coding and how to avoid them
 
-## Journal (80)
+## Journal (81)
+
+- [[journal/2026-11-24]] — Tuesday daily: Claude Ship PR approval agents · DeepMind quantum algorithms with Lean proofs · Shirudo eBPF shields · GPT-6.2 Sol in the Chat tab · ScrapeBench compliance below 5% · NVIDIA's Huang reinstatement
 
 - [[journal/2026-11-23]] — Monday daily: Pachocki's perplexity pacing proposal · AAIF shared protocols · GLM-5.4 loop transformer · 50,000 researcher Plus grants · Ireland DPC's 9 delayed launches · Google's Maps crawler block
 

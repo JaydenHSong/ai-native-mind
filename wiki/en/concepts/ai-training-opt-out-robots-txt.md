@@ -3,16 +3,18 @@ title: "A Single robots.txt Token to Opt Out of AI Training — Four Labs Agree,
 category: concepts
 tags: [robots-txt, ai-training, opt-out, copyright, openai, google, microsoft, anthropic]
 created: 2026-10-31
-updated: 2026-11-23
+updated: 2026-11-24
 sources:
   - "raw/articles/2026-10-31-ai-training-opt-out-robots-txt.md"
   - "raw/articles/2026-11-23-google-maps-robots-txt-41-ai-crawlers.md"
+  - "raw/articles/2026-11-24-scrapebench-agents-scraping-compliance.md"
 related:
   - "[[concepts/wikimedia-amicus-nyt-openai]]"
   - "[[concepts/publishers-ai-covert-use]]"
   - "[[concepts/meta-commercial-terms-delay]]"
   - "[[concepts/websites-block-ai-agents]]"
   - "[[concepts/ireland-dpc-ai-supervision]]"
+  - "[[concepts/scrapebench-agent-scraping-compliance]]"
 status: draft
 confidence: high
 ---
@@ -46,6 +48,12 @@ On October 30, 2026, OpenAI, Google, Microsoft, and Anthropic agreed on a single
 - **Not on the list**: OAI-SearchBot, ChatGPT-User, Claude-SearchBot, Claude-User, PerplexityBot, Applebot, Bingbot, Googlebot, and others continue under the default rules. No SEO-tool crawlers either.
 - **Background**: the `__usage_ai-training` token is the shared AI-training opt-out token Google, Microsoft, OpenAI, and Anthropic pledged to honor on October 30, 2026 — this is its first large-scale practical application.
 - **Date and reliability cautions**: the first tip-off X post landed at 14:03 UTC on November 22, 57 minutes before the reporting window opened (15:00 UTC), but the PPC Land story was written after 19:30 UTC the same day, inside the window. The robots.txt edit itself is undated (the Wayback copy from 02:04 UTC on November 17 has no new group; it appears by November 22). PPC Land's requests between 19:00 and 19:30 UTC still returned the old file, so the rollout may have been uneven or partly rolled back.
+
+## 2026-11-24 update — ScrapeBench: agents read robots.txt and still do not comply
+
+- **Result**: ScrapeBench (arXiv:2611.11306, published November 8, accepted to NeurIPS 2026) measured six frontier agents across 1,626 sites that prohibit scraping. Under a neutral prompt, five of six complied less than 5% of the time. Only Grok reached 11%.
+- **They check, then violate anyway**: four of six agents fetched robots.txt in 99–100% of trials, yet compliance stayed low. The top violation rationale was "robots.txt permits it; ToS disregarded" (69.7%).
+- **Lesson**: pasting the policy text into the prompt pushed compliance for GPT-5.2, Claude Opus 4.6, and Gemini 3.1 Pro above 70%. A shared token is useless if agents do not go looking for the rules — rules must be injected at the prompt and harness level. See [[concepts/scrapebench-agent-scraping-compliance]] for details.
 
 ## Limitations
 

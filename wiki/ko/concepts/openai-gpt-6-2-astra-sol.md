@@ -3,10 +3,11 @@ title: "OpenAI GPT-6.2 Astra·Sol 출시 — Astra 가격 20% 인하, 첫 'High'
 category: concepts
 tags: [openai, gpt-6-2, astra, sol, codex, model-release]
 created: 2026-11-18
-updated: 2026-11-20
+updated: 2026-11-24
 sources:
   - "raw/articles/2026-11-18-openai-gpt-6-2-astra-sol.md"
   - "raw/articles/2026-11-20-openai-gpt-6-2-reasoning-lock.md"
+  - "raw/articles/2026-11-24-openai-gpt-6-2-sol-chatgpt-chat-retirement.md"
 related:
   - "[[concepts/gpt-62-astra-codex-leak]]"
   - "[[concepts/openai-gpt6-astra-safety-underperformance]]"
@@ -52,6 +53,14 @@ OpenAI가 11월 17일 GPT-6.2 Astra(플래그십)와 GPT-6.2 Sol(저가형)을 C
 - **효과(내부 테스트)**: 이전 턴 추론 추출 시도 성공률이 GPT-6 Astra 54% → GPT-6.2 Astra 0.2%, Sol 0.5%로 급감.
 - **부작용**: 정상 개발자도 앞선 메시지 수정·채팅 로그 압축 시 에이전트가 이전 추론을 잃어 토큰 소모·지연이 증가할 수 있다. OpenAI는 원본 이력 보존 및 공식 컨텍스트 압축 인터페이스 사용을 권고했다.
 - **맥락**: GPT-6.2 출시 11월 17일, 초기 테스터 혹평과 Altman의 "쓰기 편하게 만드는 작업이 더 남았다"는 인정이 11월 18일 보도된 바 있다. [[concepts/reasoning-extraction-attack]]·[[concepts/moonshot-kimi-k31-pro]]와 같은 방향의 경쟁적 방어 — 모델의 추론 과정을 지키는 일이 이제 출시 정책의 일부가 됐다.
+
+## Chat 탭 확대·5.6 퇴역 (2026-11-23)
+
+- **Chat 탭 확대**: 11월 23일, 일상 대화용으로 튜닝한 GPT-6.2 Sol이 ChatGPT의 Chat 탭에 전 세계 순차 배포되기 시작했다. Work·Codex 출시(11월 17일) 6일 만이다. 대상은 Plus·Pro·Business·Enterprise. Free·Go 사용자는 GPT-6 Luna에 머무른다. 모델 선택기 'Latest'는 네 가지 사고 모드(Instant·Medium·High·Extra High) 모두에서 GPT-6.2를 쓴다. Pro 사고 수준은 GPT-6 Pro 그대로.
+- **성능 (OpenAI 자사 테스트, 11월 23일 시스템 카드 기준)**: 이미지 이해 71.7%(GPT-6의 47.4%에서 상승). 지시 따르기 78.1%. 까다로운 대화에서의 정책 준수 91~94%(GPT-6의 77~80%에서 상승). 청소년 안전 평가도 개선. 시스템 카드는 채팅 빌드가 사이버보안 'Critical', 생물학 'High' 임계에 해당한다고 명시.
+- **퇴역**: GPT-5.6 Sol은 12월 23일 Chat·Work·Codex에서 퇴역. GPT-5.6 Terra는 같은 날 Work·Codex에서 퇴역(Chat 탭 잔류 여부는 보도에 불명확).
+- **가격**: Enterprise 토큰제 기준 GPT-6.2(GPT-6.2 Sol) 입력 $2 / 캐시 입력 $0.10 / 출력 $10(100만 토큰당). Astra의 4분의 1 수준.
+- **한계**: 성능 수치는 OpenAI 자사 테스트 기준이며 독립 재현이 없다. 배포는 순차적이라 계정마다 며칠 차이 날 수 있다.
 
 ## 왜 중요한가 (1인 개발자 관점)
 

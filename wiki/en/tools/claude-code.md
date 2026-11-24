@@ -3,11 +3,13 @@ title: "Claude Code"
 category: tools
 tags: [claude-code, llm, ai-tool, cli]
 created: 2026-04-06
-updated: 2026-04-12
+updated: 2026-11-24
 sources:
   - "raw/articles/2026-04-04-llm-wiki-pattern.md"
+  - "raw/articles/2026-11-24-anthropic-claude-ship-code-review-pr-approvals.md"
 related:
   - "[[patterns/llm-wiki]]"
+  - "[[concepts/anthropic-claude-ship]]"
   - "[[tools/obsidian]]"
   - "[[comparisons/rag-vs-llm-wiki]]"
   - "[[concepts/ai-orchestration]]"
@@ -39,6 +41,10 @@ Anthropic's terminal CLI-based AI coding assistant capable of directly reading, 
 - **`CLAUDE.md` Schemas**: Evaluates project-specific coding conventions and workspace rules before executing actions.
 - **Interactive Workflows**: Prompts human operators for confirmation or clarification dynamically.
 - **Agent Subsystems**: Decomposes complex logic and delegates tasks to sandboxed sub-agents.
+
+## Claude Ship (2026-11-23)
+
+On November 23, 2026, Anthropic launched Claude Ship, bundling Code Review (generally available) with PR Steward and Claude Approvals (beta) so agents carry a GitHub PR through review, fixes, and approval. Individual developers can use the `/ship` command in Claude Code to push changes, open a PR, review it, and work on feedback and failing checks. Approval authority is defined by a policy file the team writes in the repository; Anthropic recommends starting in observe-only mode. See [[concepts/anthropic-claude-ship]] for details.
 
 ## Operations Summary
 

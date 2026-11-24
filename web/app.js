@@ -529,6 +529,10 @@ function renderDocumentList(data) {
     li.className = `doc-item ${currentDoc && currentDoc.id === doc.id ? 'active' : ''}`;
     li.setAttribute("data-id", doc.id);
     li.setAttribute("data-category", doc.category);
+    // 포커스 순서 점검 (2026-11-24): 목록 항목이 클릭 전용 <li>라 키보드로는 문서를
+    // 열 수 없었다. 징검다리 돌·신간 카드와 같은 패턴으로 키보드 접근을 추가한다.
+    li.setAttribute("role", "button");
+    li.setAttribute("tabindex", "0");
     
     // 3단계: 본문/요약 매칭 시 스니펫 + 하이라이트
     let snippetHTML = "";
@@ -547,6 +551,12 @@ function renderDocumentList(data) {
     
     li.addEventListener("click", () => {
       window.location.hash = doc.id;
+    });
+    li.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        window.location.hash = doc.id;
+      }
     });
     listElement.appendChild(li);
   });
@@ -593,8 +603,18 @@ function renderLibraryIndex() {
 
     // 클릭 이벤트 바인딩
     card.querySelectorAll(".lib-page-item").forEach(item => {
-      item.addEventListener("click", () => {
+      // 포커스 순서 점검 (2026-11-24): 사이드바 목록과 같은 이유로 키보드 접근 추가.
+      item.setAttribute("role", "button");
+      item.setAttribute("tabindex", "0");
+      const openDoc = () => {
         window.location.hash = item.getAttribute("data-id");
+      };
+      item.addEventListener("click", openDoc);
+      item.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          openDoc();
+        }
       });
     });
 

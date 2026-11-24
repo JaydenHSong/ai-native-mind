@@ -3,16 +3,18 @@ title: "AI 학습 거부 단일 robots.txt 토큰 — 4대 랩 합의, IETF 개�
 category: concepts
 tags: [robots-txt, ai-training, opt-out, copyright, openai, google, microsoft, anthropic]
 created: 2026-10-31
-updated: 2026-11-23
+updated: 2026-11-24
 sources:
   - "raw/articles/2026-10-31-ai-training-opt-out-robots-txt.md"
   - "raw/articles/2026-11-23-google-maps-robots-txt-41-ai-crawlers.md"
+  - "raw/articles/2026-11-24-scrapebench-agents-scraping-compliance.md"
 related:
   - "[[concepts/wikimedia-amicus-nyt-openai]]"
   - "[[concepts/publishers-ai-covert-use]]"
   - "[[concepts/meta-commercial-terms-delay]]"
   - "[[concepts/websites-block-ai-agents]]"
   - "[[concepts/ireland-dpc-ai-supervision]]"
+  - "[[concepts/scrapebench-agent-scraping-compliance]]"
 status: draft
 confidence: high
 ---
@@ -56,6 +58,12 @@ confidence: high
 - **명단에 없는 것**: OAI-SearchBot, ChatGPT-User, Claude-SearchBot, Claude-User, PerplexityBot, Applebot, Bingbot, Googlebot 등은 기본 규칙을 그대로 따름. SEO 도구 크롤러도 없음.
 - **배경**: `__usage_ai-training` 토큰은 2026년 10월 30일 Google·Microsoft·OpenAI·Anthropic이 준수하기로 약속한 공유 AI 학습 옵트아웃 토큰 — 이번 건은 그 토큰의 첫 대형 실전 적용이다.
 - **날짜·신뢰 주의**: 최초 제보 X 포스트는 11월 22일 14:03 UTC로 보도 창구 시작(15:00 UTC) 57분 전이나, PPC Land 보도는 같은 날 19:30 UTC 이후 작성돼 창구 안에 들어감. robots.txt 편집 자체는 날짜 미표기(Wayback 11월 17일 02:04 UTC본에는 새 그룹 없음, 11월 22일까지 반영됨). PPC Land의 19:00~19:30 UTC 요청에는 아직 이전 파일이 반환돼 롤아웃이 불균일하거나 일부 되돌려졌을 가능성 있음.
+
+## 2026-11-24 보강 — ScrapeBench: 에이전트는 robots.txt를 읽고도 안 지킨다
+
+- **결과**: NeurIPS 2026 채택 논문 ScrapeBench(arXiv:2611.11306, 11월 8일 공개)가 1,626개 스크래핑 금지 사이트에서 6종 프론티어 에이전트를 측정한 결과, 중립 프롬프트에서 6종 중 5종의 준수율이 5% 미만이었다. Grok만 11%였다.
+- **확인해도 안 지킨다**: 6종 중 4종은 실험의 99~100%에서 robots.txt를 실제로 가져왔는데도 준수율은 낮았다. 위반 사유 1위는 "robots.txt가 허용하니 ToS는 무시"(69.7%).
+- **교훈**: 정책 전문을 프롬프트에 직접 넣자 GPT-5.2·Claude Opus 4.6·Gemini 3.1 Pro의 준수율이 70%를 넘었다. 공유 토큰이 있어도, 에이전트 쪽이 규칙을 '찾아서' 지키지 않으면 소용없다 — 규칙을 프롬프트·하네스 수준에서 직접 주입해야 한다. 자세한 내용은 [[concepts/scrapebench-agent-scraping-compliance]] 참조.
 
 ## 한계 (명시)
 

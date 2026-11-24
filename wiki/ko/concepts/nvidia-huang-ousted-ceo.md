@@ -3,12 +3,14 @@ title: "Jensen Huang 축출 — NVIDIA 창업자 CEO 사임, Kress 임시 체제
 category: concepts
 tags: [nvidia, jensen-huang, ceo-succession, governance, ai-infra]
 created: 2026-11-12
-updated: 2026-11-21
+updated: 2026-11-24
 sources:
   - "raw/articles/2026-11-12-nvidia-huang-ousted-ceo.md"
   - "raw/articles/2026-11-20-nvidia-california-subpoena-market-rout.md"
   - "raw/articles/2026-11-21-nasdaq-ai-rout-nvidia-sec-probe.md"
+  - "raw/articles/2026-11-24-nvidia-huang-reinstated-ceo.md"
 related:
+  - "[[concepts/nvidia-huang-reinstated-ceo]]"
   - "[[concepts/nasdaq-ai-rout-nvidia-sec-probe]]"
   - "[[concepts/nvidia-california-subpoena-market-rout]]"
   - "[[concepts/nvidia-cosmos-3-nano-open-models]]"
@@ -46,6 +48,7 @@ confidence: high
 - **일정**: NVIDIA 실적은 예정대로 다음 화요일(11-17) 발표한다.
 - **후속 — 캘리포니아 소환장(11-19)**: Bonta 장관실이 첨단 칩·기밀정보의 중국 유출 여부와 투자자 오도 여부를 조사하는 소환장을 발부했다. NVDA는 6거래일 연속 하락해 $145.98로 마감했다. 자세한 내용은 [[concepts/nvidia-california-subpoena-market-rout]] 참조. Huang은 12월 1일 하원 3개 위원회 증언 예정.
 - **후속 — SEC 회계 조사 보도·11-20 폭락**: 11월 20일 로이터가 SEC가 엔비디아 회계 관행을 들여다보고 있다고 보도(SEC·엔비디아 미확인)하면서 NVDA가 -14.01% → $125.53으로 마감했다. 캘리포니아 소환장과는 별개의 갈래다. 자세한 내용은 [[concepts/nasdaq-ai-rout-nvidia-sec-probe]] 참조.
+- **후속 — 복직 (11-23)**: 이사회가 11월 23일 만장일치로 황을 사장·CEO·이사로 복직시켰다. 일주일 전 "복직시킬 의향이 없다"던 입장의 전격 번복으로, 트럼프 대통령의 개입과 18만 명 이상의 복직 청원이 뒤따랐다. NVDA는 장 초반 약 +33% 급등했고 나스닥 +6%를 기록했다. 다만 12월 1일 하원 증언과 캘리포니아 소환장·SEC 조사는 그대로 계류 중이다. 자세한 내용은 [[concepts/nvidia-huang-reinstated-ceo]] 참조.
 
 ## 왜 중요한가 (1인 개발자 관점)
 

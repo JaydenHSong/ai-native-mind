@@ -3,11 +3,13 @@ title: "Java4Shell (CVE-2026-114938) — the OpenJDK RCE Codex Found in an Hour"
 category: concepts
 tags: [java4shell, codex, security, vulnerability, openjdk, ai-security]
 created: 2026-11-19
-updated: 2026-11-19
+updated: 2026-11-24
 sources:
   - "raw/articles/2026-11-19-java4shell-codex-openjdk-rce.md"
+  - "raw/articles/2026-11-24-openai-cisco-shirudo-linux-runtime.md"
 related:
   - "[[concepts/google-threat-tracker-exploit-agent]]"
+  - "[[concepts/openai-cisco-shirudo]]"
   - "[[concepts/anthropic-disclosure-window-30-days]]"
   - "[[concepts/microsoft-agent-framework-pypi-compromise]]"
 status: draft
@@ -46,6 +48,12 @@ confidence: medium
 1. **The era of AI-found bugs**: a codebase that once took a skilled researcher weeks to review was swept by Codex in an hour. Attackers have the same tools — the structure now favors whoever finds it first. That is exactly why the disclosure window in [[concepts/anthropic-disclosure-window-30-days]] shrank from 90 days to 30.
 2. **A hole in the runtime itself**: this is not a bug in an app but in the Java engine, so six famous Java apps fell open at once. When the "floor" shakes, knowing what your stack stands on matters.
 3. **A race to patch**: the patch is out, but distributions ship on different schedules. Checking whether your own Java distribution has a fixed build is today's job.
+
+## 2026-11-23 update — Shirudo: agent-built temporary shields
+
+- **Launch**: on November 23, Cisco and OpenAI unveiled the open-source project Shirudo. AI agents find vulnerabilities and build eBPF-based temporary protections ("shields") that defend running Linux systems without a reboot until the official patch arrives.
+- **Demonstration**: using OpenAI's Codex, the team generated a shield for Java4Shell (CVE-2026-114938) and blocked an exploit attempt against a running Elasticsearch service without interrupting it. The other side of the discovery story (Codex found the flaw in an hour) — the loop is now complete, with agents taking on defense as well.
+- **Structure**: agents build the shield, but evidence and human approval decide activation. Every shield is cryptographically signed, and the TPM records shield loads and removals. BSD 2-Clause license, GitHub: github.com/shirudo-dev/shirudo. Pre-release stage, Linux only. See [[concepts/openai-cisco-shirudo]] for details.
 
 ## Limits (stated explicitly)
 

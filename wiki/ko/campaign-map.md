@@ -3,7 +3,7 @@ title: "Campaign Map"
 category: meta
 tags: [map, campaign, navigation]
 created: 2026-04-12
-updated: 2026-11-23
+updated: 2026-11-24
 sources:
  - "wiki/overview.md"
  - "wiki/index.md"
@@ -146,4 +146,5 @@ confidence: high
 - 2026-11-21: 데일리 ingest — [[concepts/nasdaq-ai-rout-nvidia-sec-probe]]·[[concepts/trump-data-center-tax-threat]]·[[concepts/thinking-machines-inkling-2-mini]]·[[concepts/google-semantic-governance-policies]]·[[concepts/apple-own-ai-agent-macos-friction]] 신규, [[concepts/nvidia-huang-ousted-ceo]]·[[concepts/anthropic-ipo-priced-83-ant-trading]]·[[concepts/anthropic-ipo-first-day-ant-97]]·[[concepts/nvidia-california-subpoena-market-rout]]·[[concepts/websites-block-ai-agents]]·[[concepts/thinking-machines-inkling-2-small]]·[[concepts/ai-debt-boom-cracking]] 보강, 총 423페이지.
 - 2026-11-22: 데일리 ingest — [[concepts/riemann-hypothesis-proof-claude-lean-verification]]·[[concepts/openai-outage-211-minutes-postgres-replicas]]·[[concepts/together-ai-prompt-leak-openrouter-providers-dropped]]·[[concepts/oracle-openai-fully-funded-300b]] 신규, [[concepts/anthropic-ipo-first-day-ant-97]]·[[concepts/dragos-canary-tokens-ai-supply-chain]]·[[concepts/ai-debt-boom-cracking]]·[[concepts/deepseek-series-b-15-8b]]·[[concepts/cairn-norforge-ai-agent-hacking-spree]]·[[concepts/agentic-commerce-gemini-tasks-klarna]] 보강, 총 428페이지.
 - 2026-11-23: 데일리 ingest — [[concepts/openai-perplexity-intelligence-pacing]]·[[concepts/zai-glm-5-4-loop-transformer]]·[[concepts/openai-chatgpt-academic-researchers]]·[[concepts/ireland-dpc-ai-supervision]] 신규, [[concepts/anthropic-agent-skills-foundation]]·[[concepts/ai-training-opt-out-robots-txt]]·[[concepts/mcp]] 보강, 총 433페이지.
+- 2026-11-24: 데일리 ingest — [[concepts/anthropic-claude-ship]]·[[concepts/deepmind-gemini-4-quantum-agents-lean]]·[[concepts/openai-cisco-shirudo]]·[[concepts/scrapebench-agent-scraping-compliance]]·[[concepts/nvidia-huang-reinstated-ceo]] 신규, [[concepts/openai-gpt-6-2-astra-sol]]·[[concepts/nvidia-huang-ousted-ceo]]·[[concepts/ai-training-opt-out-robots-txt]]·[[concepts/java4shell-codex-openjdk-rce]]·[[tools/claude-code]] 보강, 총 439페이지.
 

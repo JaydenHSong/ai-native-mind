@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-11-23
+updated: 2026-11-24
 sources: []
 status: active
 ---
@@ -29,10 +29,15 @@ status: active
 
 ## 현재 상태
 
-- **총 페이지**: 433개
-- **카테고리**: concepts(304), tools(16), patterns(30), journal(80), comparisons(11), meta(4)
+- **총 페이지**: 439개
+- **카테고리**: concepts(309), tools(16), patterns(30), journal(81), comparisons(11), meta(4)
 - **시작일**: 2026-04-06
-- **최근 작업 (2026-11-23 데일리 ingest — 숫자로 재고, 규칙으로 묶고, 문은 닫는 날: Pachocki 퍼플렉서티 제안·AAIF 공통 프로토콜·GLM-5.4·연구자 Plus 5만 건·아일랜드 DPC·구글 Maps 차단)**:
+- **최근 작업 (2026-11-24 데일리 ingest — 에이전트에게 권한을 주는 날: Claude Ship 승인 에이전트·DeepMind 양자 Lean 증명·Shirudo 실드·GPT-6.2 Sol Chat 탭·ScrapeBench 준수율·NVIDIA 황 복직)**:
+  - raw 6건 수집 (Claude Ship 자사 성과 수치는 Anthropic 주장으로 독립 검증 없음; DeepMind 양자 개선 수치는 비용 모델 기준이며 실제 하드웨어 실행 검증 없음, 개선 후에도 첫 오류정정 머신 자원 초과 가능; Shirudo 실드 패키지 명칭 .bee vs .upatch 불일치; ScrapeBench 논문은 11월 8일 공개·11월 11일 v3 개정, 11월 23일은 다이제스트 보도 시점; NVDA 상승폭 매체 간 차이 — 장 초반 약 +33% vs +34% vs 장중 최대 +36.6%).
+  - 신규 5개: concepts/anthropic-claude-ship (Code Review·PR Steward·Claude Approvals, observe-only 모드, /ship 명령, $10,000 프로모션 크레딧 — medium), concepts/deepmind-gemini-4-quantum-agents-lean (핵융합 11.8배·arcsin 290배·Lean 증명·오픈소스 라이브러리 — medium), concepts/openai-cisco-shirudo (eBPF 실드·Java4Shell 실증·BSD 2-Clause — medium), concepts/scrapebench-agent-scraping-compliance (준수율 5% 미만·Grok 11%·정책 주입 시 70% 초과·Opus 4.6 과잉 거부 98.5% — medium), concepts/nvidia-huang-reinstated-ceo (만장일치 복직·트럼프 개입·NVDA +33%·12월 1일 증언 — medium), journal/2026-11-24 (active).
+  - 보강 5개: concepts/openai-gpt-6-2-astra-sol (Chat 탭 확대·5.6 퇴역 — 이미지 이해 71.7%·12월 23일 퇴역·Enterprise 가격 $2/$0.10/$10), concepts/nvidia-huang-ousted-ceo (복직 후속 보강), concepts/ai-training-opt-out-robots-txt (ScrapeBench 보강 — robots.txt를 읽고도 안 지키는 에이전트), concepts/java4shell-codex-openjdk-rce (Shirudo 보강 — Java4Shell 실증), tools/claude-code (Claude Ship 섹션 추가).
+  - ko 위키 정제 완료. 총 433→439페이지.
+- **직전 작업 (2026-11-23 데일리 ingest — 숫자로 재고, 규칙으로 묶고, 문은 닫는 날: Pachocki 퍼플렉서티 제안·AAIF 공통 프로토콜·GLM-5.4·연구자 Plus 5만 건·아일랜드 DPC·구글 Maps 차단)**:
   - raw 6건 수집 (Pachocki 제안은 합의된 상한이 아니라 제안 단계, 수치는 OpenAI 자사 데이터셋 기준이라 랩 간 비교 불가; GLM-5.4 '2~3T급 지능'은 공식 벤치마크 없이 Z.ai 주장; 연구자 그랜트 세부 조건은 2차 보도 기준이며 OpenAI 발표에 없음; DPC 보고서 자체는 2026-09-25 발행, 11-22는 보도 시점; Google Maps robots.txt는 롤아웃 불균일 가능성 있음·편집 날짜 미표기).
   - 신규 4개: concepts/openai-perplexity-intelligence-pacing (로그-퍼플렉서티 GPT-3.5 약 0.99·GPT-4 약 0.91·최근 0.8 아래, 0.68~0.70 구간 속도 제한 제안 — medium), concepts/zai-glm-5-4-loop-transformer (750B 28개 레이어 두 번 실행·2~3T급 주장·1M 컨텍스트·비전 입력, 공식 벤치마크 없음 — medium), concepts/openai-chatgpt-academic-researchers (Plus 5만 건 선착순·20만 명 목표·파일럿 33개국 20,000명 — medium), concepts/ireland-dpc-ai-supervision (5년 180개 감독·9건 지연/취소·95% 지연 없이 출시·권고 72% 투명성 — medium), journal/2026-11-23 (active).
   - 보강 3개: concepts/anthropic-agent-skills-foundation (AAIF 프로토콜 추진 — MCP·AGENTS.md·goose·x402 기부, 10,000+ MCP 서버, 1억 3,800만 x402 거래, Goertzel 통신-공유/내부-자율 구분, Barr 경고), concepts/ai-training-opt-out-robots-txt (Google Maps 차단 — __usage_ai-training 그룹 신설, 41개 크롤러, Disallow: /maps, Google-Extended 비대칭), concepts/mcp (AAIF 프로토콜 추진 2026-11-22 섹션 추가).

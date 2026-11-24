@@ -3,11 +3,13 @@ title: "Java4Shell(CVE-2026-114938) — Codex가 1시간 만에 찾은 OpenJDK R
 category: concepts
 tags: [java4shell, codex, security, vulnerability, openjdk, ai-security]
 created: 2026-11-19
-updated: 2026-11-19
+updated: 2026-11-24
 sources:
   - "raw/articles/2026-11-19-java4shell-codex-openjdk-rce.md"
+  - "raw/articles/2026-11-24-openai-cisco-shirudo-linux-runtime.md"
 related:
   - "[[concepts/google-threat-tracker-exploit-agent]]"
+  - "[[concepts/openai-cisco-shirudo]]"
   - "[[concepts/anthropic-disclosure-window-30-days]]"
   - "[[concepts/microsoft-agent-framework-pypi-compromise]]"
 status: draft
@@ -46,6 +48,12 @@ confidence: medium
 1. **AI가 찾는 버그의 시대**: 예전에는 숙련된 연구원이 몇 주씩 들여다보던 코드베이스를 Codex가 1시간 만에 훑었다. 공격자도 같은 도구를 쓸 수 있다 — 방어자보다 공격자가 먼저 찾는 구조가 됐다. [[concepts/anthropic-disclosure-window-30-days]]에서 공개 기한이 90일에서 30일로 줄어든 이유가 바로 이것이다.
 2. **런타임 자체의 구멍**: 앱의 버그가 아니라 자바 엔진 자체의 구멍이라, 자바로 만든 유명 앱 여섯 개가 한 번에 뚫렸다. 의존성 하나가 아니라 "바닥"이 흔들리는 종류의 사건이다. 내가 쓰는 스택의 바닥이 무엇인지 아는 게 중요하다.
 3. **패치 속도 경쟁**: 패치는 나왔지만 배포판마다 시차가 있다. 내 서버의 자바 배포판이 수정 빌드를 받았는지 확인하는 것 — 그 확인 자체가 오늘 할 일이다.
+
+## 2026-11-23 보강 — Shirudo: 에이전트가 만드는 임시 실드
+
+- **공개**: Cisco와 OpenAI가 11월 23일 오픈소스 프로젝트 Shirudo를 공개했다. AI 에이전트가 취약점을 찾아 eBPF 기반 임시 보호막('실드')을 만들고, 정식 패치가 나올 때까지 재부팅 없이 실행 중인 Linux 시스템을 지킨다.
+- **실증**: OpenAI의 Codex로 Java4Shell(CVE-2026-114938)용 실드를 만들어, 실행 중인 Elasticsearch 서비스의 익스플로잇 시도를 서비스 중단 없이 차단했다. 발견(1시간 만에 Codex가 찾음)의 반대편 — 이제 에이전트가 '방어'까지 맡는 루프가 완성됐다.
+- **구조**: 실드는 에이전트가 만들어도 활성화는 증거와 인간 승인이 결정한다. 모든 실드는 암호학적으로 서명되고 TPM으로 적재·제거 기록을 남긴다. BSD 2-Clause 라이선스, GitHub: github.com/shirudo-dev/shirudo. 프리릴리스 단계, Linux 전용이다. 자세한 내용은 [[concepts/openai-cisco-shirudo]] 참조.
 
 ## 한계 (명시)
 
