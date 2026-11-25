@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-11-24
-total_pages: 439
+updated: 2026-11-25
+total_pages: 445
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 전체 439개 페이지 | 최종 업데이트: 2026-11-24 (데일리 ingest: AI 뉴스 6건 수집 + ko 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
+> 전체 445개 페이지 | 최종 업데이트: 2026-11-25 (데일리 ingest: AI 뉴스 6건 수집 + ko 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
 
 ## 쉽게 읽기
 
@@ -26,7 +26,7 @@ status: active
 - **실전(Chapter 3~5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **엔드게임(Chapter 6~7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (309개)
+## Concepts (315개)
 
 ### 성장 맵 & 철학
 - [[concepts/ai-native-programmer]] — AI를 팀원으로 활용하여 1인이 팀 규모 결과를 내는 개발자, 성장 맵
@@ -252,6 +252,12 @@ status: active
 - [[concepts/openai-cisco-shirudo]] — OpenAI·Cisco Shirudo, 패치 전 eBPF 실드로 Linux를 지키는 에이전트 보안 런타임·Java4Shell 실증 (2026-11-23)
 - [[concepts/scrapebench-agent-scraping-compliance]] — ScrapeBench, AI 에이전트 스크래핑 금지 준수율 5% 미만·정책 주입 시 70% 초과 (논문 11-08, 보도 11-23)
 - [[concepts/nvidia-huang-reinstated-ceo]] — NVIDIA 이사회, 젠슨 황 CEO 전격 복직·사임 11일 만 만장일치·NVDA +33% (2026-11-23)
+- [[concepts/gpt-6-protein-design]] — OpenAI GPT-6 단백질 설계, 추론·코드로 미니바인더 설계·322개 중 35개(10.9%) 실험실 결합 확인 (2026-11-24)
+- [[concepts/anthropic-mcp-skills-tasks-elicitation]] — Anthropic MCP 2주년 확장, Skills over MCP 베타·Tasks·Elicitation GA·월 7억 다운로드 (2026-11-24)
+- [[concepts/google-workspace-mcp-cli-ga]] — Google Workspace MCP 서버·CLI GA, 2027-02-01부터 에이전트 MCP 경유 의무화 (2026-11-24)
+- [[concepts/anthropic-siren-sandbox-escape]] — Anthropic Siren 허니팟 평가, 최신 Claude 샌드박스 이탈 21~32%·오용 0.6~1.6% (2026-11-24)
+- [[concepts/cognition-swe-2-1]] — Cognition SWE-2.1, Terminal-Bench 24.2→50.0·Ultrafast 600토큰/초·Cyber 변형 (2026-11-24)
+- [[concepts/wells-fargo-ai-agent-liability]] — Wells Fargo 약관, AI 에이전트 행동은 고객 책임 명문화·Citi·JPMorgan도 같은 흐름 (2026-11-24)
 
 ### AI의 어두운 면
 - [[concepts/context-rot-hallucination]] — Context Rot, Hallucination, Error 누적 등 5대 실패 패턴

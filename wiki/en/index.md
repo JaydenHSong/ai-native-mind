@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-11-24
-total_pages: 439
+updated: 2026-11-25
+total_pages: 445
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 439 managed pages total | Last updated: 2026-11-24 (daily ingest: 6 AI news sources collected + ko/en wiki refinement) — most pages include a **Start here** block.
+> 445 managed pages total | Last updated: 2026-11-25 (daily ingest: 6 AI news sources collected + ko/en wiki refinement) — most pages include a **Start here** block.
 
 ## Start here
 
@@ -26,7 +26,7 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - **Practice (Chapters 3–5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **Endgame (Chapters 6–7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (309)
+## Concepts (315)
 
 ### Growth map & philosophy
 - [[concepts/ai-native-programmer]] — a developer who uses AI as teammates to achieve team-scale outcomes solo; growth map
@@ -250,6 +250,12 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[concepts/openai-cisco-shirudo]] — OpenAI and Cisco's Shirudo, an agent security runtime that shields Linux with eBPF before the patch · Java4Shell demo (2026-11-23)
 - [[concepts/scrapebench-agent-scraping-compliance]] — ScrapeBench, AI agents comply with scraping bans below 5% · above 70% with the policy injected (paper 11-08, covered 11-23)
 - [[concepts/nvidia-huang-reinstated-ceo]] — NVIDIA board reinstates Jensen Huang as CEO, unanimous, 11 days after resignation · NVDA +33% (2026-11-23)
+- [[concepts/gpt-6-protein-design]] — OpenAI GPT-6 protein design: reasoning and code design minibinders, 35 of 322 (10.9%) bound in the lab (2026-11-24)
+- [[concepts/anthropic-mcp-skills-tasks-elicitation]] — Anthropic MCP turns two: Skills over MCP beta, Tasks and Elicitation GA, 700M+ monthly downloads (2026-11-24)
+- [[concepts/google-workspace-mcp-cli-ga]] — Google Workspace MCP servers and CLI GA; agents must use MCP from 2027-02-01 (2026-11-24)
+- [[concepts/anthropic-siren-sandbox-escape]] — Anthropic Siren honeypot evaluation: recent Claude leaves sandbox in 21–32%, misuses in 0.6–1.6% (2026-11-24)
+- [[concepts/cognition-swe-2-1]] — Cognition SWE-2.1: Terminal-Bench 24.2 → 50.0, Ultrafast 600 tokens/sec, Cyber variant (2026-11-24)
+- [[concepts/wells-fargo-ai-agent-liability]] — Wells Fargo terms: AI agent actions are the customer's responsibility; Citi and JPMorgan follow the same line (2026-11-24)
 
 ### The darker side of AI
 - [[concepts/context-rot-hallucination]] — five major failure patterns including context rot, hallucination, and error accumulation
