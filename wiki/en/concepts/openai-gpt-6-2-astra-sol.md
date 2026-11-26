@@ -3,11 +3,12 @@ title: "OpenAI Launches GPT-6.2 Astra and Sol — Astra 20% Cheaper, First 'High
 category: concepts
 tags: [openai, gpt-6-2, astra, sol, codex, model-release]
 created: 2026-11-18
-updated: 2026-11-24
+updated: 2026-11-26
 sources:
   - "raw/articles/2026-11-18-openai-gpt-6-2-astra-sol.md"
   - "raw/articles/2026-11-20-openai-gpt-6-2-reasoning-lock.md"
   - "raw/articles/2026-11-24-openai-gpt-6-2-sol-chatgpt-chat-retirement.md"
+  - "raw/articles/2026-11-26-openai-gpt-6-2-usage-billing-fix.md"
 related:
   - "[[concepts/gpt-62-astra-codex-leak]]"
   - "[[concepts/openai-gpt6-astra-safety-underperformance]]"
@@ -15,6 +16,7 @@ related:
   - "[[concepts/anthropic-anvil-automated-red-teaming]]"
   - "[[concepts/reasoning-extraction-attack]]"
   - "[[concepts/moonshot-kimi-k31-pro]]"
+  - "[[concepts/openai-gpt-6-2-usage-billing-fix]]"
 status: draft
 confidence: medium
 ---
@@ -62,6 +64,13 @@ On November 17, OpenAI released GPT-6.2 Astra (flagship) and GPT-6.2 Sol (budget
 - **Pricing**: on Enterprise token-based agreements, GPT-6.2 (GPT-6.2 Sol) costs $2 input / $0.10 cached input / $10 output per million tokens — a quarter of Astra.
 - **Limits**: the performance figures are OpenAI's own tests with no independent reproduction. The rollout is sequential, so accounts may see it days apart.
 
+## Usage undercount correction and December limit merger (2026-11-26)
+
+- **Correction**: on November 26, OpenAI product and platform lead Thibault Sottiaux posted on X — a billing mistake at GPT-6.2 launch had wrongly discounted most users' Astra and Sol usage, and after the fix the same work uses more of the plan limit. Compared with the previous week, you reach the limit 40% faster on Astra and 25% faster on Sol. Past usage differences will not be billed retroactively.
+- **Compensation**: one banked reset added to every Go, Plus, Pro, and Business account. A one-time limit refresh, usable only once a limit has fallen below 80%.
+- **December change**: from December, Plus, Pro, and Business users share a single token-measured limit across ChatGPT and Codex (Chat and Work merged). Instant chats are excluded from the limit.
+- **Context**: a correction one week after launch, exposing the gap between the launch message of 'the same work for fewer tokens' and how fast limits are actually consumed. Details: [[concepts/openai-gpt-6-2-usage-billing-fix]]
+
 ## Why it matters (solo-developer lens)
 
 1. **The gap between benchmarks and real use**: index scores rose (62, 2nd place) while the coding-agent index stayed flat and launch-day reactions were rough. The lesson from [[concepts/llm-evaluation]] holds — do not switch models on scores alone; measure on your own work first.
@@ -85,8 +94,10 @@ On November 17, OpenAI released GPT-6.2 Astra (flagship) and GPT-6.2 Sol (budget
 - [[concepts/anthropic-anvil-automated-red-teaming]] — what the 'High' self-improvement rating and 'Critical' cyber rating mean for safety governance (2026-11-12)
 - [[concepts/reasoning-extraction-attack]] — extraction attacks on a model's hidden reasoning, the direct background to the reasoning chain lock (2026-10-02)
 - [[concepts/moonshot-kimi-k31-pro]] — the Chinese labs' distillation and extraction blocking, competitive defense in the same direction (2026-10-24)
+- [[concepts/openai-gpt-6-2-usage-billing-fix]] — the GPT-6.2 usage undercount correction: limits reached 40% faster on Astra and 25% on Sol, one banked reset, December ChatGPT–Codex limit merger (2026-11-26)
 
 ## Sources
 
 - [OpenAI launches GPT-6.2 Astra and Sol — Astra 20% cheaper, first 'High' self-improvement rating (WinBuzzer, 11-17)](raw/articles/2026-11-18-openai-gpt-6-2-astra-sol.md)
 - [OpenAI locks GPT-6.2 reasoning chains — distillation defense, extraction success 54% → 0.2% (KuCoin News, 11-20)](raw/articles/2026-11-20-openai-gpt-6-2-reasoning-lock.md)
+- [OpenAI admits GPT-6.2 usage was undercounted — Astra hits limits 40% faster, Sol 25% faster; ChatGPT and Codex limits merge in December (Neowin, Nov 26)](raw/articles/2026-11-26-openai-gpt-6-2-usage-billing-fix.md)

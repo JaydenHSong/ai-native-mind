@@ -3,7 +3,7 @@ title: "Google Workspace MCP and CLI Generally Available — Agents Must Use MCP
 category: concepts
 tags: [google, workspace, mcp, cli, agent-gateway, enterprise, governance]
 created: 2026-11-25
-updated: 2026-11-25
+updated: 2026-11-26
 sources:
   - "raw/articles/2026-11-25-google-workspace-mcp-cli-ga.md"
 related:
@@ -39,6 +39,7 @@ Google-hosted Workspace MCP servers and the official Workspace CLI (gwscli), gen
 - **Google Cloud Agent Gateway**: a protocol-native gateway for LLM, MCP, and Agent2Agent (A2A) traffic that verifies agent identities against an Agent Registry.
 - **Enforcement timeline**: under the Workspace AI Tools Addendum, technical enforcement starts February 1, 2027 — AI agents, harnesses, and model-driven tools must use MCP for agentic access. Scaled-tier billing starts April 1, 2027 (Gmail, Calendar, and Drive APIs and the Workspace MCP servers; only usage above the daily free allowance).
 - **Security and management**: external AI agents must identify themselves in OAuth, and admins manage agent access in the Admin console the same way they manage traditional apps. Derived embeddings, memory indexes, and org graphs are capped at 30 days of storage.
+- **Follow-up details (2026-11-26)**: even after the February 1, 2027 enforcement, direct REST API calls do not disappear entirely — an AI agent's direct REST calls are limited to Standard-tier limits. Agent OAuth clients need the is_agentic designation. Scaled-tier billing starts April 1, 2027. (Google Workspace Updates announcement, November 24, 2026; TechRepublic and InfoSecurity Magazine coverage.)
 - **Rollout**: reaching Rapid Release and Scheduled Release domains within about two weeks of the announcement.
 
 ## Why it matters (for a solo developer)

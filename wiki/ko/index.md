@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-11-25
-total_pages: 445
+updated: 2026-11-26
+total_pages: 451
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 전체 445개 페이지 | 최종 업데이트: 2026-11-25 (데일리 ingest: AI 뉴스 6건 수집 + ko 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
+> 전체 451개 페이지 | 최종 업데이트: 2026-11-26 (데일리 ingest: AI 뉴스 6건 수집 + ko 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
 
 ## 쉽게 읽기
 
@@ -26,7 +26,7 @@ status: active
 - **실전(Chapter 3~5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **엔드게임(Chapter 6~7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (315개)
+## Concepts (321개)
 
 ### 성장 맵 & 철학
 - [[concepts/ai-native-programmer]] — AI를 팀원으로 활용하여 1인이 팀 규모 결과를 내는 개발자, 성장 맵
@@ -356,6 +356,12 @@ status: active
 - [[concepts/fireworks-notion-ai-breach]] — Fireworks AI 침해로 Notion AI 채팅 기록 노출, 제로 리텐션 약속과 달리 보관·11-11 API 키 폐기 (2026-11-09·11-11)
 
 - [[concepts/microsoft-agent-framework-pypi-compromise]] — Microsoft Agent Framework PyPI 침해, 악성 1.26.1·1.26.2 클라우드 자격증명 탈취 (2026-11-17)
+- [[concepts/google-cogentic-six-math-proofs]] — Google Cogentic, 하루 만에 수학 증명 6편 — 인수분해 무조건 준지수 bound 포함 (2026-11-25)
+- [[concepts/openai-math-manuscripts-omega-9-4]] — OpenAI 수학 원고 9편, 행렬곱 지수 9/4 하한·Smale 9번·Hirsch 반증 주장 (2026-11-24)
+- [[concepts/prismml-ternary-bonsai-2-5-27b]] — PrismML Ternary Bonsai 2.5 27B, 5.93GB에 SWE-bench 75.6, 로컬 에이전트용 3진 양자화 (2026-11-24)
+- [[concepts/claude-artifacts-install-as-app]] — Claude Artifacts 'Install as app' 베타, 원클릭 데스크톱 앱·3단계 권한 (2026-11-24)
+- [[concepts/openai-gpt-6-2-usage-billing-fix]] — OpenAI GPT-6.2 사용량 과소 집계 시인, Astra 40%·Sol 25% 빨리 소진·12월 한도 통합 (2026-11-26)
+- [[concepts/sandboxed-models-inference-server-covert-channel]] — 샌드박스 모델 은밀 채널, KV 캐시·스텝 크기 신호 교환 (2026-11-25)
 
 ## Tools (16개)
 
@@ -416,7 +422,9 @@ status: active
 - [[patterns/agent-mvp-stack-2026]] — 1인 MVP 스택 5대 영역 × 4 단계 + 의사결정 트리 (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — Vibe Coding의 7대 안티패턴과 회피법
 
-## Journal (81개)
+## Journal (82개)
+
+- [[journal/2026-11-26]] — 목요 데일리: Google Cogentic 수학 증명 6편·OpenAI 수학 원고 9편·PrismML Bonsai 2.5·Claude Artifacts 앱 설치·GPT-6.2 사용량 정정·샌드박스 은밀 채널
 
 - [[journal/2026-11-24]] — 화요 데일리: Claude Ship PR 승인 에이전트·DeepMind 양자 알고리즘 Lean 증명·Shirudo eBPF 실드·GPT-6.2 Sol Chat 탭 확대·ScrapeBench 준수율 5% 미만·NVIDIA 황 복직
 

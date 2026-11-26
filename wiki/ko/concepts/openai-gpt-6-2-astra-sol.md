@@ -3,11 +3,12 @@ title: "OpenAI GPT-6.2 Astra·Sol 출시 — Astra 가격 20% 인하, 첫 'High'
 category: concepts
 tags: [openai, gpt-6-2, astra, sol, codex, model-release]
 created: 2026-11-18
-updated: 2026-11-24
+updated: 2026-11-26
 sources:
   - "raw/articles/2026-11-18-openai-gpt-6-2-astra-sol.md"
   - "raw/articles/2026-11-20-openai-gpt-6-2-reasoning-lock.md"
   - "raw/articles/2026-11-24-openai-gpt-6-2-sol-chatgpt-chat-retirement.md"
+  - "raw/articles/2026-11-26-openai-gpt-6-2-usage-billing-fix.md"
 related:
   - "[[concepts/gpt-62-astra-codex-leak]]"
   - "[[concepts/openai-gpt6-astra-safety-underperformance]]"
@@ -15,6 +16,7 @@ related:
   - "[[concepts/anthropic-anvil-automated-red-teaming]]"
   - "[[concepts/reasoning-extraction-attack]]"
   - "[[concepts/moonshot-kimi-k31-pro]]"
+  - "[[concepts/openai-gpt-6-2-usage-billing-fix]]"
 status: draft
 confidence: medium
 ---
@@ -62,6 +64,13 @@ OpenAI가 11월 17일 GPT-6.2 Astra(플래그십)와 GPT-6.2 Sol(저가형)을 C
 - **가격**: Enterprise 토큰제 기준 GPT-6.2(GPT-6.2 Sol) 입력 $2 / 캐시 입력 $0.10 / 출력 $10(100만 토큰당). Astra의 4분의 1 수준.
 - **한계**: 성능 수치는 OpenAI 자사 테스트 기준이며 독립 재현이 없다. 배포는 순차적이라 계정마다 며칠 차이 날 수 있다.
 
+## 사용량 과소 집계 정정·12월 한도 통합 (2026-11-26)
+
+- **정정**: 11월 26일, OpenAI 제품·플랫폼 책임자 Thibault Sottiaux가 X에 게시 — GPT-6.2 출시 때 청구 실수로 대부분 사용자의 Astra·Sol 사용량이 잘못 할인돼 집계됐고, 수정 후 같은 작업이 한도를 더 많이 쓴다. 지난주와 비교하면 한도에 Astra 40%, Sol 25% 더 빨리 도달한다. 과거 사용량 차액은 소급 청구하지 않는다.
+- **보상**: Go·Plus·Pro·Business 전 계정에 banked reset 1회 추가. 한 번만 쓸 수 있는 한도 새로고침으로, 한도 중 하나라도 80% 미만으로 떨어져야 사용 가능하다.
+- **12월 변경**: 12월부터 Plus·Pro·Business는 ChatGPT와 Codex가 토큰 단위로 측정한 하나의 한도를 공유한다(Chat과 Work 통합). 인스턴트 채팅은 한도에서 제외.
+- **맥락**: GPT-6.2 출시 일주일 만의 정정으로, '더 적은 토큰으로 같은 일'이라는 출시 메시지와 한도 소진 속도 사이의 간극이 드러난 사례다. 상세: [[concepts/openai-gpt-6-2-usage-billing-fix]]
+
 ## 왜 중요한가 (1인 개발자 관점)
 
 1. **벤치마크와 실사용의 괴리**: 지수 점수는 올랐는데(62점, 2위) 코딩 에이전트 지수는 제자리이고, 출시 당일 평가는 거칠었다. [[concepts/llm-evaluation]]의 교훈 그대로 — 점수만 보고 모델을 갈아타지 말고 내 작업으로 직접 재는 게 먼저다.
@@ -85,8 +94,10 @@ OpenAI가 11월 17일 GPT-6.2 Astra(플래그십)와 GPT-6.2 Sol(저가형)을 C
 - [[concepts/anthropic-anvil-automated-red-teaming]] — 자기개선 'High' 등급과 사이버 'Critical' 등급이 의미하는 안전 거버넌스 변화 (2026-11-12)
 - [[concepts/reasoning-extraction-attack]] — 모델 숨겨진 추론 과정 추출 공격, 추론 체인 잠금의 직접적 배경 (2026-10-02)
 - [[concepts/moonshot-kimi-k31-pro]] — 중국 랩의 증류·추출 차단 움직임과 같은 방향의 경쟁적 방어 (2026-10-24)
+- [[concepts/openai-gpt-6-2-usage-billing-fix]] — GPT-6.2 사용량 과소 집계 정정, Astra 40%·Sol 25% 빨리 소진, 12월 ChatGPT·Codex 한도 통합 (2026-11-26)
 
 ## 참고 소스
 
 - [OpenAI GPT-6.2 Astra·Sol 출시 — Astra 가격 20% 인하, 첫 'High' 자기개선 등급 (WinBuzzer, 11-17)](raw/articles/2026-11-18-openai-gpt-6-2-astra-sol.md)
 - [OpenAI, GPT-6.2 추론 체인 잠금 — 증류 방지, 추출 성공률 54% → 0.2% (KuCoin News, 11-20)](raw/articles/2026-11-20-openai-gpt-6-2-reasoning-lock.md)
+- [OpenAI, GPT-6.2 사용량 과소 집계 시인 — Astra 한도 40%·Sol 25% 빨리 소진, 12월부터 ChatGPT·Codex 한도 통합 (Neowin, 11-26)](raw/articles/2026-11-26-openai-gpt-6-2-usage-billing-fix.md)

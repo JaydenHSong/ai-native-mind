@@ -3,7 +3,7 @@ title: "MCP (Model Context Protocol)"
 category: concepts
 tags: [mcp, anthropic, protocol, tools, integration]
 created: 2026-04-09
-updated: 2026-11-23
+updated: 2026-11-26
 sources:
   - "raw/notes/2026-04-09-mcp-research.md"
   - "raw/articles/2026-05-01-a2a-protocol-spec.md"
@@ -21,6 +21,8 @@ related:
   - "[[tools/zoho-zia]]"
   - "[[concepts/google-workspace-mcp-agentic-oauth]]"
   - "[[concepts/anthropic-agent-skills-foundation]]"
+  - "[[concepts/google-cogentic-six-math-proofs]]"
+  - "[[concepts/claude-artifacts-install-as-app]]"
 status: active
 confidence: high
 ---
@@ -145,6 +147,10 @@ MCP 표준의 신원 레이어가 퍼스트파티에서 실제로 강제되는 �
 ## 2026-11-22 — Agentic AI Foundation, MCP 포함 에이전트 공통 프로토콜 추진
 
 OpenAI·Anthropic·Google·Microsoft 등이 참여하는 Agentic AI Foundation(AAIF)이 자율 에이전트용 오픈 프로토콜 구축을 추진 중이다. Anthropic이 MCP를 기증했고, 이미 10,000개 이상 공개 서버에서 사용 중 — 2025년 12월 기부 당시의 "중립화"가 이번에는 OpenAI의 AGENTS.md, Block의 goose, Coinbase의 x402(1억 3,800만 건 이상 거래 처리) 기증과 함께 "재단 아래 프로토콜 묶음"으로 확장됐다. 상세: [[concepts/anthropic-agent-skills-foundation]]
+
+## 2026-11-26 — Cogentic·Artifacts: MCP 생태계의 두 갈래
+
+같은 주에 나온 두 소식이 MCP가 표준화한 "연결"의 위아래를 보여 준다. 위쪽에서는 Google Cogentic이 멀티 에이전트 증명 하네스(적대적 검증+원장)로 수학 증명 6편을 만들었다고 주장했다 — 에이전트들이 MCP 같은 표준 연결 위에서 협업·검증하는 구조다. 상세: [[concepts/google-cogentic-six-math-proofs]]. 아래쪽에서는 Anthropic의 Claude Artifacts 'Install as app'이 대화에서 만든 도구를 데스크톱 앱으로 설치하게 했다 — MCP·커넥터로 외부 서비스와 연결되는 앱이 사용자 컴퓨터에서 도는 배포 형태다. 권한 3단계(Full computer access 포함)가 핵심이며, Anthropic은 설치 전 검토를 하지 않는다. 상세: [[concepts/claude-artifacts-install-as-app]].
 
 ## 참고 소스
 

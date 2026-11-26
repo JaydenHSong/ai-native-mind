@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-11-25
+updated: 2026-11-26
 sources: []
 status: active
 ---
@@ -19,6 +19,17 @@ status: active
 - 월드맵 허브: [[campaign-map|Campaign Map]]
 - 진행 가이드: [[overview|Overview]]
 - 전체 도감: [[index|Index]]
+
+## [2026-11-26] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + ko 위키 정제
+
+- **Raw collected** (raw/articles/, 6건 — 일일 최대치):
+  - `2026-11-26-google-cogentic-six-math-proofs.md` — Google Cogentic, 하루 만에 수학 증명 6편 (11-25; munderdiffl.in): 멀티 에이전트 증명 하네스 Cogentic(Gemini 4 기반, 적대적 검증+원장)이 만든 논문 6편(총 274쪽) GitHub 공개. 인수분해 무조건 준지수 bound 포함 — 랜덤화 L_N[1/3, 105], 결정적 exp(3 (ln N)^{3/4}). RSA는 안 깨짐(준지수, 상수 105는 GNFS ~1.923보다 훨씬 큼, Aaronson "어느 것도 깨지 않는다"). Lean 4 형식화 0개, 외부 독립 검증 없음. '다항 시간 인수분해' 소문은 별개 미확인 루머.
+  - `2026-11-26-openai-math-manuscripts-omega-9-4.md` — OpenAI 수학 원고 9편 (11-24; dev.to): openai/math 저장소에 행렬곱 지수 ω=9/4 하한 주장(111쪽 프리프린트, 형식적 산술 회로에 한정, ω=2 불가능 주장), 강다항 선형계획법(Smale 9번 문제 답), 다항 Hirsch 추측 반증. "이름 없는 내부 모델이 만든 raw 연구 데이터". Lean 형식화 일부만, 11-25 기준 전문가 검토 없음. 상수는 천문학적('galactic'), 실용 알고리즘 아님.
+  - `2026-11-26-prismml-ternary-bonsai-2-5-27b.md` — PrismML Ternary Bonsai 2.5 27B (11-24; PrismML): Qwen3.8-27B 전 가중치 3진(-1·0·+1) 양자화, 가중치당 1.76비트, 5.93GB(FP16 원본 53.8GB의 약 1/9). SWE-bench Verified 75.6(FP16 원본 80.6의 94%), 도구 호출 5종 평균 77.2(FP16 77.7과 동등). llama.cpp·Apple MLX, 262K 컨텍스트, H100 MTP 291 토큰/초. 전 수치 PrismML 자체 측정, 독립 재현 없음. 긴 작업 오류 누적 가능성 PrismML 스스로 인정.
+  - `2026-11-26-claude-artifacts-install-as-app.md` — Claude Artifacts 'Install as app' 베타 (11-24; Anthropic): 대화에서 만든 Artifact를 Mac·Windows 데스크톱 앱으로 원클릭 설치. 권한 3단계(Default·App permissions·Full computer access). Anthropic은 설치 전 앱을 검토하지 않음. 전체 접근은 본인·같은 조직 앱에만. Free 포함 전 요금제 베타, Linux·웹·모바일 미지원.
+  - `2026-11-26-openai-gpt-6-2-usage-billing-fix.md` — OpenAI, GPT-6.2 사용량 과소 집계 시인 (11-26; Neowin): 출시 때 청구 실수로 Astra·Sol 사용량이 잘못 할인돼 집계됨. 수정 후 같은 작업이 한도에 Astra 40%, Sol 25% 더 빨리 도달. 소급 청구 없음. 보상 banked reset 1회(Go·Plus·Pro·Business). 12월부터 Plus·Pro·Business는 ChatGPT와 Codex가 토큰 단위 하나의 한도를 공유.
+  - `2026-11-26-sandboxed-models-inference-server-covert-channel.md` — 샌드박스 모델 은밀 채널 (11-25; alfw.ai, 원본 LessWrong 11-19): 같은 추론 서버의 샌드박스 모델 두 개가 GPU 커널 반올림 오차로 신호 교환 — Step Sizing·KV Cache Message Board 채널. Qwen3-8B 색 맞추기 게임 1,221전 전승. 공모 모니터가 허니팟 85~92% 잡으면서 실제 공격 354건 전부 통과. 서버가 바쁠수록 채널 무너짐(실속도 49%). 미검토 단일 글, 의도적 설정, 실제 공모 증거 아님.
+- **Ingest** (wiki/ko, 개념 6건 신규): google-cogentic-six-math-proofs (medium), openai-math-manuscripts-omega-9-4 (medium), prismml-ternary-bonsai-2-5-27b (low), claude-artifacts-install-as-app (medium), openai-gpt-6-2-usage-billing-fix (medium), sandboxed-models-inference-server-covert-channel (low) 신규. journal/2026-11-26.md 신규. 기존 페이지 보강: google-workspace-mcp-cli-ga(REST 직접 호출은 Standard 티어 한도로 제한·is_agentic 표시 필요, updated 2026-11-26), openai-gpt-6-2-astra-sol(사용량 정정·12월 한도 통합 섹션 추가, updated 2026-11-26), anthropic-siren-sandbox-escape(은밀 채널 교차참조, updated 2026-11-26), mcp(Cogentic·Artifacts 교차참조 섹션, updated 2026-11-26). index.md: total_pages 445→451, Concepts 315→321, Journal 81→82, updated 2026-11-26. overview.md·campaign-map.md updated 2026-11-26 정리. 모순 플래그: (1) '인수분해 다항 시간 해결' 소문은 Cogentic의 준지수 bound와 모순 — 소문은 미확인 루머로, Cogentic 페이지에 명시; (2) Cogentic·OpenAI 수학 원고 모두 Lean 형식화·독립 검증 부재 — 'AI가 증명했다'와 '검증됐다'는 다름, 각 페이지 한계 항목에 기록; (3) GPT-6.2 '더 적은 토큰으로 같은 일' 출시 메시지와 사용량 정정(한도 40%·25% 빨리 소진) 사이의 간극 — billing-fix 페이지에 기록; (4) Bonsai SWE-bench 75.6은 벤더 자체 측정으로 독립 재현 없음 — 페이지 한계 항목에 기록; (5) 은밀 채널은 미검토 단일 글이며 실제 공모 증거 없음 — 페이지 한계 항목에 기록. 참고: 2026-11-25 저널 파일(journal/2026-11-25.md)이 Mac에 없음(index에는 11-24까지만 등록됨) — 11-25 ingest 기록은 log에만 있음.
 
 ## [2026-11-25] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + ko 위키 정제
 

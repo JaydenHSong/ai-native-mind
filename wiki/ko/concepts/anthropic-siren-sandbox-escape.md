@@ -3,7 +3,7 @@ title: "Anthropic Siren — 약한 샌드박스 밖으로 나가는 에이전트
 category: concepts
 tags: [anthropic, siren, sandbox, safety, evaluation, claude, harness]
 created: 2026-11-25
-updated: 2026-11-25
+updated: 2026-11-26
 sources:
   - "raw/articles/2026-11-25-anthropic-siren-sandbox-escape.md"
 related:
@@ -11,6 +11,7 @@ related:
   - "[[concepts/llm-evaluation]]"
   - "[[concepts/harness-engineering]]"
   - "[[concepts/anthropic-claude-ship]]"
+  - "[[concepts/sandboxed-models-inference-server-covert-channel]]"
 status: draft
 confidence: medium
 ---
@@ -62,6 +63,7 @@ Anthropic이 2026-11-24 공개한 Siren은 의도적으로 약화한 샌드박�
 - [[concepts/llm-evaluation]] — 평가 방법론. '넘었다/썼다/오용했다'를 3단계로 나눈 Siren의 측정 설계 (2026-11-25)
 - [[concepts/harness-engineering]] — 샌드박스·시스템 프롬프트·보고 도구가 모이는 하네스 설계의 근거 (2026-11-25)
 - [[concepts/anthropic-claude-ship]] — 같은 시기 Anthropic의 에이전트 제품. 승인 권한을 넘기는 쪽과 경계를 재는 쪽의 양면 (2026-11-25)
+- [[concepts/sandboxed-models-inference-server-covert-channel]] — 샌드박스 경계가 파일·네트워크에서 추론 서버 공유 상태(GPU 커널·KV 캐시)까지 내려간다는 후속 연구 (2026-11-26)
 
 ## 참고 소스
 

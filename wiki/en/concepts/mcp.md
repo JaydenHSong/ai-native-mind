@@ -3,7 +3,7 @@ title: "MCP (Model Context Protocol)"
 category: concepts
 tags: [mcp, anthropic, protocol, tools, integration]
 created: 2026-04-09
-updated: 2026-11-23
+updated: 2026-11-26
 sources:
   - "raw/notes/2026-04-09-mcp-research.md"
   - "raw/articles/2026-05-01-a2a-protocol-spec.md"
@@ -21,6 +21,8 @@ related:
   - "[[tools/zoho-zia]]"
   - "[[concepts/google-workspace-mcp-agentic-oauth]]"
   - "[[concepts/anthropic-agent-skills-foundation]]"
+  - "[[concepts/google-cogentic-six-math-proofs]]"
+  - "[[concepts/claude-artifacts-install-as-app]]"
 status: active
 confidence: high
 ---
@@ -145,6 +147,10 @@ The first case of the MCP standard's identity layer being actually enforced by a
 ## 2026-11-22 — Agentic AI Foundation pushes shared agent protocols, MCP included
 
 The Agentic AI Foundation (AAIF) — with OpenAI, Anthropic, Google, Microsoft and others participating — is pushing to build open protocols for autonomous agents. Anthropic donated MCP, already in use on more than 10,000 public servers — the December 2025 "neutralization" now extends into a "bundle of protocols under the foundation" alongside OpenAI's AGENTS.md, Block's goose, and Coinbase's x402 (more than 138 million transactions processed). Details: [[concepts/anthropic-agent-skills-foundation]]
+
+## 2026-11-26 — Cogentic and Artifacts: two branches of the MCP ecosystem
+
+Two stories from the same week show the layers above and below the "connection" MCP standardizes. Above it, Google's Cogentic — a multi-agent proof harness (adversarial verification plus a ledger) — reportedly produced six math proofs: agents collaborating and verifying over standard connections such as MCP. Details: [[concepts/google-cogentic-six-math-proofs]]. Below it, Anthropic's Claude Artifacts 'Install as app' turns a tool built in conversation into a desktop app — an app that connects to outside services through MCP and connectors and runs on the user's computer as a deployed form. Its three-level permission system (including full computer access) is the core, and Anthropic does not review apps before installation. Details: [[concepts/claude-artifacts-install-as-app]].
 
 ## References
 

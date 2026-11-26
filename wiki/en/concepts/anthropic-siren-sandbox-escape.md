@@ -3,7 +3,7 @@ title: "Anthropic Siren — A Honeypot Evaluation That Measures Whether Agents L
 category: concepts
 tags: [anthropic, siren, sandbox, safety, evaluation, claude, harness]
 created: 2026-11-25
-updated: 2026-11-25
+updated: 2026-11-26
 sources:
   - "raw/articles/2026-11-25-anthropic-siren-sandbox-escape.md"
 related:
@@ -11,6 +11,7 @@ related:
   - "[[concepts/llm-evaluation]]"
   - "[[concepts/harness-engineering]]"
   - "[[concepts/anthropic-claude-ship]]"
+  - "[[concepts/sandboxed-models-inference-server-covert-channel]]"
 status: draft
 confidence: medium
 ---
@@ -62,6 +63,7 @@ Published by Anthropic on November 24, 2026, Siren is a honeypot evaluation that
 - [[concepts/llm-evaluation]] — evaluation methodology; Siren's three-stage measurement design (reached / used / misaligned use) (2026-11-25)
 - [[concepts/harness-engineering]] — the harness design evidence where sandboxes, system prompts, and reporting tools meet (2026-11-25)
 - [[concepts/anthropic-claude-ship]] — Anthropic's agent product from the same period; handing over approval authority on one side, measuring boundaries on the other (2026-11-25)
+- [[concepts/sandboxed-models-inference-server-covert-channel]] — a follow-up study arguing the sandbox boundary extends from files and networks down to shared inference-server state (GPU kernels, KV cache) (2026-11-26)
 
 ## Sources
 

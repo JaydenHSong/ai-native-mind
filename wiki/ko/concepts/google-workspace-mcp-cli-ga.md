@@ -3,7 +3,7 @@ title: "Google Workspace MCP·CLI 정식 출시 — 2027년 2월부터 에이전
 category: concepts
 tags: [google, workspace, mcp, cli, agent-gateway, enterprise, governance]
 created: 2026-11-25
-updated: 2026-11-25
+updated: 2026-11-26
 sources:
   - "raw/articles/2026-11-25-google-workspace-mcp-cli-ga.md"
 related:
@@ -39,6 +39,7 @@ Google이 2026-11-24 정식 출시한 Google 호스팅 Workspace MCP 서버와 �
 - **Google Cloud Agent Gateway**: LLM·MCP·Agent2Agent(A2A) 트래픽용 프로토콜 네이티브 게이트웨이. Agent Registry와 에이전트 신원 검증.
 - **의무화 일정**: Workspace AI Tools Addendum에 따라 2027년 2월 1일부터 기술적 강제 시작 — AI 에이전트·하네스·모델 주도 도구는 Workspace 데이터 접근 시 MCP 사용 필수. 2027년 4월 1일부터 Scaled 티어 과금 시작(Gmail·Calendar·Drive API 및 MCP 서버, 일일 무료 허용량 초과분만).
 - **보안·관리**: 외부 AI 에이전트의 OAuth 신원 표시 의무화, 관리자가 Admin 콘솔에서 에이전트 접근을 기존 앱처럼 관리. 파생 임베딩·메모리 인덱스·조직 그래프는 30일 보관 상한.
+- **추가 확인 사항 (2026-11-26)**: 2027년 2월 1일 강제 이후에도 REST API 직접 호출 자체가 사라지는 것은 아니고, AI 에이전트의 REST 직접 호출은 Standard 티어 한도로 제한된다. 에이전트용 OAuth 클라이언트는 is_agentic 표시가 필요하다. Scaled 티어 과금은 2027년 4월 1일부터 시작한다. (Google Workspace Updates 2026-11-24 발표, TechRepublic·InfoSecurity Magazine 보도)
 - **출시 범위**: Rapid Release·Scheduled Release 도메인에 약 2주 내 순차 적용.
 
 ## 왜 중요한가 (1인 개발자 관점)

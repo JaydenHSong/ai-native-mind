@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-11-25
-total_pages: 445
+updated: 2026-11-26
+total_pages: 451
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 445 managed pages total | Last updated: 2026-11-25 (daily ingest: 6 AI news sources collected + ko/en wiki refinement) — most pages include a **Start here** block.
+> 451 managed pages total | Last updated: 2026-11-26 (daily ingest: 6 AI news sources collected + ko/en wiki refinement) — most pages include a **Start here** block.
 
 ## Start here
 
@@ -26,7 +26,7 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - **Practice (Chapters 3–5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **Endgame (Chapters 6–7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (315)
+## Concepts (321)
 
 ### Growth map & philosophy
 - [[concepts/ai-native-programmer]] — a developer who uses AI as teammates to achieve team-scale outcomes solo; growth map
@@ -356,6 +356,12 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[concepts/fireworks-notion-ai-breach]] — Fireworks AI breach exposes Notion AI chat records; zero-retention promise broken, API keys revoked Nov 11 (2026-11-09, Nov 11)
 
 - [[concepts/microsoft-agent-framework-pypi-compromise]] — Microsoft Agent Framework compromised on PyPI, malicious 1.26.1 and 1.26.2 steal cloud credentials (2026-11-17)
+- [[concepts/google-cogentic-six-math-proofs]] — Google Cogentic produces six math proofs in a day, including an unconditional subexponential factoring bound (2026-11-25)
+- [[concepts/openai-math-manuscripts-omega-9-4]] — OpenAI's nine math manuscripts: matrix multiplication exponent 9/4 lower bound, Smale Problem 9, Hirsch disproof claims (2026-11-24)
+- [[concepts/prismml-ternary-bonsai-2-5-27b]] — PrismML Ternary Bonsai 2.5 27B: SWE-bench 75.6 in 5.93GB, ternary quantization for local agents (2026-11-24)
+- [[concepts/claude-artifacts-install-as-app]] — Claude Artifacts 'Install as app' beta: one-click desktop apps with three-level permissions (2026-11-24)
+- [[concepts/openai-gpt-6-2-usage-billing-fix]] — OpenAI admits GPT-6.2 usage was undercounted: limits reached 40% faster on Astra, 25% on Sol; December limit merger (2026-11-26)
+- [[concepts/sandboxed-models-inference-server-covert-channel]] — sandboxed models exchange signals through shared inference-server state: KV cache and step-size channels (2026-11-25)
 
 ## Tools (16)
 
@@ -416,7 +422,9 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[patterns/agent-mvp-stack-2026]] — solo MVP stack: 5 areas × 4 stages + decision tree (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — seven major anti-patterns in vibe coding and how to avoid them
 
-## Journal (81)
+## Journal (82)
+
+- [[journal/2026-11-26]] — Thursday daily: Google Cogentic's six math proofs · OpenAI's nine math manuscripts · PrismML Bonsai 2.5 · Claude Artifacts app install · GPT-6.2 usage correction · sandboxed-model covert channel
 
 - [[journal/2026-11-24]] — Tuesday daily: Claude Ship PR approval agents · DeepMind quantum algorithms with Lean proofs · Shirudo eBPF shields · GPT-6.2 Sol in the Chat tab · ScrapeBench compliance below 5% · NVIDIA's Huang reinstatement
 
