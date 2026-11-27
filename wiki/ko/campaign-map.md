@@ -3,7 +3,7 @@ title: "Campaign Map"
 category: meta
 tags: [map, campaign, navigation]
 created: 2026-04-12
-updated: 2026-11-26
+updated: 2026-11-27
 sources:
  - "wiki/overview.md"
  - "wiki/index.md"

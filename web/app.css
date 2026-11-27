@@ -520,6 +520,27 @@ body {
   animation: loading-skeleton 1.5s infinite;
   margin-bottom: 4px;
 }
+
+/* 목록 상태 — 검색 결과 없음·에러 (4단계 상태 디자인 통일, 2026-11-27) */
+.no-results,
+.error-item {
+  list-style: none;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+.no-results-hint {
+  margin-top: 4px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+.error-item {
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  background: var(--bg-surface-hover);
+}
 .skeleton-marker {
   background: var(--skeleton-bg) !important;
   background-size: 200% 100% !important;

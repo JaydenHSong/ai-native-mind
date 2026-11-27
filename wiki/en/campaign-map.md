@@ -3,7 +3,7 @@ title: "Campaign Map"
 category: meta
 tags: [map, campaign, navigation]
 created: 2026-04-12
-updated: 2026-11-26
+updated: 2026-11-27
 sources:
   - "wiki/overview.md"
   - "wiki/index.md"
@@ -166,3 +166,4 @@ This is not a document you read from top to bottom. Pick one chapter that matche
 - 2026-11-22: daily ingest — [[concepts/riemann-hypothesis-proof-claude-lean-verification]]·[[concepts/openai-outage-211-minutes-postgres-replicas]]·[[concepts/together-ai-prompt-leak-openrouter-providers-dropped]]·[[concepts/oracle-openai-fully-funded-300b]] new, [[concepts/anthropic-ipo-first-day-ant-97]]·[[concepts/dragos-canary-tokens-ai-supply-chain]]·[[concepts/ai-debt-boom-cracking]]·[[concepts/deepseek-series-b-15-8b]]·[[concepts/cairn-norforge-ai-agent-hacking-spree]]·[[concepts/agentic-commerce-gemini-tasks-klarna]] reinforced, 428 pages total.
 - 2026-11-23: daily ingest — [[concepts/openai-perplexity-intelligence-pacing]]·[[concepts/zai-glm-5-4-loop-transformer]]·[[concepts/openai-chatgpt-academic-researchers]]·[[concepts/ireland-dpc-ai-supervision]] new, [[concepts/anthropic-agent-skills-foundation]]·[[concepts/ai-training-opt-out-robots-txt]]·[[concepts/mcp]] reinforced, 433 pages total.
 - 2026-11-24: daily ingest — [[concepts/anthropic-claude-ship]]·[[concepts/deepmind-gemini-4-quantum-agents-lean]]·[[concepts/openai-cisco-shirudo]]·[[concepts/scrapebench-agent-scraping-compliance]]·[[concepts/nvidia-huang-reinstated-ceo]] new, [[concepts/openai-gpt-6-2-astra-sol]]·[[concepts/nvidia-huang-ousted-ceo]]·[[concepts/ai-training-opt-out-robots-txt]]·[[concepts/java4shell-codex-openjdk-rce]]·[[tools/claude-code]] reinforced, 439 pages total.
+- 2026-11-27: daily ingest — [[concepts/samsung-spac-private-ai-cloud]]·[[concepts/openai-private-inference-alpha-trials]]·[[concepts/deepl-aure-v2-speech-to-speech]]·[[concepts/cloudflare-search-for-agents]]·[[concepts/gemini-live-guided-vision-ios]] new, [[journal/2026-11-27]] added, [[concepts/claude-duet-proactive-agent]]·[[concepts/websites-block-ai-agents]]·[[concepts/agent-residence]] reinforced, 457 pages total.

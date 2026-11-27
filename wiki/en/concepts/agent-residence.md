@@ -3,7 +3,7 @@ title: "Agent Residence — Local Models vs Cloud Computers"
 category: concepts
 tags: [agent-residence, local-model, open-weights, privacy, cloud-agent, meta, xai, openai, underdog, claude-workspace, microsoft, windows-agents, surface, apple, china, alibaba, muse-spark, mlx]
 created: 2026-10-04
-updated: 2026-10-16
+updated: 2026-11-27
 sources:
   - "raw/articles/2026-10-04-agent-residence-local-vs-cloud.md"
   - "raw/articles/2026-10-07-underdog-ondevice-ai-assistant.md"
@@ -11,6 +11,8 @@ sources:
   - "raw/articles/2026-10-08-microsoft-surface-ultra-agentic-windows.md"
   - "raw/articles/2026-10-15-apple-intelligence-china.md"
   - "raw/articles/2026-10-16-meta-muse-spark-open.md"
+  - "raw/articles/2026-11-27-samsung-spac-private-ai-cloud.md"
+  - "raw/articles/2026-11-27-openai-private-inference-alpha-trials.md"
 related:
   - "[[concepts/persistent-agent]]"
   - "[[patterns/agentic-finance]]"
@@ -19,6 +21,8 @@ related:
   - "[[patterns/agent-safety-runtime]]"
   - "[[concepts/apple-intelligence-china-launch]]"
   - "[[concepts/meta-muse-spark-open]]"
+  - "[[concepts/samsung-spac-private-ai-cloud]]"
+  - "[[concepts/openai-private-inference-alpha-trials]]"
 status: draft
 confidence: medium
 ---
@@ -92,6 +96,14 @@ Meta Muse Spark Open (10/15, TechCrunch, MacRumors) — an 816B (42B active) MoE
 - **The platform (OS) × model (open weights) intersection**: where the 10/8 update's OS-embedded vector (Surface Ultra + Agentic Windows) made "the OS the agent's home," this is **Apple hardware × Meta model** — the local agent stack completing through an OS-vendor/model-vendor pairing. MLX (Apple's silicon inference stack) becomes part of the open-weight distribution channel.
 - Solo-dev takeaway: "local" is now two tiers — consumer GPU (30B-class) and workstation (816B-class) — and the architectural separation of what resides where gets sharper. Sensitive code on-device, heavy agent workloads on Mac-Studio-class local.
 - Details: [[concepts/meta-muse-spark-open]]
+
+## 2026-11-27 update — private compute: the 'anonymous cloud' as a third residence option
+
+Samsung and OpenAI each shipped "private compute" in the same week, adding a third option to the on-device vs cloud dichotomy — **the cloud computes, but without linking the request to who sent it: the "anonymous cloud"**:
+
+- **Samsung SPAC** (Nov 26, found in One UI 9.5 code, unannounced): third-party relay + attestation + public log + anonymous one-time passes. Assessed as following Apple Private Cloud Compute (2024)'s design as-is. Much of Galaxy AI's cloud functionality (AI Select, real-time translation, Now Brief, and more) is in scope. Code-based inference, so confidence is low. Details: [[concepts/samsung-spac-private-ai-cloud]]
+- **OpenAI Private Inference** (Nov 25, small business alpha): confidential computing keeps prompts and responses encrypted in isolated hardware while they are processed — targeting "during the answer", not "after the answer". ZDR with Private Safety Processing runs alongside. But the white paper itself states it does not guarantee "Zero Operator Access across the full inference." Details: [[concepts/openai-private-inference-alpha-trials]]
+- **Framing**: the axes on this page (local · cloud · OS-embedded · sovereignty) gain a fifth question — **"can the cloud compute without knowing who sent it?"** A design chasing local-level privacy and cloud-level performance at once, converging in late 2026 across Samsung, OpenAI, and Apple (2024 PCC).
 
 ## Related concepts
 

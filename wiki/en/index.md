@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-11-26
-total_pages: 451
+updated: 2026-11-27
+total_pages: 457
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 451 managed pages total | Last updated: 2026-11-26 (daily ingest: 6 AI news sources collected + ko/en wiki refinement) — most pages include a **Start here** block.
+> 457 managed pages total | Last updated: 2026-11-27 (daily ingest: 6 AI news sources collected + ko/en wiki refinement) — most pages include a **Start here** block.
 
 ## Start here
 
@@ -26,7 +26,7 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - **Practice (Chapters 3–5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **Endgame (Chapters 6–7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (321)
+## Concepts (326)
 
 ### Growth map & philosophy
 - [[concepts/ai-native-programmer]] — a developer who uses AI as teammates to achieve team-scale outcomes solo; growth map
@@ -362,6 +362,11 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[concepts/claude-artifacts-install-as-app]] — Claude Artifacts 'Install as app' beta: one-click desktop apps with three-level permissions (2026-11-24)
 - [[concepts/openai-gpt-6-2-usage-billing-fix]] — OpenAI admits GPT-6.2 usage was undercounted: limits reached 40% faster on Astra, 25% on Sol; December limit merger (2026-11-26)
 - [[concepts/sandboxed-models-inference-server-covert-channel]] — sandboxed models exchange signals through shared inference-server state: KV cache and step-size channels (2026-11-25)
+- [[concepts/samsung-spac-private-ai-cloud]] — Samsung SPAC private cloud for Galaxy AI found in One UI 9.5 code: relay + attestation + public log, unannounced, code-based inference (2026-11-26)
+- [[concepts/openai-private-inference-alpha-trials]] — OpenAI Private Inference alpha: confidential computing keeps prompts hidden even during processing, small business alpha (2026-11-25)
+- [[concepts/deepl-aure-v2-speech-to-speech]] — DeepL Aure v2: end-to-end speech-to-speech translation, median latency down 50% (vendor claim), 3.3 seconds (2026-11-26)
+- [[concepts/cloudflare-search-for-agents]] — Cloudflare Search for Agents beta: websites expose a search API for AI agents via .well-known/search, billing from December 1 (2026-11-25)
+- [[concepts/gemini-live-guided-vision-ios]] — Gemini Live Guided Vision comes to iOS: spoken camera guidance, developed with blind and low-vision users (2026-11-25)
 
 ## Tools (16)
 
@@ -422,7 +427,9 @@ If you want to move through the wiki like a game, open [[campaign-map|Campaign M
 - [[patterns/agent-mvp-stack-2026]] — solo MVP stack: 5 areas × 4 stages + decision tree (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — seven major anti-patterns in vibe coding and how to avoid them
 
-## Journal (82)
+## Journal (83)
+
+- [[journal/2026-11-27]] — Friday daily: Samsung SPAC private AI cloud · OpenAI Private Inference alpha · DeepL Aure v2 · Claude Duet's four-country expansion · Cloudflare Search for Agents · Gemini Live Guided Vision on iOS
 
 - [[journal/2026-11-26]] — Thursday daily: Google Cogentic's six math proofs · OpenAI's nine math manuscripts · PrismML Bonsai 2.5 · Claude Artifacts app install · GPT-6.2 usage correction · sandboxed-model covert channel
 

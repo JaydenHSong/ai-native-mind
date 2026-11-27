@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-11-26
+updated: 2026-11-27
 sources: []
 status: active
 ---
@@ -29,10 +29,15 @@ This page is a **table of contents and learning map** for the wiki. The links be
 
 ## Current state
 
-- **Total pages**: 439
-- **Categories**: concepts(309), tools(16), patterns(30), journal(81), comparisons(11), meta(4)
+- **Total pages**: 457
+- **Categories**: concepts(326), tools(16), patterns(30), journal(83), comparisons(11), meta(4)
 - **Start date**: 2026-04-06
-- **Latest work (2026-11-24 daily ingest — the day agents were handed authority: Claude Ship approval agents, DeepMind quantum Lean proofs, Shirudo shields, GPT-6.2 Sol in the Chat tab, ScrapeBench compliance rates, and NVIDIA's Huang reinstatement)**:
+- **Latest work (2026-11-27 daily ingest — private compute and the expanding senses of agents: Samsung SPAC, OpenAI Private Inference, DeepL Aure v2, Claude Duet's four-country expansion, Cloudflare Search for Agents, Gemini Live Guided Vision on iOS)**:
+  - 6 raw sources collected (SPAC is unannounced code-based inference from a single source, with the mentioned models' actual use unconfirmed; the Private Inference white paper itself states it does not guarantee Zero Operator Access across the full inference; all Aure v2 figures are DeepL's own measurements with no independent verification; Cloudflare is a "providing" standardization in the opposite direction from blocking; Guided Vision's iOS conditions are undisclosed, with a warning against using it as a navigation substitute; the Duet expansion rests on a product-page update).
+  - 5 new: concepts/samsung-spac-private-ai-cloud (One UI 9.5 code discovery, relay + attestation + public log, unannounced — low), concepts/openai-private-inference-alpha-trials (confidential computing, hidden even during processing, business alpha, ZDR with Private Safety Processing — medium), concepts/deepl-aure-v2-speech-to-speech (end-to-end speech-to-speech, median latency down 50% claimed, 3.3 seconds, vendor figures only — low), concepts/cloudflare-search-for-agents (.well-known/search, hybrid search, billing from December 1, $0.75 per 1,000 queries — medium), concepts/gemini-live-guided-vision-ios (spoken camera guidance, Aira collaboration, no navigation-substitute use — medium), journal/2026-11-27 (active).
+  - 3 reinforced: concepts/claude-duet-proactive-agent (four-country expansion, standalone apps, Team public beta, Enterprise private beta), concepts/websites-block-ai-agents (Cloudflare opposite-direction reinforcement — blocking vs providing polarization), concepts/agent-residence (private compute, anonymous cloud as a third residence option).
+  - EN sync complete. 451→457 pages.
+- **Previous work (2026-11-24 daily ingest — the day agents were handed authority: Claude Ship approval agents, DeepMind quantum Lean proofs, Shirudo shields, GPT-6.2 Sol in the Chat tab, ScrapeBench compliance rates, and NVIDIA's Huang reinstatement)**:
   - 6 raw sources collected (Claude Ship's in-house performance figures are Anthropic's own claims with no independent verification; the DeepMind quantum gains rest on a cost model with no execution on real hardware, and the improved circuits would still exceed the first error-corrected machines' resources; the Shirudo shield package names disagree — .bee vs .upatch; the ScrapeBench paper was published November 8 and revised to v3 on November 11, so November 23 is the digest coverage date; the NVDA gain differs by outlet — about 33% early trading vs 34% vs up to 36.6% intraday).
   - 5 new: concepts/anthropic-claude-ship (Code Review, PR Steward, Claude Approvals, observe-only mode, /ship command, $10,000 promotional credits — medium), concepts/deepmind-gemini-4-quantum-agents-lean (fusion 11.8x, arcsin 290x, Lean proofs, open-source library — medium), concepts/openai-cisco-shirudo (eBPF shields, Java4Shell demonstration, BSD 2-Clause — medium), concepts/scrapebench-agent-scraping-compliance (compliance below 5%, Grok 11%, above 70% with the policy injected, Opus 4.6 over-refusal 98.5% — medium), concepts/nvidia-huang-reinstated-ceo (unanimous reinstatement, Trump's involvement, NVDA +33%, December 1 testimony — medium), journal/2026-11-24 (active).
   - 5 reinforced: concepts/openai-gpt-6-2-astra-sol (Chat tab expansion and 5.6 retirement — image understanding 71.7%, December 23 retirement, Enterprise pricing $2/$0.10/$10), concepts/nvidia-huang-ousted-ceo (reinstatement follow-up), concepts/ai-training-opt-out-robots-txt (ScrapeBench — agents read robots.txt and still do not comply), concepts/java4shell-codex-openjdk-rce (Shirudo — the Java4Shell demonstration), tools/claude-code (new Claude Ship section).

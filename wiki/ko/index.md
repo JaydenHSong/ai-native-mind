@@ -3,15 +3,15 @@ title: "Wiki Index"
 category: meta
 tags: [index, catalog]
 created: 2026-04-06
-updated: 2026-11-26
-total_pages: 451
+updated: 2026-11-27
+total_pages: 457
 sources: []
 status: active
 ---
 
 # ai-native-mind Wiki Index
 
-> 전체 451개 페이지 | 최종 업데이트: 2026-11-26 (데일리 ingest: AI 뉴스 6건 수집 + ko 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
+> 전체 457개 페이지 | 최종 업데이트: 2026-11-27 (데일리 ingest: AI 뉴스 6건 수집 + ko 위키 정제) — 대부분 페이지에 **쉽게 읽기** 블록 있음
 
 ## 쉽게 읽기
 
@@ -26,7 +26,7 @@ status: active
 - **실전(Chapter 3~5)**: [[concepts/ai-orchestration]], [[patterns/agent-planning-to-implementation]], [[patterns/agent-server-harness]]
 - **엔드게임(Chapter 6~7)**: [[concepts/llm-evaluation]], [[concepts/gen-ai-observability]], [[patterns/git-ai-workflow]]
 
-## Concepts (321개)
+## Concepts (326개)
 
 ### 성장 맵 & 철학
 - [[concepts/ai-native-programmer]] — AI를 팀원으로 활용하여 1인이 팀 규모 결과를 내는 개발자, 성장 맵
@@ -362,6 +362,11 @@ status: active
 - [[concepts/claude-artifacts-install-as-app]] — Claude Artifacts 'Install as app' 베타, 원클릭 데스크톱 앱·3단계 권한 (2026-11-24)
 - [[concepts/openai-gpt-6-2-usage-billing-fix]] — OpenAI GPT-6.2 사용량 과소 집계 시인, Astra 40%·Sol 25% 빨리 소진·12월 한도 통합 (2026-11-26)
 - [[concepts/sandboxed-models-inference-server-covert-channel]] — 샌드박스 모델 은밀 채널, KV 캐시·스텝 크기 신호 교환 (2026-11-25)
+- [[concepts/samsung-spac-private-ai-cloud]] — 삼성 SPAC 프라이빗 클라우드, One UI 9.5 코드 발견·미발표·릴레이+attestation (2026-11-26)
+- [[concepts/openai-private-inference-alpha-trials]] — OpenAI Private Inference 알파, 처리 중에도 프롬프트를 못 보게·비즈니스 대상 (2026-11-25)
+- [[concepts/deepl-aure-v2-speech-to-speech]] — DeepL Aure v2, 엔드투엔드 음성→음성 번역·지연 50% 감소 주장 (2026-11-26)
+- [[concepts/cloudflare-search-for-agents]] — Cloudflare Search for Agents 베타, .well-known/search·12월 1일 과금 (2026-11-25)
+- [[concepts/gemini-live-guided-vision-ios]] — Gemini Live Guided Vision iOS, 카메라 음성 안내·Aira 협업 (2026-11-25)
 
 ## Tools (16개)
 
@@ -422,7 +427,9 @@ status: active
 - [[patterns/agent-mvp-stack-2026]] — 1인 MVP 스택 5대 영역 × 4 단계 + 의사결정 트리 (2026-05)
 - [[patterns/vibe-coding-antipatterns]] — Vibe Coding의 7대 안티패턴과 회피법
 
-## Journal (82개)
+## Journal (83개)
+
+- [[journal/2026-11-27]] — 금요 데일리: 삼성 SPAC·OpenAI Private Inference·DeepL Aure v2·Claude Duet 4개국 확대·Cloudflare Search for Agents·Gemini Live Guided Vision iOS
 
 - [[journal/2026-11-26]] — 목요 데일리: Google Cogentic 수학 증명 6편·OpenAI 수학 원고 9편·PrismML Bonsai 2.5·Claude Artifacts 앱 설치·GPT-6.2 사용량 정정·샌드박스 은밀 채널
 

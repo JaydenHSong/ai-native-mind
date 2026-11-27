@@ -3,10 +3,11 @@ title: "Platforms Blocking AI Agents — Yelp, Delta, and Banks Start Turning Ag
 category: concepts
 tags: [ai-agents, blocking, yelp, delta, banks, data-licensing, agentic-web, charles-schwab, jpmorgan]
 created: 2026-10-18
-updated: 2026-11-21
+updated: 2026-11-27
 sources:
   - "raw/articles/2026-10-18-websites-block-ai-agents.md"
   - "raw/articles/2026-11-21-amazon-perplexity-comet-hearing.md"
+  - "raw/articles/2026-11-27-cloudflare-search-for-agents.md"
 related:
   - "[[concepts/apple-own-ai-agent-macos-friction]]"
   - "[[patterns/agentic-commerce]]"
@@ -14,6 +15,7 @@ related:
   - "[[concepts/meta-sierra-poppy-protocol]]"
   - "[[concepts/cert-in-ai-agents-attack-vectors]]"
   - "[[concepts/tencent-rogue-agents]]"
+  - "[[concepts/cloudflare-search-for-agents]]"
 status: draft
 confidence: high
 ---
@@ -33,6 +35,14 @@ The Verge (Emma Roth, 10/17) reported that Yelp, Delta, JPMorgan Chase, Charles 
 - **Amazon vs Perplexity**: a court first ordered Perplexity to stop agent purchases, an appeals court overturned that in August, Amazon filed an amended suit. The jurisprudence is swinging.
 - **Amazon v Perplexity hearing (Nov 20)**: at a hearing in San Francisco federal court, Judge Chesney stayed discovery and expressed skepticism about whether Amazon's amended complaint can overcome the Ninth Circuit's August 2026 ruling vacating the injunction ("It is the user who accesses Amazon's computers"). She did suggest at least one claim about Perplexity employee testing may survive. No final decision yet.
 - **Meta's counter**: "turning away a personal agent means turning away the customer behind it." Partnerships with Walmart, Gap, Sephora, Best Buy — Muse can purchase there. Shopify opened its network.
+
+## 2026-11-25 update — the opposite direction: Cloudflare 'Search for Agents' beta
+
+The exact opposite move from blocking — a site "providing" agent access as a standard (November 25, Cloudflare official blog):
+
+- **What it is**: a dashboard toggle that makes your own website searchable by AI agents. It exposes a `https://<domain>/.well-known/search` endpoint with hybrid (vector + keyword) search; results are Markdown content, not AI-generated answers. Available on all plans, including Free.
+- **Pricing**: billing starts December 1, 2026; after the included 1,000 semantic searches per month, hybrid queries cost $0.75 per 1,000 — the site owner pays every time an agent searches.
+- **Reading**: blocking (locking the door) and providing (opening a dedicated counter) coexist in the same month — the rules of the agentic web are splitting into a "block it or open it" polarization. Details: [[concepts/cloudflare-search-for-agents]]
 
 ## Why it matters
 

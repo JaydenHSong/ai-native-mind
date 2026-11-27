@@ -3,10 +3,11 @@ title: "플랫폼의 에이전트 차단 — Yelp·Delta·은행이 에이전트
 category: concepts
 tags: [ai-agents, blocking, yelp, delta, banks, data-licensing, agentic-web, charles-schwab, jpmorgan]
 created: 2026-10-18
-updated: 2026-11-21
+updated: 2026-11-27
 sources:
   - "raw/articles/2026-10-18-websites-block-ai-agents.md"
   - "raw/articles/2026-11-21-amazon-perplexity-comet-hearing.md"
+  - "raw/articles/2026-11-27-cloudflare-search-for-agents.md"
 related:
   - "[[concepts/apple-own-ai-agent-macos-friction]]"
   - "[[patterns/agentic-commerce]]"
@@ -14,6 +15,7 @@ related:
   - "[[concepts/meta-sierra-poppy-protocol]]"
   - "[[concepts/cert-in-ai-agents-attack-vectors]]"
   - "[[concepts/tencent-rogue-agents]]"
+  - "[[concepts/cloudflare-search-for-agents]]"
 status: draft
 confidence: high
 ---
@@ -43,6 +45,14 @@ confidence: high
 - **Amazon×Perplexity**: 법원이 처음엔 Perplexity의 에이전트 구매 금지 명령 → 8월 항소법원이 뒤집음 → Amazon 수정 소송. 사법 판단도 요동 중.
 - **Amazon v Perplexity 심리(11-20)**: 샌프란시스코 연방법원 심리에서 Chesney 판사가 디스커버리를 중단하고, Amazon의 수정 소장이 2026년 8월 제9순회 판결("Amazon 컴퓨터에 접근하는 것은 사용자다")을 극복할 수 있을지 회의감을 드러냈다. 다만 Perplexity 직원 테스트 관련 청구 최소 1건은 살아남을 가능성을 시사했다. 최종 결정은 아직 없다.
 - **Meta 반론**: "개인 에이전트를 외면하는 건 그 뒤의 고객을 외면하는 것." Walmart·Gap·Sephora·Best Buy와 파트너십 — Muse 구매 가능. Shopify도 네트워크 개방.
+
+## 2026-11-25 보강 — 반대 방향: Cloudflare 'Search for Agents' 베타
+
+차단과 정반대 움직임 — 사이트가 에이전트 접근을 '제공'하는 표준화 (11월 25일, Cloudflare 공식 블로그):
+
+- **내용**: 대시보드 토글 하나로 자기 웹사이트를 AI 에이전트가 검색할 수 있는 상태로 만든다. `https://<도메인>/.well-known/search` 엔드포인트 노출, 하이브리드(벡터+키워드) 검색, 결과는 AI 생성 답이 아니라 Markdown 콘텐츠. Free 포함 전 플랜.
+- **과금**: 2026년 12월 1일부터 과금 시작, 월 의미 검색 1,000건 포함 초과 시 하이브리드 질의 1,000건당 $0.75 — 에이전트가 검색할 때마다 사이트 소유자가 부담.
+- **읽기**: 차단(입구를 잠근다)과 제공(전용 창구를 낸다)이 같은 달에 공존 — 에이전틱 웹의 규칙이 '막을 것인가, 열 것인가'의 양극화로 갈라지고 있다. 상세: [[concepts/cloudflare-search-for-agents]]
 
 ## 왜 중요한가 (1인 개발자 관점)
 

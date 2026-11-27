@@ -3,7 +3,7 @@ title: "Wiki Overview"
 category: meta
 tags: [overview, summary]
 created: 2026-04-06
-updated: 2026-11-26
+updated: 2026-11-27
 sources: []
 status: active
 ---
@@ -29,10 +29,15 @@ status: active
 
 ## 현재 상태
 
-- **총 페이지**: 439개
-- **카테고리**: concepts(309), tools(16), patterns(30), journal(81), comparisons(11), meta(4)
+- **총 페이지**: 457개
+- **카테고리**: concepts(326), tools(16), patterns(30), journal(83), comparisons(11), meta(4)
 - **시작일**: 2026-04-06
-- **최근 작업 (2026-11-24 데일리 ingest — 에이전트에게 권한을 주는 날: Claude Ship 승인 에이전트·DeepMind 양자 Lean 증명·Shirudo 실드·GPT-6.2 Sol Chat 탭·ScrapeBench 준수율·NVIDIA 황 복직)**:
+- **최근 작업 (2026-11-27 데일리 ingest — 프라이버시 컴퓨트와 에이전트의 감각 확장: 삼성 SPAC·OpenAI Private Inference·DeepL Aure v2·Claude Duet 4개국 확대·Cloudflare Search for Agents·Gemini Live Guided Vision iOS)**:
+  - raw 6건 수집 (SPAC은 미발표·코드 기반 추론으로 단일 출처, 언급 모델 실제 사용 미확인; Private Inference 백서 스스로 Zero Operator Access 전면 보장 아님 명시; Aure v2 모든 수치는 DeepL 자사 측정으로 독립 검증 없음; Cloudflare는 차단과 반대 방향의 제공 표준화; Guided Vision iOS 조건 미공개·내비게이션 대체 금지 경고; Duet 확대는 제품 페이지 업데이트 기반).
+  - 신규 5개: concepts/samsung-spac-private-ai-cloud (One UI 9.5 코드 발견·릴레이+attestation+공개 기록·미발표 — low), concepts/openai-private-inference-alpha-trials (기밀 컴퓨팅·처리 중에도 못 보게·비즈니스 알파·ZDR with Private Safety Processing — medium), concepts/deepl-aure-v2-speech-to-speech (엔드투엔드 음성→음성·지연 50% 감소 주장·3.3초·자사 수치만 — low), concepts/cloudflare-search-for-agents (.well-known/search·하이브리드 검색·12월 1일 과금·1,000건당 $0.75 — medium), concepts/gemini-live-guided-vision-ios (카메라 음성 안내·Aira 협업·내비게이션 대체 금지 — medium), journal/2026-11-27 (active).
+  - 보강 3개: concepts/claude-duet-proactive-agent (4개국 확대·독립 앱·Team 퍼블릭 베타·Enterprise 프라이빗 베타), concepts/websites-block-ai-agents (Cloudflare 반대 방향 보강 — 차단 vs 제공 양극화), concepts/agent-residence (프라이버시 컴퓨트·익명 클라우드 세 번째 옵션 보강).
+  - ko 위키 정제 완료. 총 451→457페이지.
+- **직전 작업 (2026-11-24 데일리 ingest — 에이전트에게 권한을 주는 날: Claude Ship 승인 에이전트·DeepMind 양자 Lean 증명·Shirudo 실드·GPT-6.2 Sol Chat 탭·ScrapeBench 준수율·NVIDIA 황 복직)**:
   - raw 6건 수집 (Claude Ship 자사 성과 수치는 Anthropic 주장으로 독립 검증 없음; DeepMind 양자 개선 수치는 비용 모델 기준이며 실제 하드웨어 실행 검증 없음, 개선 후에도 첫 오류정정 머신 자원 초과 가능; Shirudo 실드 패키지 명칭 .bee vs .upatch 불일치; ScrapeBench 논문은 11월 8일 공개·11월 11일 v3 개정, 11월 23일은 다이제스트 보도 시점; NVDA 상승폭 매체 간 차이 — 장 초반 약 +33% vs +34% vs 장중 최대 +36.6%).
   - 신규 5개: concepts/anthropic-claude-ship (Code Review·PR Steward·Claude Approvals, observe-only 모드, /ship 명령, $10,000 프로모션 크레딧 — medium), concepts/deepmind-gemini-4-quantum-agents-lean (핵융합 11.8배·arcsin 290배·Lean 증명·오픈소스 라이브러리 — medium), concepts/openai-cisco-shirudo (eBPF 실드·Java4Shell 실증·BSD 2-Clause — medium), concepts/scrapebench-agent-scraping-compliance (준수율 5% 미만·Grok 11%·정책 주입 시 70% 초과·Opus 4.6 과잉 거부 98.5% — medium), concepts/nvidia-huang-reinstated-ceo (만장일치 복직·트럼프 개입·NVDA +33%·12월 1일 증언 — medium), journal/2026-11-24 (active).
   - 보강 5개: concepts/openai-gpt-6-2-astra-sol (Chat 탭 확대·5.6 퇴역 — 이미지 이해 71.7%·12월 23일 퇴역·Enterprise 가격 $2/$0.10/$10), concepts/nvidia-huang-ousted-ceo (복직 후속 보강), concepts/ai-training-opt-out-robots-txt (ScrapeBench 보강 — robots.txt를 읽고도 안 지키는 에이전트), concepts/java4shell-codex-openjdk-rce (Shirudo 보강 — Java4Shell 실증), tools/claude-code (Claude Ship 섹션 추가).

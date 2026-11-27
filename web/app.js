@@ -14,6 +14,11 @@ let currentQuery = "";
 
 let currentLanguage = localStorage.getItem("lang") || "ko";
 
+// 상태 디자인 (2026-11-27): '문서를 찾을 수 없음'이 빈 화면 마크업을 덮어쓰면
+// 홈으로 돌아올 때 되돌릴 수 있게 최초 마크업을 보관한다
+// (모듈 스크립트는 지연 실행이라 이 시점에 DOM이 준비되어 있다)
+const placeholderHomeHTML = document.getElementById("reading-placeholder")?.innerHTML ?? "";
+
 // 다국어 (i18n) 사전 정의
 const i18n = {
   ko: {
@@ -25,6 +30,9 @@ const i18n = {
     tabGraph: "지식 관계망",
     fallbackNotice: "영어 번역 준비 중 - 국문 본문 제공",
     noResults: "검색 결과가 없습니다.",
+    noResultsHint: "다른 말로 검색해 보세요. 초성만 쳐도 돼요.",
+    loadError: "이야기를 불러오지 못했어요. 잠깐 뒤에 새로고침해 보세요.",
+    renderError: "화면을 그리는 중에 문제가 생겼어요. 새로고침해 보세요.",
     relatedDocs: "연관 지식 링크",
     originalSources: "참고 및 출처 소스",
     recentTitle: "최근에 들어온 이야기",
@@ -77,6 +85,9 @@ const i18n = {
     tabGraph: "Knowledge Graph",
     fallbackNotice: "Translation in progress. Showing Korean version.",
     noResults: "No results found.",
+    noResultsHint: "Try different words — Korean initial consonants work too.",
+    loadError: "Couldn't load the stories. Please refresh and try again in a moment.",
+    renderError: "Something went wrong while drawing the page. Please refresh and try again.",
     relatedDocs: "Related Knowledge Links",
     originalSources: "Sources & References",
     recentTitle: "Recently added stories",
@@ -413,7 +424,8 @@ async function fetchWikiData() {
     console.error("데이터 로드 실패:", error);
     const listElement = document.getElementById("document-list");
     if (listElement) {
-      listElement.innerHTML = `<li class="error-item">데이터 로드 실패: ${error.message}</li>`;
+      // 기술적인 원문(error.message)은 콘솔에만 남기고, 화면에는 쉬운 말로만 알린다
+      listElement.innerHTML = `<li class="error-item">${i18n[currentLanguage].loadError}</li>`;
     }
     return;
   }
@@ -434,7 +446,7 @@ async function fetchWikiData() {
     window.addEventListener("hashchange", handleRouting);
   } catch (error) {
     console.error("위키 렌더링 실패:", error);
-    showNonBlockingError(`렌더링 오류: ${error.message}`);
+    showNonBlockingError(i18n[currentLanguage].renderError);
   }
 }
 
@@ -520,7 +532,7 @@ function renderDocumentList(data) {
   const t = i18n[currentLanguage];
   
   if (data.length === 0) {
-    listElement.innerHTML = `<li class="no-results">${t.noResults}</li>`;
+    listElement.innerHTML = `<li class="no-results"><div>${t.noResults}</div><div class="no-results-hint">${t.noResultsHint}</div></li>`;
     return;
   }
 
@@ -925,15 +937,18 @@ async function handleRouting() {
     loadDocument(doc, isFallback);
   } else {
     console.warn("문서를 찾을 수 없습니다:", hash);
-    // 깨진 링크이거나 찾지 못한 경우
+    // 깨진 링크이거나 찾지 못한 경우 — 읽던 문서가 있어도 에러 화면이 보이게 패널을 연다
     const placeholder = document.getElementById("reading-placeholder");
     if (!placeholder) return;
+    const reader = document.getElementById("reading-content");
+    if (reader) reader.classList.add("hidden");
+    placeholder.classList.remove("hidden");
     placeholder.innerHTML = `
       <div class="placeholder-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
       <h3>${currentLanguage === 'ko' ? '문서를 찾을 수 없음' : 'Document Not Found'}</h3>
       <p>"${hash}" ${currentLanguage === 'ko' ? '경로는 위키에 존재하지 않거나 잘못된 링킹입니다.' : 'path does not exist in the wiki or contains an invalid link.'}</p>
+      <p><a href="#">${currentLanguage === 'ko' ? '홈으로 돌아가기' : 'Back to home'}</a></p>
     `;
-    openReadingPanel();
   }
 }
 
@@ -1166,7 +1181,14 @@ function openReadingPanel() {
 function closeReadingPanel() {
   const placeholder = document.getElementById("reading-placeholder");
   const content = document.getElementById("reading-content");
-  if (placeholder) placeholder.classList.remove("hidden");
+  if (placeholder) {
+    placeholder.classList.remove("hidden");
+    // '문서를 찾을 수 없음' 상태가 빈 화면(최근 목록) 마크업을 덮어쓴 경우 원래대로 되돌린다
+    if (!document.getElementById("placeholder-recent-list") && placeholderHomeHTML) {
+      placeholder.innerHTML = placeholderHomeHTML;
+      renderHomePlaceholder();
+    }
+  }
   if (content) content.classList.add("hidden");
 }
 

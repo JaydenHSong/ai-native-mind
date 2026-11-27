@@ -3,7 +3,7 @@ title: "Wiki Log"
 category: meta
 tags: [log, history]
 created: 2026-04-06
-updated: 2026-11-26
+updated: 2026-11-27
 sources: []
 status: active
 ---
@@ -19,6 +19,17 @@ status: active
 - 월드맵 허브: [[campaign-map|Campaign Map]]
 - 진행 가이드: [[overview|Overview]]
 - 전체 도감: [[index|Index]]
+
+## [2026-11-27] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + ko 위키 정제
+
+- **Raw collected** (raw/articles/, 6건 — 일일 최대치):
+  - `2026-11-27-samsung-spac-private-ai-cloud.md` — 삼성 SPAC 프라이빗 클라우드 (11-26; Android Authority): One UI 9.5 Beta 1(Galaxy S26 Ultra) 코드에서 발견. 애플 Private Cloud Compute와 같은 설계 — 서드파티 릴레이·attestation·공개 기록·익명 일회성 패스. 4개 앱에 SPAC SDK(Photo Editor·IntelliVoiceService·Smart Capture·PhotoRemasterService), 서버 게이트웨이 'Arcane'. 언급 모델 Gemma 4·Qwen 3.6·FLUX.2 klein 4B·Gauss는 코드상 참조일 뿐 실제 사용 미확인. 삼성 미발표, 베타에서 비활성화. 11-27 업데이트: Android Authority가 AI Select와 함께 제한적 동작 확인.
+  - `2026-11-27-openai-private-inference-alpha-trials.md` — OpenAI Private Inference 알파 (11-25; Unite.AI): 올트먼 X 게시물 — 소수 비즈니스 고객 대상 테스트 시작. 기밀 컴퓨팅으로 프롬프트·응답이 처리 중에도 암호화 격리 하드웨어에서 실행, '답변 중' 프라이버시. DevDay 2026 Private Intelligence 두 번째 축. 가격·지원 모델·출시일 미공개, 소비자용 ChatGPT 아님. ZDR with Private Safety Processing 병행(고객 소유 클라우드 암호화 저장, 최소 30일 보관). 10-26 백서: 키는 신원·하드웨어 증명·측정값 검증 뒤 해제, 내부 키 매일 교체·30일 뒤 파기. 단 표준 안전 런타임은 '추론 전체 Zero Operator Access 보장' 미제공 명시.
+  - `2026-11-27-deepl-aure-v2-speech-to-speech.md` — DeepL Aure v2 (11-26; PR Newswire): 도쿄 Unmute Summit 출시. 엔드투엔드 음성→음성 직통 번역, 전작 대비 중앙값 번역 지연 50% 감소 주장. DeepL 내부 연구(11월, 10개 언어쌍·1분 녹음) 기준 번역 단어 절반이 3.3초 안에 들림. 6개 경쟁 시스템 대비 전 언어쌍 품질 우위 주장 — 모두 자사 측정, 독립 검증 없음. 출시 언어 6개(영·독·불·스페인·일·한). DeepL Voice 고객 즉시 제공, 가격 미공개. 전작 Aure 11-11 출시 — 15일 만의 후속. 2026년 3분기 음성 분 전년 대비 8배 이상.
+  - `2026-11-27-claude-duet-global-expansion.md` — Claude Duet 4개국 확대 (11-26; Gadgets360): 제품 페이지 업데이트로 인도·인도네시아·브라질·일본 추가 — 미국 외 첫 확대. Pro·Max·Ultra 구독자 대기자 명단 방식 유지. iOS·안드로이드 독립 앱(채팅·태스크·만들기 3탭), 폰 잠가도 클라우드에서 작업 지속. Opus 5.5 기반, 6,000+ 커넥터, 아침 브리프·커넥터 감시·답장 초안. 이메일 발송·결제·삭제 전 승인 필수. 개인 Pro·Max·Ultra 연구 프리뷰, Team 퍼블릭 베타, Enterprise 프라이빗 베타. 연구 프리뷰라 스레드 오독·긴급도 오판 가능 명시.
+  - `2026-11-27-cloudflare-search-for-agents.md` — Cloudflare Search for Agents 베타 (11-25; Cloudflare Blog): 대시보드 토글 하나로 자기 웹사이트를 AI 에이전트용 검색 API로. `.well-known/search` 엔드포인트 노출, GET·HTTP QUERY(RFC 10008), 결과는 AI 생성 답이 아니라 Markdown 콘텐츠. 하이브리드(벡터+키워드) 검색, Discover 크롤링(최대 10만 페이지, 24시간 재동기화), 임베딩 @cf/qwen/qwen3-embedding-0.6b. 과금 12월 1일부터, 월 의미 검색 1,000건 포함 초과 시 하이브리드 질의 1,000건당 $0.75 — 에이전트 검색 시 사이트 소유자 부담. 봇 관리·AI Crawl Control·WAF 그대로 적용. 에이전트의 올바른 해석·인용 보장 아님 명시.
+  - `2026-11-27-gemini-live-guided-vision-ios.md` — Gemini Live Guided Vision iOS (11-25; Digital Trends): @GeminiApp X 게시물 — 10월 1일 안드로이드 출시 이후 첫 플랫폼 확대. 카메라 공유 시 보이는 것을 실시간 설명 + 카메라 위치 음성 안내(팬·틸트·뒤로 물러나기). 시각장애인·저시력 사용자와 개발, Aira 협업, 인도·브라질·싱가포르·인도네시아·일본 테스트. 용도: 포장지 작은 글씨·세탁기 다이얼·이어버드 찾기·옷 색·방 구조 설명. iOS 요구 버전·제공 국가·언어·요금제 미공개, 도움말은 안드로이드 절차만. 내비게이션·장애물 감지·이동 보조기구 대체 금지 경고. Gemini 스마트 글라스(12월 10일 판매)도 Guided Vision 지원.
+- **Ingest** (wiki/ko, 개념 5건 신규 + 보강 3건 + 저널 1건): samsung-spac-private-ai-cloud (low), openai-private-inference-alpha-trials (medium), deepl-aure-v2-speech-to-speech (low), cloudflare-search-for-agents (medium), gemini-live-guided-vision-ios (medium) 신규; claude-duet-proactive-agent(4개국 확대·독립 앱·플랜별 상태, updated 2026-11-27), websites-block-ai-agents(Cloudflare 반대 방향 보강, updated 2026-11-27), agent-residence(프라이버시 컴퓨트·익명 클라우드 보강, updated 2026-11-27) 보강; journal/2026-11-27 신규. index.md: total_pages 451→457, Concepts 321→326, Journal 82→83, updated 2026-11-27. overview.md 최근 작업 11-27 추가(총 457페이지, concepts 326·journal 83), campaign-map.md updated 2026-11-27 정리. 모순 플래그 7건: (1) SPAC은 미발표·코드 기반 추론으로 Android Authority 단일 출처, 언급 모델(Gemma·Qwen·FLUX.2·Gauss) 실제 사용 미확인 — spac 페이지 한계 항목에 기록; (2) Private Inference 백서 스스로 '추론 전체 Zero Operator Access 보장' 미제공 명시 — '못 본다'는 주장과 보장 범위 간극, private-inference 페이지 한계 항목에 기록; (3) Aure v2 모든 성능 수치(지연 50% 감소·3.3초·6개 시스템 우위)는 DeepL 자사 측정으로 독립 검증 없음, 전작 출시 15일 만의 후속 — aure 페이지 한계 항목에 기록; (4) Cloudflare Search for Agents는 websites-block-ai-agents의 차단과 반대 방향 — 모순이 아니라 같은 달의 대립축으로, 양 페이지에 교차 보강; (5) Guided Vision iOS 조건(요구 버전·국가·언어·요금제) 미공개, 도움말은 안드로이드 절차만, Google 스스로 내비게이션 대체 금지 경고 — guided-vision 페이지 한계 항목에 기록; (6) Duet 확대는 제품 페이지 업데이트 기반 — Anthropic 공식 발표문이 아니라 페이지 변경 확인, 독립 앱은 11월 초부터 스토어에 있었음; (7) overview.md 본문은 11-24까지만 반영돼 있고 11-25/11-26 항목이 없음(11-25·11-26 실행에서 frontmatter만 갱신된 기존 드리프트) — 11-27 항목을 최근 작업으로 추가했으나 11-25/26 본문 항목은 여전히 없음, 후속 정리 필요. 참고: 2026-11-25 저널 파일(journal/2026-11-25.md)이 ko/en 모두 Mac에 없음(index에는 11-24까지만 등록됨) — 11-25 ingest 기록은 log에만 있음.
 
 ## [2026-11-26] ingest | 데일리 AI 뉴스 스크랩 — raw 6건 + ko 위키 정제
 

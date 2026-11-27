@@ -3,9 +3,10 @@ title: "Claude Duet — Anthropic의 상시 대기 에이전트 리서치 프리
 category: concepts
 tags: [anthropic, claude-duet, proactive-agent, opus-5-5, agent-ux, approval-gate, marketplace-connectors, persistent-agent]
 created: 2026-10-22
-updated: 2026-10-22
+updated: 2026-11-27
 sources:
   - "raw/articles/2026-10-22-claude-duet.md"
+  - "raw/articles/2026-11-27-claude-duet-global-expansion.md"
 related:
   - "[[concepts/persistent-agent]]"
   - "[[patterns/agent-authority-model]]"
@@ -29,7 +30,7 @@ confidence: high
 
 ## 한줄 정의
 
-2026-10-21 Anthropic이 공개한 Claude Opus 5.5 기반 상시 대기 에이전트 리서치 프리뷰 — 모닝 브리프 + 주기적 앱 점검, 6,000+ 커넥터 연동, 결제·서명·삭제 사전 승인 게이트, 미국 Pro/Max 대기목록.
+2026-10-21 Anthropic이 공개한 Claude Opus 5.5 기반 상시 대기 에이전트 리서치 프리뷰 — 모닝 브리프 + 주기적 앱 점검, 6,000+ 커넥터 연동, 결제·서명·삭제 사전 승인 게이트. 2026-11-25~26 제품 페이지 업데이트로 미국 외 인도·인도네시아·브라질·일본 4개국으로 확대, Pro·Max·Ultra 구독자 대기목록, iOS·안드로이드 독립 앱 제공.
 
 ## 핵심 내용
 
@@ -41,6 +42,16 @@ confidence: high
 - **접근/과금**: 미국 Pro/Max 구독자 대기목록 방식. 백그라운드 점검도 플랜 사용 한도를 소모.
 - **패턴 수렴**: ChatGPT Dots (10-02) · Meta Muse (10-13) 에 이어 6주 내 세 번째 빅랩 proactive 에이전트 — 에이전트 UX가 "상시 대기/브리프/승인 게이트"로 수렴 중.
 
+## 2026-11-25~26 보강 — 인도·인도네시아·브라질·일본으로 첫 지역 확대
+
+Duet 발표(10월 21일) 이후 첫 지역 확대 (11월 25~26일 제품 페이지 업데이트, Gadgets360·The Hindu BusinessLine):
+
+- **확대 범위**: 미국 외 인도·인도네시아·브라질·일본 4개국 추가. 대상은 Pro·Max·Ultra 구독자, 대기자 명단(waitlist) 방식 유지. 명단에서 풀리면 이메일로 통보.
+- **앱**: iOS(App Store)·안드로이드(Google Play) 독립 앱 제공. 채팅·태스크(진행 중인 작업 실시간 표시)·만들기(Make, 결과물 보관) 3개 탭. 폰을 잠가도 클라우드에서 작업을 계속 수행.
+- **기능**: 아침 브리프(중요 업데이트·놓친 알림·메시지), 하루 중 커넥터 감시와 알림, Gmail·Slack 등과 연동해 답장 초안 작성. 이메일 발송·결제·삭제 전에는 사용자 승인 필수.
+- **플랜별 상태**: 개인 Pro·Max·Ultra는 연구 프리뷰, Team은 퍼블릭 베타, Enterprise는 프라이빗 베타.
+- **주의**: 연구 프리뷰라 스레드를 잘못 읽거나 긴급도를 잘못 판단할 수 있다고 Anthropic이 명시. 독립 앱 자체는 11월 초부터 스토어에 있었고, 이번 뉴스는 지역 확대가 핵심.
+
 ## 왜 중요한가 (1인 개발자 관점)
 
 1. **에이전트 UX의 수렴점**: 6주 새 3개 빅랩이 같은 형태 (브리프+순찰+승인 게이트) 로 나옴 — 이게 "에이전트 제품의 표준 인터페이스"가 될 가능성이 높다. 본인 서비스를 만들 때 이 UX 문법을 차용하면 사용자가 이미 익숙한 패턴이다.
@@ -49,6 +60,6 @@ confidence: high
 
 ## 한계 (명시)
 
-- 리서치 프리뷰 단계 — 미국 Pro/Max 대기목록, 정식 출시 시점·가격 미정.
+- 리서치 프리뷰 단계 — 5개국(미국·인도·인도네시아·브라질·일본) Pro·Max·Ultra 대기목록, 정식 출시 시점·가격 미정. Team 퍼블릭 베타, Enterprise 프라이빗 베타.
 - 승인 게이트의 UX (승인 피로·우회 가능성) 는 아직 검증되지 않음.
 - 백그라운드 점검의 실제 한도 소모량은 공개되지 않음.

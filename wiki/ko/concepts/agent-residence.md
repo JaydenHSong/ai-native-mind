@@ -3,7 +3,7 @@ title: "에이전트의 상주 형태 — 로컬 모델 vs 클라우드 컴퓨�
 category: concepts
 tags: [agent-residence, local-model, open-weights, privacy, cloud-agent, meta, xai, openai, underdog, claude-workspace, microsoft, windows-agents, surface, apple, china, alibaba, muse-spark, mlx]
 created: 2026-10-04
-updated: 2026-10-16
+updated: 2026-11-27
 sources:
   - "raw/articles/2026-10-04-agent-residence-local-vs-cloud.md"
   - "raw/articles/2026-10-07-underdog-ondevice-ai-assistant.md"
@@ -11,6 +11,8 @@ sources:
   - "raw/articles/2026-10-08-microsoft-surface-ultra-agentic-windows.md"
   - "raw/articles/2026-10-15-apple-intelligence-china.md"
   - "raw/articles/2026-10-16-meta-muse-spark-open.md"
+  - "raw/articles/2026-11-27-samsung-spac-private-ai-cloud.md"
+  - "raw/articles/2026-11-27-openai-private-inference-alpha-trials.md"
 related:
   - "[[concepts/persistent-agent]]"
   - "[[patterns/agentic-finance]]"
@@ -19,6 +21,8 @@ related:
   - "[[patterns/agent-safety-runtime]]"
   - "[[concepts/apple-intelligence-china-launch]]"
   - "[[concepts/meta-muse-spark-open]]"
+  - "[[concepts/samsung-spac-private-ai-cloud]]"
+  - "[[concepts/openai-private-inference-alpha-trials]]"
 status: draft
 confidence: medium
 ---
@@ -92,6 +96,14 @@ Meta Muse Spark Open (10/15, TechCrunch·MacRumors) — 816B(활성 42B) MoE 오
 - **플랫폼(OS) × 모델(오픈웨이트)의 교차**: 10/8 보강의 OS 내장(Surface Ultra + Agentic Windows)이 "OS가 에이전트의 집"이었다면, 이번은 **Apple 하드웨어 × Meta 모델** — OS 벤더와 모델 벤더의 결합으로 로컬 에이전트 스택이 완성되는 형태. MLX(Apple 실리콘 추론 스택)가 오픈웨이트 배포 채널의 일부가 됨.
 - 1인 개발자 관점: "로컬"은 이제 소비자 GPU(30B급)와 워크스테이션(816B급)의 2단 — 무엇을 어디에 상주시킬지의 아키텍처 분리가 더 정교해진다. 민감 코드는 온디바이스, 무거운 에이전트 워크로드는 Mac Studio급 로컬.
 - 상세: [[concepts/meta-muse-spark-open]]
+
+## 2026-11-27 보강 — 프라이버시 컴퓨트: '익명 클라우드'라는 세 번째 상주 옵션
+
+같은 주에 삼성과 OpenAI가 나란히 '프라이버시 컴퓨트'를 내놓으면서, 온디바이스 vs 클라우드의 이분법에 세 번째 옵션이 생겼다 — **클라우드에서 계산하되 누가 보냈는지 연결되지 않는 '익명 클라우드'**:
+
+- **삼성 SPAC** (11-26, One UI 9.5 코드 발견, 미발표): 서드파티 릴레이 + attestation + 공개 기록 + 익명 일회성 패스. 애플 Private Cloud Compute(2024)의 설계를 그대로 따랐다는 평가. Galaxy AI 클라우드 기능 상당수(AI Select·실시간 통역·Now Brief 등)가 대상. 코드 기반 추론이라 confidence low. 상세: [[concepts/samsung-spac-private-ai-cloud]]
+- **OpenAI Private Inference** (11-25, 소규모 비즈니스 알파): 기밀 컴퓨팅으로 프롬프트·응답이 처리 중에도 암호화된 채 격리 하드웨어에서 실행 — '답변 후'가 아니라 '답변 중'을 겨냥. ZDR with Private Safety Processing 병행. 단 백서 스스로 '추론 전체에 대한 Zero Operator Access 보장'은 제공하지 않는다고 명시. 상세: [[concepts/openai-private-inference-alpha-trials]]
+- **프레이밍**: 이 페이지의 축(로컬·클라우드·OS 내장·주권)에 5번째 질문이 붙는다 — **"클라우드에서 계산해도 누가 보냈는지 모르게 할 수 있는가"**. 로컬의 프라이버시와 클라우드의 성능을 동시에 노리는 설계이며, 2026년 말 삼성·OpenAI·애플(2024 PCC)로 수렴 중이다.
 
 ## 관련 개념
 
